@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://plart.pw/"/>
-  <updated>2018-11-14T04:08:08.624Z</updated>
+  <updated>2018-10-25T14:35:17.406Z</updated>
   <id>https://plart.pw/</id>
   
   <author>
@@ -15,20 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>ceshi</title>
-    <link href="https://plart.pw/2018/11/14/ceshi/"/>
-    <id>https://plart.pw/2018/11/14/ceshi/</id>
-    <published>2018-11-14T04:07:58.000Z</published>
-    <updated>2018-11-14T04:08:08.624Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>上网背后的流程</title>
@@ -429,11 +415,11 @@
   </entry>
   
   <entry>
-    <title>8086汇编总结-微型计算机概述</title>
-    <link href="https://plart.pw/2018/02/26/langs/asm/8086%E6%B1%87%E7%BC%96%E6%80%BB%E7%BB%93-%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%BF%B0/"/>
-    <id>https://plart.pw/2018/02/26/langs/asm/8086汇编总结-微型计算机概述/</id>
+    <title>8086汇编总结-16位微处理器8086</title>
+    <link href="https://plart.pw/2018/02/26/langs/asm/8086%E6%B1%87%E7%BC%96%E6%80%BB%E7%BB%93-16%E4%BD%8D%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A88086/"/>
+    <id>https://plart.pw/2018/02/26/langs/asm/8086汇编总结-16位微处理器8086/</id>
     <published>2018-02-25T16:00:00.000Z</published>
-    <updated>2018-07-13T12:42:36.284Z</updated>
+    <updated>2018-07-13T12:43:08.816Z</updated>
     
     <summary type="html">
     
@@ -460,11 +446,11 @@
   </entry>
   
   <entry>
-    <title>8086汇编总结-16位微处理器8086</title>
-    <link href="https://plart.pw/2018/02/26/langs/asm/8086%E6%B1%87%E7%BC%96%E6%80%BB%E7%BB%93-16%E4%BD%8D%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A88086/"/>
-    <id>https://plart.pw/2018/02/26/langs/asm/8086汇编总结-16位微处理器8086/</id>
+    <title>8086汇编总结-微型计算机概述</title>
+    <link href="https://plart.pw/2018/02/26/langs/asm/8086%E6%B1%87%E7%BC%96%E6%80%BB%E7%BB%93-%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%BF%B0/"/>
+    <id>https://plart.pw/2018/02/26/langs/asm/8086汇编总结-微型计算机概述/</id>
     <published>2018-02-25T16:00:00.000Z</published>
-    <updated>2018-07-13T12:43:08.816Z</updated>
+    <updated>2018-07-13T12:42:36.284Z</updated>
     
     <summary type="html">
     
@@ -540,6 +526,37 @@
     
     
       <category term="R" scheme="https://plart.pw/tags/R/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chuck7</title>
+    <link href="https://plart.pw/2018/02/15/langs/chuck/chuck7/"/>
+    <id>https://plart.pw/2018/02/15/langs/chuck/chuck7/</id>
+    <published>2018-02-15T13:40:10.000Z</published>
+    <updated>2018-07-13T12:47:00.040Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;manipulating time&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;time and duration&lt;/li&gt;
+&lt;li&gt;operations (arithmetic)&lt;/li&gt;
+&lt;li&gt;the keyword ‘now’&lt;/li&gt;
+&lt;li&gt;advancing
+        
+      
+    
+    </summary>
+    
+      <category term="编程与生活" scheme="https://plart.pw/categories/%E7%BC%96%E7%A8%8B%E4%B8%8E%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="ChucK" scheme="https://plart.pw/tags/ChucK/"/>
     
   </entry>
   
