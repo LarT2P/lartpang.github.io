@@ -18,8 +18,8 @@
   
   <entry>
     <title>上网背后的流程</title>
-    <link href="https://plart.pw/2018/10/25/ee/%E4%B8%8A%E7%BD%91%E8%83%8C%E5%90%8E%E7%9A%84%E6%B5%81%E7%A8%8B/"/>
-    <id>https://plart.pw/2018/10/25/ee/上网背后的流程/</id>
+    <link href="https://plart.pw/ee/%E4%B8%8A%E7%BD%91%E8%83%8C%E5%90%8E%E7%9A%84%E6%B5%81%E7%A8%8B/"/>
+    <id>https://plart.pw/ee/上网背后的流程/</id>
     <published>2018-10-24T16:00:00.000Z</published>
     <updated>2018-10-25T14:35:17.406Z</updated>
     
@@ -48,8 +48,8 @@
   
   <entry>
     <title>这些衰败的日子</title>
-    <link href="https://plart.pw/2018/09/15/life/%E8%BF%99%E4%BA%9B%E8%A1%B0%E8%B4%A5%E7%9A%84%E6%97%A5%E5%AD%90/"/>
-    <id>https://plart.pw/2018/09/15/life/这些衰败的日子/</id>
+    <link href="https://plart.pw/life/%E8%BF%99%E4%BA%9B%E8%A1%B0%E8%B4%A5%E7%9A%84%E6%97%A5%E5%AD%90/"/>
+    <id>https://plart.pw/life/这些衰败的日子/</id>
     <published>2018-09-14T16:00:00.000Z</published>
     <updated>2018-11-14T04:13:42.713Z</updated>
     
@@ -70,8 +70,8 @@
   
   <entry>
     <title>如懿，如意</title>
-    <link href="https://plart.pw/2018/08/30/life/%E5%A6%82%E6%87%BF%E5%A6%82%E6%84%8F/"/>
-    <id>https://plart.pw/2018/08/30/life/如懿如意/</id>
+    <link href="https://plart.pw/life/%E5%A6%82%E6%87%BF%E5%A6%82%E6%84%8F/"/>
+    <id>https://plart.pw/life/如懿如意/</id>
     <published>2018-08-29T16:00:00.000Z</published>
     <updated>2018-09-12T01:21:27.272Z</updated>
     
@@ -92,8 +92,8 @@
   
   <entry>
     <title>开心麻花</title>
-    <link href="https://plart.pw/2018/08/05/life/%E5%BC%80%E5%BF%83%E9%BA%BB%E8%8A%B1%E5%87%A0%E9%83%A8%E7%94%B5%E5%BD%B1/"/>
-    <id>https://plart.pw/2018/08/05/life/开心麻花几部电影/</id>
+    <link href="https://plart.pw/life/%E5%BC%80%E5%BF%83%E9%BA%BB%E8%8A%B1%E5%87%A0%E9%83%A8%E7%94%B5%E5%BD%B1/"/>
+    <id>https://plart.pw/life/开心麻花几部电影/</id>
     <published>2018-08-04T16:00:00.000Z</published>
     <updated>2018-10-01T15:54:57.078Z</updated>
     
@@ -122,8 +122,8 @@
   
   <entry>
     <title>spyder_tool</title>
-    <link href="https://plart.pw/2018/08/03/langs/python/spyder_tool/"/>
-    <id>https://plart.pw/2018/08/03/langs/python/spyder_tool/</id>
+    <link href="https://plart.pw/langs/python/spyder_tool/"/>
+    <id>https://plart.pw/langs/python/spyder_tool/</id>
     <published>2018-08-02T16:00:00.000Z</published>
     <updated>2018-08-03T03:09:48.057Z</updated>
     
@@ -154,21 +154,14 @@
   
   <entry>
     <title>python高级技巧之生成器与装饰器</title>
-    <link href="https://plart.pw/2018/07/22/langs/python/python%E7%9A%84%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7/"/>
-    <id>https://plart.pw/2018/07/22/langs/python/python的高级技巧/</id>
+    <link href="https://plart.pw/langs/python/python%E7%9A%84%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7/"/>
+    <id>https://plart.pw/langs/python/python的高级技巧/</id>
     <published>2018-07-21T16:00:00.000Z</published>
-    <updated>2018-07-22T12:28:05.168Z</updated>
+    <updated>2018-11-14T14:55:21.574Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;链接 &lt;a href=&quot;http://python.jobbole.com/61171/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Python高级编程技巧&lt;/a&gt; 连接 &lt;a
-        
-      
+      &lt;p&gt;python中有很多高级的技巧，这里记录下生成器与装饰器。&lt;/p&gt;
     
     </summary>
     
@@ -183,8 +176,8 @@
   
   <entry>
     <title>我不是药神</title>
-    <link href="https://plart.pw/2018/07/20/life/%E6%88%91%E4%B8%8D%E6%98%AF%E8%8D%AF%E7%A5%9E/"/>
-    <id>https://plart.pw/2018/07/20/life/我不是药神/</id>
+    <link href="https://plart.pw/life/%E6%88%91%E4%B8%8D%E6%98%AF%E8%8D%AF%E7%A5%9E/"/>
+    <id>https://plart.pw/life/我不是药神/</id>
     <published>2018-07-19T16:00:00.000Z</published>
     <updated>2018-10-01T15:53:41.194Z</updated>
     
@@ -203,8 +196,8 @@
   
   <entry>
     <title>C51汇编典型代码&amp;一些org-mode技巧</title>
-    <link href="https://plart.pw/2018/07/13/langs/asm/C51%E6%B1%87%E7%BC%96%E5%85%B8%E5%9E%8B%E4%BB%A3%E7%A0%81&amp;%E4%B8%80%E4%BA%9Borg-mode%E6%8A%80%E5%B7%A7/"/>
-    <id>https://plart.pw/2018/07/13/langs/asm/C51汇编典型代码&amp;一些org-mode技巧/</id>
+    <link href="https://plart.pw/langs/asm/C51%E6%B1%87%E7%BC%96%E5%85%B8%E5%9E%8B%E4%BB%A3%E7%A0%81&amp;%E4%B8%80%E4%BA%9Borg-mode%E6%8A%80%E5%B7%A7/"/>
+    <id>https://plart.pw/langs/asm/C51汇编典型代码&amp;一些org-mode技巧/</id>
     <published>2018-07-13T00:00:00.000Z</published>
     <updated>2018-10-01T15:52:46.458Z</updated>
     
@@ -227,8 +220,8 @@
   
   <entry>
     <title>小诗一首</title>
-    <link href="https://plart.pw/2018/06/11/life/%E5%B0%8F%E8%AF%97%E4%B8%80/"/>
-    <id>https://plart.pw/2018/06/11/life/小诗一/</id>
+    <link href="https://plart.pw/life/%E5%B0%8F%E8%AF%97%E4%B8%80/"/>
+    <id>https://plart.pw/life/小诗一/</id>
     <published>2018-06-11T15:24:59.000Z</published>
     <updated>2018-10-01T16:17:48.925Z</updated>
     
@@ -256,8 +249,8 @@
   
   <entry>
     <title>Manjaro小记</title>
-    <link href="https://plart.pw/2018/05/24/tools/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEmanjaro%E5%B0%8F%E8%AE%B0/"/>
-    <id>https://plart.pw/2018/05/24/tools/安装配置manjaro小记/</id>
+    <link href="https://plart.pw/tools/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEmanjaro%E5%B0%8F%E8%AE%B0/"/>
+    <id>https://plart.pw/tools/安装配置manjaro小记/</id>
     <published>2018-05-23T16:03:55.000Z</published>
     <updated>2018-07-13T12:50:59.004Z</updated>
     
@@ -286,8 +279,8 @@
   
   <entry>
     <title>第一千天的时候</title>
-    <link href="https://plart.pw/2018/04/04/life/%E5%8D%83%E6%97%A5/"/>
-    <id>https://plart.pw/2018/04/04/life/千日/</id>
+    <link href="https://plart.pw/life/%E5%8D%83%E6%97%A5/"/>
+    <id>https://plart.pw/life/千日/</id>
     <published>2018-04-04T13:31:10.000Z</published>
     <updated>2018-07-13T12:51:40.831Z</updated>
     
@@ -317,8 +310,8 @@
   
   <entry>
     <title>Processing权威指南阅读记录</title>
-    <link href="https://plart.pw/2018/03/29/books/Processing%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/"/>
-    <id>https://plart.pw/2018/03/29/books/Processing权威指南阅读记录/</id>
+    <link href="https://plart.pw/books/Processing%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/"/>
+    <id>https://plart.pw/books/Processing权威指南阅读记录/</id>
     <published>2018-03-29T14:41:22.000Z</published>
     <updated>2018-07-13T12:50:45.082Z</updated>
     
@@ -344,8 +337,8 @@
   
   <entry>
     <title>8086_i386试验箱综合设计实验</title>
-    <link href="https://plart.pw/2018/03/27/langs/asm/8086%E6%B1%87%E7%BC%96%E6%80%BB%E7%BB%93-i386%E8%AF%95%E9%AA%8C%E7%AE%B1%E7%BB%BC%E5%90%88%E8%AE%BE%E8%AE%A1%E5%AE%9E%E9%AA%8C/"/>
-    <id>https://plart.pw/2018/03/27/langs/asm/8086汇编总结-i386试验箱综合设计实验/</id>
+    <link href="https://plart.pw/langs/asm/8086%E6%B1%87%E7%BC%96%E6%80%BB%E7%BB%93-i386%E8%AF%95%E9%AA%8C%E7%AE%B1%E7%BB%BC%E5%90%88%E8%AE%BE%E8%AE%A1%E5%AE%9E%E9%AA%8C/"/>
+    <id>https://plart.pw/langs/asm/8086汇编总结-i386试验箱综合设计实验/</id>
     <published>2018-03-26T16:00:00.000Z</published>
     <updated>2018-07-13T12:42:28.384Z</updated>
     
@@ -373,8 +366,8 @@
   
   <entry>
     <title>Processing精彩例程之细胞自动机</title>
-    <link href="https://plart.pw/2018/03/25/langs/processing/Processing%E7%B2%BE%E5%BD%A9%E4%BE%8B%E7%A8%8B%E4%B9%8B%E7%BB%86%E8%83%9E%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
-    <id>https://plart.pw/2018/03/25/langs/processing/Processing精彩例程之细胞自动机/</id>
+    <link href="https://plart.pw/langs/processing/Processing%E7%B2%BE%E5%BD%A9%E4%BE%8B%E7%A8%8B%E4%B9%8B%E7%BB%86%E8%83%9E%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
+    <id>https://plart.pw/langs/processing/Processing精彩例程之细胞自动机/</id>
     <published>2018-03-25T14:19:41.000Z</published>
     <updated>2018-07-13T12:50:47.660Z</updated>
     
@@ -401,8 +394,8 @@
   
   <entry>
     <title>8086汇编总结-指令系统</title>
-    <link href="https://plart.pw/2018/03/11/langs/asm/8086%E6%B1%87%E7%BC%96%E6%80%BB%E7%BB%93-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/"/>
-    <id>https://plart.pw/2018/03/11/langs/asm/8086汇编总结-指令系统/</id>
+    <link href="https://plart.pw/langs/asm/8086%E6%B1%87%E7%BC%96%E6%80%BB%E7%BB%93-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/"/>
+    <id>https://plart.pw/langs/asm/8086汇编总结-指令系统/</id>
     <published>2018-03-10T16:00:00.000Z</published>
     <updated>2018-07-13T12:58:09.608Z</updated>
     
@@ -435,8 +428,8 @@
   
   <entry>
     <title>8086汇编总结-16位微处理器8086</title>
-    <link href="https://plart.pw/2018/02/26/langs/asm/8086%E6%B1%87%E7%BC%96%E6%80%BB%E7%BB%93-16%E4%BD%8D%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A88086/"/>
-    <id>https://plart.pw/2018/02/26/langs/asm/8086汇编总结-16位微处理器8086/</id>
+    <link href="https://plart.pw/langs/asm/8086%E6%B1%87%E7%BC%96%E6%80%BB%E7%BB%93-16%E4%BD%8D%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A88086/"/>
+    <id>https://plart.pw/langs/asm/8086汇编总结-16位微处理器8086/</id>
     <published>2018-02-25T16:00:00.000Z</published>
     <updated>2018-07-13T12:43:08.816Z</updated>
     
@@ -469,8 +462,8 @@
   
   <entry>
     <title>8086汇编总结-微型计算机概述</title>
-    <link href="https://plart.pw/2018/02/26/langs/asm/8086%E6%B1%87%E7%BC%96%E6%80%BB%E7%BB%93-%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%BF%B0/"/>
-    <id>https://plart.pw/2018/02/26/langs/asm/8086汇编总结-微型计算机概述/</id>
+    <link href="https://plart.pw/langs/asm/8086%E6%B1%87%E7%BC%96%E6%80%BB%E7%BB%93-%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%BF%B0/"/>
+    <id>https://plart.pw/langs/asm/8086汇编总结-微型计算机概述/</id>
     <published>2018-02-25T16:00:00.000Z</published>
     <updated>2018-07-13T12:42:36.284Z</updated>
     
@@ -503,8 +496,8 @@
   
   <entry>
     <title>2017年总结</title>
-    <link href="https://plart.pw/2018/02/24/life/2017%E6%80%BB%E7%BB%93/"/>
-    <id>https://plart.pw/2018/02/24/life/2017总结/</id>
+    <link href="https://plart.pw/life/2017%E6%80%BB%E7%BB%93/"/>
+    <id>https://plart.pw/life/2017总结/</id>
     <published>2018-02-24T04:05:20.000Z</published>
     <updated>2018-07-13T12:52:02.878Z</updated>
     
@@ -532,8 +525,8 @@
   
   <entry>
     <title>R基本数据结构</title>
-    <link href="https://plart.pw/2018/02/15/langs/r/R%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    <id>https://plart.pw/2018/02/15/langs/r/R基本数据结构/</id>
+    <link href="https://plart.pw/langs/r/R%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <id>https://plart.pw/langs/r/R基本数据结构/</id>
     <published>2018-02-15T13:46:06.000Z</published>
     <updated>2018-07-13T12:51:29.159Z</updated>
     
@@ -561,8 +554,8 @@
   
   <entry>
     <title>chuck4</title>
-    <link href="https://plart.pw/2018/02/15/langs/chuck/chuck4/"/>
-    <id>https://plart.pw/2018/02/15/langs/chuck/chuck4/</id>
+    <link href="https://plart.pw/langs/chuck/chuck4/"/>
+    <id>https://plart.pw/langs/chuck/chuck4/</id>
     <published>2018-02-15T13:40:10.000Z</published>
     <updated>2018-07-13T12:46:46.446Z</updated>
     

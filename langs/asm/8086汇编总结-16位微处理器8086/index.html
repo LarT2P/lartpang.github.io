@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next muse" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-center-simple.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.5.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="目录  第一章 微型计算机概述 第二章 16位微处理器8086 第三章 指令系统 第四章 汇编语言程序设计 第五章 存储器 第六章 输入/输出接口设计 第七章 中断系统 第八章 可编程接口芯片 第九章 AD/DA 转换 第十章 串行通信  第二章 16位微处理器8086 微处理器性能指标 微处理器性能指标主要有2项：  字长：指CPU能同时处理的数据位数 如：8">
+<meta name="keywords" content="汇编,计算机原理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="8086汇编总结-16位微处理器8086">
+<meta property="og:url" content="https://plart.pw/langs/asm/8086汇编总结-16位微处理器8086/index.html">
+<meta property="og:site_name" content="失乐园">
+<meta property="og:description" content="目录  第一章 微型计算机概述 第二章 16位微处理器8086 第三章 指令系统 第四章 汇编语言程序设计 第五章 存储器 第六章 输入/输出接口设计 第七章 中断系统 第八章 可编程接口芯片 第九章 AD/DA 转换 第十章 串行通信  第二章 16位微处理器8086 微处理器性能指标 微处理器性能指标主要有2项：  字长：指CPU能同时处理的数据位数 如：8">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://plart.pw/images/asm-2/ScreenShot00024.jpg">
+<meta property="og:image" content="https://plart.pw/images/asm-2/ScreenShot00025.jpg">
+<meta property="og:image" content="https://plart.pw/images/asm-2/ScreenShot00026.jpg">
+<meta property="og:image" content="https://plart.pw/images/asm-2/ScreenShot00027.jpg">
+<meta property="og:image" content="https://plart.pw/images/asm-2/ScreenShot00034.jpg">
+<meta property="og:image" content="https://plart.pw/images/asm-2/ScreenShot00028.jpg">
+<meta property="og:image" content="https://plart.pw/images/asm-2/ScreenShot00029.jpg">
+<meta property="og:image" content="https://plart.pw/images/asm-2/ScreenShot00030.jpg">
+<meta property="og:image" content="https://plart.pw/images/asm-2/ScreenShot00031.jpg">
+<meta property="og:image" content="https://plart.pw/images/asm-2/ScreenShot00032.jpg">
+<meta property="og:image" content="https://plart.pw/images/asm-2/ScreenShot00033.jpg">
+<meta property="og:updated_time" content="2018-07-13T12:43:08.816Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="8086汇编总结-16位微处理器8086">
+<meta name="twitter:description" content="目录  第一章 微型计算机概述 第二章 16位微处理器8086 第三章 指令系统 第四章 汇编语言程序设计 第五章 存储器 第六章 输入/输出接口设计 第七章 中断系统 第八章 可编程接口芯片 第九章 AD/DA 转换 第十章 串行通信  第二章 16位微处理器8086 微处理器性能指标 微处理器性能指标主要有2项：  字长：指CPU能同时处理的数据位数 如：8">
+<meta name="twitter:image" content="https://plart.pw/images/asm-2/ScreenShot00024.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="失乐园" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://plart.pw/langs/asm/8086汇编总结-16位微处理器8086/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>8086汇编总结-16位微处理器8086 | 失乐园</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">失乐园</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">代码与机器</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+    <a href="https://github.com/yourname" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://plart.pw/langs/asm/8086汇编总结-16位微处理器8086/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lart Pang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="失乐园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">8086汇编总结-16位微处理器8086
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-02-26 00:00:00" itemprop="dateCreated datePublished" datetime="2018-02-26T00:00:00+08:00">2018-02-26</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-07-13 20:43:08" itemprop="dateModified" datetime="2018-07-13T20:43:08+08:00">2018-07-13</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程与生活/" itemprop="url" rel="index"><span itemprop="name">编程与生活</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="目录">目录</h1>
+<ul>
+<li>第一章 微型计算机概述</li>
+<li>第二章 16位微处理器8086</li>
+<li>第三章 指令系统</li>
+<li>第四章 汇编语言程序设计</li>
+<li>第五章 存储器</li>
+<li>第六章 输入/输出接口设计</li>
+<li>第七章 中断系统</li>
+<li>第八章 可编程接口芯片</li>
+<li>第九章 AD/DA 转换</li>
+<li>第十章 串行通信</li>
+</ul>
+<h1 id="第二章-16位微处理器8086">第二章 16位微处理器8086</h1>
+<h2 id="微处理器性能指标">微处理器性能指标</h2>
+<p>微处理器性能指标主要有2项：</p>
+<ol type="1">
+<li><p>字长：指CPU能同时处理的数据位数</p>
+<p>如：8086为16位字长，80386为32位字长</p></li>
+<li><p>主频：即CPU时钟频率，主频越高，速度越快</p>
+<p>如：8086为5MHz，80386为16MHz，Pentium IV可达3GHz</p></li>
+</ol>
+<h2 id="指令执行过程">指令执行过程</h2>
+<p><strong>取指令 -&gt; 指令译码 -&gt; 指令执行</strong></p>
+<p>微型计算机的工作过程，也就是不断地取指令、译码和执行的过程，直到遇到停机指令时才结束机器的运行。</p>
+<h2 id="流水线的概念">流水线的概念</h2>
+<p>cpu流水线技术是一种将指令分解为多步，并让不同指令的各步操作重叠，从而实现几条指令并行处理，以加速程序运行过程的技术。指令的每步有各自独立的电路来处理，每完成一步，就进到下一步，而前一步则处理后续指令。</p>
+<h2 id="内部结构">8086内部结构</h2>
+<figure>
+<img src="/images/asm-2/ScreenShot00024.jpg" alt="8086内部结构"><figcaption>8086内部结构</figcaption>
+</figure>
+<ul>
+<li>(EU Execution Unit)执行单元:负责 指令的译码和执行</li>
+<li>(BIU Bus Interface Unit)总线接口单元:负责与存储器、I/O口传送数据</li>
+</ul>
+<h3 id="总线接口单元biu">总线接口单元BIU</h3>
+<ol type="1">
+<li>具体功能
+<ul>
+<li>负责从内存取指令送到CPU内部的指令队列</li>
+<li>CPU执行指令时，配合EU从指定存储单元或I/O口取数据，或把运算结果传送到指定存储单元或I/O口</li>
+</ul></li>
+<li>组成
+<ul>
+<li>4个16位段地址寄存器
+<ul>
+<li>CS (Code Segment) —代码段寄存器，代码段存放代码</li>
+<li>DS (Data Segment) —数据段寄存器，数据段存放数据</li>
+<li>SS (Stack Segment)—堆栈段寄存器，堆栈段用作堆栈操作</li>
+<li>ES (Extra Segment)—扩展段寄存器，扩展段存放数据</li>
+</ul>
+<p>注：8086对存储器采用分段管理，4个段寄存器分别存放4个当前段的段地址，又称作段基址寄存器。</p></li>
+<li><p>指令指针寄存器IP (Instruction Pointer)</p>
+<p>16位IP存放当前代码段(CS)所要取出的下一条指令的偏移地址</p></li>
+<li><p>地址加法器∑</p>
+<p>8086用20位地址线寻址1MB内存空间，但其内部寄存器是16位的，因此需要用地址加法器∑根据16位寄存器的值计算出20位物理地址</p></li>
+<li>指令缓冲队列
+<ul>
+<li>8086执行指令的同时，会从内存取1条或几条指令，取来的指令就存放在指令队列中，8086执行完一条指令就可立即执行下一条指令，无需轮番的取指令和执行指令，提高了CPU效率；</li>
+<li>8086指令队列为6个字节，8088指令队列为4个字节；</li>
+</ul></li>
+<li>其他
+<ul>
+<li>暂存器：用于与EU通信的内部寄存器</li>
+<li>总线控制电路：负责总线操作控制</li>
+</ul></li>
+</ul></li>
+</ol>
+<h3 id="执行单元eu">执行单元EU</h3>
+<ul>
+<li><p>16位算术逻辑单元ALU</p>
+<p>主要是加法器，绝大部分指令执行都由加法器完成</p></li>
+<li>4个16位数据寄存器（AX、BX、CX、DX）
+<ul>
+<li>可分为8个8位寄存器使用AH、AL、BH、BL、CH、CL、DH、DL</li>
+<li>数据寄存器用于存放操作数及中间结果，AX和AL可用作累加操作，因此又称作累加器</li>
+</ul></li>
+<li>4个16位地址指针寄存器：通常用于存放操作数偏移地址
+<ul>
+<li>SP (Stack Pointer) — 堆栈指针寄存器，指示堆栈段栈顶位置</li>
+<li>BP (Base Pointer) — 基址指针寄存器，指示堆栈段数据区基址</li>
+<li>SI (Source Index) — 源变址寄存器，指示数据段源串地址</li>
+<li>DI (Destination Index) — 目的变址寄存器，指示扩展段目的串地址</li>
+</ul></li>
+<li><p>标志寄存器 FLAG</p>
+<p>6位状态标志，3位控制标志IF、DF、TF，剩下7位保留</p>
+<figure>
+<img src="/images/asm-2/ScreenShot00025.jpg" alt="标志寄存器"><figcaption>标志寄存器</figcaption>
+</figure>
+<p><strong>状态标志：</strong></p>
+<ul>
+<li>CF（Carry Flag）进(借)位标志，加法运算最高位产生进位或减法运算最高位产生借位，则CF置1，否则置0</li>
+<li>AF（Auxiliary Carry Flag）辅助进位标志，加法运算时第3位往第4位有进位，或减法运算时第3位往第4位有借位，则AF置1，否则置0</li>
+<li>ZF（Zero Flag）零标志, 若当前运算结果为零, 则ZF置1,否则置0</li>
+<li>SF（Sign Flag）符号标志，与运算结果最高位相同，若为负数，则SF置1，否则置0，SF指示了当前运算结果是正还是负</li>
+<li>OF（Overflow Flag）溢出标志，有符号数算术运算结果溢出，则OF置1，否则置0</li>
+<li>PF（Parity Flag）奇偶标志，运算结果低8位所含1的个数为偶数则PF置1，否则置0，即奇校验低八位</li>
+</ul>
+<p><strong>控制标志：</strong></p>
+<ul>
+<li>DF（Direction Flag）方向标志 DF=1，串操作时，地址不断递减；DF=0，串操作时，地址不断递增</li>
+<li>IF（Interrupt enable Flag）中断允许标志 IF=1，CPU允许接收可屏蔽中断请求，即开中断；IF=0，则关中断</li>
+<li>TF（Trap Flag）跟踪标志，又称单步标志</li>
+<li>TF=1，CPU为单步工作方式，每执行完一条指令产生一次软件中断</li>
+<li>TF=0，CPU为正常工作，连续处理指令</li>
+</ul></li>
+</ul>
+<h2 id="biu与eu的配合">BIU与EU的配合</h2>
+<ol type="1">
+<li>指令队列中出现两个字节为空时，BIU自动按CS和IP值组成20位物理 地址，到存储器中取指令，一次取两个字节指令存放到指令队列中</li>
+<li>EU从BIU指令队列中读取指令</li>
+<li>由EU控制电路对指令进行译码分析，指出操作性质及操作对象</li>
+<li>EU执行指令，如需访问存储器或I/端口中的数据，则由EU给出数据 的16位偏移地址送给BIU</li>
+<li>BIU由地址加法器∑形成20位绝对物理地址,并传递给存储器</li>
+<li>存储器给出数据，BIU通过总线控制电路将其传送到CPU内部总线</li>
+<li>EU将从内部总线获得数据，并送入ALU进行运算</li>
+<li>EU运算出的结果，经内部总线送到指定的寄存器或暂存器，若需要将结果送给存储器，则由EU给出偏移地址，请求BIU产生20位实际物理地址，将结果写入存储器</li>
+</ol>
+<h2 id="存储器和io管理">存储器和I/O管理</h2>
+<ol type="1">
+<li><p>8086存储器编址</p>
+<p><strong>8086具有20位地址线，可寻址1MB存储空间，编址为00000H～FFFFFH</strong></p></li>
+<li><p>8086存储器管理</p>
+<p>8086对存储器采用分段管理，将1MB空间分为若干个段，每段最多为64KB，一个程序可以有代码、数据、堆栈和扩展数据4个部分，每部分又可包含一个或几个段，代码部分包含的段均称为代码段，其余部分类似，分别由CS、DS、SS、ES指示每部分当前正在操作的段起始地址。实际CS、DS等存放的是20位段起始地址的高16位，即段地址。</p>
+<p>对存储单元访问时，需要知道该存储单元所在段的起始地址，还需要知道该存储单元距离段起始位置的偏移量，即偏移地址，才能访问该存储单元。由于每段大小不会超过64KB，因此偏移地址用16位表示。</p>
+<p>由于段寄存器是16位，偏移地址也为16位，而一个存储单元的物理地址是20位，因此8086需要通过地址加法器∑根据段地址和偏移地址形成20位物理地址。段地址和偏移地址组合称为逻辑地址。</p>
+<p><strong>逻辑地址形式为 -&gt; 段地址 : 偏移地址</strong></p></li>
+</ol>
+<h3 id="位物理地址的形成">20位物理地址的形成</h3>
+<p>(物理地址) 20 = 段地址左移4位 + 偏移地址 (物理地址) 20 = (段地址)*16 + 偏移地址</p>
+<p>例：若逻辑地址为FFFFH : 0000H，则对应的物理地址为：</p>
+<pre><code>    F  F  F  F       |   段地址     16位
++      0  0  0  0    |  + 偏移地址  16位
+------------------   |  -----------------
+    F  F  F  F  0    |   物理地址   20位</code></pre>
+<p>**段寄存器 -&gt; 段地址，地址指针寄存器 -&gt; 偏移地址* 二者配对使用</p>
+<h3 id="存储器管理的几点说明">存储器管理的几点说明</h3>
+<ul>
+<li>一个段总是从16字节边界开始，20位段起始地址的低4位总为0</li>
+<li>同一个物理地址可以采取不同的逻辑地址形式表示</li>
+<li><p>例：物理地址 12345H 可表示为1200 : 0345H 或 1230 : 0045H</p></li>
+<li><p>尽管代码段、数据段、堆栈段、扩展段均为64KB，但实际应用时，不同段可以相互重叠或重合，但段内地址连续</p></li>
+</ul>
+<p>基本的对应的使用关系可见下图</p>
+<figure>
+<img src="/images/asm-2/ScreenShot00026.jpg" alt="段寄存器的对应关系"><figcaption>段寄存器的对应关系</figcaption>
+</figure>
+<h2 id="io-编址">8086 I/O 编址</h2>
+<ul>
+<li>8086用低16根地址线，寻址64KB的I/O端口，编址为0000H～FFFFH
+<ul>
+<li>一个I/O端口通常对应I/O接口电路中的一个存储单元，微机为每个端口分配一个地址，即为端口号</li>
+<li>实际使用中8086只使用低10根地址线，寻址1KB的I/O端口</li>
+</ul></li>
+<li>8086对I/O端口操作，需要专门的IN、OUT指令，并且只能通过累加器（AX/AL）来完成，例： IN AL, 80H</li>
+<li>8086系统中，<strong>存储器和I/O端口分别独立编址</strong>
+<ul>
+<li>存储器的地址范围是 00000H – 0FFFFFH</li>
+<li>I/O端口的地址范围是 0000H – 0FFFFH</li>
+</ul></li>
+</ul>
+<h2 id="引脚信号和工作模式">8086引脚信号和工作模式</h2>
+<ol type="1">
+<li><p>最小模式与最大模式</p>
+<ul>
+<li>两种工作模式，由 <span class="math inline">\(MN/\overline{MX}\)</span> 引脚决定。</li>
+<li>最小模式：系统中只有一个处理器；<span class="math inline">\(MN/\overline{MX}\)</span>为高电平；</li>
+<li>最大模式：系统中包括两个或多个处理器；<span class="math inline">\(MN/\overline{MX}\)</span>为低电平。</li>
+<li>不同模式下，部分引脚定义不同</li>
+</ul></li>
+<li><p>8086引脚信号和功能</p>
+<ul>
+<li><p>8086引脚图和引脚分类图</p>
+<p>8086 CPU为40pin双列直插（DIP)封装</p>
+<figure>
+<img src="/images/asm-2/ScreenShot00027.jpg" alt="8086引脚分类图"><figcaption>8086引脚分类图</figcaption>
+</figure></li>
+<li><p>最小模式下引脚信号和功能</p>
+<p>1）总线信号</p>
+<p>① AD0～AD15: 地址/数据复用引脚，双向工作。分时传送16位数据和地址的低16位，由ALE锁存地址信息。</p>
+<p>② A16～A19（S3～S6）: 地址/状态复用引脚，输出。分时输出地址的高4位和CPU当前状态，地址信息由ALE锁存。</p>
+<p>③ BHE/S7: 高8位数据总线允许/状态复用引脚，输出。低电平有效，表示高8位数据线D15～D8上数据有效</p>
+<p>④ ALE: 地址锁存允许信号输出。高电平有效，表示总线上的信息是地址信息。</p>
+<p>2）总线控制信号</p>
+<p>① HOLD: 总线保持请求信号输入。高电平有效，表示其他模块（如DMA)申请占用总线</p>
+<p>② HLDA: 总线保持响应信号输出，高电平有效，表示CPU已让出总线</p>
+<p>3）系统控制信号</p>
+<p>① M/IO: 存储器/输入输出选择信号，输出，高电平表示CPU访问存储器，低电平表示CPU访问I/O端口</p>
+<p>② RD: 读信号输出，低电平有效，表示CPU从存储器或I/O口读入信息</p>
+<p>③ WR: 写信号输出，低电平有效，表示CPU向存储器或I/O口输出数据</p>
+<p>④ DT/R: 数据收发信号输出。高电平表示CPU正在发送数据，低电平表示CPU接收数据</p>
+<p>⑤ DEN: 数据允许信号输出。低电平有效，表示CPU当前准备发送或接收一个数据</p>
+<p>4）中断控制信号</p>
+<p>① INTR: 可屏蔽中断请求信号输入。高电平有效，表示外部向CPU提出中断申请</p>
+<p>② INTA: 中断响应信号输出，<strong>低电平有效</strong>，表示CPU响应外设中断请求</p>
+<p>③ NMI: 非屏蔽中断请求信号输入。<strong>上升沿有效</strong>。表示外部有非屏蔽中断申请。非屏蔽中断不受软件控制，CPU必须响应</p>
+<p>5）CPU控制信号</p>
+<p>① RESET: 复位信号输入。高电平有效，至少保持4个时钟周期的高电平。复位时CPU停止现行操作，开始复位，并进行初始化：标志寄存器FLAG、IP、DS、SS、ES及指令队列均清零，CS为FFFFH，复位结束时CPU从FFFF0H开始执行程序</p>
+<p>② MN/MX：最小模式/最大模式选择信号输入</p>
+<p>③ READY：“准备好”信号输入，高电平有效，表示存储器或I/O口已准备就绪，可进行一次数据传输</p>
+<p>④ TEST: 测试信号输入，低电平有效，有效时CPU退出WAIT指令</p>
+<p>6）其它信号</p>
+<p>① CLK: 时钟信号，8086主频为4.77MHZT=210ns；单相，占空比为1/3。</p>
+<p>② VCC,GND: 电源及地，+5V，满足TTL规范</p></li>
+</ul></li>
+<li><p>最大模式下8086有8个控制信号被重新定义，对应关系如下：</p>
+<figure>
+<img src="/images/asm-2/ScreenShot00034.jpg" alt="最大模式重新定义"><figcaption>最大模式重新定义</figcaption>
+</figure></li>
+</ol>
+<h2 id="引脚信号与功能">8088引脚信号与功能</h2>
+<p>8088为准16位机，片内数据总线宽度为16位，片外为8位，引脚信号和功能与8086类似，二者 <strong><em>差别如下</em></strong>：</p>
+<pre><code>8086微处理器                8088微处理器
+16位AD复用                  8位AD复用
+BHE高八位数据允许           SS0/高电平
+M/IO引脚选择存储器/IO口     M/IO引脚选择存储器/IO口</code></pre>
+<h2 id="总线连接">总线连接</h2>
+<ol type="1">
+<li><p>8086最小模式下的总线连接</p>
+<p>很重要的图。</p>
+<figure>
+<img src="/images/asm-2/ScreenShot00028.jpg" alt="8086最小模式连接图"><figcaption>8086最小模式连接图</figcaption>
+</figure>
+<p>1）Intel 8282</p>
+<p>把AD复用引脚连接到地址总线的8位地址锁存器。3片8282(功能同74LS373)A0～A19和BHE，ALE为锁存信号。</p>
+<p>2）Intel 8286</p>
+<p>把AD复用引脚连接到数据总线的8位数据缓冲器。2片8286(功能同74LS245)做D15～D0的缓冲器，DT/R做方向选择，DEN为选通信号。</p>
+<p>3） 控制信号M/IO、RD和WR</p>
+<p>完成信息传递控制。组合起来完成右面的控制。</p>
+<p>4）中断控制信号INTR、INTA、NMI</p>
+<ul>
+<li>INTR: 外部可屏蔽中断请求引脚，高电平有效</li>
+<li>INTA: 中断响应信号，低电平有效</li>
+<li>NMI: 不可屏蔽中断请求引脚，上升沿有效</li>
+</ul>
+<p>5）总线控制信号HOLD、HLDA</p>
+<ul>
+<li>HOLD：总线保持请求引脚,高电平有效</li>
+<li>HLDA：总线保持响应引脚，高电平有效</li>
+<li>HLDA控制8282的OE，当CPU总线保持响应时让出总线</li>
+</ul></li>
+<li><p>8086最大模式下的总线</p>
+<figure>
+<img src="/images/asm-2/ScreenShot00029.jpg" alt="8086最大模式下总线连接"><figcaption>8086最大模式下总线连接</figcaption>
+</figure></li>
+</ol>
+<h2 id="时钟电路与复位电路">8086时钟电路与复位电路</h2>
+<figure>
+<img src="/images/asm-2/ScreenShot00030.jpg" alt="8086时钟电路与复位电路"><figcaption>8086时钟电路与复位电路</figcaption>
+</figure>
+<p>8284为8086提供CLK时钟信号、RESET复位信号和READY准备好信号</p>
+<ul>
+<li>8086/8088内部无时钟发生器，时钟由8284提供，频率为4.77MHz</li>
+<li>输入/RES经8284内部斯密特触发器整形，同步后产生RESET信号,给CPU复位</li>
+<li>外界准备好信号输入到8284的RDY端，同步后产生READY信号给CPU</li>
+</ul>
+<figure>
+<img src="/images/asm-2/ScreenShot00031.jpg" alt="8284内部逻辑图"><figcaption>8284内部逻辑图</figcaption>
+</figure>
+<h2 id="系统的复位操作和启动过程">8086/8088系统的复位操作和启动过程</h2>
+<ol type="1">
+<li>CPU接到RESET信号，停止现有工作，进行复位操作：CS置FFFFH，IP置0，指令队列清空，其余寄存器清0；</li>
+<li>从存储器FFFFH :0000H取第一条指令，一般在此处放一条跳转指令，跳转到ROM BIOS中的系统测试程序；</li>
+<li>系统测试程序执行硬件自检(对CPU、RAM、ROM等硬件进行测试)，然后执行ROM BIOS中的初始引导程序；</li>
+<li>初始引导程序再从磁盘0面0道1扇区装入引导程序，执行引导操作；</li>
+<li>按引导程序的指令，顺序装入其他程序模块，完成操作系统的引导操作；</li>
+</ol>
+<p>注：在3、4步之间微机还会检查C0000H开始的扩展ROM空间中是否有程序，如果有，并且校验正确，则先执行这些程序</p>
+<h2 id="总线周期">8086总线周期</h2>
+<p>CPU取指令或传送数据时，均需要通过BIU进行总线操作，而总线操作是 根据时钟脉冲CLK一个节拍一个节拍的完成。</p>
+<ol type="1">
+<li>时钟周期T（T状态）</li>
+</ol>
+<p>时钟脉冲的一个循环时间叫做一个时钟周期。每个时钟周期T又称为一个“状态”。它是CPU工作的最小时间单位，是计算机系统工作速度的重要标 志。8086 CPU的F=4.77M，T=210ns</p>
+<ol start="2" type="1">
+<li><p>总线周期</p>
+<p><strong>CPU通过总线从存储器或I/O端口存取一个字或字节的时间称为总线周期</strong></p>
+<ul>
+<li>包括三类：存储器读写周期、I/O端口读写周期、中断响应周期</li>
+<li>一个基本总线周期包括4个状态：T1，T2，T3，T4</li>
+</ul></li>
+<li><p>指令周期</p>
+<p>执行一条指令所需要的时间称为指令周期。8086指令周期最短为2个时 钟周期，最长为200个时钟周期。</p></li>
+</ol>
+<p>例：时钟周期、总线周期、指令周期举例</p>
+<figure>
+<img src="/images/asm-2/ScreenShot00032.jpg" alt="各种周期"><figcaption>各种周期</figcaption>
+</figure>
+<ul>
+<li>在总线周期的T3状态，CPU会检查READY引脚，若为低电平无效，则CPU会在T3之后插入等待周期Tw，等待外界准备好，在每个Tw状态会继续检查READY引脚，直到READY变为高电平有效才进入T4状态</li>
+<li>在两个总线操作中间，系统总线处于空闲状态，CPU便会在两个总线周期之间插入空闲周期Ti，在Ti状态，CPU不执行任何总线操作</li>
+</ul>
+<h2 id="总线操作时序">8086总线操作时序</h2>
+<p>这里的图上的BHE描述的是8282锁存前方位置的信号。所以T2会有变换。实际上真正到了存储存储器作用的是被锁存住的信号。</p>
+<figure>
+<img src="/images/asm-2/ScreenShot00033.jpg" alt="时序"><figcaption>时序</figcaption>
+</figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Lart Pang</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://plart.pw/langs/asm/8086汇编总结-16位微处理器8086/" title="8086汇编总结-16位微处理器8086">https://plart.pw/langs/asm/8086汇编总结-16位微处理器8086/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/汇编/" rel="tag"># 汇编</a>
+          
+            <a href="/tags/计算机原理/" rel="tag"># 计算机原理</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+               <div id="needsharebutton-postbottom">
+                 <span class="btn">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                 </span>
+               </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/langs/asm/8086汇编总结-微型计算机概述/" rel="next" title="8086汇编总结-微型计算机概述">
+                <i class="fa fa-chevron-left"></i> 8086汇编总结-微型计算机概述
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/langs/asm/8086汇编总结-指令系统/" rel="prev" title="8086汇编总结-指令系统">
+                8086汇编总结-指令系统 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Lart Pang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">58</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">30</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/lartpang" title="GitHub &rarr; https://github.com/lartpang" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:%6C%61%72%74%70%61%6E%67%40%31%36%33%2E%63%6F%6D" title="E-Mail &rarr; mailto:%6C%61%72%74%70%61%6E%67%40%31%36%33%2E%63%6F%6D" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/140jmx" title="Weibo &rarr; https://weibo.com/140jmx" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章-16位微处理器8086"><span class="nav-number">2.</span> <span class="nav-text">第二章 16位微处理器8086</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#微处理器性能指标"><span class="nav-number">2.1.</span> <span class="nav-text">微处理器性能指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令执行过程"><span class="nav-number">2.2.</span> <span class="nav-text">指令执行过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流水线的概念"><span class="nav-number">2.3.</span> <span class="nav-text">流水线的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内部结构"><span class="nav-number">2.4.</span> <span class="nav-text">8086内部结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#总线接口单元biu"><span class="nav-number">2.4.1.</span> <span class="nav-text">总线接口单元BIU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行单元eu"><span class="nav-number">2.4.2.</span> <span class="nav-text">执行单元EU</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#biu与eu的配合"><span class="nav-number">2.5.</span> <span class="nav-text">BIU与EU的配合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储器和io管理"><span class="nav-number">2.6.</span> <span class="nav-text">存储器和I/O管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#位物理地址的形成"><span class="nav-number">2.6.1.</span> <span class="nav-text">20位物理地址的形成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存储器管理的几点说明"><span class="nav-number">2.6.2.</span> <span class="nav-text">存储器管理的几点说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#io-编址"><span class="nav-number">2.7.</span> <span class="nav-text">8086 I/O 编址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引脚信号和工作模式"><span class="nav-number">2.8.</span> <span class="nav-text">8086引脚信号和工作模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引脚信号与功能"><span class="nav-number">2.9.</span> <span class="nav-text">8088引脚信号与功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总线连接"><span class="nav-number">2.10.</span> <span class="nav-text">总线连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时钟电路与复位电路"><span class="nav-number">2.11.</span> <span class="nav-text">8086时钟电路与复位电路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统的复位操作和启动过程"><span class="nav-number">2.12.</span> <span class="nav-text">8086/8088系统的复位操作和启动过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总线周期"><span class="nav-number">2.13.</span> <span class="nav-text">8086总线周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总线操作时序"><span class="nav-number">2.14.</span> <span class="nav-text">8086总线操作时序</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lart Pang</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.5.0</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/reading_progress/reading_progress.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

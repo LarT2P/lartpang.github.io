@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next muse" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-center-simple.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.5.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Perl的设计者：Larry Wall在《Programming Perl》中提出，优秀的程序员有三大美德：懒惰，急躁和傲慢。  懒惰是因为为减少总的能量支出而不遗余力的努力。 急躁是因为无法忍受程序执行的低效。 傲慢是因为容不下错误。  语言的诞生 程序设计语言的出现就是为了解决各种各样的问题，而这些问题以现在的语言是无法更合适的处理。 于是乎，语言之于语言，就是目标问题的差">
+<meta name="keywords" content="学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代码之髓读后感——语法&amp;流程&amp;函数&amp;错误处理">
+<meta property="og:url" content="https://plart.pw/books/代码之髓-语法&流程&函数&错误处理/index.html">
+<meta property="og:site_name" content="失乐园">
+<meta property="og:description" content="Perl的设计者：Larry Wall在《Programming Perl》中提出，优秀的程序员有三大美德：懒惰，急躁和傲慢。  懒惰是因为为减少总的能量支出而不遗余力的努力。 急躁是因为无法忍受程序执行的低效。 傲慢是因为容不下错误。  语言的诞生 程序设计语言的出现就是为了解决各种各样的问题，而这些问题以现在的语言是无法更合适的处理。 于是乎，语言之于语言，就是目标问题的差">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-08T02:55:09.874Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="代码之髓读后感——语法&amp;流程&amp;函数&amp;错误处理">
+<meta name="twitter:description" content="Perl的设计者：Larry Wall在《Programming Perl》中提出，优秀的程序员有三大美德：懒惰，急躁和傲慢。  懒惰是因为为减少总的能量支出而不遗余力的努力。 急躁是因为无法忍受程序执行的低效。 傲慢是因为容不下错误。  语言的诞生 程序设计语言的出现就是为了解决各种各样的问题，而这些问题以现在的语言是无法更合适的处理。 于是乎，语言之于语言，就是目标问题的差">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="失乐园" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://plart.pw/books/代码之髓-语法&流程&函数&错误处理/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>代码之髓读后感——语法&流程&函数&错误处理 | 失乐园</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">失乐园</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">代码与机器</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+    <a href="https://github.com/yourname" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://plart.pw/books/代码之髓-语法&流程&函数&错误处理/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lart Pang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="失乐园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">代码之髓读后感——语法&流程&函数&错误处理
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-07-08 17:33:11" itemprop="dateCreated datePublished" datetime="2017-07-08T17:33:11+08:00">2017-07-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-08 10:55:09" itemprop="dateModified" datetime="2018-10-08T10:55:09+08:00">2018-10-08</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程与生活/" itemprop="url" rel="index"><span itemprop="name">编程与生活</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>Perl的设计者：Larry Wall在《Programming Perl》中提出，优秀的程序员有三大美德：懒惰，急躁和傲慢。</p>
+</blockquote>
+<p>懒惰是因为为减少总的能量支出而不遗余力的努力。</p>
+<p>急躁是因为无法忍受程序执行的低效。</p>
+<p>傲慢是因为容不下错误。</p>
+<hr>
+<h1 id="语言的诞生">语言的诞生</h1>
+<p>程序设计语言的出现就是为了解决各种各样的问题，而这些问题以现在的语言是无法更合适的处理。</p>
+<p>于是乎，语言之于语言，就是目标问题的差异。</p>
+<hr>
+<h1 id="语法的诞生">语法的诞生</h1>
+<p>语法是程序设计者制定的规则。因语言而异。</p>
+<p>比如运算符的优先顺序，计算流程的规定等等。</p>
+<p>对于式子<code>(2+1)*3</code></p>
+<p>书中提到了比较有特点的FORTH语言，书写成：<code>12+3*</code></p>
+<p>即后缀表达式的形式。利用的是栈来实现。</p>
+<p>而LISP语言则是前缀表达式：<code>*+123</code></p>
+<p>从语法树的角度来看，连着实际上就是对于相同的树结构进行了不同的遍历方式。</p>
+<blockquote>
+<p>LISP语言语法简单，代码与语法树容易理解并且对应比较直观，此外它还具有宏这样的语法树替换机制，这两个特点催生了结构化编程等一系列现象。</p>
+</blockquote>
+<p>而语言FORTRAN则是引入了运算符优先级和结合性等复杂语法，使得程序员们编写数学表达式更为习惯。编译程序时，它的语法分析器（把原代码作为字符串，读入解析并建立语法树的程序）会将源代码的字符串转换为语法树。</p>
+<p>现代语言大多崇尚FORTRAN的语言风格，追求简单便利的编写规则。</p>
+<blockquote>
+<p>但是因为不存在任何解析矛盾的语法体系的设计是十分困难的，又要不断地融入新语法时又要避免与现有的发生冲突，这样更难，正是因此，现代程序设计语言中仍然保留着不少别扭复杂的编写规则。</p>
+</blockquote>
+<hr>
+<h1 id="流程控制">流程控制</h1>
+<p>源自结构化程序设计的诞生。</p>
+<p>他们的功能原本都可以借助goto来实现。</p>
+<h2 id="if...-if...else...">if... &amp; if...else...</h2>
+<p>很早以前存在满足条件后跳的命令。</p>
+<blockquote>
+<p>1949年发明的EDSAC就有“特定内存值大于零时跳转”和“特定内存值为负时跳转”这两条命令。</p>
+</blockquote>
+<p>这使得本来要表达 <em>如果满足条件就执行某事</em>的逻辑，不得不变成了 <em>若是满足条件则跳转到某处执行某事</em>。</p>
+<p>而导入if语句则使得逻辑更为清楚，理解更为直观。</p>
+<h2 id="while...-break">while... &amp; break</h2>
+<p>主要是用来做那些只要有goto语句就能做的事。带来的附加值是程序的易读性和易写性。</p>
+<h2 id="for...">for...</h2>
+<p>让数值渐增的while更加简洁。for主要通过循环次数来控制循环操作。</p>
+<p>升级版的foreach，则根据处理的对象来控制循环操作。</p>
+<p>但是并非所有的for语句都可以写成foreach。</p>
+<p><strong>这些流程控制语句主要是为了实现程序的 <em>简洁易懂</em></strong></p>
+<hr>
+<h1 id="函数">函数</h1>
+<p>随着程序的庞大，把握全局愈发困难，同时有可能多次要用到相同的操作。函数因此诞生。把一整块代码切分出来而命名。同时伴随着函数的出现，也产生了递归调用这一编程技巧，非常适合处理嵌套形式的数据。</p>
+<p>函数的使用使得程序便于理解和重复使用。</p>
+<p>从冗长的程序中切分出反复使用的代码将其封装成一个整体。</p>
+<p><em>遇到问题：一个程序中有几处执行相同的代码若是封装，那怎么返回到原来的地方？</em></p>
+<p>我们希望的是，执行跳转时，记住该位置，之后返回时，又能跳转到该位置后面。</p>
+<p>EDSAC的方法是通过修改程序中跳转命令的跳转目的地而实现调用后返回原来的位置。</p>
+<p><em>遇到问题：函数调用者必须知道跳转目的地和返回命令所在地。</em></p>
+<p>创建用来事先记录返回目的地的内存空间，并设计能跳转到该内存空间所记录的地址的命令。</p>
+<p><em>遇到问题：当调用函数X时又调用了Y，返回目的地的内存被覆写，X执行后的返回目的地发生错误。</em></p>
+<p>人们开始使用栈。</p>
+<p>这一切都是因为栈这种结构的特性决定的。</p>
+<p>由于函数的实际上是代码段的封闭环境，有起始就得有结束，而对于嵌套函数调用而言，必然是越深的，越晚调用的越要及早结束，及早返回，正好符合后入先出的特点。使用栈来实现函数的调用，是极为合适的。</p>
+<p>将数据存储的地址依次压入栈中，而栈顶元素内容就是最后被存入数据的地址。</p>
+<p><em>关于递归调用</em></p>
+<p>关键在于如何退出。</p>
+<hr>
+<h1 id="错误处理">错误处理</h1>
+<p>主要有两种方法：</p>
+<ol type="1">
+<li>使用返回值</li>
+<li>使用异常</li>
+</ol>
+<h2 id="使用返回值">使用返回值</h2>
+<p>通过判断错误的返回值来判断错误并进行相应的处理。</p>
+<p>传递错误信息既可以使用返回值，也可以使用事先定义好的全局变量，还可以传递引用形参等方法。</p>
+<p>这种方法可以在C语言中见到。</p>
+<p><em>遇到问题：</em></p>
+<ul>
+<li>遗漏错误——忘记做返回值检查；出错条件难以确保完全...</li>
+<li>错误处理导致代码可读性下降——为了避免错误导致出现大量错误处理代码，影响可读性...</li>
+</ul>
+<p>对于第二个问题，可以在错误处理相同时，使用goto进行集中处理。从代码形式来看，实现了代码和错误处理的分离。</p>
+<blockquote>
+<p>Linus在《Linux内核编码风格》中推荐使用goto语句把函数的结尾处理集中起来。</p>
+</blockquote>
+<p>小栗子：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!fun(A)) <span class="keyword">goto</span> ERROR;</span><br><span class="line">    <span class="keyword">if</span>(!fun(B)) <span class="keyword">goto</span> ERROR;</span><br><span class="line">    <span class="keyword">if</span>(!fun(C)) <span class="keyword">goto</span> ERROR;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">ERROR:</span><br><span class="line">    <span class="comment">/* 失败处理 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="使用异常异常处理出错后跳转">使用异常（异常处理），出错后跳转</h2>
+<p>调用函数前设定好错误处理的代码，错误发生时能跳转至相应的错误处理代码。</p>
+<p>C之前出现过事先定义好错误发生时跳转的位置，后来演变为了现在的异常处理。</p>
+<p>计算机UNIVACI：在计算中出现溢出时，它会执行000处编写的命令。（即 <em>中断(interrupt)</em>，键盘按键按下，CPU可以接收信号，传达信息的就是中断）</p>
+<p>语言COBOL：只有两种针对性的错误处理。见下例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">READ &lt;文件名&gt; AT END &lt;错误处理语句&gt;</span><br><span class="line">ADD &lt;函数名&gt; ON SIZE ERROR &lt;错误处理语句&gt;</span><br></pre></td></tr></table></figure>
+<p>语言PL/I: 引入ON语句。可以自定义增加新的错误类型，也可以主动触发新定义的错误类型。</p>
+<p>相较于PL/I的错误处理，现代的JAVA，C++，PYTHON语言的方式有所不同，前者先定义好出错的处理操作，在编写可能出错的代码，而后者则是先用<code>try{...}</code>编写可能出错的代码，在编写出错时的处理。</p>
+<h3 id="一些历史">一些历史</h3>
+<p>这样的设计的改变源自当初John Goodenough的论文中所提出的方法。</p>
+<blockquote>
+<p>命令有可能会抛出异常，而程序员有可能忘记这种可能性，也可能在不正确的地方编写异常处理或者编写不正确类型的异常处理。为使编译器能够对程序员的错误发出警告，减少这种可能性，需要做到两点。一是明确声明命令可能抛出何种异常，二是需要有将可能出错的操作括起来的语句结构。</p>
+</blockquote>
+<p>这里提议的括起来的语句为基础，现代大部分语言采用了先括起来可能出错的操作，再编写错误处理的语句结构。明确声明命令可能抛出何种异常，这个设计方针在 Java语言的异常检查中得以继承。</p>
+<p>1977年语言CLU11引入了异常处理的机制，追加了置于命令后面的错误处理语句结构<code>except</code>。CLU语言从最初就具有用<code>begin…end</code>将代码括成块状的功能，这一功能和<code>except</code>相结合，就实现了将可能出错的操作括起来再补充错误处理的代码编写方式。</p>
+<p>1983年C++诞生。针对异常处理的语句结构问题从1984年到1989年间经历了多次讨论，C++语言最终确认追加一种语句结构，把关键字<code>try</code>放在那些被括起来的可能出错代码的前面，把关键字<code>catch</code>放在捕捉并处理错误的代码块前面。<em>按照C++语言设计者斯特劳斯特卢普（Bjarne Stroustrup）的说法，<code>try</code>只是一个为了方便理解的修饰符。</em> 另外还使用<code>throw</code>这一关键字作为触发异常的命令，是因为更易理解的<code>raise</code>和<code>singal</code>两个关键字已经在标准库作为函数名字占用了。</p>
+<p>1993年发布的Windows NT 3.1在操作系统和C语言编译器导入了结构化异常处理（Structured Exception Handling，SEH）的概念。结构化异常处理中，除了将可能出错的代码括起来的<code>__try</code>和将错误处理的代码括起来的<code>__except</code>之外，还有将即使出错也要执行的代码括起来的<code>__finally</code>。</p>
+<h3 id="为什么要引入finally">为什么要引入finally</h3>
+<p>程序在意料之外结束时，也可以正常的释放锁定的内存和文件等资源，无遗漏的执行成对操作。对于错误处理，要能够不使用返回值检查和<code>goto</code>语句，简洁的实现。</p>
+<p>后来Java，Python，Ruby等语言都使用了<code>finally</code>。</p>
+<p>C++语言中没有<code>finally</code>。C++语言中使用了一种名叫RAII（Resource Acquisition Is Initialization，资源获取即初始化）的技术。比如，在操作打开了就要关闭的文件对象时，定义来操作该对象的类，用构造函数打开，用析构函数关闭。函数结束时，针对函数局部变量，程序可以自动调用析构函数。</p>
+<p>2001年出现的D语言以改良C++语言为目标，反对 <em>RAII是优雅的</em>这一意见。<strong>打开了就要关闭这样紧密关联的操作，反映在代码上时，如果能放在相近的位置就容易理解多了。</strong>基于这一考虑，D语言中引入了作用域守护（scope guard）的概念。通过使用作用域守护，可以事先定义从某一 <em>作用域</em>（如函数）跳出时执行的操作。</p>
+<h3 id="何时抛出异常">何时抛出异常</h3>
+<p>发生错误应该停止操作立刻报告，这一设计思想被称为错误优先（fail first）。</p>
+<h3 id="异常传递">异常传递</h3>
+<p>包括Java在内的很多现代语言的异常处理机制中，异常可以传递到调用方。这一设计有一个很大的问题。那就是，即使看到了函数f的代码也不知道函数f可能会抛出什么异常。有可能是函数f调用的另外的函数g中抛出的异常传递过来的，也有可能是函数g调用的函数h抛出的异常。也就是说，如果不看见函数f调用的所有的函数代码，就无从得知函数f抛出何种异常。万一没有察觉到抛出某种异常的可能性，程序就有可能异常终止。</p>
+<p>Goodenough主张为了避免这一问题，需要明确地声明可能抛出的异常。Java语言就采用了这一方针。</p>
+<p>其他语言中所谓的异常，Java语言中的<code>throw</code>语句也能抛出，并进一步分为三类：</p>
+<ul>
+<li>不应该做异常处理的重大问题</li>
+<li>可做异常处理的运行时异常</li>
+<li>可做异常处理的其他异常</li>
+</ul>
+<p>这里的其他异常叫做 <strong>检查型异常</strong>，如果在方法之外抛出，就需要在定义方法时声明，<code>throws</code>就是为这个目的准备的。</p>
+<p>实现异常处理的小栗子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;</span><br><span class="line">    <span class="comment">// shippai跑出MyException异常</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">shippai</span><span class="params">()</span> <span class="keyword">throws</span> MyException </span>&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> MyException();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 1. 使用shippai方法声明`throws MyException`</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span> <span class="keyword">throws</span> MyException </span>&#123;</span><br><span class="line">        shippai();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 2. 使用catch捕获MyException异常，进行错误处理</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">bar</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            shippai();</span><br><span class="line">        &#125;<span class="keyword">catch</span>(MyException e) &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyException</span> <span class="keyword">extends</span> <span class="title">Exception</span>()</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="异常处理的问题">异常处理的问题</h3>
+<p>一个是当函数有不只一个出口时，必须成对处理的操作很难正确地成对处理。另一个是即便看了代码也不知道函数将抛出何种异常。Java语言的开发者为了解决第二个问题导入了检查型异常，但是这种方法并不太被接受。C#语言的开发者一方面承认检查型异常的优势，另一方面希望有更好的方法出现。</p>
+<p>检查型异常的问题：可以说检查型异常是一种非常好的机制。但是这种机制并没有很好地普及到其他语言中。因为它太麻烦。一旦<code>throws</code>或<code>try/catch</code>中异常的数目增多，或者某一方法需要追加一种异常，就不得不修改调用了该方法的所有方法，特别麻烦。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Lart Pang</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://plart.pw/books/代码之髓-语法&流程&函数&错误处理/" title="代码之髓读后感——语法&流程&函数&错误处理">https://plart.pw/books/代码之髓-语法&流程&函数&错误处理/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习/" rel="tag"># 学习</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+               <div id="needsharebutton-postbottom">
+                 <span class="btn">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                 </span>
+               </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/books/代码之髓-如何高效的学习语言/" rel="next" title="代码之髓读后感——如何高效的学习语言">
+                <i class="fa fa-chevron-left"></i> 代码之髓读后感——如何高效的学习语言
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/books/代码之髓-关于学习/" rel="prev" title="代码之髓读后感——关于学习">
+                代码之髓读后感——关于学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Lart Pang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">58</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">30</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/lartpang" title="GitHub &rarr; https://github.com/lartpang" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:%6C%61%72%74%70%61%6E%67%40%31%36%33%2E%63%6F%6D" title="E-Mail &rarr; mailto:%6C%61%72%74%70%61%6E%67%40%31%36%33%2E%63%6F%6D" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/140jmx" title="Weibo &rarr; https://weibo.com/140jmx" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#语言的诞生"><span class="nav-number">1.</span> <span class="nav-text">语言的诞生</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语法的诞生"><span class="nav-number">2.</span> <span class="nav-text">语法的诞生</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#流程控制"><span class="nav-number">3.</span> <span class="nav-text">流程控制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#if...-if...else..."><span class="nav-number">3.1.</span> <span class="nav-text">if... &amp; if...else...</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#while...-break"><span class="nav-number">3.2.</span> <span class="nav-text">while... &amp; break</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for..."><span class="nav-number">3.3.</span> <span class="nav-text">for...</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">4.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#错误处理"><span class="nav-number">5.</span> <span class="nav-text">错误处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用返回值"><span class="nav-number">5.1.</span> <span class="nav-text">使用返回值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用异常异常处理出错后跳转"><span class="nav-number">5.2.</span> <span class="nav-text">使用异常（异常处理），出错后跳转</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一些历史"><span class="nav-number">5.2.1.</span> <span class="nav-text">一些历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要引入finally"><span class="nav-number">5.2.2.</span> <span class="nav-text">为什么要引入finally</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时抛出异常"><span class="nav-number">5.2.3.</span> <span class="nav-text">何时抛出异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常传递"><span class="nav-number">5.2.4.</span> <span class="nav-text">异常传递</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常处理的问题"><span class="nav-number">5.2.5.</span> <span class="nav-text">异常处理的问题</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lart Pang</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.5.0</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/reading_progress/reading_progress.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
