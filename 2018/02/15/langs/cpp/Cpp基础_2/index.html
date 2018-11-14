@@ -125,18 +125,18 @@
 
 
 
-  <meta name="description" content="有效的下标值int a[10];a[10] = 10;  数组初始化只有定义数组时才可以初始化；int a[2] = {1,2};可以用下标分别给数字元素初始化；int a[2];a[0] = 1;a[1] = 2;部分初始化时，未言明部分自动初始化为零；//将数组整体初始化为零，可以显示的将数组第一个元素初始化为零即可//int a[5] = {0};可以不明确指定数组元素数目；int a[]">
+  <meta name="description" content="有效的下标值 int a[10]; a[10] = 10; 数组初始化 只有定义数组时才可以初始化； int a[2] = {1,2}; 可以用下标分别给数字元素初始化； int a[2]; a[0] = 1; a[1] = 2; 部分初始化时，未言明部分自动初始化为零； //将数组整体初始化为零，可以显示的将数组第一个元素初始化为零即可 //int a[5] = {0}; 可以不明确指定数">
 <meta name="keywords" content="C++&amp;C">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++基础2">
 <meta property="og:url" content="https://plart.pw/2018/02/15/langs/cpp/Cpp基础_2/index.html">
 <meta property="og:site_name" content="失乐园">
-<meta property="og:description" content="有效的下标值int a[10];a[10] = 10;  数组初始化只有定义数组时才可以初始化；int a[2] = {1,2};可以用下标分别给数字元素初始化；int a[2];a[0] = 1;a[1] = 2;部分初始化时，未言明部分自动初始化为零；//将数组整体初始化为零，可以显示的将数组第一个元素初始化为零即可//int a[5] = {0};可以不明确指定数组元素数目；int a[]">
+<meta property="og:description" content="有效的下标值 int a[10]; a[10] = 10; 数组初始化 只有定义数组时才可以初始化； int a[2] = {1,2}; 可以用下标分别给数字元素初始化； int a[2]; a[0] = 1; a[1] = 2; 部分初始化时，未言明部分自动初始化为零； //将数组整体初始化为零，可以显示的将数组第一个元素初始化为零即可 //int a[5] = {0}; 可以不明确指定数">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-07-13T12:45:06.931Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++基础2">
-<meta name="twitter:description" content="有效的下标值int a[10];a[10] = 10;  数组初始化只有定义数组时才可以初始化；int a[2] = {1,2};可以用下标分别给数字元素初始化；int a[2];a[0] = 1;a[1] = 2;部分初始化时，未言明部分自动初始化为零；//将数组整体初始化为零，可以显示的将数组第一个元素初始化为零即可//int a[5] = {0};可以不明确指定数组元素数目；int a[]">
+<meta name="twitter:description" content="有效的下标值 int a[10]; a[10] = 10; 数组初始化 只有定义数组时才可以初始化； int a[2] = {1,2}; 可以用下标分别给数字元素初始化； int a[2]; a[0] = 1; a[1] = 2; 部分初始化时，未言明部分自动初始化为零； //将数组整体初始化为零，可以显示的将数组第一个元素初始化为零即可 //int a[5] = {0}; 可以不明确指定数">
 
 
 
@@ -532,35 +532,19 @@
       
 
       
-        <ol>
-<li><p>有效的下标值<br>int a[10];<br>a[10] = 10;</p>
-</li>
-<li><p>数组初始化<br>只有定义数组时才可以初始化；<br>int a[2] = {1,2};<br>可以用下标分别给数字元素初始化；<br>int a[2];<br>a[0] = 1;<br>a[1] = 2;<br>部分初始化时，未言明部分自动初始化为零；<br>//将数组整体初始化为零，可以显示的将数组第一个元素初始化为零即可<br>//int a[5] = {0};<br>可以不明确指定数组元素数目；<br>int a[] = {1,2,3};<br>int num_elements = sizeof things / sizeof ( int);<br>初始化时可以省略”=”;<br>int a[2] {1,2};<br>//大括号内可以空白，全部元素置零；<br>//int a[2] {};<br>//列表示初始化是不允许缩窄的，要保证数据无误；<br>//int a[] = {1,3.4};</p>
-</li>
-<li><p>C-风格字符串<br>以空白符结尾，’\0’，ascii = 0；<br>int a[2] = {‘a’, ‘b’}; //不是字符串<br>int a[2] = {‘a’, ‘\0’}; //是字符串<br>//字符串常量(string constant)或字符串字面值(string literal);<br>char a[10] = “god is girl”;<br>char a[] = “god is girl”;<br>//C++对字符串长度无限制；</p>
-</li>
-<li><p>带引号的字符串<br>cout &lt;&lt; “sdlfjl” “sldfjlj” &lt;&lt; endl;//可以在中间处隔行；<br>cout &lt;&lt; “sdlfjlsldfjlj” &lt;&lt; endl;</p>
-</li>
-<li><p>strlen()与sizeof();<br><cstring>（老式实现为string.h）<br>提供了很多关于字符串相关的其他函数的声明；<br>strlen();//只计算可见的字符数<br>sizeof();//算出整个数组的长度<br>==&gt;&gt;int a[strlen(strings) + 1];</cstring></p>
-</li>
-<li><p>cin小缺陷<br>cout &lt;&lt; “Your name” &lt;&lt; endl;<br>char name[10];<br>cin &gt;&gt; name;<br>//输入”Lart Pang”;<br>cout &lt;&lt; “Your university” &lt;&lt; endl;<br>char u_name[10];<br>//想要输DUT；<br>cin &gt;&gt; u_name;<br>…<br>//结果，name[10] == “Lart”;<br>//u_name[10] == “Pang”;<br>==&gt;&gt;<br>//cin 使用空白（空格，制表，换行符）来确定字符串结尾<br>//此处，name中被放入Lart，之后的Pang仍在输入队列中，被存到了u_name中；</p>
-</li>
-<li><p>读取行输入<br><iostream><br>getline();//到 ‘\n’, 然后停止读取并删掉 ‘\n’；<br>get();// 不删；</iostream></p>
-</li>
-<li><p>cin.getline(name, 20);<br>//name为要存储输入行的数组名；<br>//20为要读取的字符数；<br>//一行最多读取19个字符；<br>//在存储字符串时用空字符替换换行符；<br>cin.getline(name, 20).getline(u_name. 20);<br>//连续读入两行；</p>
-</li>
-<li><p>cin.get(name, 20);<br>由于在第一次cin.get();读完后，输入队列中还存在换行符，所以紧跟在其后的另一个cin.get();可能会直接吃掉换行符；<br>所以可以使用下面的两种方法来解决：<br>cin.get(name, 20);<br>cin.get();<br>cin.get(u_name, 20);</p>
-</li>
-</ol>
-<hr>
-<p>cin.get(name, 20).get();//cin会返回一个cin对象；</p>
-<h2 id="cin-get-u-name-20"><a href="#cin-get-u-name-20" class="headerlink" title="cin.get(u_name, 20);"></a>cin.get(u_name, 20);</h2><p>(cin &gt;&gt; name).get();//cin后也会残留’\n’；<br>==&gt;&gt;</p>
-<h2 id="get-getline-的性质上的差异，使得两者有了一些奇特的作用，getline-使用起来明显方便，但是get-的特性使得操作者，可以明确读取停止的原因，是因为数组填满还是读完了一整行；"><a href="#get-getline-的性质上的差异，使得两者有了一些奇特的作用，getline-使用起来明显方便，但是get-的特性使得操作者，可以明确读取停止的原因，是因为数组填满还是读完了一整行；" class="headerlink" title="get(),getline()的性质上的差异，使得两者有了一些奇特的作用，getline()使用起来明显方便，但是get()的特性使得操作者，可以明确读取停止的原因，是因为数组填满还是读完了一整行；"></a>get(),getline()的性质上的差异，使得两者有了一些奇特的作用，getline()使用起来明显方便，但是get()的特性使得操作者，可以明确读取停止的原因，是因为数组填满还是读完了一整行；</h2><p>稍微特别用法：<br>getline(cin ,str);<br>将数据读入到string对象中；<br>这里的getline不是类方法；</p>
-<ol start="10">
-<li><p>string类<br><string><br>using namesapce std;<br>string str1;<br>string str2 = “asd”;<br>//string str2 = {“asd”};<br>//string str2 {“asd”};<br>cin &gt;&gt; str1;<br>cout &lt;&lt; str1 &lt;&lt; str2[2] &lt;&lt; str2 &lt;&lt; str1[2] &lt;&lt; endl;<br>//string对象和字符数组之间主要区别，可以讲string对象声明为简单变量而不是数组；<br>//string对象能在初始化时自动调节大小；</string></p>
-</li>
-<li><p>string简单操作<br>string str3;<br>str3 = str1 + str2;<br>str3 = str1;<br>str1 += str2;//字符串拼接；<br>int len1 = str1.size();<br>//str1是string类中的一个对象，而size()是string类的一个方法。<br>//方法是一个函数，只能通过其所属的类的对象进行调用；<br>//C++中的类，对象，方法<br>//C函数使用参数来确定要使用那个字符串，而C++string类对象，是使用对象名和句点运算符来指出要使用那个字符串；<br>int len2 = strlen(str1);</p>
-</li>
+        <ol type="1">
+<li><p>有效的下标值 int a[10]; a[10] = 10;</p></li>
+<li><p>数组初始化 只有定义数组时才可以初始化； int a[2] = {1,2}; 可以用下标分别给数字元素初始化； int a[2]; a[0] = 1; a[1] = 2; 部分初始化时，未言明部分自动初始化为零； //将数组整体初始化为零，可以显示的将数组第一个元素初始化为零即可 //int a[5] = {0}; 可以不明确指定数组元素数目； int a[] = {1,2,3}; int num_elements = sizeof things / sizeof ( int); 初始化时可以省略&quot;=&quot;; int a[2] {1,2}; //大括号内可以空白，全部元素置零； //int a[2] {}; //列表示初始化是不允许缩窄的，要保证数据无误； //int a[] = {1,3.4};</p></li>
+<li><p>C-风格字符串 以空白符结尾，'\0'，ascii = 0； int a[2] = {'a', 'b'}; //不是字符串 int a[2] = {'a', '\0'}; //是字符串 //字符串常量(string constant)或字符串字面值(string literal); char a[10] = &quot;god is girl&quot;; char a[] = &quot;god is girl&quot;; //C++对字符串长度无限制；</p></li>
+<li><p>带引号的字符串 cout &lt;&lt; “sdlfjl&quot; &quot;sldfjlj&quot; &lt;&lt; endl;//可以在中间处隔行； cout &lt;&lt; “sdlfjlsldfjlj&quot; &lt;&lt; endl;</p></li>
+<li><p>strlen()与sizeof(); <cstring>（老式实现为string.h） 提供了很多关于字符串相关的其他函数的声明； strlen();//只计算可见的字符数 sizeof();//算出整个数组的长度 ==&gt;&gt;int a[strlen(strings) + 1];</cstring></p></li>
+<li><p>cin小缺陷 cout &lt;&lt; &quot;Your name&quot; &lt;&lt; endl; char name[10]; cin &gt;&gt; name; //输入&quot;Lart Pang&quot;; cout &lt;&lt; &quot;Your university&quot; &lt;&lt; endl; char u_name[10]; //想要输DUT； cin &gt;&gt; u_name; ... //结果，name[10] == &quot;Lart&quot;; //u_name[10] == &quot;Pang&quot;; ==&gt;&gt; //cin 使用空白（空格，制表，换行符）来确定字符串结尾 //此处，name中被放入Lart，之后的Pang仍在输入队列中，被存到了u_name中；</p></li>
+<li><p>读取行输入 <iostream> getline();//到 '', 然后停止读取并删掉 ''； get();// 不删；</iostream></p></li>
+<li><p>cin.getline(name, 20); //name为要存储输入行的数组名； //20为要读取的字符数； //一行最多读取19个字符；<br>
+//在存储字符串时用空字符替换换行符； cin.getline(name, 20).getline(u_name. 20); //连续读入两行；</p></li>
+<li><p>cin.get(name, 20); 由于在第一次cin.get();读完后，输入队列中还存在换行符，所以紧跟在其后的另一个cin.get();可能会直接吃掉换行符； 所以可以使用下面的两种方法来解决： cin.get(name, 20); cin.get(); cin.get(u_name, 20); --------------------- cin.get(name, 20).get();//cin会返回一个cin对象； cin.get(u_name, 20); --------------------- (cin &gt;&gt; name).get();//cin后也会残留''； ==&gt;&gt; get(),getline()的性质上的差异，使得两者有了一些奇特的作用，getline()使用起来明显方便，但是get()的特性使得操作者，可以明确读取停止的原因，是因为数组填满还是读完了一整行； --------------------- 稍微特别用法： getline(cin ,str); 将数据读入到string对象中； 这里的getline不是类方法；</p></li>
+<li><p>string类 <string> using namesapce std; string str1; string str2 = &quot;asd&quot;; //string str2 = {&quot;asd&quot;}; //string str2 {&quot;asd&quot;}; cin &gt;&gt; str1; cout &lt;&lt; str1 &lt;&lt; str2[2] &lt;&lt; str2 &lt;&lt; str1[2] &lt;&lt; endl; //string对象和字符数组之间主要区别，可以讲string对象声明为简单变量而不是数组； //string对象能在初始化时自动调节大小；</string></p></li>
+<li><p>string简单操作 string str3; str3 = str1 + str2; str3 = str1; str1 += str2;//字符串拼接； int len1 = str1.size(); //str1是string类中的一个对象，而size()是string类的一个方法。 //方法是一个函数，只能通过其所属的类的对象进行调用； //C++中的类，对象，方法 //C函数使用参数来确定要使用那个字符串，而C++string类对象，是使用对象名和句点运算符来指出要使用那个字符串； int len2 = strlen(str1);</p></li>
 </ol>
 
       
@@ -698,17 +682,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -890,22 +865,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cin-get-u-name-20"><span class="nav-number">1.</span> <span class="nav-text">cin.get(u_name, 20);</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#get-getline-的性质上的差异，使得两者有了一些奇特的作用，getline-使用起来明显方便，但是get-的特性使得操作者，可以明确读取停止的原因，是因为数组填满还是读完了一整行；"><span class="nav-number">2.</span> <span class="nav-text">get(),getline()的性质上的差异，使得两者有了一些奇特的作用，getline()使用起来明显方便，但是get()的特性使得操作者，可以明确读取停止的原因，是因为数组填满还是读完了一整行；</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

@@ -125,18 +125,18 @@
 
 
 
-  <meta name="description" content="#Overview ChucK is a strongly-typed, strongly-timed, concurrent(并发的) audio and multimedia(多媒体的) programming language. It is compiled(编译) into virtual(虚拟的) instructions, which is immediately run in the">
+  <meta name="description" content="#Overview ChucK is a strongly-typed, strongly-timed, concurrent(并发的) audio and multimedia(多媒体的) programming language. It is compiled(编译) into virtual(虚拟的) instructions, which is immediately run in th">
 <meta name="keywords" content="ChucK">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chuck2">
 <meta property="og:url" content="https://plart.pw/2018/02/15/langs/chuck/chuck2/index.html">
 <meta property="og:site_name" content="失乐园">
-<meta property="og:description" content="#Overview ChucK is a strongly-typed, strongly-timed, concurrent(并发的) audio and multimedia(多媒体的) programming language. It is compiled(编译) into virtual(虚拟的) instructions, which is immediately run in the">
+<meta property="og:description" content="#Overview ChucK is a strongly-typed, strongly-timed, concurrent(并发的) audio and multimedia(多媒体的) programming language. It is compiled(编译) into virtual(虚拟的) instructions, which is immediately run in th">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-07-13T12:46:35.009Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chuck2">
-<meta name="twitter:description" content="#Overview ChucK is a strongly-typed, strongly-timed, concurrent(并发的) audio and multimedia(多媒体的) programming language. It is compiled(编译) into virtual(虚拟的) instructions, which is immediately run in the">
+<meta name="twitter:description" content="#Overview ChucK is a strongly-typed, strongly-timed, concurrent(并发的) audio and multimedia(多媒体的) programming language. It is compiled(编译) into virtual(虚拟的) instructions, which is immediately run in th">
 
 
 
@@ -533,21 +533,21 @@
 
       
         <p>#Overview</p>
-<p>ChucK is a strongly-typed, strongly-timed, concurrent(并发的) audio and multimedia(多媒体的) programming language. It is compiled(编译) into virtual(虚拟的) instructions, which is immediately run in the ChucK Virtual Machine. This guide documents the features(特色) of the Language, Compiler, and Virtual Machine for a ChucK programmer. </p>
+<p>ChucK is a strongly-typed, strongly-timed, concurrent(并发的) audio and multimedia(多媒体的) programming language. It is compiled(编译) into virtual(虚拟的) instructions, which is immediately run in the ChucK Virtual Machine. This guide documents the features(特色) of the Language, Compiler, and Virtual Machine for a ChucK programmer.</p>
 <p>#running ChucK</p>
-<p>…this is a quick overview(综述), see <a href="http://chuck.cs.princeton.edu/doc/program/vm.html" target="_blank" rel="noopener">VM options</a> for a more complete guide to command line options. </p>
+<p>...this is a quick overview(综述), see <a href="http://chuck.cs.princeton.edu/doc/program/vm.html" target="_blank" rel="noopener">VM options</a> for a more complete guide to command line options.</p>
 <p>To run ChucK with a program/patch called foo.ck simply run chuck and then the name of the file:</p>
-<pre><code>chuck foo.ck 
-</code></pre><p>To run ChucK with multiple patches concurrently(同时发生) (or the same one multiple times):</p>
-<pre><code>chuck foo.ck bar.ck bar.ck boo.ck 
-</code></pre><p>…the following probes(探查) the audio system and prints out all available audio devices and MIDI devices. You may then refer to them (by number usually) from the command line or from your program. (again, see VM Options for a complete list)</p>
-<pre><code>chuck --probe 
-</code></pre><p>ChucK can be run in a different terminal as a host/listener that patches may be sent to. The server should invoke(调用) the –loop flag to specify that the virtual machine should not halt(停止) automatically(自动地) (when the current programs exit).</p>
-<pre><code>chuck --loop     
-</code></pre><p>(See the guide to <a href="http://chuck.cs.princeton.edu/doc/program/otfp.html" target="_blank" rel="noopener">On-the-fly Programming</a> for more information)</p>
+<pre><code>chuck foo.ck </code></pre>
+<p>To run ChucK with multiple patches concurrently(同时发生) (or the same one multiple times):</p>
+<pre><code>chuck foo.ck bar.ck bar.ck boo.ck </code></pre>
+<p>...the following probes(探查) the audio system and prints out all available audio devices and MIDI devices. You may then refer to them (by number usually) from the command line or from your program. (again, see VM Options for a complete list)</p>
+<pre><code>chuck --probe </code></pre>
+<p>ChucK can be run in a different terminal as a host/listener that patches may be sent to. The server should invoke(调用) the --loop flag to specify that the virtual machine should not halt(停止) automatically(自动地) (when the current programs exit).</p>
+<pre><code>chuck --loop     </code></pre>
+<p>(See the guide to <a href="http://chuck.cs.princeton.edu/doc/program/otfp.html" target="_blank" rel="noopener">On-the-fly Programming</a> for more information)</p>
 <p>If a ChucK listener is running, we can (from a second terminal) send a program/patch to the listener by using the <code>+</code> command line option:</p>
-<pre><code>chuck + foo.ck 
-</code></pre><p>Similarly, you can use <code>-</code> and <code>=</code> to <em>remove/replace</em> a patch in the listener, and use <code>^</code> to find out the status. Again, see <a href="http://chuck.cs.princeton.edu/doc/program/otfp.html" target="_blank" rel="noopener">On-the-fly Programming</a> for more information.</p>
+<pre><code>chuck + foo.ck </code></pre>
+<p>Similarly, you can use <code>-</code> and <code>=</code> to <em>remove/replace</em> a patch in the listener, and use <code>^</code> to find out the status. Again, see <a href="http://chuck.cs.princeton.edu/doc/program/otfp.html" target="_blank" rel="noopener">On-the-fly Programming</a> for more information.</p>
 <p>To run most of the code or examples in this language specification, you only need to use the basic chuck program.</p>
 <p>#comments(注释)</p>
 <p>(Note: block comments cannot be nested(嵌入的))</p>
@@ -557,12 +557,12 @@ int foo; // another comment
 /* 
    this is a block comment
    still going...
-*/
-</code></pre><p>#debug print(调试输出)</p>
-<p>…we have provided a debug print syntax(语法):</p>
+*/</code></pre>
+<p>#debug print(调试输出)</p>
+<p>...we have provided a debug print syntax(语法):</p>
 <pre><code>// prints out value of expression
-&lt;&lt;&lt; expression &gt;&gt;&gt;;
-</code></pre><p>This will print the values and types of any expressions placed within them. This debug print construction may be placed around any non-declaration expression ( non l-value ) and will not affect the execution(执行) of the code. Expressions which represent an object will print the value of that object’s reference(引用) address:</p>
+&lt;&lt;&lt; expression &gt;&gt;&gt;;</code></pre>
+<p>This will print the values and types of any expressions placed within them. This debug print construction may be placed around any non-declaration expression ( non l-value ) and will not affect the execution(执行) of the code. Expressions which represent an object will print the value of that object's reference(引用) address:</p>
 <pre><code>// assign 5 to a newly declared variable
 5 =&gt; int i;
 // prints &quot;5 : (int)&quot;
@@ -572,8 +572,8 @@ int foo; // another comment
 &lt;&lt;&lt;&quot;hello!&quot;&gt;&gt;&gt;; //prints &quot;hello! : (string)&quot;
 
 // prints &quot;3.5 : (float)&quot;
-&lt;&lt;&lt;1.0 + 2.5 &gt;&gt;&gt; =&gt; float x;
-</code></pre><p>(ChucK中似乎是没有了print这一类)<br>(Chuck中有<code>;</code>，还是类似C的)</p>
+&lt;&lt;&lt;1.0 + 2.5 &gt;&gt;&gt; =&gt; float x;</code></pre>
+<p>(ChucK中似乎是没有了print这一类) (Chuck中有<code>;</code>，还是类似C的)</p>
 <p>For more formatted(格式化) data output(输出), a comma-separated list of expressions will print only their respective(分别的) values (with one space between):</p>
 <pre><code>//接上段
 // prints &quot;the value of x is 3.5&quot; (x from above)
@@ -586,9 +586,9 @@ int foo; // another comment
 &lt;&lt;&lt;&quot;here are 3 random numbers&quot;, 
     Std.rand2(0,9), 
     Std.rand2(0,9),
-    Std.rand2(0,9) &gt;&gt;&gt;; 
-</code></pre><blockquote>
-<p>输出：<br>C:\Users\abc1\Desktop&gt;chuck “debug print.ck”<br>5 :(int)<br>“hello!” : (string)<br>3.500000 :(float)<br>the value of x is 3.500000<br>4 + 5 is 9<br>here are 3 random numbers 1 8 8</p>
+    Std.rand2(0,9) &gt;&gt;&gt;; </code></pre>
+<blockquote>
+<p>输出： C:1&gt;chuck &quot;debug print.ck&quot; 5 :(int) &quot;hello!&quot; : (string) 3.500000 :(float) the value of x is 3.500000 4 + 5 is 9 here are 3 random numbers 1 8 8</p>
 </blockquote>
 <p>#reserved words(关键字)</p>
 <pre><code>(primitive types原始类型)
@@ -653,8 +653,8 @@ int foo; // another comment
 (special : global ugens(不理解))
     dac
     adc
-    blackhole 
-</code></pre>
+    blackhole </code></pre>
+
       
     </div>
 

@@ -125,18 +125,18 @@
 
 
 
-  <meta name="description" content="concurrency, processes, shreds sporking shreds the &amp;apos;me&amp;apos; keyword using machine.add() inter-shred communication  #Concurrency &amp;amp; Shreds …is able to run many processes concurrently… A ChucKi">
+  <meta name="description" content="concurrency, processes, shreds sporking shreds the &amp;#39;me&amp;#39; keyword using machine.add() inter-shred communication  #Concurrency &amp;amp; Shreds ...is able to run many processes concurrently...">
 <meta name="keywords" content="ChucK">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chuck9">
 <meta property="og:url" content="https://plart.pw/2018/02/15/langs/chuck/chuck9/index.html">
 <meta property="og:site_name" content="失乐园">
-<meta property="og:description" content="concurrency, processes, shreds sporking shreds the &amp;apos;me&amp;apos; keyword using machine.add() inter-shred communication  #Concurrency &amp;amp; Shreds …is able to run many processes concurrently… A ChucKi">
+<meta property="og:description" content="concurrency, processes, shreds sporking shreds the &amp;#39;me&amp;#39; keyword using machine.add() inter-shred communication  #Concurrency &amp;amp; Shreds ...is able to run many processes concurrently...">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-07-13T12:48:57.394Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chuck9">
-<meta name="twitter:description" content="concurrency, processes, shreds sporking shreds the &amp;apos;me&amp;apos; keyword using machine.add() inter-shred communication  #Concurrency &amp;amp; Shreds …is able to run many processes concurrently… A ChucKi">
+<meta name="twitter:description" content="concurrency, processes, shreds sporking shreds the &amp;#39;me&amp;#39; keyword using machine.add() inter-shred communication  #Concurrency &amp;amp; Shreds ...is able to run many processes concurrently...">
 
 
 
@@ -534,19 +534,19 @@
       
         <p>concurrency, processes, shreds</p>
 <pre><code>sporking shreds
-the &apos;me&apos; keyword
+the &#39;me&#39; keyword
 using machine.add()
-inter-shred communication 
-</code></pre><p>#Concurrency &amp; Shreds</p>
-<p>…is able to run many processes concurrently…</p>
+inter-shred communication </code></pre>
+<p>#Concurrency &amp; Shreds</p>
+<p>...is able to run many processes concurrently...</p>
 <p><strong>A ChucKian process is called a shred.</strong> To <em>spork</em> a shred means <strong>creating and adding a new process to the virtual(虚拟的) machine</strong>. Shreds may be sporked from a variety of places(各种各样的地方), and may themselves spork new shreds.</p>
 <p>(直接代换理解：spork a shred == creating &amp; adding a process)</p>
 <blockquote>
-<p>ChucK supports sample-synchronous(采样同步), non-preemptive concurrency(非抢占式并发). Via the timing mechanism(机制). any number of programs/shreds can be automatically(自动的) <em>shreduled</em>(往后看，便于理解，实际上就是创建添加的过程，感觉就像是shred动作化了) and synchronized(同步的) use the timing information.A <em>shreduler</em> in the virtual(虚拟的) machine does the <em>shreduling</em>. The concurrency(并发性) is ‘sample-synchronous’, meaning that inter-process audio timing is guaranteed(保证) to be precise(精确的) to the sample(样品). <strong>Note</strong> that each process/shred does not necessarily need to know about each other - it only has to deal with time locally. The virtual machine will make sure things happen correctly “across the board(全体，全面)”. Finally, concurrency - like timing - is deterministic(确定性的) in ChucK. </p>
+<p>ChucK supports sample-synchronous(采样同步), non-preemptive concurrency(非抢占式并发). Via the timing mechanism(机制). any number of programs/shreds can be automatically(自动的) <em>shreduled</em>(往后看，便于理解，实际上就是创建添加的过程，感觉就像是shred动作化了) and synchronized(同步的) use the timing information.A <em>shreduler</em> in the virtual(虚拟的) machine does the <em>shreduling</em>. The concurrency(并发性) is 'sample-synchronous', meaning that inter-process audio timing is guaranteed(保证) to be precise(精确的) to the sample(样品). <strong>Note</strong> that each process/shred does not necessarily need to know about each other - it only has to deal with time locally. The virtual machine will make sure things happen correctly &quot;across the board(全体，全面)&quot;. Finally, concurrency - like timing - is deterministic(确定性的) in ChucK.</p>
 </blockquote>
 <p>The simplest way to to run shreds concurrently is to specify(指定) them on the command line:</p>
-<pre><code>chuck foo.ck bar.ck boo.ck
-</code></pre><p>The above command runs chuck on foo.ck, bar.ck, and boo.ck concurrently. There are other ways to run shreds concurrently (see <a href="http://chuck.cs.princeton.edu/doc/program/otfp.html" target="_blank" rel="noopener">on-the-fly programming commands</a>). Next, we show how to create new shreds from within ChucK programs.</p>
+<pre><code>chuck foo.ck bar.ck boo.ck</code></pre>
+<p>The above command runs chuck on foo.ck, bar.ck, and boo.ck concurrently. There are other ways to run shreds concurrently (see <a href="http://chuck.cs.princeton.edu/doc/program/otfp.html" target="_blank" rel="noopener">on-the-fly programming commands</a>). Next, we show how to create new shreds from within ChucK programs.</p>
 <p>#sporking shreds (in code)</p>
 <p>To <em>spork</em> means to <em>shredule a new shred.</em></p>
 <p>To spork a shred, use the <em>spork</em> keyword/operator:</p>
@@ -564,10 +564,10 @@ inter-shred communication
 
 个人理解：
 `1::second =&gt; now;`感觉上就像是将进程挂起，sleep()的感觉
-就像是1s后再跳到这个程序
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">you-&gt;me:2s</span><br><span class="line">me-&gt;you:3s</span><br></pre></td></tr></table></figure>
-<p>#the ‘me’ keyword</p>
-<p>The <code>me</code> keyword (type <code>Shred</code>) refers the current shred. </p>
+就像是1s后再跳到这个程序</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">you-&gt;me:2s</span><br><span class="line">me-&gt;you:3s</span><br></pre></td></tr></table></figure>
+<p>#the 'me' keyword</p>
+<p>The <code>me</code> keyword (type <code>Shred</code>) refers the current shred.</p>
 <p>Sometimes it is useful to suspend(暂停) the current shred without advancing time, and let other shreds shreduled for the current time to execute(实行). <code>me.yield()</code> does exactly that. <strong>This is often useful immediately after sporking a new shred, and you would like for that shred to have a chance to run but you do not want to advance time yet for yourself.</strong></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// spork shred</span></span><br><span class="line">spork ~ go();</span><br><span class="line"></span><br><span class="line"><span class="comment">// suspend the current shred ...</span></span><br><span class="line"><span class="comment">// ... give other shreds (shreduled for 'now') a chance to run</span></span><br><span class="line">me.yield();</span><br></pre></td></tr></table></figure>
 <p>It may also be useful to exit the current shred. For example if a MIDI device(装置) fails to open, you may exit the current shred.</p>
@@ -586,21 +586,21 @@ inter-shred communication
 <p>Shreds sporked in the same file can share the same global variables(变量). They can <em>use time and events to synchronize to each other</em>. (see <code>events</code>) <strong>Shreds sporked from different files can <em>share data</em> (including events).</strong>For now, this is done through a public class with static data (see <code>classes</code>). Static data is not completely implemented! We will fix this very soon!</p>
 </blockquote>
 <p>#command line arguments</p>
-<p><strong>ChucK supports passing arbitrary(任意的) data from the command line into ChucK programs using optional(可选择的) command line arguments.</strong> An argument is specified(指定) by appending(附加) a colon(冒号) character “:” to the name of the ChucK program to which you wish to send that argument, followed by the argument itself.</p>
-<pre><code>chuck foo.ck:foo
-</code></pre><p>Multiple arguments can be specified, each separated by the colon character.</p>
-<pre><code>chuck foo.ck:foo:bar:boo
-</code></pre><p>Furthermore(此外), each ChucK program has <em>its own set of arguments</em>, which are <em>specified separately</em>.</p>
-<pre><code>chuck foo.ck:foo bar.ck:bar boo.ck
-</code></pre><p>Command line arguments can also be used when using on-the-fly programming facilities(即时编程工具) of ChucK.</p>
-<pre><code>chuck + foo.ck:foo bar.ck:bar:boo
-</code></pre><p>(后面有一篇博文会讲解相关参数功能的，包括这里的<code>+</code>)</p>
+<p><strong>ChucK supports passing arbitrary(任意的) data from the command line into ChucK programs using optional(可选择的) command line arguments.</strong> An argument is specified(指定) by appending(附加) a colon(冒号) character &quot;:&quot; to the name of the ChucK program to which you wish to send that argument, followed by the argument itself.</p>
+<pre><code>chuck foo.ck:foo</code></pre>
+<p>Multiple arguments can be specified, each separated by the colon character.</p>
+<pre><code>chuck foo.ck:foo:bar:boo</code></pre>
+<p>Furthermore(此外), each ChucK program has <em>its own set of arguments</em>, which are <em>specified separately</em>.</p>
+<pre><code>chuck foo.ck:foo bar.ck:bar boo.ck</code></pre>
+<p>Command line arguments can also be used when using on-the-fly programming facilities(即时编程工具) of ChucK.</p>
+<pre><code>chuck + foo.ck:foo bar.ck:bar:boo</code></pre>
+<p>(后面有一篇博文会讲解相关参数功能的，包括这里的<code>+</code>)</p>
 <p>Machine.add() and Machine.replace() accept command line arguments in a similar fashion.</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// add foo.ck</span></span><br><span class="line"><span class="comment">// pass foo and bar as command line arguments</span></span><br><span class="line">Machine.add( <span class="string">"foo.ck:foo:bar"</span> ) =&gt; <span class="keyword">int</span> id;</span><br><span class="line"></span><br><span class="line"><span class="comment">// replace shred with "bar.ck"</span></span><br><span class="line"><span class="comment">// pass foo and bar as command line arguments</span></span><br><span class="line">Machine.replace( id, <span class="string">"bar.ck:foo:bar"</span> );</span><br></pre></td></tr></table></figure>
 <p>To access command line arguments within a ChucK program, use the <code>me.args()</code> and <code>me.arg()</code> functions.</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// print out all arguments</span></span><br><span class="line"><span class="keyword">for</span>( <span class="keyword">int</span> i; i &lt; me.numArgs(); i++ )</span><br><span class="line">    &lt;&lt;&lt; me.arg( i ) &gt;&gt;&gt;;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>直接运行会输出：<br>C:\Users\abc1\Desktop&gt;chuck test.ck:foo<br>[test.ck]:line(2): class ‘Shred’ has no member ‘numArgs’</p>
+<p>直接运行会输出： C:1&gt;chuck test.ck:foo [test.ck]:line(2): class 'Shred' has no member 'numArgs'</p>
 </blockquote>
 <p>(真就尴尬了)</p>
 
@@ -692,8 +692,8 @@ inter-shred communication
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/15/langs/chuck/chuck3/" rel="prev" title="chuck3">
-                chuck3 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/15/langs/chuck/chuck6/" rel="prev" title="chuck6">
+                chuck6 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

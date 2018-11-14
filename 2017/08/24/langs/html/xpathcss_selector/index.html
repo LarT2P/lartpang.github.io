@@ -125,18 +125,18 @@
 
 
 
-  <meta name="description" content="XPATH（参考 w3school 和 静觅 和 阮一峰的网络日志）在 XPath 中，有七种类型的节点：元素、属性、文本、命名空间、处理指令、注释以及文档节点（或称为根节点）。 节点实际上就是各种html标签，属性，以及被标签包围的文字。 搜索方法 xpath使用路径表达式在xml文档中选取节点。节点通过路径或者step来选取。在形式上，”路径表达式”与传统的文件系统非常类似。  斜杠（/）作为">
+  <meta name="description" content="XPATH（参考 w3school 和 静觅 和 阮一峰的网络日志） 在 XPath 中，有七种类型的节点：元素、属性、文本、命名空间、处理指令、注释以及文档节点（或称为根节点）。 节点实际上就是各种html标签，属性，以及被标签包围的文字。 搜索方法 xpath使用路径表达式在xml文档中选取节点。节点通过路径或者step来选取。在形式上，&amp;quot;路径表达式&amp;quot;与传统的文件系">
 <meta name="keywords" content="css,html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="xpath&amp;css选择器">
 <meta property="og:url" content="https://plart.pw/2017/08/24/langs/html/xpathcss_selector/index.html">
 <meta property="og:site_name" content="失乐园">
-<meta property="og:description" content="XPATH（参考 w3school 和 静觅 和 阮一峰的网络日志）在 XPath 中，有七种类型的节点：元素、属性、文本、命名空间、处理指令、注释以及文档节点（或称为根节点）。 节点实际上就是各种html标签，属性，以及被标签包围的文字。 搜索方法 xpath使用路径表达式在xml文档中选取节点。节点通过路径或者step来选取。在形式上，”路径表达式”与传统的文件系统非常类似。  斜杠（/）作为">
+<meta property="og:description" content="XPATH（参考 w3school 和 静觅 和 阮一峰的网络日志） 在 XPath 中，有七种类型的节点：元素、属性、文本、命名空间、处理指令、注释以及文档节点（或称为根节点）。 节点实际上就是各种html标签，属性，以及被标签包围的文字。 搜索方法 xpath使用路径表达式在xml文档中选取节点。节点通过路径或者step来选取。在形式上，&amp;quot;路径表达式&amp;quot;与传统的文件系">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-07-13T12:50:12.509Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="xpath&amp;css选择器">
-<meta name="twitter:description" content="XPATH（参考 w3school 和 静觅 和 阮一峰的网络日志）在 XPath 中，有七种类型的节点：元素、属性、文本、命名空间、处理指令、注释以及文档节点（或称为根节点）。 节点实际上就是各种html标签，属性，以及被标签包围的文字。 搜索方法 xpath使用路径表达式在xml文档中选取节点。节点通过路径或者step来选取。在形式上，”路径表达式”与传统的文件系统非常类似。  斜杠（/）作为">
+<meta name="twitter:description" content="XPATH（参考 w3school 和 静觅 和 阮一峰的网络日志） 在 XPath 中，有七种类型的节点：元素、属性、文本、命名空间、处理指令、注释以及文档节点（或称为根节点）。 节点实际上就是各种html标签，属性，以及被标签包围的文字。 搜索方法 xpath使用路径表达式在xml文档中选取节点。节点通过路径或者step来选取。在形式上，&amp;quot;路径表达式&amp;quot;与传统的文件系">
 
 
 
@@ -532,91 +532,100 @@
       
 
       
-        <h1 id="XPATH（参考-w3school-和-静觅-和-阮一峰的网络日志）"><a href="#XPATH（参考-w3school-和-静觅-和-阮一峰的网络日志）" class="headerlink" title="XPATH（参考 w3school 和 静觅 和 阮一峰的网络日志）"></a>XPATH（参考 <a href="http://www.w3school.com.cn/xpath/index.asp" target="_blank" rel="noopener">w3school</a> 和 <a href="http://cuiqingcai.com/2621.html" target="_blank" rel="noopener">静觅</a> 和 <a href="http://www.ruanyifeng.com/blog/2009/07/xpath_path_expressions.html" target="_blank" rel="noopener">阮一峰的网络日志</a>）</h1><p><strong>在 XPath 中，有七种类型的节点：元素、属性、文本、命名空间、处理指令、注释以及文档节点（或称为根节点）。</strong></p>
+        <h1 id="xpath参考-w3school-和-静觅-和-阮一峰的网络日志">XPATH（参考 <a href="http://www.w3school.com.cn/xpath/index.asp" target="_blank" rel="noopener">w3school</a> 和 <a href="http://cuiqingcai.com/2621.html" target="_blank" rel="noopener">静觅</a> 和 <a href="http://www.ruanyifeng.com/blog/2009/07/xpath_path_expressions.html" target="_blank" rel="noopener">阮一峰的网络日志</a>）</h1>
+<p><strong>在 XPath 中，有七种类型的节点：元素、属性、文本、命名空间、处理指令、注释以及文档节点（或称为根节点）。</strong></p>
 <p>节点实际上就是各种html标签，属性，以及被标签包围的文字。</p>
 <p><strong>搜索方法</strong></p>
-<p><em>xpath使用路径表达式在xml文档中选取节点。节点通过路径或者step来选取。在形式上，”路径表达式”与传统的文件系统非常类似。</em></p>
+<p><em>xpath使用路径表达式在xml文档中选取节点。节点通过路径或者step来选取。在形式上，&quot;路径表达式&quot;与传统的文件系统非常类似。</em></p>
 <ul>
 <li>斜杠（/）作为路径内部的分割符。</li>
 <li>同一个节点有绝对路径和相对路径两种写法。</li>
-<li>绝对路径（absolute path）必须用”/“起首，后面紧跟根节，比如/step/step/…。</li>
-<li>相对路径（relative path）则是除了绝对路径以外的其他*法，比如 step/step，也就是不使用”/“起首。</li>
-<li>“.”表示当前节点。</li>
-<li>“..”表示当前节点的父节点</li>
+<li>绝对路径（absolute path）必须用&quot;/&quot;起首，后面紧跟根节，比如/step/step/...。</li>
+<li>相对路径（relative path）则是除了绝对路径以外的其他*法，比如 step/step，也就是不使用&quot;/&quot;起首。</li>
+<li>&quot;.&quot;表示当前节点。</li>
+<li>&quot;..&quot;表示当前节点的父节点</li>
 </ul>
 <p>下面是详细介绍：</p>
 <table>
+<colgroup>
+<col style="width: 44%">
+<col style="width: 55%">
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>路径表达式</th>
 <th>结果</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>bookstore</td>
 <td>选取 bookstore 元素的所有子节点。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>/bookstore</td>
 <td>选取根元素 bookstore。注释：假如路径起始于正斜杠( / )，则此路径始终代表到某元素的绝对路径！</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>bookstore/book</td>
 <td>选取属于 bookstore 的子元素的所有 book 元素。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>//book</td>
 <td>选取所有 book 子元素，而不管它们在文档中的位置。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>bookstore//book</td>
 <td>选择属于 bookstore 元素的后代的所有 book 元素，而不管它们位于 bookstore 之下的什么位置。</td>
 </tr>
-<tr>
-<td>//@lang</td>
+<tr class="even">
+<td>//<span class="citation" data-cites="lang">@lang</span></td>
 <td>选取名为 lang 的所有属性。</td>
 </tr>
 </tbody>
 </table>
 <p><em>谓语（Predicates）谓语用来查找某个特定的节点或者包含某个指定的值的节点。谓语被嵌在方括号中。</em></p>
 <table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>路径表达式</th>
 <th>结果</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>/bookstore/book[1]</td>
 <td>选取属于 bookstore 子元素的第一个 book 元素。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>/bookstore/book[last()]</td>
 <td>选取属于 bookstore 子元素的最后一个 book 元素。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>/bookstore/book[last()-1]</td>
 <td>选取属于 bookstore 子元素的倒数第二个 book 元素。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>/bookstore/book[position()&lt;3]</td>
 <td>选取最前面的两个属于 bookstore 元素的子元素的 book 元素。</td>
 </tr>
-<tr>
-<td>//title[@lang]</td>
+<tr class="odd">
+<td>//title<span class="citation" data-cites="lang">[@lang]</span></td>
 <td>选取所有拥有名为 lang 的属性的 title 元素。</td>
 </tr>
-<tr>
-<td>//title[@lang=’eng’]</td>
+<tr class="even">
+<td>//title<span class="citation" data-cites="lang">[@lang='eng']</span></td>
 <td>选取所有 title 元素，且这些元素拥有值为 eng 的 lang 属性。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>/bookstore/book[price&gt;35.00]</td>
 <td>选取 bookstore 元素的所有 book 元素，且其中的 price 元素的值须大于 35.00。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>/bookstore/book[price&gt;35.00]/title</td>
 <td>选取 bookstore 元素中的 book 元素的所有 title 元素，且其中的 price 元素的值须大于 35.00。</td>
 </tr>
@@ -625,21 +634,21 @@
 <p><em>XPath 通配符可用来选取未知的 XML 元素。</em></p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>通配符</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>*</td>
 <td>匹配任何元素节点。</td>
 </tr>
-<tr>
-<td>@*</td>
+<tr class="even">
+<td><span class="citation" data-cites="*">@*</span></td>
 <td>匹配任何属性节点。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>node()</td>
 <td>匹配任何类型的节点。</td>
 </tr>
@@ -648,22 +657,22 @@
 <p>在下面的表格中，我们列出了一些路径表达式，以及这些表达式的结果：</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>路径表达式</th>
 <th>结果</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>/bookstore/*</td>
 <td>选取 bookstore 元素的所有子元素。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>//*</td>
 <td>选取文档中的所有元素。</td>
 </tr>
-<tr>
-<td>//title[@*]</td>
+<tr class="odd">
+<td>//title<span class="citation" data-cites="*">[@*]</span></td>
 <td>选取所有带有属性的 title 元素。</td>
 </tr>
 </tbody>
@@ -672,57 +681,57 @@
 <p><em>xpath轴可定义相对于当前节点的节点集。</em></p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>轴名称</th>
 <th>结果</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>ancestor</td>
 <td>选取当前节点的所有先辈（父、祖父等）。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>ancestor-or-self</td>
 <td>选取当前节点的所有先辈（父、祖父等）以及当前节点本身。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>attribute</td>
 <td>选取当前节点的所有属性。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>child</td>
 <td>选取当前节点的所有子元素。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>descendant</td>
 <td>选取当前节点的所有后代元素（子、孙等）。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>descendant-or-self</td>
 <td>选取当前节点的所有后代元素（子、孙等）以及当前节点本身。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>following</td>
 <td>选取文档中当前节点的结束标签之后的所有节点。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>namespace</td>
 <td>选取当前节点的所有命名空间节点。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>parent</td>
 <td>选取当前节点的父节点。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>preceding</td>
 <td>选取文档中当前节点的开始标签之前的所有节点。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>preceding-sibling</td>
 <td>选取当前节点之前的所有同级节点。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>self</td>
 <td>选取当前节点。</td>
 </tr>
@@ -730,59 +739,59 @@
 </table>
 <p>步（step）包括：</p>
 <p>轴（axis）</p>
-<pre><code>定义所选节点与当前节点之间的树关系
-</code></pre><p>节点测试（node-test）</p>
-<pre><code>识别某个轴内部的节点
-</code></pre><p>零个或者更多谓语（predicate）</p>
-<pre><code>更深入地提炼所选的节点集
-</code></pre><p><strong>步的语法</strong>：</p>
-<pre><code>轴名称::节点测试[谓语]
-</code></pre><p>实例</p>
+<pre><code>定义所选节点与当前节点之间的树关系</code></pre>
+<p>节点测试（node-test）</p>
+<pre><code>识别某个轴内部的节点</code></pre>
+<p>零个或者更多谓语（predicate）</p>
+<pre><code>更深入地提炼所选的节点集</code></pre>
+<p><strong>步的语法</strong>：</p>
+<pre><code>轴名称::节点测试[谓语]</code></pre>
+<p>实例</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>例子</th>
 <th>结果</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>child::book</td>
 <td>选取所有属于当前节点的子元素的 book 节点。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>attribute::lang</td>
 <td>选取当前节点的 lang 属性。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>child::*</td>
 <td>选取当前节点的所有子元素。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>attribute::*</td>
 <td>选取当前节点的所有属性。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>child::text()</td>
 <td>选取当前节点的所有文本子节点。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>child::node()</td>
 <td>选取当前节点的所有子节点。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>descendant::book</td>
 <td>选取当前节点的所有 book 后代。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>ancestor::book</td>
 <td>选择当前节点的所有 book 先辈。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>ancestor-or-self::book</td>
 <td>选取当前节点的所有 book 先辈以及当前节点（如果此节点是 book 节点）</td>
 </tr>
-<tr>
+<tr class="even">
 <td>child::*/child::price</td>
 <td>选取当前节点的所有 price 孙节点。</td>
 </tr>
@@ -790,8 +799,14 @@
 </table>
 <p><em>下面列出了可用在 XPath 表达式中的运算符</em>：</p>
 <table>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>运算符</th>
 <th>描述</th>
 <th>实例</th>
@@ -799,87 +814,85 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>\</td>
-<td></td>
+<tr class="odd">
+<td>|</td>
 <td>计算两个节点集</td>
-<td>//book \</td>
-<td>//cd</td>
+<td>//book | //cd</td>
 <td>返回所有拥有 book 和 cd 元素的节点集</td>
 </tr>
-<tr>
+<tr class="even">
 <td>+</td>
 <td>加法</td>
 <td>6 + 4</td>
 <td>10</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>-</td>
 <td>减法</td>
 <td>6 - 4</td>
 <td>2</td>
 </tr>
-<tr>
+<tr class="even">
 <td>*</td>
 <td>乘法</td>
 <td>6 * 4</td>
 <td>24</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>div</td>
 <td>除法</td>
 <td>8 div 4</td>
 <td>2</td>
 </tr>
-<tr>
+<tr class="even">
 <td>mod</td>
 <td>计算除法的余数</td>
 <td>5 mod 2</td>
 <td>1</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>=</td>
 <td>等于</td>
 <td>price=9.80</td>
 <td>如果 price 是 9.80，则返回 true。如果 price 是 9.90，则返回 false。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>!=</td>
 <td>不等于</td>
 <td>price!=9.80</td>
 <td>如果 price 是 9.90，则返回 true。如果 price 是 9.80，则返回 false。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>&lt;</td>
 <td>小于</td>
 <td>price&lt;9.80</td>
 <td>如果 price 是 9.00，则返回 true。如果 price 是 9.90，则返回 false。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>&lt;=</td>
 <td>小于或等于</td>
 <td>price&lt;=9.80</td>
 <td>如果 price 是 9.00，则返回 true。如果 price 是 9.90，则返回 false。</td>
 </tr>
-<tr>
-<td>></td>
+<tr class="odd">
+<td>&gt;</td>
 <td>大于</td>
 <td>price&gt;9.80</td>
 <td>如果 price 是 9.90，则返回 true。如果 price 是 9.80，则返回 false。</td>
 </tr>
-<tr>
-<td>>=</td>
+<tr class="even">
+<td>&gt;=</td>
 <td>大于或等于</td>
 <td>price&gt;=9.80</td>
 <td>如果 price 是 9.90，则返回 true。如果 price 是 9.70，则返回 false。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>or</td>
 <td>或</td>
 <td>price=9.80 or price=9.70</td>
 <td>如果 price 是 9.80，则返回 true。如果 price 是 9.50，则返回 false。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>and</td>
 <td>与</td>
 <td>price&gt;9.00 and price&lt;9.90</td>
@@ -890,32 +903,34 @@
 <hr>
 <p>这里主要使用是配合<code>lxml</code>库，下面是一些例子。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#========</span></span><br><span class="line"><span class="comment"># 文本读取</span></span><br><span class="line"><span class="comment">#========</span></span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line">text = <span class="string">'''</span></span><br><span class="line"><span class="string">&lt;div&gt;</span></span><br><span class="line"><span class="string">    &lt;ul&gt;</span></span><br><span class="line"><span class="string">         &lt;li class="item-0"&gt;&lt;a href="link1.html"&gt;first item&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">         &lt;li class="item-1"&gt;&lt;a href="link2.html"&gt;second item&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">         &lt;li class="item-inactive"&gt;&lt;a href="link3.html"&gt;third item&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">         &lt;li class="item-1"&gt;&lt;a href="link4.html"&gt;fourth item&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">         &lt;li class="item-0"&gt;&lt;a href="link5.html"&gt;fifth item&lt;/a&gt;</span></span><br><span class="line"><span class="string">     &lt;/ul&gt;</span></span><br><span class="line"><span class="string"> &lt;/div&gt;</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">html = etree.HTML(text)</span><br><span class="line">result = etree.tostring(html)</span><br><span class="line">print(result)</span><br><span class="line"><span class="comment">#========</span></span><br><span class="line"><span class="comment"># 文件读取</span></span><br><span class="line"><span class="comment">#========</span></span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line">html = etree.parse(<span class="string">'hello.html'</span>)</span><br><span class="line">result = etree.tostring(html, pretty_print=<span class="keyword">True</span>)</span><br><span class="line">print(result)</span><br><span class="line"><span class="comment">#=============</span></span><br><span class="line"><span class="comment"># 利用xpath解析</span></span><br><span class="line"><span class="comment">#=============</span></span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line">html = etree.parse(<span class="string">'hello.html'</span>)</span><br><span class="line">result_list = html.xpath(<span class="string">'//li'</span>)</span><br><span class="line"><span class="keyword">print</span> result_list</span><br></pre></td></tr></table></figure>
-<h1 id="CSS选择器（转自阮一峰的网络日志）"><a href="#CSS选择器（转自阮一峰的网络日志）" class="headerlink" title="CSS选择器（转自阮一峰的网络日志）"></a>CSS选择器（转自<a href="http://www.ruanyifeng.com/blog/2009/03/css_selectors.html" target="_blank" rel="noopener">阮一峰的网络日志</a>）</h1><h2 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h2><p>最基本的就是针对标签，类以及id了。</p>
+<h1 id="css选择器转自阮一峰的网络日志">CSS选择器（转自<a href="http://www.ruanyifeng.com/blog/2009/03/css_selectors.html" target="_blank" rel="noopener">阮一峰的网络日志</a>）</h1>
+<h2 id="基本选择器">基本选择器</h2>
+<p>最基本的就是针对标签，类以及id了。</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>选择器</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>1.</td>
 <td>*</td>
 <td>通用元素选择器，匹配任何元素</td>
 </tr>
-<tr>
+<tr class="even">
 <td>2.</td>
 <td>E</td>
 <td>标签选择器，匹配所有使用E标签的元素</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>3.</td>
 <td>.info</td>
 <td>class选择器，匹配所有class属性中包含info的元素</td>
 </tr>
-<tr>
+<tr class="even">
 <td>4.</td>
 <td>#footer</td>
 <td>id选择器，匹配所有id属性等于footer的元素</td>
@@ -923,31 +938,32 @@
 </tbody>
 </table>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">* &#123; <span class="attribute">margin</span>:<span class="number">0</span>; <span class="attribute">padding</span>:<span class="number">0</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">font-size</span>:<span class="number">2em</span>; &#125;</span><br><span class="line"><span class="selector-class">.info</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.info</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.info</span><span class="selector-class">.error</span> &#123; <span class="attribute">color</span>:<span class="number">#900</span>; <span class="attribute">font-weight</span>:bold; &#125;</span><br><span class="line"><span class="selector-id">#info</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-id">#info</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="多元素的组合选择器-这个蛮实用的"><a href="#多元素的组合选择器-这个蛮实用的" class="headerlink" title="多元素的组合选择器(这个蛮实用的)"></a>多元素的组合选择器(这个蛮实用的)</h2><table>
+<h2 id="多元素的组合选择器这个蛮实用的">多元素的组合选择器(这个蛮实用的)</h2>
+<table>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>选择器</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>5.</td>
 <td>E,F</td>
 <td>多元素选择器，同时匹配所有E元素或F元素，E和F之间用逗号分隔</td>
 </tr>
-<tr>
+<tr class="even">
 <td>6.</td>
 <td>E F</td>
 <td>后代元素选择器，匹配所有属于E元素后代的F元素，E和F之间用空格分隔</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>7.</td>
 <td>E &gt; F</td>
 <td>子元素选择器，匹配所有E元素的子元素F</td>
 </tr>
-<tr>
+<tr class="even">
 <td>8.</td>
 <td>E + F</td>
 <td>毗邻元素选择器，匹配所有紧随E元素之后的同级元素F</td>
@@ -955,79 +971,85 @@
 </tbody>
 </table>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">p</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"><span class="selector-id">#nav</span> <span class="selector-tag">li</span> &#123; <span class="attribute">display</span>:inline; &#125;</span><br><span class="line"><span class="selector-id">#nav</span> <span class="selector-tag">a</span> &#123; <span class="attribute">font-weight</span>:bold; &#125;</span><br><span class="line"><span class="selector-tag">div</span> &gt; <span class="selector-tag">strong</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span> + <span class="selector-tag">p</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="CSS-2-1-属性选择器"><a href="#CSS-2-1-属性选择器" class="headerlink" title="CSS 2.1 属性选择器"></a>CSS 2.1 属性选择器</h2><table>
+<h2 id="css-2.1-属性选择器">CSS 2.1 属性选择器</h2>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>选择器</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>9.</td>
 <td>E[att]</td>
-<td>匹配所有具有att属性的E元素，不考虑它的值。（注意：E在此处可以省略，比如”[cheacked]”。以下同。）</td>
+<td>匹配所有具有att属性的E元素，不考虑它的值。（注意：E在此处可以省略，比如&quot;[cheacked]&quot;。以下同。）</td>
 </tr>
-<tr>
+<tr class="even">
 <td>10.</td>
 <td>E[att=val]</td>
-<td>匹配所有att属性等于”val”的E元素</td>
+<td>匹配所有att属性等于&quot;val&quot;的E元素</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>11.</td>
 <td>E[att~=val]</td>
-<td>匹配所有att属性具有多个空格分隔的值、其中一个值等于”val”的E元素</td>
+<td>匹配所有att属性具有多个空格分隔的值、其中一个值等于&quot;val&quot;的E元素</td>
 </tr>
-<tr>
+<tr class="even">
 <td>12.</td>
-<td>E[att\</td>
-<td>=val]</td>
-<td>匹配所有att属性具有多个连字号分隔（hyphen-separated）的值、其中一个值以”val”开头的E元素，主要用于lang属性，比如”en”、”en-us”、”en-gb”等等</td>
+<td>E[att|=val]</td>
+<td>匹配所有att属性具有多个连字号分隔（hyphen-separated）的值、其中一个值以&quot;val&quot;开头的E元素，主要用于lang属性，比如&quot;en&quot;、&quot;en-us&quot;、&quot;en-gb&quot;等等</td>
 </tr>
 </tbody>
 </table>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[title]</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-attr">[class=error]</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"><span class="selector-tag">td</span><span class="selector-attr">[headers~=col1]</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[lang|=en]</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"><span class="selector-tag">blockquote</span><span class="selector-attr">[class=quote]</span><span class="selector-attr">[cite]</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="CSS-2-1中的伪类"><a href="#CSS-2-1中的伪类" class="headerlink" title="CSS 2.1中的伪类"></a>CSS 2.1中的伪类</h2><table>
+<h2 id="css-2.1中的伪类">CSS 2.1中的伪类</h2>
+<table>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>选择器</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>13.</td>
 <td>E:first-child</td>
 <td>匹配父元素的第一个子元素</td>
 </tr>
-<tr>
+<tr class="even">
 <td>14.</td>
 <td>E:link</td>
 <td>匹配所有未被点击的链接</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>15.</td>
 <td>E:visited</td>
 <td>匹配所有已被点击的链接</td>
 </tr>
-<tr>
+<tr class="even">
 <td>16.</td>
 <td>E:active</td>
 <td>匹配鼠标已经其上按下、还没有释放的E元素</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>17.</td>
 <td>E:hover</td>
 <td>匹配鼠标悬停其上的E元素</td>
 </tr>
-<tr>
+<tr class="even">
 <td>18.</td>
 <td>E:focus</td>
 <td>匹配获得当前焦点的E元素</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>19.</td>
 <td>E:lang(c)</td>
 <td>匹配lang属性等于c的E元素</td>
@@ -1035,31 +1057,32 @@
 </tbody>
 </table>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:first-child</span> &#123; <span class="attribute">font-style</span>:italic; &#125;</span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=text]</span><span class="selector-pseudo">:focus</span> &#123; <span class="attribute">color</span>:<span class="number">#000</span>; <span class="attribute">background</span>:<span class="number">#ffe</span>; &#125;</span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=text]</span><span class="selector-pseudo">:focus</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">background</span>:<span class="number">#fff</span>; &#125;</span><br><span class="line"><span class="selector-tag">q</span><span class="selector-pseudo">:lang(sv)</span> &#123; <span class="attribute">quotes</span>: <span class="string">"\201D"</span> <span class="string">"\201D"</span> <span class="string">"\2019"</span> <span class="string">"\2019"</span>; &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="CSS-2-1中的伪元素"><a href="#CSS-2-1中的伪元素" class="headerlink" title="CSS 2.1中的伪元素"></a>CSS 2.1中的伪元素</h2><table>
+<h2 id="css-2.1中的伪元素">CSS 2.1中的伪元素</h2>
+<table>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>选择器</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>20.</td>
 <td>E:first-line</td>
 <td>匹配E元素的第一行</td>
 </tr>
-<tr>
+<tr class="even">
 <td>21.</td>
 <td>E:first-letter</td>
 <td>匹配E元素的第一个字母</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>22.</td>
 <td>E:before</td>
 <td>在E元素之前插入生成的内容</td>
 </tr>
-<tr>
+<tr class="even">
 <td>23.</td>
 <td>E:after</td>
 <td>在E元素之后插入生成的内容</td>
@@ -1067,16 +1090,17 @@
 </tbody>
 </table>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">p:first-line &#123; font-weight:bold; color;#600; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.preamble</span><span class="selector-pseudo">:first-letter</span> &#123; <span class="attribute">font-size</span>:<span class="number">1.5em</span>; <span class="attribute">font-weight</span>:bold; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.cbb</span><span class="selector-pseudo">:before</span> &#123; <span class="attribute">content</span>:<span class="string">""</span>; <span class="attribute">display</span>:block; <span class="attribute">height</span>:<span class="number">17px</span>; <span class="attribute">width</span>:<span class="number">18px</span>; <span class="attribute">background</span>:<span class="built_in">url</span>(top.png) no-repeat <span class="number">0</span> <span class="number">0</span>; <span class="attribute">margin</span>:<span class="number">0</span> <span class="number">0</span> <span class="number">0</span> -<span class="number">18px</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span><span class="selector-pseudo">:after</span> &#123; <span class="attribute">content</span>: <span class="string">" ("</span> <span class="built_in">attr</span>(href) <span class="string">") "</span>; &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="CSS-3的同级元素通用选择器"><a href="#CSS-3的同级元素通用选择器" class="headerlink" title="CSS 3的同级元素通用选择器"></a>CSS 3的同级元素通用选择器</h2><table>
+<h2 id="css-3的同级元素通用选择器">CSS 3的同级元素通用选择器</h2>
+<table>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>选择器</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>24.</td>
 <td>E ~ F</td>
 <td>匹配任何在E元素之后的同级F元素</td>
@@ -1084,58 +1108,60 @@
 </tbody>
 </table>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> ~ <span class="selector-tag">ul</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="CSS-3-属性选择器"><a href="#CSS-3-属性选择器" class="headerlink" title="CSS 3 属性选择器"></a>CSS 3 属性选择器</h2><table>
+<h2 id="css-3-属性选择器">CSS 3 属性选择器</h2>
+<table>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>选择器</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>25.</td>
-<td>E[att^=”val”]</td>
-<td>属性att的值以”val”开头的元素</td>
+<td>E[att^=&quot;val&quot;]</td>
+<td>属性att的值以&quot;val&quot;开头的元素</td>
 </tr>
-<tr>
+<tr class="even">
 <td>26.</td>
-<td>E[att$=”val”]</td>
-<td>属性att的值以”val”结尾的元素</td>
+<td>E[att$=&quot;val&quot;]</td>
+<td>属性att的值以&quot;val&quot;结尾的元素</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>27.</td>
-<td>E[att*=”val”]</td>
-<td>属性att的值包含”val”字符串的元素</td>
+<td>E[att*=&quot;val&quot;]</td>
+<td>属性att的值包含&quot;val&quot;字符串的元素</td>
 </tr>
 </tbody>
 </table>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-attr">[id^="nav"]</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="CSS-3中与用户界面有关的伪类"><a href="#CSS-3中与用户界面有关的伪类" class="headerlink" title="CSS 3中与用户界面有关的伪类"></a>CSS 3中与用户界面有关的伪类</h2><table>
+<h2 id="css-3中与用户界面有关的伪类">CSS 3中与用户界面有关的伪类</h2>
+<table>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>选择器</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>28.</td>
 <td>E:enabled</td>
 <td>匹配表单中激活的元素</td>
 </tr>
-<tr>
+<tr class="even">
 <td>29.</td>
 <td>E:disabled</td>
 <td>匹配表单中禁用的元素</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>30.</td>
 <td>E:checked</td>
 <td>匹配表单中被选中的radio（单选框）或checkbox（复选框）元素</td>
 </tr>
-<tr>
+<tr class="even">
 <td>31.</td>
 <td>E::selection</td>
 <td>匹配用户当前选中的元素</td>
@@ -1143,66 +1169,72 @@
 </tbody>
 </table>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="text"]</span><span class="selector-pseudo">:disabled</span> &#123; <span class="attribute">background</span>:<span class="number">#ddd</span>; &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="CSS-3中的结构性伪类-蛮实用的"><a href="#CSS-3中的结构性伪类-蛮实用的" class="headerlink" title="CSS 3中的结构性伪类(蛮实用的)"></a>CSS 3中的结构性伪类(蛮实用的)</h2><table>
+<h2 id="css-3中的结构性伪类蛮实用的">CSS 3中的结构性伪类(蛮实用的)</h2>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>选择器</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>32.</td>
 <td>E:root</td>
 <td>匹配文档的根元素，对于HTML文档，就是HTML元素</td>
 </tr>
-<tr>
+<tr class="even">
 <td>33.</td>
 <td>E:nth-child(n)</td>
 <td>匹配其父元素的第n个子元素，第一个编号为1</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>34.</td>
 <td>E:nth-last-child(n)</td>
 <td>匹配其父元素的倒数第n个子元素，第一个编号为1</td>
 </tr>
-<tr>
+<tr class="even">
 <td>35.</td>
 <td>E:nth-of-type(n)</td>
 <td>与:nth-child()作用类似，但是仅匹配使用同种标签的元素</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>36.</td>
 <td>E:nth-last-of-type(n)</td>
 <td>与:nth-last-child() 作用类似，但是仅匹配使用同种标签的元素</td>
 </tr>
-<tr>
+<tr class="even">
 <td>37.</td>
 <td>E:last-child</td>
 <td>匹配父元素的最后一个子元素，等同于:nth-last-child(1)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>38.</td>
 <td>E:first-of-type</td>
 <td>匹配父元素下使用同种标签的第一个子元素，等同于:nth-of-type(1)</td>
 </tr>
-<tr>
+<tr class="even">
 <td>39.</td>
 <td>E:last-of-type</td>
 <td>匹配父元素下使用同种标签的最后一个子元素，等同于:nth-last-of-type(1)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>40.</td>
 <td>E:only-child</td>
 <td>匹配父元素下仅有的一个子元素，等同于:first-child:last-child或 :nth-child(1):nth-last-child(1)</td>
 </tr>
-<tr>
+<tr class="even">
 <td>41.</td>
 <td>E:only-of-type</td>
 <td>匹配父元素下使用同种标签的唯一一个子元素，等同于:first-of-type:last-of-type或 :nth-of-type(1):nth-last-of-type(1)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>42.</td>
 <td>E:empty</td>
 <td>匹配一个不包含任何子元素的元素，注意，文本节点也被看作子元素</td>
@@ -1210,16 +1242,17 @@
 </tbody>
 </table>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:nth-child(3)</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:nth-child(odd)</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:nth-child(even)</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:nth-child(3n+0)</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:nth-child(3n)</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"><span class="selector-tag">tr</span><span class="selector-pseudo">:nth-child(2n+11)</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br><span class="line"><span class="selector-tag">tr</span><span class="selector-pseudo">:nth-last-child(2)</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:last-child</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:only-child</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:empty</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="CSS-3的反选伪类"><a href="#CSS-3的反选伪类" class="headerlink" title="CSS 3的反选伪类"></a>CSS 3的反选伪类</h2><table>
+<h2 id="css-3的反选伪类">CSS 3的反选伪类</h2>
+<table>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>选择器</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>43.</td>
 <td>E:not(s)</td>
 <td>匹配不符合当前选择器的任何元素</td>
@@ -1227,19 +1260,20 @@
 </tbody>
 </table>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:not(p)</span> &#123; <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#ccc</span>; &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="CSS-3中的-target-伪类"><a href="#CSS-3中的-target-伪类" class="headerlink" title="CSS 3中的 :target 伪类"></a>CSS 3中的 :target 伪类</h2><table>
+<h2 id="css-3中的-target-伪类">CSS 3中的 :target 伪类</h2>
+<table>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>选择器</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>44.</td>
 <td>E:target</td>
-<td>匹配文档中特定”id”点击后的效果</td>
+<td>匹配文档中特定&quot;id&quot;点击后的效果</td>
 </tr>
 </tbody>
 </table>
@@ -1583,7 +1617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#XPATH（参考-w3school-和-静觅-和-阮一峰的网络日志）"><span class="nav-number">1.</span> <span class="nav-text">XPATH（参考 w3school 和 静觅 和 阮一峰的网络日志）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS选择器（转自阮一峰的网络日志）"><span class="nav-number">2.</span> <span class="nav-text">CSS选择器（转自阮一峰的网络日志）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本选择器"><span class="nav-number">2.1.</span> <span class="nav-text">基本选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多元素的组合选择器-这个蛮实用的"><span class="nav-number">2.2.</span> <span class="nav-text">多元素的组合选择器(这个蛮实用的)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-2-1-属性选择器"><span class="nav-number">2.3.</span> <span class="nav-text">CSS 2.1 属性选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-2-1中的伪类"><span class="nav-number">2.4.</span> <span class="nav-text">CSS 2.1中的伪类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-2-1中的伪元素"><span class="nav-number">2.5.</span> <span class="nav-text">CSS 2.1中的伪元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-3的同级元素通用选择器"><span class="nav-number">2.6.</span> <span class="nav-text">CSS 3的同级元素通用选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-3-属性选择器"><span class="nav-number">2.7.</span> <span class="nav-text">CSS 3 属性选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-3中与用户界面有关的伪类"><span class="nav-number">2.8.</span> <span class="nav-text">CSS 3中与用户界面有关的伪类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-3中的结构性伪类-蛮实用的"><span class="nav-number">2.9.</span> <span class="nav-text">CSS 3中的结构性伪类(蛮实用的)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-3的反选伪类"><span class="nav-number">2.10.</span> <span class="nav-text">CSS 3的反选伪类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-3中的-target-伪类"><span class="nav-number">2.11.</span> <span class="nav-text">CSS 3中的 :target 伪类</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#xpath参考-w3school-和-静觅-和-阮一峰的网络日志"><span class="nav-number">1.</span> <span class="nav-text">XPATH（参考 w3school 和 静觅 和 阮一峰的网络日志）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#css选择器转自阮一峰的网络日志"><span class="nav-number">2.</span> <span class="nav-text">CSS选择器（转自阮一峰的网络日志）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本选择器"><span class="nav-number">2.1.</span> <span class="nav-text">基本选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多元素的组合选择器这个蛮实用的"><span class="nav-number">2.2.</span> <span class="nav-text">多元素的组合选择器(这个蛮实用的)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css-2.1-属性选择器"><span class="nav-number">2.3.</span> <span class="nav-text">CSS 2.1 属性选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css-2.1中的伪类"><span class="nav-number">2.4.</span> <span class="nav-text">CSS 2.1中的伪类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css-2.1中的伪元素"><span class="nav-number">2.5.</span> <span class="nav-text">CSS 2.1中的伪元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css-3的同级元素通用选择器"><span class="nav-number">2.6.</span> <span class="nav-text">CSS 3的同级元素通用选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css-3-属性选择器"><span class="nav-number">2.7.</span> <span class="nav-text">CSS 3 属性选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css-3中与用户界面有关的伪类"><span class="nav-number">2.8.</span> <span class="nav-text">CSS 3中与用户界面有关的伪类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css-3中的结构性伪类蛮实用的"><span class="nav-number">2.9.</span> <span class="nav-text">CSS 3中的结构性伪类(蛮实用的)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css-3的反选伪类"><span class="nav-number">2.10.</span> <span class="nav-text">CSS 3的反选伪类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css-3中的-target-伪类"><span class="nav-number">2.11.</span> <span class="nav-text">CSS 3中的 :target 伪类</span></a></li></ol></li></ol></div>
             
 
           </div>

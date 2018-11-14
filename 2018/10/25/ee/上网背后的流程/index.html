@@ -125,21 +125,19 @@
 
 
 
-  <meta name="description" content="当一个用户在地址栏输入www.baidu.com过程：  https://www.cnblogs.com/lidong94/p/8309130.html  域名解析 –&amp;gt;发起TCP的3次握手 –&amp;gt;建立TCP连接后发起http请求 –&amp;gt;服务器响应http请求，浏览器得到html代码 –&amp;gt;浏览器解析html代码，并请求html代码中的资源 –&amp;gt;浏览器对页面进行渲染呈现给用">
+  <meta name="description" content="当一个用户在地址栏输入www.baidu.com过程：  https://www.cnblogs.com/lidong94/p/8309130.html  域名解析 --&amp;gt; 发起TCP的3次握手 --&amp;gt; 建立TCP连接后发起http请求 --&amp;gt; 服务器响应http请求，浏览器得到html代码 --&amp;gt; 浏览器解析html代码，并请求html代码中的资源 --&amp;gt;">
 <meta name="keywords" content="计算机网络">
 <meta property="og:type" content="article">
 <meta property="og:title" content="上网背后的流程">
 <meta property="og:url" content="https://plart.pw/2018/10/25/ee/上网背后的流程/index.html">
 <meta property="og:site_name" content="失乐园">
-<meta property="og:description" content="当一个用户在地址栏输入www.baidu.com过程：  https://www.cnblogs.com/lidong94/p/8309130.html  域名解析 –&amp;gt;发起TCP的3次握手 –&amp;gt;建立TCP连接后发起http请求 –&amp;gt;服务器响应http请求，浏览器得到html代码 –&amp;gt;浏览器解析html代码，并请求html代码中的资源 –&amp;gt;浏览器对页面进行渲染呈现给用">
+<meta property="og:description" content="当一个用户在地址栏输入www.baidu.com过程：  https://www.cnblogs.com/lidong94/p/8309130.html  域名解析 --&amp;gt; 发起TCP的3次握手 --&amp;gt; 建立TCP连接后发起http请求 --&amp;gt; 服务器响应http请求，浏览器得到html代码 --&amp;gt; 浏览器解析html代码，并请求html代码中的资源 --&amp;gt;">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-10-25T14:35:17.406Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="上网背后的流程">
-<meta name="twitter:description" content="当一个用户在地址栏输入www.baidu.com过程：  https://www.cnblogs.com/lidong94/p/8309130.html  域名解析 –&amp;gt;发起TCP的3次握手 –&amp;gt;建立TCP连接后发起http请求 –&amp;gt;服务器响应http请求，浏览器得到html代码 –&amp;gt;浏览器解析html代码，并请求html代码中的资源 –&amp;gt;浏览器对页面进行渲染呈现给用">
+<meta name="twitter:description" content="当一个用户在地址栏输入www.baidu.com过程：  https://www.cnblogs.com/lidong94/p/8309130.html  域名解析 --&amp;gt; 发起TCP的3次握手 --&amp;gt; 建立TCP连接后发起http请求 --&amp;gt; 服务器响应http请求，浏览器得到html代码 --&amp;gt; 浏览器解析html代码，并请求html代码中的资源 --&amp;gt;">
 
-
-  
 
 
   <link rel="alternate" href="/atom.xml" title="失乐园" type="application/atom+xml">
@@ -522,48 +520,55 @@
       
 
       
-        <p>当一个用户在地址栏输入<a href="http://www.baidu.com过程：" target="_blank" rel="noopener">www.baidu.com过程：</a></p>
+        <p>当一个用户在地址栏输入www.baidu.com过程：</p>
 <blockquote>
-<p><a href="https://www.cnblogs.com/lidong94/p/8309130.html" target="_blank" rel="noopener">https://www.cnblogs.com/lidong94/p/8309130.html</a></p>
+<p>https://www.cnblogs.com/lidong94/p/8309130.html</p>
 </blockquote>
-<p>域名解析 –&gt;<br>发起TCP的3次握手 –&gt;<br>建立TCP连接后发起http请求 –&gt;<br>服务器响应http请求，浏览器得到html代码 –&gt;<br>浏览器解析html代码，并请求html代码中的资源 –&gt;<br>浏览器对页面进行渲染呈现给用户 –&gt;<br>传输完成，TCP挥手</p>
-<h2 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h2><ol>
+<p>域名解析 --&gt; 发起TCP的3次握手 --&gt; 建立TCP连接后发起http请求 --&gt; 服务器响应http请求，浏览器得到html代码 --&gt; 浏览器解析html代码，并请求html代码中的资源 --&gt; 浏览器对页面进行渲染呈现给用户 --&gt; 传输完成，TCP挥手</p>
+<h2 id="域名解析">域名解析</h2>
+<ol type="1">
 <li>浏览器先检查自身缓存中有没有被解析过的这个域名对应的ip地址，如果有，解析结束。同时域名被缓存的时间也可通过TTL属性来设置。浏览器会按照一定的频率缓存DNS记录。</li>
 <li>如果浏览器缓存中没有，浏览器会检查操作系统缓存中有没有对应的已解析过的结果。</li>
-<li>如果在Windows系统的DNS缓存也没有找到，那么尝试读取hosts文件（位于C:\Windows\System32\drivers\etc），看看这里面有没有该域名对应的IP地址，如果有则解析成功。</li>
-<li>如果在hosts文件中也没有找到对应的条目，便会查找路由器缓存，如果没有就<br>会真正的请求本地域名服务器（LDNS）来解析这个域名。</li>
+<li>如果在Windows系统的DNS缓存也没有找到，那么尝试读取hosts文件（位于C:32），看看这里面有没有该域名对应的IP地址，如果有则解析成功。</li>
+<li>如果在hosts文件中也没有找到对应的条目，便会查找路由器缓存，如果没有就 会真正的请求本地域名服务器（LDNS）来解析这个域名。</li>
 <li>浏览器就会发起一个DNS的系统调用，就会向本地配置的首选DNS服务器（一般是电信运营商提供的，也可以使用像Google提供的DNS服务器）发起域名解析请求（通过的是UDP协议向DNS的53端口发起请求，这个请求是递归的请求，也就是运营商的DNS服务器必须得提供给我们该域名的IP地址）。</li>
-<li>运营商的DNS服务器首先查找自身的缓存，找到对应的条目，且没有过期，则解析成功。如果没有找到对应的条目，则有运营商的DNS代我们的浏览器发起迭代DNS解析请求。<br>7 它首先是会找根域的DNS的IP地址（这个DNS服务器都内置13台根域的DNS的IP地址），找到根域的DNS地址，就会向其发起请求（请问<a href="http://www.baidu.com这个域名的IP地址是多少啊？），根域发现这是一个顶级域com域的一个域名，于是就告诉运营商的DNS我不知道这个域名的IP地址，但是我知道com域的IP地址，你去找它去" target="_blank" rel="noopener">www.baidu.com这个域名的IP地址是多少啊？），根域发现这是一个顶级域com域的一个域名，于是就告诉运营商的DNS我不知道这个域名的IP地址，但是我知道com域的IP地址，你去找它去</a></li>
-<li>于是运营商的DNS就得到了com域的IP地址，又向com域的IP地址发起了请求（请问<a href="http://www.baidu.com这个域名的IP地址是多少?）,com域这台服务器告诉运营商的DNS我不知道www.baidu.com这个域名的IP地址，但是我知道baidu.com这个域的DNS地址，你去找它去" target="_blank" rel="noopener">www.baidu.com这个域名的IP地址是多少?）,com域这台服务器告诉运营商的DNS我不知道www.baidu.com这个域名的IP地址，但是我知道baidu.com这个域的DNS地址，你去找它去</a>.</li>
+<li>运营商的DNS服务器首先查找自身的缓存，找到对应的条目，且没有过期，则解析成功。如果没有找到对应的条目，则有运营商的DNS代我们的浏览器发起迭代DNS解析请求。 7 它首先是会找根域的DNS的IP地址（这个DNS服务器都内置13台根域的DNS的IP地址），找到根域的DNS地址，就会向其发起请求（请问www.baidu.com这个域名的IP地址是多少啊？），根域发现这是一个顶级域com域的一个域名，于是就告诉运营商的DNS我不知道这个域名的IP地址，但是我知道com域的IP地址，你去找它去</li>
+<li>于是运营商的DNS就得到了com域的IP地址，又向com域的IP地址发起了请求（请问www.baidu.com这个域名的IP地址是多少?）,com域这台服务器告诉运营商的DNS我不知道www.baidu.com这个域名的IP地址，但是我知道baidu.com这个域的DNS地址，你去找它去.</li>
 <li>于是运营商的DNS又向baidu.com这个域名的DNS地址（这个一般就是由域名注册商提供的，像万网，新网等）发起请求。</li>
-<li>这个时候baidu.com域的DNS服务器一查，在这里，于是就把找到的结果发送给运营商的DNS服务器，这个时候运营商的DNS服务器就拿到了<a href="http://www.baidu.com这个域名对应的IP地址。LDNS缓存这个域名和对应的ip。" target="_blank" rel="noopener">www.baidu.com这个域名对应的IP地址。LDNS缓存这个域名和对应的ip。</a></li>
+<li>这个时候baidu.com域的DNS服务器一查，在这里，于是就把找到的结果发送给运营商的DNS服务器，这个时候运营商的DNS服务器就拿到了www.baidu.com这个域名对应的IP地址。LDNS缓存这个域名和对应的ip。</li>
 <li>运营商的DNS服务器返回给用户Windows系统内核。</li>
 <li>内核又把结果返回给浏览器</li>
-<li>浏览器拿到了<a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a>  对应的IP地址。</li>
+<li>浏览器拿到了www.baidu.com 对应的IP地址。</li>
 <li>域名解析过程至此结束了。</li>
 </ol>
 <p>浏览器缓存，系统缓存，路由器缓存，IPS服务器缓存，根域名服务器缓存，顶级域名服务器缓存，主域名服务器缓存。</p>
-<h2 id="发起TCP的3次握手"><a href="#发起TCP的3次握手" class="headerlink" title="发起TCP的3次握手"></a>发起TCP的3次握手</h2><p>TCP/IP协议是Internet最基本的协议、Internet国际互联网络的基础，由网络层的IP协议和传输层的TCP协议组成。通俗而言：TCP负责发现传输的问题，一有问题就发出信号，要求重新传输，直到所有数据安全正确地传输到目的地。而IP是给因特网的每一台联网设备规定一个地址。</p>
+<h2 id="发起tcp的3次握手">发起TCP的3次握手</h2>
+<p>TCP/IP协议是Internet最基本的协议、Internet国际互联网络的基础，由网络层的IP协议和传输层的TCP协议组成。通俗而言：TCP负责发现传输的问题，一有问题就发出信号，要求重新传输，直到所有数据安全正确地传输到目的地。而IP是给因特网的每一台联网设备规定一个地址。</p>
 <p>拿到域名对应的IP地址之后，User-Agent（一般是指浏览器）会根据url中输入的端口向服务器的WEB程序（常用的有httpd,nginx等）发起TCP的连接请求。这个连接请求经过网络中层层的路由到达机房路由之后，防火墙判断当前端口是否开放，如果开放则进入到服务器网卡，然后是进入到内核的TCP/IP协议栈（用于识别该连接请求，解封包，一层一层的剥开），最终到达WEB程序（本文就以Nginx为例），最终建立了TCP/IP的连接。</p>
-<p>连接建立阶段： </p>
-<ol>
-<li>客户端的应用进程主动打开，并向服务端发出请求报文段。其首部中：SYN=1,seq=x。 </li>
-<li>服务器应用进程被动打开。若同意客户端的请求，则发回确认报文，其首部中：SYN=1,ACK=1,ack=x+1,seq=y。 </li>
-<li>客户端收到确认报文之后，通知上层应用进程连接已建立，并向服务器发出确认报文，其首部：ACK=1,ack=y+1。当服务器收到客户端的确认报文之后，也通知其上层应用进程连接已建立。 </li>
+<p>连接建立阶段：</p>
+<ol type="1">
+<li>客户端的应用进程主动打开，并向服务端发出请求报文段。其首部中：SYN=1,seq=x。</li>
+<li>服务器应用进程被动打开。若同意客户端的请求，则发回确认报文，其首部中：SYN=1,ACK=1,ack=x+1,seq=y。</li>
+<li>客户端收到确认报文之后，通知上层应用进程连接已建立，并向服务器发出确认报文，其首部：ACK=1,ack=y+1。当服务器收到客户端的确认报文之后，也通知其上层应用进程连接已建立。</li>
 </ol>
-<p>至此，TCP连接就建立了，客户端和服务器可以愉快地玩耍了。只要通信双方没有一方发出连接释放的请求，连接就将一直保持。 </p>
-<h2 id="建立TCP连接后发起http请求"><a href="#建立TCP连接后发起http请求" class="headerlink" title="建立TCP连接后发起http请求"></a>建立TCP连接后发起http请求</h2><p>进过TCP3次握手之后，浏览器发起了http的请求，使用的http的方法 GET 方法，请求的URL是 <a href="http://www.baidu.com/" target="_blank" rel="noopener">http://www.baidu.com/</a> ,协议是HTTP/1.0</p>
-<h2 id="服务器响应http请求，浏览器得到html代码"><a href="#服务器响应http请求，浏览器得到html代码" class="headerlink" title="服务器响应http请求，浏览器得到html代码"></a>服务器响应http请求，浏览器得到html代码</h2><p>服务器端WEB程序接收到http请求以后，就开始处理该请求，处理之后就返回给浏览器html文件。</p>
+<p>至此，TCP连接就建立了，客户端和服务器可以愉快地玩耍了。只要通信双方没有一方发出连接释放的请求，连接就将一直保持。</p>
+<h2 id="建立tcp连接后发起http请求">建立TCP连接后发起http请求</h2>
+<p>进过TCP3次握手之后，浏览器发起了http的请求，使用的http的方法 GET 方法，请求的URL是 http://www.baidu.com/ ,协议是HTTP/1.0</p>
+<h2 id="服务器响应http请求浏览器得到html代码">服务器响应http请求，浏览器得到html代码</h2>
+<p>服务器端WEB程序接收到http请求以后，就开始处理该请求，处理之后就返回给浏览器html文件。</p>
 <p>服务器返回给客户端http响应包（200 ok 响应的MIME类型是text/html），代表这一次客户端发起的http请求已成功响应。200 代表是的 响应成功的状态码。</p>
-<h2 id="浏览器解析html代码，并请求html代码中的资源（如js、css、图片等）"><a href="#浏览器解析html代码，并请求html代码中的资源（如js、css、图片等）" class="headerlink" title="浏览器解析html代码，并请求html代码中的资源（如js、css、图片等）"></a>浏览器解析html代码，并请求html代码中的资源（如js、css、图片等）</h2><p>浏览器拿到index.html文件后，就开始解析其中的html代码，遇到js/css/image等静态资源时，就向服务器端去请求下载（会使用多线程下载，每个浏览器的线程数不一样），这个时候就用上keep-alive特性了，建立一次HTTP连接，可以请求多个资源，下载资源的顺序就是按照代码里的顺序，但是由于每个资源大小不一样，而浏览器又多线程请求请求资源，所以实际顺序并不一定是代码里面的顺序。</p>
+<h2 id="浏览器解析html代码并请求html代码中的资源如jscss图片等">浏览器解析html代码，并请求html代码中的资源（如js、css、图片等）</h2>
+<p>浏览器拿到index.html文件后，就开始解析其中的html代码，遇到js/css/image等静态资源时，就向服务器端去请求下载（会使用多线程下载，每个浏览器的线程数不一样），这个时候就用上keep-alive特性了，建立一次HTTP连接，可以请求多个资源，下载资源的顺序就是按照代码里的顺序，但是由于每个资源大小不一样，而浏览器又多线程请求请求资源，所以实际顺序并不一定是代码里面的顺序。</p>
 <p>浏览器在请求静态资源时（在未过期的情况下），向服务器端发起一个http请求（询问自从上一次修改时间到现在有没有对资源进行修改），如果服务器端返回304状态码（告诉浏览器服务器端没有修改），那么浏览器会直接读取本地的该资源的缓存文件。</p>
-<h2 id="浏览器对页面进行渲染呈现给用户"><a href="#浏览器对页面进行渲染呈现给用户" class="headerlink" title="浏览器对页面进行渲染呈现给用户"></a>浏览器对页面进行渲染呈现给用户</h2><p>最后，浏览器利用自己内部的工作机制，把请求到的静态资源和html代码进行渲染，渲染之后呈现给用户。</p>
-<h2 id="传输完成，TCP挥手"><a href="#传输完成，TCP挥手" class="headerlink" title="传输完成，TCP挥手"></a>传输完成，TCP挥手</h2><p>若是不再传输数据，应用进程就会通知TCP释放连接。</p>
+<h2 id="浏览器对页面进行渲染呈现给用户">浏览器对页面进行渲染呈现给用户</h2>
+<p>最后，浏览器利用自己内部的工作机制，把请求到的静态资源和html代码进行渲染，渲染之后呈现给用户。</p>
+<h2 id="传输完成tcp挥手">传输完成，TCP挥手</h2>
+<p>若是不再传输数据，应用进程就会通知TCP释放连接。</p>
 <blockquote>
-<p><a href="https://blog.csdn.net/sinat_21455985/article/details/53508115" target="_blank" rel="noopener">https://blog.csdn.net/sinat_21455985/article/details/53508115</a></p>
+<p>https://blog.csdn.net/sinat_21455985/article/details/53508115</p>
 </blockquote>
 <p>断开连接端可以是Client端，也可以是Server端。假设Client端发起中断连接请求：</p>
-<ol>
+<ol type="1">
 <li>客户端先发送FIN报文（第24帧），用来关闭主动方到被动关闭方的数据传送，也就是客户端告诉服务器：我已经不会再给你发数据了(当然，在fin包之前发送出去的数据，如果没有收到对应的ack确认报文，客户端依然会重发这些数据)，但此时客户端还可以接受数据。</li>
 <li>Server端接到FIN报文后，但是如果还有数据没有发送完成，则不必急着关闭Socket，可以继续发送数据。所以服务器端先发送ACK（第25帧），告诉Client端：请求已经收到了，但是我还没准备好，请继续等待停止的消息。这个时候Client端就进入FIN_WAIT状态，继续等待Server端的FIN报文。</li>
 <li>当Server端确定数据已发送完成，则向Client端发送FIN报文（第26帧），告诉Client端：服务器这边数据发完了，准备好关闭连接了。</li>
@@ -903,7 +908,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#域名解析"><span class="nav-number">1.</span> <span class="nav-text">域名解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发起TCP的3次握手"><span class="nav-number">2.</span> <span class="nav-text">发起TCP的3次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建立TCP连接后发起http请求"><span class="nav-number">3.</span> <span class="nav-text">建立TCP连接后发起http请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器响应http请求，浏览器得到html代码"><span class="nav-number">4.</span> <span class="nav-text">服务器响应http请求，浏览器得到html代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器解析html代码，并请求html代码中的资源（如js、css、图片等）"><span class="nav-number">5.</span> <span class="nav-text">浏览器解析html代码，并请求html代码中的资源（如js、css、图片等）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器对页面进行渲染呈现给用户"><span class="nav-number">6.</span> <span class="nav-text">浏览器对页面进行渲染呈现给用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传输完成，TCP挥手"><span class="nav-number">7.</span> <span class="nav-text">传输完成，TCP挥手</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#域名解析"><span class="nav-number">1.</span> <span class="nav-text">域名解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发起tcp的3次握手"><span class="nav-number">2.</span> <span class="nav-text">发起TCP的3次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建立tcp连接后发起http请求"><span class="nav-number">3.</span> <span class="nav-text">建立TCP连接后发起http请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器响应http请求浏览器得到html代码"><span class="nav-number">4.</span> <span class="nav-text">服务器响应http请求，浏览器得到html代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器解析html代码并请求html代码中的资源如jscss图片等"><span class="nav-number">5.</span> <span class="nav-text">浏览器解析html代码，并请求html代码中的资源（如js、css、图片等）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器对页面进行渲染呈现给用户"><span class="nav-number">6.</span> <span class="nav-text">浏览器对页面进行渲染呈现给用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传输完成tcp挥手"><span class="nav-number">7.</span> <span class="nav-text">传输完成，TCP挥手</span></a></li></ol></div>
             
 
           </div>

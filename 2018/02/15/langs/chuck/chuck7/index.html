@@ -125,18 +125,18 @@
 
 
 
-  <meta name="description" content="manipulating time  time and duration operations (arithmetic) the keyword ‘now’ advancing time properties  #Manipulating Time ChucK is a strongly-timed language, meaning that time is fundamentally(根本地)">
+  <meta name="description" content="manipulating time  time and duration operations (arithmetic) the keyword &apos;now&apos; advancing time properties  #Manipulating Time ChucK is a strongly-timed language, meaning that time is fundament">
 <meta name="keywords" content="ChucK">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chuck7">
 <meta property="og:url" content="https://plart.pw/2018/02/15/langs/chuck/chuck7/index.html">
 <meta property="og:site_name" content="失乐园">
-<meta property="og:description" content="manipulating time  time and duration operations (arithmetic) the keyword ‘now’ advancing time properties  #Manipulating Time ChucK is a strongly-timed language, meaning that time is fundamentally(根本地)">
+<meta property="og:description" content="manipulating time  time and duration operations (arithmetic) the keyword &apos;now&apos; advancing time properties  #Manipulating Time ChucK is a strongly-timed language, meaning that time is fundament">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-07-13T12:47:00.040Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chuck7">
-<meta name="twitter:description" content="manipulating time  time and duration operations (arithmetic) the keyword ‘now’ advancing time properties  #Manipulating Time ChucK is a strongly-timed language, meaning that time is fundamentally(根本地)">
+<meta name="twitter:description" content="manipulating time  time and duration operations (arithmetic) the keyword &apos;now&apos; advancing time properties  #Manipulating Time ChucK is a strongly-timed language, meaning that time is fundament">
 
 
 
@@ -536,7 +536,7 @@
 <ul>
 <li>time and duration</li>
 <li>operations (arithmetic)</li>
-<li>the keyword ‘now’</li>
+<li>the keyword 'now'</li>
 <li>advancing time</li>
 <li>properties</li>
 </ul>
@@ -547,13 +547,13 @@
 <li>time and duration are native types in the language</li>
 <li>keyword <code>now</code> holds the current logical time</li>
 <li>time is advanced (and can only be advanced) by explicitly(显式地) manipulating(操纵) <code>now</code></li>
-<li>you have flexible(灵活的) and precise(精确的) control </li>
+<li>you have flexible(灵活的) and precise(精确的) control</li>
 </ul>
 <p>#time and duration</p>
-<p><code>Time</code> and <code>duration</code> are native types in ChucK. </p>
+<p><code>Time</code> and <code>duration</code> are native types in ChucK.</p>
 <pre><code>`time` represents an absolute(绝对的) point in time (from the beginning of ChucK time). 时间点
-`dur` represents a duration (with the same logical units as time). 时间段
-</code></pre><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a duration of one second</span></span><br><span class="line"><span class="number">1</span>::second =&gt; dur foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// a point in time (duration of foo from now)</span></span><br><span class="line">now + foo =&gt; time later;</span><br></pre></td></tr></table></figure>
+`dur` represents a duration (with the same logical units as time). 时间段</code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a duration of one second</span></span><br><span class="line"><span class="number">1</span>::second =&gt; dur foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// a point in time (duration of foo from now)</span></span><br><span class="line">now + foo =&gt; time later;</span><br></pre></td></tr></table></figure>
 <p>Later in this section, we outline(概述) the various arithmetic operations(各种数学运算) to perform on time and duration.</p>
 <p>Durations can be used to construct new durations, which then be used to inductively(归纳地) construct yet other durations. For example:</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .5 second is a quarter</span></span><br><span class="line"><span class="number">.5</span>::second =&gt; dur quarter;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4 quarters is whole</span></span><br><span class="line"><span class="number">4</span>::quarter =&gt; dur whole;</span><br></pre></td></tr></table></figure>
@@ -565,56 +565,24 @@
 <li>minute : 1 minute</li>
 <li>hour : 1 hour</li>
 <li>day : 1 day</li>
-<li>week : 1 week </li>
+<li>week : 1 week</li>
 </ul>
 <p>Use these to represent any duration.</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// the duration of half a sample</span></span><br><span class="line"><span class="number">.5</span>::samp =&gt; dur foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 20 weeks</span></span><br><span class="line"><span class="number">20</span>::week =&gt; dur waithere;</span><br><span class="line"></span><br><span class="line"><span class="comment">// use in combination</span></span><br><span class="line"><span class="number">2</span>::minute + <span class="number">30</span>::second =&gt; dur bar;</span><br><span class="line"></span><br><span class="line"><span class="comment">// same value as above</span></span><br><span class="line"><span class="number">2.5</span>::minute =&gt; dur bar;</span><br></pre></td></tr></table></figure>
 <p>#operations on time and duration (arithmetic)</p>
 <p>In ChucK, there are well-defined(定义明确的) arithmetic operations on values of type time and dur.</p>
-<hr>
-<p>example 1 (time offset(偏移)):</p>
-<pre><code>// time + dur yields time
-now + 10::second =&gt; time later;
-</code></pre><p>example 2 (time subtraction):</p>
-<pre><code>// time - time yields dur
-later - now =&gt; dur D;
-</code></pre><p>example 3 (addition):</p>
-<pre><code>// dur + dur yields dur
-10::second + 100::samp =&gt; dur foo;
-</code></pre><p>example 4 (subtraction):</p>
-<pre><code>// dur - dur yields dur
-10::second - 100::samp =&gt; dur bar;
-</code></pre><p>example 5 (division):</p>
-<pre><code>// dur / dur yields number
-10::second / 20::ms =&gt; float n;
-</code></pre><p>example 6 (time mod):</p>
-<pre><code>// time mod dur yields dur
-now % 1::second =&gt; dur remainder;
-</code></pre><p>example 7 (synchronize to period):</p>
-<pre><code>// synchronize to period of .5 second
-.5::second =&gt; dur T;
-T - (now % T) =&gt; now;
-</code></pre><p>example 8 (comparison(比较) on time):</p>
-<pre><code>// compare time and time
-if( t1 &lt; t2 )
-    // do something...
-</code></pre><p>example 9 (comparison on duration:</p>
-<pre><code>// compare dur and dur
-if( 900::ms &lt; 1::second )
-    &lt;&lt;&lt; &quot;yay!&quot; &gt;&gt;&gt;;
-</code></pre><hr>
-<p>#the keyword ‘now’</p>
+<p>#the keyword 'now'</p>
 <p>The keyword <code>now</code> is the key to reasoning about and controlling time in ChucK.思考控制时间的关键</p>
 <p>Some properties(属性) of <code>now</code> include:</p>
 <ul>
 <li><code>now</code> is a special variable(变量) of type time.</li>
 <li><code>now</code> holds the current ChucK time (when read).</li>
-<li>modifying <code>now</code> has the side effects(副作用) of:<ul>
+<li>modifying <code>now</code> has the side effects(副作用) of:
+<ul>
 <li>advancing time (see below);</li>
-<li>suspending(暂停) the current process (called <em>shred</em>) until the desired time is reached - allowing other shreds and audio synthesis to compute; </li>
-</ul>
-</li>
-<li>the value of <code>now</code> only changes when it is explicitly(明确地) modified(改动). </li>
+<li>suspending(暂停) the current process (called <em>shred</em>) until the desired time is reached - allowing other shreds and audio synthesis to compute;</li>
+</ul></li>
+<li>the value of <code>now</code> only changes when it is explicitly(明确地) modified(改动).</li>
 </ul>
 <p>(also see next section on advancing time).</p>
 <p>Example:</p>
@@ -624,7 +592,7 @@ if( 900::ms &lt; 1::second )
 <ul>
 <li>chucking (=&gt;) a duration to <code>now</code>: this will advance time by that duration.</li>
 <li>chucking (=&gt;) a time to <code>now</code>: this will advance time to that point. (note that the desired time must be later than the current time, or at least be equal to it.)</li>
-<li>chucking (=&gt;) an <code>Event</code> to <code>now</code>: time will advance until the event is triggered(引发). (also see <code>event</code>) </li>
+<li>chucking (=&gt;) an <code>Event</code> to <code>now</code>: time will advance until the event is triggered(引发). (also see <code>event</code>)</li>
 </ul>
 <p><strong>advancing time by duration</strong></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// advance time by 1 second</span></span><br><span class="line"><span class="number">1</span>::second =&gt; now;</span><br><span class="line"></span><br><span class="line"><span class="comment">// advance time by 100 millisecond</span></span><br><span class="line"><span class="number">100</span>::ms =&gt; now;</span><br><span class="line"></span><br><span class="line"><span class="comment">// advance time by 1 samp (every sample)</span></span><br><span class="line"><span class="number">1</span>::samp =&gt; now;</span><br><span class="line"></span><br><span class="line"><span class="comment">// advance time by less than 1 samp</span></span><br><span class="line"><span class="number">.024</span>::samp =&gt; now;</span><br></pre></td></tr></table></figure>
@@ -719,8 +687,8 @@ if( 900::ms &lt; 1::second )
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/15/langs/chuck/chuck12/" rel="next" title="chuck12">
-                <i class="fa fa-chevron-left"></i> chuck12
+              <a href="/2018/02/15/langs/chuck/chuck13/" rel="next" title="chuck13">
+                <i class="fa fa-chevron-left"></i> chuck13
               </a>
             
           </div>
@@ -729,8 +697,8 @@ if( 900::ms &lt; 1::second )
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/15/langs/r/R基本数据结构/" rel="prev" title="R基本数据结构">
-                R基本数据结构 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/15/langs/chuck/chuck11/" rel="prev" title="chuck11">
+                chuck11 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

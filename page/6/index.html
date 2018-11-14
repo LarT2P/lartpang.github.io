@@ -524,7 +524,8 @@
       
         
           
-            <h1 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h1><p>单个地址存放单个数据，但是如果有多个数据，而这些数据互相关联，则我们更希望的是将他们能够更好的在内存中组织在一起。于是便出现了容器的概念。</p>
+            <h1 id="容器">容器</h1>
+<p>单个地址存放单个数据，但是如果有多个数据，而这些数据互相关联，则我们更希望的是将他们能够更好的在内存中组织在一起。于是便出现了容器的概念。</p>
 <p>在不同的语言中，容器的名称不同，性质各异。比如，C 语言中的数组、LISP 语言中的列表、Python 语言中的元组以及 Ruby 语言中的数组。即使是名字相同，在不同语言中表达的意思也可能不一样。比如，LISP 语言和 Haskell 语言中的列表，与 Java 语言和 Python 语言中的列表在内部构造上完全不同。</p>
 <p>又由于<strong>所针对的问题不同</strong>（还是这句话，因为变成就是用来解决现实问题的一个工具），所以出现了各种样的容器——数组，链表，字典，散列，树等等。</p>
 <p>各种容器差别主要在于执行特定操作的优势与劣势。此时一般使用用大O表示法计量的时间复杂度栏衡量。</p>
@@ -533,7 +534,8 @@
 <p>Python 语言进一步采取了更为激进的设计方法。源代码中只要是使用了 ASCII 码以外的字符，但没有使用魔术注释符时，都将导致语法错误，就会带来以下错误。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SyntaxError: Non-ASCII character &apos;\xe6&apos; in file tmp.py on line 1, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details</span><br></pre></td></tr></table></figure>
 <p>直到后来出现了Unicode编码。字符集得到了统一，但为适应不同的需求，字符的编码方式还有很多种，如 UTF-8 和 UTF-16 就是其中两种。</p>
-<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><p>字符串就是字符并列的结果，但在不同的语言中，字符串列的表现方式各不相同。</p>
+<h4 id="字符串">字符串</h4>
+<p>字符串就是字符并列的结果，但在不同的语言中，字符串列的表现方式各不相同。</p>
 <p>这里书中介绍了 C、Pascal、Java、Ruby 和 Python 这几种语言中的字符串。这五种语言中，只有 C 语言中的字符串不知道自身的长度。其他语言中的字符串都携带有表现自身长度的整数。可以说 C 语言中的字符串是最为原始的字符串。</p>
 <p><em>那么 C 语言字符串是如何表现字符串本身到何处为止呢？</em></p>
 <p>用 NUL 字符表示字符串的终止。为达到这一目的使用了一种表现字符串终止的特殊字符，这就 NUL 字符 40。NUL 字符是一个与 0 对应的字符，在 C 语言代码中用 \0 表示。（40ASCII 规定将 null character 简称为 NUL，换行（line feed）简称为 LF。为了避免与 C 语言中的 NULL 指针相混淆，本书中用 NUL 字符来表述）</p>
@@ -544,40 +546,43 @@
 <p>(很可能因操作系统、编译器版本或选项的不同，执行结果也有所不同。)</p>
 <p>原因是 str 和 str2 都声明为 char[3]，只分配了 3 字节的空间。abc 这一 3 个字符的字符串要表达它在字符 c 的地方结束的话，需要 3 个字符再加 NUL 字符总共 4 个字符的空间，但是代码中只为其分配了 3 个字节的空间。因此，abc 后面的 NUL 字符以及 def 后面的 g 和 NUL 字符都没能放入而被舍弃了。故而在显示 str2 时，首先显示 def，然后是显示与之相邻的空间里保存的 abc。</p>
 <p>那么最后的 $$ 又是怎么回事呢？这其实是函数开始部分的 int x = 9252；语句在内存中写入的整数 9252. 9252 用 16 进制表示就是 2424，在 ASCII 码中 24 是 $。因此这个整数被解释为有两个 $ 并列的字符串的一部分。与之相邻的内存中是 00，被当作是 NUL 字符，显示到此终止。然而，在某些情况下可能显示出更多的内容，并且有可能会试图读取那些禁止读取的内容，从而造成程序的异常终止。</p>
-<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00058.gif" alt="img"></p>
+<figure>
+<img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00058.gif" alt="img"><figcaption>img</figcaption>
+</figure>
 <p>C 语言风格的字符串处理起来还是比较困难的。实际上，大多数语言都采用了 Pascal 语言风格的字符串。</p>
-<h4 id="Python-3-中引入的设计变更"><a href="#Python-3-中引入的设计变更" class="headerlink" title="Python 3 中引入的设计变更"></a>Python 3 中引入的设计变更</h4><p>在 Python 2.x 版本中，源代码中有 “ あ “ 时，这是一个字节串列的字符串。如果源代码的编码方式为 UTF-8，这就变成一个有 [‘0xe3’, ‘0x81’, ‘0x82’] 三个字节的串列。写成 u” あ “ 时，表示这是一个 Unicode 的字符串，只有一个 Unicode 字符即 [‘0x3042’].</p>
+<h4 id="python-3-中引入的设计变更">Python 3 中引入的设计变更</h4>
+<p>在 Python 2.x 版本中，源代码中有 &quot; あ &quot; 时，这是一个字节串列的字符串。如果源代码的编码方式为 UTF-8，这就变成一个有 ['0xe3', '0x81', '0x82'] 三个字节的串列。写成 u&quot; あ &quot; 时，表示这是一个 Unicode 的字符串，只有一个 Unicode 字符即 ['0x3042'].</p>
 <p>因为同时存在两种类型的字符串，于是会有一个问题：两者混合使用的话会怎样？ Python 2.x 版本规定，在 ASCII 码环境下时字节串列被当作 ASCII 码并且可以自动转换成 Unicode。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> Python <span class="number">2.7</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">u"hello, "</span> + <span class="string">"Alice"</span></span><br><span class="line"><span class="string">u'hello, Alice'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">u"hello, "</span> + <span class="string">"太郎"</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">UnicodeDecodeError: <span class="string">'ascii'</span> codec can<span class="string">'t decode byte 0xe5 in position 0:</span></span><br><span class="line"><span class="string">ordinal not in range(128)</span></span><br></pre></td></tr></table></figure>
 <p>※ Python 2.7 中字节串列只在 ASCII 码时才能和 Unicode 字符串结合</p>
-<p>然而，在字符串内容不同时，这一规定有时正常有时却会导致错误。在只使用了 ASCII 字符的测试案例中可以正常运行，而在使用了 ASCII 字符以外的字符却会有问题。因此，Python 3.x 版本舍弃了 Python 2.x 版本中的兼容性，围绕字符串展开了大的变革。首先，规则发生了变化。默认直接是 Unicode 字符，写成 “b” 时是字节串列，这样 Unicode 其次，在 Unicode 字符串和字节串列结合的时候，不管其想结合的内容如何，都将抛出类型错误。在有需要混合字符串时，规定有必要显式地使用转换代码，这避免了在不知情的情况下进行了转换而导致问题发生的被动局面。</p>
+<p>然而，在字符串内容不同时，这一规定有时正常有时却会导致错误。在只使用了 ASCII 字符的测试案例中可以正常运行，而在使用了 ASCII 字符以外的字符却会有问题。因此，Python 3.x 版本舍弃了 Python 2.x 版本中的兼容性，围绕字符串展开了大的变革。首先，规则发生了变化。默认直接是 Unicode 字符，写成 &quot;b&quot; 时是字节串列，这样 Unicode 其次，在 Unicode 字符串和字节串列结合的时候，不管其想结合的内容如何，都将抛出类型错误。在有需要混合字符串时，规定有必要显式地使用转换代码，这避免了在不知情的情况下进行了转换而导致问题发生的被动局面。</p>
 <ul>
 <li>Python 3.0 中将字节串列结合到 Unicode 字符串时常常发生错误。这时需要显示地将字节串列转换成 Unicode 字符串。</li>
-<li>在转换成 Unicode 字符串时为什么要写 ASCII 呢？也许有人这样问。这里的 decode(“ASCII”) 是指将使用 ASCII 编码方式编码了（encode）的内容做还原处理（decode）。</li>
+<li>在转换成 Unicode 字符串时为什么要写 ASCII 呢？也许有人这样问。这里的 decode(&quot;ASCII&quot;) 是指将使用 ASCII 编码方式编码了（encode）的内容做还原处理（decode）。</li>
 </ul>
-<h4 id="Ruby-1-9-的挑战"><a href="#Ruby-1-9-的挑战" class="headerlink" title="Ruby 1.9 的挑战"></a>Ruby 1.9 的挑战</h4><p>Python、Java 等众多语言都采用了以 Unicode 为基础的字符串，而 Ruby 语言却走出了独树一帜的路线。从 Ruby 1.9 开始，字符串就是 8 个比特，并且采用了追加编码方式信息的设计方法。这种方法的优点是可以直接书写那些不包含在 Unicode 字符集中的字符。</p>
-<h1 id="并发处理"><a href="#并发处理" class="headerlink" title="并发处理"></a>并发处理</h1><p>为了实现便利的并发处理，出现了进程和线程的概念。另外，由于并发处理产生了一些新的问题，为应对这些问题又发明了锁和光纤等概念。</p>
+<h4 id="ruby-1.9-的挑战">Ruby 1.9 的挑战</h4>
+<p>Python、Java 等众多语言都采用了以 Unicode 为基础的字符串，而 Ruby 语言却走出了独树一帜的路线。从 Ruby 1.9 开始，字符串就是 8 个比特，并且采用了追加编码方式信息的设计方法。这种方法的优点是可以直接书写那些不包含在 Unicode 字符集中的字符。</p>
+<h1 id="并发处理">并发处理</h1>
+<p>为了实现便利的并发处理，出现了进程和线程的概念。另外，由于并发处理产生了一些新的问题，为应对这些问题又发明了锁和光纤等概念。</p>
 <blockquote>
 <p>《程序设计语言：概念和结构》一书提到：程序设计语言中的并行性和硬件中的并列性是相互独立的两个概念。并列性是硬件层面的表述，比如英特尔公司于 1999 年发布的 Pentium III 中的可以同时针对四个值进行运算的 SSE 命令，以及 NVIDIA 为了记录因为 GPU 带来的高并列性的处理于 2007 年发布的 CUDA 等。而本书该章节将要讨论的是程序设计语言领域的并行性，具体来说是进程和线程的概念。</p>
 </blockquote>
 <p>对于单核，如何实现并行？答案就是在人们察觉不到的极短间隔内交替进行多项处理。尽管在某一瞬间实际只进行一项处理，但人们会觉得似乎有多项处理在同时进行。不过现在的计算机都实现了在CPU 上装载多个处理线路已经成为了主流，这称为多核。这是并发处理中最为重要的概念。在人们看来，程序是一刻不停地在执行，但实际上它被细分成了小段来执行。</p>
 <p>使用一个处理线路执行多项处理，就像两兄弟一起玩一台单人游戏机一样。如果能在彼此都同意的时间间隔内轮流玩，那么也就相当于两人各自在玩一台单人游戏机。“何时交替”可以分为两种情况。</p>
-<ol>
+<ol type="1">
 <li><p>协作式多任务模式——在合适的节点交替</p>
-<p> 这种方法有一个问题，有可能某个处理一直找不到合适的节点进行任务切换从而持续地进行，导致其他处理无法等到执行的机会。归根结底，采取这种方法是基于一种信任，即所有的处理都会在适当的间隔后进行交替。</p>
-<p> 再看一下那个游戏机的比喻，如果哥哥一直玩下去不给弟弟玩的话，弟弟无论等多久都玩不上了。这时弟弟估计会向妈妈告状，哥哥会被责怪吧。</p>
+<p>这种方法有一个问题，有可能某个处理一直找不到合适的节点进行任务切换从而持续地进行，导致其他处理无法等到执行的机会。归根结底，采取这种方法是基于一种信任，即所有的处理都会在适当的间隔后进行交替。</p>
+<p>再看一下那个游戏机的比喻，如果哥哥一直玩下去不给弟弟玩的话，弟弟无论等多久都玩不上了。这时弟弟估计会向妈妈告状，哥哥会被责怪吧。</p>
 <blockquote>
 <p>Windows 3.1 和 Mac OS 9 都是协作式多任务系统。即使不是有意为之，有时也会遇到程序缺陷进入无限循环，待并发处理的程序完全没有交替，全部程序都变得没有响应了。</p>
-</blockquote>
-</li>
+</blockquote></li>
 <li><p>抢占式多任务模式——一定时间后进行交替</p>
-<p> 这个方法中，有一个比其他程序都具有优势的程序叫<strong>任务管理器</strong>。它在一定时间后强制中断现在正在进行的处理，以便允许其他程序执行。</p>
-<p> 还是再来看一下那个游戏机的类比，这好比妈妈每隔十五分钟命令换人玩。换成计算机，它能在人们察觉不到中断发生的间隔时间（比如 20 毫秒或 0.02 秒）实现交替。</p>
+<p>这个方法中，有一个比其他程序都具有优势的程序叫<strong>任务管理器</strong>。它在一定时间后强制中断现在正在进行的处理，以便允许其他程序执行。</p>
+<p>还是再来看一下那个游戏机的类比，这好比妈妈每隔十五分钟命令换人玩。换成计算机，它能在人们察觉不到中断发生的间隔时间（比如 20 毫秒或 0.02 秒）实现交替。</p>
 <blockquote>
 <p>Windows 95、Mac OS 以后的版本以及 Unix、Linux 等操作系统都是使用这种方法实现的多个程序的并发处理。</p>
 </blockquote>
-<p> 对程序使用者来说，抢占式多任务模式十分方便，但对于程序设计者来讲会出现其他问题。在不知道何时被喝令终止并交替的前提下，要编写一个能稳妥执行的程序是非常困难的。</p>
-</li>
+<p>对程序使用者来说，抢占式多任务模式十分方便，但对于程序设计者来讲会出现其他问题。在不知道何时被喝令终止并交替的前提下，要编写一个能稳妥执行的程序是非常困难的。</p></li>
 </ol>
 <p>如例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">如果存款余额高于10 000元 &#123;</span><br><span class="line">    存款余额减去10 000元、</span><br><span class="line">    取出10 000元的钞票</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -586,7 +591,8 @@
 <blockquote>
 <p>竞态条件（race condition），从多进程间通信的角度来讲，是指两个或多个进程对共享的数据进行读或写的操作时，最终的结果取决于这些进程的执行顺序。</p>
 </blockquote>
-<h4 id="竞态条件成立的三个条件"><a href="#竞态条件成立的三个条件" class="headerlink" title="竞态条件成立的三个条件"></a>竞态条件成立的三个条件</h4><p>并行执行的两个处理之间出现竞态条件必须同时满足以下三个条件。</p>
+<h4 id="竞态条件成立的三个条件">竞态条件成立的三个条件</h4>
+<p>并行执行的两个处理之间出现竞态条件必须同时满足以下三个条件。</p>
 <ul>
 <li>两个处理共享变量</li>
 <li>至少一个处理会对变量进行修改</li>
@@ -594,29 +600,29 @@
 </ul>
 <p>反之，只要三个条件中有一个不具备，就可以编写适于并发处理的安全的程序。</p>
 <p>针对以上的几个方面，有了以下处理。</p>
-<ol>
+<ol type="1">
 <li><p>没有共享——进程和 actor 模型</p>
-<p> 如果最初就没有共享任何数据，条件a就不可能发生，也就没有必要在意竞态条件了。</p>
-<p> 在进程中没有内存共享。相信很多人都知道 UNIX 将执行的程序叫做进程（process）。不同的进程<em>不会共享内存</em>，所以在多个程序之间不会在内存上出现竞态条件。只需要注意与数据库连接或文件读写时共享数据的情形就够了。</p>
-<p> 在 UNIX 发布大约 10 年后，人们设计出了“轻量级进程”。它是一种共享内存、具有 UNIX 出现以前风格的进程。后来，这个被称为线程。</p>
-<p> 在不共享内存的设计方针下，还有一个流派——actor 模型。</p>
-<p> 我们以行政文员、资料和公文格为例来说明。甲打开桌上的资料进行处理时，如果乙走过来希望甲处理其他资料，这就影响了甲正在进行中的工作，这就是<strong>共享内存</strong>的问题所在。一方面，在甲的工作告一段落之前，即使乙在旁边一直等候也是浪费时间。这就是后面要讲到的<strong>死锁</strong>的问题。如果不这样，乙在往甲的公文格中放入新的资料后马上回去处理自己的工作，这就变成 actor 模型。</p>
-<p> 这种模型中处理是<em>非同步</em>的。乙不知道甲何时会处理完公文格中的资料。不管何时处理完，如果在资料中写明“处理完毕请送回乙处”等信息，<em>一旦乙在自己的公文格中看到了甲的回复，也就知道了这些资料已经处理完毕</em>。</p>
-</li>
+<p>如果最初就没有共享任何数据，条件a就不可能发生，也就没有必要在意竞态条件了。</p>
+<p>在进程中没有内存共享。相信很多人都知道 UNIX 将执行的程序叫做进程（process）。不同的进程<em>不会共享内存</em>，所以在多个程序之间不会在内存上出现竞态条件。只需要注意与数据库连接或文件读写时共享数据的情形就够了。</p>
+<p>在 UNIX 发布大约 10 年后，人们设计出了“轻量级进程”。它是一种共享内存、具有 UNIX 出现以前风格的进程。后来，这个被称为线程。</p>
+<p>在不共享内存的设计方针下，还有一个流派——actor 模型。</p>
+<p>我们以行政文员、资料和公文格为例来说明。甲打开桌上的资料进行处理时，如果乙走过来希望甲处理其他资料，这就影响了甲正在进行中的工作，这就是<strong>共享内存</strong>的问题所在。一方面，在甲的工作告一段落之前，即使乙在旁边一直等候也是浪费时间。这就是后面要讲到的<strong>死锁</strong>的问题。如果不这样，乙在往甲的公文格中放入新的资料后马上回去处理自己的工作，这就变成 actor 模型。</p>
+<p>这种模型中处理是<em>非同步</em>的。乙不知道甲何时会处理完公文格中的资料。不管何时处理完，如果在资料中写明“处理完毕请送回乙处”等信息，<em>一旦乙在自己的公文格中看到了甲的回复，也就知道了这些资料已经处理完毕</em>。</p></li>
 <li><p>不修改——const、val、Immutable</p>
-<p> 即使共享内存，只要不作修改也不会有任何问题。</p>
-<p> 但是更多的语言采用了更加现实的折衷策略——使一部分变更无法作修改。</p>
-<p> 在 C++ 语言中，使用 const 声明变量时，这个变量就是无法修改的。</p>
-<p> 在 Scala 语言中，有 var 和 val 两种声明变量的方法，val 声明的变量就无法作修改。</p>
-<p> Java 语言经常使用到 Mark Grand 提出的设计模式之一的 Immutable 模式。这种模式下，类中定义了 private 字段，同时定义了读取这些字段的 getter 方法，但不定义对这些字段作修改的 setter 方法。因为没有准备用于修改的方法，所以实现了只能读取但不能改写的效果。</p>
-</li>
+<p>即使共享内存，只要不作修改也不会有任何问题。</p>
+<p>但是更多的语言采用了更加现实的折衷策略——使一部分变更无法作修改。</p>
+<p>在 C++ 语言中，使用 const 声明变量时，这个变量就是无法修改的。</p>
+<p>在 Scala 语言中，有 var 和 val 两种声明变量的方法，val 声明的变量就无法作修改。</p>
+<p>Java 语言经常使用到 Mark Grand 提出的设计模式之一的 Immutable 模式。这种模式下，类中定义了 private 字段，同时定义了读取这些字段的 getter 方法，但不定义对这些字段作修改的 setter 方法。因为没有准备用于修改的方法，所以实现了只能读取但不能改写的效果。</p></li>
 <li><p>不介入</p>
-<p> 在处理期间如何杜绝别的作业介入进来？</p>
+<p>在处理期间如何杜绝别的作业介入进来？</p>
 <ul>
-<li><p>线程的协调——fibre、coroutine、green thread</p>
+<li>线程的协调——fibre、coroutine、green thread</li>
+</ul>
 <p>毫无疑问，由于是协作式多任务模式，如果有某个线程独占 CPU，其他处理就只能停止。说到底，这种方法的前提是各个线程能保证合理的执行时间在合适的时候做出让步。</p>
-</li>
-<li><p>表示不便介入的标志——锁、mutex、semaphore</p>
+<ul>
+<li>表示不便介入的标志——锁、mutex、semaphore</li>
+</ul>
 <p>这和试衣间中的门帘或单人浴室包间的状态牌类似。门帘关闭时表示这时试衣间正被占用，现在进去的话不方便。想使用试衣间的人只能在外面一直等到门帘打开为止。</p>
 <p>锁这个名字很容易让人误解为只要上了锁其他人就进不来了，然而实际上它只是一个表示“使用中”的状态牌。<strong>如果有线程不去检查状态牌的状态，那它也就变得没有意义了</strong>。</p>
 <blockquote>
@@ -625,26 +631,27 @@
 <p>在进入之前先检查是否挂有“使用中”的状态牌，如果有则等待，如果没有挂则挂上“使用中”的状态牌再进入。要实现这一系列约定的动作是件比较麻烦的事情。比如使用 if 语句时，在“做值的检查”和“判断为 0 则改为 1”时，有可能有其他处理介入进来。这样一来检查就毫无意义了。为了不让其他处理在中间介入进来，就有必要使用一种能将值的检查和修改同时执行的命令。</p>
 <blockquote>
 <p>Java 直接使用 synchronized lock 就可以轻松地使用实现如此功能的锁。</p>
-</blockquote>
-</li>
-</ul>
-</li>
+</blockquote></li>
 </ol>
-<h4 id="锁的问题及对策"><a href="#锁的问题及对策" class="headerlink" title="锁的问题及对策"></a>锁的问题及对策</h4><ol>
+<h4 id="锁的问题及对策">锁的问题及对策</h4>
+<ol type="1">
 <li><p>锁的问题</p>
 <ul>
 <li>陷入死锁——多个锁互相限制了对方，陷入了等待对方的解锁而形成的死结。为了避免这一问题，程序员就需要在程序的整体上注意上锁的顺序，不仅要把握应该对什么上锁，还要把握好按什么顺序去上锁。</li>
 <li>无法组合——对于多步骤的总体进行上锁，杜绝干扰的实现。要防止中间介入，程序员必须用新的锁将这两个处理步骤包括起来，用 synchronized lock 把所有这些相关的代码包括起来。但是，这样就没能达到让程序员无需担心锁的控制方式的目的。</li>
-</ul>
-</li>
+</ul></li>
 <li><p>借助事务内存来解决</p>
-<p> 有一种叫做事务内存的方法可以解决这一问题 13。这种方法把数据库中事务的理念运用到内存上，做法是先试着执行，如果失败则回退到最初状态重新执行，如果成功则共享这一变更。它不是直接修改 X 或 Y，而是临时性地创建了一个版本对其进行修改，将一个完整不可分的过程执行完毕后才反映出最终的成果。</p>
-<p> <img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00060.jpeg" alt="img"></p>
-<p> 假设有写入操作在中间介入进来，那么临时创建的版本就会被丢弃，重新回退到最初状态开始执行。这样一来，即使不上锁也可以顺利地进行并发处理。要注意的是，当写入的频率太高时，回退重 新执行的操作就会多次执行到，这样会导致性能下降。</p>
-<p> <img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00061.jpeg" alt="img"></p>
-</li>
+<p>有一种叫做事务内存的方法可以解决这一问题 13。这种方法把数据库中事务的理念运用到内存上，做法是先试着执行，如果失败则回退到最初状态重新执行，如果成功则共享这一变更。它不是直接修改 X 或 Y，而是临时性地创建了一个版本对其进行修改，将一个完整不可分的过程执行完毕后才反映出最终的成果。</p>
+<figure>
+<img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00060.jpeg" alt="img"><figcaption>img</figcaption>
+</figure>
+<p>假设有写入操作在中间介入进来，那么临时创建的版本就会被丢弃，重新回退到最初状态开始执行。这样一来，即使不上锁也可以顺利地进行并发处理。要注意的是，当写入的频率太高时，回退重 新执行的操作就会多次执行到，这样会导致性能下降。</p>
+<figure>
+<img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00061.jpeg" alt="img"><figcaption>img</figcaption>
+</figure></li>
 </ol>
-<h4 id="事务内存成功吗"><a href="#事务内存成功吗" class="headerlink" title="事务内存成功吗"></a>事务内存成功吗</h4><p>未来会怎样没人知道。</p>
+<h4 id="事务内存成功吗">事务内存成功吗</h4>
+<p>未来会怎样没人知道。</p>
 <p>微软公司于 2010 年中止了面向 .NET Framework 平台搭载软件事务内存的实验。</p>
 <p>据说后续的 Intel 处理器将搭载事物内存的部分功能。如若实现，届时对于硬件事务内存就可以轻松一试了。</p>
 
@@ -818,7 +825,9 @@
       
         
           
-            <h1 id="名字和作用域"><a href="#名字和作用域" class="headerlink" title="名字和作用域"></a>名字和作用域</h1><h2 id="为什么要取名"><a href="#为什么要取名" class="headerlink" title="为什么要取名"></a>为什么要取名</h2><p>看着代码中遍地都是的变量，函数，或多或少的我们都应该想过，为什么会有这些名字呢？</p>
+            <h1 id="名字和作用域">名字和作用域</h1>
+<h2 id="为什么要取名">为什么要取名</h2>
+<p>看着代码中遍地都是的变量，函数，或多或少的我们都应该想过，为什么会有这些名字呢？</p>
 <p>我们知道，计算机将数据存储到对应的物理内存中去。我们的操作就是基于数据的。我们需要使用这些数据，所以一个问题就是如何寻找到这些数据。一个较为直接的方式就是为它起个名字。</p>
 <p>联系现实生活中的，最典型的就是图书馆。一本本书，一块块数据。为了查找，我们使用的是对各个数据地址进行编码。一一映射到一组唯一的数据上，以此<em>便于查找的唯一</em>替代彼<em>不便于查找的唯一</em>。</p>
 <blockquote>
@@ -826,7 +835,8 @@
 </blockquote>
 <p>实际上，每个名字对应的都是实际内存中的地址。因此也必须要有一个表来存储映射关系。</p>
 <p>所以在语言的发展过程中，对照表的设计也是一个关键之处。</p>
-<h2 id="作用域的演变"><a href="#作用域的演变" class="headerlink" title="作用域的演变"></a>作用域的演变</h2><p>在早期的程序设计语言中对照表是整个程序共有的。这样的设计，虽然一定程度上解决了映射的管理的问题，但是，这就相当于现在全局的作用域的概念，一处变，处处变，一次变，次次变。为了防止变量名的重复使用，防止名字的冲突，一种方法就是使用更长的变量名。在这种过程中，各种命名法就出现了。当然，对于现在来说，合理的命名对于程序的可读性，易扩展性也是有极大的帮助的。再有就是使用作用域的限定。</p>
+<h2 id="作用域的演变">作用域的演变</h2>
+<p>在早期的程序设计语言中对照表是整个程序共有的。这样的设计，虽然一定程度上解决了映射的管理的问题，但是，这就相当于现在全局的作用域的概念，一处变，处处变，一次变，次次变。为了防止变量名的重复使用，防止名字的冲突，一种方法就是使用更长的变量名。在这种过程中，各种命名法就出现了。当然，对于现在来说，合理的命名对于程序的可读性，易扩展性也是有极大的帮助的。再有就是使用作用域的限定。</p>
 <p>随着程序规模的扩大，为了更方便管理变量，将不同层级的变量各自划分范围，将各个变量的有效范围进行约束，于是出现了作用域的概念。</p>
 <blockquote>
 <p>正是由于原先的类似于全局作用域的设定，导致当前出现了作用范围太大，出现冲突的可能性太大，进而由此想出了解决办法——缩小作用域。</p>
@@ -836,8 +846,9 @@
 <p>所谓的作用域就是指某段程序文本代码。一个声明起作用的那一段程序文本区域，则称为这个声明的作用域。静态作用域是指声明的作用域是根据程序正文在编译时就确定的，有时也称为词法作用域。而在采用动态作用域的语言中，程序中某个变量所引用的对象是在程序运行时刻根据程序的控制流信息来确定的。</p>
 </blockquote>
 <p>从对照表的角度来分析一下静态作用域和动态作用域。</p>
-<h3 id="动态"><a href="#动态" class="headerlink" title="动态"></a>动态</h3><p><strong>动态作用域中的对照表能被全部代码读取</strong></p>
-<ol>
+<h3 id="动态">动态</h3>
+<p><strong>动态作用域中的对照表能被全部代码读取</strong></p>
+<ol type="1">
 <li>最初全局对照表中记录了x与global的映射。</li>
 <li>进入函数a，准备新的全局可见的对照表。</li>
 <li>函数a写入变量x的值记录在新的对照表中。</li>
@@ -849,10 +860,11 @@
 <figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$x = <span class="string">"global"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">sub</span> <span class="title">a</span> </span>&#123;</span><br><span class="line">    <span class="keyword">local</span> $x = <span class="string">"local"</span>;</span><br><span class="line">    &amp;b();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">sub</span> <span class="title">b</span> </span>&#123;</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"$x\n"</span>;</span><br><span class="line">    <span class="comment"># 输出“local”</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&amp;a();</span><br></pre></td></tr></table></figure>
 <p>把变量原来的值实现保存在函数入口处，在出口处写回变量中。这样一来，在程序中间的改写在退出函数的时候不会继续影响。但是这样就要要求，<strong>凡当函数退出时，所有地方就要毫无遗漏的加上返回值的代码</strong>。于是处于<em>懒惰</em>的心理，我们总希望让计算机去完成这样的工作。</p>
 <blockquote>
-<p>1991年发布的Perl4开始，Perl语言就增加了这样的功能。它通过把变量声明为<code>local</code>，就可以长程序处理器去承担“把原来的值另存起来随后返回”的任务。<br>这样的作用域称为<strong>动态作用域</strong>。动态作用域中被改写的值会影响到被调用函数，因此在引用变量时是什么样的值，不看函数调用方是无从得知的。这就使得在代码规模庞大时，不便于把握。</p>
+<p>1991年发布的Perl4开始，Perl语言就增加了这样的功能。它通过把变量声明为<code>local</code>，就可以长程序处理器去承担“把原来的值另存起来随后返回”的任务。 这样的作用域称为<strong>动态作用域</strong>。动态作用域中被改写的值会影响到被调用函数，因此在引用变量时是什么样的值，不看函数调用方是无从得知的。这就使得在代码规模庞大时，不便于把握。</p>
 </blockquote>
-<h3 id="静态（又叫字面作用域，词法域等等）"><a href="#静态（又叫字面作用域，词法域等等）" class="headerlink" title="静态（又叫字面作用域，词法域等等）"></a>静态（又叫字面作用域，词法域等等）</h3><p><strong>静态作用域按照函数区分对照表</strong></p>
-<ol>
+<h3 id="静态又叫字面作用域词法域等等">静态（又叫字面作用域，词法域等等）</h3>
+<p><strong>静态作用域按照函数区分对照表</strong></p>
+<ol type="1">
 <li>最初全局对照表中记录了x与global的映射。</li>
 <li>进入函数a，准备函数a专用的对照表。</li>
 <li>函数a写入变量x的值记录在专用的的对照表中。</li>
@@ -866,16 +878,19 @@
 <blockquote>
 <p>现在说全局变量不好或者全局污染原因便是在此。实际操作中尽量减小作用范围，是一种明智的选择。</p>
 </blockquote>
-<h2 id="静态作用域的不足"><a href="#静态作用域的不足" class="headerlink" title="静态作用域的不足"></a>静态作用域的不足</h2><p>以一开始就采用了静态作用域的python语言为例：</p>
+<h2 id="静态作用域的不足">静态作用域的不足</h2>
+<p>以一开始就采用了静态作用域的python语言为例：</p>
 <p>2000年发布的python2.0中，对照表有三个层次（作用域）。从大到小分别是内置的，全局的，局部的。简单而言，每个程序都有一张整体对照表（内置），一张文件级别的对照表（全局），一张函数级别的对照表（局部）。</p>
 <p>内置对照表，可以在程序的任何地方使用参照，全局对照表是针对每个文件的，因为有的语言也称之为文件作用域，局部作用域则是针对每个函数的对照表。</p>
 <p>在实际使用中，主要出现以下问题：</p>
-<h3 id="嵌套函数的问题"><a href="#嵌套函数的问题" class="headerlink" title="嵌套函数的问题"></a>嵌套函数的问题</h3><p>python支持函数嵌套定义。</p>
+<h3 id="嵌套函数的问题">嵌套函数的问题</h3>
+<p>python支持函数嵌套定义。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="string">"global"</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">a</span><span class="params">()</span>:</span></span><br><span class="line">    x = <span class="string">"a"</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">b</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="keyword">print</span> x</span><br><span class="line">    b()</span><br><span class="line">a()</span><br></pre></td></tr></table></figure>
 <p>在python2.0最初的设计中，如上函数嵌套时，当b中的局部作用域中找不到x，接下来去找的是全局作用域。</p>
 <p>这样的设计引来很多误解，人们常常会以为，从表面看，因为a中包含b，所以a的作用域也包含b的作用域，当b中找不到x时，参照相邻的外部a的作用域。</p>
 <p>后来在2011年发布的python2.1中设计修改为了<em>逐层</em>往外寻找的策略。</p>
-<h3 id="外部作用域的再绑定问题"><a href="#外部作用域的再绑定问题" class="headerlink" title="外部作用域的再绑定问题"></a>外部作用域的再绑定问题</h3><p>指的是采用静态作用域时，无法变更嵌套作用域外部的变量。当嵌套的内层函数变量赋值时，若是当前作用域没有该值时，就会在当前的作用域定义一个新的局部变量。对这个名字进行了一次再次绑定，为他关联了另外的值。但是，这并不会影响外部的作用域。即无法变更外部的变量。</p>
+<h3 id="外部作用域的再绑定问题">外部作用域的再绑定问题</h3>
+<p>指的是采用静态作用域时，无法变更嵌套作用域外部的变量。当嵌套的内层函数变量赋值时，若是当前作用域没有该值时，就会在当前的作用域定义一个新的局部变量。对这个名字进行了一次再次绑定，为他关联了另外的值。但是，这并不会影响外部的作用域。即无法变更外部的变量。</p>
 <p>为了解决这个小问题，2006年的python3.0提供了关键字<code>nolocal</code>，在函数开始时，声明变量为<code>nolocal</code>性质。即主动地声明是非本地的。</p>
 <p>这个关键字的选取，主要考虑了对于过往代码的兼容性，他在过去的代码中，出现的频度是最低的。</p>
 <blockquote>
@@ -885,59 +900,69 @@
 <p>函数发生嵌套，形式上有两种类型。方法套方法，方法套代码段。</p>
 <p>如下两例：</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方法在进行嵌套时作用于不嵌套</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span></span></span><br><span class="line">    x = <span class="string">"outside"</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">()</span></span> <span class="comment"># 方法嵌套</span></span><br><span class="line">        p x   <span class="comment"># 会出错，因为无法访问外部的x</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法中有代码段时，方法的局部作用域中有的名字，在代码段中视为方法的局部变量，除此以外被视为代码段的局部变量。</span></span><br><span class="line"><span class="comment"># 相同名字则为方法的，不同的，则是自己的。</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span></span></span><br><span class="line">    x = <span class="string">"old"</span></span><br><span class="line">    lambda &#123;x = <span class="string">"new"</span>; y = <span class="string">"new"</span>&#125;.call</span><br><span class="line">    <span class="comment"># x -&gt; foo(), y -&gt; lambda的本地变量</span></span><br><span class="line">    p x <span class="comment"># new</span></span><br><span class="line">    p y <span class="comment"># lambda的本地变量，外部无法访问</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h2 id="作用域总结"><a href="#作用域总结" class="headerlink" title="作用域总结"></a>作用域总结</h2><blockquote>
-<p>虽然现在很少会使用动态作用域，但这一概念并不是完全没有用处。与<strong>静态作用域中作用域是源代码级别上的一块完整独立的范围</strong>不同，在<strong>动态作用域中，作用域则是进入该作用域开始直至离开这一时间轴上的完整独立的范围</strong>。与此相同的特征也体现在其他好多地方。比如，在某处理进行期间，一时改变某变量的值随后将原值返回的代码编写方式就相当于创建了自己专属的动态作用域。又如，<em>异常处理与动态作用域也很相似，函数抛出异常时的处理方式受到调用函数的 try/catch 语句的影响</em>。<br>面向对象中像 <code>private</code> 声明这样的访问修饰符，在限制可访问范围的作用上和作用域是非常相似的。<code>private</code> 将可访问范围限制在类之内，而 <code>protected</code> 将此范围扩大到其继承类。这和函数调用处的变更会影响到调用里面的操作这一动态作用域表现是相似的，两者都具有这么一个缺点，这就是<strong>影响范围没有能限制在代码的某一个地方</strong>。<br>比如 Java 语言，它是静态作用域语言，它的类可以在源代码的任意处被访问。这意味着<strong>类是具有全局作用域的</strong>。但是<strong>类的名字具有层次并且只有导入后才能被使用</strong>，这避免了全局变量带来的无意的名字冲突。<em>但是不管是全局变量还是类的静态成员都可以在源代码的任意地方被变更</em>。这提醒我们，在享受使用上的便利的同时，要谨防滥用导致的代码难以理解的情况发生。<br>作用域是编写易于理解的代码的有力工具，很多地方都应用了这一概念。</p>
+<h2 id="作用域总结">作用域总结</h2>
+<blockquote>
+<p>虽然现在很少会使用动态作用域，但这一概念并不是完全没有用处。与<strong>静态作用域中作用域是源代码级别上的一块完整独立的范围</strong>不同，在<strong>动态作用域中，作用域则是进入该作用域开始直至离开这一时间轴上的完整独立的范围</strong>。与此相同的特征也体现在其他好多地方。比如，在某处理进行期间，一时改变某变量的值随后将原值返回的代码编写方式就相当于创建了自己专属的动态作用域。又如，<em>异常处理与动态作用域也很相似，函数抛出异常时的处理方式受到调用函数的 try/catch 语句的影响</em>。 面向对象中像 <code>private</code> 声明这样的访问修饰符，在限制可访问范围的作用上和作用域是非常相似的。<code>private</code> 将可访问范围限制在类之内，而 <code>protected</code> 将此范围扩大到其继承类。这和函数调用处的变更会影响到调用里面的操作这一动态作用域表现是相似的，两者都具有这么一个缺点，这就是<strong>影响范围没有能限制在代码的某一个地方</strong>。 比如 Java 语言，它是静态作用域语言，它的类可以在源代码的任意处被访问。这意味着<strong>类是具有全局作用域的</strong>。但是<strong>类的名字具有层次并且只有导入后才能被使用</strong>，这避免了全局变量带来的无意的名字冲突。<em>但是不管是全局变量还是类的静态成员都可以在源代码的任意地方被变更</em>。这提醒我们，在享受使用上的便利的同时，要谨防滥用导致的代码难以理解的情况发生。 作用域是编写易于理解的代码的有力工具，很多地方都应用了这一概念。</p>
 </blockquote>
 <hr>
-<h1 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h1><p>C，java，C++等语言中的int，void，double，float等等，这些是怎么出现的？现在又有了怎样的变化与发展？</p>
-<h2 id="类型是什么"><a href="#类型是什么" class="headerlink" title="类型是什么"></a>类型是什么</h2><blockquote>
+<h1 id="类型">类型</h1>
+<p>C，java，C++等语言中的int，void，double，float等等，这些是怎么出现的？现在又有了怎样的变化与发展？</p>
+<h2 id="类型是什么">类型是什么</h2>
+<blockquote>
 <p>类型是人们给数据附加的一种追加数据。计算机中保存的数据是由 on 和 off 或 0 和 1 的组合来表达的。至于 on 和 off 的组合（比特列）是如何表达各种数值的，哪种比特列表示哪种值，这些只不过是人们简单的约定事项而已。同样的比特列，当其被解释为的数据的类型不同时，得到的数值是不同的。为了避免这一情况的发生，人们追加了关于数据的类型信息，这就是类型的起源。</p>
 </blockquote>
 <blockquote>
 <p>计算机中的数值是整数、浮点数还是其他类型的数，为了在计算机中管理这一信息，于是催生了类型。起初，类型中只加入了数值的种类信息，最后又有多种多样的信息加入进来。比如，能在这个数值上施加的操作、此函数可能抛出的异常等信息都被加入到类型中来了。现在，像静态类型和动态类型那样连内存地址和使用时间都不一样的事物也被称为类型，这使得类型这种东西变得越来越难以捉摸。什么样的信息放在什么地方，在什么样的时间被使用，从这个视角来看反而更容易理解。</p>
 </blockquote>
-<h2 id="表达数字的思考"><a href="#表达数字的思考" class="headerlink" title="表达数字的思考"></a>表达数字的思考</h2><p>如何在电子计算机中表达数值呢？如前所述，在计算机中所有的数值都用 on 和 off 或 0 和 1 的组合来表达。为了更形象地说明，我们换个角度来思考，该如何用灯泡的点亮与熄灭来表达数值呢？为了充分利用资源，只能是用最少的技术标量来表示最多的数。</p>
+<h2 id="表达数字的思考">表达数字的思考</h2>
+<p>如何在电子计算机中表达数值呢？如前所述，在计算机中所有的数值都用 on 和 off 或 0 和 1 的组合来表达。为了更形象地说明，我们换个角度来思考，该如何用灯泡的点亮与熄灭来表达数值呢？为了充分利用资源，只能是用最少的技术标量来表示最多的数。</p>
 <pre><code>完全按个数(n个计数标量) 
         -&gt; 数位(阿拉伯数字)(10个计数标量) 
                     -&gt; 七段数码管(7个计数标量) 
                                     -&gt; 算盘(最少的5个，上一下四)
-                                                -&gt; 从十进制到二进制(9也只需要4个，1001)
-</code></pre><p>把二进制中某几个字符组合在一起用一个字符来表示，使之变得更容易读，这种表达方式就是八进制或十六进制。</p>
-<h2 id="如何表达实数"><a href="#如何表达实数" class="headerlink" title="如何表达实数"></a>如何表达实数</h2><p>实数的复杂之处在于在正整数的基础上添加了小数和负数。所以针对这两种情况进行设计。</p>
-<h3 id="定点数——小数点位置确定"><a href="#定点数——小数点位置确定" class="headerlink" title="定点数——小数点位置确定"></a>定点数——小数点位置确定</h3><p>一种方法是确定小数点的的位置。比如，约定好把整数的小数点向左移动四位，最低四位就是小数部分。这样一来，1 变成 0.0001，100 变成 0.0100 即 0.01.这种方法有个问题，它无法表达比 0.0001 小的数，比如无法表达 0.00001。当然只要把约定改为把整数的小数点向左移动五位得到小数部分就可以，但这样针对每一个新的小数都要记一句新的约定很困难，而且还容易出错。那该怎么办呢？</p>
-<h3 id="浮点数-floating-point-number-——数值本身包含小数部分何处开始的信息"><a href="#浮点数-floating-point-number-——数值本身包含小数部分何处开始的信息" class="headerlink" title="浮点数(floating point number)——数值本身包含小数部分何处开始的信息"></a>浮点数(floating point number)——数值本身包含小数部分何处开始的信息</h3><blockquote>
-<p>以前关于浮点数有各种不同的约定，现在都标准化为 IEEE 75415。15官方名称为“IEEE Standard for Floating-Point Arithmetic (ANSI/IEEE Std 754-2008)”。IEEE 754 最早制定于 1985 年，后于 2008 年进行了修订。另外，在此标准规定有 5 种标准类型，这里仅仅说明了其中的单精度二进制浮点数。</p>
+                                                -&gt; 从十进制到二进制(9也只需要4个，1001)</code></pre>
+<p>把二进制中某几个字符组合在一起用一个字符来表示，使之变得更容易读，这种表达方式就是八进制或十六进制。</p>
+<h2 id="如何表达实数">如何表达实数</h2>
+<p>实数的复杂之处在于在正整数的基础上添加了小数和负数。所以针对这两种情况进行设计。</p>
+<h3 id="定点数小数点位置确定">定点数——小数点位置确定</h3>
+<p>一种方法是确定小数点的的位置。比如，约定好把整数的小数点向左移动四位，最低四位就是小数部分。这样一来，1 变成 0.0001，100 变成 0.0100 即 0.01.这种方法有个问题，它无法表达比 0.0001 小的数，比如无法表达 0.00001。当然只要把约定改为把整数的小数点向左移动五位得到小数部分就可以，但这样针对每一个新的小数都要记一句新的约定很困难，而且还容易出错。那该怎么办呢？</p>
+<h3 id="浮点数floating-point-number数值本身包含小数部分何处开始的信息">浮点数(floating point number)——数值本身包含小数部分何处开始的信息</h3>
+<blockquote>
+<p>以前关于浮点数有各种不同的约定，现在都标准化为 IEEE 75415。15官方名称为“IEEE Standard for Floating-Point Arithmetic (ANSI/IEEE Std 754-2008)&quot;。IEEE 754 最早制定于 1985 年，后于 2008 年进行了修订。另外，在此标准规定有 5 种标准类型，这里仅仅说明了其中的单精度二进制浮点数。</p>
 </blockquote>
-<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00036.gif" alt="img"></p>
+<figure>
+<img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00036.gif" alt="img"><figcaption>img</figcaption>
+</figure>
 <p>左边那盏灯（最高比特位）,也可以称之为 MSB（most significant bit），最高有效位 代表了数的符号。该位为 0 时表示正数，为 1 时表示负数,在标准中，零区分为正的零和负的零。</p>
 <p>接下来的 8 盏灯是表示位数的指数部分。指数部分作为整数理解的话可以表达 0~255 之间的数，减去 127 得到范围－127~128。－127 和 128 分别代表了零和无限大，剩下的－126~127 代表了小数点的位置。－126 是指小数点向左移动 126 位，127 是指小数点向右移动 127 位。</p>
 <p>其余的 23 盏灯是尾数部分，表示了小数点以下的部分。尾数部最左边的灯泡表示 1/2（二进制中的 0.1），接下来是 1/4（二进制中的 0.01）。请看图中的 1.75 这个数，它等于 1+1/2+1/4，用二进制来表示就是 1.11。所以，1/2 位的灯泡和 1/4 位的灯泡都点亮。指数部分为 127（要减去 127 就是范围中的 0），这表示小数点的位置移动 0 位。这两点组合起来就是 1.75。</p>
-<pre><code>准确来讲，尾数是在二进制表达中为使得整数部分变成 1 而移动小数点得到的小数部分。
-</code></pre><p>接下来的数 3.5，用二进制来表示是 11.1。小数点向左移动一位就得到 1.11。所以它的尾数部分和 1.75 一样，1/2 位和 1/4 位点亮。指数部分变成 128（减去 127 就是范围中的 1）。3.5（二进制中的 11.1）其实就是 1.75（二进制中的 1.11）的小数点向右移动一位得到的数 19。而 7.0 则是由指数部分继续加 1 得到。</p>
+<pre><code>准确来讲，尾数是在二进制表达中为使得整数部分变成 1 而移动小数点得到的小数部分。</code></pre>
+<p>接下来的数 3.5，用二进制来表示是 11.1。小数点向左移动一位就得到 1.11。所以它的尾数部分和 1.75 一样，1/2 位和 1/4 位点亮。指数部分变成 128（减去 127 就是范围中的 1）。3.5（二进制中的 11.1）其实就是 1.75（二进制中的 1.11）的小数点向右移动一位得到的数 19。而 7.0 则是由指数部分继续加 1 得到。</p>
 <p>19在二进制中，小数点移动一位进位不是 10 倍而是 2 倍。指数部分加 1，变成 2 倍，减 1 变成 1/2。</p>
-<h4 id="浮点数的问题"><a href="#浮点数的问题" class="headerlink" title="浮点数的问题"></a>浮点数的问题</h4><p>现今大家接触到的语言中，实数大多用浮点数 IEEE 754 表达。从实用角度来看，大部分情况下这没有任何问题。但是，这种方法要表达 3 除以 10 的答案时，十进制中可以确切表达出来的 0.3 在二进制中却变成了 0.0100110011001100110011……这样的无限循环小数，无论怎么写都有误差存在。正因为如此，会出现对0.3做十次加法并舍去某些位数后得到2这样的现象。银行和外汇交易等涉及资金操作的场合尤其不欢迎这种系统行为，所以这些场合使用的是定点数或者加三码（excess-3）这样的十进制计算方式。</p>
-<h2 id="为什么出现类型"><a href="#为什么出现类型" class="headerlink" title="为什么出现类型"></a>为什么出现类型</h2><p>在内存中记录的数值是整数还是浮点数，单靠人的记忆很难避免错误。有没有更为简易的方法呢？</p>
+<h4 id="浮点数的问题">浮点数的问题</h4>
+<p>现今大家接触到的语言中，实数大多用浮点数 IEEE 754 表达。从实用角度来看，大部分情况下这没有任何问题。但是，这种方法要表达 3 除以 10 的答案时，十进制中可以确切表达出来的 0.3 在二进制中却变成了 0.0100110011001100110011……这样的无限循环小数，无论怎么写都有误差存在。正因为如此，会出现对0.3做十次加法并舍去某些位数后得到2这样的现象。银行和外汇交易等涉及资金操作的场合尤其不欢迎这种系统行为，所以这些场合使用的是定点数或者加三码（excess-3）这样的十进制计算方式。</p>
+<h2 id="为什么出现类型">为什么出现类型</h2>
+<p>在内存中记录的数值是整数还是浮点数，单靠人的记忆很难避免错误。有没有更为简易的方法呢？</p>
 <ul>
-<li><p>一种方法是用确定的规则来表示变量名所表达的内容。比如，早期的 FORTRAN 语言使用了一系列规则，指定以 I~N 开头的变量名表示整数，除此以外的表示浮点数。</p>
-</li>
+<li><p>一种方法是用确定的规则来表示变量名所表达的内容。比如，早期的 FORTRAN 语言使用了一系列规则，指定以 I~N 开头的变量名表示整数，除此以外的表示浮点数。</p></li>
 <li><p>另一种更好的方法是告诉处理器某某变量是整数，让计算机而不是人去记忆这一信息。<strong>这就是变量的类型的声明产生的原因</strong>。比如 C 语言中，声明 int x; 表示名字为 x 的变量指向的内存被解释为整数，声明 float y; 表示名字为 y 的变量指向的内存被解释为浮点数。这样通过提供关于类型的信息，处理器在进行运算时，就能自动判断该做整数相加运算还是浮点数相加运算，而不需要人们逐个去指定。</p>
 <ul>
 <li>整数之间、浮点数之间的运算计算机参照数据的类型来决定怎样执行。如果 x 和 y 同为整数，就做整数之间的加法运算。如果 x 和 y 同为浮点数，就做浮点数之间的加法运算。</li>
-<li>整数与浮点数之间的计算，则依据语言不同采用了不同的方法。有显示使用转换函数(如早期的 FORTRAN 语言)，也有隐式自动转换的(如C)。<ul>
+<li>整数与浮点数之间的计算，则依据语言不同采用了不同的方法。有显示使用转换函数(如早期的 FORTRAN 语言)，也有隐式自动转换的(如C)。
+<ul>
 <li>C 语言中采用的设计方法是由计算对象的类型来决定是否舍去小数部分。这一方法在很长时间内被很多语言使用，以至于很多程序员都非常习惯，认为理所当然。然而，这个不是恒久不变的物理法则，只不过是人们确立的设计方法而已。因此并不是所有的语言都采用这种设计。</li>
-<li>一些语言使用特定的运算符来处理是否保留小数的情况。<ul>
+<li>一些语言使用特定的运算符来处理是否保留小数的情况。
+<ul>
 <li>1973 年问世的 ML 语言中，整数的除法运算就表达为 x div y， 而浮点数的除法运算表达为 x / y。</li>
 <li>OCaml 中也用 x / y 和 x /. y 来区分整数的除法运算和浮点数的除法运算。</li>
 <li>1991 年问世的 Python 语言起初使用的是混杂着 C 语言风格的除法运算方式。</li>
 <li>2008 年发布的 Python 3.0 中，把 x / y 作为与 x 和 y 类型无关不做舍去的除法运算，带舍去的除法运算用 x // y 来表示。</li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="类型的发展"><a href="#类型的发展" class="headerlink" title="类型的发展"></a>类型的发展</h2><ol>
+<h2 id="类型的发展">类型的发展</h2>
+<ol type="1">
 <li>使用语言中自带的基本数据类型通过组合定义新的类型的这一功能被发明出来。这被称为<em>用户定义型</em>。</li>
 </ol>
 <ul>
@@ -948,7 +973,7 @@
 <blockquote>
 <p>其实，不仅限于整数这样的数据，函数这样决定数据如何被处理的对象也被糅合到类型中来了。C++ 语言的设计者本贾尼·斯特劳斯特卢普把用户能自定义的类型当作构造程序的基本要素，把这种类型冠名为类。</p>
 </blockquote>
-<ol start="2">
+<ol start="2" type="1">
 <li>后来出现了类型既是功能的观念。这种观念认为，构成结构体和类的类型不应该是全部公开而是最小限度地公开，类型是否一致这个交由编译器来检查，用类型来表达功能，与功能是否一致也是由编译器来检查。因此，只需要将与外部有交互的部分作为类型公开，而实现的细节则隐藏起来。这样类型就被区分为公开部分和非公开部分了。</li>
 <li>出现了不包含有具体的实现细节的类型（Java 语言中的接口等）。</li>
 <li>另外把函数是否抛出异常这一信息也当作类型。</li>
@@ -956,24 +981,31 @@
 <blockquote>
 <p>类型即是功能的方法得到了越来越广泛地应用，但遗憾的是，用类型来实现所有功能的想法却还没有成功。如果它能成功，就很理想了：<strong>只要类型一致就不用关心内部的实现细节，功能与类型的不一致交由编译器来检查，编译通过意味着没有 bug</strong>。然而，仍有不少类型无法表达的信息，如输入这个数据需要多少处理时间，这个处理过程需要多少内存，线程中是否可以进行这种操作等。至今，这些问题也只能通过人为地读取文档和源代码来判断。</p>
 </blockquote>
-<h3 id="总称型、泛型和模板"><a href="#总称型、泛型和模板" class="headerlink" title="总称型、泛型和模板"></a>总称型、泛型和模板</h3><p>通过将不同类型进行组合得到复杂的类型后，使用中会出现<strong>想更改其中一部分却又不想全部重新定义的再利用</strong>需求。</p>
+<h3 id="总称型泛型和模板">总称型、泛型和模板</h3>
+<p>通过将不同类型进行组合得到复杂的类型后，使用中会出现<strong>想更改其中一部分却又不想全部重新定义的再利用</strong>需求。</p>
 <p>因此出现了构成要素部分可变的类型，即总称型。想要表现不同的情况时，出现了以类型为参数创建类型的函数(C++ 语言中的模板、Java 语言中的泛型以及 Haskell 语言中的类型构造器可以说就是这种创建类型的机制)。</p>
-<h3 id="动态静态类型"><a href="#动态静态类型" class="headerlink" title="动态静态类型"></a>动态静态类型</h3><p>到目前为止，我们介绍的类型的机制中，处理器把变量名、保存数值的内存地址、内存里的内容的类型三者作为一个整体来看待。把类型的信息和数值看作整体的方式叫动态类型。作为其反义词，到目前为止介绍的类型机制都叫静态类型。现在大多数的脚本语言都采用了动态类型。</p>
+<h3 id="动态静态类型">动态静态类型</h3>
+<p>到目前为止，我们介绍的类型的机制中，处理器把变量名、保存数值的内存地址、内存里的内容的类型三者作为一个整体来看待。把类型的信息和数值看作整体的方式叫动态类型。作为其反义词，到目前为止介绍的类型机制都叫静态类型。现在大多数的脚本语言都采用了动态类型。</p>
 <p>动态类型如何实现的呢？</p>
 <p>是因为在内存上使用了同等类型对待的设计方法。比如 Python 语言中，不管是整数还是浮点数还是字符串，全部都作为 PyObject 对待，开始部分都是一样的。另外在 PyObject 类型的结构中还预留了保存值的类型信息的地方。这一点在其它的脚本语言中也是同样的情况，比如在 Ruby 语言中，任何数值都是 VALUE 类型的。</p>
-<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00039.gif" alt="img"></p>
+<figure>
+<img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00039.gif" alt="img"><figcaption>img</figcaption>
+</figure>
 <pre><code>※ 使用次数是指在内存管理中记录这个数值有几处被参照引用的数值（引用计数）。
-※ 字符串的散列值是散列函数的计算结果（详见第 9 章），状态是表示该字符串是否记录在 Internpool 里（处理器是否把该字符串进行唯一处理的标志）。
-</code></pre><h3 id="动态类型的优势与不足"><a href="#动态类型的优势与不足" class="headerlink" title="动态类型的优势与不足"></a>动态类型的优势与不足</h3><p>使用这种数值类型处理方法，能实现历来静态类型语言不能实现的灵活处理。运行时确定类型和改变类型成为可能。然而，它也有一些不足。静态类型语言在编译时确定类型，同时编译时也检查了类型的一致性。有了这种类型检查，在实际执行前，便能发现一部分bug。这一点动态类型语言是无法做到的。</p>
-<h3 id="类型推断"><a href="#类型推断" class="headerlink" title="类型推断"></a>类型推断</h3><p>既不放弃编译时的类型检查，也想尽量减少麻烦的类型声明，要实现这一要求就要用到计算机自动推论确定类型的方法。</p>
+※ 字符串的散列值是散列函数的计算结果（详见第 9 章），状态是表示该字符串是否记录在 Internpool 里（处理器是否把该字符串进行唯一处理的标志）。</code></pre>
+<h3 id="动态类型的优势与不足">动态类型的优势与不足</h3>
+<p>使用这种数值类型处理方法，能实现历来静态类型语言不能实现的灵活处理。运行时确定类型和改变类型成为可能。然而，它也有一些不足。静态类型语言在编译时确定类型，同时编译时也检查了类型的一致性。有了这种类型检查，在实际执行前，便能发现一部分bug。这一点动态类型语言是无法做到的。</p>
+<h3 id="类型推断">类型推断</h3>
+<p>既不放弃编译时的类型检查，也想尽量减少麻烦的类型声明，要实现这一要求就要用到计算机自动推论确定类型的方法。</p>
 <p>同样是使用类型推断这一术语，在不同的语言中，如何做类型推断以及类型推断的能力如何，情况是不一样的。我们来比较一下 Haskell 语言和 Scala 语言。</p>
 <figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="type">GHCi</span></span><br><span class="line">&gt; :<span class="class"><span class="keyword">type</span> identity identity</span></span><br><span class="line"><span class="title">identity</span> identity :: t -&gt; t</span><br><span class="line">&gt; identity identity <span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
 <p>Scala 语言中类型推断的行为和 Haskell 语言是不一样的。它会首先来定义 identify 函数。</p>
 <figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> <span class="type">Scala</span>的对话终端</span><br><span class="line">scala&gt; <span class="function"><span class="keyword">def</span> <span class="title">identity</span> </span>= x =&gt; x</span><br><span class="line">&lt;console&gt;:<span class="number">7</span>: error: missing parameter <span class="class"><span class="keyword">type</span></span></span><br><span class="line"><span class="class">       <span class="title">def</span> <span class="title">identity</span> </span>= x =&gt; x</span><br><span class="line">                      ^</span><br><span class="line"></span><br><span class="line">scala&gt; <span class="function"><span class="keyword">def</span> <span class="title">identity</span></span>[<span class="type">T</span>] = (x : <span class="type">T</span>) =&gt; x</span><br><span class="line">identity: [<span class="type">T</span>]=&gt; <span class="type">T</span> =&gt; <span class="type">T</span></span><br><span class="line"></span><br><span class="line">scala&gt; identity(identity)</span><br><span class="line">res0: <span class="type">Nothing</span> =&gt; <span class="type">Nothing</span> = &lt;function1&gt;</span><br><span class="line">scala&gt; identity(identity)(<span class="number">1</span>)</span><br><span class="line">&lt;console&gt;:<span class="number">9</span>: error: <span class="class"><span class="keyword">type</span> <span class="title">mismatch</span></span>;</span><br><span class="line"> found   : <span class="type">Int</span>(<span class="number">1</span>)</span><br><span class="line"> required: <span class="type">Nothing</span></span><br><span class="line">              identity(identity)(<span class="number">1</span>)</span><br><span class="line">                                 ^</span><br></pre></td></tr></table></figure>
 <p>由此可见，同样是使用类型推断的表达方法，不同语言指示的具体内容是不一样的。刚刚展示了 Scala 语言推论失败的一个例子，即使推论成功了，在实用价值上有没有优势这个问题上，大家也是有意见分歧的。即使承认它的优势而对类型推断的机制进行修改，在由此带来的作业代价与推论失败的代价之间做权衡之后，再决定否应该做改进和变更将是一个更加困难的问题。</p>
-<h3 id="强类型下是否可以做到程序没有bug"><a href="#强类型下是否可以做到程序没有bug" class="headerlink" title="强类型下是否可以做到程序没有bug"></a>强类型下是否可以做到程序没有bug</h3><p>类型推断与理论推论之间有对应关系。于是有些语言发出挑战，试图通过使用比 C 语言和 Java 语言更强力的类型系统来证明程序中没有任何 bug。今后在改善类型系统的表现力和类型推断规则方面应该会开展各种研究。</p>
-<pre><code>比如，在一个接受 X 型参数返回 Y 型返回值的函数中传递一个 X 型的数值，会得到 Y 型的返回值。这一关于类型的描述与“X 为真在如果 X 则 Y 的情况下，Y 就为真”这一逻辑的描述是相对应的，被称为 Curry-Howard 对应。
-</code></pre>
+<h3 id="强类型下是否可以做到程序没有bug">强类型下是否可以做到程序没有bug</h3>
+<p>类型推断与理论推论之间有对应关系。于是有些语言发出挑战，试图通过使用比 C 语言和 Java 语言更强力的类型系统来证明程序中没有任何 bug。今后在改善类型系统的表现力和类型推断规则方面应该会开展各种研究。</p>
+<pre><code>比如，在一个接受 X 型参数返回 Y 型返回值的函数中传递一个 X 型的数值，会得到 Y 型的返回值。这一关于类型的描述与“X 为真在如果 X 则 Y 的情况下，Y 就为真”这一逻辑的描述是相对应的，被称为 Curry-Howard 对应。</code></pre>
+
           
         
       
@@ -1145,13 +1177,15 @@
         
           
             <p>一些学习的方法：</p>
-<h2 id="具体的知识与抽象的知识"><a href="#具体的知识与抽象的知识" class="headerlink" title="具体的知识与抽象的知识"></a>具体的知识与抽象的知识</h2><p>学习之路必经从具体到抽象的这样一个过程。</p>
+<h2 id="具体的知识与抽象的知识">具体的知识与抽象的知识</h2>
+<p>学习之路必经从具体到抽象的这样一个过程。</p>
 <p>具体的知识只能应对特定的具体环境，而面对瞬息万变的世界，唯有抽象出来的 <em>元知识</em>才能真正起到作用。具体的知识在特定的环境下可以快速提升你的工作效率，但是环境一变，这种知识就无法使用。而抽象的 <em>元知识</em>， 也需要与具体的实践相结合，才能在实际应用中发挥价值。实践是检验真理的唯一标准。这是毋庸置疑的。</p>
 <p>这样也引出来一种判别我们所学有没有成为真正的知识的方式。那就是，可以考察能否具体的举例或者实现来确认。真正的知识是可以使得我们 <strong>触类旁通</strong>的。只是一味的鹦鹉学舌，重复讲讲，也无法利用知识创造价值。</p>
-<h2 id="学习的策略"><a href="#学习的策略" class="headerlink" title="学习的策略"></a>学习的策略</h2><p>学习，终究想吃肉一样，一口吃不成个大胖子。到底讲求的还是 <strong>细嚼慢咽</strong>。这个词中，一个“细”字点出了真意。“分而治之”，小块消化。</p>
+<h2 id="学习的策略">学习的策略</h2>
+<p>学习，终究想吃肉一样，一口吃不成个大胖子。到底讲求的还是 <strong>细嚼慢咽</strong>。这个词中，一个“细”字点出了真意。“分而治之”，小块消化。</p>
 <p>这样的思想，在面对少量的信息时，效果很好，效率也可以。</p>
 <p>但是，现在这样一个信息爆炸的年代，这样是远远不够的。</p>
-<p>所以现在我们就面临着一个问题——如何对信息作取舍？什么样的信息重要，什么样的信息需要，什么样的信息可以被扔掉…</p>
+<p>所以现在我们就面临着一个问题——如何对信息作取舍？什么样的信息重要，什么样的信息需要，什么样的信息可以被扔掉...</p>
 <p>但是，若要得出一个明确的答案，那我们实际上应该对于该领域十分熟悉，水平并不低，那这样不就和我们的现况正好冲突了么？先有鸡还是先有蛋？</p>
 <p>书中提到了一些方法：</p>
 <ul>
@@ -1160,7 +1194,7 @@
 <li>阅读其他人的理解总结——二手资料——可信度，准确度等等难以保障</li>
 </ul>
 <p>这里面其实暗含着一种对于大量信息进行阅读的一个必要过程（因为我们实际上多数是偏向于后两种），这个过程一般等价于一种煎熬。而且费时费力，有时还不得好。书中提到了三种策略：</p>
-<ol>
+<ol type="1">
 <li>从需要的地方开始阅读</li>
 <li>从概要开始阅读再细读</li>
 <li>从头到尾通篇阅读手抄</li>
@@ -1175,7 +1209,8 @@
 <p><strong>逐章手抄减少漫无目的难以专注的终极方法</strong></p>
 <p>这也是最后的方法。当没有明确的目的，简单浏览内容过目即忘，这种学习状态下，只能“抄写”书籍，其他的不要想，直接做知识的搬运工吧——逐章手抄。</p>
 <p>对于学习，适当的激励是极为有助的。关键是选择 <strong>可以获得成就感的合适的学习间隔</strong>。</p>
-<h2 id="学习的态度"><a href="#学习的态度" class="headerlink" title="学习的态度"></a>学习的态度</h2><p>其实学习最关键的还是实际的应用。</p>
+<h2 id="学习的态度">学习的态度</h2>
+<p>其实学习最关键的还是实际的应用。</p>
 <p>学习即为了解决问题，有明确问题驱动下的学习是极其有效率的。</p>
 <p>但是，问题的深度，难度，都将或多或少的影响着学习的进度和考验着人的意志。通常，事实是，大多数人无疾而终，因为所研究的问题，已经超出了自己的理解范围，太过于偏离自己的知识领域。</p>
 <p>所以说，真正的学习，还应当是 <strong>循序渐进的</strong>，即使是有需求的学习，那也是需要起码的了解，是建立在已有知识基础之上的。</p>
@@ -1363,13 +1398,15 @@
 <p>急躁是因为无法忍受程序执行的低效。</p>
 <p>傲慢是因为容不下错误。</p>
 <hr>
-<h1 id="语言的诞生"><a href="#语言的诞生" class="headerlink" title="语言的诞生"></a>语言的诞生</h1><p>程序设计语言的出现就是为了解决各种各样的问题，而这些问题以现在的语言是无法更合适的处理。</p>
+<h1 id="语言的诞生">语言的诞生</h1>
+<p>程序设计语言的出现就是为了解决各种各样的问题，而这些问题以现在的语言是无法更合适的处理。</p>
 <p>于是乎，语言之于语言，就是目标问题的差异。</p>
 <hr>
-<h1 id="语法的诞生"><a href="#语法的诞生" class="headerlink" title="语法的诞生"></a>语法的诞生</h1><p>语法是程序设计者制定的规则。因语言而异。</p>
+<h1 id="语法的诞生">语法的诞生</h1>
+<p>语法是程序设计者制定的规则。因语言而异。</p>
 <p>比如运算符的优先顺序，计算流程的规定等等。</p>
 <p>对于式子<code>(2+1)*3</code></p>
-<p>书中提到了比较有特点的FORTH语言，书写成：<code>12+3*</code> </p>
+<p>书中提到了比较有特点的FORTH语言，书写成：<code>12+3*</code></p>
 <p>即后缀表达式的形式。利用的是栈来实现。</p>
 <p>而LISP语言则是前缀表达式：<code>*+123</code></p>
 <p>从语法树的角度来看，连着实际上就是对于相同的树结构进行了不同的遍历方式。</p>
@@ -1382,21 +1419,26 @@
 <p>但是因为不存在任何解析矛盾的语法体系的设计是十分困难的，又要不断地融入新语法时又要避免与现有的发生冲突，这样更难，正是因此，现代程序设计语言中仍然保留着不少别扭复杂的编写规则。</p>
 </blockquote>
 <hr>
-<h1 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h1><p>源自结构化程序设计的诞生。</p>
+<h1 id="流程控制">流程控制</h1>
+<p>源自结构化程序设计的诞生。</p>
 <p>他们的功能原本都可以借助goto来实现。</p>
-<h2 id="if…-amp-if…else…"><a href="#if…-amp-if…else…" class="headerlink" title="if… &amp; if…else…"></a>if… &amp; if…else…</h2><p>很早以前存在满足条件后跳的命令。</p>
+<h2 id="if...-if...else...">if... &amp; if...else...</h2>
+<p>很早以前存在满足条件后跳的命令。</p>
 <blockquote>
 <p>1949年发明的EDSAC就有“特定内存值大于零时跳转”和“特定内存值为负时跳转”这两条命令。</p>
 </blockquote>
 <p>这使得本来要表达 <em>如果满足条件就执行某事</em>的逻辑，不得不变成了 <em>若是满足条件则跳转到某处执行某事</em>。</p>
 <p>而导入if语句则使得逻辑更为清楚，理解更为直观。</p>
-<h2 id="while…-amp-break"><a href="#while…-amp-break" class="headerlink" title="while… &amp; break"></a>while… &amp; break</h2><p>主要是用来做那些只要有goto语句就能做的事。带来的附加值是程序的易读性和易写性。</p>
-<h2 id="for…"><a href="#for…" class="headerlink" title="for…"></a>for…</h2><p>让数值渐增的while更加简洁。for主要通过循环次数来控制循环操作。</p>
+<h2 id="while...-break">while... &amp; break</h2>
+<p>主要是用来做那些只要有goto语句就能做的事。带来的附加值是程序的易读性和易写性。</p>
+<h2 id="for...">for...</h2>
+<p>让数值渐增的while更加简洁。for主要通过循环次数来控制循环操作。</p>
 <p>升级版的foreach，则根据处理的对象来控制循环操作。</p>
 <p>但是并非所有的for语句都可以写成foreach。</p>
 <p><strong>这些流程控制语句主要是为了实现程序的 <em>简洁易懂</em></strong></p>
 <hr>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p>随着程序的庞大，把握全局愈发困难，同时有可能多次要用到相同的操作。函数因此诞生。把一整块代码切分出来而命名。同时伴随着函数的出现，也产生了递归调用这一编程技巧，非常适合处理嵌套形式的数据。</p>
+<h1 id="函数">函数</h1>
+<p>随着程序的庞大，把握全局愈发困难，同时有可能多次要用到相同的操作。函数因此诞生。把一整块代码切分出来而命名。同时伴随着函数的出现，也产生了递归调用这一编程技巧，非常适合处理嵌套形式的数据。</p>
 <p>函数的使用使得程序便于理解和重复使用。</p>
 <p>从冗长的程序中切分出反复使用的代码将其封装成一个整体。</p>
 <p><em>遇到问题：一个程序中有几处执行相同的代码若是封装，那怎么返回到原来的地方？</em></p>
@@ -1412,18 +1454,20 @@
 <p><em>关于递归调用</em></p>
 <p>关键在于如何退出。</p>
 <hr>
-<h1 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h1><p>主要有两种方法：</p>
-<ol>
+<h1 id="错误处理">错误处理</h1>
+<p>主要有两种方法：</p>
+<ol type="1">
 <li>使用返回值</li>
 <li>使用异常</li>
 </ol>
-<h2 id="使用返回值"><a href="#使用返回值" class="headerlink" title="使用返回值"></a>使用返回值</h2><p>通过判断错误的返回值来判断错误并进行相应的处理。</p>
+<h2 id="使用返回值">使用返回值</h2>
+<p>通过判断错误的返回值来判断错误并进行相应的处理。</p>
 <p>传递错误信息既可以使用返回值，也可以使用事先定义好的全局变量，还可以传递引用形参等方法。</p>
 <p>这种方法可以在C语言中见到。</p>
-<p><em>遇到问题：</em> </p>
+<p><em>遇到问题：</em></p>
 <ul>
-<li>遗漏错误——忘记做返回值检查；出错条件难以确保完全…</li>
-<li>错误处理导致代码可读性下降——为了避免错误导致出现大量错误处理代码，影响可读性…</li>
+<li>遗漏错误——忘记做返回值检查；出错条件难以确保完全...</li>
+<li>错误处理导致代码可读性下降——为了避免错误导致出现大量错误处理代码，影响可读性...</li>
 </ul>
 <p>对于第二个问题，可以在错误处理相同时，使用goto进行集中处理。从代码形式来看，实现了代码和错误处理的分离。</p>
 <blockquote>
@@ -1431,14 +1475,16 @@
 </blockquote>
 <p>小栗子：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!fun(A)) <span class="keyword">goto</span> ERROR;</span><br><span class="line">    <span class="keyword">if</span>(!fun(B)) <span class="keyword">goto</span> ERROR;</span><br><span class="line">    <span class="keyword">if</span>(!fun(C)) <span class="keyword">goto</span> ERROR;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">ERROR:</span><br><span class="line">    <span class="comment">/* 失败处理 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="使用异常（异常处理），出错后跳转"><a href="#使用异常（异常处理），出错后跳转" class="headerlink" title="使用异常（异常处理），出错后跳转"></a>使用异常（异常处理），出错后跳转</h2><p>调用函数前设定好错误处理的代码，错误发生时能跳转至相应的错误处理代码。</p>
+<h2 id="使用异常异常处理出错后跳转">使用异常（异常处理），出错后跳转</h2>
+<p>调用函数前设定好错误处理的代码，错误发生时能跳转至相应的错误处理代码。</p>
 <p>C之前出现过事先定义好错误发生时跳转的位置，后来演变为了现在的异常处理。</p>
 <p>计算机UNIVACI：在计算中出现溢出时，它会执行000处编写的命令。（即 <em>中断(interrupt)</em>，键盘按键按下，CPU可以接收信号，传达信息的就是中断）</p>
 <p>语言COBOL：只有两种针对性的错误处理。见下例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">READ &lt;文件名&gt; AT END &lt;错误处理语句&gt;</span><br><span class="line">ADD &lt;函数名&gt; ON SIZE ERROR &lt;错误处理语句&gt;</span><br></pre></td></tr></table></figure>
 <p>语言PL/I: 引入ON语句。可以自定义增加新的错误类型，也可以主动触发新定义的错误类型。</p>
 <p>相较于PL/I的错误处理，现代的JAVA，C++，PYTHON语言的方式有所不同，前者先定义好出错的处理操作，在编写可能出错的代码，而后者则是先用<code>try{...}</code>编写可能出错的代码，在编写出错时的处理。</p>
-<h3 id="一些历史"><a href="#一些历史" class="headerlink" title="一些历史"></a>一些历史</h3><p>这样的设计的改变源自当初John Goodenough的论文中所提出的方法。</p>
+<h3 id="一些历史">一些历史</h3>
+<p>这样的设计的改变源自当初John Goodenough的论文中所提出的方法。</p>
 <blockquote>
 <p>命令有可能会抛出异常，而程序员有可能忘记这种可能性，也可能在不正确的地方编写异常处理或者编写不正确类型的异常处理。为使编译器能够对程序员的错误发出警告，减少这种可能性，需要做到两点。一是明确声明命令可能抛出何种异常，二是需要有将可能出错的操作括起来的语句结构。</p>
 </blockquote>
@@ -1446,12 +1492,15 @@
 <p>1977年语言CLU11引入了异常处理的机制，追加了置于命令后面的错误处理语句结构<code>except</code>。CLU语言从最初就具有用<code>begin…end</code>将代码括成块状的功能，这一功能和<code>except</code>相结合，就实现了将可能出错的操作括起来再补充错误处理的代码编写方式。</p>
 <p>1983年C++诞生。针对异常处理的语句结构问题从1984年到1989年间经历了多次讨论，C++语言最终确认追加一种语句结构，把关键字<code>try</code>放在那些被括起来的可能出错代码的前面，把关键字<code>catch</code>放在捕捉并处理错误的代码块前面。<em>按照C++语言设计者斯特劳斯特卢普（Bjarne Stroustrup）的说法，<code>try</code>只是一个为了方便理解的修饰符。</em> 另外还使用<code>throw</code>这一关键字作为触发异常的命令，是因为更易理解的<code>raise</code>和<code>singal</code>两个关键字已经在标准库作为函数名字占用了。</p>
 <p>1993年发布的Windows NT 3.1在操作系统和C语言编译器导入了结构化异常处理（Structured Exception Handling，SEH）的概念。结构化异常处理中，除了将可能出错的代码括起来的<code>__try</code>和将错误处理的代码括起来的<code>__except</code>之外，还有将即使出错也要执行的代码括起来的<code>__finally</code>。</p>
-<h3 id="为什么要引入finally"><a href="#为什么要引入finally" class="headerlink" title="为什么要引入finally"></a>为什么要引入finally</h3><p>程序在意料之外结束时，也可以正常的释放锁定的内存和文件等资源，无遗漏的执行成对操作。对于错误处理，要能够不使用返回值检查和<code>goto</code>语句，简洁的实现。</p>
+<h3 id="为什么要引入finally">为什么要引入finally</h3>
+<p>程序在意料之外结束时，也可以正常的释放锁定的内存和文件等资源，无遗漏的执行成对操作。对于错误处理，要能够不使用返回值检查和<code>goto</code>语句，简洁的实现。</p>
 <p>后来Java，Python，Ruby等语言都使用了<code>finally</code>。</p>
 <p>C++语言中没有<code>finally</code>。C++语言中使用了一种名叫RAII（Resource Acquisition Is Initialization，资源获取即初始化）的技术。比如，在操作打开了就要关闭的文件对象时，定义来操作该对象的类，用构造函数打开，用析构函数关闭。函数结束时，针对函数局部变量，程序可以自动调用析构函数。</p>
-<p>2001年出现的D语言以改良C++语言为目标，反对 <em>RAII是优雅的</em>这一意见。<strong>打开了就要关闭这样紧密关联的操作，反映在代码上时，如果能放在相近的位置就容易理解多了。</strong>基于这一考虑，D语言中引入了作用域守护（scope guard）的概念。通过使用作用域守护，可以事先定义从某一 <em>作用域</em>（如函数）跳出时执行的操作。 </p>
-<h3 id="何时抛出异常"><a href="#何时抛出异常" class="headerlink" title="何时抛出异常"></a>何时抛出异常</h3><p>发生错误应该停止操作立刻报告，这一设计思想被称为错误优先（fail first）。</p>
-<h3 id="异常传递"><a href="#异常传递" class="headerlink" title="异常传递"></a>异常传递</h3><p>包括Java在内的很多现代语言的异常处理机制中，异常可以传递到调用方。这一设计有一个很大的问题。那就是，即使看到了函数f的代码也不知道函数f可能会抛出什么异常。有可能是函数f调用的另外的函数g中抛出的异常传递过来的，也有可能是函数g调用的函数h抛出的异常。也就是说，如果不看见函数f调用的所有的函数代码，就无从得知函数f抛出何种异常。万一没有察觉到抛出某种异常的可能性，程序就有可能异常终止。</p>
+<p>2001年出现的D语言以改良C++语言为目标，反对 <em>RAII是优雅的</em>这一意见。<strong>打开了就要关闭这样紧密关联的操作，反映在代码上时，如果能放在相近的位置就容易理解多了。</strong>基于这一考虑，D语言中引入了作用域守护（scope guard）的概念。通过使用作用域守护，可以事先定义从某一 <em>作用域</em>（如函数）跳出时执行的操作。</p>
+<h3 id="何时抛出异常">何时抛出异常</h3>
+<p>发生错误应该停止操作立刻报告，这一设计思想被称为错误优先（fail first）。</p>
+<h3 id="异常传递">异常传递</h3>
+<p>包括Java在内的很多现代语言的异常处理机制中，异常可以传递到调用方。这一设计有一个很大的问题。那就是，即使看到了函数f的代码也不知道函数f可能会抛出什么异常。有可能是函数f调用的另外的函数g中抛出的异常传递过来的，也有可能是函数g调用的函数h抛出的异常。也就是说，如果不看见函数f调用的所有的函数代码，就无从得知函数f抛出何种异常。万一没有察觉到抛出某种异常的可能性，程序就有可能异常终止。</p>
 <p>Goodenough主张为了避免这一问题，需要明确地声明可能抛出的异常。Java语言就采用了这一方针。</p>
 <p>其他语言中所谓的异常，Java语言中的<code>throw</code>语句也能抛出，并进一步分为三类：</p>
 <ul>
@@ -1462,7 +1511,8 @@
 <p>这里的其他异常叫做 <strong>检查型异常</strong>，如果在方法之外抛出，就需要在定义方法时声明，<code>throws</code>就是为这个目的准备的。</p>
 <p>实现异常处理的小栗子：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;</span><br><span class="line">    <span class="comment">// shippai跑出MyException异常</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">shippai</span><span class="params">()</span> <span class="keyword">throws</span> MyException </span>&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> MyException();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 1. 使用shippai方法声明`throws MyException`</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span> <span class="keyword">throws</span> MyException </span>&#123;</span><br><span class="line">        shippai();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 2. 使用catch捕获MyException异常，进行错误处理</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">bar</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            shippai();</span><br><span class="line">        &#125;<span class="keyword">catch</span>(MyException e) &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyException</span> <span class="keyword">extends</span> <span class="title">Exception</span>()</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="异常处理的问题"><a href="#异常处理的问题" class="headerlink" title="异常处理的问题"></a>异常处理的问题</h3><p>一个是当函数有不只一个出口时，必须成对处理的操作很难正确地成对处理。另一个是即便看了代码也不知道函数将抛出何种异常。Java语言的开发者为了解决第二个问题导入了检查型异常，但是这种方法并不太被接受。C#语言的开发者一方面承认检查型异常的优势，另一方面希望有更好的方法出现。</p>
+<h3 id="异常处理的问题">异常处理的问题</h3>
+<p>一个是当函数有不只一个出口时，必须成对处理的操作很难正确地成对处理。另一个是即便看了代码也不知道函数将抛出何种异常。Java语言的开发者为了解决第二个问题导入了检查型异常，但是这种方法并不太被接受。C#语言的开发者一方面承认检查型异常的优势，另一方面希望有更好的方法出现。</p>
 <p>检查型异常的问题：可以说检查型异常是一种非常好的机制。但是这种机制并没有很好地普及到其他语言中。因为它太麻烦。一旦<code>throws</code>或<code>try/catch</code>中异常的数目增多，或者某一方法需要追加一种异常，就不得不修改调用了该方法的所有方法，特别麻烦。</p>
 
           
@@ -1637,20 +1687,21 @@
           
             <p><a href="https://news.cnblogs.com/n/153825/" target="_blank" rel="noopener">王垠：如何掌握程序语言</a></p>
 <p>《代码之髓》这本书里提出了三种学习语言的方法—— <em>如何高效的学习语言？</em></p>
-<ol>
+<ol type="1">
 <li>在比较中学习</li>
 <li>在历史中学习</li>
 <li>在实践中学习</li>
 </ol>
-<h1 id="在比较中学习"><a href="#在比较中学习" class="headerlink" title="在比较中学习"></a>在比较中学习</h1><p>通过比较多种语言，总结出某种语言的独有特点，以及多种语言的共有特点。</p>
+<h1 id="在比较中学习">在比较中学习</h1>
+<p>通过比较多种语言，总结出某种语言的独有特点，以及多种语言的共有特点。</p>
 <p>借用王垠的一些话——</p>
 <blockquote>
-<p>重视语言特性，而不是语言。<br>何一种“语言”，都是各种“语言特性”的组合。<br>每一种语言里面必然有一套“通用”的特性。比如变量，函数，整数和浮点数运算，等等。这些是每个通用程序语言里面都必须有的，一个都不能少。你只要通过“某种语言”学会了这些特性，掌握这些特性的根本概念，就能随时把这些知识应用到任何其它语言。<br>掌握了通用的语言特性，剩下的就只剩某些语言“特有”的特性了。研究语言的人都知道，要设计出新的，好的，无害的特性，是非常困难的。所以一般说来，一种好的语言，它所特有的新特性，终究不会超过一两种。如果有个语言号称自己有超过 5 种新特性，那你就得小心了，因为它们带来的和可能不是优势，而是灾难！</p>
+<p>重视语言特性，而不是语言。 何一种“语言”，都是各种“语言特性”的组合。 每一种语言里面必然有一套“通用”的特性。比如变量，函数，整数和浮点数运算，等等。这些是每个通用程序语言里面都必须有的，一个都不能少。你只要通过“某种语言”学会了这些特性，掌握这些特性的根本概念，就能随时把这些知识应用到任何其它语言。 掌握了通用的语言特性，剩下的就只剩某些语言“特有”的特性了。研究语言的人都知道，要设计出新的，好的，无害的特性，是非常困难的。所以一般说来，一种好的语言，它所特有的新特性，终究不会超过一两种。如果有个语言号称自己有超过 5 种新特性，那你就得小心了，因为它们带来的和可能不是优势，而是灾难！</p>
 </blockquote>
 <p>各种语言之中，都有着共性，这是基本，而个性只是部分点。</p>
 <p>在比较中学习，可以帮助我们更清楚地意识到：</p>
 <p>哪些点是共性——就是上面王垠所谓的“语言特性”，因为这才是语言的基本。掌握了这些共性，对于我们的语言学习有着极大的帮助。这通常确定着一门语言的基本架构方式，大致的代码雏形，以及基本流程。这会告诉我们如何去站立，如何去行走。</p>
-<p>哪些点是个性——这个是需要我们深入使用时需要考虑的点。因为一般这些东西，都是一些在当前特定的条件下的，“如此做更为方便”的方法。有时候这些东西可能不是必要的考量，但是掌握他们，对于此门语言使用往往会起到提升整体质量的作用。甚至促使我们对于解决适当的问题有着更为灵活多选的方式。这会告诉我们如何在现在的路上奔跑，跳跃。因为这时候更加关注了这条路上的细节，哪里有坑，哪里有捷径…</p>
+<p>哪些点是个性——这个是需要我们深入使用时需要考虑的点。因为一般这些东西，都是一些在当前特定的条件下的，“如此做更为方便”的方法。有时候这些东西可能不是必要的考量，但是掌握他们，对于此门语言使用往往会起到提升整体质量的作用。甚至促使我们对于解决适当的问题有着更为灵活多选的方式。这会告诉我们如何在现在的路上奔跑，跳跃。因为这时候更加关注了这条路上的细节，哪里有坑，哪里有捷径...</p>
 <blockquote>
 <p>因为掌握了语言特性的人都知道，自己需要的特性，在任何语言里面一定有对应的表达方式。</p>
 </blockquote>
@@ -1662,11 +1713,13 @@
 </blockquote>
 <p>对于掌握编程的核心概念来说，这些其实都是次要的。</p>
 <p>总而言之，通过对比学习，你会更容易发现真正的语言特性究竟是什么。学习编程到底要学习什么。</p>
-<h1 id="在历史中学习"><a href="#在历史中学习" class="headerlink" title="在历史中学习"></a>在历史中学习</h1><p>通过追溯语言的发展历史，了解语言是如何产生，变化，消失的，探寻语言发展演变的轨迹。</p>
+<h1 id="在历史中学习">在历史中学习</h1>
+<p>通过追溯语言的发展历史，了解语言是如何产生，变化，消失的，探寻语言发展演变的轨迹。</p>
 <p>有时候，我们在学习中，对于一些功能的学习，往往会不明所以，这其实是因为，对于这种功能，你自己从内在其实并没有觉得理所当然，就像是为什么要有类这一类的问题其实潜在的就在你的心头萦绕着，这使得你的学习，会变得茫然，就像我们最初学习线性代数，上来就整一堆定义，先把你整晕，再来一堆定理，往往不明所以，直接就迷失了，到头来脑袋空空，真正的实际应用中，什么也变不出来。所以我到现在对于线性代数还是充满了敬畏。</p>
 <p>在历史中学习，能帮助我们更加清晰地了解那些被掩埋的细节。回看语言设计者为了解决何种问题而创造出这样一种语言，阅读其发展变迁的历史，那些功能的缘由就会变得清晰，你也就会更加认同其中所蕴含的现实意义。</p>
 <p>而从历史中学习，也是有助于我们更容易了解到语言的特性，那些非特性的部分为什么被创造出来，是为了解决一种什么样的具体问题。这些都有助于加深我们对于语言的理解。</p>
-<h1 id="在实践中学习"><a href="#在实践中学习" class="headerlink" title="在实践中学习"></a>在实践中学习</h1><p>亲自进行程序设计，边实践边思考如何编程，才能深入了解设计者的意图，同时也能发现自己原先理解的不到位之处。</p>
+<h1 id="在实践中学习">在实践中学习</h1>
+<p>亲自进行程序设计，边实践边思考如何编程，才能深入了解设计者的意图，同时也能发现自己原先理解的不到位之处。</p>
 <p>这是这行的至上真理。</p>
 <hr>
 <p><strong>三种学习的方式，实际上是为了满足我们学习语言的三种情绪：希望快速掌握的迫切，对于未知事物的求真以及对于自我认知的测验</strong></p>
@@ -1849,12 +1902,14 @@
 <p>初级阶段使用文本编辑器即可，当然，我正处在这个阶段。</p>
 <p>此时用来编译运行JAVA文件常用的两条命令是</p>
 <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">javac -encoding utf-<span class="number">8</span> filename.java</span><br><span class="line">java filename</span><br></pre></td></tr></table></figure>
-<p>以上命令就是先使用<code>javac</code>在java文件当前目录下，编译生成字节码文件<code>filename.class</code>，之后再用<code>java</code>解释执行成特定平台的机器码，输出。<br>这里指定了编码格式，因为java默认文件为unicode编码，但是文件中有中文，会有错误提示。</p>
+<p>以上命令就是先使用<code>javac</code>在java文件当前目录下，编译生成字节码文件<code>filename.class</code>，之后再用<code>java</code>解释执行成特定平台的机器码，输出。 这里指定了编码格式，因为java默认文件为unicode编码，但是文件中有中文，会有错误提示。</p>
 <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">错误：编码GBK的不可映射字符</span><br></pre></td></tr></table></figure>
 <p>若是你没有这个问题，则可以忽略那个<code>-encoding utf-8</code></p>
 <hr>
-<h2 id="java源文件的命名"><a href="#java源文件的命名" class="headerlink" title="java源文件的命名"></a>java源文件的命名</h2><p>和c，c++，python不同，java要求，源文件后缀名为<code>.java</code>，文件名字一般要求和文件中的 <em>public class</em> 同名，若是没有定义，那就没有限制了。这也可以看出，<strong>一个java源文件中只能最多有一个 <em>public class</em></strong>。通常建议一个java源文件只定义一个类，让java的源文件主文件名与该源文件中定义的 <em>public class</em>同名。</p>
-<h2 id="java程序的结构"><a href="#java程序的结构" class="headerlink" title="java程序的结构"></a>java程序的结构</h2><p><em>java程序必须以类的形式存在</em>，类是java程序的最小单位，java不允许除类外的可执行语句，方法等成分独立存在。他们必须放在类定义里。</p>
+<h2 id="java源文件的命名">java源文件的命名</h2>
+<p>和c，c++，python不同，java要求，源文件后缀名为<code>.java</code>，文件名字一般要求和文件中的 <em>public class</em> 同名，若是没有定义，那就没有限制了。这也可以看出，<strong>一个java源文件中只能最多有一个 <em>public class</em></strong>。通常建议一个java源文件只定义一个类，让java的源文件主文件名与该源文件中定义的 <em>public class</em>同名。</p>
+<h2 id="java程序的结构">java程序的结构</h2>
+<p><em>java程序必须以类的形式存在</em>，类是java程序的最小单位，java不允许除类外的可执行语句，方法等成分独立存在。他们必须放在类定义里。</p>
 <p>例子：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello World"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>观察上例，与文件同名的 <em>public class</em> <code>HelloWorld</code>，内部包含一个<code>main()</code>方法，使用<code>System.out.println(&quot;Hello World&quot;);</code>实现对于文本的输出，类似的有个<code>System.out.print(&quot;Hello World&quot;);</code>，差别就在于前者会换行。</p>
@@ -1863,7 +1918,8 @@
 <p>可见下例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">jump</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"正在执行jump方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.jump();</span><br><span class="line">        System.out.println(<span class="string">"正在执行run方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DogTest</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Dog dog = <span class="keyword">new</span> Dog();</span><br><span class="line">        dog.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>因为只允许有一个<code>public class</code>，故而其他的就是普通的类的形式。</p>
-<h2 id="java中的流程控制语句"><a href="#java中的流程控制语句" class="headerlink" title="java中的流程控制语句"></a>java中的流程控制语句</h2><pre><code>if (...){
+<h2 id="java中的流程控制语句">java中的流程控制语句</h2>
+<pre><code>if (...){
     ...
 }
 else if{
@@ -1894,12 +1950,12 @@ do{
 
 for (...; ...; ...){
     ...
-}
-</code></pre><p>Java中出现了一种迭代式的for的用法。python和C++都有类似的语法结构。</p>
+}</code></pre>
+<p>Java中出现了一种迭代式的for的用法。python和C++都有类似的语法结构。</p>
 <pre><code>for ( type variableName : array | collection){
     // variableName 自动迭代访问每个元素
-}
-</code></pre><p>例如：</p>
+}</code></pre>
+<p>例如：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ForEachTest</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        String[] books = &#123;<span class="string">"轻量级"</span>,</span><br><span class="line">                        <span class="string">"fengkuang"</span>,</span><br><span class="line">                        <span class="string">"jiangyi"</span>&#125;;</span><br><span class="line">        <span class="comment">// 使用foreach迭代遍历。</span></span><br><span class="line">        <span class="keyword">for</span>(String book : books)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(book);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           
@@ -2074,7 +2130,7 @@ for (...; ...; ...){
           
             <p><strong>问题：</strong></p>
 <blockquote>
-<p>请编写算法实现：<br>(1) InsertAtHead()：从键盘读入正整数n,再读入n个升序整数，用头插法建立带表头结点的降序单链表La；<br>(2) InsertAtTail()：从键盘读入正整数m,再读入m个升序整数，用尾插法建立带表头结点的升序单链表Lb；<br>(3) PrintList()：分别输出显示有序单链表La和Lb;<br>(4) ReverseList()：将降序单链表La就地逆置成升序；<br>(5) MergeList()：将两个升序单链表La和Lb合并成升序单链表Lc并输出显示；<br>(6) DelOdd()：将有序单链表Lc中数据域值为奇数的所有元素删除，然后输出显示。</p>
+<p>请编写算法实现： (1) InsertAtHead()：从键盘读入正整数n,再读入n个升序整数，用头插法建立带表头结点的降序单链表La； (2) InsertAtTail()：从键盘读入正整数m,再读入m个升序整数，用尾插法建立带表头结点的升序单链表Lb； (3) PrintList()：分别输出显示有序单链表La和Lb; (4) ReverseList()：将降序单链表La就地逆置成升序； (5) MergeList()：将两个升序单链表La和Lb合并成升序单链表Lc并输出显示； (6) DelOdd()：将有序单链表Lc中数据域值为奇数的所有元素删除，然后输出显示。</p>
 </blockquote>
 <p><strong>遇到的比较严重的问题：</strong></p>
 <p><em>for条件部分使用变量</em></p>
@@ -2260,13 +2316,13 @@ for (...; ...; ...){
 <p>约瑟夫环问题：</p>
 <p>问题描述：设有编号为1，2，3……n的n个人顺时针方向围坐一圈，每人有一密码（正整数）。开始时给出一报数上限m，从编号为1的人开始报数，报m的人出列；以后将出列者的密码作为新的m，从顺时针方向紧挨着他的下一个人开始报数……直至所有人出列。试编算法，求出出列顺序。</p>
 <p>要求：</p>
-<ol>
+<ol type="1">
 <li>用不带头结点的单向循环链表实现</li>
 <li>从键盘输入n，m</li>
 <li>各人的密码由计算机随机产生(1~10的正整数，也可以自己指定)</li>
 </ol>
 <p>测试数据：</p>
-<p>假设m的初值为6；n=7。7个人的密码依次是：3,1,7,2,4,8,4  则出列的顺序为:  6,1,4,7,2,3,5</p>
+<p>假设m的初值为6；n=7。7个人的密码依次是：3,1,7,2,4,8,4 则出列的顺序为: 6,1,4,7,2,3,5</p>
 </blockquote>
 <p><strong>1.0 版本</strong></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> NUM 7 <span class="comment">//人的总个数</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> members[<span class="number">1</span> + NUM] = &#123; <span class="number">0</span>, <span class="number">3</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">22</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">15</span> &#125;;<span class="comment">//间隔多少个人</span></span><br><span class="line">    <span class="comment">//将各个成员的存在状态用一个仅有0和1的int数组表述</span></span><br><span class="line">    <span class="comment">//1存在；0退出</span></span><br><span class="line">    <span class="keyword">int</span> <span class="keyword">bool</span>[<span class="number">1</span> + NUM];<span class="comment">//存在状态数组</span></span><br><span class="line">    <span class="keyword">int</span> *p = <span class="keyword">bool</span>;<span class="comment">//循环指针</span></span><br><span class="line">    <span class="keyword">int</span> i_1;<span class="comment">//循环指数</span></span><br><span class="line">    <span class="keyword">for</span> (i_1 = <span class="number">1</span>; i_1 &lt;= NUM; i_1++)<span class="comment">//初始化</span></span><br><span class="line">        *(p + i_1) = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//给定第一步进数</span></span><br><span class="line">    <span class="keyword">int</span> init_step = <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//先将特殊的第一个处理掉，后面的有规律</span></span><br><span class="line">    <span class="keyword">int</span> i_2;<span class="comment">//循环指数</span></span><br><span class="line">    <span class="keyword">if</span> (init_step % NUM != <span class="number">0</span>)<span class="comment">//有余数</span></span><br><span class="line">    &#123;</span><br><span class="line">        *(p + init_step % NUM) = <span class="number">0</span>;</span><br><span class="line">        i_2 = init_step % NUM;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span><span class="comment">//无余数</span></span><br><span class="line">    &#123;</span><br><span class="line">        *(p + NUM) = <span class="number">0</span>;</span><br><span class="line">        i_2 = NUM;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"退出：%d \n"</span>, i_2);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//处理后面的数据</span></span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">0</span>;      <span class="comment">//j统计经过的未退出的人数，至上一个退出人的数据后，归零</span></span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">1</span>;  <span class="comment">//统计退出的人数</span></span><br><span class="line">    <span class="keyword">int</span> death;      <span class="comment">//退出者的序号</span></span><br><span class="line">    death = i_2;</span><br><span class="line">    <span class="keyword">for</span> (;; ++i_2)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (*(p + i_2) == <span class="number">1</span>)<span class="comment">//此人还活着</span></span><br><span class="line">        &#123;</span><br><span class="line">            j++;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (j == members[death])</span><br><span class="line">            &#123;</span><br><span class="line">                *(p + i_2) = <span class="number">0</span>;</span><br><span class="line">                death = i_2;</span><br><span class="line">                j = <span class="number">0</span>;</span><br><span class="line">                count++;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"退出：%d \n"</span>, i_2);</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (count == NUM)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"最后退出：%d \n"</span>, i_2);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (i_2 == NUM)</span><br><span class="line">            i_2 = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

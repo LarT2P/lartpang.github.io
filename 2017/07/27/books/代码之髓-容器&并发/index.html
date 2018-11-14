@@ -125,13 +125,13 @@
 
 
 
-  <meta name="description" content="容器单个地址存放单个数据，但是如果有多个数据，而这些数据互相关联，则我们更希望的是将他们能够更好的在内存中组织在一起。于是便出现了容器的概念。 在不同的语言中，容器的名称不同，性质各异。比如，C 语言中的数组、LISP 语言中的列表、Python 语言中的元组以及 Ruby 语言中的数组。即使是名字相同，在不同语言中表达的意思也可能不一样。比如，LISP 语言和 Haskell 语言中的列表，与">
+  <meta name="description" content="容器 单个地址存放单个数据，但是如果有多个数据，而这些数据互相关联，则我们更希望的是将他们能够更好的在内存中组织在一起。于是便出现了容器的概念。 在不同的语言中，容器的名称不同，性质各异。比如，C 语言中的数组、LISP 语言中的列表、Python 语言中的元组以及 Ruby 语言中的数组。即使是名字相同，在不同语言中表达的意思也可能不一样。比如，LISP 语言和 Haskell 语言中的列表">
 <meta name="keywords" content="学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="代码之髓读后感——容器&amp;并发">
 <meta property="og:url" content="https://plart.pw/2017/07/27/books/代码之髓-容器&并发/index.html">
 <meta property="og:site_name" content="失乐园">
-<meta property="og:description" content="容器单个地址存放单个数据，但是如果有多个数据，而这些数据互相关联，则我们更希望的是将他们能够更好的在内存中组织在一起。于是便出现了容器的概念。 在不同的语言中，容器的名称不同，性质各异。比如，C 语言中的数组、LISP 语言中的列表、Python 语言中的元组以及 Ruby 语言中的数组。即使是名字相同，在不同语言中表达的意思也可能不一样。比如，LISP 语言和 Haskell 语言中的列表，与">
+<meta property="og:description" content="容器 单个地址存放单个数据，但是如果有多个数据，而这些数据互相关联，则我们更希望的是将他们能够更好的在内存中组织在一起。于是便出现了容器的概念。 在不同的语言中，容器的名称不同，性质各异。比如，C 语言中的数组、LISP 语言中的列表、Python 语言中的元组以及 Ruby 语言中的数组。即使是名字相同，在不同语言中表达的意思也可能不一样。比如，LISP 语言和 Haskell 语言中的列表">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00058.gif">
 <meta property="og:image" content="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00060.jpeg">
@@ -139,7 +139,7 @@
 <meta property="og:updated_time" content="2018-07-13T12:44:34.035Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="代码之髓读后感——容器&amp;并发">
-<meta name="twitter:description" content="容器单个地址存放单个数据，但是如果有多个数据，而这些数据互相关联，则我们更希望的是将他们能够更好的在内存中组织在一起。于是便出现了容器的概念。 在不同的语言中，容器的名称不同，性质各异。比如，C 语言中的数组、LISP 语言中的列表、Python 语言中的元组以及 Ruby 语言中的数组。即使是名字相同，在不同语言中表达的意思也可能不一样。比如，LISP 语言和 Haskell 语言中的列表，与">
+<meta name="twitter:description" content="容器 单个地址存放单个数据，但是如果有多个数据，而这些数据互相关联，则我们更希望的是将他们能够更好的在内存中组织在一起。于是便出现了容器的概念。 在不同的语言中，容器的名称不同，性质各异。比如，C 语言中的数组、LISP 语言中的列表、Python 语言中的元组以及 Ruby 语言中的数组。即使是名字相同，在不同语言中表达的意思也可能不一样。比如，LISP 语言和 Haskell 语言中的列表">
 <meta name="twitter:image" content="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00058.gif">
 
 
@@ -536,7 +536,8 @@
       
 
       
-        <h1 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h1><p>单个地址存放单个数据，但是如果有多个数据，而这些数据互相关联，则我们更希望的是将他们能够更好的在内存中组织在一起。于是便出现了容器的概念。</p>
+        <h1 id="容器">容器</h1>
+<p>单个地址存放单个数据，但是如果有多个数据，而这些数据互相关联，则我们更希望的是将他们能够更好的在内存中组织在一起。于是便出现了容器的概念。</p>
 <p>在不同的语言中，容器的名称不同，性质各异。比如，C 语言中的数组、LISP 语言中的列表、Python 语言中的元组以及 Ruby 语言中的数组。即使是名字相同，在不同语言中表达的意思也可能不一样。比如，LISP 语言和 Haskell 语言中的列表，与 Java 语言和 Python 语言中的列表在内部构造上完全不同。</p>
 <p>又由于<strong>所针对的问题不同</strong>（还是这句话，因为变成就是用来解决现实问题的一个工具），所以出现了各种样的容器——数组，链表，字典，散列，树等等。</p>
 <p>各种容器差别主要在于执行特定操作的优势与劣势。此时一般使用用大O表示法计量的时间复杂度栏衡量。</p>
@@ -545,7 +546,8 @@
 <p>Python 语言进一步采取了更为激进的设计方法。源代码中只要是使用了 ASCII 码以外的字符，但没有使用魔术注释符时，都将导致语法错误，就会带来以下错误。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SyntaxError: Non-ASCII character &apos;\xe6&apos; in file tmp.py on line 1, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details</span><br></pre></td></tr></table></figure>
 <p>直到后来出现了Unicode编码。字符集得到了统一，但为适应不同的需求，字符的编码方式还有很多种，如 UTF-8 和 UTF-16 就是其中两种。</p>
-<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><p>字符串就是字符并列的结果，但在不同的语言中，字符串列的表现方式各不相同。</p>
+<h4 id="字符串">字符串</h4>
+<p>字符串就是字符并列的结果，但在不同的语言中，字符串列的表现方式各不相同。</p>
 <p>这里书中介绍了 C、Pascal、Java、Ruby 和 Python 这几种语言中的字符串。这五种语言中，只有 C 语言中的字符串不知道自身的长度。其他语言中的字符串都携带有表现自身长度的整数。可以说 C 语言中的字符串是最为原始的字符串。</p>
 <p><em>那么 C 语言字符串是如何表现字符串本身到何处为止呢？</em></p>
 <p>用 NUL 字符表示字符串的终止。为达到这一目的使用了一种表现字符串终止的特殊字符，这就 NUL 字符 40。NUL 字符是一个与 0 对应的字符，在 C 语言代码中用 \0 表示。（40ASCII 规定将 null character 简称为 NUL，换行（line feed）简称为 LF。为了避免与 C 语言中的 NULL 指针相混淆，本书中用 NUL 字符来表述）</p>
@@ -556,40 +558,43 @@
 <p>(很可能因操作系统、编译器版本或选项的不同，执行结果也有所不同。)</p>
 <p>原因是 str 和 str2 都声明为 char[3]，只分配了 3 字节的空间。abc 这一 3 个字符的字符串要表达它在字符 c 的地方结束的话，需要 3 个字符再加 NUL 字符总共 4 个字符的空间，但是代码中只为其分配了 3 个字节的空间。因此，abc 后面的 NUL 字符以及 def 后面的 g 和 NUL 字符都没能放入而被舍弃了。故而在显示 str2 时，首先显示 def，然后是显示与之相邻的空间里保存的 abc。</p>
 <p>那么最后的 $$ 又是怎么回事呢？这其实是函数开始部分的 int x = 9252；语句在内存中写入的整数 9252. 9252 用 16 进制表示就是 2424，在 ASCII 码中 24 是 $。因此这个整数被解释为有两个 $ 并列的字符串的一部分。与之相邻的内存中是 00，被当作是 NUL 字符，显示到此终止。然而，在某些情况下可能显示出更多的内容，并且有可能会试图读取那些禁止读取的内容，从而造成程序的异常终止。</p>
-<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00058.gif" alt="img"></p>
+<figure>
+<img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00058.gif" alt="img"><figcaption>img</figcaption>
+</figure>
 <p>C 语言风格的字符串处理起来还是比较困难的。实际上，大多数语言都采用了 Pascal 语言风格的字符串。</p>
-<h4 id="Python-3-中引入的设计变更"><a href="#Python-3-中引入的设计变更" class="headerlink" title="Python 3 中引入的设计变更"></a>Python 3 中引入的设计变更</h4><p>在 Python 2.x 版本中，源代码中有 “ あ “ 时，这是一个字节串列的字符串。如果源代码的编码方式为 UTF-8，这就变成一个有 [‘0xe3’, ‘0x81’, ‘0x82’] 三个字节的串列。写成 u” あ “ 时，表示这是一个 Unicode 的字符串，只有一个 Unicode 字符即 [‘0x3042’].</p>
+<h4 id="python-3-中引入的设计变更">Python 3 中引入的设计变更</h4>
+<p>在 Python 2.x 版本中，源代码中有 &quot; あ &quot; 时，这是一个字节串列的字符串。如果源代码的编码方式为 UTF-8，这就变成一个有 ['0xe3', '0x81', '0x82'] 三个字节的串列。写成 u&quot; あ &quot; 时，表示这是一个 Unicode 的字符串，只有一个 Unicode 字符即 ['0x3042'].</p>
 <p>因为同时存在两种类型的字符串，于是会有一个问题：两者混合使用的话会怎样？ Python 2.x 版本规定，在 ASCII 码环境下时字节串列被当作 ASCII 码并且可以自动转换成 Unicode。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> Python <span class="number">2.7</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">u"hello, "</span> + <span class="string">"Alice"</span></span><br><span class="line"><span class="string">u'hello, Alice'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">u"hello, "</span> + <span class="string">"太郎"</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">UnicodeDecodeError: <span class="string">'ascii'</span> codec can<span class="string">'t decode byte 0xe5 in position 0:</span></span><br><span class="line"><span class="string">ordinal not in range(128)</span></span><br></pre></td></tr></table></figure>
 <p>※ Python 2.7 中字节串列只在 ASCII 码时才能和 Unicode 字符串结合</p>
-<p>然而，在字符串内容不同时，这一规定有时正常有时却会导致错误。在只使用了 ASCII 字符的测试案例中可以正常运行，而在使用了 ASCII 字符以外的字符却会有问题。因此，Python 3.x 版本舍弃了 Python 2.x 版本中的兼容性，围绕字符串展开了大的变革。首先，规则发生了变化。默认直接是 Unicode 字符，写成 “b” 时是字节串列，这样 Unicode 其次，在 Unicode 字符串和字节串列结合的时候，不管其想结合的内容如何，都将抛出类型错误。在有需要混合字符串时，规定有必要显式地使用转换代码，这避免了在不知情的情况下进行了转换而导致问题发生的被动局面。</p>
+<p>然而，在字符串内容不同时，这一规定有时正常有时却会导致错误。在只使用了 ASCII 字符的测试案例中可以正常运行，而在使用了 ASCII 字符以外的字符却会有问题。因此，Python 3.x 版本舍弃了 Python 2.x 版本中的兼容性，围绕字符串展开了大的变革。首先，规则发生了变化。默认直接是 Unicode 字符，写成 &quot;b&quot; 时是字节串列，这样 Unicode 其次，在 Unicode 字符串和字节串列结合的时候，不管其想结合的内容如何，都将抛出类型错误。在有需要混合字符串时，规定有必要显式地使用转换代码，这避免了在不知情的情况下进行了转换而导致问题发生的被动局面。</p>
 <ul>
 <li>Python 3.0 中将字节串列结合到 Unicode 字符串时常常发生错误。这时需要显示地将字节串列转换成 Unicode 字符串。</li>
-<li>在转换成 Unicode 字符串时为什么要写 ASCII 呢？也许有人这样问。这里的 decode(“ASCII”) 是指将使用 ASCII 编码方式编码了（encode）的内容做还原处理（decode）。</li>
+<li>在转换成 Unicode 字符串时为什么要写 ASCII 呢？也许有人这样问。这里的 decode(&quot;ASCII&quot;) 是指将使用 ASCII 编码方式编码了（encode）的内容做还原处理（decode）。</li>
 </ul>
-<h4 id="Ruby-1-9-的挑战"><a href="#Ruby-1-9-的挑战" class="headerlink" title="Ruby 1.9 的挑战"></a>Ruby 1.9 的挑战</h4><p>Python、Java 等众多语言都采用了以 Unicode 为基础的字符串，而 Ruby 语言却走出了独树一帜的路线。从 Ruby 1.9 开始，字符串就是 8 个比特，并且采用了追加编码方式信息的设计方法。这种方法的优点是可以直接书写那些不包含在 Unicode 字符集中的字符。</p>
-<h1 id="并发处理"><a href="#并发处理" class="headerlink" title="并发处理"></a>并发处理</h1><p>为了实现便利的并发处理，出现了进程和线程的概念。另外，由于并发处理产生了一些新的问题，为应对这些问题又发明了锁和光纤等概念。</p>
+<h4 id="ruby-1.9-的挑战">Ruby 1.9 的挑战</h4>
+<p>Python、Java 等众多语言都采用了以 Unicode 为基础的字符串，而 Ruby 语言却走出了独树一帜的路线。从 Ruby 1.9 开始，字符串就是 8 个比特，并且采用了追加编码方式信息的设计方法。这种方法的优点是可以直接书写那些不包含在 Unicode 字符集中的字符。</p>
+<h1 id="并发处理">并发处理</h1>
+<p>为了实现便利的并发处理，出现了进程和线程的概念。另外，由于并发处理产生了一些新的问题，为应对这些问题又发明了锁和光纤等概念。</p>
 <blockquote>
 <p>《程序设计语言：概念和结构》一书提到：程序设计语言中的并行性和硬件中的并列性是相互独立的两个概念。并列性是硬件层面的表述，比如英特尔公司于 1999 年发布的 Pentium III 中的可以同时针对四个值进行运算的 SSE 命令，以及 NVIDIA 为了记录因为 GPU 带来的高并列性的处理于 2007 年发布的 CUDA 等。而本书该章节将要讨论的是程序设计语言领域的并行性，具体来说是进程和线程的概念。</p>
 </blockquote>
 <p>对于单核，如何实现并行？答案就是在人们察觉不到的极短间隔内交替进行多项处理。尽管在某一瞬间实际只进行一项处理，但人们会觉得似乎有多项处理在同时进行。不过现在的计算机都实现了在CPU 上装载多个处理线路已经成为了主流，这称为多核。这是并发处理中最为重要的概念。在人们看来，程序是一刻不停地在执行，但实际上它被细分成了小段来执行。</p>
 <p>使用一个处理线路执行多项处理，就像两兄弟一起玩一台单人游戏机一样。如果能在彼此都同意的时间间隔内轮流玩，那么也就相当于两人各自在玩一台单人游戏机。“何时交替”可以分为两种情况。</p>
-<ol>
+<ol type="1">
 <li><p>协作式多任务模式——在合适的节点交替</p>
-<p> 这种方法有一个问题，有可能某个处理一直找不到合适的节点进行任务切换从而持续地进行，导致其他处理无法等到执行的机会。归根结底，采取这种方法是基于一种信任，即所有的处理都会在适当的间隔后进行交替。</p>
-<p> 再看一下那个游戏机的比喻，如果哥哥一直玩下去不给弟弟玩的话，弟弟无论等多久都玩不上了。这时弟弟估计会向妈妈告状，哥哥会被责怪吧。</p>
+<p>这种方法有一个问题，有可能某个处理一直找不到合适的节点进行任务切换从而持续地进行，导致其他处理无法等到执行的机会。归根结底，采取这种方法是基于一种信任，即所有的处理都会在适当的间隔后进行交替。</p>
+<p>再看一下那个游戏机的比喻，如果哥哥一直玩下去不给弟弟玩的话，弟弟无论等多久都玩不上了。这时弟弟估计会向妈妈告状，哥哥会被责怪吧。</p>
 <blockquote>
 <p>Windows 3.1 和 Mac OS 9 都是协作式多任务系统。即使不是有意为之，有时也会遇到程序缺陷进入无限循环，待并发处理的程序完全没有交替，全部程序都变得没有响应了。</p>
-</blockquote>
-</li>
+</blockquote></li>
 <li><p>抢占式多任务模式——一定时间后进行交替</p>
-<p> 这个方法中，有一个比其他程序都具有优势的程序叫<strong>任务管理器</strong>。它在一定时间后强制中断现在正在进行的处理，以便允许其他程序执行。</p>
-<p> 还是再来看一下那个游戏机的类比，这好比妈妈每隔十五分钟命令换人玩。换成计算机，它能在人们察觉不到中断发生的间隔时间（比如 20 毫秒或 0.02 秒）实现交替。</p>
+<p>这个方法中，有一个比其他程序都具有优势的程序叫<strong>任务管理器</strong>。它在一定时间后强制中断现在正在进行的处理，以便允许其他程序执行。</p>
+<p>还是再来看一下那个游戏机的类比，这好比妈妈每隔十五分钟命令换人玩。换成计算机，它能在人们察觉不到中断发生的间隔时间（比如 20 毫秒或 0.02 秒）实现交替。</p>
 <blockquote>
 <p>Windows 95、Mac OS 以后的版本以及 Unix、Linux 等操作系统都是使用这种方法实现的多个程序的并发处理。</p>
 </blockquote>
-<p> 对程序使用者来说，抢占式多任务模式十分方便，但对于程序设计者来讲会出现其他问题。在不知道何时被喝令终止并交替的前提下，要编写一个能稳妥执行的程序是非常困难的。</p>
-</li>
+<p>对程序使用者来说，抢占式多任务模式十分方便，但对于程序设计者来讲会出现其他问题。在不知道何时被喝令终止并交替的前提下，要编写一个能稳妥执行的程序是非常困难的。</p></li>
 </ol>
 <p>如例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">如果存款余额高于10 000元 &#123;</span><br><span class="line">    存款余额减去10 000元、</span><br><span class="line">    取出10 000元的钞票</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -598,7 +603,8 @@
 <blockquote>
 <p>竞态条件（race condition），从多进程间通信的角度来讲，是指两个或多个进程对共享的数据进行读或写的操作时，最终的结果取决于这些进程的执行顺序。</p>
 </blockquote>
-<h4 id="竞态条件成立的三个条件"><a href="#竞态条件成立的三个条件" class="headerlink" title="竞态条件成立的三个条件"></a>竞态条件成立的三个条件</h4><p>并行执行的两个处理之间出现竞态条件必须同时满足以下三个条件。</p>
+<h4 id="竞态条件成立的三个条件">竞态条件成立的三个条件</h4>
+<p>并行执行的两个处理之间出现竞态条件必须同时满足以下三个条件。</p>
 <ul>
 <li>两个处理共享变量</li>
 <li>至少一个处理会对变量进行修改</li>
@@ -606,29 +612,29 @@
 </ul>
 <p>反之，只要三个条件中有一个不具备，就可以编写适于并发处理的安全的程序。</p>
 <p>针对以上的几个方面，有了以下处理。</p>
-<ol>
+<ol type="1">
 <li><p>没有共享——进程和 actor 模型</p>
-<p> 如果最初就没有共享任何数据，条件a就不可能发生，也就没有必要在意竞态条件了。</p>
-<p> 在进程中没有内存共享。相信很多人都知道 UNIX 将执行的程序叫做进程（process）。不同的进程<em>不会共享内存</em>，所以在多个程序之间不会在内存上出现竞态条件。只需要注意与数据库连接或文件读写时共享数据的情形就够了。</p>
-<p> 在 UNIX 发布大约 10 年后，人们设计出了“轻量级进程”。它是一种共享内存、具有 UNIX 出现以前风格的进程。后来，这个被称为线程。</p>
-<p> 在不共享内存的设计方针下，还有一个流派——actor 模型。</p>
-<p> 我们以行政文员、资料和公文格为例来说明。甲打开桌上的资料进行处理时，如果乙走过来希望甲处理其他资料，这就影响了甲正在进行中的工作，这就是<strong>共享内存</strong>的问题所在。一方面，在甲的工作告一段落之前，即使乙在旁边一直等候也是浪费时间。这就是后面要讲到的<strong>死锁</strong>的问题。如果不这样，乙在往甲的公文格中放入新的资料后马上回去处理自己的工作，这就变成 actor 模型。</p>
-<p> 这种模型中处理是<em>非同步</em>的。乙不知道甲何时会处理完公文格中的资料。不管何时处理完，如果在资料中写明“处理完毕请送回乙处”等信息，<em>一旦乙在自己的公文格中看到了甲的回复，也就知道了这些资料已经处理完毕</em>。</p>
-</li>
+<p>如果最初就没有共享任何数据，条件a就不可能发生，也就没有必要在意竞态条件了。</p>
+<p>在进程中没有内存共享。相信很多人都知道 UNIX 将执行的程序叫做进程（process）。不同的进程<em>不会共享内存</em>，所以在多个程序之间不会在内存上出现竞态条件。只需要注意与数据库连接或文件读写时共享数据的情形就够了。</p>
+<p>在 UNIX 发布大约 10 年后，人们设计出了“轻量级进程”。它是一种共享内存、具有 UNIX 出现以前风格的进程。后来，这个被称为线程。</p>
+<p>在不共享内存的设计方针下，还有一个流派——actor 模型。</p>
+<p>我们以行政文员、资料和公文格为例来说明。甲打开桌上的资料进行处理时，如果乙走过来希望甲处理其他资料，这就影响了甲正在进行中的工作，这就是<strong>共享内存</strong>的问题所在。一方面，在甲的工作告一段落之前，即使乙在旁边一直等候也是浪费时间。这就是后面要讲到的<strong>死锁</strong>的问题。如果不这样，乙在往甲的公文格中放入新的资料后马上回去处理自己的工作，这就变成 actor 模型。</p>
+<p>这种模型中处理是<em>非同步</em>的。乙不知道甲何时会处理完公文格中的资料。不管何时处理完，如果在资料中写明“处理完毕请送回乙处”等信息，<em>一旦乙在自己的公文格中看到了甲的回复，也就知道了这些资料已经处理完毕</em>。</p></li>
 <li><p>不修改——const、val、Immutable</p>
-<p> 即使共享内存，只要不作修改也不会有任何问题。</p>
-<p> 但是更多的语言采用了更加现实的折衷策略——使一部分变更无法作修改。</p>
-<p> 在 C++ 语言中，使用 const 声明变量时，这个变量就是无法修改的。</p>
-<p> 在 Scala 语言中，有 var 和 val 两种声明变量的方法，val 声明的变量就无法作修改。</p>
-<p> Java 语言经常使用到 Mark Grand 提出的设计模式之一的 Immutable 模式。这种模式下，类中定义了 private 字段，同时定义了读取这些字段的 getter 方法，但不定义对这些字段作修改的 setter 方法。因为没有准备用于修改的方法，所以实现了只能读取但不能改写的效果。</p>
-</li>
+<p>即使共享内存，只要不作修改也不会有任何问题。</p>
+<p>但是更多的语言采用了更加现实的折衷策略——使一部分变更无法作修改。</p>
+<p>在 C++ 语言中，使用 const 声明变量时，这个变量就是无法修改的。</p>
+<p>在 Scala 语言中，有 var 和 val 两种声明变量的方法，val 声明的变量就无法作修改。</p>
+<p>Java 语言经常使用到 Mark Grand 提出的设计模式之一的 Immutable 模式。这种模式下，类中定义了 private 字段，同时定义了读取这些字段的 getter 方法，但不定义对这些字段作修改的 setter 方法。因为没有准备用于修改的方法，所以实现了只能读取但不能改写的效果。</p></li>
 <li><p>不介入</p>
-<p> 在处理期间如何杜绝别的作业介入进来？</p>
+<p>在处理期间如何杜绝别的作业介入进来？</p>
 <ul>
-<li><p>线程的协调——fibre、coroutine、green thread</p>
+<li>线程的协调——fibre、coroutine、green thread</li>
+</ul>
 <p>毫无疑问，由于是协作式多任务模式，如果有某个线程独占 CPU，其他处理就只能停止。说到底，这种方法的前提是各个线程能保证合理的执行时间在合适的时候做出让步。</p>
-</li>
-<li><p>表示不便介入的标志——锁、mutex、semaphore</p>
+<ul>
+<li>表示不便介入的标志——锁、mutex、semaphore</li>
+</ul>
 <p>这和试衣间中的门帘或单人浴室包间的状态牌类似。门帘关闭时表示这时试衣间正被占用，现在进去的话不方便。想使用试衣间的人只能在外面一直等到门帘打开为止。</p>
 <p>锁这个名字很容易让人误解为只要上了锁其他人就进不来了，然而实际上它只是一个表示“使用中”的状态牌。<strong>如果有线程不去检查状态牌的状态，那它也就变得没有意义了</strong>。</p>
 <blockquote>
@@ -637,26 +643,27 @@
 <p>在进入之前先检查是否挂有“使用中”的状态牌，如果有则等待，如果没有挂则挂上“使用中”的状态牌再进入。要实现这一系列约定的动作是件比较麻烦的事情。比如使用 if 语句时，在“做值的检查”和“判断为 0 则改为 1”时，有可能有其他处理介入进来。这样一来检查就毫无意义了。为了不让其他处理在中间介入进来，就有必要使用一种能将值的检查和修改同时执行的命令。</p>
 <blockquote>
 <p>Java 直接使用 synchronized lock 就可以轻松地使用实现如此功能的锁。</p>
-</blockquote>
-</li>
-</ul>
-</li>
+</blockquote></li>
 </ol>
-<h4 id="锁的问题及对策"><a href="#锁的问题及对策" class="headerlink" title="锁的问题及对策"></a>锁的问题及对策</h4><ol>
+<h4 id="锁的问题及对策">锁的问题及对策</h4>
+<ol type="1">
 <li><p>锁的问题</p>
 <ul>
 <li>陷入死锁——多个锁互相限制了对方，陷入了等待对方的解锁而形成的死结。为了避免这一问题，程序员就需要在程序的整体上注意上锁的顺序，不仅要把握应该对什么上锁，还要把握好按什么顺序去上锁。</li>
 <li>无法组合——对于多步骤的总体进行上锁，杜绝干扰的实现。要防止中间介入，程序员必须用新的锁将这两个处理步骤包括起来，用 synchronized lock 把所有这些相关的代码包括起来。但是，这样就没能达到让程序员无需担心锁的控制方式的目的。</li>
-</ul>
-</li>
+</ul></li>
 <li><p>借助事务内存来解决</p>
-<p> 有一种叫做事务内存的方法可以解决这一问题 13。这种方法把数据库中事务的理念运用到内存上，做法是先试着执行，如果失败则回退到最初状态重新执行，如果成功则共享这一变更。它不是直接修改 X 或 Y，而是临时性地创建了一个版本对其进行修改，将一个完整不可分的过程执行完毕后才反映出最终的成果。</p>
-<p> <img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00060.jpeg" alt="img"></p>
-<p> 假设有写入操作在中间介入进来，那么临时创建的版本就会被丢弃，重新回退到最初状态开始执行。这样一来，即使不上锁也可以顺利地进行并发处理。要注意的是，当写入的频率太高时，回退重 新执行的操作就会多次执行到，这样会导致性能下降。</p>
-<p> <img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00061.jpeg" alt="img"></p>
-</li>
+<p>有一种叫做事务内存的方法可以解决这一问题 13。这种方法把数据库中事务的理念运用到内存上，做法是先试着执行，如果失败则回退到最初状态重新执行，如果成功则共享这一变更。它不是直接修改 X 或 Y，而是临时性地创建了一个版本对其进行修改，将一个完整不可分的过程执行完毕后才反映出最终的成果。</p>
+<figure>
+<img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00060.jpeg" alt="img"><figcaption>img</figcaption>
+</figure>
+<p>假设有写入操作在中间介入进来，那么临时创建的版本就会被丢弃，重新回退到最初状态开始执行。这样一来，即使不上锁也可以顺利地进行并发处理。要注意的是，当写入的频率太高时，回退重 新执行的操作就会多次执行到，这样会导致性能下降。</p>
+<figure>
+<img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00061.jpeg" alt="img"><figcaption>img</figcaption>
+</figure></li>
 </ol>
-<h4 id="事务内存成功吗"><a href="#事务内存成功吗" class="headerlink" title="事务内存成功吗"></a>事务内存成功吗</h4><p>未来会怎样没人知道。</p>
+<h4 id="事务内存成功吗">事务内存成功吗</h4>
+<p>未来会怎样没人知道。</p>
 <p>微软公司于 2010 年中止了面向 .NET Framework 平台搭载软件事务内存的实验。</p>
 <p>据说后续的 Intel 处理器将搭载事物内存的部分功能。如若实现，届时对于硬件事务内存就可以轻松一试了。</p>
 
@@ -997,7 +1004,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#容器"><span class="nav-number">1.</span> <span class="nav-text">容器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-3-中引入的设计变更"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">Python 3 中引入的设计变更</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Ruby-1-9-的挑战"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">Ruby 1.9 的挑战</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#并发处理"><span class="nav-number">2.</span> <span class="nav-text">并发处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#竞态条件成立的三个条件"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">竞态条件成立的三个条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#锁的问题及对策"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">锁的问题及对策</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事务内存成功吗"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">事务内存成功吗</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#容器"><span class="nav-number">1.</span> <span class="nav-text">容器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python-3-中引入的设计变更"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">Python 3 中引入的设计变更</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ruby-1.9-的挑战"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">Ruby 1.9 的挑战</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#并发处理"><span class="nav-number">2.</span> <span class="nav-text">并发处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#竞态条件成立的三个条件"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">竞态条件成立的三个条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#锁的问题及对策"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">锁的问题及对策</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事务内存成功吗"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">事务内存成功吗</span></a></li></ol></li></div>
             
 
           </div>

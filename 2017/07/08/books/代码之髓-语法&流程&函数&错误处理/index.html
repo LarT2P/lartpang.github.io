@@ -125,18 +125,18 @@
 
 
 
-  <meta name="description" content="Perl的设计者：Larry Wall在《Programming Perl》中提出，优秀的程序员有三大美德：懒惰，急躁和傲慢。  懒惰是因为为减少总的能量支出而不遗余力的努力。 急躁是因为无法忍受程序执行的低效。 傲慢是因为容不下错误。  语言的诞生程序设计语言的出现就是为了解决各种各样的问题，而这些问题以现在的语言是无法更合适的处理。 于是乎，语言之于语言，就是目标问题的差异。  语法的诞生语">
+  <meta name="description" content="Perl的设计者：Larry Wall在《Programming Perl》中提出，优秀的程序员有三大美德：懒惰，急躁和傲慢。  懒惰是因为为减少总的能量支出而不遗余力的努力。 急躁是因为无法忍受程序执行的低效。 傲慢是因为容不下错误。  语言的诞生 程序设计语言的出现就是为了解决各种各样的问题，而这些问题以现在的语言是无法更合适的处理。 于是乎，语言之于语言，就是目标问题的差">
 <meta name="keywords" content="学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="代码之髓读后感——语法&amp;流程&amp;函数&amp;错误处理">
 <meta property="og:url" content="https://plart.pw/2017/07/08/books/代码之髓-语法&流程&函数&错误处理/index.html">
 <meta property="og:site_name" content="失乐园">
-<meta property="og:description" content="Perl的设计者：Larry Wall在《Programming Perl》中提出，优秀的程序员有三大美德：懒惰，急躁和傲慢。  懒惰是因为为减少总的能量支出而不遗余力的努力。 急躁是因为无法忍受程序执行的低效。 傲慢是因为容不下错误。  语言的诞生程序设计语言的出现就是为了解决各种各样的问题，而这些问题以现在的语言是无法更合适的处理。 于是乎，语言之于语言，就是目标问题的差异。  语法的诞生语">
+<meta property="og:description" content="Perl的设计者：Larry Wall在《Programming Perl》中提出，优秀的程序员有三大美德：懒惰，急躁和傲慢。  懒惰是因为为减少总的能量支出而不遗余力的努力。 急躁是因为无法忍受程序执行的低效。 傲慢是因为容不下错误。  语言的诞生 程序设计语言的出现就是为了解决各种各样的问题，而这些问题以现在的语言是无法更合适的处理。 于是乎，语言之于语言，就是目标问题的差">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-10-08T02:55:09.874Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="代码之髓读后感——语法&amp;流程&amp;函数&amp;错误处理">
-<meta name="twitter:description" content="Perl的设计者：Larry Wall在《Programming Perl》中提出，优秀的程序员有三大美德：懒惰，急躁和傲慢。  懒惰是因为为减少总的能量支出而不遗余力的努力。 急躁是因为无法忍受程序执行的低效。 傲慢是因为容不下错误。  语言的诞生程序设计语言的出现就是为了解决各种各样的问题，而这些问题以现在的语言是无法更合适的处理。 于是乎，语言之于语言，就是目标问题的差异。  语法的诞生语">
+<meta name="twitter:description" content="Perl的设计者：Larry Wall在《Programming Perl》中提出，优秀的程序员有三大美德：懒惰，急躁和傲慢。  懒惰是因为为减少总的能量支出而不遗余力的努力。 急躁是因为无法忍受程序执行的低效。 傲慢是因为容不下错误。  语言的诞生 程序设计语言的出现就是为了解决各种各样的问题，而这些问题以现在的语言是无法更合适的处理。 于是乎，语言之于语言，就是目标问题的差">
 
 
 
@@ -539,13 +539,15 @@
 <p>急躁是因为无法忍受程序执行的低效。</p>
 <p>傲慢是因为容不下错误。</p>
 <hr>
-<h1 id="语言的诞生"><a href="#语言的诞生" class="headerlink" title="语言的诞生"></a>语言的诞生</h1><p>程序设计语言的出现就是为了解决各种各样的问题，而这些问题以现在的语言是无法更合适的处理。</p>
+<h1 id="语言的诞生">语言的诞生</h1>
+<p>程序设计语言的出现就是为了解决各种各样的问题，而这些问题以现在的语言是无法更合适的处理。</p>
 <p>于是乎，语言之于语言，就是目标问题的差异。</p>
 <hr>
-<h1 id="语法的诞生"><a href="#语法的诞生" class="headerlink" title="语法的诞生"></a>语法的诞生</h1><p>语法是程序设计者制定的规则。因语言而异。</p>
+<h1 id="语法的诞生">语法的诞生</h1>
+<p>语法是程序设计者制定的规则。因语言而异。</p>
 <p>比如运算符的优先顺序，计算流程的规定等等。</p>
 <p>对于式子<code>(2+1)*3</code></p>
-<p>书中提到了比较有特点的FORTH语言，书写成：<code>12+3*</code> </p>
+<p>书中提到了比较有特点的FORTH语言，书写成：<code>12+3*</code></p>
 <p>即后缀表达式的形式。利用的是栈来实现。</p>
 <p>而LISP语言则是前缀表达式：<code>*+123</code></p>
 <p>从语法树的角度来看，连着实际上就是对于相同的树结构进行了不同的遍历方式。</p>
@@ -558,21 +560,26 @@
 <p>但是因为不存在任何解析矛盾的语法体系的设计是十分困难的，又要不断地融入新语法时又要避免与现有的发生冲突，这样更难，正是因此，现代程序设计语言中仍然保留着不少别扭复杂的编写规则。</p>
 </blockquote>
 <hr>
-<h1 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h1><p>源自结构化程序设计的诞生。</p>
+<h1 id="流程控制">流程控制</h1>
+<p>源自结构化程序设计的诞生。</p>
 <p>他们的功能原本都可以借助goto来实现。</p>
-<h2 id="if…-amp-if…else…"><a href="#if…-amp-if…else…" class="headerlink" title="if… &amp; if…else…"></a>if… &amp; if…else…</h2><p>很早以前存在满足条件后跳的命令。</p>
+<h2 id="if...-if...else...">if... &amp; if...else...</h2>
+<p>很早以前存在满足条件后跳的命令。</p>
 <blockquote>
 <p>1949年发明的EDSAC就有“特定内存值大于零时跳转”和“特定内存值为负时跳转”这两条命令。</p>
 </blockquote>
 <p>这使得本来要表达 <em>如果满足条件就执行某事</em>的逻辑，不得不变成了 <em>若是满足条件则跳转到某处执行某事</em>。</p>
 <p>而导入if语句则使得逻辑更为清楚，理解更为直观。</p>
-<h2 id="while…-amp-break"><a href="#while…-amp-break" class="headerlink" title="while… &amp; break"></a>while… &amp; break</h2><p>主要是用来做那些只要有goto语句就能做的事。带来的附加值是程序的易读性和易写性。</p>
-<h2 id="for…"><a href="#for…" class="headerlink" title="for…"></a>for…</h2><p>让数值渐增的while更加简洁。for主要通过循环次数来控制循环操作。</p>
+<h2 id="while...-break">while... &amp; break</h2>
+<p>主要是用来做那些只要有goto语句就能做的事。带来的附加值是程序的易读性和易写性。</p>
+<h2 id="for...">for...</h2>
+<p>让数值渐增的while更加简洁。for主要通过循环次数来控制循环操作。</p>
 <p>升级版的foreach，则根据处理的对象来控制循环操作。</p>
 <p>但是并非所有的for语句都可以写成foreach。</p>
 <p><strong>这些流程控制语句主要是为了实现程序的 <em>简洁易懂</em></strong></p>
 <hr>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p>随着程序的庞大，把握全局愈发困难，同时有可能多次要用到相同的操作。函数因此诞生。把一整块代码切分出来而命名。同时伴随着函数的出现，也产生了递归调用这一编程技巧，非常适合处理嵌套形式的数据。</p>
+<h1 id="函数">函数</h1>
+<p>随着程序的庞大，把握全局愈发困难，同时有可能多次要用到相同的操作。函数因此诞生。把一整块代码切分出来而命名。同时伴随着函数的出现，也产生了递归调用这一编程技巧，非常适合处理嵌套形式的数据。</p>
 <p>函数的使用使得程序便于理解和重复使用。</p>
 <p>从冗长的程序中切分出反复使用的代码将其封装成一个整体。</p>
 <p><em>遇到问题：一个程序中有几处执行相同的代码若是封装，那怎么返回到原来的地方？</em></p>
@@ -588,18 +595,20 @@
 <p><em>关于递归调用</em></p>
 <p>关键在于如何退出。</p>
 <hr>
-<h1 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h1><p>主要有两种方法：</p>
-<ol>
+<h1 id="错误处理">错误处理</h1>
+<p>主要有两种方法：</p>
+<ol type="1">
 <li>使用返回值</li>
 <li>使用异常</li>
 </ol>
-<h2 id="使用返回值"><a href="#使用返回值" class="headerlink" title="使用返回值"></a>使用返回值</h2><p>通过判断错误的返回值来判断错误并进行相应的处理。</p>
+<h2 id="使用返回值">使用返回值</h2>
+<p>通过判断错误的返回值来判断错误并进行相应的处理。</p>
 <p>传递错误信息既可以使用返回值，也可以使用事先定义好的全局变量，还可以传递引用形参等方法。</p>
 <p>这种方法可以在C语言中见到。</p>
-<p><em>遇到问题：</em> </p>
+<p><em>遇到问题：</em></p>
 <ul>
-<li>遗漏错误——忘记做返回值检查；出错条件难以确保完全…</li>
-<li>错误处理导致代码可读性下降——为了避免错误导致出现大量错误处理代码，影响可读性…</li>
+<li>遗漏错误——忘记做返回值检查；出错条件难以确保完全...</li>
+<li>错误处理导致代码可读性下降——为了避免错误导致出现大量错误处理代码，影响可读性...</li>
 </ul>
 <p>对于第二个问题，可以在错误处理相同时，使用goto进行集中处理。从代码形式来看，实现了代码和错误处理的分离。</p>
 <blockquote>
@@ -607,14 +616,16 @@
 </blockquote>
 <p>小栗子：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!fun(A)) <span class="keyword">goto</span> ERROR;</span><br><span class="line">    <span class="keyword">if</span>(!fun(B)) <span class="keyword">goto</span> ERROR;</span><br><span class="line">    <span class="keyword">if</span>(!fun(C)) <span class="keyword">goto</span> ERROR;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">ERROR:</span><br><span class="line">    <span class="comment">/* 失败处理 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="使用异常（异常处理），出错后跳转"><a href="#使用异常（异常处理），出错后跳转" class="headerlink" title="使用异常（异常处理），出错后跳转"></a>使用异常（异常处理），出错后跳转</h2><p>调用函数前设定好错误处理的代码，错误发生时能跳转至相应的错误处理代码。</p>
+<h2 id="使用异常异常处理出错后跳转">使用异常（异常处理），出错后跳转</h2>
+<p>调用函数前设定好错误处理的代码，错误发生时能跳转至相应的错误处理代码。</p>
 <p>C之前出现过事先定义好错误发生时跳转的位置，后来演变为了现在的异常处理。</p>
 <p>计算机UNIVACI：在计算中出现溢出时，它会执行000处编写的命令。（即 <em>中断(interrupt)</em>，键盘按键按下，CPU可以接收信号，传达信息的就是中断）</p>
 <p>语言COBOL：只有两种针对性的错误处理。见下例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">READ &lt;文件名&gt; AT END &lt;错误处理语句&gt;</span><br><span class="line">ADD &lt;函数名&gt; ON SIZE ERROR &lt;错误处理语句&gt;</span><br></pre></td></tr></table></figure>
 <p>语言PL/I: 引入ON语句。可以自定义增加新的错误类型，也可以主动触发新定义的错误类型。</p>
 <p>相较于PL/I的错误处理，现代的JAVA，C++，PYTHON语言的方式有所不同，前者先定义好出错的处理操作，在编写可能出错的代码，而后者则是先用<code>try{...}</code>编写可能出错的代码，在编写出错时的处理。</p>
-<h3 id="一些历史"><a href="#一些历史" class="headerlink" title="一些历史"></a>一些历史</h3><p>这样的设计的改变源自当初John Goodenough的论文中所提出的方法。</p>
+<h3 id="一些历史">一些历史</h3>
+<p>这样的设计的改变源自当初John Goodenough的论文中所提出的方法。</p>
 <blockquote>
 <p>命令有可能会抛出异常，而程序员有可能忘记这种可能性，也可能在不正确的地方编写异常处理或者编写不正确类型的异常处理。为使编译器能够对程序员的错误发出警告，减少这种可能性，需要做到两点。一是明确声明命令可能抛出何种异常，二是需要有将可能出错的操作括起来的语句结构。</p>
 </blockquote>
@@ -622,12 +633,15 @@
 <p>1977年语言CLU11引入了异常处理的机制，追加了置于命令后面的错误处理语句结构<code>except</code>。CLU语言从最初就具有用<code>begin…end</code>将代码括成块状的功能，这一功能和<code>except</code>相结合，就实现了将可能出错的操作括起来再补充错误处理的代码编写方式。</p>
 <p>1983年C++诞生。针对异常处理的语句结构问题从1984年到1989年间经历了多次讨论，C++语言最终确认追加一种语句结构，把关键字<code>try</code>放在那些被括起来的可能出错代码的前面，把关键字<code>catch</code>放在捕捉并处理错误的代码块前面。<em>按照C++语言设计者斯特劳斯特卢普（Bjarne Stroustrup）的说法，<code>try</code>只是一个为了方便理解的修饰符。</em> 另外还使用<code>throw</code>这一关键字作为触发异常的命令，是因为更易理解的<code>raise</code>和<code>singal</code>两个关键字已经在标准库作为函数名字占用了。</p>
 <p>1993年发布的Windows NT 3.1在操作系统和C语言编译器导入了结构化异常处理（Structured Exception Handling，SEH）的概念。结构化异常处理中，除了将可能出错的代码括起来的<code>__try</code>和将错误处理的代码括起来的<code>__except</code>之外，还有将即使出错也要执行的代码括起来的<code>__finally</code>。</p>
-<h3 id="为什么要引入finally"><a href="#为什么要引入finally" class="headerlink" title="为什么要引入finally"></a>为什么要引入finally</h3><p>程序在意料之外结束时，也可以正常的释放锁定的内存和文件等资源，无遗漏的执行成对操作。对于错误处理，要能够不使用返回值检查和<code>goto</code>语句，简洁的实现。</p>
+<h3 id="为什么要引入finally">为什么要引入finally</h3>
+<p>程序在意料之外结束时，也可以正常的释放锁定的内存和文件等资源，无遗漏的执行成对操作。对于错误处理，要能够不使用返回值检查和<code>goto</code>语句，简洁的实现。</p>
 <p>后来Java，Python，Ruby等语言都使用了<code>finally</code>。</p>
 <p>C++语言中没有<code>finally</code>。C++语言中使用了一种名叫RAII（Resource Acquisition Is Initialization，资源获取即初始化）的技术。比如，在操作打开了就要关闭的文件对象时，定义来操作该对象的类，用构造函数打开，用析构函数关闭。函数结束时，针对函数局部变量，程序可以自动调用析构函数。</p>
-<p>2001年出现的D语言以改良C++语言为目标，反对 <em>RAII是优雅的</em>这一意见。<strong>打开了就要关闭这样紧密关联的操作，反映在代码上时，如果能放在相近的位置就容易理解多了。</strong>基于这一考虑，D语言中引入了作用域守护（scope guard）的概念。通过使用作用域守护，可以事先定义从某一 <em>作用域</em>（如函数）跳出时执行的操作。 </p>
-<h3 id="何时抛出异常"><a href="#何时抛出异常" class="headerlink" title="何时抛出异常"></a>何时抛出异常</h3><p>发生错误应该停止操作立刻报告，这一设计思想被称为错误优先（fail first）。</p>
-<h3 id="异常传递"><a href="#异常传递" class="headerlink" title="异常传递"></a>异常传递</h3><p>包括Java在内的很多现代语言的异常处理机制中，异常可以传递到调用方。这一设计有一个很大的问题。那就是，即使看到了函数f的代码也不知道函数f可能会抛出什么异常。有可能是函数f调用的另外的函数g中抛出的异常传递过来的，也有可能是函数g调用的函数h抛出的异常。也就是说，如果不看见函数f调用的所有的函数代码，就无从得知函数f抛出何种异常。万一没有察觉到抛出某种异常的可能性，程序就有可能异常终止。</p>
+<p>2001年出现的D语言以改良C++语言为目标，反对 <em>RAII是优雅的</em>这一意见。<strong>打开了就要关闭这样紧密关联的操作，反映在代码上时，如果能放在相近的位置就容易理解多了。</strong>基于这一考虑，D语言中引入了作用域守护（scope guard）的概念。通过使用作用域守护，可以事先定义从某一 <em>作用域</em>（如函数）跳出时执行的操作。</p>
+<h3 id="何时抛出异常">何时抛出异常</h3>
+<p>发生错误应该停止操作立刻报告，这一设计思想被称为错误优先（fail first）。</p>
+<h3 id="异常传递">异常传递</h3>
+<p>包括Java在内的很多现代语言的异常处理机制中，异常可以传递到调用方。这一设计有一个很大的问题。那就是，即使看到了函数f的代码也不知道函数f可能会抛出什么异常。有可能是函数f调用的另外的函数g中抛出的异常传递过来的，也有可能是函数g调用的函数h抛出的异常。也就是说，如果不看见函数f调用的所有的函数代码，就无从得知函数f抛出何种异常。万一没有察觉到抛出某种异常的可能性，程序就有可能异常终止。</p>
 <p>Goodenough主张为了避免这一问题，需要明确地声明可能抛出的异常。Java语言就采用了这一方针。</p>
 <p>其他语言中所谓的异常，Java语言中的<code>throw</code>语句也能抛出，并进一步分为三类：</p>
 <ul>
@@ -638,7 +652,8 @@
 <p>这里的其他异常叫做 <strong>检查型异常</strong>，如果在方法之外抛出，就需要在定义方法时声明，<code>throws</code>就是为这个目的准备的。</p>
 <p>实现异常处理的小栗子：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;</span><br><span class="line">    <span class="comment">// shippai跑出MyException异常</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">shippai</span><span class="params">()</span> <span class="keyword">throws</span> MyException </span>&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> MyException();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 1. 使用shippai方法声明`throws MyException`</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span> <span class="keyword">throws</span> MyException </span>&#123;</span><br><span class="line">        shippai();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 2. 使用catch捕获MyException异常，进行错误处理</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">bar</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            shippai();</span><br><span class="line">        &#125;<span class="keyword">catch</span>(MyException e) &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyException</span> <span class="keyword">extends</span> <span class="title">Exception</span>()</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="异常处理的问题"><a href="#异常处理的问题" class="headerlink" title="异常处理的问题"></a>异常处理的问题</h3><p>一个是当函数有不只一个出口时，必须成对处理的操作很难正确地成对处理。另一个是即便看了代码也不知道函数将抛出何种异常。Java语言的开发者为了解决第二个问题导入了检查型异常，但是这种方法并不太被接受。C#语言的开发者一方面承认检查型异常的优势，另一方面希望有更好的方法出现。</p>
+<h3 id="异常处理的问题">异常处理的问题</h3>
+<p>一个是当函数有不只一个出口时，必须成对处理的操作很难正确地成对处理。另一个是即便看了代码也不知道函数将抛出何种异常。Java语言的开发者为了解决第二个问题导入了检查型异常，但是这种方法并不太被接受。C#语言的开发者一方面承认检查型异常的优势，另一方面希望有更好的方法出现。</p>
 <p>检查型异常的问题：可以说检查型异常是一种非常好的机制。但是这种机制并没有很好地普及到其他语言中。因为它太麻烦。一旦<code>throws</code>或<code>try/catch</code>中异常的数目增多，或者某一方法需要追加一种异常，就不得不修改调用了该方法的所有方法，特别麻烦。</p>
 
       
@@ -978,7 +993,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#语言的诞生"><span class="nav-number">1.</span> <span class="nav-text">语言的诞生</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语法的诞生"><span class="nav-number">2.</span> <span class="nav-text">语法的诞生</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#流程控制"><span class="nav-number">3.</span> <span class="nav-text">流程控制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#if…-amp-if…else…"><span class="nav-number">3.1.</span> <span class="nav-text">if… &amp; if…else…</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#while…-amp-break"><span class="nav-number">3.2.</span> <span class="nav-text">while… &amp; break</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for…"><span class="nav-number">3.3.</span> <span class="nav-text">for…</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">4.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#错误处理"><span class="nav-number">5.</span> <span class="nav-text">错误处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用返回值"><span class="nav-number">5.1.</span> <span class="nav-text">使用返回值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用异常（异常处理），出错后跳转"><span class="nav-number">5.2.</span> <span class="nav-text">使用异常（异常处理），出错后跳转</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一些历史"><span class="nav-number">5.2.1.</span> <span class="nav-text">一些历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要引入finally"><span class="nav-number">5.2.2.</span> <span class="nav-text">为什么要引入finally</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时抛出异常"><span class="nav-number">5.2.3.</span> <span class="nav-text">何时抛出异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常传递"><span class="nav-number">5.2.4.</span> <span class="nav-text">异常传递</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常处理的问题"><span class="nav-number">5.2.5.</span> <span class="nav-text">异常处理的问题</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#语言的诞生"><span class="nav-number">1.</span> <span class="nav-text">语言的诞生</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语法的诞生"><span class="nav-number">2.</span> <span class="nav-text">语法的诞生</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#流程控制"><span class="nav-number">3.</span> <span class="nav-text">流程控制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#if...-if...else..."><span class="nav-number">3.1.</span> <span class="nav-text">if... &amp; if...else...</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#while...-break"><span class="nav-number">3.2.</span> <span class="nav-text">while... &amp; break</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for..."><span class="nav-number">3.3.</span> <span class="nav-text">for...</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">4.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#错误处理"><span class="nav-number">5.</span> <span class="nav-text">错误处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用返回值"><span class="nav-number">5.1.</span> <span class="nav-text">使用返回值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用异常异常处理出错后跳转"><span class="nav-number">5.2.</span> <span class="nav-text">使用异常（异常处理），出错后跳转</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一些历史"><span class="nav-number">5.2.1.</span> <span class="nav-text">一些历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要引入finally"><span class="nav-number">5.2.2.</span> <span class="nav-text">为什么要引入finally</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时抛出异常"><span class="nav-number">5.2.3.</span> <span class="nav-text">何时抛出异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常传递"><span class="nav-number">5.2.4.</span> <span class="nav-text">异常传递</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常处理的问题"><span class="nav-number">5.2.5.</span> <span class="nav-text">异常处理的问题</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

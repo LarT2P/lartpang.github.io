@@ -125,18 +125,18 @@
 
 
 
-  <meta name="description" content="未初始化的数组的内容是未定义的，且其末尾的空字符是不确定的，有可能在限定字节外。 未初始化的 string 对象长度自动设定为0。 wchar_t, char16_t, char32_t 三种字符串wchar_t title[] = L”Chief Astrogator”;char16_t name[] = u”Felonia Ripova”;char32_t car[] = U”Humber">
+  <meta name="description" content="未初始化的数组的内容是未定义的，且其末尾的空字符是不确定的，有可能在限定字节外。 未初始化的 string 对象长度自动设定为0。 wchar_t, char16_t, char32_t 三种字符串 wchar_t title[] = L&amp;quot;Chief Astrogator&amp;quot;; char16_t name[] = u&amp;quot;Felonia Ripova&amp;quot;;">
 <meta name="keywords" content="C++&amp;C">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++基础3">
 <meta property="og:url" content="https://plart.pw/2018/02/15/langs/cpp/Cpp基础_3/index.html">
 <meta property="og:site_name" content="失乐园">
-<meta property="og:description" content="未初始化的数组的内容是未定义的，且其末尾的空字符是不确定的，有可能在限定字节外。 未初始化的 string 对象长度自动设定为0。 wchar_t, char16_t, char32_t 三种字符串wchar_t title[] = L”Chief Astrogator”;char16_t name[] = u”Felonia Ripova”;char32_t car[] = U”Humber">
+<meta property="og:description" content="未初始化的数组的内容是未定义的，且其末尾的空字符是不确定的，有可能在限定字节外。 未初始化的 string 对象长度自动设定为0。 wchar_t, char16_t, char32_t 三种字符串 wchar_t title[] = L&amp;quot;Chief Astrogator&amp;quot;; char16_t name[] = u&amp;quot;Felonia Ripova&amp;quot;;">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-07-13T12:45:21.228Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++基础3">
-<meta name="twitter:description" content="未初始化的数组的内容是未定义的，且其末尾的空字符是不确定的，有可能在限定字节外。 未初始化的 string 对象长度自动设定为0。 wchar_t, char16_t, char32_t 三种字符串wchar_t title[] = L”Chief Astrogator”;char16_t name[] = u”Felonia Ripova”;char32_t car[] = U”Humber">
+<meta name="twitter:description" content="未初始化的数组的内容是未定义的，且其末尾的空字符是不确定的，有可能在限定字节外。 未初始化的 string 对象长度自动设定为0。 wchar_t, char16_t, char32_t 三种字符串 wchar_t title[] = L&amp;quot;Chief Astrogator&amp;quot;; char16_t name[] = u&amp;quot;Felonia Ripova&amp;quot;;">
 
 
 
@@ -532,40 +532,19 @@
       
 
       
-        <ol>
+        <ol type="1">
 <li>未初始化的数组的内容是未定义的，且其末尾的空字符是不确定的，有可能在限定字节外。</li>
 <li>未初始化的 string 对象长度自动设定为0。</li>
-<li><p>wchar_t, char16_t, char32_t 三种字符串<br>wchar_t title[] = L”Chief Astrogator”;<br>char16_t name[] = u”Felonia Ripova”;<br>char32_t car[] = U”Humber Super Snipe”;</p>
-</li>
-<li><p>原始(raw)字符串<br>cout &lt;&lt; R”(l”s” / \sajfl; “ “” lafjlj.)” &lt;&lt; endl;<br>原样输出；<br>上面的方式有不足，会把第一个 ‘ )” ‘ 认为是字符串到此结尾；<br>cout &lt;&lt; R”+<em>(“(dkshfk)”), jsfjldsjf.)+</em>“ &lt;&lt; endl;<br>输入时会忽视特殊字符的特殊用途，回车会被添加到原始字符串中；<br>可以使用 Ru UR 等配合wchar_t 等类型的原始字符串；</p>
-</li>
-<li><p>结构<br>C: struct inflatable goose;<br>C++: inflatable vincent;<br>*访问类成员函数的点号方式即使从访问结构成员变量的方式衍生而来；</p>
-</li>
-</ol>
-<hr>
-<p><string><br>struct test<br>{<br>    std::string name;<br>    flaot volume;<br>    double price;<br>};<br>struct inflatable<br>{<br>    char name[20];<br>    float colume;<br>    double prince;<br>};<br>int main()<br>{<br>    inflatable guest =<br>    {<br>        “lasfj”,<br>        1.88,<br>        29.99<br>    };</string></p>
-<pre><code>inflatable pal1 = {&quot;sakdfh&quot;, 2.5, 3.0};
-
-inflatable pal2 {&quot;sakdfh&quot;, 2.5, 3.0};
-
-inflatable pal3 {};//全部字节置零**不允许格式上的缩窄转换；
-...
-return 0;
-</code></pre><h2 id=""><a href="#" class="headerlink" title="}"></a>}</h2><p>(the same struct) </p>
-<h2 id="choice-bouquet"><a href="#choice-bouquet" class="headerlink" title="choice = bouquet;"></a>choice = bouquet;</h2><p>struct perks<br>{<br>    int sdlkfj;<br>    double skdf;<br>    char a[20];<br>} mr_dlasjfl =<br>{<br>    7,<br>    23.0,<br>    “dsafhk”</p>
-<h2 id="分开写的话可能更便于阅读；"><a href="#分开写的话可能更便于阅读；" class="headerlink" title="};//分开写的话可能更便于阅读；"></a>};//分开写的话可能更便于阅读；</h2><p>struct<br>{<br>    int x;<br>    int y;<br>} position;</p>
-<h2 id="只有position这一个这种类型的结构，后面也将无法创建；"><a href="#只有position这一个这种类型的结构，后面也将无法创建；" class="headerlink" title="//只有position这一个这种类型的结构，后面也将无法创建；"></a>//只有position这一个这种类型的结构，后面也将无法创建；</h2><p>struct widget<br>{<br>    char brand[20];<br>    int type;<br>    union id<br>    {<br>        long id_num;<br>        char id_char[20];<br>    } id_val;<br>};<br>widget prize;</p>
-<h2 id="cin-gt-gt-prize-id-val-id-char"><a href="#cin-gt-gt-prize-id-val-id-char" class="headerlink" title="cin &gt;&gt; prize.id_val.id_char;"></a>cin &gt;&gt; prize.id_val.id_char;</h2><p>struct widget<br>{<br>    char brand[20];<br>    int type;<br>    union//匿名共用体(anonymous union)<br>    {<br>        long id_num;<br>        char id_char[20];<br>    } id_val;<br>};<br>widget prize;<br>cin &gt;&gt; prize.id_char;</p>
-<ol start="6">
-<li><p>enum 枚举类型<br>可用于设置符号常量，枚举量(enumerator)；<br>enum {a, b, c, d}//0,1,2,3<br>枚举只定义了赋值运算符，没有定义算术运算；</p>
-</li>
-<li><p>指针使用是一定要先确定地址；<br>int<em> pt;<br>pt = (int</em>) 0xB8000000//地址；</p>
-</li>
-<li><p>new 运算符<br>指针的真正用武之地在于在运行阶段分配未命名的内存以存储值；<br>C中可以使用库函数malloc()来分配；<br>C++中可以使用new运算符；<br>传统通过内存名称来访问该 int：<br>int higgens;<br>int<em> pt = &higgens;<br>新方式：<br>int</em> pn = new int;<br>//此处pn指向的是内存是没有名称的，可以说指向一个数据对象，指的是为数据项分配的内存块；</p>
-</li>
-<li><p>delete 运算符<br>使得用完的内存归还内存池；<br>与 new 搭配使用。<br>int<em> ps = new int;<br>delete ps;<br>//仅仅释放ps所指向的内存；
-</em>一定要配对使用 new 与 delete,否则会发生内存泄漏(memory leak)，也就是说，被分配的内存再也无法使用。<br>如果泄露严重，则程序会不断寻找更多内存而中止。<br>int<em> ps = new int;<br>delete ps;<br>delete ps;//已释放的内存块再进行释放操作，这样的出的结果是不确定的，意味着什么都会发生，但是对于空指针而言则是安全的<br>int jugs = 5;<br>int</em> pi = %jugs;<br>delete pi;//delete只能用来释放由new分配的内存。</p>
-</li>
+<li><p>wchar_t, char16_t, char32_t 三种字符串 wchar_t title[] = L&quot;Chief Astrogator&quot;; char16_t name[] = u&quot;Felonia Ripova&quot;; char32_t car[] = U&quot;Humber Super Snipe&quot;;</p></li>
+<li><p>原始(raw)字符串 cout &lt;&lt; R&quot;(l&quot;s&quot; / ; &quot; &quot;&quot; lafjlj.)&quot; &lt;&lt; endl; 原样输出； 上面的方式有不足，会把第一个 ' )&quot; ' 认为是字符串到此结尾； cout &lt;&lt; R&quot;+<em>(&quot;(dkshfk)&quot;), jsfjldsjf.)+</em>&quot; &lt;&lt; endl; 输入时会忽视特殊字符的特殊用途，回车会被添加到原始字符串中； 可以使用 Ru UR 等配合wchar_t 等类型的原始字符串；</p></li>
+<li><p>结构 C: struct inflatable goose; C++: inflatable vincent; *访问类成员函数的点号方式即使从访问结构成员变量的方式衍生而来； -------------------------- <string> struct test { std::string name; flaot volume; double price; }; struct inflatable { char name[20]; float colume; double prince; }; int main() { inflatable guest = { &quot;lasfj&quot;, 1.88, 29.99 };</string></p>
+<p>inflatable pal1 = {&quot;sakdfh&quot;, 2.5, 3.0};</p>
+<p>inflatable pal2 {&quot;sakdfh&quot;, 2.5, 3.0};</p>
+<p>inflatable pal3 {};//全部字节置零**不允许格式上的缩窄转换； ... return 0; } --------------------- (the same struct) choice = bouquet; --------------------- struct perks { int sdlkfj; double skdf; char a[20]; } mr_dlasjfl = { 7, 23.0, &quot;dsafhk&quot; };//分开写的话可能更便于阅读； -------------------- struct { int x; int y; } position; //只有position这一个这种类型的结构，后面也将无法创建； -------------------- struct widget { char brand[20]; int type; union id { long id_num; char id_char[20]; } id_val; }; widget prize; cin &gt;&gt; prize.id_val.id_char; ----------------------- struct widget { char brand[20]; int type; union//匿名共用体(anonymous union) { long id_num; char id_char[20]; } id_val; }; widget prize; cin &gt;&gt; prize.id_char;</p></li>
+<li><p>enum 枚举类型 可用于设置符号常量，枚举量(enumerator)； enum {a, b, c, d}//0,1,2,3 枚举只定义了赋值运算符，没有定义算术运算；</p></li>
+<li><p>指针使用是一定要先确定地址； int* pt; pt = (int*) 0xB8000000//地址；</p></li>
+<li><p>new 运算符 指针的真正用武之地在于在运行阶段分配未命名的内存以存储值； C中可以使用库函数malloc()来分配； C++中可以使用new运算符； 传统通过内存名称来访问该 int： int higgens; int* pt = &amp;higgens; 新方式： int* pn = new int; //此处pn指向的是内存是没有名称的，可以说指向一个数据对象，指的是为数据项分配的内存块；</p></li>
+<li><p>delete 运算符 使得用完的内存归还内存池； 与 new 搭配使用。 int* ps = new int; delete ps; //仅仅释放ps所指向的内存； <em>一定要配对使用 new 与 delete,否则会发生内存泄漏(memory leak)，也就是说，被分配的内存再也无法使用。 如果泄露严重，则程序会不断寻找更多内存而中止。 int</em> ps = new int; delete ps; delete ps;//已释放的内存块再进行释放操作，这样的出的结果是不确定的，意味着什么都会发生，但是对于空指针而言则是安全的 int jugs = 5; int* pi = %jugs; delete pi;//delete只能用来释放由new分配的内存。</p></li>
 </ol>
 
       
@@ -703,17 +682,8 @@ return 0;
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -895,22 +865,6 @@ return 0;
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#choice-bouquet"><span class="nav-number">2.</span> <span class="nav-text">choice = bouquet;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分开写的话可能更便于阅读；"><span class="nav-number">3.</span> <span class="nav-text">};//分开写的话可能更便于阅读；</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#只有position这一个这种类型的结构，后面也将无法创建；"><span class="nav-number">4.</span> <span class="nav-text">//只有position这一个这种类型的结构，后面也将无法创建；</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cin-gt-gt-prize-id-val-id-char"><span class="nav-number">5.</span> <span class="nav-text">cin &gt;&gt; prize.id_val.id_char;</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

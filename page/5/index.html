@@ -526,7 +526,9 @@
           
             <p>对之前我的那个豆瓣的短评的爬虫，进行了一下架构性的改动。尽可能实现了模块的分离。但是总是感觉不完美。暂时也没心情折腾了。</p>
 <p>同时也添加了多线程的实现。具体过程见下。</p>
-<h1 id="改动"><a href="#改动" class="headerlink" title="改动"></a>改动</h1><h2 id="独立出来的部分："><a href="#独立出来的部分：" class="headerlink" title="独立出来的部分："></a>独立出来的部分：</h2><ul>
+<h1 id="改动">改动</h1>
+<h2 id="独立出来的部分">独立出来的部分：</h2>
+<ul>
 <li>MakeOpener</li>
 <li>MakeRes</li>
 <li>GetNum</li>
@@ -534,12 +536,14 @@
 <li>GetSoup</li>
 <li>main</li>
 </ul>
-<p>将所有的代码都置于函数之中，显得干净了许多。(<em>^__^</em>) 嘻嘻……</p>
-<h2 id="使用直接调用文件入口作为程序的起点"><a href="#使用直接调用文件入口作为程序的起点" class="headerlink" title="使用直接调用文件入口作为程序的起点"></a>使用直接调用文件入口作为程序的起点</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>将所有的代码都置于函数之中，显得干净了许多。(*^__^*) 嘻嘻……</p>
+<h2 id="使用直接调用文件入口作为程序的起点">使用直接调用文件入口作为程序的起点</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
 <p>注意，这一句并不代表如果该<code>if</code>之前有其他直接暴露出来的代码时，他会首先执行。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"首先执行"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    print(<span class="string">"次序执行"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出如下：</span></span><br><span class="line"><span class="comment"># 首先执行</span></span><br><span class="line"><span class="comment"># 次序执行</span></span><br></pre></td></tr></table></figure>
 <p>该<code>if</code>语句只是代表顺序执行到这句话时进行判断调用者是谁，若是直接运行的该文件，则进入结构，若是其他文件调用，那就跳过。</p>
-<h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><p>这里参考了<a href="http://www.cnblogs.com/whatbeg/p/5331266.html" target="_blank" rel="noopener">【Python数据分析】Python3多线程并发网络爬虫-以豆瓣图书Top</a>，和我的情况较为类似，参考较为容易。</p>
+<h2 id="多线程">多线程</h2>
+<p>这里参考了<a href="http://www.cnblogs.com/whatbeg/p/5331266.html" target="_blank" rel="noopener">【Python数据分析】Python3多线程并发网络爬虫-以豆瓣图书Top</a>，和我的情况较为类似，参考较为容易。</p>
 <blockquote>
 <p>仔细想想就可以发现，其实爬10页（每页25本），这10页爬的先后关系是无所谓的，因为写入的时候没有依赖关系，各写各的，所以用串行方式爬取是吃亏的。显然可以用并发来加快速度，而且由于没有同步互斥关系，所以连锁都不用上。</p>
 </blockquote>
@@ -552,20 +556,33 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pagelist = [x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>, pagenum, step)]</span><br></pre></td></tr></table></figure>
 <p>这个和下面是一致的：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pagelist = []</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>, pagenum, step):</span><br><span class="line">    pagelist.append(x)</span><br></pre></td></tr></table></figure>
-<h3 id="threading-Thread的几个方法"><a href="#threading-Thread的几个方法" class="headerlink" title="threading.Thread的几个方法"></a>threading.Thread的几个方法</h3><p>值得参考：<a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/00143192823818768cd506abbc94eb5916192364506fa5d000" target="_blank" rel="noopener">多线程</a></p>
+<h3 id="threading.thread的几个方法">threading.Thread的几个方法</h3>
+<p>值得参考：<a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/00143192823818768cd506abbc94eb5916192364506fa5d000" target="_blank" rel="noopener">多线程</a></p>
 <ul>
 <li>start() 启动线程</li>
 <li>jion([timeout])，依次检验线程池中的线程是否结束，没有结束就阻塞直到线程结束，如果结束则跳转执行下一个线程的join函数。在程序中，最后join()方法使得当所调用线程都执行完毕后，主线程才会执行下面的代码。相当于实现了一个结束上的同步。这样避免了前面的线程结束任务时，导致文件关闭。</li>
 </ul>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>使用多线程时，期间的延时时间应该设置的大些，不然会被网站拒绝访问，这时你还得去豆瓣认证下”我真的不是机器人”（尴尬）。我设置了10s，倒是没问题，再小些，就会出错了。</p>
-<h1 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">Created on Thu Aug 17 16:31:35 2017</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">@note: 为了便于阅读，将模块的引用就近安置了</span></span><br><span class="line"><span class="string">@author: lart</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> http <span class="keyword">import</span> cookiejar</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 用于生成短评页面网址的函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">MakeUrl</span><span class="params">(start)</span>:</span></span><br><span class="line">    <span class="string">"""make the next page's url"""</span></span><br><span class="line">    url = <span class="string">'https://movie.douban.com/subject/26934346/comments?start='</span> \</span><br><span class="line">        + str(start) + <span class="string">'&amp;limit=20&amp;sort=new_score&amp;status=P'</span></span><br><span class="line">    <span class="keyword">return</span> url</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">MakeOpener</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""make the opener of requset"""</span></span><br><span class="line">    <span class="comment"># 保存cookies便于后续页面的保持登陆</span></span><br><span class="line">    cookie = cookiejar.CookieJar()</span><br><span class="line">    cookie_support = request.HTTPCookieProcessor(cookie)</span><br><span class="line">    opener = request.build_opener(cookie_support)</span><br><span class="line">    <span class="keyword">return</span> opener</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">MakeRes</span><span class="params">(url, opener, formdata, headers)</span>:</span></span><br><span class="line">    <span class="string">"""make the response of http"""</span></span><br><span class="line">    <span class="comment"># 编码信息，生成请求，打开页面获取内容</span></span><br><span class="line">    data = parse.urlencode(formdata).encode(<span class="string">'utf-8'</span>)</span><br><span class="line">    req = request.Request(</span><br><span class="line">                    url=url,</span><br><span class="line">                    data=data,</span><br><span class="line">                    headers=headers</span><br><span class="line">                )</span><br><span class="line">    response = opener.open(req).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">    <span class="keyword">return</span> response</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">GetNum</span><span class="params">(soup)</span>:</span></span><br><span class="line">    <span class="string">"""get the number of pages"""</span></span><br><span class="line">    <span class="comment"># 获得页面评论文字</span></span><br><span class="line">    totalnum = soup.select(<span class="string">"div.mod-hd h2 span a"</span>)[<span class="number">0</span>].get_text()[<span class="number">3</span>:<span class="number">-2</span>]</span><br><span class="line">    <span class="comment"># 计算出页数</span></span><br><span class="line">    pagenum = int(totalnum) // <span class="number">20</span></span><br><span class="line">    print(<span class="string">"the number of comments is:"</span> + totalnum,</span><br><span class="line">          <span class="string">"the number of pages is: "</span> + str(pagenum))</span><br><span class="line">    <span class="keyword">return</span> pagenum</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">IOFile</span><span class="params">(soup, opener, file, pagestart, step)</span>:</span></span><br><span class="line">    <span class="string">"""the IO operation of file"""</span></span><br><span class="line">    <span class="comment"># 循环爬取内容</span></span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> range(step):</span><br><span class="line">        start = (pagestart + item) * <span class="number">20</span></span><br><span class="line">        print(<span class="string">'第'</span> + str(pagestart + item) + <span class="string">'页评论开始爬取'</span>)</span><br><span class="line">        url = MakeUrl(start)</span><br><span class="line">        <span class="comment"># 超时重连</span></span><br><span class="line">        state = <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">while</span> <span class="keyword">not</span> state:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                html = opener.open(url).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">                state = <span class="keyword">True</span></span><br><span class="line">            <span class="keyword">except</span> socket.timeout:</span><br><span class="line">                state = <span class="keyword">False</span></span><br><span class="line">        <span class="comment"># 获得评论内容</span></span><br><span class="line">        soup = BeautifulSoup(html, <span class="string">"html.parser"</span>)</span><br><span class="line">        comments = soup.select(<span class="string">"div.comment &gt; p"</span>)</span><br><span class="line">        <span class="keyword">for</span> text <span class="keyword">in</span> comments:</span><br><span class="line">            file.write(text.get_text().split()[<span class="number">0</span>] + <span class="string">'\n'</span>)</span><br><span class="line">            print(text.get_text())</span><br><span class="line">        <span class="comment"># 延时1s</span></span><br><span class="line">        time.sleep(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'线程采集写入完毕'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">GetSoup</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""get the soup and the opener of url"""</span></span><br><span class="line">    main_url = <span class="string">'https://accounts.douban.com/login?source=movie'</span></span><br><span class="line">    formdata = &#123;</span><br><span class="line">        <span class="string">"form_email"</span>: <span class="string">"your-email"</span>,</span><br><span class="line">        <span class="string">"form_password"</span>: <span class="string">"your-password"</span>,</span><br><span class="line">        <span class="string">"source"</span>: <span class="string">"movie"</span>,</span><br><span class="line">        <span class="string">"redir"</span>: <span class="string">"https://movie.douban.com/subject/26934346/"</span>,</span><br><span class="line">        <span class="string">"login"</span>: <span class="string">"登录"</span></span><br><span class="line">            &#125;</span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">"User-Agent"</span>: <span class="string">"Mozilla/5.0 (Windows NT 5.1; U; en; rv:1.8.1)\</span></span><br><span class="line"><span class="string">            Gecko/20061208 Firefox/2.0.0 Opera 9.50"</span>,</span><br><span class="line">        <span class="string">'Connection'</span>: <span class="string">'keep-alive'</span></span><br><span class="line">            &#125;</span><br><span class="line">    opener = MakeOpener()</span><br><span class="line"></span><br><span class="line">    response_login = MakeRes(main_url, opener, formdata, headers)</span><br><span class="line">    soup = BeautifulSoup(response_login, <span class="string">"html.parser"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> soup.find(<span class="string">'img'</span>, id=<span class="string">'captcha_image'</span>):</span><br><span class="line">        print(<span class="string">"有验证码"</span>)</span><br><span class="line">        <span class="comment"># 获取验证码图片地址</span></span><br><span class="line">        captchaAddr = soup.find(<span class="string">'img'</span>, id=<span class="string">'captcha_image'</span>)[<span class="string">'src'</span>]</span><br><span class="line">        <span class="comment"># 匹配验证码id</span></span><br><span class="line">        reCaptchaID = <span class="string">r'&lt;input type="hidden" name="captcha-id" value="(.*?)"/'</span></span><br><span class="line">        captchaID = re.findall(reCaptchaID, response_login)</span><br><span class="line">        <span class="comment"># 下载验证码图片</span></span><br><span class="line">        request.urlretrieve(captchaAddr, <span class="string">"captcha.jpg"</span>)</span><br><span class="line">        img = pyplot.imread(<span class="string">"captcha.jpg"</span>)</span><br><span class="line">        pyplot.imshow(img)</span><br><span class="line">        pyplot.axis(<span class="string">'off'</span>)</span><br><span class="line">        pyplot.show()</span><br><span class="line">        <span class="comment"># 输入验证码并加入提交信息中，重新编码提交获得页面内容</span></span><br><span class="line">        captcha = input(<span class="string">'please input the captcha:'</span>)</span><br><span class="line">        formdata[<span class="string">'captcha-solution'</span>] = captcha</span><br><span class="line">        formdata[<span class="string">'captcha-id'</span>] = captchaID[<span class="number">0</span>]</span><br><span class="line">        response_login = MakeRes(main_url, opener, formdata, headers)</span><br><span class="line">        soup = BeautifulSoup(response_login, <span class="string">"html.parser"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> soup, opener</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""main function"""</span></span><br><span class="line">    timeout = <span class="number">5</span></span><br><span class="line">    socket.setdefaulttimeout(timeout)</span><br><span class="line">    now = datetime.now()</span><br><span class="line">    soup, opener = GetSoup()</span><br><span class="line"></span><br><span class="line">    pagenum = GetNum(soup)</span><br><span class="line">    step = pagenum // <span class="number">9</span></span><br><span class="line">    pagelist = [x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>, pagenum, step)]</span><br><span class="line">    print(<span class="string">'pageurl`s list=&#123;&#125;, step=&#123;&#125;'</span>.format(pagelist, step))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 追加写文件的方式打开文件</span></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'秘密森林的短评.txt'</span>, <span class="string">'w+'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> file:</span><br><span class="line">        thread = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">10</span>):</span><br><span class="line">            t = threading.Thread(</span><br><span class="line">                    target=IOFile,</span><br><span class="line">                    args=(soup, opener, file, pagelist[i], step)</span><br><span class="line">                )</span><br><span class="line">            thread.append(t)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 建立线程</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">10</span>):</span><br><span class="line">            thread[i].start()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">10</span>):</span><br><span class="line">            thread[i].join()</span><br><span class="line"></span><br><span class="line">    end = datetime.now()</span><br><span class="line">    print(<span class="string">"程序耗时： "</span> + str(end-now))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
-<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><h2 id="效率有提升"><a href="#效率有提升" class="headerlink" title="效率有提升"></a>效率有提升</h2><p>推荐使用ipython作为shell或者直接使用jupyter notebook，因为可以直接在终端显示出验证码图片。</p>
+<h2 id="注意">注意</h2>
+<p>使用多线程时，期间的延时时间应该设置的大些，不然会被网站拒绝访问，这时你还得去豆瓣认证下&quot;我真的不是机器人&quot;（尴尬）。我设置了10s，倒是没问题，再小些，就会出错了。</p>
+<h1 id="完整代码">完整代码</h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">Created on Thu Aug 17 16:31:35 2017</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">@note: 为了便于阅读，将模块的引用就近安置了</span></span><br><span class="line"><span class="string">@author: lart</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> http <span class="keyword">import</span> cookiejar</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 用于生成短评页面网址的函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">MakeUrl</span><span class="params">(start)</span>:</span></span><br><span class="line">    <span class="string">"""make the next page's url"""</span></span><br><span class="line">    url = <span class="string">'https://movie.douban.com/subject/26934346/comments?start='</span> \</span><br><span class="line">        + str(start) + <span class="string">'&amp;limit=20&amp;sort=new_score&amp;status=P'</span></span><br><span class="line">    <span class="keyword">return</span> url</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">MakeOpener</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""make the opener of requset"""</span></span><br><span class="line">    <span class="comment"># 保存cookies便于后续页面的保持登陆</span></span><br><span class="line">    cookie = cookiejar.CookieJar()</span><br><span class="line">    cookie_support = request.HTTPCookieProcessor(cookie)</span><br><span class="line">    opener = request.build_opener(cookie_support)</span><br><span class="line">    <span class="keyword">return</span> opener</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">MakeRes</span><span class="params">(url, opener, formdata, headers)</span>:</span></span><br><span class="line">    <span class="string">"""make the response of http"""</span></span><br><span class="line">    <span class="comment"># 编码信息，生成请求，打开页面获取内容</span></span><br><span class="line">    data = parse.urlencode(formdata).encode(<span class="string">'utf-8'</span>)</span><br><span class="line">    req = request.Request(</span><br><span class="line">                    url=url,</span><br><span class="line">                    data=data,</span><br><span class="line">                    headers=headers</span><br><span class="line">                )</span><br><span class="line">    response = opener.open(req).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">    <span class="keyword">return</span> response</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">GetNum</span><span class="params">(soup)</span>:</span></span><br><span class="line">    <span class="string">"""get the number of pages"""</span></span><br><span class="line">    <span class="comment"># 获得页面评论文字</span></span><br><span class="line">    totalnum = soup.select(<span class="string">"div.mod-hd h2 span a"</span>)[<span class="number">0</span>].get_text()[<span class="number">3</span>:<span class="number">-2</span>]</span><br><span class="line">    <span class="comment"># 计算出页数</span></span><br><span class="line">    pagenum = int(totalnum) // <span class="number">20</span></span><br><span class="line">    print(<span class="string">"the number of comments is:"</span> + totalnum,</span><br><span class="line">          <span class="string">"the number of pages is: "</span> + str(pagenum))</span><br><span class="line">    <span class="keyword">return</span> pagenum</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">IOFile</span><span class="params">(soup, opener, file, pagestart, step)</span>:</span></span><br><span class="line">    <span class="string">"""the IO operation of file"""</span></span><br><span class="line">    <span class="comment"># 循环爬取内容</span></span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> range(step):</span><br><span class="line">        start = (pagestart + item) * <span class="number">20</span></span><br><span class="line">        print(<span class="string">'第'</span> + str(pagestart + item) + <span class="string">'页评论开始爬取'</span>)</span><br><span class="line">        url = MakeUrl(start)</span><br><span class="line">        <span class="comment"># 超时重连</span></span><br><span class="line">        state = <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">while</span> <span class="keyword">not</span> state:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                html = opener.open(url).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">                state = <span class="keyword">True</span></span><br><span class="line">            <span class="keyword">except</span> socket.timeout:</span><br><span class="line">                state = <span class="keyword">False</span></span><br><span class="line">        <span class="comment"># 获得评论内容</span></span><br><span class="line">        soup = BeautifulSoup(html, <span class="string">"html.parser"</span>)</span><br><span class="line">        comments = soup.select(<span class="string">"div.comment &gt; p"</span>)</span><br><span class="line">        <span class="keyword">for</span> text <span class="keyword">in</span> comments:</span><br><span class="line">            file.write(text.get_text().split()[<span class="number">0</span>] + <span class="string">'\n'</span>)</span><br><span class="line">            print(text.get_text())</span><br><span class="line">        <span class="comment"># 延时1s</span></span><br><span class="line">        time.sleep(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'线程采集写入完毕'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">GetSoup</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""get the soup and the opener of url"""</span></span><br><span class="line">    main_url = <span class="string">'https://accounts.douban.com/login?source=movie'</span></span><br><span class="line">    formdata = &#123;</span><br><span class="line">        <span class="string">"form_email"</span>: <span class="string">"your-email"</span>,</span><br><span class="line">        <span class="string">"form_password"</span>: <span class="string">"your-password"</span>,</span><br><span class="line">        <span class="string">"source"</span>: <span class="string">"movie"</span>,</span><br><span class="line">        <span class="string">"redir"</span>: <span class="string">"https://movie.douban.com/subject/26934346/"</span>,</span><br><span class="line">        <span class="string">"login"</span>: <span class="string">"登录"</span></span><br><span class="line">            &#125;</span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">"User-Agent"</span>: <span class="string">"Mozilla/5.0 (Windows NT 5.1; U; en; rv:1.8.1)\</span></span><br><span class="line"><span class="string">            Gecko/20061208 Firefox/2.0.0 Opera 9.50"</span>,</span><br><span class="line">        <span class="string">'Connection'</span>: <span class="string">'keep-alive'</span></span><br><span class="line">            &#125;</span><br><span class="line">    opener = MakeOpener()</span><br><span class="line"></span><br><span class="line">    response_login = MakeRes(main_url, opener, formdata, headers)</span><br><span class="line">    soup = BeautifulSoup(response_login, <span class="string">"html.parser"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> soup.find(<span class="string">'img'</span>, id=<span class="string">'captcha_image'</span>):</span><br><span class="line">        print(<span class="string">"有验证码"</span>)</span><br><span class="line">        <span class="comment"># 获取验证码图片地址</span></span><br><span class="line">        captchaAddr = soup.find(<span class="string">'img'</span>, id=<span class="string">'captcha_image'</span>)[<span class="string">'src'</span>]</span><br><span class="line">        <span class="comment"># 匹配验证码id</span></span><br><span class="line">        reCaptchaID = <span class="string">r'&lt;input type="hidden" name="captcha-id" value="(.*?)"/'</span></span><br><span class="line">        captchaID = re.findall(reCaptchaID, response_login)</span><br><span class="line">        <span class="comment"># 下载验证码图片</span></span><br><span class="line">        request.urlretrieve(captchaAddr, <span class="string">"captcha.jpg"</span>)</span><br><span class="line">        img = pyplot.imread(<span class="string">"captcha.jpg"</span>)</span><br><span class="line">        pyplot.imshow(img)</span><br><span class="line">        pyplot.axis(<span class="string">'off'</span>)</span><br><span class="line">        pyplot.show()</span><br><span class="line">        <span class="comment"># 输入验证码并加入提交信息中，重新编码提交获得页面内容</span></span><br><span class="line">        captcha = input(<span class="string">'please input the captcha:'</span>)</span><br><span class="line">        formdata[<span class="string">'captcha-solution'</span>] = captcha</span><br><span class="line">        formdata[<span class="string">'captcha-id'</span>] = captchaID[<span class="number">0</span>]</span><br><span class="line">        response_login = MakeRes(main_url, opener, formdata, headers)</span><br><span class="line">        soup = BeautifulSoup(response_login, <span class="string">"html.parser"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> soup, opener</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""main function"""</span></span><br><span class="line">    timeout = <span class="number">5</span></span><br><span class="line">    socket.setdefaulttimeout(timeout)</span><br><span class="line">    now = datetime.now()</span><br><span class="line">    soup, opener = GetSoup()</span><br><span class="line"></span><br><span class="line">    pagenum = GetNum(soup)</span><br><span class="line">    step = pagenum // <span class="number">9</span></span><br><span class="line">    pagelist = [x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>, pagenum, step)]</span><br><span class="line">    print(<span class="string">'pageurl`s list=&#123;&#125;, step=&#123;&#125;'</span>.format(pagelist, step))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 追加写文件的方式打开文件</span></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'秘密森林的短评.txt'</span>, <span class="string">'w+'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> file:</span><br><span class="line">        thread = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">10</span>):</span><br><span class="line">            t = threading.Thread(</span><br><span class="line">                    target=IOFile,</span><br><span class="line">                    args=(soup, opener, file, pagelist[i], step)</span><br><span class="line">                )</span><br><span class="line">            thread.append(t)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 建立线程</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">10</span>):</span><br><span class="line">            thread[i].start()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">10</span>):</span><br><span class="line">            thread[i].join()</span><br><span class="line"></span><br><span class="line">    end = datetime.now()</span><br><span class="line">    print(<span class="string">"程序耗时： "</span> + str(end-now))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<h1 id="运行结果">运行结果</h1>
+<h2 id="效率有提升">效率有提升</h2>
+<p>推荐使用ipython作为shell或者直接使用jupyter notebook，因为可以直接在终端显示出验证码图片。</p>
 <p>对应的单线程程序在github上。单线程：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2817465-d0d6e9bb5080cdd5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="单线程.jpg"></p>
+<figure>
+<img src="http://upload-images.jianshu.io/upload_images/2817465-d0d6e9bb5080cdd5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="单线程.jpg"><figcaption>单线程.jpg</figcaption>
+</figure>
 <p>可见时间超过30分钟。修改后时间缩短到了11分钟。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2817465-3f5e78feeae353ec.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="多线程.jpg"></p>
-<h2 id="文件截图"><a href="#文件截图" class="headerlink" title="文件截图"></a>文件截图</h2><p><img src="http://upload-images.jianshu.io/upload_images/2817465-9e2dae6fb1ea04a5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ScreenShot00080.jpg"></p>
-<h2 id="我的项目"><a href="#我的项目" class="headerlink" title="我的项目"></a>我的项目</h2><p>具体文件和对应的结果截图我放到了我的github上。</p>
+<figure>
+<img src="http://upload-images.jianshu.io/upload_images/2817465-3f5e78feeae353ec.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="多线程.jpg"><figcaption>多线程.jpg</figcaption>
+</figure>
+<h2 id="文件截图">文件截图</h2>
+<figure>
+<img src="http://upload-images.jianshu.io/upload_images/2817465-9e2dae6fb1ea04a5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ScreenShot00080.jpg"><figcaption>ScreenShot00080.jpg</figcaption>
+</figure>
+<h2 id="我的项目">我的项目</h2>
+<p>具体文件和对应的结果截图我放到了我的github上。</p>
 <p><a href="https://github.com/lartpang/mypython" target="_blank" rel="noopener">mypython</a></p>
 
           
@@ -738,91 +755,100 @@
       
         
           
-            <h1 id="XPATH（参考-w3school-和-静觅-和-阮一峰的网络日志）"><a href="#XPATH（参考-w3school-和-静觅-和-阮一峰的网络日志）" class="headerlink" title="XPATH（参考 w3school 和 静觅 和 阮一峰的网络日志）"></a>XPATH（参考 <a href="http://www.w3school.com.cn/xpath/index.asp" target="_blank" rel="noopener">w3school</a> 和 <a href="http://cuiqingcai.com/2621.html" target="_blank" rel="noopener">静觅</a> 和 <a href="http://www.ruanyifeng.com/blog/2009/07/xpath_path_expressions.html" target="_blank" rel="noopener">阮一峰的网络日志</a>）</h1><p><strong>在 XPath 中，有七种类型的节点：元素、属性、文本、命名空间、处理指令、注释以及文档节点（或称为根节点）。</strong></p>
+            <h1 id="xpath参考-w3school-和-静觅-和-阮一峰的网络日志">XPATH（参考 <a href="http://www.w3school.com.cn/xpath/index.asp" target="_blank" rel="noopener">w3school</a> 和 <a href="http://cuiqingcai.com/2621.html" target="_blank" rel="noopener">静觅</a> 和 <a href="http://www.ruanyifeng.com/blog/2009/07/xpath_path_expressions.html" target="_blank" rel="noopener">阮一峰的网络日志</a>）</h1>
+<p><strong>在 XPath 中，有七种类型的节点：元素、属性、文本、命名空间、处理指令、注释以及文档节点（或称为根节点）。</strong></p>
 <p>节点实际上就是各种html标签，属性，以及被标签包围的文字。</p>
 <p><strong>搜索方法</strong></p>
-<p><em>xpath使用路径表达式在xml文档中选取节点。节点通过路径或者step来选取。在形式上，”路径表达式”与传统的文件系统非常类似。</em></p>
+<p><em>xpath使用路径表达式在xml文档中选取节点。节点通过路径或者step来选取。在形式上，&quot;路径表达式&quot;与传统的文件系统非常类似。</em></p>
 <ul>
 <li>斜杠（/）作为路径内部的分割符。</li>
 <li>同一个节点有绝对路径和相对路径两种写法。</li>
-<li>绝对路径（absolute path）必须用”/“起首，后面紧跟根节，比如/step/step/…。</li>
-<li>相对路径（relative path）则是除了绝对路径以外的其他*法，比如 step/step，也就是不使用”/“起首。</li>
-<li>“.”表示当前节点。</li>
-<li>“..”表示当前节点的父节点</li>
+<li>绝对路径（absolute path）必须用&quot;/&quot;起首，后面紧跟根节，比如/step/step/...。</li>
+<li>相对路径（relative path）则是除了绝对路径以外的其他*法，比如 step/step，也就是不使用&quot;/&quot;起首。</li>
+<li>&quot;.&quot;表示当前节点。</li>
+<li>&quot;..&quot;表示当前节点的父节点</li>
 </ul>
 <p>下面是详细介绍：</p>
 <table>
+<colgroup>
+<col style="width: 44%">
+<col style="width: 55%">
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>路径表达式</th>
 <th>结果</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>bookstore</td>
 <td>选取 bookstore 元素的所有子节点。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>/bookstore</td>
 <td>选取根元素 bookstore。注释：假如路径起始于正斜杠( / )，则此路径始终代表到某元素的绝对路径！</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>bookstore/book</td>
 <td>选取属于 bookstore 的子元素的所有 book 元素。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>//book</td>
 <td>选取所有 book 子元素，而不管它们在文档中的位置。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>bookstore//book</td>
 <td>选择属于 bookstore 元素的后代的所有 book 元素，而不管它们位于 bookstore 之下的什么位置。</td>
 </tr>
-<tr>
-<td>//@lang</td>
+<tr class="even">
+<td>//<span class="citation" data-cites="lang">@lang</span></td>
 <td>选取名为 lang 的所有属性。</td>
 </tr>
 </tbody>
 </table>
 <p><em>谓语（Predicates）谓语用来查找某个特定的节点或者包含某个指定的值的节点。谓语被嵌在方括号中。</em></p>
 <table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>路径表达式</th>
 <th>结果</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>/bookstore/book[1]</td>
 <td>选取属于 bookstore 子元素的第一个 book 元素。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>/bookstore/book[last()]</td>
 <td>选取属于 bookstore 子元素的最后一个 book 元素。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>/bookstore/book[last()-1]</td>
 <td>选取属于 bookstore 子元素的倒数第二个 book 元素。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>/bookstore/book[position()&lt;3]</td>
 <td>选取最前面的两个属于 bookstore 元素的子元素的 book 元素。</td>
 </tr>
-<tr>
-<td>//title[@lang]</td>
+<tr class="odd">
+<td>//title<span class="citation" data-cites="lang">[@lang]</span></td>
 <td>选取所有拥有名为 lang 的属性的 title 元素。</td>
 </tr>
-<tr>
-<td>//title[@lang=’eng’]</td>
+<tr class="even">
+<td>//title<span class="citation" data-cites="lang">[@lang='eng']</span></td>
 <td>选取所有 title 元素，且这些元素拥有值为 eng 的 lang 属性。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>/bookstore/book[price&gt;35.00]</td>
 <td>选取 bookstore 元素的所有 book 元素，且其中的 price 元素的值须大于 35.00。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>/bookstore/book[price&gt;35.00]/title</td>
 <td>选取 bookstore 元素中的 book 元素的所有 title 元素，且其中的 price 元素的值须大于 35.00。</td>
 </tr>
@@ -831,21 +857,21 @@
 <p><em>XPath 通配符可用来选取未知的 XML 元素。</em></p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>通配符</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>*</td>
 <td>匹配任何元素节点。</td>
 </tr>
-<tr>
-<td>@*</td>
+<tr class="even">
+<td><span class="citation" data-cites="*">@*</span></td>
 <td>匹配任何属性节点。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>node()</td>
 <td>匹配任何类型的节点。</td>
 </tr>
@@ -854,22 +880,22 @@
 <p>在下面的表格中，我们列出了一些路径表达式，以及这些表达式的结果：</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>路径表达式</th>
 <th>结果</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>/bookstore/*</td>
 <td>选取 bookstore 元素的所有子元素。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>//*</td>
 <td>选取文档中的所有元素。</td>
 </tr>
-<tr>
-<td>//title[@*]</td>
+<tr class="odd">
+<td>//title<span class="citation" data-cites="*">[@*]</span></td>
 <td>选取所有带有属性的 title 元素。</td>
 </tr>
 </tbody>
@@ -878,57 +904,57 @@
 <p><em>xpath轴可定义相对于当前节点的节点集。</em></p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>轴名称</th>
 <th>结果</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>ancestor</td>
 <td>选取当前节点的所有先辈（父、祖父等）。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>ancestor-or-self</td>
 <td>选取当前节点的所有先辈（父、祖父等）以及当前节点本身。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>attribute</td>
 <td>选取当前节点的所有属性。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>child</td>
 <td>选取当前节点的所有子元素。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>descendant</td>
 <td>选取当前节点的所有后代元素（子、孙等）。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>descendant-or-self</td>
 <td>选取当前节点的所有后代元素（子、孙等）以及当前节点本身。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>following</td>
 <td>选取文档中当前节点的结束标签之后的所有节点。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>namespace</td>
 <td>选取当前节点的所有命名空间节点。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>parent</td>
 <td>选取当前节点的父节点。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>preceding</td>
 <td>选取文档中当前节点的开始标签之前的所有节点。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>preceding-sibling</td>
 <td>选取当前节点之前的所有同级节点。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>self</td>
 <td>选取当前节点。</td>
 </tr>
@@ -936,59 +962,59 @@
 </table>
 <p>步（step）包括：</p>
 <p>轴（axis）</p>
-<pre><code>定义所选节点与当前节点之间的树关系
-</code></pre><p>节点测试（node-test）</p>
-<pre><code>识别某个轴内部的节点
-</code></pre><p>零个或者更多谓语（predicate）</p>
-<pre><code>更深入地提炼所选的节点集
-</code></pre><p><strong>步的语法</strong>：</p>
-<pre><code>轴名称::节点测试[谓语]
-</code></pre><p>实例</p>
+<pre><code>定义所选节点与当前节点之间的树关系</code></pre>
+<p>节点测试（node-test）</p>
+<pre><code>识别某个轴内部的节点</code></pre>
+<p>零个或者更多谓语（predicate）</p>
+<pre><code>更深入地提炼所选的节点集</code></pre>
+<p><strong>步的语法</strong>：</p>
+<pre><code>轴名称::节点测试[谓语]</code></pre>
+<p>实例</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>例子</th>
 <th>结果</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>child::book</td>
 <td>选取所有属于当前节点的子元素的 book 节点。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>attribute::lang</td>
 <td>选取当前节点的 lang 属性。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>child::*</td>
 <td>选取当前节点的所有子元素。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>attribute::*</td>
 <td>选取当前节点的所有属性。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>child::text()</td>
 <td>选取当前节点的所有文本子节点。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>child::node()</td>
 <td>选取当前节点的所有子节点。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>descendant::book</td>
 <td>选取当前节点的所有 book 后代。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>ancestor::book</td>
 <td>选择当前节点的所有 book 先辈。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>ancestor-or-self::book</td>
 <td>选取当前节点的所有 book 先辈以及当前节点（如果此节点是 book 节点）</td>
 </tr>
-<tr>
+<tr class="even">
 <td>child::*/child::price</td>
 <td>选取当前节点的所有 price 孙节点。</td>
 </tr>
@@ -996,8 +1022,14 @@
 </table>
 <p><em>下面列出了可用在 XPath 表达式中的运算符</em>：</p>
 <table>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>运算符</th>
 <th>描述</th>
 <th>实例</th>
@@ -1005,87 +1037,85 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>\</td>
-<td></td>
+<tr class="odd">
+<td>|</td>
 <td>计算两个节点集</td>
-<td>//book \</td>
-<td>//cd</td>
+<td>//book | //cd</td>
 <td>返回所有拥有 book 和 cd 元素的节点集</td>
 </tr>
-<tr>
+<tr class="even">
 <td>+</td>
 <td>加法</td>
 <td>6 + 4</td>
 <td>10</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>-</td>
 <td>减法</td>
 <td>6 - 4</td>
 <td>2</td>
 </tr>
-<tr>
+<tr class="even">
 <td>*</td>
 <td>乘法</td>
 <td>6 * 4</td>
 <td>24</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>div</td>
 <td>除法</td>
 <td>8 div 4</td>
 <td>2</td>
 </tr>
-<tr>
+<tr class="even">
 <td>mod</td>
 <td>计算除法的余数</td>
 <td>5 mod 2</td>
 <td>1</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>=</td>
 <td>等于</td>
 <td>price=9.80</td>
 <td>如果 price 是 9.80，则返回 true。如果 price 是 9.90，则返回 false。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>!=</td>
 <td>不等于</td>
 <td>price!=9.80</td>
 <td>如果 price 是 9.90，则返回 true。如果 price 是 9.80，则返回 false。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>&lt;</td>
 <td>小于</td>
 <td>price&lt;9.80</td>
 <td>如果 price 是 9.00，则返回 true。如果 price 是 9.90，则返回 false。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>&lt;=</td>
 <td>小于或等于</td>
 <td>price&lt;=9.80</td>
 <td>如果 price 是 9.00，则返回 true。如果 price 是 9.90，则返回 false。</td>
 </tr>
-<tr>
-<td>></td>
+<tr class="odd">
+<td>&gt;</td>
 <td>大于</td>
 <td>price&gt;9.80</td>
 <td>如果 price 是 9.90，则返回 true。如果 price 是 9.80，则返回 false。</td>
 </tr>
-<tr>
-<td>>=</td>
+<tr class="even">
+<td>&gt;=</td>
 <td>大于或等于</td>
 <td>price&gt;=9.80</td>
 <td>如果 price 是 9.90，则返回 true。如果 price 是 9.70，则返回 false。</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>or</td>
 <td>或</td>
 <td>price=9.80 or price=9.70</td>
 <td>如果 price 是 9.80，则返回 true。如果 price 是 9.50，则返回 false。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>and</td>
 <td>与</td>
 <td>price&gt;9.00 and price&lt;9.90</td>
@@ -1096,32 +1126,34 @@
 <hr>
 <p>这里主要使用是配合<code>lxml</code>库，下面是一些例子。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#========</span></span><br><span class="line"><span class="comment"># 文本读取</span></span><br><span class="line"><span class="comment">#========</span></span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line">text = <span class="string">'''</span></span><br><span class="line"><span class="string">&lt;div&gt;</span></span><br><span class="line"><span class="string">    &lt;ul&gt;</span></span><br><span class="line"><span class="string">         &lt;li class="item-0"&gt;&lt;a href="link1.html"&gt;first item&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">         &lt;li class="item-1"&gt;&lt;a href="link2.html"&gt;second item&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">         &lt;li class="item-inactive"&gt;&lt;a href="link3.html"&gt;third item&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">         &lt;li class="item-1"&gt;&lt;a href="link4.html"&gt;fourth item&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">         &lt;li class="item-0"&gt;&lt;a href="link5.html"&gt;fifth item&lt;/a&gt;</span></span><br><span class="line"><span class="string">     &lt;/ul&gt;</span></span><br><span class="line"><span class="string"> &lt;/div&gt;</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">html = etree.HTML(text)</span><br><span class="line">result = etree.tostring(html)</span><br><span class="line">print(result)</span><br><span class="line"><span class="comment">#========</span></span><br><span class="line"><span class="comment"># 文件读取</span></span><br><span class="line"><span class="comment">#========</span></span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line">html = etree.parse(<span class="string">'hello.html'</span>)</span><br><span class="line">result = etree.tostring(html, pretty_print=<span class="keyword">True</span>)</span><br><span class="line">print(result)</span><br><span class="line"><span class="comment">#=============</span></span><br><span class="line"><span class="comment"># 利用xpath解析</span></span><br><span class="line"><span class="comment">#=============</span></span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line">html = etree.parse(<span class="string">'hello.html'</span>)</span><br><span class="line">result_list = html.xpath(<span class="string">'//li'</span>)</span><br><span class="line"><span class="keyword">print</span> result_list</span><br></pre></td></tr></table></figure>
-<h1 id="CSS选择器（转自阮一峰的网络日志）"><a href="#CSS选择器（转自阮一峰的网络日志）" class="headerlink" title="CSS选择器（转自阮一峰的网络日志）"></a>CSS选择器（转自<a href="http://www.ruanyifeng.com/blog/2009/03/css_selectors.html" target="_blank" rel="noopener">阮一峰的网络日志</a>）</h1><h2 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h2><p>最基本的就是针对标签，类以及id了。</p>
+<h1 id="css选择器转自阮一峰的网络日志">CSS选择器（转自<a href="http://www.ruanyifeng.com/blog/2009/03/css_selectors.html" target="_blank" rel="noopener">阮一峰的网络日志</a>）</h1>
+<h2 id="基本选择器">基本选择器</h2>
+<p>最基本的就是针对标签，类以及id了。</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>选择器</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>1.</td>
 <td>*</td>
 <td>通用元素选择器，匹配任何元素</td>
 </tr>
-<tr>
+<tr class="even">
 <td>2.</td>
 <td>E</td>
 <td>标签选择器，匹配所有使用E标签的元素</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>3.</td>
 <td>.info</td>
 <td>class选择器，匹配所有class属性中包含info的元素</td>
 </tr>
-<tr>
+<tr class="even">
 <td>4.</td>
 <td>#footer</td>
 <td>id选择器，匹配所有id属性等于footer的元素</td>
@@ -1129,31 +1161,32 @@
 </tbody>
 </table>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">* &#123; <span class="attribute">margin</span>:<span class="number">0</span>; <span class="attribute">padding</span>:<span class="number">0</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">font-size</span>:<span class="number">2em</span>; &#125;</span><br><span class="line"><span class="selector-class">.info</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.info</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.info</span><span class="selector-class">.error</span> &#123; <span class="attribute">color</span>:<span class="number">#900</span>; <span class="attribute">font-weight</span>:bold; &#125;</span><br><span class="line"><span class="selector-id">#info</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-id">#info</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="多元素的组合选择器-这个蛮实用的"><a href="#多元素的组合选择器-这个蛮实用的" class="headerlink" title="多元素的组合选择器(这个蛮实用的)"></a>多元素的组合选择器(这个蛮实用的)</h2><table>
+<h2 id="多元素的组合选择器这个蛮实用的">多元素的组合选择器(这个蛮实用的)</h2>
+<table>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>选择器</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>5.</td>
 <td>E,F</td>
 <td>多元素选择器，同时匹配所有E元素或F元素，E和F之间用逗号分隔</td>
 </tr>
-<tr>
+<tr class="even">
 <td>6.</td>
 <td>E F</td>
 <td>后代元素选择器，匹配所有属于E元素后代的F元素，E和F之间用空格分隔</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>7.</td>
 <td>E &gt; F</td>
 <td>子元素选择器，匹配所有E元素的子元素F</td>
 </tr>
-<tr>
+<tr class="even">
 <td>8.</td>
 <td>E + F</td>
 <td>毗邻元素选择器，匹配所有紧随E元素之后的同级元素F</td>
@@ -1161,79 +1194,85 @@
 </tbody>
 </table>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">p</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"><span class="selector-id">#nav</span> <span class="selector-tag">li</span> &#123; <span class="attribute">display</span>:inline; &#125;</span><br><span class="line"><span class="selector-id">#nav</span> <span class="selector-tag">a</span> &#123; <span class="attribute">font-weight</span>:bold; &#125;</span><br><span class="line"><span class="selector-tag">div</span> &gt; <span class="selector-tag">strong</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span> + <span class="selector-tag">p</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="CSS-2-1-属性选择器"><a href="#CSS-2-1-属性选择器" class="headerlink" title="CSS 2.1 属性选择器"></a>CSS 2.1 属性选择器</h2><table>
+<h2 id="css-2.1-属性选择器">CSS 2.1 属性选择器</h2>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>选择器</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>9.</td>
 <td>E[att]</td>
-<td>匹配所有具有att属性的E元素，不考虑它的值。（注意：E在此处可以省略，比如”[cheacked]”。以下同。）</td>
+<td>匹配所有具有att属性的E元素，不考虑它的值。（注意：E在此处可以省略，比如&quot;[cheacked]&quot;。以下同。）</td>
 </tr>
-<tr>
+<tr class="even">
 <td>10.</td>
 <td>E[att=val]</td>
-<td>匹配所有att属性等于”val”的E元素</td>
+<td>匹配所有att属性等于&quot;val&quot;的E元素</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>11.</td>
 <td>E[att~=val]</td>
-<td>匹配所有att属性具有多个空格分隔的值、其中一个值等于”val”的E元素</td>
+<td>匹配所有att属性具有多个空格分隔的值、其中一个值等于&quot;val&quot;的E元素</td>
 </tr>
-<tr>
+<tr class="even">
 <td>12.</td>
-<td>E[att\</td>
-<td>=val]</td>
-<td>匹配所有att属性具有多个连字号分隔（hyphen-separated）的值、其中一个值以”val”开头的E元素，主要用于lang属性，比如”en”、”en-us”、”en-gb”等等</td>
+<td>E[att|=val]</td>
+<td>匹配所有att属性具有多个连字号分隔（hyphen-separated）的值、其中一个值以&quot;val&quot;开头的E元素，主要用于lang属性，比如&quot;en&quot;、&quot;en-us&quot;、&quot;en-gb&quot;等等</td>
 </tr>
 </tbody>
 </table>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[title]</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-attr">[class=error]</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"><span class="selector-tag">td</span><span class="selector-attr">[headers~=col1]</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[lang|=en]</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"><span class="selector-tag">blockquote</span><span class="selector-attr">[class=quote]</span><span class="selector-attr">[cite]</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="CSS-2-1中的伪类"><a href="#CSS-2-1中的伪类" class="headerlink" title="CSS 2.1中的伪类"></a>CSS 2.1中的伪类</h2><table>
+<h2 id="css-2.1中的伪类">CSS 2.1中的伪类</h2>
+<table>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>选择器</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>13.</td>
 <td>E:first-child</td>
 <td>匹配父元素的第一个子元素</td>
 </tr>
-<tr>
+<tr class="even">
 <td>14.</td>
 <td>E:link</td>
 <td>匹配所有未被点击的链接</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>15.</td>
 <td>E:visited</td>
 <td>匹配所有已被点击的链接</td>
 </tr>
-<tr>
+<tr class="even">
 <td>16.</td>
 <td>E:active</td>
 <td>匹配鼠标已经其上按下、还没有释放的E元素</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>17.</td>
 <td>E:hover</td>
 <td>匹配鼠标悬停其上的E元素</td>
 </tr>
-<tr>
+<tr class="even">
 <td>18.</td>
 <td>E:focus</td>
 <td>匹配获得当前焦点的E元素</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>19.</td>
 <td>E:lang(c)</td>
 <td>匹配lang属性等于c的E元素</td>
@@ -1241,31 +1280,32 @@
 </tbody>
 </table>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:first-child</span> &#123; <span class="attribute">font-style</span>:italic; &#125;</span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=text]</span><span class="selector-pseudo">:focus</span> &#123; <span class="attribute">color</span>:<span class="number">#000</span>; <span class="attribute">background</span>:<span class="number">#ffe</span>; &#125;</span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type=text]</span><span class="selector-pseudo">:focus</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">background</span>:<span class="number">#fff</span>; &#125;</span><br><span class="line"><span class="selector-tag">q</span><span class="selector-pseudo">:lang(sv)</span> &#123; <span class="attribute">quotes</span>: <span class="string">"\201D"</span> <span class="string">"\201D"</span> <span class="string">"\2019"</span> <span class="string">"\2019"</span>; &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="CSS-2-1中的伪元素"><a href="#CSS-2-1中的伪元素" class="headerlink" title="CSS 2.1中的伪元素"></a>CSS 2.1中的伪元素</h2><table>
+<h2 id="css-2.1中的伪元素">CSS 2.1中的伪元素</h2>
+<table>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>选择器</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>20.</td>
 <td>E:first-line</td>
 <td>匹配E元素的第一行</td>
 </tr>
-<tr>
+<tr class="even">
 <td>21.</td>
 <td>E:first-letter</td>
 <td>匹配E元素的第一个字母</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>22.</td>
 <td>E:before</td>
 <td>在E元素之前插入生成的内容</td>
 </tr>
-<tr>
+<tr class="even">
 <td>23.</td>
 <td>E:after</td>
 <td>在E元素之后插入生成的内容</td>
@@ -1273,16 +1313,17 @@
 </tbody>
 </table>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">p:first-line &#123; font-weight:bold; color;#600; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.preamble</span><span class="selector-pseudo">:first-letter</span> &#123; <span class="attribute">font-size</span>:<span class="number">1.5em</span>; <span class="attribute">font-weight</span>:bold; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.cbb</span><span class="selector-pseudo">:before</span> &#123; <span class="attribute">content</span>:<span class="string">""</span>; <span class="attribute">display</span>:block; <span class="attribute">height</span>:<span class="number">17px</span>; <span class="attribute">width</span>:<span class="number">18px</span>; <span class="attribute">background</span>:<span class="built_in">url</span>(top.png) no-repeat <span class="number">0</span> <span class="number">0</span>; <span class="attribute">margin</span>:<span class="number">0</span> <span class="number">0</span> <span class="number">0</span> -<span class="number">18px</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span><span class="selector-pseudo">:after</span> &#123; <span class="attribute">content</span>: <span class="string">" ("</span> <span class="built_in">attr</span>(href) <span class="string">") "</span>; &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="CSS-3的同级元素通用选择器"><a href="#CSS-3的同级元素通用选择器" class="headerlink" title="CSS 3的同级元素通用选择器"></a>CSS 3的同级元素通用选择器</h2><table>
+<h2 id="css-3的同级元素通用选择器">CSS 3的同级元素通用选择器</h2>
+<table>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>选择器</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>24.</td>
 <td>E ~ F</td>
 <td>匹配任何在E元素之后的同级F元素</td>
@@ -1290,58 +1331,60 @@
 </tbody>
 </table>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> ~ <span class="selector-tag">ul</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="CSS-3-属性选择器"><a href="#CSS-3-属性选择器" class="headerlink" title="CSS 3 属性选择器"></a>CSS 3 属性选择器</h2><table>
+<h2 id="css-3-属性选择器">CSS 3 属性选择器</h2>
+<table>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>选择器</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>25.</td>
-<td>E[att^=”val”]</td>
-<td>属性att的值以”val”开头的元素</td>
+<td>E[att^=&quot;val&quot;]</td>
+<td>属性att的值以&quot;val&quot;开头的元素</td>
 </tr>
-<tr>
+<tr class="even">
 <td>26.</td>
-<td>E[att$=”val”]</td>
-<td>属性att的值以”val”结尾的元素</td>
+<td>E[att$=&quot;val&quot;]</td>
+<td>属性att的值以&quot;val&quot;结尾的元素</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>27.</td>
-<td>E[att*=”val”]</td>
-<td>属性att的值包含”val”字符串的元素</td>
+<td>E[att*=&quot;val&quot;]</td>
+<td>属性att的值包含&quot;val&quot;字符串的元素</td>
 </tr>
 </tbody>
 </table>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-attr">[id^="nav"]</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="CSS-3中与用户界面有关的伪类"><a href="#CSS-3中与用户界面有关的伪类" class="headerlink" title="CSS 3中与用户界面有关的伪类"></a>CSS 3中与用户界面有关的伪类</h2><table>
+<h2 id="css-3中与用户界面有关的伪类">CSS 3中与用户界面有关的伪类</h2>
+<table>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>选择器</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>28.</td>
 <td>E:enabled</td>
 <td>匹配表单中激活的元素</td>
 </tr>
-<tr>
+<tr class="even">
 <td>29.</td>
 <td>E:disabled</td>
 <td>匹配表单中禁用的元素</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>30.</td>
 <td>E:checked</td>
 <td>匹配表单中被选中的radio（单选框）或checkbox（复选框）元素</td>
 </tr>
-<tr>
+<tr class="even">
 <td>31.</td>
 <td>E::selection</td>
 <td>匹配用户当前选中的元素</td>
@@ -1349,66 +1392,72 @@
 </tbody>
 </table>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="text"]</span><span class="selector-pseudo">:disabled</span> &#123; <span class="attribute">background</span>:<span class="number">#ddd</span>; &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="CSS-3中的结构性伪类-蛮实用的"><a href="#CSS-3中的结构性伪类-蛮实用的" class="headerlink" title="CSS 3中的结构性伪类(蛮实用的)"></a>CSS 3中的结构性伪类(蛮实用的)</h2><table>
+<h2 id="css-3中的结构性伪类蛮实用的">CSS 3中的结构性伪类(蛮实用的)</h2>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>选择器</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>32.</td>
 <td>E:root</td>
 <td>匹配文档的根元素，对于HTML文档，就是HTML元素</td>
 </tr>
-<tr>
+<tr class="even">
 <td>33.</td>
 <td>E:nth-child(n)</td>
 <td>匹配其父元素的第n个子元素，第一个编号为1</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>34.</td>
 <td>E:nth-last-child(n)</td>
 <td>匹配其父元素的倒数第n个子元素，第一个编号为1</td>
 </tr>
-<tr>
+<tr class="even">
 <td>35.</td>
 <td>E:nth-of-type(n)</td>
 <td>与:nth-child()作用类似，但是仅匹配使用同种标签的元素</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>36.</td>
 <td>E:nth-last-of-type(n)</td>
 <td>与:nth-last-child() 作用类似，但是仅匹配使用同种标签的元素</td>
 </tr>
-<tr>
+<tr class="even">
 <td>37.</td>
 <td>E:last-child</td>
 <td>匹配父元素的最后一个子元素，等同于:nth-last-child(1)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>38.</td>
 <td>E:first-of-type</td>
 <td>匹配父元素下使用同种标签的第一个子元素，等同于:nth-of-type(1)</td>
 </tr>
-<tr>
+<tr class="even">
 <td>39.</td>
 <td>E:last-of-type</td>
 <td>匹配父元素下使用同种标签的最后一个子元素，等同于:nth-last-of-type(1)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>40.</td>
 <td>E:only-child</td>
 <td>匹配父元素下仅有的一个子元素，等同于:first-child:last-child或 :nth-child(1):nth-last-child(1)</td>
 </tr>
-<tr>
+<tr class="even">
 <td>41.</td>
 <td>E:only-of-type</td>
 <td>匹配父元素下使用同种标签的唯一一个子元素，等同于:first-of-type:last-of-type或 :nth-of-type(1):nth-last-of-type(1)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>42.</td>
 <td>E:empty</td>
 <td>匹配一个不包含任何子元素的元素，注意，文本节点也被看作子元素</td>
@@ -1416,16 +1465,17 @@
 </tbody>
 </table>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:nth-child(3)</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:nth-child(odd)</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:nth-child(even)</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:nth-child(3n+0)</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:nth-child(3n)</span> &#123; <span class="attribute">color</span>:<span class="number">#f00</span>; &#125;</span><br><span class="line"><span class="selector-tag">tr</span><span class="selector-pseudo">:nth-child(2n+11)</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br><span class="line"><span class="selector-tag">tr</span><span class="selector-pseudo">:nth-last-child(2)</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:last-child</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:only-child</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:empty</span> &#123; <span class="attribute">background</span>:<span class="number">#ff0</span>; &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="CSS-3的反选伪类"><a href="#CSS-3的反选伪类" class="headerlink" title="CSS 3的反选伪类"></a>CSS 3的反选伪类</h2><table>
+<h2 id="css-3的反选伪类">CSS 3的反选伪类</h2>
+<table>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>选择器</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>43.</td>
 <td>E:not(s)</td>
 <td>匹配不符合当前选择器的任何元素</td>
@@ -1433,19 +1483,20 @@
 </tbody>
 </table>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:not(p)</span> &#123; <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#ccc</span>; &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="CSS-3中的-target-伪类"><a href="#CSS-3中的-target-伪类" class="headerlink" title="CSS 3中的 :target 伪类"></a>CSS 3中的 :target 伪类</h2><table>
+<h2 id="css-3中的-target-伪类">CSS 3中的 :target 伪类</h2>
+<table>
 <thead>
-<tr>
+<tr class="header">
 <th>序号</th>
 <th>选择器</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>44.</td>
 <td>E:target</td>
-<td>匹配文档中特定”id”点击后的效果</td>
+<td>匹配文档中特定&quot;id&quot;点击后的效果</td>
 </tr>
 </tbody>
 </table>
@@ -1625,7 +1676,7 @@
 <p>似乎那是讲“麦兜之父”谢立文的故事。</p>
 <p>印象中对于麦兜的记忆片段，似乎是麦兜成了宇航员，飞上了天空，也有麦兜妈妈的影像，只记得当时的场景很煽情，很催泪。</p>
 <p>而这次的麦兜饭宝奇兵，不得不说，有笑点，有泪点，不过，终究是笑点更多，略带幻想的有丢丢励志的人类大战外星怪的搞怪动画。</p>
-<p><img src="http://n1.itc.cn/img8/wb/recom/2016/05/09/146276080746839844.JPEG" alt="img"><br>影片开头，主要讲了外星怪物袭击地球，人类各种手段都无法战胜，甚至来自宇宙的扎肉超人都被打败。此怪兽，力大，体壮，能力强，无坚不摧，无法被战胜。</p>
+<p><img src="http://n1.itc.cn/img8/wb/recom/2016/05/09/146276080746839844.JPEG" alt="img"> 影片开头，主要讲了外星怪物袭击地球，人类各种手段都无法战胜，甚至来自宇宙的扎肉超人都被打败。此怪兽，力大，体壮，能力强，无坚不摧，无法被战胜。</p>
 <p>无奈的人类，只好寻求全世界的力量。最终麦兜的饭煲机器人成了人类的救星，和怪兽一起回到了怪兽的星球。拯救了地球。</p>
 <p>全片极具恶搞意味。</p>
 <p>扎肉超人的那句“s-o-o-r-y”以及被怪兽打回了家后面对家人的说辞；麦兜家乡邻里的言语交谈；麦兜最初那不切实际的各种创新想法；隐士高人的献身；机器人战斗之间的搞怪；怪兽的摇摆舞，高能臭气，无敌屎尿屁（。。。）；世界级富豪赤膊上阵造机器人；政府高官一心想用自己的机器人假意办比赛；等等。</p>
@@ -1811,10 +1862,12 @@
         
           
             <p>在之前的三篇文章中，我尝试了使用python爬虫实现的对于特定站点的《剑来》小说的爬取，对于豆瓣的短评的爬取，也有对于爬取的短评数据进行的词云展示，期间运用了不少的知识，现在是时间回顾一下。在此之后，我会再关注一些爬虫框架的使用，以及更多的爬虫的优化方法，争取做到尽量多的吸收新知识，巩固旧知识。</p>
-<p>在参考文章<a href="http://www.jianshu.com/p/0bfd0c48457f" target="_blank" rel="noopener">爬虫（1）— Python网络爬虫二三事</a>的基础上，我写了这篇文章。</p>
+<p>在参考文章<a href="http://www.jianshu.com/p/0bfd0c48457f" target="_blank" rel="noopener">爬虫（1）--- Python网络爬虫二三事</a>的基础上，我写了这篇文章。</p>
 <p><strong>这篇文章主要的目的有两个，收集新知识，并用之丰富旧知识，巩固旧知识。</strong></p>
-<h1 id="关于爬虫背后的（这一节是主要是http的概要，下一节是我的一些总结）"><a href="#关于爬虫背后的（这一节是主要是http的概要，下一节是我的一些总结）" class="headerlink" title="关于爬虫背后的（这一节是主要是http的概要，下一节是我的一些总结）"></a>关于爬虫背后的（这一节是主要是http的概要，下一节是我的一些总结）</h1><p>要想不限于代码表面，深入理解爬虫，就得需要了解一些关于网络的知识。</p>
-<h2 id="HTTP-协议"><a href="#HTTP-协议" class="headerlink" title="HTTP 协议"></a>HTTP 协议</h2><blockquote>
+<h1 id="关于爬虫背后的这一节是主要是http的概要下一节是我的一些总结">关于爬虫背后的（这一节是主要是http的概要，下一节是我的一些总结）</h1>
+<p>要想不限于代码表面，深入理解爬虫，就得需要了解一些关于网络的知识。</p>
+<h2 id="http-协议">HTTP 协议</h2>
+<blockquote>
 <p>HTTP（Hypertext Transfer Protocol）是应用级协议，它适应了分布式超媒体协作系统对灵活性及速度的要求。它是一个一般的、无状态的、基于对象的协议。</p>
 </blockquote>
 <p>可以参考的文章：</p>
@@ -1825,7 +1878,8 @@
 <li><a href="https://www.cnblogs.com/li0803/archive/2008/11/03/1324746.html" target="_blank" rel="noopener">HTTP协议详解（真的很经典）</a></li>
 <li><a href="http://tools.jb51.net/table" target="_blank" rel="noopener">HTTP请求方法大全&amp;HTTP请求头大全HTTP状态码大全HTTP Content-type 对照表</a></li>
 </ul>
-<h3 id="一些术语"><a href="#一些术语" class="headerlink" title="一些术语"></a>一些术语</h3><ul>
+<h3 id="一些术语">一些术语</h3>
+<ul>
 <li>请求（request）：HTTP的请求消息（在第五节定义）</li>
 <li>响应（response）：HTTP的回应消息（在第六节定义）</li>
 <li>资源（resource）：网络上可以用URI来标识的数据对象或服务。URI有许多名字，如WWW地址、通用文件标识（Universal Document Identifiers）、通用资源标识（Universal Resource Identifiers），以及最终的统一资源定位符（Uniform Resource Locators (URL)）和统一资源名（URN）。</li>
@@ -1833,25 +1887,27 @@
 <li>客户端（client）：指以发出请求为目的而建立连接的应用程序。</li>
 <li>用户代理（user agent）：指初始化请求的客户端，如浏览器、编辑器、蜘蛛（web爬行机器人）或其它终端用户工具。用户代理请求标题域包含用户原始请求的信息，这可用于统计方面的用途。通过跟踪协议冲突、自动识别用户代理以避免特殊用户代理的局限性，从而做到更好的回应。虽然没有规定，用户代理应当在请求中包括此域。</li>
 <li>服务器（server）：指接受连接，并通过发送回应来响应服务请求的应用程序。</li>
-<li>代理（proxy）：同时扮演服务器及客户端角色的中间程序，用来为其它客户产生请求。请求经过变换，被传递到最终的目的服务器，在代理程序内部，请求或被处理，或被传递。代理必须在消息转发前对消息进行解释，而且如有必要还得重写消息。代理通常被用作经过防火墙的客户端出口，用以辅助处理用户代理所没实现的请求。<br><img src="http://upload-images.jianshu.io/upload_images/3471485-097f1343b6952165.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>代理（proxy）：同时扮演服务器及客户端角色的中间程序，用来为其它客户产生请求。请求经过变换，被传递到最终的目的服务器，在代理程序内部，请求或被处理，或被传递。代理必须在消息转发前对消息进行解释，而且如有必要还得重写消息。代理通常被用作经过防火墙的客户端出口，用以辅助处理用户代理所没实现的请求。 <img src="http://upload-images.jianshu.io/upload_images/3471485-097f1343b6952165.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></li>
 </ul>
 <p><em>任何指定的程序都有能力同时做为客户端和服务器。我们在使用这个概念时，不是看程序功能上是否能实现客户及服务器，而是看程序在特定连接时段上扮演何种角色（客户或服务器）。同样，任何服务器可以扮演原始服务器、代理、网关、隧道等角色，行为的切换取决于每次请求的内容。</em></p>
-<h3 id="简单流程"><a href="#简单流程" class="headerlink" title="简单流程"></a>简单流程</h3><p>HTTP协议是基于<strong>请求/回应</strong>机制的。客户端与服务器端建立连接后，以请求方法、URI、协议版本等方式向服务器端发出请求，该请求可跟随包含请求修饰符、客户信息、及可能的请求体（body）内容的MIME类型消息。服务器端通过状态队列（status line）来回应，内容包括消息的协议版本、成功或错误代码，也跟随着包含服务器信息、实体元信息及实体内容的MIME类型消息。    </p>
+<h3 id="简单流程">简单流程</h3>
+<p>HTTP协议是基于<strong>请求/回应</strong>机制的。客户端与服务器端建立连接后，以请求方法、URI、协议版本等方式向服务器端发出请求，该请求可跟随包含请求修饰符、客户信息、及可能的请求体（body）内容的MIME类型消息。服务器端通过状态队列（status line）来回应，内容包括消息的协议版本、成功或错误代码，也跟随着包含服务器信息、实体元信息及实体内容的MIME类型消息。</p>
 <p>绝大多数HTTP通讯<em>由用户代理进行初始化</em>，并通过它来组装请求以获取存储在一些原始服务器上的资源。</p>
 <p>一次HTTP操作称为一个事务，综上，其工作过程可分为四步：</p>
-<ol>
+<ol type="1">
 <li>首先客户机与服务器需要建立连接。只要单击某个超级链接，HTTP的工作开始。</li>
 <li>建立连接后，客户机发送一个请求给服务器，请求方式的格式为：统一资源标识符（URL）、协议版本号，后边是MIME信息包括请求修饰符、客户机信息和可能的内容。</li>
 <li>服务器接到请求后，给予相应的响应信息，其格式为一个状态行，包括信息的协议版本号、一个成功或错误的代码，后边是MIME信息包括服务器信息、实体信息和可能的内容。</li>
 <li>客户端接收服务器所返回的信息通过浏览器显示在用户的显示屏上，然后客户机与服务器断开连接。</li>
 </ol>
 <p>如果在以上过程中的某一步出现错误，那么产生错误的信息将返回到客户端，有显示屏输出。对于用户来说，这些过程是由HTTP自己完成的，用户只要用鼠标点击，等待信息显示就可以了。</p>
-<h3 id="HTTP-消息（HTTP-Message）"><a href="#HTTP-消息（HTTP-Message）" class="headerlink" title="HTTP 消息（HTTP Message）"></a>HTTP 消息（HTTP Message）</h3><p>HTTP消息由客户端到服务器的请求和由服务器到客户端的回应组成。</p>
-<pre><code>HTTP-message   = Simple-Request                ; HTTP/0.9 messages
+<h3 id="http-消息http-message">HTTP 消息（HTTP Message）</h3>
+<p>HTTP消息由客户端到服务器的请求和由服务器到客户端的回应组成。</p>
+<pre><code>HTTP-message   = Simple-Request             ; HTTP/0.9 messages
                     | Simple-Response
                     | Full-Request          ; HTTP/1.0 messages
-                    | Full-Response
-</code></pre><p>完整的请求（Full-Request）和完整的回应（Full-Response）都使用<code>RFC822</code>中实体传输部分规定的消息格式。两者的消息都可能包括标题域（headers，可选）、实体主体（entity body）。实体主体与标题间通过空行来分隔（即CRLF前没有内容的行）。</p>
+                    | Full-Response</code></pre>
+<p>完整的请求（Full-Request）和完整的回应（Full-Response）都使用<code>RFC822</code>中实体传输部分规定的消息格式。两者的消息都可能包括标题域（headers，可选）、实体主体（entity body）。实体主体与标题间通过空行来分隔（即CRLF前没有内容的行）。</p>
 <pre><code>Full-Request        = Request-Line
                         *( General-Header
                         | Request-Header
@@ -1859,20 +1915,23 @@
                         CRLF
                         [ Entity-Body ]
 
-Full-Response          = Status-Line            
+Full-Response       = Status-Line           
                         *( General-Header
-                        | Response-Header    
-                        | Entity-Header )    
+                        | Response-Header   
+                        | Entity-Header )   
                         CRLF
-                        [ Entity-Body ]            
-</code></pre><p>（想要了解更多，可以前往<a href="http://man.chinaunix.net/develop/rfc/RFC1945.txt" target="_blank" rel="noopener">中文 HTTP/1.0 RFC文档目录</a> ）</p>
-<h1 id="代码实现的流程"><a href="#代码实现的流程" class="headerlink" title="代码实现的流程"></a>代码实现的流程</h1><p>从我之前的代码中可以从一些方法中看出，我们利用<code>urllib</code>库，实际上完成了请求，并接受了响应。通过我们自己构造（例如添加headers）或者使用默认的请求信息，利用了<code>urllib</code>库的<code>request</code>模块的<code>Request()</code>方法构造请求，利用<code>urlopen()</code>方法接受响应返回的页面代码。</p>
-<p>至于我们的爬虫工作的过程，在这里盗用(<a href="http://www.jianshu.com/p/0bfd0c48457f）一张图片：" target="_blank" rel="noopener">http://www.jianshu.com/p/0bfd0c48457f）一张图片：</a></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3471485-6a9cfc5e33421cbd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h1 id="爬虫是一个综合性的工具"><a href="#爬虫是一个综合性的工具" class="headerlink" title="爬虫是一个综合性的工具"></a>爬虫是一个综合性的工具</h1><p>在实现爬虫的过程中，为了实现我们的目的，我们借助了各种各样的工具。浏览器的开发者工具，正则表达式，以及python的各种功能库。可谓是无所不用其极。但是，对于这些工具，我们实际上用到的功能，目前来看，其实并不多，核心代码就是那点而已，所以说，抽离出汇总起来，日后重新使用，一旦对于这个工具不再熟悉，回过头来看这些小小的片段，总是会省下很多的时间。</p>
+                        [ Entity-Body ]         </code></pre>
+<p>（想要了解更多，可以前往<a href="http://man.chinaunix.net/develop/rfc/RFC1945.txt" target="_blank" rel="noopener">中文 HTTP/1.0 RFC文档目录</a> ） # 代码实现的流程</p>
+<p>从我之前的代码中可以从一些方法中看出，我们利用<code>urllib</code>库，实际上完成了请求，并接受了响应。通过我们自己构造（例如添加headers）或者使用默认的请求信息，利用了<code>urllib</code>库的<code>request</code>模块的<code>Request()</code>方法构造请求，利用<code>urlopen()</code>方法接受响应返回的页面代码。</p>
+<p>至于我们的爬虫工作的过程，在这里盗用(http://www.jianshu.com/p/0bfd0c48457f）一张图片：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3471485-6a9cfc5e33421cbd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
+<h1 id="爬虫是一个综合性的工具">爬虫是一个综合性的工具</h1>
+<p>在实现爬虫的过程中，为了实现我们的目的，我们借助了各种各样的工具。浏览器的开发者工具，正则表达式，以及python的各种功能库。可谓是无所不用其极。但是，对于这些工具，我们实际上用到的功能，目前来看，其实并不多，核心代码就是那点而已，所以说，抽离出汇总起来，日后重新使用，一旦对于这个工具不再熟悉，回过头来看这些小小的片段，总是会省下很多的时间。</p>
 <p>所以，这篇文章的核心内容就要来了。</p>
-<h2 id="获取URL"><a href="#获取URL" class="headerlink" title="获取URL"></a>获取URL</h2><p>这里可以借助浏览器的<code>产看网页源代码</code>，<code>查看元素</code>等开发者工具，且快捷键一般是<code>F12</code>。</p>
-<h2 id="获取页面及异常处理"><a href="#获取页面及异常处理" class="headerlink" title="获取页面及异常处理"></a>获取页面及异常处理</h2><p>常用的是利用<code>urllib</code>库。在python3中，没有了原来2中的<code>urllib2</code>，而是用<code>urllib</code>包含了。</p>
+<h2 id="获取url">获取URL</h2>
+<p>这里可以借助浏览器的<code>产看网页源代码</code>，<code>查看元素</code>等开发者工具，且快捷键一般是<code>F12</code>。</p>
+<h2 id="获取页面及异常处理">获取页面及异常处理</h2>
+<p>常用的是利用<code>urllib</code>库。在python3中，没有了原来2中的<code>urllib2</code>，而是用<code>urllib</code>包含了。</p>
 <p>主要是用<code>urllib.request.Request()</code>&amp;<code>urllib.request.urlopen()</code></p>
 <p><a href="https://docs.python.org/3.0/library/urllib.request.html" target="_blank" rel="noopener">urllib.request</a></p>
 <blockquote>
@@ -1885,43 +1944,54 @@ urllib.error
 urllib.parse 
     for parsing URLs
 urllib.robotparser 
-    for parsing robots.txt files
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> urllib.error</span><br><span class="line"><span class="keyword">import</span> traceback</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">url = <span class="string">"..."</span></span><br><span class="line"><span class="keyword">try</span>: </span><br><span class="line">    request = urllib.request.Request(url)</span><br><span class="line">    html = urllib.request.urlopen(request).read().decode(<span class="string">""</span>)<span class="comment"># 按情况解码</span></span><br><span class="line">    print(html) </span><br><span class="line"><span class="keyword">except</span> urllib.error.URLError <span class="keyword">as</span> error_1: </span><br><span class="line">    <span class="keyword">if</span> hasattr(error_1,<span class="string">"code"</span>): </span><br><span class="line">        print(<span class="string">"URLError异常代码："</span>) </span><br><span class="line">        print(error_1.code) </span><br><span class="line">    <span class="keyword">if</span> hasattr(error_1,<span class="string">"reason"</span>): </span><br><span class="line">        print(<span class="string">"URLError异常原因："</span>) </span><br><span class="line">        print(error_1.reason)</span><br><span class="line"><span class="keyword">except</span> urllib.error.HTTPError <span class="keyword">as</span> error_2: </span><br><span class="line">    print(<span class="string">"HTTPError异常概要："</span>)</span><br><span class="line">    print(error_2)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> error_3: </span><br><span class="line">    print(<span class="string">"异常概要："</span>) </span><br><span class="line">    print(error_3) </span><br><span class="line">    print(<span class="string">"---------------------------"</span>) </span><br><span class="line">    errorInfo = sys.exc_info() </span><br><span class="line">    print(<span class="string">"异常类型："</span>+str(errorInfo[<span class="number">0</span>])) </span><br><span class="line">    print(<span class="string">"异常信息或参数："</span>+str(errorInfo[<span class="number">1</span>])) </span><br><span class="line">    print(<span class="string">"调用栈信息的对象："</span>+str(errorInfo[<span class="number">2</span>])) </span><br><span class="line">    print(<span class="string">"已从堆栈中“辗转开解”的函数有关的信息："</span>+str(traceback.print_exc()))</span><br><span class="line"></span><br><span class="line">作者：whenif</span><br><span class="line">链接：http://www.jianshu.com/p/<span class="number">0</span>bfd0c48457f</span><br><span class="line">來源：简书</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
+    for parsing robots.txt files</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> urllib.error</span><br><span class="line"><span class="keyword">import</span> traceback</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">url = <span class="string">"..."</span></span><br><span class="line"><span class="keyword">try</span>: </span><br><span class="line">    request = urllib.request.Request(url)</span><br><span class="line">    html = urllib.request.urlopen(request).read().decode(<span class="string">""</span>)<span class="comment"># 按情况解码</span></span><br><span class="line">    print(html) </span><br><span class="line"><span class="keyword">except</span> urllib.error.URLError <span class="keyword">as</span> error_1: </span><br><span class="line">    <span class="keyword">if</span> hasattr(error_1,<span class="string">"code"</span>): </span><br><span class="line">        print(<span class="string">"URLError异常代码："</span>) </span><br><span class="line">        print(error_1.code) </span><br><span class="line">    <span class="keyword">if</span> hasattr(error_1,<span class="string">"reason"</span>): </span><br><span class="line">        print(<span class="string">"URLError异常原因："</span>) </span><br><span class="line">        print(error_1.reason)</span><br><span class="line"><span class="keyword">except</span> urllib.error.HTTPError <span class="keyword">as</span> error_2: </span><br><span class="line">    print(<span class="string">"HTTPError异常概要："</span>)</span><br><span class="line">    print(error_2)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> error_3: </span><br><span class="line">    print(<span class="string">"异常概要："</span>) </span><br><span class="line">    print(error_3) </span><br><span class="line">    print(<span class="string">"---------------------------"</span>) </span><br><span class="line">    errorInfo = sys.exc_info() </span><br><span class="line">    print(<span class="string">"异常类型："</span>+str(errorInfo[<span class="number">0</span>])) </span><br><span class="line">    print(<span class="string">"异常信息或参数："</span>+str(errorInfo[<span class="number">1</span>])) </span><br><span class="line">    print(<span class="string">"调用栈信息的对象："</span>+str(errorInfo[<span class="number">2</span>])) </span><br><span class="line">    print(<span class="string">"已从堆栈中“辗转开解”的函数有关的信息："</span>+str(traceback.print_exc()))</span><br><span class="line"></span><br><span class="line">作者：whenif</span><br><span class="line">链接：http://www.jianshu.com/p/<span class="number">0</span>bfd0c48457f</span><br><span class="line">來源：简书</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>URLError<br>通常，URLError在没有网络连接(没有路由到特定服务器)，或者服务器不存在的情况下产生。</p>
-<p>HTTPError<br>首先我们要明白服务器上每一个HTTP 应答对象response都包含一个数字“状态码”，该状态码表示HTTP协议所返回的响应的状态，这就是HTTPError。比如当产生“404 Not Found”的时候，便表示“没有找到对应页面”，可能是输错了URL地址，也可能IP被该网站屏蔽了，这时便要使用代理IP进行爬取数据。</p>
+<p>URLError 通常，URLError在没有网络连接(没有路由到特定服务器)，或者服务器不存在的情况下产生。</p>
+<p>HTTPError 首先我们要明白服务器上每一个HTTP 应答对象response都包含一个数字“状态码”，该状态码表示HTTP协议所返回的响应的状态，这就是HTTPError。比如当产生“404 Not Found”的时候，便表示“没有找到对应页面”，可能是输错了URL地址，也可能IP被该网站屏蔽了，这时便要使用代理IP进行爬取数据。</p>
 <p>两者关系</p>
 <p>两者是父类与子类的关系，即 <strong>HTTPError是URLError的子类</strong>，HTTPError有异常状态码与异常原因，URLError没有异常状态码。所以，我们在处理的时候，不能使用URLError直接代替HTTPError。同时，Python中所有异常都是基类Exception的成员，所有异常都从此基类继承，而且都在exceptions模块中定义。如果要代替，必须要判断是否有状态码属性。</p>
 </blockquote>
 <p>异常处理有还有<code>else</code>&amp;<code>finally</code>可以选择。</p>
-<h2 id="伪装浏览器"><a href="#伪装浏览器" class="headerlink" title="伪装浏览器"></a>伪装浏览器</h2><p>添加头信息。可以在浏览器的开发者工具中的网路选项卡中点击对应的html页面查看请求报文和相应报文信息。一般的，只需添加用户代理信息即可。</p>
+<h2 id="伪装浏览器">伪装浏览器</h2>
+<p>添加头信息。可以在浏览器的开发者工具中的网路选项卡中点击对应的html页面查看请求报文和相应报文信息。一般的，只需添加用户代理信息即可。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line">url = <span class="string">'http://www.baidu.com'</span></span><br><span class="line"><span class="comment"># 构造方法1</span></span><br><span class="line">headers = &#123;<span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55.0'</span>&#125;</span><br><span class="line">request = urllib.request.Request(url, headers = headers)</span><br><span class="line">data = urllib.request.urlopen(request).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 构造方法2</span></span><br><span class="line">headers=(<span class="string">"User-Agent"</span>, <span class="string">"Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"</span>) </span><br><span class="line">opener = urllib.request.build_opener()</span><br><span class="line">opener.addheaders = [headers]</span><br><span class="line"><span class="comment"># # 打开方法1</span></span><br><span class="line">data = opener.open(url, timeout=<span class="number">3</span>).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="comment"># 打开方法2</span></span><br><span class="line">urllib.request.install_opener(opener)</span><br><span class="line">data = urllib.request.urlopen(url).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line">print(data)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">urllib</span>.<span class="title">request</span>.<span class="title">Request</span><span class="params">(url[, data][, headers][, origin_req_host][, unverifiable])</span></span></span><br></pre></td></tr></table></figure>
 <p>data 数据可以是指定要发送到服务器的附加数据的字符串，如果不需要这样的数据，则为None。目前HTTP请求是唯一使用数据的请求; 当提供数据参数时，HTTP请求将是POST而不是GET。 数据应该是标准的 <em>application/x-www-form-urlencoded</em> 格式。<code>urllib.parse.urlencode()</code>函数采用映射或2元组的序列，并以此格式返回一个字符串。</p>
 <p>headers 应该是一个字典，并且将被视为使用每个键和值作为参数调用 <code>add_header()</code>。 这通常用于“欺骗”用户代理头，浏览器使用它来识别自己 - 一些HTTP服务器只允许来自普通浏览器的请求而不是脚本。</p>
-<h2 id="时间问题"><a href="#时间问题" class="headerlink" title="时间问题"></a>时间问题</h2><h3 id="超时重连"><a href="#超时重连" class="headerlink" title="超时重连"></a>超时重连</h3><p>有时候网页请求太过频繁，会出现长时间没有响应的状态，这时候一般需要设置超时重连。下面是一个例子片段</p>
+<h2 id="时间问题">时间问题</h2>
+<h3 id="超时重连">超时重连</h3>
+<p>有时候网页请求太过频繁，会出现长时间没有响应的状态，这时候一般需要设置超时重连。下面是一个例子片段</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line">url = <span class="string">"..."</span></span><br><span class="line">NET_STATUS = <span class="keyword">False</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> NET_STATUS:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = urllib.request.urlopen(url, data=<span class="keyword">None</span>, timeout=<span class="number">3</span>)</span><br><span class="line">        html = response.read().decode(<span class="string">'GBK'</span>)</span><br><span class="line">        print(<span class="string">'NET_STATUS is good'</span>)</span><br><span class="line">        <span class="keyword">return</span> html</span><br><span class="line">    <span class="keyword">except</span> socket.timeout:</span><br><span class="line">        print(<span class="string">'NET_STATUS is not good'</span>)</span><br><span class="line">        NET_STATUS = <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 也可以直接设置全局超时进行捕获，用的还是`socket.timeout`异常</span></span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line">timeout = <span class="number">3</span></span><br><span class="line">socket.setdefaulttimeout(timeout)</span><br></pre></td></tr></table></figure>
-<h3 id="线程延迟"><a href="#线程延迟" class="headerlink" title="线程延迟"></a>线程延迟</h3><p>线程推迟（单位为秒），避免请求太快。</p>
+<h3 id="线程延迟">线程延迟</h3>
+<p>线程推迟（单位为秒），避免请求太快。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">time.sleep(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="页面解析"><a href="#页面解析" class="headerlink" title="页面解析"></a>页面解析</h2><p>目前掌握的方法是使用正则表达式和bs库。当然，之后会了解下<code>XPath</code>，这个也提供了一种搜索的思路。</p>
-<h3 id="正则匹配"><a href="#正则匹配" class="headerlink" title="正则匹配"></a>正则匹配</h3><p>这个用的函数并不多。有两种书写方式，面向对象和</p>
+<h2 id="页面解析">页面解析</h2>
+<p>目前掌握的方法是使用正则表达式和bs库。当然，之后会了解下<code>XPath</code>，这个也提供了一种搜索的思路。</p>
+<h3 id="正则匹配">正则匹配</h3>
+<p>这个用的函数并不多。有两种书写方式，面向对象和</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">pattern = re.compile(<span class="string">'[a-zA-Z]'</span>)</span><br><span class="line">result_list = pattern.findall(<span class="string">'as3SiOPdj#@23awe'</span>)</span><br><span class="line">print(result_list)</span><br><span class="line"></span><br><span class="line"><span class="comment"># re.search 扫描整个字符串并返回第一个成功的匹配。 </span></span><br><span class="line">searchObj = re.search( <span class="string">r'(.*) are (.*?) .*'</span>, <span class="string">"Cats are smarter than dogs"</span>, re.M|re.I)</span><br><span class="line">print(searchObj.group())<span class="comment"># Cats are smarter than dogs</span></span><br><span class="line">print(searchObj.group(<span class="number">1</span>))<span class="comment"># Cats</span></span><br><span class="line">print(searchObj.groups())<span class="comment"># ('Cats', 'smarter')</span></span><br></pre></td></tr></table></figure>
 <p><a href="www.runoob.com/python3/python3-reg-expressions.html">python3正则表达式</a></p>
-<h3 id="beautifulsoup4"><a href="#beautifulsoup4" class="headerlink" title="beautifulsoup4"></a>beautifulsoup4</h3><p><a href="http://www.jb51.net/article/109782.htm" target="_blank" rel="noopener">Python利用Beautiful Soup模块搜索内容详解</a></p>
+<h3 id="beautifulsoup4">beautifulsoup4</h3>
+<p><a href="http://www.jb51.net/article/109782.htm" target="_blank" rel="noopener">Python利用Beautiful Soup模块搜索内容详解</a></p>
 <p>我个人感觉，这个库的使用，主要难点在于搜索时的麻烦。我觉得比较好用的是方法<code>find()</code>&amp;<code>find_all()</code>&amp;<code>select()</code>。</p>
 <p>使用 <code>find()</code> 方法会从搜索结果中返回第一个匹配的内容，而 <code>find_all()</code> 方法则会返回所有匹配的项，返回列表。</p>
 <p><code>select()</code>中可以使用CSS选择器。很方便可以参考浏览器开发者工具。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="comment"># 可以获取验证码图片地址并下载图片</span></span><br><span class="line">soup = BeautifulSoup(response_login, <span class="string">"html.parser"</span>)</span><br><span class="line">captchaAddr = soup.find(<span class="string">'img'</span>, id=<span class="string">'captcha_image'</span>)[<span class="string">'src'</span>]</span><br><span class="line">request.urlretrieve(captchaAddr, <span class="string">"captcha.jpg"</span>)</span><br><span class="line">...</span><br><span class="line">totalnum = soup.select(<span class="string">"div.mod-hd h2 span a"</span>)[<span class="number">0</span>].get_text()[<span class="number">3</span>:<span class="number">-2</span>]</span><br></pre></td></tr></table></figure>
-<h2 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 要读取非UTF-8编码的文本文件，需要给open()函数传入encoding参数</span></span><br><span class="line"><span class="keyword">with</span> open(filename, <span class="string">'w+'</span>) <span class="keyword">as</span> open_file:</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 遇到有些编码不规范的文件，你可能会遇到UnicodeDecodeError，因为在文本文件中可能夹杂了一些非法编码的字符。遇到这种情况，open()函数还接收一个errors参数，表示如果遇到编码错误后如何处理。最简单的方式是直接忽略</span></span><br><span class="line"><span class="keyword">with</span> open(filename, <span class="string">'r'</span>, encoding=<span class="string">'gbk'</span>, errors=<span class="string">'ignore'</span>) <span class="keyword">as</span> open_file:</span><br><span class="line">    all_the_text = open_file.read([size])</span><br><span class="line">    list_of_all_the_lines = open_file.readlines()</span><br><span class="line">    open_file.write(all_the_text)</span><br><span class="line">    open_file.writelines(list_of_text_strings)</span><br></pre></td></tr></table></figure>
-<h2 id="登录信息"><a href="#登录信息" class="headerlink" title="登录信息"></a>登录信息</h2><p>我们构造好 POST 请求，这一旦发送过去, 就登陆上了服务器, 服务器就会发给我们 Cookies。继续保持登录状态时，就需要借助相关的库的方式，可以简化处理。</p>
+<h2 id="文件读写">文件读写</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 要读取非UTF-8编码的文本文件，需要给open()函数传入encoding参数</span></span><br><span class="line"><span class="keyword">with</span> open(filename, <span class="string">'w+'</span>) <span class="keyword">as</span> open_file:</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 遇到有些编码不规范的文件，你可能会遇到UnicodeDecodeError，因为在文本文件中可能夹杂了一些非法编码的字符。遇到这种情况，open()函数还接收一个errors参数，表示如果遇到编码错误后如何处理。最简单的方式是直接忽略</span></span><br><span class="line"><span class="keyword">with</span> open(filename, <span class="string">'r'</span>, encoding=<span class="string">'gbk'</span>, errors=<span class="string">'ignore'</span>) <span class="keyword">as</span> open_file:</span><br><span class="line">    all_the_text = open_file.read([size])</span><br><span class="line">    list_of_all_the_lines = open_file.readlines()</span><br><span class="line">    open_file.write(all_the_text)</span><br><span class="line">    open_file.writelines(list_of_text_strings)</span><br></pre></td></tr></table></figure>
+<h2 id="登录信息">登录信息</h2>
+<p>我们构造好 POST 请求，这一旦发送过去, 就登陆上了服务器, 服务器就会发给我们 Cookies。继续保持登录状态时，就需要借助相关的库的方式，可以简化处理。</p>
 <p>Cookies 是某些网站为了辨别用户身份、进行 session 跟踪而储存在用户本地终端上的数据(通常经过加密)。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line"><span class="keyword">from</span> http <span class="keyword">import</span> cookiejar</span><br><span class="line"></span><br><span class="line">main_url = <span class="string">'...'</span></span><br><span class="line">formdata = &#123;</span><br><span class="line">    <span class="comment"># 看网站post页面需求</span></span><br><span class="line"></span><br><span class="line">    <span class="string">"form_email"</span>:<span class="string">"你的邮箱"</span>,</span><br><span class="line">    <span class="string">"form_password"</span>:<span class="string">"你的密码"</span>,</span><br><span class="line">    <span class="string">"source"</span>:<span class="string">"movie"</span>,</span><br><span class="line">    <span class="string">"redir"</span>:<span class="string">"https://movie.douban.com/subject/26934346/"</span>,</span><br><span class="line">    <span class="string">"login"</span>:<span class="string">"登录"</span></span><br><span class="line">&#125;</span><br><span class="line">user_agent = <span class="string">'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36'</span></span><br><span class="line">headers = &#123;<span class="string">'User-Agnet'</span>: user_agent, <span class="string">'Connection'</span>: <span class="string">'keep-alive'</span>&#125;</span><br><span class="line"></span><br><span class="line">cookie = cookiejar.CookieJar()</span><br><span class="line">cookie_support = request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener = request.build_opener(cookie_support)</span><br><span class="line">data = parse.urlencode(formdata).encode(<span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line">req_ligin = request.Request(url=main_url, data=data, headers=headers)</span><br><span class="line">html = opener.open(req_ligin).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">print(html)</span><br></pre></td></tr></table></figure>
-<h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p>有一种反爬虫策略就是对IP进行封锁。所以我们有时需要设置代理。</p>
+<h2 id="代理">代理</h2>
+<p>有一种反爬虫策略就是对IP进行封锁。所以我们有时需要设置代理。</p>
 <p>原理：代理服务器原理如下图，利用代理服务器可以很好处理IP限制问题。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3471485-097f1343b6952165.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3471485-097f1343b6952165.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
 <p>一般都是利用互联网上提供的一些免费代理IP进行爬取，而这些免费IP的质量残次不齐，出错是在所难免的，所以在使用之前我们要对其进行有效性测试。另外，对开源IP池有兴趣的同学可以学习Github上的开源项目：<a href="https://github.com/qiyeboy/IPProxyPool" target="_blank" rel="noopener">IPProxyPool</a>。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">use_proxy</span><span class="params">(url,proxy_addr,iHeaders,timeoutSec)</span>:</span></span><br><span class="line">  <span class="string">'''</span></span><br><span class="line"><span class="string">  功能：伪装成浏览器并使用代理IP防屏蔽</span></span><br><span class="line"><span class="string">  @url：目标URL</span></span><br><span class="line"><span class="string">  @proxy_addr：代理IP地址</span></span><br><span class="line"><span class="string">  @iHeaders：浏览器头信息</span></span><br><span class="line"><span class="string">  @timeoutSec：超时设置（单位：秒）</span></span><br><span class="line"><span class="string">  '''</span></span><br><span class="line">  proxy = urllib.request.ProxyHandler(&#123;<span class="string">"http"</span>:proxy_addr&#125;)</span><br><span class="line">  opener = urllib.request.build_opener(proxy,urllib.request.HTTPHandler)</span><br><span class="line">  urllib.request.install_opener(opener)</span><br><span class="line">  <span class="keyword">try</span>:</span><br><span class="line">      req = urllib.request.Request(url,headers = iHeaders)  <span class="comment">#伪装为浏览器并封装request</span></span><br><span class="line">      data = urllib.request.urlopen(req).read().decode(<span class="string">"utf-8"</span>,<span class="string">"ignore"</span>)  </span><br><span class="line">  <span class="keyword">except</span> Exception <span class="keyword">as</span> er:</span><br><span class="line">      print(<span class="string">"爬取时发生错误，具体如下："</span>)</span><br><span class="line">      print(er)</span><br><span class="line">  <span class="keyword">return</span> data    </span><br><span class="line">url = <span class="string">"http://www.baidu.com"</span></span><br><span class="line">proxy_addr = <span class="string">"125.94.0.253:8080"</span></span><br><span class="line">iHeaders = &#123;<span class="string">"User-Agent"</span>:<span class="string">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.22 Safari/537.36 SE 2.X MetaSr 1.0"</span>&#125;</span><br><span class="line">timeoutSec = <span class="number">10</span></span><br><span class="line">data = use_proxy(url,proxy_addr,iHeaders,timeoutSec)</span><br><span class="line">print(len(data))</span><br><span class="line"></span><br><span class="line">作者：whenif</span><br><span class="line">链接：http://www.jianshu.com/p/<span class="number">0</span>bfd0c48457f</span><br><span class="line">來源：简书</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
-<h1 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h1><p>后面我会在考虑学习多线程异或多进程改写之前的爬虫，研究研究前面引用的文章里的提到的一些我之前还未了解的技术，感觉要学的东西还是很多，快要开学了，自己的效率有点低，也不知道还能有多少时间给自己这样浪。</p>
+<h1 id="后续">后续</h1>
+<p>后面我会在考虑学习多线程异或多进程改写之前的爬虫，研究研究前面引用的文章里的提到的一些我之前还未了解的技术，感觉要学的东西还是很多，快要开学了，自己的效率有点低，也不知道还能有多少时间给自己这样浪。</p>
 
           
         
@@ -2632,49 +2702,73 @@ urllib.robotparser
       
         
           
-            <h1 id="代码管理方式——集中与分散"><a href="#代码管理方式——集中与分散" class="headerlink" title="代码管理方式——集中与分散"></a>代码管理方式——集中与分散</h1><h2 id="集中型"><a href="#集中型" class="headerlink" title="集中型"></a>集中型</h2><p>以 Subversion 为代表的集中型，所示将仓库集中存放在服务器之中，所以只存在一个仓库。这就是为什么这种版本管理系统会被称作集中型。</p>
+            <h1 id="代码管理方式集中与分散">代码管理方式——集中与分散</h1>
+<h2 id="集中型">集中型</h2>
+<p>以 Subversion 为代表的集中型，所示将仓库集中存放在服务器之中，所以只存在一个仓库。这就是为什么这种版本管理系统会被称作集中型。</p>
 <p>集中型将所有数据集中存放在服务器当中，有便于管理的优点。但是一旦开发者所处的环境不能连接服务器，就无法获取最新的源代码，开发也就几乎无法进行。服务器宕机时也是同样的道理，而且万一服务器故障导致数据消失，恐怕开发者就再也见不到最新的源代码了。</p>
-<h2 id="分散型"><a href="#分散型" class="headerlink" title="分散型"></a>分散型</h2><p>GitHub 将仓库 Fork 给了每一个用户。Fork 就是将 GitHub 的某个特定仓库复制到自己的账户下。Fork 出的仓库与原仓库是两个不同的仓库，开发者可以随意编辑。</p>
+<h2 id="分散型">分散型</h2>
+<p>GitHub 将仓库 Fork 给了每一个用户。Fork 就是将 GitHub 的某个特定仓库复制到自己的账户下。Fork 出的仓库与原仓库是两个不同的仓库，开发者可以随意编辑。</p>
 <p>分散型拥有多个仓库，相对而言稍显复杂。不过，由于本地的开发环境中就有仓库，所以开发者不必连接远程仓库就可以进行开发。</p>
-<h1 id="GitHub相关"><a href="#GitHub相关" class="headerlink" title="GitHub相关"></a>GitHub相关</h1><h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>在 GitHub 中，很多页面都可以使用键盘快捷键。在各个页面按下 shift ＋ / 都可以打开键盘快捷键一览表，查看当前页面的快捷键。</p>
-<h2 id="Explore"><a href="#Explore" class="headerlink" title="Explore"></a>Explore</h2><p>从各个角度介绍 GitHub 上的热门软件。</p>
+<h1 id="github相关">GitHub相关</h1>
+<h2 id="快捷键">快捷键</h2>
+<p>在 GitHub 中，很多页面都可以使用键盘快捷键。在各个页面按下 shift ＋ / 都可以打开键盘快捷键一览表，查看当前页面的快捷键。</p>
+<h2 id="explore">Explore</h2>
+<p>从各个角度介绍 GitHub 上的热门软件。</p>
 <ul>
 <li>GitHub 公司特别介绍的软件（附开发者制作的视频）</li>
 <li>按语言筛选本日 / 周 / 月的热门仓库 / 开发者</li>
 </ul>
-<h2 id="Gist"><a href="#Gist" class="headerlink" title="Gist"></a>Gist</h2><p>Gist 功能主要用于管理及发布一些没必要保存在仓库中的代码，比如小的代码片段等。系统会自动管理更新历史，并且提供了 Fork 功能。在 Gist 上添加的代码示例可以嵌入博客中。当然，如果选择了语言，还会自动添加语法高亮。</p>
-<h2 id="Blog"><a href="#Blog" class="headerlink" title="Blog"></a>Blog</h2><p>这是到 GitHub 公司官方博客的超链接，GitHub 公司会在上面发布通知。新功能的通知、新入职员工的介绍、drinkup 聚会的信息等都会在上面定期发布。</p>
-<h2 id="github上的交流："><a href="#github上的交流：" class="headerlink" title="github上的交流："></a>github上的交流：</h2><p>GitHub 中可使用的描述方法并不止“@ 用户名”一种。</p>
+<h2 id="gist">Gist</h2>
+<p>Gist 功能主要用于管理及发布一些没必要保存在仓库中的代码，比如小的代码片段等。系统会自动管理更新历史，并且提供了 Fork 功能。在 Gist 上添加的代码示例可以嵌入博客中。当然，如果选择了语言，还会自动添加语法高亮。</p>
+<h2 id="blog">Blog</h2>
+<p>这是到 GitHub 公司官方博客的超链接，GitHub 公司会在上面发布通知。新功能的通知、新入职员工的介绍、drinkup 聚会的信息等都会在上面定期发布。</p>
+<h2 id="github上的交流">github上的交流：</h2>
+<p>GitHub 中可使用的描述方法并不止“@ 用户名”一种。</p>
 <p>输入“@ 组织名”可以让属于该 Organization（组织）的所有成员收到通知 7。输入“@ 团队名”可以让该团队的所有成员收到通知。这就是同时向多人发送通知的方法。</p>
 <p>输入“# 编号”，会连接到该仓库所对应的 Issue 编号。输入“用户名 / 仓库名 # 编号”则可以连接到指定仓库所对应的 Issue 编号。只要按照这类特定格式书写便会自动创建链接。</p>
 <p>只要将感兴趣的仓库添加至 Watch 中，就可以在 News Feed 查 看该仓库的相关信息。</p>
-<h2 id="News-Feed"><a href="#News-Feed" class="headerlink" title="News Feed"></a>News Feed</h2><p>显示当前已 Follow 的用户和已 Watch 的项目的活动信息，用户可以在这里查看最新动向。将右上角 RSS 标志的 URL 添加到 RSS 阅读器中，还可以通过 RSS 查看。</p>
-<h2 id="Issues"><a href="#Issues" class="headerlink" title="Issues"></a>Issues</h2><p>在这里可以查看用户拥有权限的仓库或分配给自己的 Issue。当用户同时进行多个项目时，可以在这里一并查看 Issue。</p>
-<h2 id="Broadcast"><a href="#Broadcast" class="headerlink" title="Broadcast"></a>Broadcast</h2><p>主要用于接收 GitHub 公司发来的通知或使用技巧的小贴士。</p>
-<h2 id="Your-Repositories"><a href="#Your-Repositories" class="headerlink" title="Your Repositories"></a>Your Repositories</h2><p>按更新时间顺序显示用户的仓库。标有钥匙图案的是非公开仓库，标有类似字母 Y 图案的是用户 Fork 过的仓库。</p>
-<h2 id="Public-contributions"><a href="#Public-contributions" class="headerlink" title="Public contributions"></a>Public contributions</h2><p>一格表示一天，记录当日用户对拥有读取权限的仓库的大致贡献度。贡献度的衡量标准包括发送 Pull Request 的次数、写 Issue 的次数、进行提交的次数等。颜色越深代表贡献度越高。</p>
-<h2 id="Public-Activity"><a href="#Public-Activity" class="headerlink" title="Public Activity"></a>Public Activity</h2><p>从这里可以了解到该用户平常都在 GitHub 上做些什么。比如查看一下崇拜已久的程序员的公开活动，就可以知道他现在关注些什么，或者正在热心于开发些什么。</p>
-<h2 id="Pull-Requests"><a href="#Pull-Requests" class="headerlink" title="Pull Requests"></a>Pull Requests</h2><p>在 Pull Requests 中可以列表查看并管理 Pull Request。代码的更改和讨论都可以在这里进行。旁边显示的数字表示尚未 Close 的 Pull Request的数量。</p>
-<h2 id="Pulse"><a href="#Pulse" class="headerlink" title="Pulse"></a>Pulse</h2><p>显示该仓库最近的活动信息。该仓库中的软件是无人问津，还是在火热地开发之中，从这里可以一目了然。</p>
-<h2 id="Graphs"><a href="#Graphs" class="headerlink" title="Graphs"></a>Graphs</h2><p>以图表形式显示该仓库的各项指标。让用户轻松了解该仓库的活动倾向。</p>
-<h2 id="Clone-in-Desktop"><a href="#Clone-in-Desktop" class="headerlink" title="Clone in Desktop"></a>Clone in Desktop</h2><p>启动 GitHub 专用的客户端应用程序并进行 clone。</p>
-<h2 id="releases"><a href="#releases" class="headerlink" title="releases"></a>releases</h2><p>显示仓库的标签（Tag）列表。同时可以将标签加入时的文件以归档形式（ZIP、tar.gz）下载到本地。软件在版本升级时一般都会打标签，如果需要特定版本的文件，可以从这里寻找。</p>
-<h2 id="Compare-amp-review"><a href="#Compare-amp-review" class="headerlink" title="Compare &amp; review"></a>Compare &amp; review</h2><p>可以查看当前显示的分支与其他分支的差别，以便进行审查。点击这个按钮，会出现一个页面让用户选择比较对象。</p>
-<h2 id="行链接"><a href="#行链接" class="headerlink" title="行链接"></a>行链接</h2><p>文件内容的左侧会显示该文件的行号。假如我们点击第 10 行的行号，这一行就会被高亮标记为黄色，同时 URL 末尾会自动添加“#L10”。使用这个 URL，程序员们在交流时，就可以将讨论明确指向某一行。另外，如果将“#L10”改成“#L10-15”，则会标记该文件的第10～15 行。</p>
+<h2 id="news-feed">News Feed</h2>
+<p>显示当前已 Follow 的用户和已 Watch 的项目的活动信息，用户可以在这里查看最新动向。将右上角 RSS 标志的 URL 添加到 RSS 阅读器中，还可以通过 RSS 查看。</p>
+<h2 id="issues">Issues</h2>
+<p>在这里可以查看用户拥有权限的仓库或分配给自己的 Issue。当用户同时进行多个项目时，可以在这里一并查看 Issue。</p>
+<h2 id="broadcast">Broadcast</h2>
+<p>主要用于接收 GitHub 公司发来的通知或使用技巧的小贴士。</p>
+<h2 id="yourrepositories">Your Repositories</h2>
+<p>按更新时间顺序显示用户的仓库。标有钥匙图案的是非公开仓库，标有类似字母 Y 图案的是用户 Fork 过的仓库。</p>
+<h2 id="publiccontributions">Public contributions</h2>
+<p>一格表示一天，记录当日用户对拥有读取权限的仓库的大致贡献度。贡献度的衡量标准包括发送 Pull Request 的次数、写 Issue 的次数、进行提交的次数等。颜色越深代表贡献度越高。</p>
+<h2 id="publicactivity">Public Activity</h2>
+<p>从这里可以了解到该用户平常都在 GitHub 上做些什么。比如查看一下崇拜已久的程序员的公开活动，就可以知道他现在关注些什么，或者正在热心于开发些什么。</p>
+<h2 id="pullrequests">Pull Requests</h2>
+<p>在 Pull Requests 中可以列表查看并管理 Pull Request。代码的更改和讨论都可以在这里进行。旁边显示的数字表示尚未 Close 的 Pull Request的数量。</p>
+<h2 id="pulse">Pulse</h2>
+<p>显示该仓库最近的活动信息。该仓库中的软件是无人问津，还是在火热地开发之中，从这里可以一目了然。</p>
+<h2 id="graphs">Graphs</h2>
+<p>以图表形式显示该仓库的各项指标。让用户轻松了解该仓库的活动倾向。</p>
+<h2 id="cloneindesktop">Clone in Desktop</h2>
+<p>启动 GitHub 专用的客户端应用程序并进行 clone。</p>
+<h2 id="releases">releases</h2>
+<p>显示仓库的标签（Tag）列表。同时可以将标签加入时的文件以归档形式（ZIP、tar.gz）下载到本地。软件在版本升级时一般都会打标签，如果需要特定版本的文件，可以从这里寻找。</p>
+<h2 id="comparereview">Compare &amp; review</h2>
+<p>可以查看当前显示的分支与其他分支的差别，以便进行审查。点击这个按钮，会出现一个页面让用户选择比较对象。</p>
+<h2 id="行链接">行链接</h2>
+<p>文件内容的左侧会显示该文件的行号。假如我们点击第 10 行的行号，这一行就会被高亮标记为黄色，同时 URL 末尾会自动添加“#L10”。使用这个 URL，程序员们在交流时，就可以将讨论明确指向某一行。另外，如果将“#L10”改成“#L10-15”，则会标记该文件的第10～15 行。</p>
 <p>在仓库页面试着按下键盘的 t 键，然后输入要找的目录或文件的部分名称。筛选器会在仓库的目录和文件中进行筛选，搜索出您要找的文件。</p>
-<h2 id="URL使用技巧"><a href="#URL使用技巧" class="headerlink" title="URL使用技巧"></a>URL使用技巧</h2><ul>
-<li><a href="https://github.com/rails/rails/compare/4-0-stable...3-2-stable" target="_blank" rel="noopener">https://github.com/rails/rails/compare/4-0-stable...3-2-stable</a></li>
+<h2 id="url使用技巧">URL使用技巧</h2>
+<ul>
+<li>https://github.com/rails/rails/compare/4-0-stable...3-2-stable</li>
 </ul>
 <p>这样，就可以查看两个分支间的差别。</p>
 <ul>
-<li><a href="https://github.com/rails/rails/compare/master@{7.day.ago}...master" target="_blank" rel="noopener">https://github.com/rails/rails/compare/master@{7.day.ago}...master</a> </li>
+<li>https://github.com/rails/rails/compare/master@{7.day.ago}...master</li>
 </ul>
 <p>查看 master 分支在最近 7 天内的差别，支持day，week，month，year。如果差别过大则不会列出所有提交，只显示最近的一部分。</p>
 <ul>
-<li><a href="https://github.com/rails/rails/compare/master@{2013-01-01}...master" target="_blank" rel="noopener">https://github.com/rails/rails/compare/master@{2013-01-01}...master</a></li>
+<li>https://github.com/rails/rails/compare/master@{2013-01-01}...master</li>
 </ul>
 <p>查看 master 分支 2013 年 1 月 1 日与现在的区别。但是如果指定日期与现在的差别过大，或者指定日期过于久远，则无法显示。</p>
-<h2 id="Issue"><a href="#Issue" class="headerlink" title="Issue"></a>Issue</h2><p>用于 BUG 报告、功能添加、方向性讨论等，将这些以 Issue 形式进行管理。Pull Request 时也会创建 Issue。旁边显示的数字是当前处于Open 状态的 Issue 数。</p>
+<h2 id="issue">Issue</h2>
+<p>用于 BUG 报告、功能添加、方向性讨论等，将这些以 Issue 形式进行管理。Pull Request 时也会创建 Issue。旁边显示的数字是当前处于Open 状态的 Issue 数。</p>
 <p>在软件开发过程中，开发者们为了跟踪 BUG 及进行软件相关讨论，进而方便管理，创建了 Issue。管理 Issue 的系统称为 BTS（Bug Tracking System，BUG 跟踪系统）。当今具有代表性的 BTS 有 Redmine，Trac，Bugzilla等。GitHub 也为自身加入了 BTS 的功能。</p>
 <ul>
 <li>支持markdown语法</li>
@@ -2683,11 +2777,14 @@ urllib.robotparser
 <li>支持添加标签整理 Issue</li>
 <li>支持添加里程碑来管理 Issue（类似于进度条的一个东西）</li>
 </ul>
-<h3 id="CONTRIBUTING-md"><a href="#CONTRIBUTING-md" class="headerlink" title="CONTRIBUTING.md"></a>CONTRIBUTING.md</h3><p>在描述 Issue 时，常常会看到贡献规范的链接。</p>
-<p>在该仓库的根目录下添加 CONTRIBUTING.md 文件后该链接就<br>会显示出来。规范的内容一般包括报告时Issue的描述方法、Pull Request 时的规则或要求、许可证的相关信息等。为了在开源项目开发中能与其他人和谐相处，请务必在贡献之前仔细阅读这些规范。</p>
-<h3 id="Tasklist语法"><a href="#Tasklist语法" class="headerlink" title="Tasklist语法"></a>Tasklist语法</h3><p>使用 GFM 的一项独有功能，那就是 Tasklist 语法。</p>
+<h3 id="contributing.md">CONTRIBUTING.md</h3>
+<p>在描述 Issue 时，常常会看到贡献规范的链接。</p>
+<p>在该仓库的根目录下添加 CONTRIBUTING.md 文件后该链接就 会显示出来。规范的内容一般包括报告时Issue的描述方法、Pull Request 时的规则或要求、许可证的相关信息等。为了在开源项目开发中能与其他人和谐相处，请务必在贡献之前仔细阅读这些规范。</p>
+<h3 id="tasklist语法">Tasklist语法</h3>
+<p>使用 GFM 的一项独有功能，那就是 Tasklist 语法。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 本月要做的任务</span><br><span class="line">- [ ] 完成图片</span><br><span class="line">- [x] 完成部署工具的设置</span><br><span class="line">- [ ] 实现抽签功能</span><br></pre></td></tr></table></figure>
-<h3 id="提交与Issue的交互"><a href="#提交与Issue的交互" class="headerlink" title="提交与Issue的交互"></a>提交与Issue的交互</h3><p>在 Issue 一览表中我们可以看到，每一个 Issue 标题的下面都分配了诸如“#24”的编号。只要<strong>在提交信息的描述中加入“#24”</strong>，就能在 Issue 中显示该提交的相关信息，使关联的提交一目了然。这里只需轻轻点击一下便可以显示相应提交的具体内容，在代码审查时省去了从大量提交日志中搜索相应提交的麻烦，非常方便。</p>
+<h3 id="提交与issue的交互">提交与Issue的交互</h3>
+<p>在 Issue 一览表中我们可以看到，每一个 Issue 标题的下面都分配了诸如“#24”的编号。只要<strong>在提交信息的描述中加入“#24”</strong>，就能在 Issue 中显示该提交的相关信息，使关联的提交一目了然。这里只需轻轻点击一下便可以显示相应提交的具体内容，在代码审查时省去了从大量提交日志中搜索相应提交的麻烦，非常方便。</p>
 <p>如果一个处于 Open 状态的 Issue 已经处理完毕，只要在该提交中以下列任意一种格式描述提交信息，对应的 Issue 就会被 Close。</p>
 <ul>
 <li>fix #24</li>
@@ -2700,48 +2797,70 @@ urllib.robotparser
 <li>resolves #24</li>
 <li>resolved #24</li>
 </ul>
-<h3 id="Issue与Pull-Request"><a href="#Issue与Pull-Request" class="headerlink" title="Issue与Pull Request"></a>Issue与Pull Request</h3><p>在 GitHub 上，如果给 Issue 添加源代码，它就会变成我们马上要讲到的 Pull Request。Issue 与 Pull Request 的编号相互通用，通过 GitHub的 API 可以将特定的 Issue 转换为 Pull Request，能够完成这一操作的是 <code>hub</code> 命令。</p>
-<h2 id="Pull-Requests-1"><a href="#Pull-Requests-1" class="headerlink" title="Pull Requests"></a>Pull Requests</h2><p>显示用户已进行过的 Pull Request。通过这里，开发者可以很方便地追踪 Pull Request 的后续情况。</p>
+<h3 id="issue与pull-request">Issue与Pull Request</h3>
+<p>在 GitHub 上，如果给 Issue 添加源代码，它就会变成我们马上要讲到的 Pull Request。Issue 与 Pull Request 的编号相互通用，通过 GitHub的 API 可以将特定的 Issue 转换为 Pull Request，能够完成这一操作的是 <code>hub</code> 命令。</p>
+<h2 id="pullrequests-1">Pull Requests</h2>
+<p>显示用户已进行过的 Pull Request。通过这里，开发者可以很方便地追踪 Pull Request 的后续情况。</p>
 <p>Pull Request 是用户修改代码后向对方仓库发送采纳请求的功能。在列表中点击特定的 Pull Request 就会进入详细页面。页面上方显示着这次是从谁的哪个分支向谁的哪个分支发送了 Pull Request。</p>
-<h3 id="链接妙用"><a href="#链接妙用" class="headerlink" title="链接妙用"></a>链接妙用</h3><p>假设 Pull…Request 的 URL 如下所示。</p>
-<pre><code>https://github.com/用户名/仓库名/pull/28
-</code></pre><p>如果想获取 diff 格式的文件，只要像下面这样在 URL 末尾<br>添加 .diff 即可。</p>
-<pre><code>https://github.com/用户名/仓库名/pull/28.diff
-</code></pre><p>同 理， 想 要 patch 格 式 的 文 件， 只 需 要 在 URL 末 尾 添加 .patch 即可。<br>　　　<br>    <a href="https://github.com/用户名/仓库名/pull/28.patch" target="_blank" rel="noopener">https://github.com/用户名/仓库名/pull/28.patch</a></p>
-<h3 id="Conversation"><a href="#Conversation" class="headerlink" title="Conversation"></a>Conversation</h3><p>可以查看与当前 Pull Request 相关的所有评论以及提交的历史记录。提交日志的右侧有该提交的哈希值，点击链接即可确认相应提交的详细信息。</p>
+<h3 id="链接妙用">链接妙用</h3>
+<p>假设 Pull…Request 的 URL 如下所示。</p>
+<pre><code>https://github.com/用户名/仓库名/pull/28</code></pre>
+<p>如果想获取 diff 格式的文件，只要像下面这样在 URL 末尾 添加 .diff 即可。</p>
+<pre><code>https://github.com/用户名/仓库名/pull/28.diff</code></pre>
+<p>同 理， 想 要 patch 格 式 的 文 件， 只 需 要 在 URL 末 尾 添加 .patch 即可。 　　　 https://github.com/用户名/仓库名/pull/28.patch</p>
+<h3 id="conversation">Conversation</h3>
+<p>可以查看与当前 Pull Request 相关的所有评论以及提交的历史记录。提交日志的右侧有该提交的哈希值，点击链接即可确认相应提交的详细信息。</p>
 <p>可以使用R键快速引用选中的评论。</p>
-<h3 id="Commits"><a href="#Commits" class="headerlink" title="Commits"></a>Commits</h3><p>在 Commits 标签页中，按时间顺序列表显示了与当前 Pull Request相关的提交。标签上的数字为提交的次数。每个提交右侧的哈希值可以连接到该提交的代码。</p>
+<h3 id="commits">Commits</h3>
+<p>在 Commits 标签页中，按时间顺序列表显示了与当前 Pull Request相关的提交。标签上的数字为提交的次数。每个提交右侧的哈希值可以连接到该提交的代码。</p>
 <p>在评论中输入“:”（冒号）便会启动表情自动补全功能。只要输入几个与该表情相关的字母，系统就会为您筛选自动补全的对象。选择想要的表情，其相应代码（前后都有冒号的字符串）便会插入到文本框中。</p>
-<p>（请登录 <a href="http://www.emoji" target="_blank" rel="noopener">http://www.emoji</a> - cheat - sheet.com/ 查找可使用的表情）</p>
-<h3 id="Files-Changed"><a href="#Files-Changed" class="headerlink" title="Files Changed"></a>Files Changed</h3><p>Files Changed 标签页中可以查看当前 Pull Request 更改的文件内容以及前后差别。标签上的数字表示新建及被更改的文件数。默认情况下系统会将空格的不同也高亮显示，所以在空格有改动的情况下会难以阅读。这时只要在 URL 的末尾添加“?w=1”就可以不显示空格的差别。将鼠标指针放到被更改行行号的左侧，我们会看到一个加号。点击这个加号可以在代码中插入评论。这样，评论是针对哪行代码的就一目了然了。</p>
-<h2 id="Wiki"><a href="#Wiki" class="headerlink" title="Wiki"></a>Wiki</h2><p>Wiki 是一种比 HTML 语法更简单的页面描述功能。常用于记录开发者之间应该共享的信息或软件文档。数字表示当前 Wiki 的页面数量。所有<br>有权限的人都可以对文章进行修改，所以比较适合多人共同编写文章的情况。创建、编辑文档时不必另外启动软件，用起来十分方便，非常适合用来针对更新频率较高的软件进行文档等信息方面的汇总。一般情况下，Wiki 中记载着软件相关的 FAQ、文档、代码示例及解说等信息。</p>
+<p>（请登录 http://www.emoji - cheat - sheet.com/ 查找可使用的表情）</p>
+<h3 id="fileschanged">Files Changed</h3>
+<p>Files Changed 标签页中可以查看当前 Pull Request 更改的文件内容以及前后差别。标签上的数字表示新建及被更改的文件数。默认情况下系统会将空格的不同也高亮显示，所以在空格有改动的情况下会难以阅读。这时只要在 URL 的末尾添加“?w=1”就可以不显示空格的差别。将鼠标指针放到被更改行行号的左侧，我们会看到一个加号。点击这个加号可以在代码中插入评论。这样，评论是针对哪行代码的就一目了然了。</p>
+<h2 id="wiki">Wiki</h2>
+<p>Wiki 是一种比 HTML 语法更简单的页面描述功能。常用于记录开发者之间应该共享的信息或软件文档。数字表示当前 Wiki 的页面数量。所有 有权限的人都可以对文章进行修改，所以比较适合多人共同编写文章的情况。创建、编辑文档时不必另外启动软件，用起来十分方便，非常适合用来针对更新频率较高的软件进行文档等信息方面的汇总。一般情况下，Wiki 中记载着软件相关的 FAQ、文档、代码示例及解说等信息。</p>
 <ul>
 <li>支持GFM。</li>
-<li>Wiki 功能本身的数据也在 Git 中进行管理。<ul>
+<li>Wiki 功能本身的数据也在 Git 中进行管理。
+<ul>
 <li>用户能够通过 clone操作获取 Wiki 仓库，然后在本地创建、编辑页面，进行提交再 push，便可以完成对 Wiki 的创建及编辑工作。</li>
-</ul>
-</li>
+</ul></li>
 <li>在 Pages 标签页中可以列表查看 Wiki 页面。</li>
 <li>在 History 标签页中可以查看 Wiki 的修改历史记录。</li>
-<li>所有 Wiki 页面都可以显示侧边栏。<ul>
+<li>所有 Wiki 页面都可以显示侧边栏。
+<ul>
 <li>做法很简单，只要创建名为“_sidebar”的页面即可。_sidebar 页不会显示在 Pages 的页面一览中。在编辑各页面时页面下部会附加 Sidebar 段，用户可以在这里编辑侧边栏的内容。</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="Graphs-1"><a href="#Graphs-1" class="headerlink" title="Graphs"></a>Graphs</h2><p>在 Graphs 页中，可以通过 4 种图表查看该仓库的相关统计信息。</p>
-<h3 id="Code-Frequency"><a href="#Code-Frequency" class="headerlink" title="Code Frequency"></a>Code Frequency</h3><p>Code Frequency 中显示了该仓库中代码行数的增加量和删除量。一款优秀的软件并不会一味地增加代码，在经过重构之后，代码量往往会降低。</p>
-<h3 id="Punchcard"><a href="#Punchcard" class="headerlink" title="Punchcard"></a>Punchcard</h3><p>从 Punchcard 的图中我们可以直观地掌握一周内每天何时收到的提交最多。黑色圆越大，表示提交越频繁。仓库的关键人物往往会出现在提交频率高的时间段，因此用户发送的 Pull Request 最有可能在这段时间内被处理。大致了解时间规律，将有助于各位把握好发送 Pull Request 以及等待回复的时间点。另外，该软件的开发是集中在早上还是晚上，从这张图中也可一目了然。</p>
-<h2 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h2><p>以图表形式显示包括克隆仓库在内的所有分支的提交。从图上可以直观地看出每个人做了多少工作。将鼠标指针停留在表中提交或合并的点上，可以查看相应的参考内容。</p>
-<h2 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h2><p>关于仓库的设置。</p>
-<h3 id="GitHub-Pages"><a href="#GitHub-Pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h3><p>GitHub 有一个名为 GitHub Pages 的仓库，用户可以利用该仓库中的资料创建 Web 页，用来发布仓库中软件的相关信息。如果已经创建过GitHub Pages，则会显示相应 URL。点击 Automatic Page Generator 即可以自动创建 GitHub Pages。</p>
-<h3 id="Collaborators"><a href="#Collaborators" class="headerlink" title="Collaborators"></a>Collaborators</h3><p>用户主要在这里设置仓库的访问权限。如果仓库隶属于个人账户，那么可以添加 GitHub 的用户名，赋予该用户直接读写仓库的权限。不过，如果仓库隶属于 Organization 账户，则需要像所示的那样先创建 Team，然后赋予该 Team 读写仓库的权限。像这样使用 Organization 账户可以高效地设置仓库权限，在公司等多人共同进行开发的组织中，建议使用 Organization 账户。</p>
-<h3 id="Webhooks-amp-Services"><a href="#Webhooks-amp-Services" class="headerlink" title="Webhooks &amp; Services"></a>Webhooks &amp; Services</h3><p>在这个页面中，用户可以添加 Hook 让 GitHub 仓库与其他服务集成。通过 Add webhook 可以添加用户自己的 webhook。通过 Configureservices 则可以从 GitHub 事先列出的可以集成的服务中进行选择。能与GitHub 集成的服务非常多，其中还包括邮件及 IRC 等社交服务。</p>
-<h3 id="Deploy-Keys"><a href="#Deploy-Keys" class="headerlink" title="Deploy Keys"></a>Deploy Keys</h3><p>在这个页面中，用户可以添加用于部署的公开密钥，允许以只读方式访问仓库。设置公开密钥后，用户可以使用私有密钥通过 ssh 协议 clone 仓库。要注意的是，这里添加的公开密钥·私有密钥对无法再添加到其他仓库。使用 Deploy Keys 功能时，需要给每个仓库赋予不同的密钥对。</p>
-<h2 id="Notifications"><a href="#Notifications" class="headerlink" title="Notifications"></a>Notifications</h2><p>每当创建 Issue、收到评论、创建 Pull Request 等情况发生时，我们就会在 Notifications 中收到通知。</p>
-<h2 id="其他功能"><a href="#其他功能" class="headerlink" title="其他功能"></a>其他功能</h2><h3 id="GitHub-Pages-1"><a href="#GitHub-Pages-1" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h3><p>GitHub Pages 主要用于在 GitHub 上托管静态 HTML，以便发布项目的 Web 页。可以绑定独立域名。常被使用为静态博客。</p>
-<h3 id="GitHub-Enterprise"><a href="#GitHub-Enterprise" class="headerlink" title="GitHub Enterprise"></a>GitHub Enterprise</h3><p>GitHub Enterprise 专为那些无法将源代码放到公司之外的企业设计。这项服务可以以虚拟机的形式提供 GitHub。</p>
-<h3 id="GitHub-API"><a href="#GitHub-API" class="headerlink" title="GitHub API"></a>GitHub API</h3><p>GitHub 面向开发者公开了 API。</p>
-<h1 id="Gist-1"><a href="#Gist-1" class="headerlink" title="Gist"></a>Gist</h1><p>Gist 是一款简单的 Web 应用程序，常被开发者们用来共享示例代码和错误信息。它使用JavaScript 编写的 Ace 编辑器，只需打开浏览器便可编写简单代码。另外，Gist 中的文档都在版本管理系统的管理之下，用户可以放心编辑。而且由于其版本历史记录保管在 Git 仓库中，所以还可以通过clone 操作将 Gist 获取至本地。共享 Gist 的人之间能够互相添加评论，所有交流都会被记录下来。Gist 支持多种语言的语法高亮，可以大幅增强代码可读性。可以说，这一工具就是专为程序员设计的。</p>
+<h2 id="graphs-1">Graphs</h2>
+<p>在 Graphs 页中，可以通过 4 种图表查看该仓库的相关统计信息。</p>
+<h3 id="codefrequency">Code Frequency</h3>
+<p>Code Frequency 中显示了该仓库中代码行数的增加量和删除量。一款优秀的软件并不会一味地增加代码，在经过重构之后，代码量往往会降低。</p>
+<h3 id="punchcard">Punchcard</h3>
+<p>从 Punchcard 的图中我们可以直观地掌握一周内每天何时收到的提交最多。黑色圆越大，表示提交越频繁。仓库的关键人物往往会出现在提交频率高的时间段，因此用户发送的 Pull Request 最有可能在这段时间内被处理。大致了解时间规律，将有助于各位把握好发送 Pull Request 以及等待回复的时间点。另外，该软件的开发是集中在早上还是晚上，从这张图中也可一目了然。</p>
+<h2 id="network">Network</h2>
+<p>以图表形式显示包括克隆仓库在内的所有分支的提交。从图上可以直观地看出每个人做了多少工作。将鼠标指针停留在表中提交或合并的点上，可以查看相应的参考内容。</p>
+<h2 id="settings">Settings</h2>
+<p>关于仓库的设置。</p>
+<h3 id="githubpages">GitHub Pages</h3>
+<p>GitHub 有一个名为 GitHub Pages 的仓库，用户可以利用该仓库中的资料创建 Web 页，用来发布仓库中软件的相关信息。如果已经创建过GitHub Pages，则会显示相应 URL。点击 Automatic Page Generator 即可以自动创建 GitHub Pages。</p>
+<h3 id="collaborators">Collaborators</h3>
+<p>用户主要在这里设置仓库的访问权限。如果仓库隶属于个人账户，那么可以添加 GitHub 的用户名，赋予该用户直接读写仓库的权限。不过，如果仓库隶属于 Organization 账户，则需要像所示的那样先创建 Team，然后赋予该 Team 读写仓库的权限。像这样使用 Organization 账户可以高效地设置仓库权限，在公司等多人共同进行开发的组织中，建议使用 Organization 账户。</p>
+<h3 id="webhooksservices">Webhooks &amp; Services</h3>
+<p>在这个页面中，用户可以添加 Hook 让 GitHub 仓库与其他服务集成。通过 Add webhook 可以添加用户自己的 webhook。通过 Configureservices 则可以从 GitHub 事先列出的可以集成的服务中进行选择。能与GitHub 集成的服务非常多，其中还包括邮件及 IRC 等社交服务。</p>
+<h3 id="deploykeys">Deploy Keys</h3>
+<p>在这个页面中，用户可以添加用于部署的公开密钥，允许以只读方式访问仓库。设置公开密钥后，用户可以使用私有密钥通过 ssh 协议 clone 仓库。要注意的是，这里添加的公开密钥·私有密钥对无法再添加到其他仓库。使用 Deploy Keys 功能时，需要给每个仓库赋予不同的密钥对。</p>
+<h2 id="notifications">Notifications</h2>
+<p>每当创建 Issue、收到评论、创建 Pull Request 等情况发生时，我们就会在 Notifications 中收到通知。</p>
+<h2 id="其他功能">其他功能</h2>
+<h3 id="githubpages-1">GitHub Pages</h3>
+<p>GitHub Pages 主要用于在 GitHub 上托管静态 HTML，以便发布项目的 Web 页。可以绑定独立域名。常被使用为静态博客。</p>
+<h3 id="githubenterprise">GitHub Enterprise</h3>
+<p>GitHub Enterprise 专为那些无法将源代码放到公司之外的企业设计。这项服务可以以虚拟机的形式提供 GitHub。</p>
+<h3 id="githubapi">GitHub API</h3>
+<p>GitHub 面向开发者公开了 API。</p>
+<h1 id="gist-1">Gist</h1>
+<p>Gist 是一款简单的 Web 应用程序，常被开发者们用来共享示例代码和错误信息。它使用JavaScript 编写的 Ace 编辑器，只需打开浏览器便可编写简单代码。另外，Gist 中的文档都在版本管理系统的管理之下，用户可以放心编辑。而且由于其版本历史记录保管在 Git 仓库中，所以还可以通过clone 操作将 Gist 获取至本地。共享 Gist 的人之间能够互相添加评论，所有交流都会被记录下来。Gist 支持多种语言的语法高亮，可以大幅增强代码可读性。可以说，这一工具就是专为程序员设计的。</p>
 
           
         
@@ -2913,50 +3032,54 @@ urllib.robotparser
       
         
           
-            <h1 id="初始设置本地Git"><a href="#初始设置本地Git" class="headerlink" title="初始设置本地Git"></a>初始设置本地Git</h1><p>首先来设置使用 Git 时的姓名和邮箱地址。名字请用英文输入。</p>
+            <h1 id="初始设置本地git">初始设置本地Git</h1>
+<p>首先来设置使用 Git 时的姓名和邮箱地址。名字请用英文输入。</p>
 <pre><code>$ git config --global user.name &quot;Firstname Lastname&quot;
-$ git config --global user.email &quot;your_email@example.com&quot;
-</code></pre><p>这个命令，会在“~/.gitconfig”中以如下形式输出设置文件。</p>
+$ git config --global user.email &quot;your_email@example.com&quot;</code></pre>
+<p>这个命令，会在“~/.gitconfig”中以如下形式输出设置文件。</p>
 <pre><code>[user]
   name = Firstname Lastname
-  email = your_email@example.com
-</code></pre><p>想更改这些信息时，可以直接编辑这个设置文件。这里设置的姓名和邮箱地址会用在 Git 的 <em>提交日志</em>中。由于在 GitHub 上公开仓库时，这里的姓名和邮箱地址也会随着提交日志一同被公开，所以请不要使用不便公开的隐私信息。</p>
+  email = your_email@example.com</code></pre>
+<p>想更改这些信息时，可以直接编辑这个设置文件。这里设置的姓名和邮箱地址会用在 Git 的 <em>提交日志</em>中。由于在 GitHub 上公开仓库时，这里的姓名和邮箱地址也会随着提交日志一同被公开，所以请不要使用不便公开的隐私信息。</p>
 <p>将 color.ui 设置为 auto 可以让命令的输出拥有更高的可读性。</p>
-<pre><code>$ git config --global color.ui auto
-</code></pre><p>“~/.gitconfig”中会增加下面一行。</p>
+<pre><code>$ git config --global color.ui auto</code></pre>
+<p>“~/.gitconfig”中会增加下面一行。</p>
 <pre><code>[color]
-  ui = auto
-</code></pre><p>这样一来，各种命令的输出就会变得更容易分辨。</p>
+  ui = auto</code></pre>
+<p>这样一来，各种命令的输出就会变得更容易分辨。</p>
 <blockquote>
 <p>注意：下面大多数命令是在Win下 git bash 中使用，当然，linux终端也可以使用。</p>
 </blockquote>
-<h1 id="申请GitHub账号及相关设置"><a href="#申请GitHub账号及相关设置" class="headerlink" title="申请GitHub账号及相关设置"></a>申请GitHub账号及相关设置</h1><h2 id="设置SSH-Key"><a href="#设置SSH-Key" class="headerlink" title="设置SSH Key"></a>设置SSH Key</h2><p>GitHub 上连接已有仓库时的认证，是通过使用了 SSH 的公开密钥认证方式进行的。现在让我们来创建公开密钥认证所需的 SSH Key，并将其添加至 GitHub。</p>
+<h1 id="申请github账号及相关设置">申请GitHub账号及相关设置</h1>
+<h2 id="设置ssh-key">设置SSH Key</h2>
+<p>GitHub 上连接已有仓库时的认证，是通过使用了 SSH 的公开密钥认证方式进行的。现在让我们来创建公开密钥认证所需的 SSH Key，并将其添加至 GitHub。</p>
 <p>在 Git bash 运行下面的命令创建 SSH Key。</p>
 <pre><code>$ ssh-keygen -t rsa -C &quot;your_email@example.com&quot;
 Generating public/private rsa key pair.
 Enter file in which to save the key
 (/Users/your_user_directory/.ssh/id_rsa): 按回车键
 Enter passphrase (empty for no passphrase): 输入密码
-Enter same passphrase again: 再次输入密码
-</code></pre><p><a href="mailto:`your_email@example.com" target="_blank" rel="noopener">`your_email@example.com</a>`的部分请改成您在创建账户时用的邮箱地址。密码需要在认证时输入，请选择复杂度高并且容易记忆的组合。输入密码后会出现提示已经创建密匙的提示，并告诉存储位置以及相关信息。其中，<em>id_rsa 文件是私有密钥，id_rsa.pub 是公开密钥</em>。</p>
+Enter same passphrase again: 再次输入密码</code></pre>
+<p><code>your_email@example.com</code>的部分请改成您在创建账户时用的邮箱地址。密码需要在认证时输入，请选择复杂度高并且容易记忆的组合。输入密码后会出现提示已经创建密匙的提示，并告诉存储位置以及相关信息。其中，<em>id_rsa 文件是私有密钥，id_rsa.pub 是公开密钥</em>。</p>
 <p>在 GitHub 中添加公开密钥（<code>Add SSH Key</code>），今后就可以用私有密钥进行认证了。</p>
 <p>在 Title 中输入适当的密钥名称。Key 部分使用 <code>id_rsa.pub</code> 文件里的内容。<code>id_rsa.pub</code> 的内容可以用如下方法查看。</p>
 <pre><code>$ cat ~/.ssh/id_rsa.pub
-ssh-rsa 公开密钥的内容 your_email@example.com
-</code></pre><p>添加后，账户邮箱会收到邮件提示。可以使用如下命令测试用手中的私人密钥与 GitHub 进行认证和<br>通信。</p>
-<pre><code>$ ssh -T git@github.com
-</code></pre><p>若是出现</p>
-<pre><code>The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established.
+ssh-rsa 公开密钥的内容 your_email@example.com</code></pre>
+<p>添加后，账户邮箱会收到邮件提示。可以使用如下命令测试用手中的私人密钥与 GitHub 进行认证和 通信。</p>
+<pre><code>$ ssh -T git@github.com</code></pre>
+<p>若是出现</p>
+<pre><code>The authenticity of host &#39;github.com (207.97.227.239)&#39; can&#39;t be established.
 RSA key fingerprint is fingerprint值 .
-Are you sure you want to continue connecting (yes/no)? 输入yes
-</code></pre><p>出现如下结果即为成功。</p>
-<pre><code>Hi hirocastest! You&apos;ve successfully authenticated, but GitHub does not provide shell access.
-</code></pre><h2 id="创建新仓库需要注意的细节"><a href="#创建新仓库需要注意的细节" class="headerlink" title="创建新仓库需要注意的细节"></a>创建新仓库需要注意的细节</h2><ul>
+Are you sure you want to continue connecting (yes/no)? 输入yes</code></pre>
+<p>出现如下结果即为成功。</p>
+<pre><code>Hi hirocastest! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code></pre>
+<h2 id="创建新仓库需要注意的细节">创建新仓库需要注意的细节</h2>
+<ul>
 <li>Initialize this repository with a README</li>
 </ul>
 <p>在 Initialize this repository with a README 选项上打钩，随后GitHub 会自动初始化仓库并设置 README 文件，让用户可以立刻clone 这个仓库。如果想向 GitHub 添加手中已有的 Git 仓库，建议不要勾选，直接手动 push。</p>
 <ul>
-<li><a href="https://github.com/用户名/Hello-Word" target="_blank" rel="noopener">https://github.com/用户名/Hello-Word</a></li>
+<li>https://github.com/用户名/Hello-Word</li>
 </ul>
 <p>是刚刚创建的仓库的页面。</p>
 <ul>
@@ -2967,41 +3090,45 @@ Are you sure you want to continue connecting (yes/no)? 输入yes
 <li>GitHub Flavored Markdown</li>
 </ul>
 <p>在 GitHub 上进行交流时用到的 Issue、评论、Wiki，都可以用 Markdown 语法表述，从而进行标记。准确地说应该是 <code>GitHub Flavored Markdown（GFM）</code>语法。该语法虽然是 GitHub 在 Markdown 语法基础上扩充而来的，但一般情况下只要按照原本的 Markdown 语法进行描述就可以。</p>
-<h1 id="简单试验对已有仓库的操作"><a href="#简单试验对已有仓库的操作" class="headerlink" title="简单试验对已有仓库的操作"></a>简单试验对已有仓库的操作</h1><h2 id="clone"><a href="#clone" class="headerlink" title="clone"></a>clone</h2><p>将代码下载到了本地以仓库名作为文件夹名的文件夹中，但是与直接下载不同。</p>
+<h1 id="简单试验对已有仓库的操作">简单试验对已有仓库的操作</h1>
+<h2 id="clone">clone</h2>
+<p>将代码下载到了本地以仓库名作为文件夹名的文件夹中，但是与直接下载不同。</p>
 <pre><code>$ git clone git@github.com:hirocastest/Hello-World.git
-Cloning into &apos;Hello-World&apos;...
+Cloning into &#39;Hello-World&#39;...
 remote: Counting objects: 3, done.
 remote: Total 3 (delta 0), reused 0 (delta 0)
 Receiving objects: 100% (3/3), done.
-$ cd Hello-World
-</code></pre><p>这里会要求输入 GitHub 上设置的公开密钥的密码。认证成功后，仓库便会被 clone 至仓库名后的目录中。将想要公开的代码提交至这个仓库再 push 到 GitHub 的仓库中，代码便会被公开。</p>
+$ cd Hello-World</code></pre>
+<p>这里会要求输入 GitHub 上设置的公开密钥的密码。认证成功后，仓库便会被 clone 至仓库名后的目录中。将想要公开的代码提交至这个仓库再 push 到 GitHub 的仓库中，代码便会被公开。</p>
 <p>如果之前并未设置密码，那么这里也就不用输入。</p>
-<h2 id="添加自己的文件"><a href="#添加自己的文件" class="headerlink" title="添加自己的文件"></a>添加自己的文件</h2><p>本地文件想要加入，需要先加到本地仓库。只有添加到其中，才能实现跟踪管理。</p>
+<h2 id="添加自己的文件">添加自己的文件</h2>
+<p>本地文件想要加入，需要先加到本地仓库。只有添加到其中，才能实现跟踪管理。</p>
 <p>这里我们编写一个 <code>hello_world.php</code> 文件，用来输出“Hello World!”。</p>
-<p>由于 hello_word.php 还没有添加至 Git 仓库，所以显示为 Untracked<br>files。</p>
+<p>由于 hello_word.php 还没有添加至 Git 仓库，所以显示为 Untracked files。</p>
 <pre><code>$ git status
 # On branch master
 # Untracked files:
 # (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
 #
 # hello_world.php
-nothing added to commit but untracked files present (use &quot;git add&quot; to track)
-</code></pre><p>添加到本地仓库，这样一来，这个文件就进入了版本管理系统的管理之下。今后的更改管理都交由 Git 进行。通过 git add命令将文件加入暂存区，再通过 <code>git commit</code> 命令附加信息并提交。</p>
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)</code></pre>
+<p>添加到本地仓库，这样一来，这个文件就进入了版本管理系统的管理之下。今后的更改管理都交由 Git 进行。通过 git add命令将文件加入暂存区，再通过 <code>git commit</code> 命令附加信息并提交。</p>
 <pre><code>$ git add hello_world.php
 $ git commit -m &quot;Add hello world script by php&quot;
 [master d23b909] Add hello world script by php
 1 file changed, 3 insertions(+)
-create mode 100644 hello_world.php
-</code></pre><p>添加成功后，可以通过 <code>git log</code> 命令查看提交日志。</p>
+create mode 100644 hello_world.php</code></pre>
+<p>添加成功后，可以通过 <code>git log</code> 命令查看提交日志。</p>
 <pre><code>$ git log
 commit d23b909caad5d49a281480e6683ce3855087a5da
 Author: 你的信息
 Date: 你的时间
-Add hello world script by php
-</code></pre><blockquote>
+Add hello world script by php</code></pre>
+<blockquote>
 <p>关于许可：实际使用时，只需将 LICENSE 文件加入仓库，并在README.md 文件中声明使用了何种许可协议即可。使用没有声明许可协议的软件时，以防万一最好直接联系著作者。</p>
 </blockquote>
-<h2 id="push"><a href="#push" class="headerlink" title="push"></a>push</h2><p>之后只要执行 push，GitHub 上的仓库就会被更新。</p>
+<h2 id="push">push</h2>
+<p>之后只要执行 push，GitHub 上的仓库就会被更新。</p>
 <pre><code>$ git push
 Counting objects: 4, done.
 Delta compression using up to 4 threads.
@@ -3009,20 +3136,24 @@ Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 328 bytes, done.
 Total 3 (delta 0), reused 0 (delta 0)
 To git@github.com:hirocastest/Hello-World.git
-46ff713..d23b909 master -&gt; master
-</code></pre><h1 id="本地新仓库推送远程"><a href="#本地新仓库推送远程" class="headerlink" title="本地新仓库推送远程"></a>本地新仓库推送远程</h1><h2 id="init"><a href="#init" class="headerlink" title="init"></a>init</h2><p>要使用 Git 进行版本管理，必须先初始化仓库。</p>
+46ff713..d23b909 master -&gt; master</code></pre>
+<h1 id="本地新仓库推送远程">本地新仓库推送远程</h1>
+<h2 id="init">init</h2>
+<p>要使用 Git 进行版本管理，必须先初始化仓库。</p>
 <p>在包含所有要上传的文件的目录级别下：</p>
-<pre><code>$ git init
-</code></pre><p>如果初始化成功，执行了 <code>git init</code> 命令的目录下就会生成 <code>.git</code> 目录。这个 <code>.git</code> 目录里存储着管理当前目录内容所需的仓库数据。在 Git 中，我们将这个目录的内容称为“附属于该仓库的工作树”。文件的编辑等操作在工作树中进行，然后记录到仓库中，以此管理文件的历史快照。</p>
-<h2 id="status"><a href="#status" class="headerlink" title="status"></a>status</h2><p>工作树和仓库在被操作的过程中，状态会不断发生变化。</p>
+<pre><code>$ git init</code></pre>
+<p>如果初始化成功，执行了 <code>git init</code> 命令的目录下就会生成 <code>.git</code> 目录。这个 <code>.git</code> 目录里存储着管理当前目录内容所需的仓库数据。在 Git 中，我们将这个目录的内容称为“附属于该仓库的工作树”。文件的编辑等操作在工作树中进行，然后记录到仓库中，以此管理文件的历史快照。</p>
+<h2 id="status">status</h2>
+<p>工作树和仓库在被操作的过程中，状态会不断发生变化。</p>
 <pre><code>$ git status
 # On branch master
 #
 # Initial commit
 #
-nothing to commit (create/copy files and use &quot;git add&quot; to track)
-</code></pre><p>结果显示了我们当前正处于 <code>master</code> 分支下。接着还显示了没有可提交的内容。所谓提交（Commit），是指“记录工作树中所有文件的当前状态”。</p>
-<h2 id="add"><a href="#add" class="headerlink" title="add"></a>add</h2><p>要想让文件成为 Git 仓库的管理对象，就需要用 <code>git add</code> 命令将其加入暂存区（Stage 或者 Index）中。暂存区是提交之前的一个临时区域。</p>
+nothing to commit (create/copy files and use &quot;git add&quot; to track)</code></pre>
+<p>结果显示了我们当前正处于 <code>master</code> 分支下。接着还显示了没有可提交的内容。所谓提交（Commit），是指“记录工作树中所有文件的当前状态”。</p>
+<h2 id="add">add</h2>
+<p>要想让文件成为 Git 仓库的管理对象，就需要用 <code>git add</code> 命令将其加入暂存区（Stage 或者 Index）中。暂存区是提交之前的一个临时区域。</p>
 <pre><code>$ git add README.md
 $ git status
 # On branch master
@@ -3033,17 +3164,18 @@ $ git status
 # (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
 #
 # new file: README.md
-#
-</code></pre><p>可见，新建的文件被加到了暂存区（注意关注输出内容中括号中的内容，会有一些功能性的建议）</p>
-<h2 id="commit"><a href="#commit" class="headerlink" title="commit"></a>commit</h2><p>可以将当前暂存区中的文件实际保存到仓库的历史记录中。通过这些记录，我们就可以在工作树中复原文件。</p>
+#</code></pre>
+<p>可见，新建的文件被加到了暂存区（注意关注输出内容中括号中的内容，会有一些功能性的建议）</p>
+<h2 id="commit">commit</h2>
+<p>可以将当前暂存区中的文件实际保存到仓库的历史记录中。通过这些记录，我们就可以在工作树中复原文件。</p>
 <pre><code>$ git commit -m &quot;First commit&quot;
 [master (root-commit) 9f129ba] First commit
 1 file changed, 0 insertions(+), 0 deletions(-)
-create mode 100644 README.md
-</code></pre><p><code>-m</code> 参数后的 “First commit”称作提交信息，是对这个提交的概述。若是不加 <code>-m</code>，直接执行 <code>git commit</code> 命令。执行后编辑器就会启动，并显示如下结果。</p>
+create mode 100644 README.md</code></pre>
+<p><code>-m</code> 参数后的 &quot;First commit&quot;称作提交信息，是对这个提交的概述。若是不加 <code>-m</code>，直接执行 <code>git commit</code> 命令。执行后编辑器就会启动，并显示如下结果。</p>
 <p><code>git commit -am &quot;...&quot;</code> 命令一次完成 add，commit。</p>
 <pre><code># Please enter the commit message for your changes. Lines starting
-# with &apos;#&apos; will be ignored, and an empty message aborts the commit.
+# with &#39;#&#39; will be ignored, and an empty message aborts the commit.
 # On branch master
 #
 # Initial commit
@@ -3052,89 +3184,99 @@ create mode 100644 README.md
 # (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
 #
 # new file: README.md
-#
-</code></pre><p>在编辑器中记述提交信息的格式如下。</p>
+#</code></pre>
+<p>在编辑器中记述提交信息的格式如下。</p>
 <pre><code>* 第一行：用一行文字简述提交的更改内容
 * 第二行：空行
-* 第三行以后：记述更改的原因和详细内容
-</code></pre><p>只要按照上面的格式输入，今后便可以通过确认日志的命令或工具看到这些记录。</p>
+* 第三行以后：记述更改的原因和详细内容</code></pre>
+<p>只要按照上面的格式输入，今后便可以通过确认日志的命令或工具看到这些记录。</p>
 <p>在以 #（井号）标为注释的 Changes to be committed（要提交的更改）栏中，可以查看本次提交中包含的文件。将提交信息按格式记述完毕后，请保存并关闭编辑器，以 #（井号）标为注释的行不必删除。随后，刚才记述的提交信息就会被提交。</p>
 <p>如果在编辑器启动后想中止提交，请将提交信息留空并直接关闭编辑器，随后提交就会被中止。</p>
 <p>提交之后，工作树状态会提示没有更改，因为处于最新状态。</p>
 <p>要修改上一条提交信息，可以使用 <code>git commit --amend</code> 命令。</p>
-<h2 id="log"><a href="#log" class="headerlink" title="log"></a>log</h2><p>可以查看什么人在什么时候进行了提交或合并，以及操作前后有怎样的差别。</p>
+<h2 id="log">log</h2>
+<p>可以查看什么人在什么时候进行了提交或合并，以及操作前后有怎样的差别。</p>
 <p>针对刚才</p>
 <pre><code>$ git log
 commit 9f129bae19b2c82fb4e98cde5890e52a6c546922(指向这个提交的哈希值)
 Author: ...
 Date: ...
-First commit(该提交的提交信息。)
-</code></pre><p>如果只想让程序显示第一行简述信息，可以在 <code>git log</code> 命令后加上 <code>--pretty=short</code> 。</p>
+First commit(该提交的提交信息。)</code></pre>
+<p>如果只想让程序显示第一行简述信息，可以在 <code>git log</code> 命令后加上 <code>--pretty=short</code> 。</p>
 <pre><code>$ git log --pretty=short
 commit 9f129bae19b2c82fb4e98cde5890e52a6c546922
 Author: ...
 First commit
 
-$ git log -p README.md
-</code></pre><p>在 <code>git log</code> 命令后加上 <code>-p</code> 参数，文件的前后差<br>别就会显示在提交信息之后。加上目录名，便会只显示该目录下的日志。如果加的是文件名，就会只显示与该文件相关的日志。</p>
+$ git log -p README.md</code></pre>
+<p>在 <code>git log</code> 命令后加上 <code>-p</code> 参数，文件的前后差 别就会显示在提交信息之后。加上目录名，便会只显示该目录下的日志。如果加的是文件名，就会只显示与该文件相关的日志。</p>
 <p><code>git log -- graph</code> ——以图表形式查看分支合并提交等信息。</p>
-<h2 id="diff"><a href="#diff" class="headerlink" title="diff"></a>diff</h2><p>可以查看 <strong>工作树</strong>、<strong>暂存区</strong>、<strong>最新提交</strong>之间的差别。显示的内容的内容中，“+”号标出的是新添加的行，被删除的行则用“-”号标出。</p>
-<p>要查看与最新提交的差别，请执行以下<br>命令。</p>
-<pre><code>$ git diff HEAD
-</code></pre><p>这里的 <code>HEAD</code> 是指向当前分支中最新一次提交<br>的指针。</p>
-<h2 id="branch"><a href="#branch" class="headerlink" title="branch"></a>branch</h2><p>在进行多个并行作业时，我们会用到分支。在这类并行开发的过程中，往往同时存在多个最新代码状态。<code>master</code> 分支是 Git 默认创建的分支，因此基本上所有开发都是以这个分支为中心进行的。不同分支中，可以同时进行完全不同的作业。等该分支的作业完成之后再与 <code>master</code> 分支合并。</p>
+<h2 id="diff">diff</h2>
+<p>可以查看 <strong>工作树</strong>、<strong>暂存区</strong>、<strong>最新提交</strong>之间的差别。显示的内容的内容中，“+”号标出的是新添加的行，被删除的行则用“-”号标出。</p>
+<p>要查看与最新提交的差别，请执行以下 命令。</p>
+<pre><code>$ git diff HEAD</code></pre>
+<p>这里的 <code>HEAD</code> 是指向当前分支中最新一次提交 的指针。</p>
+<h2 id="branch">branch</h2>
+<p>在进行多个并行作业时，我们会用到分支。在这类并行开发的过程中，往往同时存在多个最新代码状态。<code>master</code> 分支是 Git 默认创建的分支，因此基本上所有开发都是以这个分支为中心进行的。不同分支中，可以同时进行完全不同的作业。等该分支的作业完成之后再与 <code>master</code> 分支合并。</p>
 <p><code>git branch</code> 命令可以将分支名列表显示，同时可以确认当前所在分支。</p>
-<p>分支左侧标有“*”（星号），表示这是我们当前所<br>在的分支。结果中没有显示其他分支名，表示本地仓库中只存在 <code>master</code> 一个分支。</p>
+<p>分支左侧标有“*”（星号），表示这是我们当前所 在的分支。结果中没有显示其他分支名，表示本地仓库中只存在 <code>master</code> 一个分支。</p>
 <p>如果想以当前的 <code>master</code> 分支为基础创建新的分支，我们需要用到 <code>git checkout -b</code>命令。</p>
 <pre><code>$ git checkout -b feature-A
-Switched to a new branch &apos;feature-A&apos;
-</code></pre><p>等同于：</p>
+Switched to a new branch &#39;feature-A&#39;</code></pre>
+<p>等同于：</p>
 <pre><code>$ git branch feature-A
-$ git checkout feature-A
-</code></pre><p>创建 <code>feature-A</code> 分支，并将当前分支切换为 <code>feature-A</code> 分支。这时再来查看分支列表，会显示我们处于 <code>feature-A</code> 分支下。</p>
+$ git checkout feature-A</code></pre>
+<p>创建 <code>feature-A</code> 分支，并将当前分支切换为 <code>feature-A</code> 分支。这时再来查看分支列表，会显示我们处于 <code>feature-A</code> 分支下。</p>
 <p>在这个状态下像正常开发那样修改代码、执行 <code>git add</code> 命令并进行提交的话，代码就会提交至 <code>feature-A</code> 分支。</p>
 <p>命令 <code>git checkout -</code> 可以切换回上一个分支，当然指定名字也可以。</p>
-<h3 id="主干分支和特性分支"><a href="#主干分支和特性分支" class="headerlink" title="主干分支和特性分支"></a>主干分支和特性分支</h3><p>特性分支顾名思义，是集中实现单一特性（主题），除此之外不进行任何作业的分支。在日常开发中，往往会创建数个特性分支，同时在此之外再保留一个随时可以发布软件的稳定分支。稳定分支的角色通常由 <code>master</code> 分支担当。</p>
+<h3 id="主干分支和特性分支">主干分支和特性分支</h3>
+<p>特性分支顾名思义，是集中实现单一特性（主题），除此之外不进行任何作业的分支。在日常开发中，往往会创建数个特性分支，同时在此之外再保留一个随时可以发布软件的稳定分支。稳定分支的角色通常由 <code>master</code> 分支担当。</p>
 <p>主干分支是刚才我们讲解的特性分支的原点，同时也是合并的终点。通常人们会用 <code>master</code> 分支作为主干分支。主干分支中并没有开发到一半的代码，可以随时供他人查看。有时我们需要让这个主干分支总是配置在正式环境中，有时又需要用标签 Tag 等创建版本信息，同时管理多个版本发布。拥有多个版本发布时，主干分支也有多个。</p>
-<h2 id="merge"><a href="#merge" class="headerlink" title="merge"></a>merge</h2><p>接下来，我们假设 <code>feature-A</code> 已经实现完毕，想要将它合并到主干分支 <code>master</code> 中。为了在历史记录中明确记录下本次分支合并，我们需要创建合并提交。因此，在合并时加上 <code>--no-ff</code> 参数，在主干分支中执行</p>
-<pre><code>$ git merge --no-ff feature-A
-</code></pre><p>随后编辑器会启动，用于录入合并提交的信息。默认信息中已经包含了是从 <code>feature-A</code> 分支合并过来的相关内容，所以可不必做任何更改。将编辑器中显示的内容保存，关闭编辑器会提示成功合并。</p>
+<h2 id="merge">merge</h2>
+<p>接下来，我们假设 <code>feature-A</code> 已经实现完毕，想要将它合并到主干分支 <code>master</code> 中。为了在历史记录中明确记录下本次分支合并，我们需要创建合并提交。因此，在合并时加上 <code>--no-ff</code> 参数，在主干分支中执行</p>
+<pre><code>$ git merge --no-ff feature-A</code></pre>
+<p>随后编辑器会启动，用于录入合并提交的信息。默认信息中已经包含了是从 <code>feature-A</code> 分支合并过来的相关内容，所以可不必做任何更改。将编辑器中显示的内容保存，关闭编辑器会提示成功合并。</p>
 <p>合并时可能发生冲突(Conflict)，不解决，无法合并。按提示解决就好。</p>
-<h2 id="reset"><a href="#reset" class="headerlink" title="reset"></a>reset</h2><p>要让仓库的 <code>HEAD</code> 、暂存区、当前工作树回溯到指定状态，需要用到 <code>git rest --hard</code> 命令。只要提供 <strong>目标时间点的哈希值</strong>，就可以完全恢复至该时间点的状态。</p>
+<h2 id="reset">reset</h2>
+<p>要让仓库的 <code>HEAD</code> 、暂存区、当前工作树回溯到指定状态，需要用到 <code>git rest --hard</code> 命令。只要提供 <strong>目标时间点的哈希值</strong>，就可以完全恢复至该时间点的状态。</p>
 <p><code>git log</code> 命令只能查看以当前状态为终点的历史日志。所以这里要使用 <code>git reflog</code> 命令，查看当前仓库的操作日志。在日志中找出回溯历史之前的哈希值，通过 <code>git reset --hard</code> 命令恢复到回溯历史前的状态。</p>
 <p>在日志中，我们可以看到 commit、checkout、reset、merge 等 Git 命令的执行记录。只要不进行 Git 的 GC（Garbage Collection，垃圾回收），就可以通过日志随意调取近期的历史状态。</p>
-<h2 id="rebase"><a href="#rebase" class="headerlink" title="rebase"></a>rebase</h2><p>在合并特性分支之前，如果发现已提交的内容中有些许拼写错误等，不妨提交一个修改，然后将这个修改包含到前一个提交之中，压缩成一个历史记录。</p>
+<h2 id="rebase">rebase</h2>
+<p>在合并特性分支之前，如果发现已提交的内容中有些许拼写错误等，不妨提交一个修改，然后将这个修改包含到前一个提交之中，压缩成一个历史记录。</p>
 <p><code>git rebase -i HEAD~2</code> 方式执行 <code>git rebase</code> 命令，可以选定当前分支中包含 <code>HEAD</code>（最新提交）在内的两个最新历史记录为对象，并在编辑器中打开。</p>
 <p>出现类似</p>
 <pre><code>pick 7a34294 Add feature-C
-pick 6fba227 Fix typo
-</code></pre><p>将 <code>6fba227</code> 左侧的 <code>pick</code> 部分删除，改写为 <code>fixup</code>。</p>
+pick 6fba227 Fix typo</code></pre>
+<p>将 <code>6fba227</code> 左侧的 <code>pick</code> 部分删除，改写为 <code>fixup</code>。</p>
 <pre><code>pick 7a34294 Add feature-C
-fixup 6fba227 Fix typo
-</code></pre><p>保存编辑器里的内容，关闭编辑器。提示 <code>rebase</code> 成功。这样一来，<code>Fix typo</code> 就从历史中被抹去，也就相当于 <code>Add feature-C</code>中从来没有出现过拼写错误。这算是一种良性的历史改写。</p>
-<h2 id="remote-add"><a href="#remote-add" class="headerlink" title="remote add"></a>remote add</h2><p>在 GitHub 上新建一个仓库。为防止与其他仓库混淆，仓库名请与本地仓库保持一致。创建时请不要勾选 <code>Initialize this repository with a README</code> 选项。因为一旦勾选该选项，GitHub 一侧的仓库就会自动生成 README 文件，从创建之初便与本地仓库失去了整合性。虽然到时也可以强制覆盖，但为防止这一情况发生还是建议不要勾选该选项。</p>
+fixup 6fba227 Fix typo</code></pre>
+<p>保存编辑器里的内容，关闭编辑器。提示 <code>rebase</code> 成功。这样一来，<code>Fix typo</code> 就从历史中被抹去，也就相当于 <code>Add feature-C</code>中从来没有出现过拼写错误。这算是一种良性的历史改写。</p>
+<h2 id="remote-add">remote add</h2>
+<p>在 GitHub 上新建一个仓库。为防止与其他仓库混淆，仓库名请与本地仓库保持一致。创建时请不要勾选 <code>Initialize this repository with a README</code> 选项。因为一旦勾选该选项，GitHub 一侧的仓库就会自动生成 README 文件，从创建之初便与本地仓库失去了整合性。虽然到时也可以强制覆盖，但为防止这一情况发生还是建议不要勾选该选项。</p>
 <p>现在我们用 <code>git remote add</code> 命令将github新建仓库设置成本地仓库的远程仓库。</p>
-<pre><code>$ git remote add origin 远程仓库路径
-</code></pre><p>按照上述格式执行 <code>git remote add</code> 命令之后，Git 会自动将远程仓库的名称设置为 <code>origin</code>（标识符）。</p>
-<h2 id="push-1"><a href="#push-1" class="headerlink" title="push"></a>push</h2><p>当前分支下本地仓库内容推送到远程仓库。</p>
+<pre><code>$ git remote add origin 远程仓库路径</code></pre>
+<p>按照上述格式执行 <code>git remote add</code> 命令之后，Git 会自动将远程仓库的名称设置为 <code>origin</code>（标识符）。</p>
+<h2 id="push-1">push</h2>
+<p>当前分支下本地仓库内容推送到远程仓库。</p>
 <p>假定在 <code>master</code> 分支下工作。</p>
-<pre><code>$ git push -u origin master
-</code></pre><p>当前分支的内容就会被推送给远程仓库 <code>origin</code> 的 <code>master</code> 分支。</p>
+<pre><code>$ git push -u origin master</code></pre>
+<p>当前分支的内容就会被推送给远程仓库 <code>origin</code> 的 <code>master</code> 分支。</p>
 <p><code>-u</code> 参数可以在推送的同时，将 <code>origin</code> 仓库的 <code>master</code> 分支设置为本地仓库当前分支的 <code>upstream</code>（上游）。添加了这个参数，将来运行 <code>git pull</code> 命令从远程仓库获取内容时，本地仓库的这个分支就可以直接从 <code>origin</code> 的 <code>master</code> 分支获取内容，省去了另外添加参数的麻烦。</p>
-<p>对于其他分支，我们在本地仓库中创建了 <code>feature-D</code> 分支，现在将它 push 给远程仓<br>库并保持分支名称不变。</p>
+<p>对于其他分支，我们在本地仓库中创建了 <code>feature-D</code> 分支，现在将它 push 给远程仓 库并保持分支名称不变。</p>
 <pre><code>$ git checkout -b feature-D
-$ git push -u origin feature-D
-</code></pre><h1 id="获取远程仓库其他分支开发"><a href="#获取远程仓库其他分支开发" class="headerlink" title="获取远程仓库其他分支开发"></a>获取远程仓库其他分支开发</h1><p>不要与之前操作的仓库在同一目录下。执行 <code>git clone</code> 命令后我们会默认处于 <code>master</code> 分支下，同时系统会自动将 <code>origin</code> 设置成该远程仓库的标识符。也就是说，当前本地仓库的 <code>master</code> 分支与 GitHub 端远程仓库（origin）的 <code>master</code> 分支在内容上是完全相同的。</p>
+$ git push -u origin feature-D</code></pre>
+<h1 id="获取远程仓库其他分支开发">获取远程仓库其他分支开发</h1>
+<p>不要与之前操作的仓库在同一目录下。执行 <code>git clone</code> 命令后我们会默认处于 <code>master</code> 分支下，同时系统会自动将 <code>origin</code> 设置成该远程仓库的标识符。也就是说，当前本地仓库的 <code>master</code> 分支与 GitHub 端远程仓库（origin）的 <code>master</code> 分支在内容上是完全相同的。</p>
 <p>用 <code>git branch -a</code>命令查看当前分支的相关信息。添加 <code>-a</code> 参数可以同时显示本地仓库和远程仓库的分支信息。</p>
 <p>若要获取远程特性分支 <code>feature-D</code>，可以使用如下操作。</p>
-<pre><code>$ git checkout -b feature-D origin/feature-D
-</code></pre><p><code>-b</code> 参数的后面是本地仓库中新建分支的名称。为了便于理解，我们仍将其命名为 <code>feature-D</code>，让它与远程仓库的对应分支保持同名。新建分支名称后面是获取来源的分支名称。</p>
+<pre><code>$ git checkout -b feature-D origin/feature-D</code></pre>
+<p><code>-b</code> 参数的后面是本地仓库中新建分支的名称。为了便于理解，我们仍将其命名为 <code>feature-D</code>，让它与远程仓库的对应分支保持同名。新建分支名称后面是获取来源的分支名称。</p>
 <p>例子中指定了 <code>origin/feature-D</code>，就是说以远程 <code>origin</code> 的仓库的 <code>feature-D</code> 分支作为来源，在本地仓库中创建 <code>feature-D</code> 分支。更改添加提交推送即可。</p>
 <pre><code>$ git commit -am &quot;Add feature-D&quot;
-$ git push
-</code></pre><p>此时，本地分支中并未有内容，需要使用 <code>pull</code></p>
-<pre><code>$ git pull origin feature-D
-</code></pre><p>如果两人同时修改了同一部分的源代码，push 时就很容易发生冲突。所以多名开发者在同一个分支中进行作业时，为减少冲突情况的发生，建议更频繁地进行 push 和 pull 操作。</p>
+$ git push</code></pre>
+<p>此时，本地分支中并未有内容，需要使用 <code>pull</code></p>
+<pre><code>$ git pull origin feature-D</code></pre>
+<p>如果两人同时修改了同一部分的源代码，push 时就很容易发生冲突。所以多名开发者在同一个分支中进行作业时，为减少冲突情况的发生，建议更频繁地进行 push 和 pull 操作。</p>
 
           
         
@@ -3306,31 +3448,37 @@ $ git push
       
         
           
-            <h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><blockquote>
+            <h1 id="面向对象">面向对象</h1>
+<blockquote>
 <p>语言中的用语并不是共通的，在不同语言中，同一个用语的含义可能会有很大差别。</p>
 </blockquote>
 <p>C++的设计者本贾尼·斯特劳斯特卢普对类和继承给予了正面肯定，然而，“面向对象”这个词的发明者艾伦·凯（Alan kay，他同时也是 Smalltalk 语言的设计者）却持有不同的意见，他对类和继承持否定立场。</p>
-<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00062.jpeg" alt="img"></p>
-<h2 id="对于面向对象的理解"><a href="#对于面向对象的理解" class="headerlink" title="对于面向对象的理解"></a>对于面向对象的理解</h2><blockquote>
+<figure>
+<img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00062.jpeg" alt="img"><figcaption>img</figcaption>
+</figure>
+<h2 id="对于面向对象的理解">对于面向对象的理解</h2>
+<blockquote>
 <p>我们是怎样理解世界的呢？我们将生活中遇见的事物总结为特定的“物”的概念，它们就是诸如桌子、椅子、银行贷款、公式、人、多项式、三角形、晶体管之类的东西。我们的思考、语言以及行动就是建立在指示、说明和操作这些所谓的“物”的基础之上。我们在用计算机解决问题的时候，有必要将现实世界中的“物”的模型在计算机中建立起来。</p>
 </blockquote>
-<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00064.gif" alt="img"></p>
-<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p>大部分语言的程序设计中，类并不是不可或缺的，但 Java 语言是例外。Java 语言“把类定义为部件，将其组装起来即是程序设计”。因此，在用 Java 语言编写程序时类是必要的。其他诸如 C++、Python、Ruby 这样的语言，在编写程序时既可以使用类也可以不使用类。</p>
+<figure>
+<img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00064.gif" alt="img"><figcaption>img</figcaption>
+</figure>
+<h2 id="类">类</h2>
+<p>大部分语言的程序设计中，类并不是不可或缺的，但 Java 语言是例外。Java 语言“把类定义为部件，将其组装起来即是程序设计”。因此，在用 Java 语言编写程序时类是必要的。其他诸如 C++、Python、Ruby 这样的语言，在编写程序时既可以使用类也可以不使用类。</p>
 <p><strong>那是使用类好呢，还是不使用也可以呢？</strong></p>
 <blockquote>
 <p>这取决于要编写的程序。如果仅是小规模的程序，没必要使用类的情况居多。也有人认为，在多人分工协作编写的大型程序中，使用类来划分责任范围比较好。图形用户界面的编写中面向对象的特性似乎非常管用。比如设计一个按钮，需要有放置按钮的座标和按钮的宽、高等值，也需要有表达按钮按下时的动作的函数。将实现按钮所必需的这些要素统一到类中，编写程序就会变得简单起来。</p>
 </blockquote>
-<h2 id="归集变量与函数建立模型的方法"><a href="#归集变量与函数建立模型的方法" class="headerlink" title="归集变量与函数建立模型的方法"></a>归集变量与函数建立模型的方法</h2><p>除类之外，还有几种其他的方式。</p>
-<ol>
+<h2 id="归集变量与函数建立模型的方法">归集变量与函数建立模型的方法</h2>
+<p>除类之外，还有几种其他的方式。</p>
+<ol type="1">
 <li>模块（module）。模块原本是一种将相关联的函数集中到一起的功能。在 Perl 语言中类似的功能被称为包（package）。Perl 语言在引入面向对象时，采用了把用来归集函数的包和用来归集变量的散列（hash）绑定在一起的方法。</li>
 <li>把函数和变量放入散列中。这是 JavaScript 等语言采用的方法。</li>
 <li><p>闭包（closure）。使用函数执行时的命名空间来归集变量的方法。这种方法主要在函数式语言中使用。</p>
 <blockquote>
-<p>为什么把这称为闭包？一个包含了自由变量的开放表达式，它和该自由变量的约束环境组合在一起后，实现了一种封闭的状态。<br>类的存在只不过是因为人们觉得有了它编写程序会更方便些，而约定的一种事项。它并不是什么物理法则或宇宙真理，仅仅是人们的一种约定而已。所以，为了理解为什么会有这样一种约定，我们需要考虑语言设计者的意图。</p>
-</blockquote>
-</li>
-<li><p>类</p>
-</li>
+<p>为什么把这称为闭包？一个包含了自由变量的开放表达式，它和该自由变量的约束环境组合在一起后，实现了一种封闭的状态。 类的存在只不过是因为人们觉得有了它编写程序会更方便些，而约定的一种事项。它并不是什么物理法则或宇宙真理，仅仅是人们的一种约定而已。所以，为了理解为什么会有这样一种约定，我们需要考虑语言设计者的意图。</p>
+</blockquote></li>
+<li><p>类</p></li>
 </ol>
 <p>C++ 语言和 Java 语言的类具有以下几个作用：</p>
 <ul>
@@ -3338,46 +3486,56 @@ $ git push
 <li>可行操作的功能说明</li>
 <li>代码再利用的单位</li>
 </ul>
-<h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><p>继承的不同实现策略。继承的实现策略大体可以分为三种。</p>
+<h1 id="继承">继承</h1>
+<p>继承的不同实现策略。继承的实现策略大体可以分为三种。</p>
 <ul>
 <li>一般化与专门化</li>
 </ul>
 <p>第一种策略是在父类中实现那些一般化的功能，在子类中实现那些专门的个性化的功能。其设计方针就是子类是父类的专门化。</p>
-<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00070.jpeg" alt="img"></p>
+<figure>
+<img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00070.jpeg" alt="img"><figcaption>img</figcaption>
+</figure>
 <ul>
 <li>共享部分的提取</li>
 </ul>
 <p>第二种策略是从多个类中提取出共享部分作为父类。它和一般化与专门化的考虑很不一样。对于子类是否为父类的一种，它的答案是否定的。这种提取出共享部分的设计方针是习惯了函数的一种考虑问题的方法。</p>
-<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00071.jpeg" alt="img"></p>
+<figure>
+<img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00071.jpeg" alt="img"><figcaption>img</figcaption>
+</figure>
 <ul>
 <li>差异实现</li>
 </ul>
 <p>第三种策略认为继承之后仅实现有变更的那些属性会带来效率的提高。它把继承作为实现方式再利用的途径，旨在使编程实现更加轻松。的确有很多这样的情况。但这些情况下通常子类都不是父类的一种。</p>
-<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00072.jpeg" alt="img"> </p>
-<h2 id="继承的弊端"><a href="#继承的弊端" class="headerlink" title="继承的弊端"></a>继承的弊端</h2><p>方法的多样意味着控制的复杂，自由度太高往往会需要我们去限制。</p>
+<figure>
+<img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00072.jpeg" alt="img"><figcaption>img</figcaption>
+</figure>
+<h2 id="继承的弊端">继承的弊端</h2>
+<p>方法的多样意味着控制的复杂，自由度太高往往会需要我们去限制。</p>
 <p>比如说 goto 。</p>
 <p>尤其是第三种使用方法——继承已有的类并实现差异部分，这种编程风格会造成<strong>多层级</strong>的继承树，很容易导致代码理解困难。</p>
 <p>这里就提到了编程中很重要的一点，就是可读性。</p>
-<h2 id="里氏置换原则"><a href="#里氏置换原则" class="headerlink" title="里氏置换原则"></a>里氏置换原则</h2><p>这个原则可以表述为：假设对于 T 类型的对象 x，属性 q(x) 恒为真。如果 S 为 T 的派生类，那么 S 类型的对象 y 的属性 q(y) 也必须恒为真。</p>
+<h2 id="里氏置换原则">里氏置换原则</h2>
+<p>这个原则可以表述为：假设对于 T 类型的对象 x，属性 q(x) 恒为真。如果 S 为 T 的派生类，那么 S 类型的对象 y 的属性 q(y) 也必须恒为真。</p>
 <p>这句话换种表达就是，对于类 T 的对象一定成立的条件，对于类 T 的子类 S 的对象也必须成立。</p>
-<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00073.jpeg" alt=""></p>
+<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00073.jpeg"></p>
 <p>为了保证类的继承关系和类型的父子关系这两种关系之间的一致性，有必要遵守这一原则。这一原则也可以表达为继承必须是 <strong>is-a</strong> 关系。把子类 S 的所有对象都看作是父类 T 的对象而不会有任何问题，必须要做到这一点。</p>
 <blockquote>
 <p>这一约束条件是非常严格的。当要继承某种类时，需要考虑该类是否可以被继承。假设继承的时候考虑的属性可以使里氏置换原则成立。但是在随后的程序编写过程中，需要的属性可能会越来越多。随着属性的增加，置换原则就有可能被打破。是在设计阶段就把所有属性列出来，只有当置换原则绝对不被打破时才去继承呢？还是在开发阶段如果发现新的属性就放弃类的继承呢？不管哪种方式都很费劲。</p>
 </blockquote>
-<h2 id="多重继承"><a href="#多重继承" class="headerlink" title="多重继承"></a>多重继承</h2><p>现实世界中一种事物有可能属于多种分类。为了实现对这种现实情况的模拟，作为工具的程序设计语言是不是应该支持对多个类的继承呢？这就是多重继承的初衷。</p>
+<h2 id="多重继承">多重继承</h2>
+<p>现实世界中一种事物有可能属于多种分类。为了实现对这种现实情况的模拟，作为工具的程序设计语言是不是应该支持对多个类的继承呢？这就是多重继承的初衷。</p>
 <p>多重继承对于实现方式再利用非常便利。</p>
-<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00074.jpeg" alt=""></p>
-<h3 id="多重继承的问题"><a href="#多重继承的问题" class="headerlink" title="多重继承的问题"></a>多重继承的问题</h3><p>多重继承看起来真的很方便。但是，使用多重继承时该如何解决名字解释的问题呢？当问到类中 x 值是什么时，该如何回答呢？</p>
+<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00074.jpeg"></p>
+<h3 id="多重继承的问题">多重继承的问题</h3>
+<p>多重继承看起来真的很方便。但是，使用多重继承时该如何解决名字解释的问题呢？当问到类中 x 值是什么时，该如何回答呢？</p>
 <p>首先，如果这个类本身知道答案，就直接给出回答。其次，如果这个类本身不知道答案，就去问它的父类再给出回答。</p>
 <p>但是如下情况就麻烦了。</p>
-<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00078.jpeg" alt=""></p>
+<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00078.jpeg"></p>
 <ul>
 <li><p>解决方法 1：禁止多重继承。Java 语言中就禁止了类的多重继承。只要不认可类的多重继承这种方式，就不会有上述问题。这样可以把问题解决得很干脆，只是会以失去多重继承的良好便利性为代价。</p>
 <ul>
 <li>委托。取而代之发展起来的概念是委托。这种方法定义了具有待使用实现方式的类的对象，然后根据需要使用该对象来处理。使用继承后，从类型到命名空间都会被一起继承，从而导致问题的发生，这种方法只是停留在使用对象的层面上。</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDelegate</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">new</span> UseInheritance().useHello(); <span class="comment">// -&gt; hello!</span></span><br><span class="line">        <span class="keyword">new</span> UseDelegate().useHello();    <span class="comment">// -&gt; hello!</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Hello</span></span>&#123;   ❶</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"hello!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UseInheritance</span> <span class="keyword">extends</span> <span class="title">Hello</span> </span>&#123;   ❷</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">useHello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        hello();                       ❸</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UseDelegate</span> </span>&#123;                    ❹</span><br><span class="line">    Hello h = <span class="keyword">new</span> Hello();             ❺</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">useHello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        h.hello();                     ❻</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>显示“Hello ！”的方法 hello 为类 Hello 所持有（❶）。类 UseInheritance 通过继承类 Hello 自身也持有了方法 hello（❷）并加以使用（❸）。与之不同，类 UseDelegate 并没有继承类 Hello（❹），而是通过句❺持有了类 Hello 的对象。当有需要使用时通过句❻将需要的处理委托给该对象操作。</p>
@@ -3395,16 +3553,16 @@ $ git push
 </ul>
 <p>曾经也有些语言试图通过明确定义搜索顺序来解决冲突问题。</p>
 <p>出现过深度优先搜索法，重载和菱形继承时会很麻烦。以及广度优先。</p>
-<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00080.jpeg" alt=""></p>
+<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00080.jpeg"></p>
 <p>以及后来的C3线性化。</p>
 <pre><code>* 父类不比子类先被检查
-* 如果是从多个类中继承下来则优先检查先书写的类
-</code></pre><p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00081.jpeg" alt=""></p>
+* 如果是从多个类中继承下来则优先检查先书写的类</code></pre>
+<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00081.jpeg"></p>
 <ul>
 <li>解决方法 3：混入式处理</li>
 </ul>
 <p>原本，问题是指从一个类到它的祖先类有多种追溯方法。定义仅包含所需功能的类并把它与需要添加这些功能的更大的类糅合在一起。把这种设计方针、混入式处理方式和用来混入的小的类统称为混入处理（Mix-in）。</p>
-<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00082.jpeg" alt=""></p>
+<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00082.jpeg"></p>
 <p>通常这些小型的类最小限度地定义了一些方法，起到了作为代码再利用单位的作用。为了表明这一点，Python 语言会在该类的名字中加上 MixIn 来标识。</p>
 <p>Ruby 语言采用的规则是：类是单一继承的而模块则可以任意数量地做混入式处理。模块无法创建实例，但可以像类一样拥有成员变量和方法。也就是说，模块实质上是从类中去除了实例创建功能。即使类的多重继承被禁止了，通过使用模块的 Mix-In 方式照样可以实现对实现方式的再利用。</p>
 <ul>

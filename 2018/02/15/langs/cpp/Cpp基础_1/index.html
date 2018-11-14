@@ -125,18 +125,18 @@
 
 
 
-  <meta name="description" content="OOP的本质就是设计并扩展自己的数据类型。  变量名命名时，以两个下划线或下划线和大写字母打头的名称被保留给实现（编译器及其使用的资源）使用，以一个下划线开头的名称被保留给，实现，用作全局标识符。  C++中对于名称长度没有限制，但是有些平台有长度限制。  C++赋值方式：（大括号初始化器，适用于任何类型，等号可有可无）  int x = 1; int x = {1};//将大括号初始化器用于单变">
+  <meta name="description" content="OOP的本质就是设计并扩展自己的数据类型。  变量名命名时，以两个下划线或下划线和大写字母打头的名称被保留给实现（编译器及其使用的资源）使用，以一个下划线开头的名称被保留给，实现，用作全局标识符。 C++中对于名称长度没有限制，但是有些平台有长度限制。 C++赋值方式： （大括号初始化器，适用于任何类型，等号可有可无）  int x = 1; int x = {1};//将大括号初始">
 <meta name="keywords" content="C++&amp;C">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++基础1">
 <meta property="og:url" content="https://plart.pw/2018/02/15/langs/cpp/Cpp基础_1/index.html">
 <meta property="og:site_name" content="失乐园">
-<meta property="og:description" content="OOP的本质就是设计并扩展自己的数据类型。  变量名命名时，以两个下划线或下划线和大写字母打头的名称被保留给实现（编译器及其使用的资源）使用，以一个下划线开头的名称被保留给，实现，用作全局标识符。  C++中对于名称长度没有限制，但是有些平台有长度限制。  C++赋值方式：（大括号初始化器，适用于任何类型，等号可有可无）  int x = 1; int x = {1};//将大括号初始化器用于单变">
+<meta property="og:description" content="OOP的本质就是设计并扩展自己的数据类型。  变量名命名时，以两个下划线或下划线和大写字母打头的名称被保留给实现（编译器及其使用的资源）使用，以一个下划线开头的名称被保留给，实现，用作全局标识符。 C++中对于名称长度没有限制，但是有些平台有长度限制。 C++赋值方式： （大括号初始化器，适用于任何类型，等号可有可无）  int x = 1; int x = {1};//将大括号初始">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-07-13T12:48:49.440Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++基础1">
-<meta name="twitter:description" content="OOP的本质就是设计并扩展自己的数据类型。  变量名命名时，以两个下划线或下划线和大写字母打头的名称被保留给实现（编译器及其使用的资源）使用，以一个下划线开头的名称被保留给，实现，用作全局标识符。  C++中对于名称长度没有限制，但是有些平台有长度限制。  C++赋值方式：（大括号初始化器，适用于任何类型，等号可有可无）  int x = 1; int x = {1};//将大括号初始化器用于单变">
+<meta name="twitter:description" content="OOP的本质就是设计并扩展自己的数据类型。  变量名命名时，以两个下划线或下划线和大写字母打头的名称被保留给实现（编译器及其使用的资源）使用，以一个下划线开头的名称被保留给，实现，用作全局标识符。 C++中对于名称长度没有限制，但是有些平台有长度限制。 C++赋值方式： （大括号初始化器，适用于任何类型，等号可有可无）  int x = 1; int x = {1};//将大括号初始">
 
 
 
@@ -533,85 +533,49 @@
 
       
         <p>OOP的本质就是设计并扩展自己的数据类型。</p>
-<ol>
-<li><p>变量名命名时，以两个下划线或下划线和大写字母打头的名称被保留给实现（编译器及其使用的资源）使用，以一个下划线开头的名称被保留给，实现，用作全局标识符。</p>
-</li>
-<li><p>C++中对于名称长度没有限制，但是有些平台有长度限制。</p>
-</li>
-<li><p>C++赋值方式：<br>（大括号初始化器，适用于任何类型，等号可有可无）</p>
-<ol>
+<ol type="1">
+<li><p>变量名命名时，以两个下划线或下划线和大写字母打头的名称被保留给实现（编译器及其使用的资源）使用，以一个下划线开头的名称被保留给，实现，用作全局标识符。</p></li>
+<li><p>C++中对于名称长度没有限制，但是有些平台有长度限制。</p></li>
+<li>C++赋值方式： （大括号初始化器，适用于任何类型，等号可有可无）
+<ol type="1">
 <li>int x = 1;</li>
 <li>int x = {1};//将大括号初始化器用于单变量</li>
 <li>int x{1}；</li>
 <li>int x{};//置零</li>
 <li>int x = {1}；//置零</li>
-</ol>
-</li>
-<li><p>int类型被设定为对于目标计算机而言效率最高的长度。</p>
-</li>
-<li><p>cout 关于进制转换<br>std::cout;<br>std::endl;<br>std::hex;<br>std::oct;<br>code:<br> using namespace std;<br> int main()<br> {</p>
-<pre><code>int chest = 42;
-int waist = 42;
-int inseam = 42;
+</ol></li>
+<li><p>int类型被设定为对于目标计算机而言效率最高的长度。</p></li>
+<li><p>cout 关于进制转换 std::cout; std::endl; std::hex; std::oct; code: using namespace std; int main() { int chest = 42; int waist = 42; int inseam = 42;</p>
+<pre><code> cout &lt;&lt; &quot;chest = &quot; &lt;&lt; chest &lt;&lt; &quot; (decimal for 42)&quot; &lt;&lt; endl;
+ cout &lt;&lt; hex;
+ cout &lt;&lt; &quot;waist = &quot; &lt;&lt; waist &lt;&lt; &quot; (hexadecimal for 42)&quot; &lt;&lt; endl;
+ cout &lt;&lt; oct;
+ cout &lt;&lt; &quot;inseam = &quot; &lt;&lt; inseam &lt;&lt; &quot; (octal for 42)&quot; &lt;&lt; endl;
+ return 0;</code></pre>
+<p>} (cout &lt;&lt; hex;不会显示任何内容，只是会改变cout显示整数的方式。）</p></li>
+<li><p>数值类型 220L; 220LU == 220UL; 220ll == 220LL; 220ull == 220ULL == 220uLL == 220Ull; (十六进制常用来表示内存地址，而内存地址是没有符号的，所以多用 &quot;usigned int&quot; 类型来表示十六位地址）</p></li>
+<li><p>‘字符’ “字符串”</p></li>
+<li><p>cout.put();//cout的成员函数 显示一个字符； int main() { char ch = 'M'; int i = ch; cout &lt;&lt; &quot;The ASCII code for &quot; &lt;&lt; ch &lt;&lt; &quot; is &quot; &lt;&lt; i &lt;&lt; endl;</p>
+<pre><code> cout &lt;&lt; &quot;Add one to the character code:&quot; &lt;&lt; endl;
+ ch = ch + 1;
+ i = ch;
+ cout &lt;&lt; &quot;The ASCII code for &quot; &lt;&lt; ch &lt;&lt; &quot; is &quot; &lt;&lt; i &lt;&lt; endl;
 
-cout &lt;&lt; &quot;chest = &quot; &lt;&lt; chest &lt;&lt; &quot; (decimal for 42)&quot; &lt;&lt; endl;
-cout &lt;&lt; hex;
-cout &lt;&lt; &quot;waist = &quot; &lt;&lt; waist &lt;&lt; &quot; (hexadecimal for 42)&quot; &lt;&lt; endl;
-cout &lt;&lt; oct;
-cout &lt;&lt; &quot;inseam = &quot; &lt;&lt; inseam &lt;&lt; &quot; (octal for 42)&quot; &lt;&lt; endl;
-return 0;
-</code></pre><p> }<br>(cout &lt;&lt; hex;不会显示任何内容，只是会改变cout显示整数的方式。）</p>
-</li>
-<li><p>数值类型<br>220L;<br>220LU == 220UL;<br>220ll == 220LL;<br>220ull == 220ULL == 220uLL == 220Ull;<br>(十六进制常用来表示内存地址，而内存地址是没有符号的，所以多用 “usigned int” 类型来表示十六位地址）</p>
-</li>
-<li><p>‘字符’ “字符串”</p>
-</li>
-<li><p>cout.put();//cout的成员函数<br>显示一个字符；<br> int main()<br> {</p>
-<pre><code>char ch = &apos;M&apos;;
-int i = ch;
-cout &lt;&lt; &quot;The ASCII code for &quot; &lt;&lt; ch &lt;&lt; &quot; is &quot; &lt;&lt; i &lt;&lt; endl;
-
-cout &lt;&lt; &quot;Add one to the character code:&quot; &lt;&lt; endl;
-ch = ch + 1;
-i = ch;
-cout &lt;&lt; &quot;The ASCII code for &quot; &lt;&lt; ch &lt;&lt; &quot; is &quot; &lt;&lt; i &lt;&lt; endl;
-
-cout &lt;&lt; &quot;Displaying char ch using cout.put(ch): &quot;;
-cout.put(ch) //&lt;&lt; &apos;!&apos;;
-//cout.put(&apos;!&apos;);//两个二选一即可；
-cout &lt;&lt; endl &lt;&lt; &quot;Done&quot; &lt;&lt; endl;
-return 0;
-</code></pre><p> }</p>
-</li>
-<li><p>bool<br>bool is_ready = true; //“is_ready” assigned true or 1;</p>
-</li>
-<li><p>创建符号常量<br>尽量使用const来创建，而非”#define”;<br>const type name = value;<br>声明时没有提供值，则该常量的值将是不确定的，且无法修改。<br>好处：<br>1, 限定类型<br>2, 限定范围</p>
-</li>
-<li><p>+d.dddE+n<br>指的是将小数点向右移动n位，<br>+换成~时，表示将小数点向左移动n位。</p>
-</li>
-<li><p>setf成员函数可以把强行把浮点数输出时用定点表示法<br>int main()<br>{</p>
-<pre><code>cout.setf(ios_base::fixed, ios_base::floatfield);
-cout &lt;&lt; &quot;Integer division: 9/5 = &quot; &lt;&lt; 9 / 5 &lt;&lt; endl;
-cout &lt;&lt; &quot;Floating-point division: 9.0 / 5.0 = &quot;;
-cout &lt;&lt; 9.0 / 5.0 &lt;&lt; endl;
-cout &lt;&lt; &quot;Mixed division: 9.0 / 5 = &quot; &lt;&lt; 9.0 / 5 &lt;&lt; endl;
-cout &lt;&lt; &quot;double constants: 1e7 / 9.0 = &quot;;
-cout &lt;&lt; 1.e7 / 9.0 &lt;&lt; endl;
-cout &lt;&lt; &quot;float constants: 1e7f / 9.0f = &quot;;
-cout &lt;&lt; 1.e7f / 9.0f &lt;&lt; endl;
-return 0;
-</code></pre><p>}</p>
-</li>
-<li><p>浮点类型默认为double类型</p>
-</li>
-<li><p>以{}方式初始化时进行的转换<br>使用大括号的初始化，陈作列表初始化，因为这种初始化，常用于给复杂的数据类型提供值列表，对类型转换更为严格，<br>此类初始化不允许对数据进行缩窄（narrowing），即使得变量类型有可能无法表示赋给它的值。</p>
-</li>
-<li><p>整型提升（integral promotion）<br>例如将 bool,char,unsigned char,…值转换为 int </p>
-</li>
-<li><p>强制转换<br>(typeName) value<br>typeName (value)<br>static_cast<typename> (value)//转换要求很严格</typename></p>
-</li>
-<li><p>运算符重载<br>使用相同符号，进行多种操作，叫做运算符重载(operator overloading)</p>
-</li>
+ cout &lt;&lt; &quot;Displaying char ch using cout.put(ch): &quot;;
+ cout.put(ch) //&lt;&lt; &#39;!&#39;;
+ //cout.put(&#39;!&#39;);//两个二选一即可；
+ cout &lt;&lt; endl &lt;&lt; &quot;Done&quot; &lt;&lt; endl;
+ return 0;</code></pre>
+<p>}</p></li>
+<li><p>bool bool is_ready = true; //&quot;is_ready&quot; assigned true or 1;</p></li>
+<li><p>创建符号常量 尽量使用const来创建，而非&quot;#define&quot;; const type name = value; 声明时没有提供值，则该常量的值将是不确定的，且无法修改。 好处： 1, 限定类型 2, 限定范围</p></li>
+<li><p>+d.dddE+n 指的是将小数点向右移动n位， +换成~时，表示将小数点向左移动n位。</p></li>
+<li><p>setf成员函数可以把强行把浮点数输出时用定点表示法 int main() { cout.setf(ios_base::fixed, ios_base::floatfield); cout &lt;&lt; &quot;Integer division: 9/5 = &quot; &lt;&lt; 9 / 5 &lt;&lt; endl; cout &lt;&lt; &quot;Floating-point division: 9.0 / 5.0 = &quot;; cout &lt;&lt; 9.0 / 5.0 &lt;&lt; endl; cout &lt;&lt; &quot;Mixed division: 9.0 / 5 = &quot; &lt;&lt; 9.0 / 5 &lt;&lt; endl; cout &lt;&lt; &quot;double constants: 1e7 / 9.0 = &quot;; cout &lt;&lt; 1.e7 / 9.0 &lt;&lt; endl; cout &lt;&lt; &quot;float constants: 1e7f / 9.0f = &quot;; cout &lt;&lt; 1.e7f / 9.0f &lt;&lt; endl; return 0; }</p></li>
+<li><p>浮点类型默认为double类型</p></li>
+<li><p>以{}方式初始化时进行的转换 使用大括号的初始化，陈作列表初始化，因为这种初始化，常用于给复杂的数据类型提供值列表，对类型转换更为严格， 此类初始化不允许对数据进行缩窄（narrowing），即使得变量类型有可能无法表示赋给它的值。</p></li>
+<li><p>整型提升（integral promotion） 例如将 bool,char,unsigned char,...值转换为 int</p></li>
+<li><p>强制转换 (typeName) value typeName (value) static_cast<typename> (value)//转换要求很严格</typename></p></li>
+<li><p>运算符重载 使用相同符号，进行多种操作，叫做运算符重载(operator overloading)</p></li>
 </ol>
 
       

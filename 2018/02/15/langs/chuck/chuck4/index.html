@@ -125,18 +125,18 @@
 
 
 
-  <meta name="description" content="arrays * declaring * multi-dimensional * lookup * associative arrays * assignment  #Arrays This sections specifies(指定) how arrays are declared and used in ChucK. Some quick notes: * arrays can be inde">
+  <meta name="description" content="arrays * declaring * multi-dimensional * lookup * associative arrays * assignment #Arrays This sections specifies(指定) how arrays are declared and used in ChucK. Some quick notes: * arrays can be ind">
 <meta name="keywords" content="ChucK">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chuck4">
 <meta property="og:url" content="https://plart.pw/2018/02/15/langs/chuck/chuck4/index.html">
 <meta property="og:site_name" content="失乐园">
-<meta property="og:description" content="arrays * declaring * multi-dimensional * lookup * associative arrays * assignment  #Arrays This sections specifies(指定) how arrays are declared and used in ChucK. Some quick notes: * arrays can be inde">
+<meta property="og:description" content="arrays * declaring * multi-dimensional * lookup * associative arrays * assignment #Arrays This sections specifies(指定) how arrays are declared and used in ChucK. Some quick notes: * arrays can be ind">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-07-13T12:46:46.446Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chuck4">
-<meta name="twitter:description" content="arrays * declaring * multi-dimensional * lookup * associative arrays * assignment  #Arrays This sections specifies(指定) how arrays are declared and used in ChucK. Some quick notes: * arrays can be inde">
+<meta name="twitter:description" content="arrays * declaring * multi-dimensional * lookup * associative arrays * assignment #Arrays This sections specifies(指定) how arrays are declared and used in ChucK. Some quick notes: * arrays can be ind">
 
 
 
@@ -532,50 +532,36 @@
       
 
       
-        <p>arrays</p>
-<pre><code>* declaring
-* multi-dimensional
-* lookup
-* associative arrays
-* assignment 
-</code></pre><p>#Arrays</p>
-<p>This sections specifies(指定) how arrays are declared and used in ChucK. Some quick notes:</p>
-<pre><code>* arrays can be indexed by integer(整数) (0-indexed).
-* **any array can also be used as an associative(联想的) map, indexed by strings.**
-* it is important to note that the *integer-indexed portion(部分)* and the *associative portion* of an array are stored in separate namespaces
-* arrays are objects, and will behave similarly under *reference assignment(引用赋值)* and other operations common to objects. 
-</code></pre><p>#declaration</p>
+        <p>arrays * declaring * multi-dimensional * lookup * associative arrays * assignment</p>
+<p>#Arrays</p>
+<p>This sections specifies(指定) how arrays are declared and used in ChucK. Some quick notes: * arrays can be indexed by integer(整数) (0-indexed). * <strong>any array can also be used as an associative(联想的) map, indexed by strings.</strong> * it is important to note that the <em>integer-indexed portion(部分)</em> and the <em>associative portion</em> of an array are stored in separate namespaces * arrays are objects, and will behave similarly under <em>reference assignment(引用赋值)</em> and other operations common to objects.</p>
+<p>#declaration</p>
 <p>Arrays(数组) can be declared in the following way:</p>
 <pre><code>// declare 10 element array of int, called foo
 int foo[10];
 
 // since array of int (primitive type), the contents
-// are automatically initialized to 0
-</code></pre><p>Arrays can also be initialized(初始化):</p>
+// are automatically initialized to 0</code></pre>
+<p>Arrays can also be initialized(初始化):</p>
 <pre><code>// chuck intializer(初始化器，程序) to array reference
-[ 1, 1, 2, 3, 5, 8 ] @=&gt; int foo[];
-</code></pre><p>In the above code, there are several things to note:</p>
-<pre><code>* initializers must contain *the same or similar types*. the compiler(编译器) will attempt to find *the highest common base type of all the elements(元素)*. **if no such common element is found, an error is reported.**
-* the type of the initializer `[ 1, 1, 2, 3, 5, 8 ]` is int[]. *the intializer is an array that can be used directly* when arrays are expected.
-* the at-chuck operator (`@=&gt;`) means assignment(分配), and is discussed at length(详细地) in operators and operations.
-* `int foo[]` is declaring an empty reference(引用) to an array(数组). the statement(声明) assigns(分配) the initializer array to foo.
-* arrays are objects. 
-</code></pre><p>When declaring an array of objects, the objects inside the array are automatically(自动的) instantiated(实例化).</p>
+[ 1, 1, 2, 3, 5, 8 ] @=&gt; int foo[];</code></pre>
+<p>In the above code, there are several things to note: * initializers must contain <em>the same or similar types</em>. the compiler(编译器) will attempt to find <em>the highest common base type of all the elements(元素)</em>. <strong>if no such common element is found, an error is reported.</strong> * the type of the initializer <code>[ 1, 1, 2, 3, 5, 8 ]</code> is int[]. <em>the intializer is an array that can be used directly</em> when arrays are expected. * the at-chuck operator (<code>@=&gt;</code>) means assignment(分配), and is discussed at length(详细地) in operators and operations. * <code>int foo[]</code> is declaring an empty reference(引用) to an array(数组). the statement(声明) assigns(分配) the initializer array to foo. * arrays are objects.</p>
+<p>When declaring an array of objects, the objects inside the array are automatically(自动的) instantiated(实例化).</p>
 <pre><code>// objects in arrays are automatically instantiated
-Object group[10];
-</code></pre><p>If you only want an array of object references:(对象引用数组)</p>
+Object group[10];</code></pre>
+<p>If you only want an array of object references:(对象引用数组)</p>
 <pre><code>// array of null object references
-Object @ group[10];
-</code></pre><p><a href="http://chuck.cs.princeton.edu/doc/language/class.html" target="_blank" rel="noopener">Check here</a> more information on object declaration and instantation in Chuck.</p>
+Object @ group[10];</code></pre>
+<p><a href="http://chuck.cs.princeton.edu/doc/language/class.html" target="_blank" rel="noopener">Check here</a> more information on object declaration and instantation in Chuck.</p>
 <p>The above examples are 1-dimensional arrays (or vectors(矢量)).</p>
 <p>#multi-dimensional arrays</p>
 <p>It is possible (and equally easy) to declare multi-dimensional arrays:</p>
 <pre><code>// declare 4 by 6 by 8 array of float
-float foo3D[4][6][8];//和C还是很像
-</code></pre><p>Initializers work in similar ways:</p>
+float foo3D[4][6][8];//和C还是很像</code></pre>
+<p>Initializers work in similar ways:</p>
 <pre><code>// declare 2 by 2 array of int
-[ [1,3], [2,4] ] @=&gt; int bar[][];
-</code></pre><p>In the above code, note the two <code>[][]</code> since we make a matrix. </p>
+[ [1,3], [2,4] ] @=&gt; int bar[][];</code></pre>
+<p>In the above code, note the two <code>[][]</code> since we make a matrix.</p>
 <p>#lookup</p>
 <p>Elements in an array can be accessed using [] /(in the appropriate quantities).</p>
 <pre><code>// declare an array of floats
@@ -585,8 +571,8 @@ float foo3D[4][6][8];//和C还是很像
 &lt;&lt;&lt; foo[0] &gt;&gt;&gt;; // hopefully 3.2
 
 // set the 2nd element
-8.5 =&gt; foo[2];
-</code></pre><p>Looping over the elements of an array:</p>
+8.5 =&gt; foo[2];</code></pre>
+<p>Looping over the elements of an array:</p>
 <pre><code>// array of floats again
 [ 1, 2, 3, 4, 5, 6 ] @=&gt; int foo[];
 //官方的例子这里是float，但是实际测试，整型不可以被分配到float里。
@@ -596,21 +582,21 @@ for( 0 =&gt; int i; i &lt; foo.cap(); i++ )//foo.cap()
 {
     // do something (debug print)
     &lt;&lt;&lt; foo[i] &gt;&gt;&gt;;//自带换行
-}
-</code></pre><p>Accessing multi-dimensional array:</p>
+}</code></pre>
+<p>Accessing multi-dimensional array:</p>
 <pre><code>// 2D array
 int foo[4][4];
 
 // set an element
-10 =&gt; foo[2][2];
-</code></pre><p>If the index exceeds(超过) the bounds of the array in any dimension(标出尺寸), an exception(异常) is issued(被放出) and the current shred(片段) is halted(停止).</p>
+10 =&gt; foo[2][2];</code></pre>
+<p>If the index exceeds(超过) the bounds of the array in any dimension(标出尺寸), an exception(异常) is issued(被放出) and the current shred(片段) is halted(停止).</p>
 <pre><code>// array capacity is 5
 int foo[5];
 
 // this should cause ArrayOutOfBoundsException
 // access element 6 (index 5)
-&lt;&lt;&lt; foo[5] &gt;&gt;&gt;;
-</code></pre><p>a longer program: <code>otf_06.ck</code> from <a href="http://chuck.cs.princeton.edu/doc/examples/" target="_blank" rel="noopener">examples</a>:</p>
+&lt;&lt;&lt; foo[5] &gt;&gt;&gt;;</code></pre>
+<p>a longer program: <code>otf_06.ck</code> from <a href="http://chuck.cs.princeton.edu/doc/examples/" target="_blank" rel="noopener">examples</a>:</p>
 <pre><code>// the period
 .5::second =&gt; dur T;
 // synchronize to period (for on-the-fly(运行中) synchronization)
@@ -638,10 +624,10 @@ while( true )
     // advance time
     if( Std.randf() &gt; -.5 ) .25::T =&gt; now;
     else .5::T =&gt; now;
-}
-</code></pre><p>#associative arrays(关联数组)<br>(类似于python中的字典，用字符串索引)</p>
+}</code></pre>
+<p>#associative arrays(关联数组) (类似于python中的字典，用字符串索引)</p>
 <p>Any array(数组) can be used also as an associative array, indexed on strings. Once the regular array is instantiated, no further work has to be done to make it associative as well - just start using it as such.</p>
-<pre><code>// declare regular array(正规数组) (capacity(容量) doesn&apos;t matter so much)
+<pre><code>// declare regular array(正规数组) (capacity(容量) doesn&#39;t matter so much)
 float foo[4];
 
 // use as int-based array
@@ -654,8 +640,8 @@ float foo[4];
 &lt;&lt;&lt; foo[&quot;yoyo&quot;] &gt;&gt;&gt;;
 
 // access empty element
-&lt;&lt;&lt; foo[&quot;gaga&quot;] &gt;&gt;&gt;;  // -&gt; should print 0.0
-</code></pre><p>It is important to note (again), that the address space of the integer(整数) portion(部分) and the associative portion of the array are completely separate. For example:</p>
+&lt;&lt;&lt; foo[&quot;gaga&quot;] &gt;&gt;&gt;;  // -&gt; should print 0.0</code></pre>
+<p>It is important to note (again), that the address space of the integer(整数) portion(部分) and the associative portion of the array are completely separate. For example:</p>
 <pre><code>// declare array
 int foo[2];
 
@@ -666,8 +652,8 @@ int foo[2];
 20 =&gt; foo[&quot;0&quot;];
 
 // this should print out 10 20
-&lt;&lt;&lt; foo[0], foo[&quot;0&quot;] &gt;&gt;&gt;;
-</code></pre><p>The capacity(容量) of an array relates only to the integer portion of it. An array with an integer portion of capacity 0, for example, can <em>still have any number of associative indexes.</em></p>
+&lt;&lt;&lt; foo[0], foo[&quot;0&quot;] &gt;&gt;&gt;;</code></pre>
+<p>The capacity(容量) of an array relates only to the integer portion of it. An array with an integer portion of capacity 0, for example, can <em>still have any number of associative indexes.</em></p>
 <pre><code>// declare array of 0 capacity
 int foo[0];
 
@@ -678,9 +664,9 @@ int foo[0];
 &lt;&lt;&lt; foo[&quot;here&quot;] &gt;&gt;&gt;
 
 // this should cause an exception
-&lt;&lt;&lt; foo[0] &gt;&gt;&gt;
-</code></pre><blockquote>
-<p><strong>Note</strong>: The associative capacity of an array is not defined(定义), so objects used in the associative namespace must be explicitly(明确的) instantiated, in contrast(对比) to those in the integer namespace<br>(<strong>此处不甚明白</strong>)</p>
+&lt;&lt;&lt; foo[0] &gt;&gt;&gt;</code></pre>
+<blockquote>
+<p><strong>Note</strong>: The associative capacity of an array is not defined(定义), so objects used in the associative namespace must be explicitly(明确的) instantiated, in contrast(对比) to those in the integer namespace (<strong>此处不甚明白</strong>)</p>
 </blockquote>
 <p>Accessing an uninstantiated element(元素) of the associate array will return a null reference. Please check the <a href="http://chuck.cs.princeton.edu/doc/language/class.html" target="_blank" rel="noopener">class documentation page</a> for an explanation of ChucK objects and references.</p>
 <pre><code>class Item { 
@@ -699,12 +685,12 @@ new Item @=&gt; box[&quot;lamp&quot;];
 2.0 =&gt; box[&quot;lamp&quot;].weight; 
 
 // access causes a `NullPointerException`    
-2.0 =&gt; box[&quot;sweater&quot;].weight; 
-</code></pre><p>#array assignment</p>
-<p>Arrays are objects. So when we declare an array, we are actually </p>
+2.0 =&gt; box[&quot;sweater&quot;].weight; </code></pre>
+<p>#array assignment</p>
+<p>Arrays are objects. So when we declare an array, we are actually</p>
 <pre><code>(1) declaring a reference to array (reference variable(引用变量))
-(2) instantiating a new array and reference assigned(分配) to the variable. 
-</code></pre><p>A (null) reference is a reference variable that points to no object or null. A null reference to an array can be created in this fashion:</p>
+(2) instantiating a new array and reference assigned(分配) to the variable. </code></pre>
+<p>A (null) reference is a reference variable that points to no object or null. A null reference to an array can be created in this fashion:</p>
 <pre><code>// declare array reference (by not specifying(指定) a capacity)
 int foo[];
 
@@ -712,8 +698,8 @@ int foo[];
 [ 1, 2, 3 ] @=&gt; foo;
 
 // print out 0th element
-&lt;&lt;&lt; foo[0] &gt;&gt;&gt;;
-</code></pre><p>This is also useful in declaring functions that have arrays(数组) as arguments or return type.</p>
+&lt;&lt;&lt; foo[0] &gt;&gt;&gt;;</code></pre>
+<p>This is also useful in declaring functions that have arrays(数组) as arguments or return type.</p>
 <pre><code>// our function
 fun void print( int bar[] )
 {
@@ -727,8 +713,8 @@ print( [ 1, 2, 3, 4, 5 ] );
 
 // or can we can pass a reference variable
 int foo[10];
-print( foo );
-</code></pre><p>Like other objects, it is possible make multiple references(多个引用) to a single array. Like other objects, all assignments(分配) are <em>reference assignments</em>, meaning the contents are NOT copied, only a reference to array is duplicated(被复制).(传递引用)</p>
+print( foo );</code></pre>
+<p>Like other objects, it is possible make multiple references(多个引用) to a single array. Like other objects, all assignments(分配) are <em>reference assignments</em>, meaning the contents are NOT copied, only a reference to array is duplicated(被复制).(传递引用)</p>
 <pre><code>// our single array
 int the_array[10];
 
@@ -741,16 +727,16 @@ the_array =&gt; int foo[] =&gt; int bar[];
 // they reference the same array, changing one is like changing the other
 // 连锁反应，内存中的存储信息改变了
 5 =&gt; the_array[0];
-&lt;&lt;&lt; foo[0] &gt;&gt;&gt;; // should be 5
-</code></pre><p>It is possible to reference sub-sections(小节) of multi-dimensional(多维) arrays.</p>
+&lt;&lt;&lt; foo[0] &gt;&gt;&gt;; // should be 5</code></pre>
+<p>It is possible to reference sub-sections(小节) of multi-dimensional(多维) arrays.</p>
 <pre><code>// a 3D array
 int foo3D[4][4][4];
 
 // we can make a reference to a sub-section
 foo3D[2] =&gt; int bar[][];
 
-// (note that the dimensions must add up!)
-</code></pre>
+// (note that the dimensions must add up!)</code></pre>
+
       
     </div>
 
@@ -829,8 +815,8 @@ foo3D[2] =&gt; int bar[][];
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/15/langs/chuck/chuck13/" rel="next" title="chuck13">
-                <i class="fa fa-chevron-left"></i> chuck13
+              <a href="/2018/02/15/langs/chuck/chuck12/" rel="next" title="chuck12">
+                <i class="fa fa-chevron-left"></i> chuck12
               </a>
             
           </div>
@@ -839,8 +825,8 @@ foo3D[2] =&gt; int bar[][];
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/15/langs/chuck/chuck11/" rel="prev" title="chuck11">
-                chuck11 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/15/langs/r/R基本数据结构/" rel="prev" title="R基本数据结构">
+                R基本数据结构 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

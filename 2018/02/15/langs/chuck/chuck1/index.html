@@ -125,18 +125,18 @@
 
 
 
-  <meta name="description" content="Build/Install Instructions 如是直接安装（win）可以忽略上面的。*  The ChucK Tutorial *   This tutorial(个别指导) was written for the command line version of ChucK (currently the most stable(稳定的) and widely supported). O">
+  <meta name="description" content="Build/Install Instructions 如是直接安装（win）可以忽略上面的。* The ChucK Tutorial*  This tutorial(个别指导) was written for the command line version of ChucK (currently the most stable(稳定的) and widely supported). O">
 <meta name="keywords" content="ChucK">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chuck1">
 <meta property="og:url" content="https://plart.pw/2018/02/15/langs/chuck/chuck1/index.html">
 <meta property="og:site_name" content="失乐园">
-<meta property="og:description" content="Build/Install Instructions 如是直接安装（win）可以忽略上面的。*  The ChucK Tutorial *   This tutorial(个别指导) was written for the command line version of ChucK (currently the most stable(稳定的) and widely supported). O">
+<meta property="og:description" content="Build/Install Instructions 如是直接安装（win）可以忽略上面的。* The ChucK Tutorial*  This tutorial(个别指导) was written for the command line version of ChucK (currently the most stable(稳定的) and widely supported). O">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-07-13T12:45:54.534Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chuck1">
-<meta name="twitter:description" content="Build/Install Instructions 如是直接安装（win）可以忽略上面的。*  The ChucK Tutorial *   This tutorial(个别指导) was written for the command line version of ChucK (currently the most stable(稳定的) and widely supported). O">
+<meta name="twitter:description" content="Build/Install Instructions 如是直接安装（win）可以忽略上面的。* The ChucK Tutorial*  This tutorial(个别指导) was written for the command line version of ChucK (currently the most stable(稳定的) and widely supported). O">
 
 
 
@@ -533,31 +533,29 @@
 
       
         <ul>
-<li><p><a href="http://chuck.cs.princeton.edu/doc/build/" target="_blank" rel="noopener"> Build/Install Instructions </a><br>如是直接安装（win）可以忽略上面的。*</p>
-</li>
-<li><p><a href="http://chuck.cs.princeton.edu/doc/learn/tutorial.html" target="_blank" rel="noopener">The ChucK Tutorial </a>*</p>
-</li>
+<li><p><a href="http://chuck.cs.princeton.edu/doc/build/" target="_blank" rel="noopener">Build/Install Instructions</a> 如是直接安装（win）可以忽略上面的。*</p></li>
+<li><p><a href="http://chuck.cs.princeton.edu/doc/learn/tutorial.html" target="_blank" rel="noopener">The ChucK Tutorial</a>*</p></li>
 </ul>
 <p>This tutorial(个别指导) was written for the command line version of ChucK (currently the most stable(稳定的) and widely supported). Other methods of running ChucK includes the miniAudicle (now on all major platforms) and the Audicle (in pre-pre-alpha). <em>The code is the same, but the way to run them differs, depending the ChucK system.</em></p>
-<p>…generate a sine wave and send to the speaker…</p>
-<p>…connecting audio processing modules (<a href="https://en.wikipedia.org/wiki/Unit_generator" target="_blank" rel="noopener">unit generators</a>) and having them work together to compute the sound.</p>
-<pre><code>// connect sine oscillator to D/A convertor (sound card)
-SinOsc s =&gt; dac;
-</code></pre><p>The above does several things:</p>
-<pre><code>(1) it creates a new unit generator of type &apos;SinOsc&apos; (sine oscillator(振荡器)), and store its reference(引用) in variable(变量的) &apos;s&apos;. 
-(2) &apos;dac&apos; (D/A convertor(转炉)) is a special *unit generator* (created by the system) which is our abstraction(抽象) for the underlying(潜在的) audio interface(界面). 
-(3) we are using the ChucK operator (=&gt;) to ChucK &apos;s&apos; to &apos;dac&apos;. 
-</code></pre><p>In ChucK, when one unit generator is ChucKed to another, we connect them. We can think of this line as setting up <em>a data flow from ‘s’</em>, a signal generator, to <em>‘dac’, the sound card/speaker</em>. Collectively(集体的), we will call this a ‘patch’. </p>
-<p>…we simply have to “allow time to pass” for data to be computed…time and audio data are both inextricably(密不可分) related in ChucK (as in reality), and separated in the way they are manipulated(操纵).</p>
-<p>let’s generate our sine wave and hear it by adding one more line: </p>
+<p>...generate a sine wave and send to the speaker...</p>
+<p>...connecting audio processing modules (<a href="https://en.wikipedia.org/wiki/Unit_generator" target="_blank" rel="noopener">unit generators</a>) and having them work together to compute the sound.</p>
+<pre><code>  // connect sine oscillator to D/A convertor (sound card)
+  SinOsc s =&gt; dac;</code></pre>
+<p>The above does several things:</p>
+<pre><code>(1) it creates a new unit generator of type &#39;SinOsc&#39; (sine oscillator(振荡器)), and store its reference(引用) in variable(变量的) &#39;s&#39;. 
+(2) &#39;dac&#39; (D/A convertor(转炉)) is a special *unit generator* (created by the system) which is our abstraction(抽象) for the underlying(潜在的) audio interface(界面). 
+(3) we are using the ChucK operator (=&gt;) to ChucK &#39;s&#39; to &#39;dac&#39;. </code></pre>
+<p>In ChucK, when one unit generator is ChucKed to another, we connect them. We can think of this line as setting up <em>a data flow from 's'</em>, a signal generator, to <em>'dac', the sound card/speaker</em>. Collectively(集体的), we will call this a 'patch'.</p>
+<p>...we simply have to &quot;allow time to pass&quot; for data to be computed...time and audio data are both inextricably(密不可分) related in ChucK (as in reality), and separated in the way they are manipulated(操纵).</p>
+<p>let's generate our sine wave and hear it by adding one more line:</p>
 <pre><code>// connect sine oscillator to D/A convertor (sound card)
 SinOsc s =&gt; dac;
 
 // allow 2 seconds to pass
-2::second =&gt; now;
-</code></pre><p>Let’s now run this (assuming(假设) you saved the file as ‘foo.ck’):</p>
-<pre><code>%&gt; chuck foo.ck
-</code></pre><p> For now, we can just take the second line of code to mean “let time pass for 2 seconds (and let audio compute during that time)”. If you want to play it indefinitely(无限制地), we could write a loop:</p>
+2::second =&gt; now;</code></pre>
+<p>Let's now run this (assuming(假设) you saved the file as 'foo.ck'):</p>
+<pre><code>%&gt; chuck foo.ck</code></pre>
+<p>For now, we can just take the second line of code to mean &quot;let time pass for 2 seconds (and let audio compute during that time)&quot;. If you want to play it indefinitely(无限制地), we could write a loop:</p>
 <pre><code>////////////
 //example1//
 ////////////
@@ -568,33 +566,33 @@ SinOsc s =&gt; dac;
 while( true ) {
     2::second =&gt; now;
     //(we used 2::second here, but we could have used any number of 
-    //&apos;ms&apos;, &apos;second&apos;, &apos;minute&apos;, &apos;hour&apos;, &apos;day&apos;, and even &apos;week&apos;)
-    }
-</code></pre><p>In ChucK, this is called a ‘time-loop’ (in fact this is an ‘infinite time loop’).<br><strong>To stop a ongoing ChucK program from the command line, hit (ctrl - c).</strong></p>
-<p>Now, let’s try changing the frequency randomly every 100ms:</p>
+    //&#39;ms&#39;, &#39;second&#39;, &#39;minute&#39;, &#39;hour&#39;, &#39;day&#39;, and even &#39;week&#39;)
+    }</code></pre>
+<p>In ChucK, this is called a 'time-loop' (in fact this is an 'infinite time loop'). <strong>To stop a ongoing ChucK program from the command line, hit (ctrl - c).</strong></p>
+<p>Now, let's try changing the frequency randomly every 100ms:</p>
 <pre><code>// make our patch
 SinOsc s =&gt; dac;
 
-// time-loop, in which the osc&apos;s frequency is changed every 100 ms
+// time-loop, in which the osc&#39;s frequency is changed every 100 ms
 while( true ) {
     100::ms =&gt; now;
     Std.rand2f(30.0, 1000.0) =&gt; s.freq;
-    }
-</code></pre><p>Two more things to note here. </p>
+    }</code></pre>
+<p>Two more things to note here.</p>
 <pre><code>(1) We are advancing time inside the loop by 100::ms durations. 
-(2) A random value between 30.0 and 1000.0 is generated and &apos;assigned&apos; to the oscillator&apos;s frequency, every 100::ms. 
-</code></pre><p><em>目前运行的结果是有并不规律的声音产生，这就是那个时刻变形的声波</em></p>
+(2) A random value between 30.0 and 1000.0 is generated and &#39;assigned&#39; to the oscillator&#39;s frequency, every 100::ms. </code></pre>
+<p><em>目前运行的结果是有并不规律的声音产生，这就是那个时刻变形的声波</em></p>
 <hr>
-<p>Now let’s write another (slightly longer) program: (these files can be found in the examples/ directory, so you don’t have to type them in) </p>
+<p>Now let's write another (slightly longer) program: (these files can be found in the examples/ directory, so you don't have to type them in)</p>
 <pre><code>////////////
 //example2//
 ////////////
 // impulse(脉冲信号) to filter to dac
 //Biquad filter（双二阶滤波器）
 Impulse i =&gt; BiQuad f =&gt; dac;
-// set the filter&apos;s pole radius( = prad)
+// set the filter&#39;s pole radius( = prad)
 .99 =&gt; f.prad;
-// set equal gain zero&apos;s
+// set equal gain zero&#39;s
 1 =&gt; f.eqzs;//不理解
 // initialize float variable
 0.0 =&gt; float v;
@@ -610,17 +608,17 @@ while( true )
     v + .1 =&gt; v;
     // advance time
     100::ms =&gt; now;
-}
-</code></pre><p>Name this moe.ck, and run it:</p>
-<pre><code>chuck moe.ck
-</code></pre><p>Now, make two copies of moe.ck - larry.ck and curly.ck. Make the following modifications(修改). </p>
+}</code></pre>
+<p>Name this moe.ck, and run it:</p>
+<pre><code>chuck moe.ck</code></pre>
+<p>Now, make two copies of moe.ck - larry.ck and curly.ck. Make the following modifications(修改).</p>
 <pre><code>1) change larry.ck to advance time by 99::ms (instead of 100::ms). 
 2) change curly.ck to advance time by 101::ms (instead of 100::ms). 
-3) optionally, change the 4000.0 to something else (like 400.0 for curly).
-</code></pre><p>Run all three in parallel:</p>
-<pre><code>chuck moe.ck larry.ck curly.ck
-</code></pre><p>What you hear (if all goes well) should be ‘phasing’ between moe, larry, and curly, with curly emitting(发出) the lower-frequency pulses(脉冲).</p>
-<p>ChucK supports sample-synchronous concurrency(并发性), via the ChucK timing mechanism(机制). Given any number of source files that uses the timing mechanism above, the ChucK VM can use the timing information to automatically(自动地) synchronize(合拍) all of them… Note that each process do not need to know about each other - it only has to deal with time locally. The VM will make sure things happen correctly and globally. </p>
+3) optionally, change the 4000.0 to something else (like 400.0 for curly).</code></pre>
+<p>Run all three in parallel:</p>
+<pre><code>chuck moe.ck larry.ck curly.ck</code></pre>
+<p>What you hear (if all goes well) should be 'phasing' between moe, larry, and curly, with curly emitting(发出) the lower-frequency pulses(脉冲).</p>
+<p>ChucK supports sample-synchronous concurrency(并发性), via the ChucK timing mechanism(机制). Given any number of source files that uses the timing mechanism above, the ChucK VM can use the timing information to automatically(自动地) synchronize(合拍) all of them... Note that each process do not need to know about each other - it only has to deal with time locally. The VM will make sure things happen correctly and globally.</p>
 <p>A large collection of pre-made examples have been arranged and provided with this distribution in the /doc/examples directory, and are mirrored <a href="http://chuck.cs.princeton.edu/doc/examples/" target="_blank" rel="noopener">here</a></p>
 
       

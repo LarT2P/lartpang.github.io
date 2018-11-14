@@ -125,18 +125,18 @@
 
 
 
-  <meta name="description" content="control structures  if / else while &amp;amp; do…while… until for break / continue  #Control Structures ChucK includes standard control structures similar to those in most programming languages. A conditi">
+  <meta name="description" content="control structures  if / else while &amp;amp; do...while... until for break / continue  #Control Structures ChucK includes standard control structures similar to those in most programming languag">
 <meta name="keywords" content="ChucK">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chuck6">
 <meta property="og:url" content="https://plart.pw/2018/02/15/langs/chuck/chuck6/index.html">
 <meta property="og:site_name" content="失乐园">
-<meta property="og:description" content="control structures  if / else while &amp;amp; do…while… until for break / continue  #Control Structures ChucK includes standard control structures similar to those in most programming languages. A conditi">
+<meta property="og:description" content="control structures  if / else while &amp;amp; do...while... until for break / continue  #Control Structures ChucK includes standard control structures similar to those in most programming languag">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-07-13T12:46:56.071Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chuck6">
-<meta name="twitter:description" content="control structures  if / else while &amp;amp; do…while… until for break / continue  #Control Structures ChucK includes standard control structures similar to those in most programming languages. A conditi">
+<meta name="twitter:description" content="control structures  if / else while &amp;amp; do...while... until for break / continue  #Control Structures ChucK includes standard control structures similar to those in most programming languag">
 
 
 
@@ -535,13 +535,13 @@
         <p>control structures</p>
 <ul>
 <li>if / else</li>
-<li>while &amp; do…while…</li>
+<li>while &amp; do...while...</li>
 <li>until</li>
 <li>for</li>
 <li>break / continue</li>
 </ul>
 <p>#Control Structures</p>
-<p>ChucK includes standard control structures similar to those in most programming languages. A condition (of type ‘int’) is evaluated and then a proceeding block is potentially executed. Blocks are separated either by semicolons(分号) or by curly brackets(花括号). </p>
+<p>ChucK includes standard control structures similar to those in most programming languages. A condition (of type 'int') is evaluated and then a proceeding block is potentially executed. Blocks are separated either by semicolons(分号) or by curly brackets(花括号).</p>
 <p>#if / else</p>
 <p>The if statement executes a block if the condition is evaluated as <em>non-zero</em>.</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>( condition )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// insert code here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -549,13 +549,13 @@
 <p>The else statement(声明) can be put after the if block to handle the case where the condition evaluates(求值) to 0.</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>( condition )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// your code here</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// your other code here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>If statements can be nested(嵌套).</p>
-<p>#while &amp; do…while…</p>
+<p>#while &amp; do...while...</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// here is an infinite loop</span></span><br><span class="line"><span class="keyword">while</span>( <span class="literal">true</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// your code loops forever!</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// (sometimes this is desirable because we can create</span></span><br><span class="line">    <span class="comment">// infinite time loops this way, and because we have</span></span><br><span class="line">    <span class="comment">// concurrency)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="comment">// your code executes here at least once</span></span><br><span class="line">&#125; <span class="keyword">while</span>( condition );</span><br></pre></td></tr></table></figure>
 <p>A few more points:</p>
 <ul>
 <li><code>while</code> statements can be nested.</li>
-<li>see <code>break/continue</code> for additional(附加的) control over your loops </li>
+<li>see <code>break/continue</code> for additional(附加的) control over your loops</li>
 </ul>
 <p>#until</p>
 <p>The until statement is the opposite of while, semantically(语义地). A until loop repeatedly executes the body until the condition evaluates as non-zero.</p>
@@ -563,7 +563,7 @@
 <p>A few more points:</p>
 <ul>
 <li><code>while</code> statements can be nested.</li>
-<li>see <code>break/continue</code> for additional(附加的) control over your loops </li>
+<li>see <code>break/continue</code> for additional(附加的) control over your loops</li>
 </ul>
 <p>#for</p>
 <p>A loop that iterates(迭代) a given number of times.(迭代给定次数) A temporary(暂时的) variable(变量) is declared that keeps track(跟踪) of the current index and is evaluated and incremented at each iteration(迭代).</p>
@@ -652,8 +652,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/15/langs/chuck/chuck3/" rel="next" title="chuck3">
-                <i class="fa fa-chevron-left"></i> chuck3
+              <a href="/2018/02/15/langs/chuck/chuck9/" rel="next" title="chuck9">
+                <i class="fa fa-chevron-left"></i> chuck9
               </a>
             
           </div>

@@ -125,18 +125,18 @@
 
 
 
-  <meta name="description" content="(因为我粗略学过C,C++,Python，了解过他们的一些语法，所以为了使得java的入门更为顺畅，便会忽略一些和C语法相类似的地方，着重点明一些java自己的特色之处。也减轻一下自己写文字的负担。)  JAVA是一门静态的强类型的面向对象的重量级的编程语言。 一般写JAVA程序需要的组件是JDK，到甲骨文的网站上下载即可。 初级阶段使用文本编辑器即可，当然，我正处在这个阶段。 此时用来编译运行">
+  <meta name="description" content="(因为我粗略学过C,C++,Python，了解过他们的一些语法，所以为了使得java的入门更为顺畅，便会忽略一些和C语法相类似的地方，着重点明一些java自己的特色之处。也减轻一下自己写文字的负担。)  JAVA是一门静态的强类型的面向对象的重量级的编程语言。 一般写JAVA程序需要的组件是JDK，到甲骨文的网站上下载即可。 初级阶段使用文本编辑器即可，当然，我正处在这个阶段。 此时">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java学习笔记——基础1">
 <meta property="og:url" content="https://plart.pw/2017/07/01/langs/java/Java初入/index.html">
 <meta property="og:site_name" content="失乐园">
-<meta property="og:description" content="(因为我粗略学过C,C++,Python，了解过他们的一些语法，所以为了使得java的入门更为顺畅，便会忽略一些和C语法相类似的地方，着重点明一些java自己的特色之处。也减轻一下自己写文字的负担。)  JAVA是一门静态的强类型的面向对象的重量级的编程语言。 一般写JAVA程序需要的组件是JDK，到甲骨文的网站上下载即可。 初级阶段使用文本编辑器即可，当然，我正处在这个阶段。 此时用来编译运行">
+<meta property="og:description" content="(因为我粗略学过C,C++,Python，了解过他们的一些语法，所以为了使得java的入门更为顺畅，便会忽略一些和C语法相类似的地方，着重点明一些java自己的特色之处。也减轻一下自己写文字的负担。)  JAVA是一门静态的强类型的面向对象的重量级的编程语言。 一般写JAVA程序需要的组件是JDK，到甲骨文的网站上下载即可。 初级阶段使用文本编辑器即可，当然，我正处在这个阶段。 此时">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-07-13T12:50:20.712Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java学习笔记——基础1">
-<meta name="twitter:description" content="(因为我粗略学过C,C++,Python，了解过他们的一些语法，所以为了使得java的入门更为顺畅，便会忽略一些和C语法相类似的地方，着重点明一些java自己的特色之处。也减轻一下自己写文字的负担。)  JAVA是一门静态的强类型的面向对象的重量级的编程语言。 一般写JAVA程序需要的组件是JDK，到甲骨文的网站上下载即可。 初级阶段使用文本编辑器即可，当然，我正处在这个阶段。 此时用来编译运行">
+<meta name="twitter:description" content="(因为我粗略学过C,C++,Python，了解过他们的一些语法，所以为了使得java的入门更为顺畅，便会忽略一些和C语法相类似的地方，着重点明一些java自己的特色之处。也减轻一下自己写文字的负担。)  JAVA是一门静态的强类型的面向对象的重量级的编程语言。 一般写JAVA程序需要的组件是JDK，到甲骨文的网站上下载即可。 初级阶段使用文本编辑器即可，当然，我正处在这个阶段。 此时">
 
 
 
@@ -540,12 +540,14 @@
 <p>初级阶段使用文本编辑器即可，当然，我正处在这个阶段。</p>
 <p>此时用来编译运行JAVA文件常用的两条命令是</p>
 <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">javac -encoding utf-<span class="number">8</span> filename.java</span><br><span class="line">java filename</span><br></pre></td></tr></table></figure>
-<p>以上命令就是先使用<code>javac</code>在java文件当前目录下，编译生成字节码文件<code>filename.class</code>，之后再用<code>java</code>解释执行成特定平台的机器码，输出。<br>这里指定了编码格式，因为java默认文件为unicode编码，但是文件中有中文，会有错误提示。</p>
+<p>以上命令就是先使用<code>javac</code>在java文件当前目录下，编译生成字节码文件<code>filename.class</code>，之后再用<code>java</code>解释执行成特定平台的机器码，输出。 这里指定了编码格式，因为java默认文件为unicode编码，但是文件中有中文，会有错误提示。</p>
 <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">错误：编码GBK的不可映射字符</span><br></pre></td></tr></table></figure>
 <p>若是你没有这个问题，则可以忽略那个<code>-encoding utf-8</code></p>
 <hr>
-<h2 id="java源文件的命名"><a href="#java源文件的命名" class="headerlink" title="java源文件的命名"></a>java源文件的命名</h2><p>和c，c++，python不同，java要求，源文件后缀名为<code>.java</code>，文件名字一般要求和文件中的 <em>public class</em> 同名，若是没有定义，那就没有限制了。这也可以看出，<strong>一个java源文件中只能最多有一个 <em>public class</em></strong>。通常建议一个java源文件只定义一个类，让java的源文件主文件名与该源文件中定义的 <em>public class</em>同名。</p>
-<h2 id="java程序的结构"><a href="#java程序的结构" class="headerlink" title="java程序的结构"></a>java程序的结构</h2><p><em>java程序必须以类的形式存在</em>，类是java程序的最小单位，java不允许除类外的可执行语句，方法等成分独立存在。他们必须放在类定义里。</p>
+<h2 id="java源文件的命名">java源文件的命名</h2>
+<p>和c，c++，python不同，java要求，源文件后缀名为<code>.java</code>，文件名字一般要求和文件中的 <em>public class</em> 同名，若是没有定义，那就没有限制了。这也可以看出，<strong>一个java源文件中只能最多有一个 <em>public class</em></strong>。通常建议一个java源文件只定义一个类，让java的源文件主文件名与该源文件中定义的 <em>public class</em>同名。</p>
+<h2 id="java程序的结构">java程序的结构</h2>
+<p><em>java程序必须以类的形式存在</em>，类是java程序的最小单位，java不允许除类外的可执行语句，方法等成分独立存在。他们必须放在类定义里。</p>
 <p>例子：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello World"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>观察上例，与文件同名的 <em>public class</em> <code>HelloWorld</code>，内部包含一个<code>main()</code>方法，使用<code>System.out.println(&quot;Hello World&quot;);</code>实现对于文本的输出，类似的有个<code>System.out.print(&quot;Hello World&quot;);</code>，差别就在于前者会换行。</p>
@@ -554,7 +556,8 @@
 <p>可见下例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">jump</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"正在执行jump方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.jump();</span><br><span class="line">        System.out.println(<span class="string">"正在执行run方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DogTest</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Dog dog = <span class="keyword">new</span> Dog();</span><br><span class="line">        dog.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>因为只允许有一个<code>public class</code>，故而其他的就是普通的类的形式。</p>
-<h2 id="java中的流程控制语句"><a href="#java中的流程控制语句" class="headerlink" title="java中的流程控制语句"></a>java中的流程控制语句</h2><pre><code>if (...){
+<h2 id="java中的流程控制语句">java中的流程控制语句</h2>
+<pre><code>if (...){
     ...
 }
 else if{
@@ -585,12 +588,12 @@ do{
 
 for (...; ...; ...){
     ...
-}
-</code></pre><p>Java中出现了一种迭代式的for的用法。python和C++都有类似的语法结构。</p>
+}</code></pre>
+<p>Java中出现了一种迭代式的for的用法。python和C++都有类似的语法结构。</p>
 <pre><code>for ( type variableName : array | collection){
     // variableName 自动迭代访问每个元素
-}
-</code></pre><p>例如：</p>
+}</code></pre>
+<p>例如：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ForEachTest</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        String[] books = &#123;<span class="string">"轻量级"</span>,</span><br><span class="line">                        <span class="string">"fengkuang"</span>,</span><br><span class="line">                        <span class="string">"jiangyi"</span>&#125;;</span><br><span class="line">        <span class="comment">// 使用foreach迭代遍历。</span></span><br><span class="line">        <span class="keyword">for</span>(String book : books)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(book);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       

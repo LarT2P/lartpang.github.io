@@ -125,18 +125,18 @@
 
 
 
-  <meta name="description" content="#Types, Values, and Variables(变量) ChucK is a strongly-typed language, meaning that types are resolved(决定) at compile-time. However, it is not quite statically-typed, because the compiler/type system i">
+  <meta name="description" content="#Types, Values, and Variables(变量) ChucK is a strongly-typed language, meaning that types are resolved(决定) at compile-time. However, it is not quite statically-typed, because the compiler/type system">
 <meta name="keywords" content="ChucK">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chuck3">
 <meta property="og:url" content="https://plart.pw/2018/02/15/langs/chuck/chuck3/index.html">
 <meta property="og:site_name" content="失乐园">
-<meta property="og:description" content="#Types, Values, and Variables(变量) ChucK is a strongly-typed language, meaning that types are resolved(决定) at compile-time. However, it is not quite statically-typed, because the compiler/type system i">
+<meta property="og:description" content="#Types, Values, and Variables(变量) ChucK is a strongly-typed language, meaning that types are resolved(决定) at compile-time. However, it is not quite statically-typed, because the compiler/type system">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-07-13T12:46:41.321Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chuck3">
-<meta name="twitter:description" content="#Types, Values, and Variables(变量) ChucK is a strongly-typed language, meaning that types are resolved(决定) at compile-time. However, it is not quite statically-typed, because the compiler/type system i">
+<meta name="twitter:description" content="#Types, Values, and Variables(变量) ChucK is a strongly-typed language, meaning that types are resolved(决定) at compile-time. However, it is not quite statically-typed, because the compiler/type system">
 
 
 
@@ -533,8 +533,8 @@
 
       
         <p>#Types, Values, and Variables(变量)</p>
-<p>ChucK is a strongly-typed language, meaning that types <em>are resolved(决定) at compile-time</em>. However, it is not quite statically-typed, because <strong>the compiler/type system is a part of the ChucK virtual(虚拟的) machine, and is a runtime component(成分)</strong>. This type system helps to impose(强加) precision(精度) and clarity(清楚) in the code, and naturally lends to organization of complex(复杂的) programs. At the same time, it is also <em>dynamic</em> in that changes to the type system can take place (in a well-defined(定义明确的) manner) at runtime. This dynamic(动态的) aspect(方面) forms the basis(基础) for <a href="http://on-the-fly.cs.princeton.edu/" target="_blank" rel="noopener">on-the-fly programming</a>. </p>
-<p>This section deals with <em>types, values, and the declaration(声明) and usage(使用) of variables</em>. As in other strongly-typed programming languages, we can think of a type as associated(关联的) behaviors(行为) of data. (For example, an ‘int’ is a type that means integer(整数), and adding two integer is defined(定义) to produce a third integer representing the sum.) <em>Classes and objects</em> allow us to extend(延伸) the type system with our own custom types, but we won’t cover them in this section. <strong>We will focus mainly on <em>primitive(原始的) types</em> here, and leave the discussion of more complex types for <a href="http://chuck.cs.princeton.edu/doc/language/class.html" target="_blank" rel="noopener">classes and objects</a>.</strong></p>
+<p>ChucK is a strongly-typed language, meaning that types <em>are resolved(决定) at compile-time</em>. However, it is not quite statically-typed, because <strong>the compiler/type system is a part of the ChucK virtual(虚拟的) machine, and is a runtime component(成分)</strong>. This type system helps to impose(强加) precision(精度) and clarity(清楚) in the code, and naturally lends to organization of complex(复杂的) programs. At the same time, it is also <em>dynamic</em> in that changes to the type system can take place (in a well-defined(定义明确的) manner) at runtime. This dynamic(动态的) aspect(方面) forms the basis(基础) for <a href="http://on-the-fly.cs.princeton.edu/" target="_blank" rel="noopener">on-the-fly programming</a>.</p>
+<p>This section deals with <em>types, values, and the declaration(声明) and usage(使用) of variables</em>. As in other strongly-typed programming languages, we can think of a type as associated(关联的) behaviors(行为) of data. (For example, an 'int' is a type that means integer(整数), and adding two integer is defined(定义) to produce a third integer representing the sum.) <em>Classes and objects</em> allow us to extend(延伸) the type system with our own custom types, but we won't cover them in this section. <strong>We will focus mainly on <em>primitive(原始的) types</em> here, and leave the discussion of more complex types for <a href="http://chuck.cs.princeton.edu/doc/language/class.html" target="_blank" rel="noopener">classes and objects</a>.</strong></p>
 <p>#primitive types(原始类型)</p>
 <p>The primitive(原始的), or intrinsic(本质的) types are those which are simple datatypes (they have no additional(附加的) data attributes(属性)). <em>Objects are not primitive types.</em> <strong>Primitive types are passed by value. Primitive types cannot be extended(延伸).</strong> The primitive types in ChucK are:</p>
 <pre><code>int : integer(整数) (signed)
@@ -543,9 +543,9 @@ time : ChucKian time
 dur : ChucKian duration(持续)
 void : (no type)
 complex : complex number in rectangular(矩形的) form a + bi (see [below][1])
-polar: complex number in polar(极面) form (see [below][1])
-</code></pre><p>For a summary of operations on these types, go to <a href="http://chuck.cs.princeton.edu/doc/language/oper.html" target="_blank" rel="noopener">operations and operators</a>.</p>
-<p>All other types are derived(派生) from ‘object’, either as part of the ChucK standard library, or as a new class that you create. For specification(规格), go to <a href="http://chuck.cs.princeton.edu/doc/language/class.html" target="_blank" rel="noopener">classes and objects</a>.</p>
+polar: complex number in polar(极面) form (see [below][1])</code></pre>
+<p>For a summary of operations on these types, go to <a href="http://chuck.cs.princeton.edu/doc/language/oper.html" target="_blank" rel="noopener">operations and operators</a>.</p>
+<p>All other types are derived(派生) from 'object', either as part of the ChucK standard library, or as a new class that you create. For specification(规格), go to <a href="http://chuck.cs.princeton.edu/doc/language/class.html" target="_blank" rel="noopener">classes and objects</a>.</p>
 <p>#values (literals(字面值))</p>
 <p>Literal values are specified(指定) explicitly(明确地) in code and are assigned(分配) a type by the compiler(编译器).The following are some examples of literal values:</p>
 <pre><code>int:
@@ -564,69 +564,66 @@ dur:
 
 5.5::second
 //In the above code, second is an existing duration(持续) variable(变量). 
-//For more on durations, see the [manipulating time(时间调节)][4] section. 
-</code></pre><p>#variables</p>
+//For more on durations, see the [manipulating time(时间调节)][4] section. </code></pre>
+<p>#variables</p>
 <p><strong>Variables(变量) are locations in memory that hold data.</strong> <em>Variables have to be declared in ChucK before they are used.</em> For example, to declare a variable of type int called foo:</p>
-<pre><code>// declare an &apos;int&apos; called &apos;foo&apos;
-int foo;
-</code></pre><p>We can assign(分配) a value to <em>an existing variable</em> by using the ChucK operator (<code>=&gt;</code>). This is one of the most commonly used operators in ChucK, it’s the way to do work and take action! (后面会讨论)</p>
-<pre><code>// assign value of 2 to &apos;foo&apos;
-2 =&gt; foo;
-</code></pre><p>It is possible to combine the two statements(声明) into one:</p>
-<pre><code>// assign 2 to a new variable &apos;foo&apos; of type &apos;int&apos;
-2 =&gt; int foo;
-</code></pre><p>To use a variable, just refer to it by name:</p>
+<pre><code>// declare an &#39;int&#39; called &#39;foo&#39;
+int foo;</code></pre>
+<p>We can assign(分配) a value to <em>an existing variable</em> by using the ChucK operator (<code>=&gt;</code>). This is one of the most commonly used operators in ChucK, it's the way to do work and take action! (后面会讨论)</p>
+<pre><code>// assign value of 2 to &#39;foo&#39;
+2 =&gt; foo;</code></pre>
+<p>It is possible to combine the two statements(声明) into one:</p>
+<pre><code>// assign 2 to a new variable &#39;foo&#39; of type &#39;int&#39;
+2 =&gt; int foo;</code></pre>
+<p>To use a variable, just refer to it by name:</p>
 <pre><code>// debug-print the value of foo
-&lt;&lt;&lt; foo &gt;&gt;&gt;;
-</code></pre><p>To update the value of foo, for example:</p>
-<pre><code>// multiply &apos;foo&apos; by 10, assign back to &apos;foo&apos;
-foo * 10 =&gt; foo;
-</code></pre><p>You can also do the above using a <code>*=&gt;</code> (mult-chuck):</p>
-<pre><code>// multiply &apos;foo&apos; by 10, and then assign to &apos;foo&apos;
-10 *=&gt; foo;
-</code></pre><p>Here is an example of a duration(持续):</p>
-<pre><code>// assign value of &apos;5 seconds&apos; to new variable bar
-5::second =&gt; dur bar;
-</code></pre><p>Once you have bar, you can inductively(归纳的) use it to construct new durations:</p>
+&lt;&lt;&lt; foo &gt;&gt;&gt;;</code></pre>
+<p>To update the value of foo, for example:</p>
+<pre><code>// multiply &#39;foo&#39; by 10, assign back to &#39;foo&#39;
+foo * 10 =&gt; foo;</code></pre>
+<p>You can also do the above using a <code>*=&gt;</code> (mult-chuck):</p>
+<pre><code>// multiply &#39;foo&#39; by 10, and then assign to &#39;foo&#39;
+10 *=&gt; foo;</code></pre>
+<p>Here is an example of a duration(持续):</p>
+<pre><code>// assign value of &#39;5 seconds&#39; to new variable bar
+5::second =&gt; dur bar;</code></pre>
+<p>Once you have bar, you can inductively(归纳的) use it to construct new durations:</p>
 <pre><code>// 4 bar, a measure?
-4::bar =&gt; dur measure;
-</code></pre><blockquote>
-<p>输出：<br>C:\Users\abc1\Desktop&gt;chuck test.ck<br>882000.000000 :(dur)</p>
+4::bar =&gt; dur measure;</code></pre>
+<blockquote>
+<p>输出： C:1&gt;chuck test.ck 882000.000000 :(dur)</p>
 </blockquote>
-<p>Since time is central to programming ChucK, it is important to understand time, dur, the relationship and operations between them. There is more information in the <a href="http://chuck.cs.princeton.edu/doc/language/time.html" target="_blank" rel="noopener">manipulating time</a> section. </p>
+<p>Since time is central to programming ChucK, it is important to understand time, dur, the relationship and operations between them. There is more information in the <a href="http://chuck.cs.princeton.edu/doc/language/time.html" target="_blank" rel="noopener">manipulating time</a> section.</p>
 <p>#reference types(引用类型)</p>
 <p>Reference(参考) types are types which inherit(继承) from the object class. Some default reference types include:</p>
 <pre><code>Object : base type that all classes inherit from (directly or indirectly)所有类继承的基本类型
 array : N-dimensional ordered(有序的) set of data (of the same type)
 Event : fundamental(基本的), extendable(可扩展的), synchronization(同步) mechanism(机制)
 UGen : extendable unit generator(单元发生器) base class (U = unit, Gen = generator)
-string : string (of characters)
-</code></pre><p>New classes can be created. <strong>All classes are reference types.</strong> We will leave the full discussion to the <a href="http://chuck.cs.princeton.edu/doc/language/class.html" target="_blank" rel="noopener">objects and classes</a> section.</p>
-<p>#complex types<br>(虚数：直角坐标系，极坐标系)</p>
+string : string (of characters)</code></pre>
+<p>New classes can be created. <strong>All classes are reference types.</strong> We will leave the full discussion to the <a href="http://chuck.cs.princeton.edu/doc/language/class.html" target="_blank" rel="noopener">objects and classes</a> section.</p>
+<p>#complex types (虚数：直角坐标系，极坐标系)</p>
 <p>Two special <code>primitive types</code> are available to to represent complex (复杂的)data, such as the output (输出)of an FFT: complex and polar. A complex number of the form a + bi can be declared as</p>
-<pre><code>#(2,3) =&gt; complex cmp; //cmp is now 2 + 3i 
-</code></pre><p>where the #(…) syntax(语法) explicitly(明确地) denotes(表示) a complex number in rectangular form(矩形). Similarly, explicit complex numbers can be manipulated(操纵) directly:</p>
+<pre><code>#(2,3) =&gt; complex cmp; //cmp is now 2 + 3i </code></pre>
+<p>where the #(...) syntax(语法) explicitly(明确地) denotes(表示) a complex number in rectangular form(矩形). Similarly, explicit complex numbers can be manipulated(操纵) directly:</p>
 <pre><code>#(5, -1.5) =&gt; complex cmp; // cmp is 5 - 1.5i
-#(2,3) + #(5,6) + cmp =&gt; complex sum; // sum is now 12 + 7.5i
-</code></pre><p>The (floating point) real and imaginary parts(实虚部) of a complex number can be accessed(存取) with the .re and .im components of a complex number:</p>
+#(2,3) + #(5,6) + cmp =&gt; complex sum; // sum is now 12 + 7.5i</code></pre>
+<p>The (floating point) real and imaginary parts(实虚部) of a complex number can be accessed(存取) with the .re and .im components of a complex number:</p>
 <pre><code>#(2.0,3.5) =&gt; complex cmp;
 cmp.re =&gt; float x; // x is 2.0
-cmp.im =&gt; float y; //y is 3.5
-</code></pre><p>The polar type(极坐标) offers an equivalent(等价的), alternative(供选择的) representation(表示) of complex numbers in terms of a magnitude(大小) and phase(相) value. A polar representation of a complex number can be declared as</p>
-<pre><code>%(2, .5*pi) =&gt; polar pol; // pol is 2∠.5π(没有想到，竟然有这个(●&apos;◡&apos;●))
-</code></pre><p>The magnitude(大小) and phase(相) values can be accessed via .mag and .phase:</p>
+cmp.im =&gt; float y; //y is 3.5</code></pre>
+<p>The polar type(极坐标) offers an equivalent(等价的), alternative(供选择的) representation(表示) of complex numbers in terms of a magnitude(大小) and phase(相) value. A polar representation of a complex number can be declared as</p>
+<pre><code>%(2, .5*pi) =&gt; polar pol; // pol is 2∠.5π(没有想到，竟然有这个(●&#39;◡&#39;●))</code></pre>
+<p>The magnitude(大小) and phase(相) values can be accessed via .mag and .phase:</p>
 <pre><code>%(2, .5*pi) =&gt; polar pol;
 pol.mag =&gt; float m; // m is 2
-pol.phase =&gt; float p; //p is .5π
-</code></pre><p>polar and complex representations(代表) can be cast to each other and multiplied/added/assigned(分配)/etc.:</p>
+pol.phase =&gt; float p; //p is .5π</code></pre>
+<p>polar and complex representations(代表) can be cast to each other and multiplied/added/assigned(分配)/etc.:</p>
 <pre><code>%(2, .5*pi) =&gt; polar pol;
 #(3, 4) =&gt; complex cmp;
 pol $ complex + #(10, 3) + cmp =&gt; complex cmp2;
-cmp $ polar + %(10, .25*pi) - pol =&gt; polar pol2;
-</code></pre><p>(这里的$实现了两种坐标系下表示的转换)</p>
-<blockquote>
-<p>输出：<br>C:\Users\abc1\Desktop&gt;chuck test.ck<br>%(2.0000,0.5000<em>pi) :(polar)<br>#(3.0000,4.0000) :(complex)<br>#(13.0000,9.0000) :(complex)<br>%(13.5540,0.2334</em>pi) :(polar)</p>
-</blockquote>
+cmp $ polar + %(10, .25*pi) - pol =&gt; polar pol2;</code></pre>
+<p>(这里的$实现了两种坐标系下表示的转换) &gt;输出： C:1&gt;chuck test.ck %(2.0000,0.5000<em>pi) :(polar) #(3.0000,4.0000) :(complex) #(13.0000,9.0000) :(complex) %(13.5540,0.2334</em>pi) :(polar)</p>
 
       
     </div>
@@ -706,8 +703,8 @@ cmp $ polar + %(10, .25*pi) - pol =&gt; polar pol2;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/15/langs/chuck/chuck9/" rel="next" title="chuck9">
-                <i class="fa fa-chevron-left"></i> chuck9
+              <a href="/2018/02/15/langs/chuck/chuck5/" rel="next" title="chuck5">
+                <i class="fa fa-chevron-left"></i> chuck5
               </a>
             
           </div>
@@ -716,8 +713,8 @@ cmp $ polar + %(10, .25*pi) - pol =&gt; polar pol2;
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/15/langs/chuck/chuck6/" rel="prev" title="chuck6">
-                chuck6 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/15/langs/chuck/chuck8/" rel="prev" title="chuck8">
+                chuck8 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

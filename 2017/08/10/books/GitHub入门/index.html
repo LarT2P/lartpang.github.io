@@ -125,18 +125,18 @@
 
 
 
-  <meta name="description" content="代码管理方式——集中与分散集中型以 Subversion 为代表的集中型，所示将仓库集中存放在服务器之中，所以只存在一个仓库。这就是为什么这种版本管理系统会被称作集中型。 集中型将所有数据集中存放在服务器当中，有便于管理的优点。但是一旦开发者所处的环境不能连接服务器，就无法获取最新的源代码，开发也就几乎无法进行。服务器宕机时也是同样的道理，而且万一服务器故障导致数据消失，恐怕开发者就再也见不到最新">
+  <meta name="description" content="代码管理方式——集中与分散 集中型 以 Subversion 为代表的集中型，所示将仓库集中存放在服务器之中，所以只存在一个仓库。这就是为什么这种版本管理系统会被称作集中型。 集中型将所有数据集中存放在服务器当中，有便于管理的优点。但是一旦开发者所处的环境不能连接服务器，就无法获取最新的源代码，开发也就几乎无法进行。服务器宕机时也是同样的道理，而且万一服务器故障导致数据消失，恐怕开发者就再也">
 <meta name="keywords" content="工具">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GitHub入门">
 <meta property="og:url" content="https://plart.pw/2017/08/10/books/GitHub入门/index.html">
 <meta property="og:site_name" content="失乐园">
-<meta property="og:description" content="代码管理方式——集中与分散集中型以 Subversion 为代表的集中型，所示将仓库集中存放在服务器之中，所以只存在一个仓库。这就是为什么这种版本管理系统会被称作集中型。 集中型将所有数据集中存放在服务器当中，有便于管理的优点。但是一旦开发者所处的环境不能连接服务器，就无法获取最新的源代码，开发也就几乎无法进行。服务器宕机时也是同样的道理，而且万一服务器故障导致数据消失，恐怕开发者就再也见不到最新">
+<meta property="og:description" content="代码管理方式——集中与分散 集中型 以 Subversion 为代表的集中型，所示将仓库集中存放在服务器之中，所以只存在一个仓库。这就是为什么这种版本管理系统会被称作集中型。 集中型将所有数据集中存放在服务器当中，有便于管理的优点。但是一旦开发者所处的环境不能连接服务器，就无法获取最新的源代码，开发也就几乎无法进行。服务器宕机时也是同样的道理，而且万一服务器故障导致数据消失，恐怕开发者就再也">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-11-14T04:06:18.216Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub入门">
-<meta name="twitter:description" content="代码管理方式——集中与分散集中型以 Subversion 为代表的集中型，所示将仓库集中存放在服务器之中，所以只存在一个仓库。这就是为什么这种版本管理系统会被称作集中型。 集中型将所有数据集中存放在服务器当中，有便于管理的优点。但是一旦开发者所处的环境不能连接服务器，就无法获取最新的源代码，开发也就几乎无法进行。服务器宕机时也是同样的道理，而且万一服务器故障导致数据消失，恐怕开发者就再也见不到最新">
+<meta name="twitter:description" content="代码管理方式——集中与分散 集中型 以 Subversion 为代表的集中型，所示将仓库集中存放在服务器之中，所以只存在一个仓库。这就是为什么这种版本管理系统会被称作集中型。 集中型将所有数据集中存放在服务器当中，有便于管理的优点。但是一旦开发者所处的环境不能连接服务器，就无法获取最新的源代码，开发也就几乎无法进行。服务器宕机时也是同样的道理，而且万一服务器故障导致数据消失，恐怕开发者就再也">
 
 
 
@@ -532,49 +532,73 @@
       
 
       
-        <h1 id="代码管理方式——集中与分散"><a href="#代码管理方式——集中与分散" class="headerlink" title="代码管理方式——集中与分散"></a>代码管理方式——集中与分散</h1><h2 id="集中型"><a href="#集中型" class="headerlink" title="集中型"></a>集中型</h2><p>以 Subversion 为代表的集中型，所示将仓库集中存放在服务器之中，所以只存在一个仓库。这就是为什么这种版本管理系统会被称作集中型。</p>
+        <h1 id="代码管理方式集中与分散">代码管理方式——集中与分散</h1>
+<h2 id="集中型">集中型</h2>
+<p>以 Subversion 为代表的集中型，所示将仓库集中存放在服务器之中，所以只存在一个仓库。这就是为什么这种版本管理系统会被称作集中型。</p>
 <p>集中型将所有数据集中存放在服务器当中，有便于管理的优点。但是一旦开发者所处的环境不能连接服务器，就无法获取最新的源代码，开发也就几乎无法进行。服务器宕机时也是同样的道理，而且万一服务器故障导致数据消失，恐怕开发者就再也见不到最新的源代码了。</p>
-<h2 id="分散型"><a href="#分散型" class="headerlink" title="分散型"></a>分散型</h2><p>GitHub 将仓库 Fork 给了每一个用户。Fork 就是将 GitHub 的某个特定仓库复制到自己的账户下。Fork 出的仓库与原仓库是两个不同的仓库，开发者可以随意编辑。</p>
+<h2 id="分散型">分散型</h2>
+<p>GitHub 将仓库 Fork 给了每一个用户。Fork 就是将 GitHub 的某个特定仓库复制到自己的账户下。Fork 出的仓库与原仓库是两个不同的仓库，开发者可以随意编辑。</p>
 <p>分散型拥有多个仓库，相对而言稍显复杂。不过，由于本地的开发环境中就有仓库，所以开发者不必连接远程仓库就可以进行开发。</p>
-<h1 id="GitHub相关"><a href="#GitHub相关" class="headerlink" title="GitHub相关"></a>GitHub相关</h1><h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>在 GitHub 中，很多页面都可以使用键盘快捷键。在各个页面按下 shift ＋ / 都可以打开键盘快捷键一览表，查看当前页面的快捷键。</p>
-<h2 id="Explore"><a href="#Explore" class="headerlink" title="Explore"></a>Explore</h2><p>从各个角度介绍 GitHub 上的热门软件。</p>
+<h1 id="github相关">GitHub相关</h1>
+<h2 id="快捷键">快捷键</h2>
+<p>在 GitHub 中，很多页面都可以使用键盘快捷键。在各个页面按下 shift ＋ / 都可以打开键盘快捷键一览表，查看当前页面的快捷键。</p>
+<h2 id="explore">Explore</h2>
+<p>从各个角度介绍 GitHub 上的热门软件。</p>
 <ul>
 <li>GitHub 公司特别介绍的软件（附开发者制作的视频）</li>
 <li>按语言筛选本日 / 周 / 月的热门仓库 / 开发者</li>
 </ul>
-<h2 id="Gist"><a href="#Gist" class="headerlink" title="Gist"></a>Gist</h2><p>Gist 功能主要用于管理及发布一些没必要保存在仓库中的代码，比如小的代码片段等。系统会自动管理更新历史，并且提供了 Fork 功能。在 Gist 上添加的代码示例可以嵌入博客中。当然，如果选择了语言，还会自动添加语法高亮。</p>
-<h2 id="Blog"><a href="#Blog" class="headerlink" title="Blog"></a>Blog</h2><p>这是到 GitHub 公司官方博客的超链接，GitHub 公司会在上面发布通知。新功能的通知、新入职员工的介绍、drinkup 聚会的信息等都会在上面定期发布。</p>
-<h2 id="github上的交流："><a href="#github上的交流：" class="headerlink" title="github上的交流："></a>github上的交流：</h2><p>GitHub 中可使用的描述方法并不止“@ 用户名”一种。</p>
+<h2 id="gist">Gist</h2>
+<p>Gist 功能主要用于管理及发布一些没必要保存在仓库中的代码，比如小的代码片段等。系统会自动管理更新历史，并且提供了 Fork 功能。在 Gist 上添加的代码示例可以嵌入博客中。当然，如果选择了语言，还会自动添加语法高亮。</p>
+<h2 id="blog">Blog</h2>
+<p>这是到 GitHub 公司官方博客的超链接，GitHub 公司会在上面发布通知。新功能的通知、新入职员工的介绍、drinkup 聚会的信息等都会在上面定期发布。</p>
+<h2 id="github上的交流">github上的交流：</h2>
+<p>GitHub 中可使用的描述方法并不止“@ 用户名”一种。</p>
 <p>输入“@ 组织名”可以让属于该 Organization（组织）的所有成员收到通知 7。输入“@ 团队名”可以让该团队的所有成员收到通知。这就是同时向多人发送通知的方法。</p>
 <p>输入“# 编号”，会连接到该仓库所对应的 Issue 编号。输入“用户名 / 仓库名 # 编号”则可以连接到指定仓库所对应的 Issue 编号。只要按照这类特定格式书写便会自动创建链接。</p>
 <p>只要将感兴趣的仓库添加至 Watch 中，就可以在 News Feed 查 看该仓库的相关信息。</p>
-<h2 id="News-Feed"><a href="#News-Feed" class="headerlink" title="News Feed"></a>News Feed</h2><p>显示当前已 Follow 的用户和已 Watch 的项目的活动信息，用户可以在这里查看最新动向。将右上角 RSS 标志的 URL 添加到 RSS 阅读器中，还可以通过 RSS 查看。</p>
-<h2 id="Issues"><a href="#Issues" class="headerlink" title="Issues"></a>Issues</h2><p>在这里可以查看用户拥有权限的仓库或分配给自己的 Issue。当用户同时进行多个项目时，可以在这里一并查看 Issue。</p>
-<h2 id="Broadcast"><a href="#Broadcast" class="headerlink" title="Broadcast"></a>Broadcast</h2><p>主要用于接收 GitHub 公司发来的通知或使用技巧的小贴士。</p>
-<h2 id="Your-Repositories"><a href="#Your-Repositories" class="headerlink" title="Your Repositories"></a>Your Repositories</h2><p>按更新时间顺序显示用户的仓库。标有钥匙图案的是非公开仓库，标有类似字母 Y 图案的是用户 Fork 过的仓库。</p>
-<h2 id="Public-contributions"><a href="#Public-contributions" class="headerlink" title="Public contributions"></a>Public contributions</h2><p>一格表示一天，记录当日用户对拥有读取权限的仓库的大致贡献度。贡献度的衡量标准包括发送 Pull Request 的次数、写 Issue 的次数、进行提交的次数等。颜色越深代表贡献度越高。</p>
-<h2 id="Public-Activity"><a href="#Public-Activity" class="headerlink" title="Public Activity"></a>Public Activity</h2><p>从这里可以了解到该用户平常都在 GitHub 上做些什么。比如查看一下崇拜已久的程序员的公开活动，就可以知道他现在关注些什么，或者正在热心于开发些什么。</p>
-<h2 id="Pull-Requests"><a href="#Pull-Requests" class="headerlink" title="Pull Requests"></a>Pull Requests</h2><p>在 Pull Requests 中可以列表查看并管理 Pull Request。代码的更改和讨论都可以在这里进行。旁边显示的数字表示尚未 Close 的 Pull Request的数量。</p>
-<h2 id="Pulse"><a href="#Pulse" class="headerlink" title="Pulse"></a>Pulse</h2><p>显示该仓库最近的活动信息。该仓库中的软件是无人问津，还是在火热地开发之中，从这里可以一目了然。</p>
-<h2 id="Graphs"><a href="#Graphs" class="headerlink" title="Graphs"></a>Graphs</h2><p>以图表形式显示该仓库的各项指标。让用户轻松了解该仓库的活动倾向。</p>
-<h2 id="Clone-in-Desktop"><a href="#Clone-in-Desktop" class="headerlink" title="Clone in Desktop"></a>Clone in Desktop</h2><p>启动 GitHub 专用的客户端应用程序并进行 clone。</p>
-<h2 id="releases"><a href="#releases" class="headerlink" title="releases"></a>releases</h2><p>显示仓库的标签（Tag）列表。同时可以将标签加入时的文件以归档形式（ZIP、tar.gz）下载到本地。软件在版本升级时一般都会打标签，如果需要特定版本的文件，可以从这里寻找。</p>
-<h2 id="Compare-amp-review"><a href="#Compare-amp-review" class="headerlink" title="Compare &amp; review"></a>Compare &amp; review</h2><p>可以查看当前显示的分支与其他分支的差别，以便进行审查。点击这个按钮，会出现一个页面让用户选择比较对象。</p>
-<h2 id="行链接"><a href="#行链接" class="headerlink" title="行链接"></a>行链接</h2><p>文件内容的左侧会显示该文件的行号。假如我们点击第 10 行的行号，这一行就会被高亮标记为黄色，同时 URL 末尾会自动添加“#L10”。使用这个 URL，程序员们在交流时，就可以将讨论明确指向某一行。另外，如果将“#L10”改成“#L10-15”，则会标记该文件的第10～15 行。</p>
+<h2 id="news-feed">News Feed</h2>
+<p>显示当前已 Follow 的用户和已 Watch 的项目的活动信息，用户可以在这里查看最新动向。将右上角 RSS 标志的 URL 添加到 RSS 阅读器中，还可以通过 RSS 查看。</p>
+<h2 id="issues">Issues</h2>
+<p>在这里可以查看用户拥有权限的仓库或分配给自己的 Issue。当用户同时进行多个项目时，可以在这里一并查看 Issue。</p>
+<h2 id="broadcast">Broadcast</h2>
+<p>主要用于接收 GitHub 公司发来的通知或使用技巧的小贴士。</p>
+<h2 id="yourrepositories">Your Repositories</h2>
+<p>按更新时间顺序显示用户的仓库。标有钥匙图案的是非公开仓库，标有类似字母 Y 图案的是用户 Fork 过的仓库。</p>
+<h2 id="publiccontributions">Public contributions</h2>
+<p>一格表示一天，记录当日用户对拥有读取权限的仓库的大致贡献度。贡献度的衡量标准包括发送 Pull Request 的次数、写 Issue 的次数、进行提交的次数等。颜色越深代表贡献度越高。</p>
+<h2 id="publicactivity">Public Activity</h2>
+<p>从这里可以了解到该用户平常都在 GitHub 上做些什么。比如查看一下崇拜已久的程序员的公开活动，就可以知道他现在关注些什么，或者正在热心于开发些什么。</p>
+<h2 id="pullrequests">Pull Requests</h2>
+<p>在 Pull Requests 中可以列表查看并管理 Pull Request。代码的更改和讨论都可以在这里进行。旁边显示的数字表示尚未 Close 的 Pull Request的数量。</p>
+<h2 id="pulse">Pulse</h2>
+<p>显示该仓库最近的活动信息。该仓库中的软件是无人问津，还是在火热地开发之中，从这里可以一目了然。</p>
+<h2 id="graphs">Graphs</h2>
+<p>以图表形式显示该仓库的各项指标。让用户轻松了解该仓库的活动倾向。</p>
+<h2 id="cloneindesktop">Clone in Desktop</h2>
+<p>启动 GitHub 专用的客户端应用程序并进行 clone。</p>
+<h2 id="releases">releases</h2>
+<p>显示仓库的标签（Tag）列表。同时可以将标签加入时的文件以归档形式（ZIP、tar.gz）下载到本地。软件在版本升级时一般都会打标签，如果需要特定版本的文件，可以从这里寻找。</p>
+<h2 id="comparereview">Compare &amp; review</h2>
+<p>可以查看当前显示的分支与其他分支的差别，以便进行审查。点击这个按钮，会出现一个页面让用户选择比较对象。</p>
+<h2 id="行链接">行链接</h2>
+<p>文件内容的左侧会显示该文件的行号。假如我们点击第 10 行的行号，这一行就会被高亮标记为黄色，同时 URL 末尾会自动添加“#L10”。使用这个 URL，程序员们在交流时，就可以将讨论明确指向某一行。另外，如果将“#L10”改成“#L10-15”，则会标记该文件的第10～15 行。</p>
 <p>在仓库页面试着按下键盘的 t 键，然后输入要找的目录或文件的部分名称。筛选器会在仓库的目录和文件中进行筛选，搜索出您要找的文件。</p>
-<h2 id="URL使用技巧"><a href="#URL使用技巧" class="headerlink" title="URL使用技巧"></a>URL使用技巧</h2><ul>
-<li><a href="https://github.com/rails/rails/compare/4-0-stable...3-2-stable" target="_blank" rel="noopener">https://github.com/rails/rails/compare/4-0-stable...3-2-stable</a></li>
+<h2 id="url使用技巧">URL使用技巧</h2>
+<ul>
+<li>https://github.com/rails/rails/compare/4-0-stable...3-2-stable</li>
 </ul>
 <p>这样，就可以查看两个分支间的差别。</p>
 <ul>
-<li><a href="https://github.com/rails/rails/compare/master@{7.day.ago}...master" target="_blank" rel="noopener">https://github.com/rails/rails/compare/master@{7.day.ago}...master</a> </li>
+<li>https://github.com/rails/rails/compare/master@{7.day.ago}...master</li>
 </ul>
 <p>查看 master 分支在最近 7 天内的差别，支持day，week，month，year。如果差别过大则不会列出所有提交，只显示最近的一部分。</p>
 <ul>
-<li><a href="https://github.com/rails/rails/compare/master@{2013-01-01}...master" target="_blank" rel="noopener">https://github.com/rails/rails/compare/master@{2013-01-01}...master</a></li>
+<li>https://github.com/rails/rails/compare/master@{2013-01-01}...master</li>
 </ul>
 <p>查看 master 分支 2013 年 1 月 1 日与现在的区别。但是如果指定日期与现在的差别过大，或者指定日期过于久远，则无法显示。</p>
-<h2 id="Issue"><a href="#Issue" class="headerlink" title="Issue"></a>Issue</h2><p>用于 BUG 报告、功能添加、方向性讨论等，将这些以 Issue 形式进行管理。Pull Request 时也会创建 Issue。旁边显示的数字是当前处于Open 状态的 Issue 数。</p>
+<h2 id="issue">Issue</h2>
+<p>用于 BUG 报告、功能添加、方向性讨论等，将这些以 Issue 形式进行管理。Pull Request 时也会创建 Issue。旁边显示的数字是当前处于Open 状态的 Issue 数。</p>
 <p>在软件开发过程中，开发者们为了跟踪 BUG 及进行软件相关讨论，进而方便管理，创建了 Issue。管理 Issue 的系统称为 BTS（Bug Tracking System，BUG 跟踪系统）。当今具有代表性的 BTS 有 Redmine，Trac，Bugzilla等。GitHub 也为自身加入了 BTS 的功能。</p>
 <ul>
 <li>支持markdown语法</li>
@@ -583,11 +607,14 @@
 <li>支持添加标签整理 Issue</li>
 <li>支持添加里程碑来管理 Issue（类似于进度条的一个东西）</li>
 </ul>
-<h3 id="CONTRIBUTING-md"><a href="#CONTRIBUTING-md" class="headerlink" title="CONTRIBUTING.md"></a>CONTRIBUTING.md</h3><p>在描述 Issue 时，常常会看到贡献规范的链接。</p>
-<p>在该仓库的根目录下添加 CONTRIBUTING.md 文件后该链接就<br>会显示出来。规范的内容一般包括报告时Issue的描述方法、Pull Request 时的规则或要求、许可证的相关信息等。为了在开源项目开发中能与其他人和谐相处，请务必在贡献之前仔细阅读这些规范。</p>
-<h3 id="Tasklist语法"><a href="#Tasklist语法" class="headerlink" title="Tasklist语法"></a>Tasklist语法</h3><p>使用 GFM 的一项独有功能，那就是 Tasklist 语法。</p>
+<h3 id="contributing.md">CONTRIBUTING.md</h3>
+<p>在描述 Issue 时，常常会看到贡献规范的链接。</p>
+<p>在该仓库的根目录下添加 CONTRIBUTING.md 文件后该链接就 会显示出来。规范的内容一般包括报告时Issue的描述方法、Pull Request 时的规则或要求、许可证的相关信息等。为了在开源项目开发中能与其他人和谐相处，请务必在贡献之前仔细阅读这些规范。</p>
+<h3 id="tasklist语法">Tasklist语法</h3>
+<p>使用 GFM 的一项独有功能，那就是 Tasklist 语法。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 本月要做的任务</span><br><span class="line">- [ ] 完成图片</span><br><span class="line">- [x] 完成部署工具的设置</span><br><span class="line">- [ ] 实现抽签功能</span><br></pre></td></tr></table></figure>
-<h3 id="提交与Issue的交互"><a href="#提交与Issue的交互" class="headerlink" title="提交与Issue的交互"></a>提交与Issue的交互</h3><p>在 Issue 一览表中我们可以看到，每一个 Issue 标题的下面都分配了诸如“#24”的编号。只要<strong>在提交信息的描述中加入“#24”</strong>，就能在 Issue 中显示该提交的相关信息，使关联的提交一目了然。这里只需轻轻点击一下便可以显示相应提交的具体内容，在代码审查时省去了从大量提交日志中搜索相应提交的麻烦，非常方便。</p>
+<h3 id="提交与issue的交互">提交与Issue的交互</h3>
+<p>在 Issue 一览表中我们可以看到，每一个 Issue 标题的下面都分配了诸如“#24”的编号。只要<strong>在提交信息的描述中加入“#24”</strong>，就能在 Issue 中显示该提交的相关信息，使关联的提交一目了然。这里只需轻轻点击一下便可以显示相应提交的具体内容，在代码审查时省去了从大量提交日志中搜索相应提交的麻烦，非常方便。</p>
 <p>如果一个处于 Open 状态的 Issue 已经处理完毕，只要在该提交中以下列任意一种格式描述提交信息，对应的 Issue 就会被 Close。</p>
 <ul>
 <li>fix #24</li>
@@ -600,48 +627,70 @@
 <li>resolves #24</li>
 <li>resolved #24</li>
 </ul>
-<h3 id="Issue与Pull-Request"><a href="#Issue与Pull-Request" class="headerlink" title="Issue与Pull Request"></a>Issue与Pull Request</h3><p>在 GitHub 上，如果给 Issue 添加源代码，它就会变成我们马上要讲到的 Pull Request。Issue 与 Pull Request 的编号相互通用，通过 GitHub的 API 可以将特定的 Issue 转换为 Pull Request，能够完成这一操作的是 <code>hub</code> 命令。</p>
-<h2 id="Pull-Requests-1"><a href="#Pull-Requests-1" class="headerlink" title="Pull Requests"></a>Pull Requests</h2><p>显示用户已进行过的 Pull Request。通过这里，开发者可以很方便地追踪 Pull Request 的后续情况。</p>
+<h3 id="issue与pull-request">Issue与Pull Request</h3>
+<p>在 GitHub 上，如果给 Issue 添加源代码，它就会变成我们马上要讲到的 Pull Request。Issue 与 Pull Request 的编号相互通用，通过 GitHub的 API 可以将特定的 Issue 转换为 Pull Request，能够完成这一操作的是 <code>hub</code> 命令。</p>
+<h2 id="pullrequests-1">Pull Requests</h2>
+<p>显示用户已进行过的 Pull Request。通过这里，开发者可以很方便地追踪 Pull Request 的后续情况。</p>
 <p>Pull Request 是用户修改代码后向对方仓库发送采纳请求的功能。在列表中点击特定的 Pull Request 就会进入详细页面。页面上方显示着这次是从谁的哪个分支向谁的哪个分支发送了 Pull Request。</p>
-<h3 id="链接妙用"><a href="#链接妙用" class="headerlink" title="链接妙用"></a>链接妙用</h3><p>假设 Pull…Request 的 URL 如下所示。</p>
-<pre><code>https://github.com/用户名/仓库名/pull/28
-</code></pre><p>如果想获取 diff 格式的文件，只要像下面这样在 URL 末尾<br>添加 .diff 即可。</p>
-<pre><code>https://github.com/用户名/仓库名/pull/28.diff
-</code></pre><p>同 理， 想 要 patch 格 式 的 文 件， 只 需 要 在 URL 末 尾 添加 .patch 即可。<br>　　　<br>    <a href="https://github.com/用户名/仓库名/pull/28.patch" target="_blank" rel="noopener">https://github.com/用户名/仓库名/pull/28.patch</a></p>
-<h3 id="Conversation"><a href="#Conversation" class="headerlink" title="Conversation"></a>Conversation</h3><p>可以查看与当前 Pull Request 相关的所有评论以及提交的历史记录。提交日志的右侧有该提交的哈希值，点击链接即可确认相应提交的详细信息。</p>
+<h3 id="链接妙用">链接妙用</h3>
+<p>假设 Pull…Request 的 URL 如下所示。</p>
+<pre><code>https://github.com/用户名/仓库名/pull/28</code></pre>
+<p>如果想获取 diff 格式的文件，只要像下面这样在 URL 末尾 添加 .diff 即可。</p>
+<pre><code>https://github.com/用户名/仓库名/pull/28.diff</code></pre>
+<p>同 理， 想 要 patch 格 式 的 文 件， 只 需 要 在 URL 末 尾 添加 .patch 即可。 　　　 https://github.com/用户名/仓库名/pull/28.patch</p>
+<h3 id="conversation">Conversation</h3>
+<p>可以查看与当前 Pull Request 相关的所有评论以及提交的历史记录。提交日志的右侧有该提交的哈希值，点击链接即可确认相应提交的详细信息。</p>
 <p>可以使用R键快速引用选中的评论。</p>
-<h3 id="Commits"><a href="#Commits" class="headerlink" title="Commits"></a>Commits</h3><p>在 Commits 标签页中，按时间顺序列表显示了与当前 Pull Request相关的提交。标签上的数字为提交的次数。每个提交右侧的哈希值可以连接到该提交的代码。</p>
+<h3 id="commits">Commits</h3>
+<p>在 Commits 标签页中，按时间顺序列表显示了与当前 Pull Request相关的提交。标签上的数字为提交的次数。每个提交右侧的哈希值可以连接到该提交的代码。</p>
 <p>在评论中输入“:”（冒号）便会启动表情自动补全功能。只要输入几个与该表情相关的字母，系统就会为您筛选自动补全的对象。选择想要的表情，其相应代码（前后都有冒号的字符串）便会插入到文本框中。</p>
-<p>（请登录 <a href="http://www.emoji" target="_blank" rel="noopener">http://www.emoji</a> - cheat - sheet.com/ 查找可使用的表情）</p>
-<h3 id="Files-Changed"><a href="#Files-Changed" class="headerlink" title="Files Changed"></a>Files Changed</h3><p>Files Changed 标签页中可以查看当前 Pull Request 更改的文件内容以及前后差别。标签上的数字表示新建及被更改的文件数。默认情况下系统会将空格的不同也高亮显示，所以在空格有改动的情况下会难以阅读。这时只要在 URL 的末尾添加“?w=1”就可以不显示空格的差别。将鼠标指针放到被更改行行号的左侧，我们会看到一个加号。点击这个加号可以在代码中插入评论。这样，评论是针对哪行代码的就一目了然了。</p>
-<h2 id="Wiki"><a href="#Wiki" class="headerlink" title="Wiki"></a>Wiki</h2><p>Wiki 是一种比 HTML 语法更简单的页面描述功能。常用于记录开发者之间应该共享的信息或软件文档。数字表示当前 Wiki 的页面数量。所有<br>有权限的人都可以对文章进行修改，所以比较适合多人共同编写文章的情况。创建、编辑文档时不必另外启动软件，用起来十分方便，非常适合用来针对更新频率较高的软件进行文档等信息方面的汇总。一般情况下，Wiki 中记载着软件相关的 FAQ、文档、代码示例及解说等信息。</p>
+<p>（请登录 http://www.emoji - cheat - sheet.com/ 查找可使用的表情）</p>
+<h3 id="fileschanged">Files Changed</h3>
+<p>Files Changed 标签页中可以查看当前 Pull Request 更改的文件内容以及前后差别。标签上的数字表示新建及被更改的文件数。默认情况下系统会将空格的不同也高亮显示，所以在空格有改动的情况下会难以阅读。这时只要在 URL 的末尾添加“?w=1”就可以不显示空格的差别。将鼠标指针放到被更改行行号的左侧，我们会看到一个加号。点击这个加号可以在代码中插入评论。这样，评论是针对哪行代码的就一目了然了。</p>
+<h2 id="wiki">Wiki</h2>
+<p>Wiki 是一种比 HTML 语法更简单的页面描述功能。常用于记录开发者之间应该共享的信息或软件文档。数字表示当前 Wiki 的页面数量。所有 有权限的人都可以对文章进行修改，所以比较适合多人共同编写文章的情况。创建、编辑文档时不必另外启动软件，用起来十分方便，非常适合用来针对更新频率较高的软件进行文档等信息方面的汇总。一般情况下，Wiki 中记载着软件相关的 FAQ、文档、代码示例及解说等信息。</p>
 <ul>
 <li>支持GFM。</li>
-<li>Wiki 功能本身的数据也在 Git 中进行管理。<ul>
+<li>Wiki 功能本身的数据也在 Git 中进行管理。
+<ul>
 <li>用户能够通过 clone操作获取 Wiki 仓库，然后在本地创建、编辑页面，进行提交再 push，便可以完成对 Wiki 的创建及编辑工作。</li>
-</ul>
-</li>
+</ul></li>
 <li>在 Pages 标签页中可以列表查看 Wiki 页面。</li>
 <li>在 History 标签页中可以查看 Wiki 的修改历史记录。</li>
-<li>所有 Wiki 页面都可以显示侧边栏。<ul>
+<li>所有 Wiki 页面都可以显示侧边栏。
+<ul>
 <li>做法很简单，只要创建名为“_sidebar”的页面即可。_sidebar 页不会显示在 Pages 的页面一览中。在编辑各页面时页面下部会附加 Sidebar 段，用户可以在这里编辑侧边栏的内容。</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="Graphs-1"><a href="#Graphs-1" class="headerlink" title="Graphs"></a>Graphs</h2><p>在 Graphs 页中，可以通过 4 种图表查看该仓库的相关统计信息。</p>
-<h3 id="Code-Frequency"><a href="#Code-Frequency" class="headerlink" title="Code Frequency"></a>Code Frequency</h3><p>Code Frequency 中显示了该仓库中代码行数的增加量和删除量。一款优秀的软件并不会一味地增加代码，在经过重构之后，代码量往往会降低。</p>
-<h3 id="Punchcard"><a href="#Punchcard" class="headerlink" title="Punchcard"></a>Punchcard</h3><p>从 Punchcard 的图中我们可以直观地掌握一周内每天何时收到的提交最多。黑色圆越大，表示提交越频繁。仓库的关键人物往往会出现在提交频率高的时间段，因此用户发送的 Pull Request 最有可能在这段时间内被处理。大致了解时间规律，将有助于各位把握好发送 Pull Request 以及等待回复的时间点。另外，该软件的开发是集中在早上还是晚上，从这张图中也可一目了然。</p>
-<h2 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h2><p>以图表形式显示包括克隆仓库在内的所有分支的提交。从图上可以直观地看出每个人做了多少工作。将鼠标指针停留在表中提交或合并的点上，可以查看相应的参考内容。</p>
-<h2 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h2><p>关于仓库的设置。</p>
-<h3 id="GitHub-Pages"><a href="#GitHub-Pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h3><p>GitHub 有一个名为 GitHub Pages 的仓库，用户可以利用该仓库中的资料创建 Web 页，用来发布仓库中软件的相关信息。如果已经创建过GitHub Pages，则会显示相应 URL。点击 Automatic Page Generator 即可以自动创建 GitHub Pages。</p>
-<h3 id="Collaborators"><a href="#Collaborators" class="headerlink" title="Collaborators"></a>Collaborators</h3><p>用户主要在这里设置仓库的访问权限。如果仓库隶属于个人账户，那么可以添加 GitHub 的用户名，赋予该用户直接读写仓库的权限。不过，如果仓库隶属于 Organization 账户，则需要像所示的那样先创建 Team，然后赋予该 Team 读写仓库的权限。像这样使用 Organization 账户可以高效地设置仓库权限，在公司等多人共同进行开发的组织中，建议使用 Organization 账户。</p>
-<h3 id="Webhooks-amp-Services"><a href="#Webhooks-amp-Services" class="headerlink" title="Webhooks &amp; Services"></a>Webhooks &amp; Services</h3><p>在这个页面中，用户可以添加 Hook 让 GitHub 仓库与其他服务集成。通过 Add webhook 可以添加用户自己的 webhook。通过 Configureservices 则可以从 GitHub 事先列出的可以集成的服务中进行选择。能与GitHub 集成的服务非常多，其中还包括邮件及 IRC 等社交服务。</p>
-<h3 id="Deploy-Keys"><a href="#Deploy-Keys" class="headerlink" title="Deploy Keys"></a>Deploy Keys</h3><p>在这个页面中，用户可以添加用于部署的公开密钥，允许以只读方式访问仓库。设置公开密钥后，用户可以使用私有密钥通过 ssh 协议 clone 仓库。要注意的是，这里添加的公开密钥·私有密钥对无法再添加到其他仓库。使用 Deploy Keys 功能时，需要给每个仓库赋予不同的密钥对。</p>
-<h2 id="Notifications"><a href="#Notifications" class="headerlink" title="Notifications"></a>Notifications</h2><p>每当创建 Issue、收到评论、创建 Pull Request 等情况发生时，我们就会在 Notifications 中收到通知。</p>
-<h2 id="其他功能"><a href="#其他功能" class="headerlink" title="其他功能"></a>其他功能</h2><h3 id="GitHub-Pages-1"><a href="#GitHub-Pages-1" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h3><p>GitHub Pages 主要用于在 GitHub 上托管静态 HTML，以便发布项目的 Web 页。可以绑定独立域名。常被使用为静态博客。</p>
-<h3 id="GitHub-Enterprise"><a href="#GitHub-Enterprise" class="headerlink" title="GitHub Enterprise"></a>GitHub Enterprise</h3><p>GitHub Enterprise 专为那些无法将源代码放到公司之外的企业设计。这项服务可以以虚拟机的形式提供 GitHub。</p>
-<h3 id="GitHub-API"><a href="#GitHub-API" class="headerlink" title="GitHub API"></a>GitHub API</h3><p>GitHub 面向开发者公开了 API。</p>
-<h1 id="Gist-1"><a href="#Gist-1" class="headerlink" title="Gist"></a>Gist</h1><p>Gist 是一款简单的 Web 应用程序，常被开发者们用来共享示例代码和错误信息。它使用JavaScript 编写的 Ace 编辑器，只需打开浏览器便可编写简单代码。另外，Gist 中的文档都在版本管理系统的管理之下，用户可以放心编辑。而且由于其版本历史记录保管在 Git 仓库中，所以还可以通过clone 操作将 Gist 获取至本地。共享 Gist 的人之间能够互相添加评论，所有交流都会被记录下来。Gist 支持多种语言的语法高亮，可以大幅增强代码可读性。可以说，这一工具就是专为程序员设计的。</p>
+<h2 id="graphs-1">Graphs</h2>
+<p>在 Graphs 页中，可以通过 4 种图表查看该仓库的相关统计信息。</p>
+<h3 id="codefrequency">Code Frequency</h3>
+<p>Code Frequency 中显示了该仓库中代码行数的增加量和删除量。一款优秀的软件并不会一味地增加代码，在经过重构之后，代码量往往会降低。</p>
+<h3 id="punchcard">Punchcard</h3>
+<p>从 Punchcard 的图中我们可以直观地掌握一周内每天何时收到的提交最多。黑色圆越大，表示提交越频繁。仓库的关键人物往往会出现在提交频率高的时间段，因此用户发送的 Pull Request 最有可能在这段时间内被处理。大致了解时间规律，将有助于各位把握好发送 Pull Request 以及等待回复的时间点。另外，该软件的开发是集中在早上还是晚上，从这张图中也可一目了然。</p>
+<h2 id="network">Network</h2>
+<p>以图表形式显示包括克隆仓库在内的所有分支的提交。从图上可以直观地看出每个人做了多少工作。将鼠标指针停留在表中提交或合并的点上，可以查看相应的参考内容。</p>
+<h2 id="settings">Settings</h2>
+<p>关于仓库的设置。</p>
+<h3 id="githubpages">GitHub Pages</h3>
+<p>GitHub 有一个名为 GitHub Pages 的仓库，用户可以利用该仓库中的资料创建 Web 页，用来发布仓库中软件的相关信息。如果已经创建过GitHub Pages，则会显示相应 URL。点击 Automatic Page Generator 即可以自动创建 GitHub Pages。</p>
+<h3 id="collaborators">Collaborators</h3>
+<p>用户主要在这里设置仓库的访问权限。如果仓库隶属于个人账户，那么可以添加 GitHub 的用户名，赋予该用户直接读写仓库的权限。不过，如果仓库隶属于 Organization 账户，则需要像所示的那样先创建 Team，然后赋予该 Team 读写仓库的权限。像这样使用 Organization 账户可以高效地设置仓库权限，在公司等多人共同进行开发的组织中，建议使用 Organization 账户。</p>
+<h3 id="webhooksservices">Webhooks &amp; Services</h3>
+<p>在这个页面中，用户可以添加 Hook 让 GitHub 仓库与其他服务集成。通过 Add webhook 可以添加用户自己的 webhook。通过 Configureservices 则可以从 GitHub 事先列出的可以集成的服务中进行选择。能与GitHub 集成的服务非常多，其中还包括邮件及 IRC 等社交服务。</p>
+<h3 id="deploykeys">Deploy Keys</h3>
+<p>在这个页面中，用户可以添加用于部署的公开密钥，允许以只读方式访问仓库。设置公开密钥后，用户可以使用私有密钥通过 ssh 协议 clone 仓库。要注意的是，这里添加的公开密钥·私有密钥对无法再添加到其他仓库。使用 Deploy Keys 功能时，需要给每个仓库赋予不同的密钥对。</p>
+<h2 id="notifications">Notifications</h2>
+<p>每当创建 Issue、收到评论、创建 Pull Request 等情况发生时，我们就会在 Notifications 中收到通知。</p>
+<h2 id="其他功能">其他功能</h2>
+<h3 id="githubpages-1">GitHub Pages</h3>
+<p>GitHub Pages 主要用于在 GitHub 上托管静态 HTML，以便发布项目的 Web 页。可以绑定独立域名。常被使用为静态博客。</p>
+<h3 id="githubenterprise">GitHub Enterprise</h3>
+<p>GitHub Enterprise 专为那些无法将源代码放到公司之外的企业设计。这项服务可以以虚拟机的形式提供 GitHub。</p>
+<h3 id="githubapi">GitHub API</h3>
+<p>GitHub 面向开发者公开了 API。</p>
+<h1 id="gist-1">Gist</h1>
+<p>Gist 是一款简单的 Web 应用程序，常被开发者们用来共享示例代码和错误信息。它使用JavaScript 编写的 Ace 编辑器，只需打开浏览器便可编写简单代码。另外，Gist 中的文档都在版本管理系统的管理之下，用户可以放心编辑。而且由于其版本历史记录保管在 Git 仓库中，所以还可以通过clone 操作将 Gist 获取至本地。共享 Gist 的人之间能够互相添加评论，所有交流都会被记录下来。Gist 支持多种语言的语法高亮，可以大幅增强代码可读性。可以说，这一工具就是专为程序员设计的。</p>
 
       
     </div>
@@ -980,7 +1029,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代码管理方式——集中与分散"><span class="nav-number">1.</span> <span class="nav-text">代码管理方式——集中与分散</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#集中型"><span class="nav-number">1.1.</span> <span class="nav-text">集中型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分散型"><span class="nav-number">1.2.</span> <span class="nav-text">分散型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GitHub相关"><span class="nav-number">2.</span> <span class="nav-text">GitHub相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#快捷键"><span class="nav-number">2.1.</span> <span class="nav-text">快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Explore"><span class="nav-number">2.2.</span> <span class="nav-text">Explore</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gist"><span class="nav-number">2.3.</span> <span class="nav-text">Gist</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Blog"><span class="nav-number">2.4.</span> <span class="nav-text">Blog</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#github上的交流："><span class="nav-number">2.5.</span> <span class="nav-text">github上的交流：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#News-Feed"><span class="nav-number">2.6.</span> <span class="nav-text">News Feed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Issues"><span class="nav-number">2.7.</span> <span class="nav-text">Issues</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Broadcast"><span class="nav-number">2.8.</span> <span class="nav-text">Broadcast</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Your-Repositories"><span class="nav-number">2.9.</span> <span class="nav-text">Your Repositories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Public-contributions"><span class="nav-number">2.10.</span> <span class="nav-text">Public contributions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Public-Activity"><span class="nav-number">2.11.</span> <span class="nav-text">Public Activity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pull-Requests"><span class="nav-number">2.12.</span> <span class="nav-text">Pull Requests</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pulse"><span class="nav-number">2.13.</span> <span class="nav-text">Pulse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Graphs"><span class="nav-number">2.14.</span> <span class="nav-text">Graphs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Clone-in-Desktop"><span class="nav-number">2.15.</span> <span class="nav-text">Clone in Desktop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#releases"><span class="nav-number">2.16.</span> <span class="nav-text">releases</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compare-amp-review"><span class="nav-number">2.17.</span> <span class="nav-text">Compare &amp; review</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行链接"><span class="nav-number">2.18.</span> <span class="nav-text">行链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URL使用技巧"><span class="nav-number">2.19.</span> <span class="nav-text">URL使用技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Issue"><span class="nav-number">2.20.</span> <span class="nav-text">Issue</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CONTRIBUTING-md"><span class="nav-number">2.20.1.</span> <span class="nav-text">CONTRIBUTING.md</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tasklist语法"><span class="nav-number">2.20.2.</span> <span class="nav-text">Tasklist语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交与Issue的交互"><span class="nav-number">2.20.3.</span> <span class="nav-text">提交与Issue的交互</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Issue与Pull-Request"><span class="nav-number">2.20.4.</span> <span class="nav-text">Issue与Pull Request</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pull-Requests-1"><span class="nav-number">2.21.</span> <span class="nav-text">Pull Requests</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#链接妙用"><span class="nav-number">2.21.1.</span> <span class="nav-text">链接妙用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conversation"><span class="nav-number">2.21.2.</span> <span class="nav-text">Conversation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Commits"><span class="nav-number">2.21.3.</span> <span class="nav-text">Commits</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Files-Changed"><span class="nav-number">2.21.4.</span> <span class="nav-text">Files Changed</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Wiki"><span class="nav-number">2.22.</span> <span class="nav-text">Wiki</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Graphs-1"><span class="nav-number">2.23.</span> <span class="nav-text">Graphs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-Frequency"><span class="nav-number">2.23.1.</span> <span class="nav-text">Code Frequency</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Punchcard"><span class="nav-number">2.23.2.</span> <span class="nav-text">Punchcard</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network"><span class="nav-number">2.24.</span> <span class="nav-text">Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Settings"><span class="nav-number">2.25.</span> <span class="nav-text">Settings</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub-Pages"><span class="nav-number">2.25.1.</span> <span class="nav-text">GitHub Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Collaborators"><span class="nav-number">2.25.2.</span> <span class="nav-text">Collaborators</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Webhooks-amp-Services"><span class="nav-number">2.25.3.</span> <span class="nav-text">Webhooks &amp; Services</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-Keys"><span class="nav-number">2.25.4.</span> <span class="nav-text">Deploy Keys</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Notifications"><span class="nav-number">2.26.</span> <span class="nav-text">Notifications</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他功能"><span class="nav-number">2.27.</span> <span class="nav-text">其他功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub-Pages-1"><span class="nav-number">2.27.1.</span> <span class="nav-text">GitHub Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub-Enterprise"><span class="nav-number">2.27.2.</span> <span class="nav-text">GitHub Enterprise</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub-API"><span class="nav-number">2.27.3.</span> <span class="nav-text">GitHub API</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Gist-1"><span class="nav-number">3.</span> <span class="nav-text">Gist</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代码管理方式集中与分散"><span class="nav-number">1.</span> <span class="nav-text">代码管理方式——集中与分散</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#集中型"><span class="nav-number">1.1.</span> <span class="nav-text">集中型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分散型"><span class="nav-number">1.2.</span> <span class="nav-text">分散型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#github相关"><span class="nav-number">2.</span> <span class="nav-text">GitHub相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#快捷键"><span class="nav-number">2.1.</span> <span class="nav-text">快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#explore"><span class="nav-number">2.2.</span> <span class="nav-text">Explore</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gist"><span class="nav-number">2.3.</span> <span class="nav-text">Gist</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#blog"><span class="nav-number">2.4.</span> <span class="nav-text">Blog</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#github上的交流"><span class="nav-number">2.5.</span> <span class="nav-text">github上的交流：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#news-feed"><span class="nav-number">2.6.</span> <span class="nav-text">News Feed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#issues"><span class="nav-number">2.7.</span> <span class="nav-text">Issues</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#broadcast"><span class="nav-number">2.8.</span> <span class="nav-text">Broadcast</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yourrepositories"><span class="nav-number">2.9.</span> <span class="nav-text">Your Repositories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#publiccontributions"><span class="nav-number">2.10.</span> <span class="nav-text">Public contributions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#publicactivity"><span class="nav-number">2.11.</span> <span class="nav-text">Public Activity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullrequests"><span class="nav-number">2.12.</span> <span class="nav-text">Pull Requests</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pulse"><span class="nav-number">2.13.</span> <span class="nav-text">Pulse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#graphs"><span class="nav-number">2.14.</span> <span class="nav-text">Graphs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cloneindesktop"><span class="nav-number">2.15.</span> <span class="nav-text">Clone in Desktop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#releases"><span class="nav-number">2.16.</span> <span class="nav-text">releases</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#comparereview"><span class="nav-number">2.17.</span> <span class="nav-text">Compare &amp; review</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行链接"><span class="nav-number">2.18.</span> <span class="nav-text">行链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#url使用技巧"><span class="nav-number">2.19.</span> <span class="nav-text">URL使用技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#issue"><span class="nav-number">2.20.</span> <span class="nav-text">Issue</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#contributing.md"><span class="nav-number">2.20.1.</span> <span class="nav-text">CONTRIBUTING.md</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tasklist语法"><span class="nav-number">2.20.2.</span> <span class="nav-text">Tasklist语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交与issue的交互"><span class="nav-number">2.20.3.</span> <span class="nav-text">提交与Issue的交互</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#issue与pull-request"><span class="nav-number">2.20.4.</span> <span class="nav-text">Issue与Pull Request</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullrequests-1"><span class="nav-number">2.21.</span> <span class="nav-text">Pull Requests</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#链接妙用"><span class="nav-number">2.21.1.</span> <span class="nav-text">链接妙用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#conversation"><span class="nav-number">2.21.2.</span> <span class="nav-text">Conversation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#commits"><span class="nav-number">2.21.3.</span> <span class="nav-text">Commits</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fileschanged"><span class="nav-number">2.21.4.</span> <span class="nav-text">Files Changed</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wiki"><span class="nav-number">2.22.</span> <span class="nav-text">Wiki</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#graphs-1"><span class="nav-number">2.23.</span> <span class="nav-text">Graphs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#codefrequency"><span class="nav-number">2.23.1.</span> <span class="nav-text">Code Frequency</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#punchcard"><span class="nav-number">2.23.2.</span> <span class="nav-text">Punchcard</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#network"><span class="nav-number">2.24.</span> <span class="nav-text">Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#settings"><span class="nav-number">2.25.</span> <span class="nav-text">Settings</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#githubpages"><span class="nav-number">2.25.1.</span> <span class="nav-text">GitHub Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#collaborators"><span class="nav-number">2.25.2.</span> <span class="nav-text">Collaborators</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webhooksservices"><span class="nav-number">2.25.3.</span> <span class="nav-text">Webhooks &amp; Services</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deploykeys"><span class="nav-number">2.25.4.</span> <span class="nav-text">Deploy Keys</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#notifications"><span class="nav-number">2.26.</span> <span class="nav-text">Notifications</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他功能"><span class="nav-number">2.27.</span> <span class="nav-text">其他功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#githubpages-1"><span class="nav-number">2.27.1.</span> <span class="nav-text">GitHub Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#githubenterprise"><span class="nav-number">2.27.2.</span> <span class="nav-text">GitHub Enterprise</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#githubapi"><span class="nav-number">2.27.3.</span> <span class="nav-text">GitHub API</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gist-1"><span class="nav-number">3.</span> <span class="nav-text">Gist</span></a></li></ol></div>
             
 
           </div>

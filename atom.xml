@@ -29,9 +29,11 @@
       
         
         
-          &lt;p&gt;当一个用户在地址栏输入&lt;a href=&quot;http://www.baidu.com过程：&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;www.baidu.com过程：&lt;/a&gt;&lt;/p&gt;
+          &lt;p&gt;当一个用户在地址栏输入www.baidu.com过程：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a
+&lt;p&gt;https://www.cnblogs.com/lidong94/p/8309130.html&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;域名解析 --&amp;gt;
         
       
     
@@ -75,7 +77,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;最近一直在看《如懿传》，如懿深陷冷宫，不知后续如何…&lt;/p&gt;
+      &lt;p&gt;最近一直在看《如懿传》，如懿深陷冷宫，不知后续如何...&lt;/p&gt;
     
     </summary>
     
@@ -131,7 +133,11 @@
       
         
         
-          &lt;h1 id=&quot;python爬虫工具集合&quot;&gt;&lt;a href=&quot;#python爬虫工具集合&quot; class=&quot;headerlink&quot;
+          &lt;h1 id=&quot;python爬虫工具集合&quot;&gt;python爬虫工具集合&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;主要针对python3&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2
         
       
     
@@ -160,7 +166,7 @@
         
         
           &lt;blockquote&gt;
-&lt;p&gt;链接 &lt;a href=&quot;http://python.jobbole.com/61171/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Python高级编程技巧&lt;/a&gt;&lt;br&gt;连接 &lt;a
+&lt;p&gt;链接 &lt;a href=&quot;http://python.jobbole.com/61171/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Python高级编程技巧&lt;/a&gt; 连接 &lt;a
         
       
     
@@ -232,7 +238,8 @@
       
         
         
-          &lt;p&gt;&lt;img src=&quot;https://goss.veer.com/creative/vcg/veer/1600water/veer-145909347.jpg&quot; alt=&quot;配图&quot;
+          &lt;figure&gt;
+&lt;img src=&quot;https://goss.veer.com/creative/vcg/veer/1600water/veer-145909347.jpg&quot; title=&quot;夜色下的玉兰花&quot;
         
       
     
@@ -260,7 +267,11 @@
       
         
         
-          &lt;h1 id=&quot;又是一次新的尝试&quot;&gt;&lt;a href=&quot;#又是一次新的尝试&quot; class=&quot;headerlink&quot;
+          &lt;h1 id=&quot;又是一次新的尝试&quot;&gt;又是一次新的尝试&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;写下这篇文章的时间：2018年5月23日22:46:25&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2
         
       
     
@@ -286,8 +297,10 @@
       
         
         
-          &lt;p&gt;&lt;img src=&quot;https://cdn.gratisography.com/photos/444H.jpg&quot; alt=&quot;飞翔的鲸&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;第一千天的时候&quot;&gt;&lt;a href=&quot;#第一千天的时候&quot; class=&quot;headerlink&quot;
+          &lt;figure&gt;
+&lt;img src=&quot;https://cdn.gratisography.com/photos/444H.jpg&quot; alt=&quot;飞翔的鲸&quot;&gt;&lt;figcaption&gt;飞翔的鲸&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h1
         
       
     
@@ -315,8 +328,8 @@
       
         
         
-          &lt;p&gt;&lt;img src=&quot;https://img1.doubanio.com/lpic/s27080847.jpg&quot; alt=&quot;Processing权威指南&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;我与Processing&quot;&gt;&lt;a href=&quot;#我与Processing&quot;
+          &lt;figure&gt;
+&lt;img src=&quot;https://img1.doubanio.com/lpic/s27080847.jpg&quot;
         
       
     
@@ -342,7 +355,8 @@
       
         
         
-          &lt;h1 id=&quot;设计要求&quot;&gt;&lt;a href=&quot;#设计要求&quot; class=&quot;headerlink&quot;
+          &lt;h1 id=&quot;设计要求&quot;&gt;设计要求&lt;/h1&gt;
+&lt;ol
         
       
     
@@ -370,7 +384,9 @@
       
         
         
-          &lt;h1 id=&quot;一维细胞自动机&quot;&gt;&lt;a href=&quot;#一维细胞自动机&quot; class=&quot;headerlink&quot; title=&quot;一维细胞自动机&quot;&gt;&lt;/a&gt;一维细胞自动机&lt;/h1&gt;&lt;p&gt;&lt;img
+          &lt;h1 id=&quot;一维细胞自动机&quot;&gt;一维细胞自动机&lt;/h1&gt;
+&lt;figure&gt;
+&lt;img src=&quot;https://wx3.sinaimg.cn/mw1024/a6bff99cly1fpphnr62iej20rt0dxdgs.jpg&quot;
         
       
     
@@ -396,10 +412,13 @@
       
         
         
-          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;第一章  微型计算机概述&lt;/li&gt;
-&lt;li&gt;第二章  16位微处理器8086&lt;/li&gt;
-&lt;li&gt;第三章 
+          &lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;第一章 微型计算机概述&lt;/li&gt;
+&lt;li&gt;第二章 16位微处理器8086&lt;/li&gt;
+&lt;li&gt;第三章 指令系统&lt;/li&gt;
+&lt;li&gt;第四章 汇编语言程序设计&lt;/li&gt;
+&lt;li&gt;第五章
         
       
     
@@ -427,10 +446,13 @@
       
         
         
-          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;第一章  微型计算机概述&lt;/li&gt;
-&lt;li&gt;第二章  16位微处理器8086&lt;/li&gt;
-&lt;li&gt;第三章 
+          &lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;第一章 微型计算机概述&lt;/li&gt;
+&lt;li&gt;第二章 16位微处理器8086&lt;/li&gt;
+&lt;li&gt;第三章 指令系统&lt;/li&gt;
+&lt;li&gt;第四章 汇编语言程序设计&lt;/li&gt;
+&lt;li&gt;第五章
         
       
     
@@ -458,10 +480,13 @@
       
         
         
-          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;第一章  微型计算机概述&lt;/li&gt;
-&lt;li&gt;第二章  16位微处理器8086&lt;/li&gt;
-&lt;li&gt;第三章 
+          &lt;h1 id=&quot;目录&quot;&gt;目录&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;第一章 微型计算机概述&lt;/li&gt;
+&lt;li&gt;第二章 16位微处理器8086&lt;/li&gt;
+&lt;li&gt;第三章 指令系统&lt;/li&gt;
+&lt;li&gt;第四章 汇编语言程序设计&lt;/li&gt;
+&lt;li&gt;第五章
         
       
     
@@ -489,7 +514,10 @@
       
         
         
-          &lt;h1 id=&quot;一&quot;&gt;&lt;a href=&quot;#一&quot; class=&quot;headerlink&quot;
+          &lt;h1 id=&quot;一&quot;&gt;一&lt;/h1&gt;
+&lt;p&gt;2017年转瞬即逝，倏忽间，便已是2018。&lt;/p&gt;
+&lt;p&gt;回顾2017，我所希望的目的是，可以找到自己的不足，找到更多的缺点，找到，那个熟悉的自己。&lt;/p&gt;
+&lt;h1
         
       
     
@@ -516,7 +544,9 @@
         
         
           &lt;blockquote&gt;
-&lt;p&gt;主站：&lt;a href=&quot;https://lartpang.github.io/&quot; target=&quot;_blank&quot;
+&lt;p&gt;主站：https://lartpang.github.io/&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;之前一阵子，在EDX上学习了R语言的一门基础课程，这里做个总结。这门课程主要侧重于R的数据结构的介绍，当然也介绍了它的基本的绘图手段。&lt;/
         
       
     
@@ -530,11 +560,11 @@
   </entry>
   
   <entry>
-    <title>chuck7</title>
-    <link href="https://plart.pw/2018/02/15/langs/chuck/chuck7/"/>
-    <id>https://plart.pw/2018/02/15/langs/chuck/chuck7/</id>
+    <title>chuck4</title>
+    <link href="https://plart.pw/2018/02/15/langs/chuck/chuck4/"/>
+    <id>https://plart.pw/2018/02/15/langs/chuck/chuck4/</id>
     <published>2018-02-15T13:40:10.000Z</published>
-    <updated>2018-07-13T12:47:00.040Z</updated>
+    <updated>2018-07-13T12:46:46.446Z</updated>
     
     <summary type="html">
     
@@ -542,12 +572,9 @@
       
         
         
-          &lt;p&gt;manipulating time&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;time and duration&lt;/li&gt;
-&lt;li&gt;operations (arithmetic)&lt;/li&gt;
-&lt;li&gt;the keyword ‘now’&lt;/li&gt;
-&lt;li&gt;advancing
+          &lt;p&gt;arrays * declaring * multi-dimensional * lookup * associative arrays * assignment&lt;/p&gt;
+&lt;p&gt;#Arrays&lt;/p&gt;
+&lt;p&gt;This sections specifies(指定)
         
       
     

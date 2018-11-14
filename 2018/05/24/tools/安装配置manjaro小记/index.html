@@ -125,18 +125,18 @@
 
 
 
-  <meta name="description" content="又是一次新的尝试 写下这篇文章的时间：2018年5月23日22:46:25  使用的工具 manjaro-kde-17.1.7-stable-x86_64.iso rufus-2.18.exe AUSU X555L Core i3-5010U CPU @ 2.10GHz 2.10GHz RAM 4.00GB  Win8.1 X64 一个容量合适的U盘  安装使用 rufus 来制作启动U盘。BIO">
+  <meta name="description" content="又是一次新的尝试  写下这篇文章的时间：2018年5月23日22:46:25  使用的工具  manjaro-kde-17.1.7-stable-x86_64.iso rufus-2.18.exe AUSU X555L Core i3-5010U CPU @ 2.10GHz 2.10GHz RAM 4.00GB Win8.1 X64 一个容量合适的U盘  安装 使用 ru">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Manjaro小记">
 <meta property="og:url" content="https://plart.pw/2018/05/24/tools/安装配置manjaro小记/index.html">
 <meta property="og:site_name" content="失乐园">
-<meta property="og:description" content="又是一次新的尝试 写下这篇文章的时间：2018年5月23日22:46:25  使用的工具 manjaro-kde-17.1.7-stable-x86_64.iso rufus-2.18.exe AUSU X555L Core i3-5010U CPU @ 2.10GHz 2.10GHz RAM 4.00GB  Win8.1 X64 一个容量合适的U盘  安装使用 rufus 来制作启动U盘。BIO">
+<meta property="og:description" content="又是一次新的尝试  写下这篇文章的时间：2018年5月23日22:46:25  使用的工具  manjaro-kde-17.1.7-stable-x86_64.iso rufus-2.18.exe AUSU X555L Core i3-5010U CPU @ 2.10GHz 2.10GHz RAM 4.00GB Win8.1 X64 一个容量合适的U盘  安装 使用 ru">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-07-13T12:50:59.004Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Manjaro小记">
-<meta name="twitter:description" content="又是一次新的尝试 写下这篇文章的时间：2018年5月23日22:46:25  使用的工具 manjaro-kde-17.1.7-stable-x86_64.iso rufus-2.18.exe AUSU X555L Core i3-5010U CPU @ 2.10GHz 2.10GHz RAM 4.00GB  Win8.1 X64 一个容量合适的U盘  安装使用 rufus 来制作启动U盘。BIO">
+<meta name="twitter:description" content="又是一次新的尝试  写下这篇文章的时间：2018年5月23日22:46:25  使用的工具  manjaro-kde-17.1.7-stable-x86_64.iso rufus-2.18.exe AUSU X555L Core i3-5010U CPU @ 2.10GHz 2.10GHz RAM 4.00GB Win8.1 X64 一个容量合适的U盘  安装 使用 ru">
 
 
 
@@ -532,17 +532,20 @@
       
 
       
-        <h1 id="又是一次新的尝试"><a href="#又是一次新的尝试" class="headerlink" title="又是一次新的尝试"></a>又是一次新的尝试</h1><blockquote>
+        <h1 id="又是一次新的尝试">又是一次新的尝试</h1>
+<blockquote>
 <p>写下这篇文章的时间：2018年5月23日22:46:25</p>
 </blockquote>
-<h2 id="使用的工具"><a href="#使用的工具" class="headerlink" title="使用的工具"></a>使用的工具</h2><ul>
+<h2 id="使用的工具">使用的工具</h2>
+<ul>
 <li>manjaro-kde-17.1.7-stable-x86_64.iso</li>
 <li>rufus-2.18.exe</li>
-<li>AUSU X555L Core i3-5010U CPU @ 2.10GHz 2.10GHz RAM 4.00GB </li>
+<li>AUSU X555L Core i3-5010U CPU @ 2.10GHz 2.10GHz RAM 4.00GB</li>
 <li>Win8.1 X64</li>
 <li>一个容量合适的U盘</li>
 </ul>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>使用 rufus 来制作启动U盘。BIOS设置U盘启动。</p>
+<h2 id="安装">安装</h2>
+<p>使用 rufus 来制作启动U盘。BIOS设置U盘启动。</p>
 <p>由于直接使用ISO模式，我这里出现了非法错误的提示，转而使用DD模式，成功进入安装设置界面。</p>
 <p>界面很清晰，关键是驱动设定，选择闭源 —— non-free。</p>
 <p>选择中文。</p>
@@ -551,23 +554,25 @@
 <p>流程主要参看 <a href="https://blog.csdn.net/aaazz47/article/details/77416136?locationNum=6&amp;fps=1" target="_blank" rel="noopener">Manjaro Linux 17.0.2 KDE环境安装、配置记录</a>。</p>
 <p>问题是，我在手动分区的时候，划分了 /boot/efi（这里文件系统我是用的是fat32，安装后win下会出现一个新的盘符，在磁盘管理中，我将其隐藏了），/，/var，但是安装过程会提示出错。</p>
 <p>这里具体的错误已经忘记，但是多番尝试后，修改了挂载点，把 /var 改成了 交换分区。诶，这次竟然装上去了。</p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>初次进入系统后，首先要配置好源的问题。</p>
+<h2 id="配置">配置</h2>
+<p>初次进入系统后，首先要配置好源的问题。</p>
 <p>用vi（或者KDE自带编辑器Kate，当然命令行里的Nano也不错）编辑/etc/pacman.conf文件(sudo vi /etc/pacman.conf)，在文件底部添加下面几行:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustedOnly</span><br><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch</span><br></pre></td></tr></table></figure>
 <p>再执行来调整源顺序，<a href="https://blog.csdn.net/kxp9545/article/details/76138980" target="_blank" rel="noopener">使用国内源</a>。并更新系统，估计会有一个多G的内容要更新，等着吧。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman-mirrors -c China -g</span><br><span class="line"><span class="comment"># 这里我直接使用了KDE的更新管理器，就是托盘里那个小妖精...简单直接</span></span><br><span class="line">sudo pacman -Syyu</span><br></pre></td></tr></table></figure>
 <p>关于 pacman 命令可见以下文章：</p>
-<p><a href="https://wiki.archlinux.org/index.php/Pacman" target="_blank" rel="noopener">https://wiki.archlinux.org/index.php/Pacman</a></p>
-<p><a href="https://www.cnblogs.com/shengansong/archive/2011/11/19/2255129.html" target="_blank" rel="noopener">https://www.cnblogs.com/shengansong/archive/2011/11/19/2255129.html</a></p>
+<p>https://wiki.archlinux.org/index.php/Pacman</p>
+<p>https://www.cnblogs.com/shengansong/archive/2011/11/19/2255129.html</p>
 <p>之后就是常用软件的安装了。</p>
-<ol>
+<ol type="1">
 <li>终端使用vim（个人喜好，用了自己的配置文件。需要修改一些路径，字体就不用管，终端使用就这好处。）</li>
 <li>图形使用emacs —— spacemacs（使用develop版本，参考配置可见子龙山人的）。</li>
 <li>输入法使用fcitx-googlepinyin，我这里安装搜狗总是有问题，直接换了谷歌拼音。</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S gvim</span><br><span class="line">sudo pacman -S emacs</span><br><span class="line">sudo pacman -S git</span><br><span class="line"><span class="comment"># 关于fcitx可见 https://wiki.archlinux.org/index.php/Fcitx</span></span><br><span class="line">sudo pacman -S fcitx-googlepinyin</span><br><span class="line">sudo pacman -S fcitx-im         <span class="comment"># 全部安装</span></span><br><span class="line">sudo pacman -S fcitx-configtool <span class="comment"># 图形化配置工具</span></span><br><span class="line">sudo pacman -S kcm-fcitx <span class="comment"># KDE 的 Fcitx 输入法模块，似乎是可选的</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置中文输入法环境变量，相当于开启启动输入法，编辑~/.xprofile文件，增加下面几行(如果文件不存在，则新建)</span></span><br><span class="line"><span class="comment"># 可以通过 </span></span><br><span class="line"><span class="comment"># echo ~</span></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line"><span class="comment"># echo $HOME</span></span><br><span class="line"><span class="comment"># 来查看对应的位置</span></span><br><span class="line"></span><br><span class="line">exportGTK_IM_MODULE=fcitx</span><br><span class="line">exportQT_IM_MODULE=fcitx</span><br><span class="line">exportXMODIFIERS=<span class="string">"@im=fcitx"</span></span><br></pre></td></tr></table></figure>
 <p>如上安装后，gvim和emacs基本没有什么问题，但是输入法有些小问题，多次尝试后，就是输入字符出来的候选菜单里面不能显示文字，当我使用了 <code>fcitx-ui-light</code> 这个轻量级UI，发现正常了。（可在配置菜单里的高级中配置）。</p>
-<h2 id="没完没了"><a href="#没完没了" class="headerlink" title="没完没了"></a>没完没了</h2><p>KDE启动内存占用将近五百兆，虽然比win要省一些，但是还是想尝试点新的更给力的环境。于是，我瞄上了 <a href="https://i3wm.org/" target="_blank" rel="noopener">i3wm</a>，一个平铺式窗口管理器。</p>
+<h2 id="没完没了">没完没了</h2>
+<p>KDE启动内存占用将近五百兆，虽然比win要省一些，但是还是想尝试点新的更给力的环境。于是，我瞄上了 <a href="https://i3wm.org/" target="_blank" rel="noopener">i3wm</a>，一个平铺式窗口管理器。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S i3</span><br></pre></td></tr></table></figure>
 <p>注销用户，登录界面的 <code>会话</code> 选择 <code>i3</code> 。</p>
 <p>进来的时候，发现只有屏幕最下方的显示有变化，变成了一条看似酷炫缺什么也做不了的状态栏。</p>
@@ -575,17 +580,18 @@
 <p>所以刚进的时候，会问你要不要使用默认配置。还是自己创建配置吧。会问你使用哪个作为主要的功能键，mod键设定为windows键。</p>
 <p>这时需要 <code>win+return</code> 打开终端。</p>
 <p>可以使用这个较为完整的配置：</p>
-<p><a href="https://github.com/ID1258/oh-my-i3" target="_blank" rel="noopener">https://github.com/ID1258/oh-my-i3</a></p>
-<p>注意，里面的安装最后，要运行脚本，这里需要这样执行，详见 <a href="https://github.com/ID1258/oh-my-i3/issues/2" target="_blank" rel="noopener">https://github.com/ID1258/oh-my-i3/issues/2</a> ：</p>
+<p>https://github.com/ID1258/oh-my-i3</p>
+<p>注意，里面的安装最后，要运行脚本，这里需要这样执行，详见 https://github.com/ID1258/oh-my-i3/issues/2 ：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout HEAD^</span><br><span class="line">./install.sh</span><br></pre></td></tr></table></figure>
 <p>注意安装依赖：</p>
 <pre><code>调用conky作为i3bar输出
 dmenu启动程序
 feh显示壁纸
 xcompmgr透明插件（可选）
-infinality字体渲染美化（可选）
-</code></pre><p>关于配置，网上有很多，但是都需要仔细调教，可以仔细阅读i3官网手册，慢慢摸索。</p>
-<h2 id="相关参考"><a href="#相关参考" class="headerlink" title="相关参考"></a>相关参考</h2><p><a href="https://github.com/lartpang/.vim_runtime" target="_blank" rel="noopener">我的vim配置</a><br><a href="https://github.com/syl20bnr/spacemacs#windows" target="_blank" rel="noopener">spacemacs</a><br><a href="https://blog.csdn.net/lingsuifenfei123/article/details/79155369" target="_blank" rel="noopener">Manjaro安装与配置</a></p>
+infinality字体渲染美化（可选）</code></pre>
+<p>关于配置，网上有很多，但是都需要仔细调教，可以仔细阅读i3官网手册，慢慢摸索。</p>
+<h2 id="相关参考">相关参考</h2>
+<p><a href="https://github.com/lartpang/.vim_runtime" target="_blank" rel="noopener">我的vim配置</a> <a href="https://github.com/syl20bnr/spacemacs#windows" target="_blank" rel="noopener">spacemacs</a> <a href="https://blog.csdn.net/lingsuifenfei123/article/details/79155369" target="_blank" rel="noopener">Manjaro安装与配置</a></p>
 
       
     </div>

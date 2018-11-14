@@ -125,18 +125,18 @@
 
 
 
-  <meta name="description" content="unit generators(单元发生器) declaring connecting controlling (timing mechanism) mono + stereo creating (coming soon)  #Unit Generators Unit Generators are function generators that output(输出) signals that c">
+  <meta name="description" content="unit generators(单元发生器) declaring connecting controlling (timing mechanism) mono + stereo creating (coming soon)  #Unit Generators Unit Generators are function generators that output(输出) signals">
 <meta name="keywords" content="ChucK">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chuck11">
 <meta property="og:url" content="https://plart.pw/2018/02/15/langs/chuck/chuck11/index.html">
 <meta property="og:site_name" content="失乐园">
-<meta property="og:description" content="unit generators(单元发生器) declaring connecting controlling (timing mechanism) mono + stereo creating (coming soon)  #Unit Generators Unit Generators are function generators that output(输出) signals that c">
+<meta property="og:description" content="unit generators(单元发生器) declaring connecting controlling (timing mechanism) mono + stereo creating (coming soon)  #Unit Generators Unit Generators are function generators that output(输出) signals">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-07-13T12:46:19.971Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="chuck11">
-<meta name="twitter:description" content="unit generators(单元发生器) declaring connecting controlling (timing mechanism) mono + stereo creating (coming soon)  #Unit Generators Unit Generators are function generators that output(输出) signals that c">
+<meta name="twitter:description" content="unit generators(单元发生器) declaring connecting controlling (timing mechanism) mono + stereo creating (coming soon)  #Unit Generators Unit Generators are function generators that output(输出) signals">
 
 
 
@@ -537,34 +537,34 @@
 connecting
 controlling (timing mechanism)
 mono + stereo
-creating (coming soon) 
-</code></pre><p>#Unit Generators</p>
+creating (coming soon) </code></pre>
+<p>#Unit Generators</p>
 <p><strong>Unit Generators are function generators that output(输出) signals that can be used as audio or control signals</strong>. However, in ChucK, there is <em>no fixed control rate</em>. <strong>Any unit generator may be controlled at any rate.</strong> Using the timing mechanism(机制), you can program your own control rate, and can dynamically(动态地) vary(变化) the control over time. <em>Using concurrency(并发性), it is possible to have many different parallel(平行的) controls rates, each at any granularity(间隔尺寸).</em></p>
 <p>Some more quick facts about ChucK unit generators</p>
 <ul>
 <li>All ChucK unit generators are objects (not primitive(原始的) types).是对象，非原始类型</li>
 <li>All ChucK unit generators inherit(继承) from the <code>UGen</code> class.继承自<code>UGen</code>类</li>
-<li>The operation <code>foo =&gt; bar</code>, where <code>foo</code> and <code>bar</code> are UGen’s, connects <code>foo</code> to <code>bar</code>.</li>
+<li>The operation <code>foo =&gt; bar</code>, where <code>foo</code> and <code>bar</code> are UGen's, connects <code>foo</code> to <code>bar</code>.</li>
 <li>Unit generators are controlled by calling/chucking to member functions over time.通过随时间唤起成员函数而控制单元发生器</li>
 <li>All unit generators have the functions <code>gain</code>, <code>op</code>, <code>channels</code>, <code>chan</code>, and <code>last</code>. (see below)</li>
 <li>Three default, global unit generators are provided. They are <code>adc</code>, <code>dac</code>, and <code>blackhole</code>. (see below)</li>
 <li><em>Unit generators are specially integrated(集合) into the virtual machine</em> such that audio is computed for every sample(取样) <code>as time is advanced(随时间被推进)</code>. Via the timing mechanism(机制), we have the ability to <strong>assert(维护) control over the audio generate process <em>at any point in time</em> and <em>at any desired control rate</em>. </strong></li>
 </ul>
 <blockquote>
-<p><a href="http://chuck.cs.princeton.edu/doc/program/ugen.html" target="_blank" rel="noopener">View a list</a> of ChucK’s built-in(嵌入的) unit generator classes<br><a href="http://chuck.cs.princeton.edu/doc/examples/index.html#ugen" target="_blank" rel="noopener">View sample code</a> for unit generators </p>
+<p><a href="http://chuck.cs.princeton.edu/doc/program/ugen.html" target="_blank" rel="noopener">View a list</a> of ChucK's built-in(嵌入的) unit generator classes <a href="http://chuck.cs.princeton.edu/doc/examples/index.html#ugen" target="_blank" rel="noopener">View sample code</a> for unit generators</p>
 </blockquote>
 <p>#declaring</p>
 <p>Unit generators (UGens) are objects, and <em>need to be instantiated before they can be used(在使用前需要被实例化)</em>. We declare unit generators the same way we declare objects.</p>
 <pre><code>// instantiate a SinOsc, assign reference to variable s
-SinOsc s;
-</code></pre><p>#connecting</p>
+SinOsc s;</code></pre>
+<p>#connecting</p>
 <p>The ChucK operator (<code>=&gt;</code>) <em>is specially overloaded for unit generators</em>: <strong>ChucKing one UGen to another</strong> connects their respective(分别的) output(s) and input(s).</p>
-<pre><code>// instantiate a SinOsc, connect its output to dac&apos;s input
-SinOsc s =&gt; dac;
-</code></pre><p>It is also possible to linearly(线性地) chain many UGens together in a single statement.在一个单独声明中，线性连接许多单元发生器</p>
+<pre><code>// instantiate a SinOsc, connect its output to dac&#39;s input
+SinOsc s =&gt; dac;</code></pre>
+<p>It is also possible to linearly(线性地) chain many UGens together in a single statement.在一个单独声明中，线性连接许多单元发生器</p>
 <pre><code>// connect SinOsc to Gain to reverb(混响) to dac
-SinOsc s =&gt; Gain g =&gt; JCRev r =&gt; dac;
-</code></pre><p>Furthermore(此外), it is possible to introduce feedback(反馈) in the network.网络中可以引入反馈</p>
+SinOsc s =&gt; Gain g =&gt; JCRev r =&gt; dac;</code></pre>
+<p>Furthermore(此外), it is possible to introduce feedback(反馈) in the network.网络中可以引入反馈</p>
 <pre><code>// connect adc to Gain(增益) to delayline(延迟线) to dac; (feedforward(正反馈))
 adc =&gt; Gain g1 =&gt; DelayL d =&gt; dac;
 
@@ -572,19 +572,19 @@ adc =&gt; Gain g1 =&gt; DelayL d =&gt; dac;
 adc =&gt; Gain g2 =&gt; dac;
 
 // our delayline to Gain back to itself (feedback)
-d =&gt; Gain g3 =&gt; d;
-</code></pre><p>UGens may be dynamically(动态地) connected in this fashion(以这种方式) into an audio synthesis network(音频合成网络). It is essential to note that the above only connects the unit generators, but does not actually generate(形成) audio - unless time is advanced. (see manipulating time and using events)要注意上面只是链接了单元发生器，并未形成音频，除非时间被推进</p>
+d =&gt; Gain g3 =&gt; d;</code></pre>
+<p>UGens may be dynamically(动态地) connected in this fashion(以这种方式) into an audio synthesis network(音频合成网络). It is essential to note that the above only connects the unit generators, but does not actually generate(形成) audio - unless time is advanced. (see manipulating time and using events)要注意上面只是链接了单元发生器，并未形成音频，除非时间被推进</p>
 <pre><code>// connect SinOsc to dac
 SinOsc s =&gt; dac;
 // set initial frequency (see next section)
 440 =&gt; s.freq;
 
 // advance time; allow audio to compute
-1::second =&gt; now;
-</code></pre><p>It is also possible to dynamically disconnect(断开) unit generators, using the UnChucK operator (<code>=&lt;</code> or <code>!=&gt;</code>):</p>
+1::second =&gt; now;</code></pre>
+<p>It is also possible to dynamically disconnect(断开) unit generators, using the UnChucK operator (<code>=&lt;</code> or <code>!=&gt;</code>):</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// connect SinOsc to dac</span></span><br><span class="line">SinOsc s =&gt; dac;</span><br><span class="line"></span><br><span class="line"><span class="comment">// let time pass for 1 second letting audio be computed for that amount of time</span></span><br><span class="line"><span class="number">1</span>::second =&gt; now;</span><br><span class="line"></span><br><span class="line"><span class="comment">// disconnect s from the dac</span></span><br><span class="line">s =&lt; dac;</span><br><span class="line"></span><br><span class="line"><span class="comment">// let time pass for another second - should hear silence</span></span><br><span class="line"><span class="number">1</span>::second =&gt; now;</span><br><span class="line"></span><br><span class="line"><span class="comment">// duh, connect them again</span></span><br><span class="line">s =&gt; dac;</span><br><span class="line"></span><br><span class="line"><span class="comment">// let time pass...</span></span><br><span class="line"><span class="number">1</span>::second =&gt; now;</span><br></pre></td></tr></table></figure>
 <p>#controlling (over time)</p>
-<p>In ChucK, parameters(参数) of unit generators may be <em>controlled and altered at any point in time and at any control rate.</em> We only have to move through time and assert(维护) the control at <em>appropriate</em>(适当的) points in time, by setting various parameters on the unit generator.<br>通过在单元发生器设定各种各样的参数<br>To set the a value for a parameter of a unit generator, a value of the proper type should be ChucKed to the corresponding control fucntion.<br>为了设定一个单元发生器的参数值，一个合适的类型的值应该被ChucK到相应的控制函数上。</p>
+<p>In ChucK, parameters(参数) of unit generators may be <em>controlled and altered at any point in time and at any control rate.</em> We only have to move through time and assert(维护) the control at <em>appropriate</em>(适当的) points in time, by setting various parameters on the unit generator. 通过在单元发生器设定各种各样的参数 To set the a value for a parameter of a unit generator, a value of the proper type should be ChucKed to the corresponding control fucntion. 为了设定一个单元发生器的参数值，一个合适的类型的值应该被ChucK到相应的控制函数上。</p>
 <pre><code>// connect SinOsc to dac
 SinOsc s =&gt; dac;
 // set initial frequency to 440 hz
@@ -594,8 +594,8 @@ SinOsc s =&gt; dac;
 1::second =&gt; now;
 
 // change the frequency to 880 hz
-880 =&gt; s.freq;
-</code></pre><p>Since <em>the control functions</em> are <em>member functions of the unit generator</em>,<br>控制函数就是单元发生器的成员函数<br>the above syntax(语法) is equivalent to calling functions(等价于调用函数).</p>
+880 =&gt; s.freq;</code></pre>
+<p>Since <em>the control functions</em> are <em>member functions of the unit generator</em>, 控制函数就是单元发生器的成员函数 the above syntax(语法) is equivalent to calling functions(等价于调用函数).</p>
 <pre><code>// connect SinOsc to dac
 SinOsc s =&gt; dac;
 
@@ -603,15 +603,15 @@ SinOsc s =&gt; dac;
 s.freq( 440 );
 
 // let time pass
-1::second =&gt; now;
-</code></pre><p>For a list of unit generators and their control methods, consult(查阅) <a href="http://chuck.cs.princeton.edu/doc/program/ugen.html" target="_blank" rel="noopener">UGen reference</a>.</p>
-<p>To read the current value of certain parameters(参数) (<em>not all parameters can be read</em>), we may call an overloaded function of the same name.<br>为了读取某个参数的当前值，需要调用一个同名的重载函数</p>
+1::second =&gt; now;</code></pre>
+<p>For a list of unit generators and their control methods, consult(查阅) <a href="http://chuck.cs.princeton.edu/doc/program/ugen.html" target="_blank" rel="noopener">UGen reference</a>.</p>
+<p>To read the current value of certain parameters(参数) (<em>not all parameters can be read</em>), we may call an overloaded function of the same name. 为了读取某个参数的当前值，需要调用一个同名的重载函数</p>
 <pre><code>// connect SinOsc to dac
 SinOsc s =&gt; dac;
 
 // store the current value of the freq
-s.freq() =&gt; float the_freq;
-</code></pre><p>You can chain assignments(分配) together when you want to assign(分配) one value to multiple targets. <strong>Note</strong> that the parentheses(括号) are only needed when the read function is on the very left.<br>只有当读函数位于最左边时，才需要括号</p>
+s.freq() =&gt; float the_freq;</code></pre>
+<p>You can chain assignments(分配) together when you want to assign(分配) one value to multiple targets. <strong>Note</strong> that the parentheses(括号) are only needed when the read function is on the very left. 只有当读函数位于最左边时，才需要括号</p>
 <pre><code>// SinOsc to dac
 SinOsc foo =&gt; dac;
 // triosc to dac
@@ -624,8 +624,8 @@ triosc bar =&gt; dac;
 foo.freq() =&gt; bar.freq;
 
 // the above is same as:
-bar.freq( foo.freq() );
-</code></pre><blockquote>
+bar.freq( foo.freq() );</code></pre>
+<blockquote>
 <p>Of course, varying(不同的) parameters over time is often more interesting.不同参数随时间推移是很有趣的。</p>
 </blockquote>
 <pre><code>// SinOsc to dac
@@ -639,31 +639,31 @@ while( true )
 
     // advance time
     100::ms =&gt; now;
-}
-</code></pre><p>All ugen’s have at least the following three control parameters:<br>以下参数至少有三个</p>
+}</code></pre>
+<p>All ugen's have at least the following three control parameters: 以下参数至少有三个</p>
 <ul>
-<li><em>gain(float)</em> (of type <code>float</code>): set/get the gain of the UGen’s output(输出).设置或获取单元发生器输出的增益</li>
+<li><em>gain(float)</em> (of type <code>float</code>): set/get the gain of the UGen's output(输出).设置或获取单元发生器输出的增益</li>
 <li><em>last()</em> (of type <code>float</code>): get the last sample computed by the UGen. if UGen has more than one channel, the average of all components(成分) channels are returned. 得到被单元发生器计算的最后的样本，如果单元发生器有不止一个通道，则返回所有通道的平均值。</li>
 <li><em>channels()</em> (of type <code>int</code>): get the number of channels in the UGen.获取单元发生器的通道数</li>
 <li><em>chan(int)</em> (of type <code>UGen</code>): return reference to nth channel (or <em>null</em> if no such channel).返回第几个通道引用，没有的话就返回<code>null</code></li>
-<li><em>op(int)</em> (of type <code>int</code>): set/get operation at the UGen. 设定或获取单元发生器的操作 Values:<ul>
+<li><em>op(int)</em> (of type <code>int</code>): set/get operation at the UGen. 设定或获取单元发生器的操作 Values:
+<ul>
 <li>0 : stop - always output 0</li>
 <li>1 : normal operation, add all inputs (default)</li>
 <li>2 : normal operation, subtract(减去) <em>inputs starting from the earliest</em> connected减去从最早的链接开始的输入(不甚理解？？？)</li>
 <li>3 : normal operation, multiply(乘以) all inputs</li>
 <li>4 : normal operation, divide <em>inputs starting from the earlist connected</em></li>
 <li>-1 : passthru - all inputs to the ugen are summed and passed directly to output所有单元生成器的输入被加在一起并且直接传递到输出</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <p>#mono + stereo(单声道立体声)</p>
-<p>ChucK supports <em>stereo</em>(立体声) (default) and <em>multi-channel audio</em> (see <code>command line options</code> to select interfaces(界面) and number of channels). <strong>The <code>dac</code> and the <code>adc</code> are now multi-channel UGens</strong>. By default, ChucKing two UGens containing the same number of channels (<strong>e.g. both stereo(立体声) or both mono(单声道放音)</strong>) automatically(自动地) matches the output(输出) channels with the input(输入) channels (<strong>e.g. left to left, right to right for stereo</strong>). </p>
-<p><em>Stereo UGens mix their output channels when connecting to mono UGens</em>.<br><em>Mono UGens split their output channels when connecting to stereo UGens.</em> </p>
+<p>ChucK supports <em>stereo</em>(立体声) (default) and <em>multi-channel audio</em> (see <code>command line options</code> to select interfaces(界面) and number of channels). <strong>The <code>dac</code> and the <code>adc</code> are now multi-channel UGens</strong>. By default, ChucKing two UGens containing the same number of channels (<strong>e.g. both stereo(立体声) or both mono(单声道放音)</strong>) automatically(自动地) matches the output(输出) channels with the input(输入) channels (<strong>e.g. left to left, right to right for stereo</strong>).</p>
+<p><em>Stereo UGens mix their output channels when connecting to mono UGens</em>. <em>Mono UGens split their output channels when connecting to stereo UGens.</em></p>
 <p>Stereo UGens contain the parameters(参数) <code>.left</code> and <code>.right</code>, which allow access(访问) to the individual(个人的) channels.</p>
 <pre><code>// adding separate reverb(混响) to left and right channels
 adc.left =&gt; JCRev rl =&gt; dac.left;
-adc.right =&gt; JCRev rr =&gt; dac.right;
-</code></pre><p>The pan2 stereo object takes a mono signal and split it to a stereo signal, with control over the panning. The pan position may be changed with the <code>.pan</code> parameter (-1 (hard left) &lt;= p &lt;= 1 (hard right)范围是固定的)<br>pan2立体声对象将单声道分离成立体声，通过控制panning(平移？)，平移位置可能被用<code>.pan</code>参数改变。</p>
+adc.right =&gt; JCRev rr =&gt; dac.right;</code></pre>
+<p>The pan2 stereo object takes a mono signal and split it to a stereo signal, with control over the panning. The pan position may be changed with the <code>.pan</code> parameter (-1 (hard left) &lt;= p &lt;= 1 (hard right)范围是固定的) pan2立体声对象将单声道分离成立体声，通过控制panning(平移？)，平移位置可能被用<code>.pan</code>参数改变。</p>
 <pre><code>// white noise to pan to dac
 noise n =&gt; pan2 p =&gt; dac;
 
@@ -674,13 +674,13 @@ while( true )
     Math.sin( now / 1::second * 2 * pi ) =&gt; p.pan;
     // advance time
     10::ms =&gt; now;
-}
-</code></pre><p>#creating</p>
+}</code></pre>
+<p>#creating</p>
 <blockquote>
 <p>( coming soon! )</p>
 </blockquote>
 <p>#built-in unit generators</p>
-<p>ChucK has a number of built-in(嵌入的) UGen classes, included most of the <code>Synthesis ToolKit (STK)</code>. A list of built-in ChucK unit generators can be found here(url:…/ugen.html).</p>
+<p>ChucK has a number of built-in(嵌入的) UGen classes, included most of the <code>Synthesis ToolKit (STK)</code>. A list of built-in ChucK unit generators can be found here(url:.../ugen.html).</p>
 
       
     </div>
@@ -760,8 +760,8 @@ while( true )
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/15/langs/chuck/chuck4/" rel="next" title="chuck4">
-                <i class="fa fa-chevron-left"></i> chuck4
+              <a href="/2018/02/15/langs/chuck/chuck7/" rel="next" title="chuck7">
+                <i class="fa fa-chevron-left"></i> chuck7
               </a>
             
           </div>
