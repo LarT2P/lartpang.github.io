@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>chuck3 | 失乐园</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#Types, Values, and Variables(变量) ChucK is a strongly-typed language, meaning that types are resolved(决定) at compile-time. However, it is not quite statically-typed, because the compiler/type system i">
+<meta name="keywords" content="ChucK">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chuck3">
+<meta property="og:url" content="https://plart.pw/2018/02/15/langs/chuck/chuck3/index.html">
+<meta property="og:site_name" content="失乐园">
+<meta property="og:description" content="#Types, Values, and Variables(变量) ChucK is a strongly-typed language, meaning that types are resolved(决定) at compile-time. However, it is not quite statically-typed, because the compiler/type system i">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-13T12:46:41.321Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="chuck3">
+<meta name="twitter:description" content="#Types, Values, and Variables(变量) ChucK is a strongly-typed language, meaning that types are resolved(决定) at compile-time. However, it is not quite statically-typed, because the compiler/type system i">
+  
+    <link rel="alternate" href="/atom.xml" title="失乐园" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">失乐园</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">代码与机器</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://plart.pw"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-langs/chuck/chuck3" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/15/langs/chuck/chuck3/" class="article-date">
+  <time datetime="2018-02-15T13:40:10.000Z" itemprop="datePublished">2018-02-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      chuck3
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#Types, Values, and Variables(变量)</p>
+<p>ChucK is a strongly-typed language, meaning that types <em>are resolved(决定) at compile-time</em>. However, it is not quite statically-typed, because <strong>the compiler/type system is a part of the ChucK virtual(虚拟的) machine, and is a runtime component(成分)</strong>. This type system helps to impose(强加) precision(精度) and clarity(清楚) in the code, and naturally lends to organization of complex(复杂的) programs. At the same time, it is also <em>dynamic</em> in that changes to the type system can take place (in a well-defined(定义明确的) manner) at runtime. This dynamic(动态的) aspect(方面) forms the basis(基础) for <a href="http://on-the-fly.cs.princeton.edu/" target="_blank" rel="noopener">on-the-fly programming</a>. </p>
+<p>This section deals with <em>types, values, and the declaration(声明) and usage(使用) of variables</em>. As in other strongly-typed programming languages, we can think of a type as associated(关联的) behaviors(行为) of data. (For example, an ‘int’ is a type that means integer(整数), and adding two integer is defined(定义) to produce a third integer representing the sum.) <em>Classes and objects</em> allow us to extend(延伸) the type system with our own custom types, but we won’t cover them in this section. <strong>We will focus mainly on <em>primitive(原始的) types</em> here, and leave the discussion of more complex types for <a href="http://chuck.cs.princeton.edu/doc/language/class.html" target="_blank" rel="noopener">classes and objects</a>.</strong></p>
+<p>#primitive types(原始类型)</p>
+<p>The primitive(原始的), or intrinsic(本质的) types are those which are simple datatypes (they have no additional(附加的) data attributes(属性)). <em>Objects are not primitive types.</em> <strong>Primitive types are passed by value. Primitive types cannot be extended(延伸).</strong> The primitive types in ChucK are:</p>
+<pre><code>int : integer(整数) (signed)
+float : floating point number (in ChucK, a float is by default double-precision(双精度))
+time : ChucKian time
+dur : ChucKian duration(持续)
+void : (no type)
+complex : complex number in rectangular(矩形的) form a + bi (see [below][1])
+polar: complex number in polar(极面) form (see [below][1])
+</code></pre><p>For a summary of operations on these types, go to <a href="http://chuck.cs.princeton.edu/doc/language/oper.html" target="_blank" rel="noopener">operations and operators</a>.</p>
+<p>All other types are derived(派生) from ‘object’, either as part of the ChucK standard library, or as a new class that you create. For specification(规格), go to <a href="http://chuck.cs.princeton.edu/doc/language/class.html" target="_blank" rel="noopener">classes and objects</a>.</p>
+<p>#values (literals(字面值))</p>
+<p>Literal values are specified(指定) explicitly(明确地) in code and are assigned(分配) a type by the compiler(编译器).The following are some examples of literal values:</p>
+<pre><code>int:
+
+42
+
+int (hexidecimal):
+
+0xaf30
+
+float:
+
+1.323
+
+dur:
+
+5.5::second
+//In the above code, second is an existing duration(持续) variable(变量). 
+//For more on durations, see the [manipulating time(时间调节)][4] section. 
+</code></pre><p>#variables</p>
+<p><strong>Variables(变量) are locations in memory that hold data.</strong> <em>Variables have to be declared in ChucK before they are used.</em> For example, to declare a variable of type int called foo:</p>
+<pre><code>// declare an &apos;int&apos; called &apos;foo&apos;
+int foo;
+</code></pre><p>We can assign(分配) a value to <em>an existing variable</em> by using the ChucK operator (<code>=&gt;</code>). This is one of the most commonly used operators in ChucK, it’s the way to do work and take action! (后面会讨论)</p>
+<pre><code>// assign value of 2 to &apos;foo&apos;
+2 =&gt; foo;
+</code></pre><p>It is possible to combine the two statements(声明) into one:</p>
+<pre><code>// assign 2 to a new variable &apos;foo&apos; of type &apos;int&apos;
+2 =&gt; int foo;
+</code></pre><p>To use a variable, just refer to it by name:</p>
+<pre><code>// debug-print the value of foo
+&lt;&lt;&lt; foo &gt;&gt;&gt;;
+</code></pre><p>To update the value of foo, for example:</p>
+<pre><code>// multiply &apos;foo&apos; by 10, assign back to &apos;foo&apos;
+foo * 10 =&gt; foo;
+</code></pre><p>You can also do the above using a <code>*=&gt;</code> (mult-chuck):</p>
+<pre><code>// multiply &apos;foo&apos; by 10, and then assign to &apos;foo&apos;
+10 *=&gt; foo;
+</code></pre><p>Here is an example of a duration(持续):</p>
+<pre><code>// assign value of &apos;5 seconds&apos; to new variable bar
+5::second =&gt; dur bar;
+</code></pre><p>Once you have bar, you can inductively(归纳的) use it to construct new durations:</p>
+<pre><code>// 4 bar, a measure?
+4::bar =&gt; dur measure;
+</code></pre><blockquote>
+<p>输出：<br>C:\Users\abc1\Desktop&gt;chuck test.ck<br>882000.000000 :(dur)</p>
+</blockquote>
+<p>Since time is central to programming ChucK, it is important to understand time, dur, the relationship and operations between them. There is more information in the <a href="http://chuck.cs.princeton.edu/doc/language/time.html" target="_blank" rel="noopener">manipulating time</a> section. </p>
+<p>#reference types(引用类型)</p>
+<p>Reference(参考) types are types which inherit(继承) from the object class. Some default reference types include:</p>
+<pre><code>Object : base type that all classes inherit from (directly or indirectly)所有类继承的基本类型
+array : N-dimensional ordered(有序的) set of data (of the same type)
+Event : fundamental(基本的), extendable(可扩展的), synchronization(同步) mechanism(机制)
+UGen : extendable unit generator(单元发生器) base class (U = unit, Gen = generator)
+string : string (of characters)
+</code></pre><p>New classes can be created. <strong>All classes are reference types.</strong> We will leave the full discussion to the <a href="http://chuck.cs.princeton.edu/doc/language/class.html" target="_blank" rel="noopener">objects and classes</a> section.</p>
+<p>#complex types<br>(虚数：直角坐标系，极坐标系)</p>
+<p>Two special <code>primitive types</code> are available to to represent complex (复杂的)data, such as the output (输出)of an FFT: complex and polar. A complex number of the form a + bi can be declared as</p>
+<pre><code>#(2,3) =&gt; complex cmp; //cmp is now 2 + 3i 
+</code></pre><p>where the #(…) syntax(语法) explicitly(明确地) denotes(表示) a complex number in rectangular form(矩形). Similarly, explicit complex numbers can be manipulated(操纵) directly:</p>
+<pre><code>#(5, -1.5) =&gt; complex cmp; // cmp is 5 - 1.5i
+#(2,3) + #(5,6) + cmp =&gt; complex sum; // sum is now 12 + 7.5i
+</code></pre><p>The (floating point) real and imaginary parts(实虚部) of a complex number can be accessed(存取) with the .re and .im components of a complex number:</p>
+<pre><code>#(2.0,3.5) =&gt; complex cmp;
+cmp.re =&gt; float x; // x is 2.0
+cmp.im =&gt; float y; //y is 3.5
+</code></pre><p>The polar type(极坐标) offers an equivalent(等价的), alternative(供选择的) representation(表示) of complex numbers in terms of a magnitude(大小) and phase(相) value. A polar representation of a complex number can be declared as</p>
+<pre><code>%(2, .5*pi) =&gt; polar pol; // pol is 2∠.5π(没有想到，竟然有这个(●&apos;◡&apos;●))
+</code></pre><p>The magnitude(大小) and phase(相) values can be accessed via .mag and .phase:</p>
+<pre><code>%(2, .5*pi) =&gt; polar pol;
+pol.mag =&gt; float m; // m is 2
+pol.phase =&gt; float p; //p is .5π
+</code></pre><p>polar and complex representations(代表) can be cast to each other and multiplied/added/assigned(分配)/etc.:</p>
+<pre><code>%(2, .5*pi) =&gt; polar pol;
+#(3, 4) =&gt; complex cmp;
+pol $ complex + #(10, 3) + cmp =&gt; complex cmp2;
+cmp $ polar + %(10, .25*pi) - pol =&gt; polar pol2;
+</code></pre><p>(这里的$实现了两种坐标系下表示的转换)</p>
+<blockquote>
+<p>输出：<br>C:\Users\abc1\Desktop&gt;chuck test.ck<br>%(2.0000,0.5000<em>pi) :(polar)<br>#(3.0000,4.0000) :(complex)<br>#(13.0000,9.0000) :(complex)<br>%(13.5540,0.2334</em>pi) :(polar)</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2018/02/15/langs/chuck/chuck3/" data-id="cjogni4do002pqshsstpdokat" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ChucK/">ChucK</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/02/15/langs/chuck/chuck10/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          chuck10
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/15/langs/chuck/chuck12/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">chuck12</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/幻想与现实/">幻想与现实</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术与进步/">技术与进步</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活与思考/">生活与思考</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影与艺术/">电影与艺术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程与生活/">编程与生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录与总结/">记录与总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C++&C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChucK/">ChucK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/org-mode/">org-mode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/佳片/">佳片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开心麻花/">开心麻花</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/影视/">影视</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/校园/">校园</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爱情/">爱情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/琐事/">琐事</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科幻/">科幻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机原理/">计算机原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进阶/">进阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信/">通信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随感/">随感</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-C/" style="font-size: 14.29px;">C++&C</a> <a href="/tags/ChucK/" style="font-size: 20px;">ChucK</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/org-mode/" style="font-size: 10px;">org-mode</a> <a href="/tags/python/" style="font-size: 18.57px;">python</a> <a href="/tags/python3/" style="font-size: 10px;">python3</a> <a href="/tags/佳片/" style="font-size: 10px;">佳片</a> <a href="/tags/学习/" style="font-size: 17.14px;">学习</a> <a href="/tags/工具/" style="font-size: 11.43px;">工具</a> <a href="/tags/开心麻花/" style="font-size: 10px;">开心麻花</a> <a href="/tags/影视/" style="font-size: 11.43px;">影视</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/校园/" style="font-size: 10px;">校园</a> <a href="/tags/汇编/" style="font-size: 15.71px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/爱情/" style="font-size: 10px;">爱情</a> <a href="/tags/琐事/" style="font-size: 10px;">琐事</a> <a href="/tags/生活/" style="font-size: 11.43px;">生活</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/科幻/" style="font-size: 10px;">科幻</a> <a href="/tags/计算机原理/" style="font-size: 12.86px;">计算机原理</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/进阶/" style="font-size: 10px;">进阶</a> <a href="/tags/通信/" style="font-size: 10px;">通信</a> <a href="/tags/随感/" style="font-size: 10px;">随感</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/14/ceshi/">ceshi</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/25/ee/上网背后的流程/">上网背后的流程</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/15/life/这些衰败的日子/">这些衰败的日子</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/30/life/如懿如意/">如懿，如意</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/05/life/开心麻花几部电影/">开心麻花</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Lart Pang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

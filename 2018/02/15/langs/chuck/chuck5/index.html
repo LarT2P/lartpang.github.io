@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>chuck5 | 失乐园</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="operators &amp;amp; operations  =&amp;gt; (chuck)    / (arithmetic)       % (modulo) &amp;amp;&amp;amp; || == != &amp;gt;= &amp;lt;=” (logic) &amp;amp; | ^ (bitwise) ++ – (inc / dec) ! + - new (unary)  You may have seen many of">
+<meta name="keywords" content="ChucK">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chuck5">
+<meta property="og:url" content="https://plart.pw/2018/02/15/langs/chuck/chuck5/index.html">
+<meta property="og:site_name" content="失乐园">
+<meta property="og:description" content="operators &amp;amp; operations  =&amp;gt; (chuck)    / (arithmetic)       % (modulo) &amp;amp;&amp;amp; || == != &amp;gt;= &amp;lt;=” (logic) &amp;amp; | ^ (bitwise) ++ – (inc / dec) ! + - new (unary)  You may have seen many of">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-13T12:46:51.362Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="chuck5">
+<meta name="twitter:description" content="operators &amp;amp; operations  =&amp;gt; (chuck)    / (arithmetic)       % (modulo) &amp;amp;&amp;amp; || == != &amp;gt;= &amp;lt;=” (logic) &amp;amp; | ^ (bitwise) ++ – (inc / dec) ! + - new (unary)  You may have seen many of">
+  
+    <link rel="alternate" href="/atom.xml" title="失乐园" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">失乐园</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">代码与机器</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://plart.pw"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-langs/chuck/chuck5" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/15/langs/chuck/chuck5/" class="article-date">
+  <time datetime="2018-02-15T13:40:10.000Z" itemprop="datePublished">2018-02-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      chuck5
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>operators &amp; operations</p>
+<ul>
+<li>=&gt; (chuck)</li>
+<li><ul>
+<li><ul>
+<li><ul>
+<li>/ (arithmetic)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>% (modulo)</li>
+<li>&amp;&amp; || == != &gt;= &lt;=” (logic)</li>
+<li>&amp; | ^ (bitwise)</li>
+<li>++ – (inc / dec)</li>
+<li>! + - new (unary)</li>
+</ul>
+<p>You may have seen many of the operators in other programming languages (C/Java). <em>Some others are native to ChucK</em>. We start with the family of ChucK operators. </p>
+<p>#=&gt; (the ChucK operator) </p>
+<p>The ChucK operator (<code>=&gt;</code>) is a massively(大量地) overloaded operator that, depending on the types involved(包含), performs various actions(执行各种操作). <code>It denotes(表示) **action**, can be chained(链接), and imposes(强制执行) and clarifies order(理清顺序) (always goes *from left to right*).</code> The ChucK operator is the means by which work is done in ChucK. Furthermore(此外), the ChucK operator is not a single operator, but a family of operators.</p>
+<p>##=&gt; (foundational(基础的) ChucK operator) </p>
+<p>We start with the standard, plain-vanilla(普通的，无修饰的) ChucK operator (<code>=&gt;</code>). It is left-associative (<strong>all ChucK operators are</strong>), which allows us to specify(指定) any ordered flow of data/tasks/modules (such as unit generator connection) from left to right, as in written (English) text. <strong>What <code>=&gt;</code> does depends on the context(环境).</strong> It always depends on the type of the entity(实体) on the left (the chucker(投手)) and the one on the right (the chuckee(接球手)), and it sometimes also depends on the nature of the entity (such as whether it is a variable(变量的) or not).</p>
+<p>Some examples:<br>(用了c的高亮，至少好看点)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a unit generator patch - the signal flow is apparent</span></span><br><span class="line"><span class="comment">// (in this case, =&gt; connects two unit generators)</span></span><br><span class="line">SinOsc b =&gt; Gain g =&gt; BiQuad f =&gt; dac;</span><br><span class="line"></span><br><span class="line"><span class="comment">// add 4 to foo, chuck result to new 'int' variable 'bar'</span></span><br><span class="line"><span class="comment">// (in this case, =&gt; assigns a value to a variable (int)</span></span><br><span class="line"><span class="number">4</span> + foo =&gt; <span class="keyword">int</span> bar;</span><br><span class="line"></span><br><span class="line"><span class="comment">// chuck values to a function == function call</span></span><br><span class="line"><span class="comment">// (same as Math.rand2f( 30, 1000))</span></span><br><span class="line">( <span class="number">30</span>, <span class="number">1000</span> ) =&gt; Math.rand2f;</span><br></pre></td></tr></table></figure>
+<p>There are many other well-defined(定义明确的) uses of the ChucK operator, depending on the context.</p>
+<p>##<code>@=&gt;</code> (explicit(明确的) assignment(分配) ChucK operator)</p>
+<p>In ChucK, <em>there is no stardard assignment operator (=)</em>, found in many other programming languages. Assignment is carried out using ChucK operators. In the previous examples, we have used =&gt; for assignment:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// assign 4 to variable foo</span></span><br><span class="line"><span class="number">4</span> =&gt; <span class="keyword">int</span> foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// assign 1.5 to variable bar</span></span><br><span class="line"><span class="number">1.5</span> =&gt; <span class="keyword">float</span> bar;</span><br><span class="line"></span><br><span class="line"><span class="comment">// assign duration of 100 millisecond to duh</span></span><br><span class="line"><span class="number">100</span>::ms =&gt; dur duh;</span><br><span class="line"></span><br><span class="line"><span class="comment">// assign the time "5 second from now" to later</span></span><br><span class="line"><span class="number">5</span>::second + now =&gt; time later;</span><br></pre></td></tr></table></figure>
+<p>The <code>@=&gt;</code> explicit assignment ChucK operator behaves exactly the same for the above types (int, float, dur, time). However, the difference is that <code>@=&gt;</code> can also be used for reference assignments(分配) of objects (see objects and classes) whereas(然而) <code>=&gt;</code> only does assignment on primitive(原始的) types (int, float, dur, time). The behavior(行为) of <code>=&gt;</code> on objects is completely context-dependent(上下文相关的).</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// using @=&gt; is same as =&gt; for primitive types</span></span><br><span class="line"><span class="number">4</span> @=&gt; <span class="keyword">int</span> foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// assign 1.5 to variable bar</span></span><br><span class="line"><span class="number">1.5</span> @=&gt; <span class="keyword">float</span> bar;</span><br><span class="line"></span><br><span class="line"><span class="comment">// (only @=&gt; can perform reference assignment on objects)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// reference assign moe to larry</span></span><br><span class="line"><span class="comment">// (such that both moe and larry reference the same object)</span></span><br><span class="line">Object moe @=&gt; Object @ larry;</span><br><span class="line"></span><br><span class="line"><span class="comment">// array initialization</span></span><br><span class="line">[ <span class="number">1</span>, <span class="number">2</span> ] @=&gt; <span class="keyword">int</span> ar[];</span><br><span class="line"></span><br><span class="line"><span class="comment">// using new</span></span><br><span class="line"><span class="keyword">new</span> Object @=&gt; moe;</span><br></pre></td></tr></table></figure>
+<p>In its own screwed-up(糟透了的) way, this is kind of nice because there is no confusion(混淆) between assignment (<code>@=&gt;</code> or <code>=&gt;</code>) and equality (<code>==</code>). In fact,  the following is not a valid ChucK statement(声明):</p>
+<pre><code>// not a valid ChucK statement!
+int foo = 4;
+</code></pre><p>##+=&gt;  -=&gt;  *=&gt;  /=&gt;  etc. (arithmetic(算数) ChucK operators)</p>
+<p>These operators are used with variables(变量) (using ‘int’ and ‘float’) to perform one operation with assignment(执行一个有分配的操作).</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// add 4 to foo and assign result to foo</span></span><br><span class="line">foo + <span class="number">4</span> =&gt; foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// add 4 to foo and assign result to foo</span></span><br><span class="line"><span class="number">4</span> +=&gt; foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// subtract 10 from foo and assign result to foo</span></span><br><span class="line"><span class="comment">// remember this is (foo-10), not (10-foo)</span></span><br><span class="line"><span class="number">10</span> -=&gt; foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2 times foo assign result to foo</span></span><br><span class="line"><span class="number">2</span> *=&gt; foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// divide 4 into foo and assign result to foo</span></span><br><span class="line"><span class="comment">// again remember this is (foo/4), not (4/foo)</span></span><br><span class="line"><span class="number">4</span> /=&gt; foo;</span><br></pre></td></tr></table></figure>
+<p>It is important to note the relationship between the value and variable when using <code>-=&gt;</code> and <code>/=&gt;</code>, since these operations are not commutative(交换的).</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// mod foo by T and assign result to foo</span></span><br><span class="line">T %=&gt; foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// bitwise(按位) AND 0xff and bar and assign result to bar</span></span><br><span class="line"><span class="number">0xff</span> &amp;=&gt; bar;</span><br><span class="line"></span><br><span class="line"><span class="comment">// bitwise OR 0xff and bar and assign result to bar</span></span><br><span class="line"><span class="number">0xff</span> |=&gt; bar;</span><br></pre></td></tr></table></figure>
+<p>#+  -  *  /  (arithmetic)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// divide (and assign)</span></span><br><span class="line"><span class="number">16</span> / <span class="number">4</span> =&gt; <span class="keyword">int</span> four;</span><br><span class="line"></span><br><span class="line"><span class="comment">// multiply</span></span><br><span class="line"><span class="number">2</span> * <span class="number">2</span> =&gt; four;</span><br><span class="line"></span><br><span class="line"><span class="comment">// add</span></span><br><span class="line"><span class="number">3</span> + <span class="number">1</span> =&gt; four;</span><br><span class="line"></span><br><span class="line"><span class="comment">// subtract</span></span><br><span class="line"><span class="number">93</span> - <span class="number">89</span> =&gt; four;</span><br></pre></td></tr></table></figure>
+<p><strong>cast(转换)</strong></p>
+<p><em>ChucK implicitly(隐式地) casts int values to float when float is expected, but not the other around.</em> The latter could result in a loss of information and requires an explicit(明确的) cast.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// adding float and int produces a float</span></span><br><span class="line"><span class="number">9.1</span> + <span class="number">2</span> =&gt; <span class="keyword">float</span> result;</span><br><span class="line"></span><br><span class="line"><span class="comment">// however, going from float to int requires cast</span></span><br><span class="line"><span class="number">4.8</span> $ <span class="keyword">int</span> =&gt; <span class="keyword">int</span> foo;  <span class="comment">// foo == 4</span></span><br><span class="line"><span class="comment">//这里的$是什么意思？</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// this function expects two floats</span></span><br><span class="line">Math.rand2f( <span class="number">30.0</span>, <span class="number">1000.0</span> );</span><br><span class="line"></span><br><span class="line"><span class="comment">// this is ok because of implicit cast</span></span><br><span class="line">Math.rand2f( <span class="number">30</span>, <span class="number">1000</span> );</span><br></pre></td></tr></table></figure>
+<p>#% (modulo(取模))</p>
+<p>The modulo operator <code>%</code> computes the remainder(余数) after integer(整数), floating point, duration, and time/duration division.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 7 mod 4 (should yield(产生) 3)</span></span><br><span class="line"><span class="number">7</span> % <span class="number">4</span> =&gt; <span class="keyword">int</span> result;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 7.3 mod 3.2 floating point mod (should yield .9)</span></span><br><span class="line"><span class="number">7.3</span> % <span class="number">3.2</span> =&gt; <span class="keyword">float</span> resultf;</span><br><span class="line"></span><br><span class="line"><span class="comment">// duration mod</span></span><br><span class="line"><span class="number">5</span>::second % <span class="number">2</span>::second =&gt; dur foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// time/duration mod</span></span><br><span class="line">now % <span class="number">5</span>::second =&gt; dur bar;</span><br></pre></td></tr></table></figure>
+<p>the latter (time/duration mod) is one of many ways to dynamically(动态地) synchronize(同步) timing in shreds. the examples <code>otf_01.ck</code> through <code>otf_07.ck</code> (see under <code>examples</code>) make use of this to on-the-fly(运行时) synchronize its various parts, no matter when each shred is added to the virtual(虚拟的) machine:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// define period (agreed upon by several shreds)</span></span><br><span class="line"><span class="number">.5</span>::second =&gt; dur T;</span><br><span class="line"></span><br><span class="line"><span class="comment">// compute the remainder(余数) of the current period ...</span></span><br><span class="line"><span class="comment">// and advance time by that amount</span></span><br><span class="line">T - (now % T) =&gt; now;</span><br><span class="line"></span><br><span class="line"><span class="comment">// when we reach this point, we are synchronized to T period boundary</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// the rest of the code</span></span><br><span class="line"><span class="comment">// ...</span></span><br></pre></td></tr></table></figure>
+<p>This is one of many ways to compute and reason about(思考) time in ChucK. The appropriate(适当的) solution(解决方案)(s) in each case depends on the intended(打算的) functionality(功能). </p>
+<p>#&amp;&amp;  ||  ==  !=  &gt;  &gt;=  &lt;  &lt;=  (logic)(逻辑)</p>
+<p>Logical operators - each of these need two operands(操作数). <strong>The result is an integer value of 0 or 1.</strong></p>
+<ul>
+<li>&amp;&amp; : and</li>
+<li>|| : or</li>
+<li>== : equals</li>
+<li>!= : does not equal</li>
+<li><blockquote>
+<p>: greater than</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>= : greater than or equal to</p>
+</blockquote>
+</li>
+<li>&lt; : less than</li>
+<li>&lt;= : less than or equal to </li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// test some universal truths(普遍的真理)</span></span><br><span class="line"><span class="keyword">if</span>( <span class="number">1</span> &lt;= <span class="number">4</span> &amp;&amp; <span class="literal">true</span> )</span><br><span class="line">    &lt;&lt;&lt;<span class="string">"horray"</span>&gt;&gt;&gt;;</span><br></pre></td></tr></table></figure>
+<p>#&gt;&gt;  &lt;&lt;  &amp;  |  ^  (bitwise)(按位)</p>
+<p>These are used on int values at the bit level, often for bit masking.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; : <span class="function">shift bits <span class="title">right</span><span class="params">(右移位)</span> <span class="params">( <span class="number">8</span> &gt;&gt; <span class="number">1</span> = <span class="number">4</span> )</span></span></span><br><span class="line">&lt;&lt; : shift bits left ( 8 &lt;&lt; 1 = 16 )</span><br><span class="line">&amp; : bitwise AND</span><br><span class="line">| : bitwise OR</span><br><span class="line">^ : bitwise XOR</span><br></pre></td></tr></table></figure>
+<p>#++  –  (inc / dec)<br>Values may be incremented or decremented by appending(附加) the <code>++</code> or <code>--</code> operators.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span> =&gt; <span class="keyword">int</span> foo;</span><br><span class="line">foo++;</span><br><span class="line">foo--;</span><br></pre></td></tr></table></figure>
+<p>#! + - new (unary(一元的))</p>
+<p>These operators come before(位于…之前) one operand(操作数).</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// logical invert</span></span><br><span class="line"><span class="keyword">if</span>( !<span class="literal">true</span> == <span class="literal">false</span> )</span><br><span class="line">    &lt;&lt;&lt;<span class="string">"yes"</span>&gt;&gt;&gt;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// negative</span></span><br><span class="line"><span class="number">-1</span> =&gt; <span class="keyword">int</span> foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// instantiate object</span></span><br><span class="line"><span class="keyword">new</span> object @=&gt; object @ bar;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2018/02/15/langs/chuck/chuck5/" data-id="cjogni4do002vqshso16dmm51" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ChucK/">ChucK</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/02/15/langs/chuck/chuck6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          chuck6
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/15/langs/chuck/chuck4/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">chuck4</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/幻想与现实/">幻想与现实</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术与进步/">技术与进步</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活与思考/">生活与思考</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影与艺术/">电影与艺术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程与生活/">编程与生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录与总结/">记录与总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C++&C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChucK/">ChucK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/org-mode/">org-mode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/佳片/">佳片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开心麻花/">开心麻花</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/影视/">影视</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/校园/">校园</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爱情/">爱情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/琐事/">琐事</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科幻/">科幻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机原理/">计算机原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进阶/">进阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信/">通信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随感/">随感</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-C/" style="font-size: 14.29px;">C++&C</a> <a href="/tags/ChucK/" style="font-size: 20px;">ChucK</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/org-mode/" style="font-size: 10px;">org-mode</a> <a href="/tags/python/" style="font-size: 18.57px;">python</a> <a href="/tags/python3/" style="font-size: 10px;">python3</a> <a href="/tags/佳片/" style="font-size: 10px;">佳片</a> <a href="/tags/学习/" style="font-size: 17.14px;">学习</a> <a href="/tags/工具/" style="font-size: 11.43px;">工具</a> <a href="/tags/开心麻花/" style="font-size: 10px;">开心麻花</a> <a href="/tags/影视/" style="font-size: 11.43px;">影视</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/校园/" style="font-size: 10px;">校园</a> <a href="/tags/汇编/" style="font-size: 15.71px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/爱情/" style="font-size: 10px;">爱情</a> <a href="/tags/琐事/" style="font-size: 10px;">琐事</a> <a href="/tags/生活/" style="font-size: 11.43px;">生活</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/科幻/" style="font-size: 10px;">科幻</a> <a href="/tags/计算机原理/" style="font-size: 12.86px;">计算机原理</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/进阶/" style="font-size: 10px;">进阶</a> <a href="/tags/通信/" style="font-size: 10px;">通信</a> <a href="/tags/随感/" style="font-size: 10px;">随感</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/14/ceshi/">ceshi</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/25/ee/上网背后的流程/">上网背后的流程</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/15/life/这些衰败的日子/">这些衰败的日子</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/30/life/如懿如意/">如懿，如意</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/05/life/开心麻花几部电影/">开心麻花</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Lart Pang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

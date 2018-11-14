@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Java学习笔记——基础1 | 失乐园</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="(因为我粗略学过C,C++,Python，了解过他们的一些语法，所以为了使得java的入门更为顺畅，便会忽略一些和C语法相类似的地方，着重点明一些java自己的特色之处。也减轻一下自己写文字的负担。)  JAVA是一门静态的强类型的面向对象的重量级的编程语言。 一般写JAVA程序需要的组件是JDK，到甲骨文的网站上下载即可。 初级阶段使用文本编辑器即可，当然，我正处在这个阶段。 此时用来编译运行">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java学习笔记——基础1">
+<meta property="og:url" content="https://plart.pw/2017/07/01/langs/java/Java初入/index.html">
+<meta property="og:site_name" content="失乐园">
+<meta property="og:description" content="(因为我粗略学过C,C++,Python，了解过他们的一些语法，所以为了使得java的入门更为顺畅，便会忽略一些和C语法相类似的地方，着重点明一些java自己的特色之处。也减轻一下自己写文字的负担。)  JAVA是一门静态的强类型的面向对象的重量级的编程语言。 一般写JAVA程序需要的组件是JDK，到甲骨文的网站上下载即可。 初级阶段使用文本编辑器即可，当然，我正处在这个阶段。 此时用来编译运行">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-13T12:50:20.712Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java学习笔记——基础1">
+<meta name="twitter:description" content="(因为我粗略学过C,C++,Python，了解过他们的一些语法，所以为了使得java的入门更为顺畅，便会忽略一些和C语法相类似的地方，着重点明一些java自己的特色之处。也减轻一下自己写文字的负担。)  JAVA是一门静态的强类型的面向对象的重量级的编程语言。 一般写JAVA程序需要的组件是JDK，到甲骨文的网站上下载即可。 初级阶段使用文本编辑器即可，当然，我正处在这个阶段。 此时用来编译运行">
+  
+    <link rel="alternate" href="/atom.xml" title="失乐园" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">失乐园</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">代码与机器</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://plart.pw"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-langs/java/Java初入" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/01/langs/java/Java初入/" class="article-date">
+  <time datetime="2017-07-01T10:40:59.000Z" itemprop="datePublished">2017-07-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java学习笔记——基础1
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>(因为我粗略学过C,C++,Python，了解过他们的一些语法，所以为了使得java的入门更为顺畅，便会忽略一些和C语法相类似的地方，着重点明一些java自己的特色之处。也减轻一下自己写文字的负担。)</p>
+</blockquote>
+<p>JAVA是一门<a href="https://www.zhihu.com/question/19918532" target="_blank" rel="noopener">静态的强类型</a>的面向对象的重量级的编程语言。</p>
+<p>一般写JAVA程序需要的组件是JDK，到甲骨文的网站上下载即可。</p>
+<p>初级阶段使用文本编辑器即可，当然，我正处在这个阶段。</p>
+<p>此时用来编译运行JAVA文件常用的两条命令是</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">javac -encoding utf-<span class="number">8</span> filename.java</span><br><span class="line">java filename</span><br></pre></td></tr></table></figure>
+<p>以上命令就是先使用<code>javac</code>在java文件当前目录下，编译生成字节码文件<code>filename.class</code>，之后再用<code>java</code>解释执行成特定平台的机器码，输出。<br>这里指定了编码格式，因为java默认文件为unicode编码，但是文件中有中文，会有错误提示。</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">错误：编码GBK的不可映射字符</span><br></pre></td></tr></table></figure>
+<p>若是你没有这个问题，则可以忽略那个<code>-encoding utf-8</code></p>
+<hr>
+<h2 id="java源文件的命名"><a href="#java源文件的命名" class="headerlink" title="java源文件的命名"></a>java源文件的命名</h2><p>和c，c++，python不同，java要求，源文件后缀名为<code>.java</code>，文件名字一般要求和文件中的 <em>public class</em> 同名，若是没有定义，那就没有限制了。这也可以看出，<strong>一个java源文件中只能最多有一个 <em>public class</em></strong>。通常建议一个java源文件只定义一个类，让java的源文件主文件名与该源文件中定义的 <em>public class</em>同名。</p>
+<h2 id="java程序的结构"><a href="#java程序的结构" class="headerlink" title="java程序的结构"></a>java程序的结构</h2><p><em>java程序必须以类的形式存在</em>，类是java程序的最小单位，java不允许除类外的可执行语句，方法等成分独立存在。他们必须放在类定义里。</p>
+<p>例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello World"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>观察上例，与文件同名的 <em>public class</em> <code>HelloWorld</code>，内部包含一个<code>main()</code>方法，使用<code>System.out.println(&quot;Hello World&quot;);</code>实现对于文本的输出，类似的有个<code>System.out.print(&quot;Hello World&quot;);</code>，差别就在于前者会换行。</p>
+<p>目前用到的<code>main()</code>函数都是这样写的，关于详细内容之后的文章会介绍。</p>
+<p><em>若是存在多个类怎么办？</em></p>
+<p>可见下例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">jump</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"正在执行jump方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.jump();</span><br><span class="line">        System.out.println(<span class="string">"正在执行run方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DogTest</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Dog dog = <span class="keyword">new</span> Dog();</span><br><span class="line">        dog.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因为只允许有一个<code>public class</code>，故而其他的就是普通的类的形式。</p>
+<h2 id="java中的流程控制语句"><a href="#java中的流程控制语句" class="headerlink" title="java中的流程控制语句"></a>java中的流程控制语句</h2><pre><code>if (...){
+    ...
+}
+else if{
+    ...
+}
+else{
+    ...
+}
+
+switch (...){
+    case ...:{
+    ...
+    break;
+    }
+    ...
+    default:{
+    ...
+    }
+}
+
+while (...){
+    ...
+}
+
+do{
+    ...
+}while (...);
+
+for (...; ...; ...){
+    ...
+}
+</code></pre><p>Java中出现了一种迭代式的for的用法。python和C++都有类似的语法结构。</p>
+<pre><code>for ( type variableName : array | collection){
+    // variableName 自动迭代访问每个元素
+}
+</code></pre><p>例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ForEachTest</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        String[] books = &#123;<span class="string">"轻量级"</span>,</span><br><span class="line">                        <span class="string">"fengkuang"</span>,</span><br><span class="line">                        <span class="string">"jiangyi"</span>&#125;;</span><br><span class="line">        <span class="comment">// 使用foreach迭代遍历。</span></span><br><span class="line">        <span class="keyword">for</span>(String book : books)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(book);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2017/07/01/langs/java/Java初入/" data-id="cjogni4ff003yqshsmfm3qvux" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/07/08/books/代码之髓-如何高效的学习语言/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          代码之髓读后感——如何高效的学习语言
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/12/langs/cpp/链表操作/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">数据结构之链表相关算法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/幻想与现实/">幻想与现实</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术与进步/">技术与进步</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活与思考/">生活与思考</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影与艺术/">电影与艺术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程与生活/">编程与生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录与总结/">记录与总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C++&C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChucK/">ChucK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/org-mode/">org-mode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/佳片/">佳片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开心麻花/">开心麻花</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/影视/">影视</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/校园/">校园</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爱情/">爱情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/琐事/">琐事</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科幻/">科幻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机原理/">计算机原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进阶/">进阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信/">通信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随感/">随感</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-C/" style="font-size: 14.29px;">C++&C</a> <a href="/tags/ChucK/" style="font-size: 20px;">ChucK</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/org-mode/" style="font-size: 10px;">org-mode</a> <a href="/tags/python/" style="font-size: 18.57px;">python</a> <a href="/tags/python3/" style="font-size: 10px;">python3</a> <a href="/tags/佳片/" style="font-size: 10px;">佳片</a> <a href="/tags/学习/" style="font-size: 17.14px;">学习</a> <a href="/tags/工具/" style="font-size: 11.43px;">工具</a> <a href="/tags/开心麻花/" style="font-size: 10px;">开心麻花</a> <a href="/tags/影视/" style="font-size: 11.43px;">影视</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/校园/" style="font-size: 10px;">校园</a> <a href="/tags/汇编/" style="font-size: 15.71px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/爱情/" style="font-size: 10px;">爱情</a> <a href="/tags/琐事/" style="font-size: 10px;">琐事</a> <a href="/tags/生活/" style="font-size: 11.43px;">生活</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/科幻/" style="font-size: 10px;">科幻</a> <a href="/tags/计算机原理/" style="font-size: 12.86px;">计算机原理</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/进阶/" style="font-size: 10px;">进阶</a> <a href="/tags/通信/" style="font-size: 10px;">通信</a> <a href="/tags/随感/" style="font-size: 10px;">随感</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/14/ceshi/">ceshi</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/25/ee/上网背后的流程/">上网背后的流程</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/15/life/这些衰败的日子/">这些衰败的日子</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/30/life/如懿如意/">如懿，如意</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/05/life/开心麻花几部电影/">开心麻花</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Lart Pang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

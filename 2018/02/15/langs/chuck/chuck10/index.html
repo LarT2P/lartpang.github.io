@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>chuck10 | 失乐园</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="classes and objects introduction existing classes working with objects writing a class members (data + functions) static (data + functions) inheritance overloadation (overloading + overriding)  #intro">
+<meta name="keywords" content="ChucK">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chuck10">
+<meta property="og:url" content="https://plart.pw/2018/02/15/langs/chuck/chuck10/index.html">
+<meta property="og:site_name" content="失乐园">
+<meta property="og:description" content="classes and objects introduction existing classes working with objects writing a class members (data + functions) static (data + functions) inheritance overloadation (overloading + overriding)  #intro">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-13T12:46:14.885Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="chuck10">
+<meta name="twitter:description" content="classes and objects introduction existing classes working with objects writing a class members (data + functions) static (data + functions) inheritance overloadation (overloading + overriding)  #intro">
+  
+    <link rel="alternate" href="/atom.xml" title="失乐园" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">失乐园</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">代码与机器</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://plart.pw"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-langs/chuck/chuck10" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/15/langs/chuck/chuck10/" class="article-date">
+  <time datetime="2018-02-15T13:40:10.000Z" itemprop="datePublished">2018-02-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      chuck10
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>classes and objects</p>
+<pre><code>introduction
+existing classes
+working with objects
+writing a class
+members (data + functions)
+static (data + functions)
+inheritance
+overloadation (overloading + overriding) 
+</code></pre><p>#introduction</p>
+<p>Chuck implements(实现) an object system that borrows from both C++ and Java conventions. In our case this means:</p>
+<ul>
+<li>You can define(定义) custom classes as new types and instantiate objects自定义类</li>
+<li>ChucK supports <em>polymorphic inheritance(多态继承)</em> (this is the same model used in Java, and also known as <em>virtual inheritance</em> in C++)</li>
+<li>All object variables(变量) are <em>references</em> (like Java), but instantiation(实例化) resembles(类似于) C++. We will discuss this in detail below.</li>
+<li>There is a default class library.</li>
+<li>All objects inherit(继承) from the Object class (as in Java)</li>
+</ul>
+<p>For the sake(目的) of clarity(清楚) we will define(定义) these terms:</p>
+<ul>
+<li>a class is an <em>abstraction</em> of data (<strong>members</strong>) and behavior(行为) (<strong>methods</strong>)</li>
+<li>a class is a <em>type</em>.</li>
+<li>an <em>object</em> is an <em>instantiation</em> of that class</li>
+<li>a <em>reference</em> variable refers indirectly to an object - it is not the object itself. <strong>All ChucK <em>object variables</em> are reference variables</strong>(变量) (like in Java).</li>
+<li>similarly, <em>reference assignment(引用赋值)</em> duplicates a reference to an object and assigns(分配) the reference to a reference variable. The object itself is not duplicated. <strong>All ChucK object assignments are reference assignments.所有对象赋值都是引用赋值</strong></li>
+</ul>
+<p>#built-in classes</p>
+<p>ChucK has a number of classes defined(定义) within the language.</p>
+<ul>
+<li><code>Object</code> : <strong>base class to all ChucK objects.</strong></li>
+<li><code>Event</code> : ChucK’s basic synchronization(同步) mechanism(机制); may be extended(延伸) to <em>create custom Event</em> functionality(功能) (discussed <a href="http://chuck.cs.princeton.edu/doc/language/event.html" target="_blank" rel="noopener">here</a>).</li>
+<li><code>Shred</code> : basic abstraction(抽象) for a non-preemptive ChucK process(非抢占式进程).</li>
+<li><code>UGen</code> : base unit generator class (discussed <a href="http://chuck.cs.princeton.edu/doc/language/ugen.html" target="_blank" rel="noopener">here</a>).</li>
+</ul>
+<p>These are some of the more commonly used classes in ChucK. </p>
+<p>#working with objects</p>
+<p>Let’s begin with some examples. For these examples, let’s assume Foo is a defined class.</p>
+<pre><code>// create a Foo object; stored in reference variable bar
+Foo bar;
+</code></pre><p>The above code does two things:</p>
+<ul>
+<li>a reference variable bar is declared; its type is Foo.</li>
+<li>a new instance of Foo is created, and its reference is assigned to bar.</li>
+</ul>
+<p>Note that in contrast to(与…相比) Java, <em>this statement both declares a reference variable and instantiates a instance of that class and assigns the reference to the variable</em>.<br>Also note that in contrast to C++, <em>bar is a reference, and does not represent the object itself</em>.</p>
+<p>To declare a reference variable that refers to nothing (also called a <em>null reference</em>):</p>
+<pre><code>// create a null reference to a Foo object
+Foo @ bar;
+</code></pre><p>The above code only declare a reference and initializes it to null. (random note: the above statement may be read as “Foo at bar”)</p>
+<p>We can assign a new instance to the reference variable:</p>
+<pre><code>// assign new instance of Foo to bar
+new Foo @=&gt; Foo @ bar;
+
+// (this statement is equivalent to &apos;Foo bar&apos;, above)
+</code></pre><p>The <code>new</code> operator creates an instance of a class, in this case <code>Foo</code>. The <code>@=&gt;</code> operator performs the <em>reference assignment</em>. (see <a href="http://chuck.cs.princeton.edu/doc/language/oper.html" target="_blank" rel="noopener">here</a> for more information on <code>@=&gt;</code>)</p>
+<p>It is possible to make many references to same object:</p>
+<pre><code>// make a Foo
+Foo bar;
+
+// reference assign to duh
+bar @=&gt; Foo @ duh;
+
+// (now both bar and duh points to the same object)
+</code></pre><p>ChucK objects are reference counted(引用计数) and garbage collection takes place automatically. (note: this is still being implemented!)引用计数，垃圾回收</p>
+<p>As stated above(如上所述), <em>a classes may contain data and behavior</em>, in the form of <em>member variables</em> and <em>member functions</em>, respectively. Members are accessed by using ‘dot notation’ - <em>reference.memberdata</em> and <em>reference.memberfunc()</em>. To invoke(调用) a member function of an object (assuming class <code>Foo</code> has a member function called <code>compute</code> that takes two integers and returns an integer):</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// make a Foo</span></span><br><span class="line">Foo bar;</span><br><span class="line"></span><br><span class="line"><span class="comment">// call compute(), store result in boo</span></span><br><span class="line">bar.compute( <span class="number">1</span>, <span class="number">2</span> ) =&gt; <span class="keyword">int</span> boo;</span><br></pre></td></tr></table></figure>
+<p>#writing a class</p>
+<p>If a class has already <em>been defined in the ChucK virtual machine</em> (either in the same file or as a public class in a different file) then it can be instantiated <em>similar to primitive types</em>.</p>
+<p>Unless declared <em>public</em>, class definitions are scoped to the shred and will not conflict with identically named classes in other running shreds.除非声明是公共的，类的定义作用于该进程，并将不会与在其他运行进程中的命名相同的类发生冲突。</p>
+<p>Classes encapsulate(封装) a set of behaviors and data. To define a new object type, the keyword <code>class</code> is used followed by the name of that class.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// define class X</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">X</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="comment">// insert code here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>If a class is defined as <code>public</code>, it is integrated(整合) into <em>the central namespace</em> (instead of the local one), and can be instantiated from other programs that are subsequently compiled.<br>在随后编译的其他程序中，公共类也可以被实例化。</p>
+<p><strong>There can be at most one public class per file.</strong>(每个文件中至多一个公共类)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// define public class MissPopular</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MissPopular</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// define non-public class Flarg</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Flarg</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// both MissPopular and Flarg can be used in this file</span></span><br><span class="line"><span class="comment">// only MissPopular can be used from another file</span></span><br></pre></td></tr></table></figure>
+<p>We define <code>member data</code> and <code>methods</code> to specify the <strong>data types and functionality(数据类型和功能)</strong> required of the class. Members, or instance data and instance functions are associated with <em>individual instances of a class</em>, whereas(然而) static data and functions are only associated with the class (and shared by the instances).<br>成员 或者 实例数据和实例函数，关联各个类实例，而静态数据和函数是关联于类的，各实例共享。</p>
+<p>#members (instance data + functions)</p>
+<p>Instance data and methods are associated with an object.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// define class X</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">X</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="comment">// declare instance variable 'm_foo'</span></span><br><span class="line">    <span class="keyword">int</span> m_foo;</span><br><span class="line">    <span class="comment">// another instance variable 'm_bar'</span></span><br><span class="line">    <span class="keyword">float</span> m_bar;</span><br><span class="line">    <span class="comment">// yet another, this time an object</span></span><br><span class="line">    Event m_event;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// function that returns value of m_foo</span></span><br><span class="line">    <span class="function">fun <span class="keyword">int</span> <span class="title">getFoo</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> m_foo; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// function to set the value of m_foo</span></span><br><span class="line">    <span class="function">fun <span class="keyword">void</span> <span class="title">setFoo</span><span class="params">( <span class="keyword">int</span> value )</span> </span>&#123; value =&gt; m_foo; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// calculate something</span></span><br><span class="line">    <span class="function">fun <span class="keyword">float</span> <span class="title">calculate</span><span class="params">( <span class="keyword">float</span> x, <span class="keyword">float</span> y )</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// insert code</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// print some stuff</span></span><br><span class="line">    <span class="function">fun <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        &lt;&lt;&lt; m_foo, m_bar, m_event &gt;&gt;&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// instantiate an X</span></span><br><span class="line">X x;</span><br><span class="line"></span><br><span class="line"><span class="comment">// set the Foo</span></span><br><span class="line">x.setFoo( <span class="number">5</span> );</span><br><span class="line"><span class="comment">// print the Foo</span></span><br><span class="line">&lt;&lt;&lt; x.getFoo() &gt;&gt;&gt;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// call print</span></span><br><span class="line">x.print();</span><br></pre></td></tr></table></figure>
+<p><strong>class constructors</strong></p>
+<blockquote>
+<p>In the initial release(初始版本), we do not support <em>constructors</em> yet. However, we have a single pre-constructor. The code immediately inside a class definiton(定义) (and not inside any functions) is run every time an instance of that class is created.<br>类实例化时就自动运行类定义里而不是任何函数里的代码。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">// define <span class="class"><span class="keyword">class</span> <span class="title">X</span></span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">X</span></span></span><br><span class="line">&#123;</span><br><span class="line">    // we can put any ChucK statements here <span class="keyword">as</span> pre-constructor</span><br><span class="line">    </span><br><span class="line">    // initialize an instance data</span><br><span class="line">    109 =&gt; int m_foo;</span><br><span class="line"></span><br><span class="line">    // loop over stuff</span><br><span class="line">    for( 0 =&gt; int i; i &lt; 5; i++ )</span><br><span class="line">    &#123;</span><br><span class="line">        // <span class="keyword">print</span> out message how silly</span><br><span class="line">        &lt;&lt;&lt; <span class="string">"part of class pre-constructor..."</span>, this, i &gt;&gt;&gt;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // function</span><br><span class="line">    fun void doit()</span><br><span class="line">    &#123;</span><br><span class="line">        // ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// when we instantiate X, the pre-constructor <span class="keyword">is</span> run</span><br><span class="line">X x;</span><br><span class="line"></span><br><span class="line">// <span class="keyword">print</span> out m_foo</span><br><span class="line">&lt;&lt;&lt; x.m_foo &gt;&gt;&gt;;</span><br></pre></td></tr></table></figure>
+<p>#static (data + functions)</p>
+<p>Static data and functions are associated with a <em>class</em>, and are <em>shared by all instances of that class</em> – in fact, static elements can be accessed without an instance, by using the name of the class: <code>Classname.element</code>.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// define class X</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">X</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="comment">// static data</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> our_data;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// static function</span></span><br><span class="line">    <span class="function">fun <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">doThatThing</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// return the data</span></span><br><span class="line">        <span class="keyword">return</span> our_data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// do not need an instance to access our_data</span></span><br><span class="line"><span class="number">2</span> =&gt; X.our_data;</span><br><span class="line"><span class="comment">// print out</span></span><br><span class="line">&lt;&lt;&lt; X.our_data &gt;&gt;&gt;;</span><br><span class="line"><span class="comment">// print</span></span><br><span class="line">&lt;&lt;&lt; X.doThatThing() &gt;&gt;&gt;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// create instances of X</span></span><br><span class="line">X x1;</span><br><span class="line">X x2;</span><br><span class="line"></span><br><span class="line"><span class="comment">// print out their static data - should be same</span></span><br><span class="line">&lt;&lt;&lt; x1.our_data, x2.our_data &gt;&gt;&gt;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// change use one</span></span><br><span class="line"><span class="number">5</span> =&gt; x1.our_data;</span><br><span class="line"></span><br><span class="line"><span class="comment">// the other should be changed as well</span></span><br><span class="line">&lt;&lt;&lt; x1.our_data, x2.our_data &gt;&gt;&gt;;</span><br></pre></td></tr></table></figure>
+<p>静态数据是同一块内存</p>
+<p>#inheritance</p>
+<p>Inheritance in <strong>object-oriented(面向对象的)</strong> code allows the programmer to take an existing class to extend(扩展) or alter(改变) its functionality.  In doing so we can create a taxonomy(分类法) of classes that all share a specific(特定的) set of behaviors(行为), while implementing(实施) those behaviors in different, yet well-defined(定义明确的), ways. <strong>We indicate(表明) that a new class inherits(继承) from another class using the <code>extends</code> keyword.</strong> The class from which we inherit(继承) is referred to as the <code>parent class</code>, and the inheriting class is the <code>child class</code>. The <em>Child class receives all of the member data and functions from the parent class</em>, although functions from the parent class may be overridden(重写) ( below ).<br>Because the children contain the functionality(功能) of the parent class, references to instances(实例) of a child class may be assigned(分配) to a parent class reference type. </p>
+<p>For now, access modifiers(存取修改器) (public, protected, private) are included but not fully implemented. <em>Everything is public by default</em>.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// define class X</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">X</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="comment">// define member function</span></span><br><span class="line">    <span class="function">fun <span class="keyword">void</span> <span class="title">doThatThing</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        &lt;&lt;&lt;<span class="string">"Hallo"</span>&gt;&gt;&gt;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// define another</span></span><br><span class="line">    <span class="function">fun <span class="keyword">void</span> <span class="title">hey</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        &lt;&lt;&lt;<span class="string">"Hey!!!"</span>&gt;&gt;&gt;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// data</span></span><br><span class="line">    <span class="keyword">int</span> the_data;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// define child class Y</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Y</span> <span class="title">extends</span> <span class="title">X</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="comment">// override doThatThing()</span></span><br><span class="line">    <span class="function">fun <span class="keyword">void</span> <span class="title">doThatThing</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        &lt;&lt;&lt;<span class="string">"No! Get away from me!"</span>&gt;&gt;&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// instantiate a Y</span></span><br><span class="line">Y y;</span><br><span class="line"></span><br><span class="line"><span class="comment">// call doThatThing</span></span><br><span class="line">y.doThatThing();</span><br><span class="line"></span><br><span class="line"><span class="comment">// call hey() - should use X's hey(), since we didn't override</span></span><br><span class="line">y.hey();</span><br><span class="line"></span><br><span class="line"><span class="comment">// data is also inherited from X</span></span><br><span class="line">&lt;&lt;&lt; y.the_data &gt;&gt;&gt;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Inheritance provides us a way of efficiently sharing code between classes which <strong>perform similar roles</strong>. We can define a particular complex pattern of behavior, while changing the way that certain aspects of the behavior operate.</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// parent class defines some basic data and methods </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Xfunc</span></span></span><br><span class="line"><span class="class">&#123;</span> </span><br><span class="line">    <span class="keyword">int</span> x; </span><br><span class="line"></span><br><span class="line">    <span class="function">fun <span class="keyword">int</span> <span class="title">doSomething</span><span class="params">( <span class="keyword">int</span> a, <span class="keyword">int</span> b )</span> </span>&#123; </span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// child class, which overrides the doSomething function with an addition operation</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Xadds</span> <span class="title">extends</span> <span class="title">Xfunc</span></span></span><br><span class="line"><span class="class">&#123;</span> </span><br><span class="line">    <span class="function">fun <span class="keyword">int</span> <span class="title">doSomething</span> <span class="params">( <span class="keyword">int</span> a, <span class="keyword">int</span> b )</span></span></span><br><span class="line"><span class="function">    </span>&#123; </span><br><span class="line">         <span class="keyword">return</span> a + b ; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// child class, which overrides the doSomething function with a multiply operation </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Xmuls</span> <span class="title">extends</span> <span class="title">Xfunc</span></span></span><br><span class="line"><span class="class">&#123;</span> </span><br><span class="line">    <span class="function">fun <span class="keyword">int</span> <span class="title">doSomething</span> <span class="params">( <span class="keyword">int</span> a, <span class="keyword">int</span> b )</span></span></span><br><span class="line"><span class="function">    </span>&#123; </span><br><span class="line">         <span class="keyword">return</span> a * b; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// array of references to Xfunc</span></span><br><span class="line">Xfunc @ operators[<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// instantiate two children and assign reference to the array </span></span><br><span class="line"><span class="keyword">new</span> Xadds @=&gt; operators[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">new</span> Xmuls @=&gt; operators[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// loop over the Xfunc</span></span><br><span class="line"><span class="keyword">for</span>( <span class="number">0</span> =&gt; <span class="keyword">int</span> i; i &lt; operators.cap(); i++ )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// doSomething, potentially different for each Xfunc</span></span><br><span class="line">    &lt;&lt;&lt; operators[i].doSomething( <span class="number">4</span>, <span class="number">5</span> ) &gt;&gt;&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>because Xmuls and Xadds each redefine(重新定义) doSomething( int a, int b ) with their own code, we say that they have <code>overridden</code>(重写) the behavior of the parent class. They observe the same interface, but have potentially different implementation.<br>This is known as <strong>polymorphism(多态性)</strong>.</p>
+<p>#Overloading</p>
+<p>Function overloading in classes is similar to that of regular functions. see functions.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2018/02/15/langs/chuck/chuck10/" data-id="cjogni4dc002aqshskvpywnzs" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ChucK/">ChucK</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/02/15/langs/chuck/chuck1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          chuck1
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/15/langs/chuck/chuck3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">chuck3</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/幻想与现实/">幻想与现实</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术与进步/">技术与进步</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活与思考/">生活与思考</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影与艺术/">电影与艺术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程与生活/">编程与生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录与总结/">记录与总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C++&C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChucK/">ChucK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/org-mode/">org-mode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/佳片/">佳片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开心麻花/">开心麻花</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/影视/">影视</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/校园/">校园</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爱情/">爱情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/琐事/">琐事</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科幻/">科幻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机原理/">计算机原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进阶/">进阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信/">通信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随感/">随感</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-C/" style="font-size: 14.29px;">C++&C</a> <a href="/tags/ChucK/" style="font-size: 20px;">ChucK</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/org-mode/" style="font-size: 10px;">org-mode</a> <a href="/tags/python/" style="font-size: 18.57px;">python</a> <a href="/tags/python3/" style="font-size: 10px;">python3</a> <a href="/tags/佳片/" style="font-size: 10px;">佳片</a> <a href="/tags/学习/" style="font-size: 17.14px;">学习</a> <a href="/tags/工具/" style="font-size: 11.43px;">工具</a> <a href="/tags/开心麻花/" style="font-size: 10px;">开心麻花</a> <a href="/tags/影视/" style="font-size: 11.43px;">影视</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/校园/" style="font-size: 10px;">校园</a> <a href="/tags/汇编/" style="font-size: 15.71px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/爱情/" style="font-size: 10px;">爱情</a> <a href="/tags/琐事/" style="font-size: 10px;">琐事</a> <a href="/tags/生活/" style="font-size: 11.43px;">生活</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/科幻/" style="font-size: 10px;">科幻</a> <a href="/tags/计算机原理/" style="font-size: 12.86px;">计算机原理</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/进阶/" style="font-size: 10px;">进阶</a> <a href="/tags/通信/" style="font-size: 10px;">通信</a> <a href="/tags/随感/" style="font-size: 10px;">随感</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/14/ceshi/">ceshi</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/25/ee/上网背后的流程/">上网背后的流程</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/15/life/这些衰败的日子/">这些衰败的日子</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/30/life/如懿如意/">如懿，如意</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/05/life/开心麻花几部电影/">开心麻花</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Lart Pang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

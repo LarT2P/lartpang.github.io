@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>我的第一个豆瓣短评爬虫 | 失乐园</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="豆瓣上有着大量的影视剧的评论，所以说，要是想要实现对广大人民群众的观点的分析，对一部片子的理解，综合来看大家的评论是很有必要的。而短评作为短小精干的快速评论入口，是值得一谈的。 所以先要实现对其的数据的爬取。 目前来看，基本内容是可以爬取的。最大的问题在于速度。后续考虑准备运用多线程的方式处理下。以及可以尝试其他提速的方法。 下面是这个程序的构思编写过程。">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的第一个豆瓣短评爬虫">
+<meta property="og:url" content="https://plart.pw/2017/08/17/langs/python/spyderfordouban/index.html">
+<meta property="og:site_name" content="失乐园">
+<meta property="og:description" content="豆瓣上有着大量的影视剧的评论，所以说，要是想要实现对广大人民群众的观点的分析，对一部片子的理解，综合来看大家的评论是很有必要的。而短评作为短小精干的快速评论入口，是值得一谈的。 所以先要实现对其的数据的爬取。 目前来看，基本内容是可以爬取的。最大的问题在于速度。后续考虑准备运用多线程的方式处理下。以及可以尝试其他提速的方法。 下面是这个程序的构思编写过程。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2817465-4d950a3b3b84b2ec?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-07-13T12:43:42.822Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我的第一个豆瓣短评爬虫">
+<meta name="twitter:description" content="豆瓣上有着大量的影视剧的评论，所以说，要是想要实现对广大人民群众的观点的分析，对一部片子的理解，综合来看大家的评论是很有必要的。而短评作为短小精干的快速评论入口，是值得一谈的。 所以先要实现对其的数据的爬取。 目前来看，基本内容是可以爬取的。最大的问题在于速度。后续考虑准备运用多线程的方式处理下。以及可以尝试其他提速的方法。 下面是这个程序的构思编写过程。">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2817465-4d950a3b3b84b2ec?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+  
+    <link rel="alternate" href="/atom.xml" title="失乐园" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">失乐园</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">代码与机器</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://plart.pw"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-langs/python/spyderfordouban" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/17/langs/python/spyderfordouban/" class="article-date">
+  <time datetime="2017-08-17T09:19:22.000Z" itemprop="datePublished">2017-08-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      我的第一个豆瓣短评爬虫
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>豆瓣上有着大量的影视剧的评论，所以说，要是想要实现对广大人民群众的观点的分析，对一部片子的理解，综合来看大家的评论是很有必要的。而短评作为短小精干的快速评论入口，是值得一谈的。</p>
+<p>所以先要实现对其的数据的爬取。</p>
+<p>目前来看，基本内容是可以爬取的。最大的问题在于速度。后续考虑准备运用多线程的方式处理下。以及可以尝试其他提速的方法。</p>
+<p>下面是这个程序的构思编写过程。</p>
+<a id="more"></a>
+<h1 id="构思准备"><a href="#构思准备" class="headerlink" title="构思准备"></a>构思准备</h1><h2 id="爬取的思路，及反省与思考"><a href="#爬取的思路，及反省与思考" class="headerlink" title="爬取的思路，及反省与思考"></a>爬取的思路，及反省与思考</h2><h3 id="盲目状态"><a href="#盲目状态" class="headerlink" title="盲目状态"></a>盲目状态</h3><p>最初，并不知道豆瓣对于未登陆用户的限制，盲目的爬取，看着评论文件，发现行数太少，也就是说评论内容太少，感觉不对劲。</p>
+<p>我利用了即时打印写入内容的方式，发现，到了第十页左右的时候，出现无法获得页面内评论内容，思考了下后，试着将页面源代码打印出来，发现到了后面，就出现提示<strong>权限不足</strong>。我一下子知道了，是因为没有登录的原因。</p>
+<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p>之前看过内容，明白这时候应该借助<code>cookie</code>的方式了。</p>
+<p>但是又要处理验证码。而且，似乎初次登陆的时候并不需要验证码。为了方便，下面直接使用了存在验证码的方式。</p>
+<p>由于开始不了解，不知道应该提交哪些信息，多方查找后，终于明白，就是在登录页面登陆后，打开浏览器的<em>开发者工具</em>里，查看里面的<em>网络</em>，注意关注里面的<em>方法</em>一列中的<code>post</code>所在行那项。在登陆点击后，随着页面的跳转，会出现一个<code>post</code>页面，点击后查看其参数，若是火狐的话有个专门的参数窗口，其中就有要提交的参数了。包括用户信息，还有登录跳转页面（redir）等等。</p>
+<p>在最初，我直接将<code>https://accounts.douban.com/login</code>选作登录地址，当然也将从其登陆的信息复制了出来，但是发现登录到<code>redir</code>还可以，要是用<code>opener.open()</code>再登录<code>&#39;https://movie.douban.com/subject/26934346/comments?start=&#39; + str(start) + &#39;&amp;limit=20&amp;sort=new_score&amp;status=P&#39;</code> 这里构造的页面是登不上的。这里我也是测试了好久才发现的问题。具体原因我不清楚。可能是有哪些知识我是遗漏了的。</p>
+<p>后来觉察到这一点后，我尝试使用现在的信息登录，如下。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">main_url = <span class="string">'https://accounts.douban.com/login?source=movie'</span></span><br><span class="line">formdata = &#123;</span><br><span class="line">    <span class="string">"form_email"</span>:<span class="string">"你的邮箱"</span>,</span><br><span class="line">    <span class="string">"form_password"</span>:<span class="string">"你的密码"</span>,</span><br><span class="line">    <span class="string">"source"</span>:<span class="string">"movie"</span>,</span><br><span class="line">    <span class="string">"redir"</span>:<span class="string">"https://movie.douban.com/subject/26934346/"</span>,</span><br><span class="line">    <span class="string">"login"</span>:<span class="string">"登录"</span></span><br><span class="line">&#125;</span><br><span class="line">user_agent = <span class="string">r'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36'</span></span><br><span class="line">headers = &#123;<span class="string">'User-Agnet'</span>: user_agent, <span class="string">'Connection'</span>: <span class="string">'keep-alive'</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>诶，竟然登上去了！</p>
+<h3 id="关于验证码的纠结思考"><a href="#关于验证码的纠结思考" class="headerlink" title="关于验证码的纠结思考"></a>关于验证码的纠结思考</h3><p>由于豆瓣的验证码是登一次变一次的。所以在发生上面的问题时，在没有找到正确的处理办法之时，我怀疑是因为验证码，在我获取上一次验证码图片，并将验证信息输入到<code>formdata</code>这个提交信息的字典中后，再次使用<code>request.Request(url=main_url, data=logingpostdata, headers=headers)</code>与<code>opener.open(req_ligin).read().decode(&#39;utf-8&#39;)</code>的时候，会不会验证码发生了变化？而我提交的是刚才的验证码？</p>
+<p>又开始查资料，后来终于明白，这里提交的信息中指定了验证码的图片的<code>captchaID</code>，这样使得提交信息时候，返回来的验证码图片也就是这个，图片id是唯一的，当你自己修改了提交内容，豆瓣也会使用你提供的这个id来获取服务器里的验证码图片，所以保证了图片的一致。（这是我的理解，觉得有问题，或者更精确的理解的，欢迎留言）</p>
+<h2 id="使用库的考虑"><a href="#使用库的考虑" class="headerlink" title="使用库的考虑"></a>使用库的考虑</h2><h3 id="BeautifulSoup，-re"><a href="#BeautifulSoup，-re" class="headerlink" title="BeautifulSoup， re"></a>BeautifulSoup， re</h3><p>准备尝试下<code>beautiful soup</code>这个库，对于拆解html页面很便利。但是在实践中，还是可能会用到正则表达式<code>re</code>模块。可见，正则表达式还是很重要的。掌握基本可以查表使用时必须的。</p>
+<p>在代码中可以看出，我对于该库的使用还是有些粗，不巧妙，还有待加强。</p>
+<p>不过，今天尝试了下，用CSS选择器还是很方便的。<code>select()</code>方法，很方便，可以参考从浏览器开发者工具里选择元素对应的CSS选择器，很直接。</p>
+<h3 id="urllib-request，http-cookiejar"><a href="#urllib-request，http-cookiejar" class="headerlink" title="urllib.request，http.cookiejar"></a>urllib.request，http.cookiejar</h3><p>借鉴之前使用<code>urllib.request</code>的经验，尝试直接使用<code>urllib.request.Request(url, headers=headers)</code>与<code>urllib.request.urlopen(request, data=None, timeout=3)</code>发现，豆瓣的短评，最一开始还好，但是在爬取将近十多页的短评时，会报出<code>Forbidden</code>的异常，查询后得知，应该是豆瓣对于游客用户的限制，需要登录才可以。参考网上一些其他教程，可以使用设置<code>cookie</code>的方法来处理。</p>
+<p>使用了<code>cookiejar.CookieJar()</code>声明对象，来保存<code>cookie</code>到了变量中。利用的<code>request.HTTPCookieProcessor()</code>来创建cookie处理器。利用<code>request.build_opener()</code>构造了一个 <code>opener</code>，后面利用<code>opener.open()</code>来打开直接网页或者处理请求。</p>
+<h3 id="socket"><a href="#socket" class="headerlink" title="socket"></a>socket</h3><p>类似上一个爬虫里的设置，这里直接使用了全局的超时设定。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">timeout = <span class="number">3</span></span><br><span class="line">socket.setdefaulttimeout(timeout)</span><br></pre></td></tr></table></figure>
+<p>限制三秒，超出就抛出<code>socket.timeout</code>异常。捕获后重新连接。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 超时重连</span></span><br><span class="line">state = <span class="keyword">False</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> state:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        html = opener.open(url).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">        state = <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">except</span> socket.timeout:</span><br><span class="line">        state = <span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+<h3 id="time"><a href="#time" class="headerlink" title="time"></a>time</h3><p>为了防止爬取过快，设置了循环的延时。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ...:</span><br><span class="line">    ...</span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">Created on Thu Aug 17 16:31:35 2017</span></span><br><span class="line"><span class="string">@note: 为了便于阅读，将模块的引用就近安置了</span></span><br><span class="line"><span class="string">@author: lart</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 用于生成短评页面网址的函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">MakeUrl</span><span class="params">(start)</span>:</span></span><br><span class="line">    <span class="string">"""make the next page's url"""</span></span><br><span class="line">    url = <span class="string">'https://movie.douban.com/subject/26934346/comments?start='</span> + str(start) + <span class="string">'&amp;limit=20&amp;sort=new_score&amp;status=P'</span></span><br><span class="line">    <span class="keyword">return</span> url</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 登录页面信息</span></span><br><span class="line">main_url = <span class="string">'https://accounts.douban.com/login?source=movie'</span></span><br><span class="line">formdata = &#123;</span><br><span class="line">    <span class="string">"form_email"</span>:<span class="string">"你的邮箱"</span>,</span><br><span class="line">    <span class="string">"form_password"</span>:<span class="string">"你的密码"</span>,</span><br><span class="line">    <span class="string">"source"</span>:<span class="string">"movie"</span>,</span><br><span class="line">    <span class="string">"redir"</span>:<span class="string">"https://movie.douban.com/subject/26934346/"</span>,</span><br><span class="line">    <span class="string">"login"</span>:<span class="string">"登录"</span></span><br><span class="line">&#125;</span><br><span class="line">user_agent = <span class="string">r'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36'</span></span><br><span class="line">headers = &#123;<span class="string">'User-Agnet'</span>: user_agent, <span class="string">'Connection'</span>: <span class="string">'keep-alive'</span>&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存cookies便于后续页面的保持登陆</span></span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> http <span class="keyword">import</span> cookiejar</span><br><span class="line"></span><br><span class="line">cookie = cookiejar.CookieJar()</span><br><span class="line">cookie_support = request.HTTPCookieProcessor(cookie)</span><br><span class="line">opener = request.build_opener(cookie_support)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 编码信息，生成请求，打开页面获取内容</span></span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line"></span><br><span class="line">logingpostdata = parse.urlencode(formdata).encode(<span class="string">'utf-8'</span>)</span><br><span class="line">req_ligin = request.Request(url=main_url, data=logingpostdata, headers=headers)</span><br><span class="line">response_login = opener.open(req_ligin).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取验证码图片地址</span></span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    soup = BeautifulSoup(response_login, <span class="string">"html.parser"</span>)</span><br><span class="line">    captchaAddr = soup.find(<span class="string">'img'</span>, id=<span class="string">'captcha_image'</span>)[<span class="string">'src'</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 匹配验证码id</span></span><br><span class="line">    <span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">    reCaptchaID = <span class="string">r'&lt;input type="hidden" name="captcha-id" value="(.*?)"/'</span></span><br><span class="line">    captchaID = re.findall(reCaptchaID, response_login)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 下载验证码图片</span></span><br><span class="line">    request.urlretrieve(captchaAddr, <span class="string">"captcha.jpg"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 输入验证码并加入提交信息中，重新编码提交获得页面内容</span></span><br><span class="line">    captcha = input(<span class="string">'please input the captcha:'</span>)</span><br><span class="line">    formdata[<span class="string">'captcha-solution'</span>] = captcha</span><br><span class="line">    formdata[<span class="string">'captcha-id'</span>] = captchaID[<span class="number">0</span>]</span><br><span class="line">    logingpostdata = parse.urlencode(formdata).encode(<span class="string">'utf-8'</span>)</span><br><span class="line">    req_ligin = request.Request(url=main_url, data=logingpostdata, headers=headers)</span><br><span class="line">    response_login = opener.open(req_ligin).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    <span class="comment"># 获得页面评论文字</span></span><br><span class="line">    soup = BeautifulSoup(response_login, <span class="string">"html.parser"</span>)</span><br><span class="line">    totalnum = soup.select(<span class="string">"div.mod-hd h2 span a"</span>)[<span class="number">0</span>].get_text()[<span class="number">3</span>:<span class="number">-2</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算出页数和最后一页的评论数</span></span><br><span class="line">    pagenum = int(totalnum) // <span class="number">20</span></span><br><span class="line">    commentnum = int(totalnum) % <span class="number">20</span></span><br><span class="line">    print(pagenum, commentnum)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 设置等待时间，避免爬取太快</span></span><br><span class="line">    <span class="keyword">import</span> time</span><br><span class="line">    <span class="comment"># 用于在超时的时候抛出异常，便于捕获重连</span></span><br><span class="line">    <span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line">    timeout = <span class="number">3</span></span><br><span class="line">    socket.setdefaulttimeout(timeout)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 追加写文件的方式打开文件</span></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'秘密森林的短评.txt'</span>, <span class="string">'w+'</span>, encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> file:</span><br><span class="line">        <span class="comment"># 循环爬取内容</span></span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> range(pagenum):</span><br><span class="line">            print(<span class="string">'第'</span> + str(item) + <span class="string">'页'</span>)</span><br><span class="line">            start = item * <span class="number">20</span></span><br><span class="line">            url = MakeUrl(start)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 超时重连</span></span><br><span class="line">            state = <span class="keyword">False</span></span><br><span class="line">            <span class="keyword">while</span> <span class="keyword">not</span> state:</span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    html = opener.open(url).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">                    state = <span class="keyword">True</span></span><br><span class="line">                <span class="keyword">except</span> socket.timeout:</span><br><span class="line">                    state = <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 获得评论内容</span></span><br><span class="line">            soup = BeautifulSoup(html, <span class="string">"html.parser"</span>)</span><br><span class="line">            comments = soup.select(<span class="string">"div.comment &gt; p"</span>)</span><br><span class="line">            <span class="keyword">for</span> text <span class="keyword">in</span> comments:</span><br><span class="line">                file.write(text.get_text().split()[<span class="number">0</span>] + <span class="string">'\n'</span>)</span><br><span class="line">                print(text.get_text())</span><br><span class="line">                limit_num = <span class="number">0</span></span><br><span class="line">                <span class="keyword">if</span> item == pagenum - <span class="number">1</span>:</span><br><span class="line">                    limit_num =+ <span class="number">1</span></span><br><span class="line">                    <span class="keyword">if</span> limit_num == commentnum:</span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line">            time.sleep(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'采集写入完毕'</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p><img src="http://upload-images.jianshu.io/upload_images/2817465-4d950a3b3b84b2ec?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>可见至少也有9200条评论，不管是否有所遗漏，基数已经基本无差。</p>
+<h1 id="后续处理"><a href="#后续处理" class="headerlink" title="后续处理"></a>后续处理</h1><p>数据已经到手，怎样玩耍就看自己的想法了，近期看到了一篇文章,讲了利用词频制作词云，生成图片，有点意思，决定模仿试试。</p>
+<p><a href="http://mp.weixin.qq.com/s/nVofu75tjPfpGavTGLmoTw" target="_blank" rel="noopener">Python 爬虫实践：《战狼2》豆瓣影评分析</a></p>
+<p><a href="https://github.com/amueller/word_cloud/" target="_blank" rel="noopener">github:amueller/word_cloud</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2017/08/17/langs/python/spyderfordouban/" data-id="cjogni4fv004dqshskc62pcwk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/08/18/langs/python/spyderforwordcloud/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          利用豆瓣短评数据生成词云
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/08/13/langs/python/spyderfornovel/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">纪念我的第一个完整的小说爬虫</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/幻想与现实/">幻想与现实</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术与进步/">技术与进步</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活与思考/">生活与思考</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影与艺术/">电影与艺术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程与生活/">编程与生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录与总结/">记录与总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C++&C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChucK/">ChucK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/org-mode/">org-mode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/佳片/">佳片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开心麻花/">开心麻花</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/影视/">影视</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/校园/">校园</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爱情/">爱情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/琐事/">琐事</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科幻/">科幻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机原理/">计算机原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进阶/">进阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信/">通信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随感/">随感</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-C/" style="font-size: 14.29px;">C++&C</a> <a href="/tags/ChucK/" style="font-size: 20px;">ChucK</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/org-mode/" style="font-size: 10px;">org-mode</a> <a href="/tags/python/" style="font-size: 18.57px;">python</a> <a href="/tags/python3/" style="font-size: 10px;">python3</a> <a href="/tags/佳片/" style="font-size: 10px;">佳片</a> <a href="/tags/学习/" style="font-size: 17.14px;">学习</a> <a href="/tags/工具/" style="font-size: 11.43px;">工具</a> <a href="/tags/开心麻花/" style="font-size: 10px;">开心麻花</a> <a href="/tags/影视/" style="font-size: 11.43px;">影视</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/校园/" style="font-size: 10px;">校园</a> <a href="/tags/汇编/" style="font-size: 15.71px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/爱情/" style="font-size: 10px;">爱情</a> <a href="/tags/琐事/" style="font-size: 10px;">琐事</a> <a href="/tags/生活/" style="font-size: 11.43px;">生活</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/科幻/" style="font-size: 10px;">科幻</a> <a href="/tags/计算机原理/" style="font-size: 12.86px;">计算机原理</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/进阶/" style="font-size: 10px;">进阶</a> <a href="/tags/通信/" style="font-size: 10px;">通信</a> <a href="/tags/随感/" style="font-size: 10px;">随感</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/14/ceshi/">ceshi</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/25/ee/上网背后的流程/">上网背后的流程</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/15/life/这些衰败的日子/">这些衰败的日子</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/30/life/如懿如意/">如懿，如意</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/05/life/开心麻花几部电影/">开心麻花</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Lart Pang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

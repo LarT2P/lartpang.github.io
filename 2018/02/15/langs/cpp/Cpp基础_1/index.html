@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>C++基础1 | 失乐园</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="OOP的本质就是设计并扩展自己的数据类型。  变量名命名时，以两个下划线或下划线和大写字母打头的名称被保留给实现（编译器及其使用的资源）使用，以一个下划线开头的名称被保留给，实现，用作全局标识符。  C++中对于名称长度没有限制，但是有些平台有长度限制。  C++赋值方式：（大括号初始化器，适用于任何类型，等号可有可无）  int x = 1; int x = {1};//将大括号初始化器用于单变">
+<meta name="keywords" content="C++&amp;C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++基础1">
+<meta property="og:url" content="https://plart.pw/2018/02/15/langs/cpp/Cpp基础_1/index.html">
+<meta property="og:site_name" content="失乐园">
+<meta property="og:description" content="OOP的本质就是设计并扩展自己的数据类型。  变量名命名时，以两个下划线或下划线和大写字母打头的名称被保留给实现（编译器及其使用的资源）使用，以一个下划线开头的名称被保留给，实现，用作全局标识符。  C++中对于名称长度没有限制，但是有些平台有长度限制。  C++赋值方式：（大括号初始化器，适用于任何类型，等号可有可无）  int x = 1; int x = {1};//将大括号初始化器用于单变">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-13T12:48:49.440Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C++基础1">
+<meta name="twitter:description" content="OOP的本质就是设计并扩展自己的数据类型。  变量名命名时，以两个下划线或下划线和大写字母打头的名称被保留给实现（编译器及其使用的资源）使用，以一个下划线开头的名称被保留给，实现，用作全局标识符。  C++中对于名称长度没有限制，但是有些平台有长度限制。  C++赋值方式：（大括号初始化器，适用于任何类型，等号可有可无）  int x = 1; int x = {1};//将大括号初始化器用于单变">
+  
+    <link rel="alternate" href="/atom.xml" title="失乐园" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">失乐园</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">代码与机器</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://plart.pw"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-langs/cpp/Cpp基础_1" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/15/langs/cpp/Cpp基础_1/" class="article-date">
+  <time datetime="2018-02-15T13:38:12.000Z" itemprop="datePublished">2018-02-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C++基础1
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>OOP的本质就是设计并扩展自己的数据类型。</p>
+<ol>
+<li><p>变量名命名时，以两个下划线或下划线和大写字母打头的名称被保留给实现（编译器及其使用的资源）使用，以一个下划线开头的名称被保留给，实现，用作全局标识符。</p>
+</li>
+<li><p>C++中对于名称长度没有限制，但是有些平台有长度限制。</p>
+</li>
+<li><p>C++赋值方式：<br>（大括号初始化器，适用于任何类型，等号可有可无）</p>
+<ol>
+<li>int x = 1;</li>
+<li>int x = {1};//将大括号初始化器用于单变量</li>
+<li>int x{1}；</li>
+<li>int x{};//置零</li>
+<li>int x = {1}；//置零</li>
+</ol>
+</li>
+<li><p>int类型被设定为对于目标计算机而言效率最高的长度。</p>
+</li>
+<li><p>cout 关于进制转换<br>std::cout;<br>std::endl;<br>std::hex;<br>std::oct;<br>code:<br> using namespace std;<br> int main()<br> {</p>
+<pre><code>int chest = 42;
+int waist = 42;
+int inseam = 42;
+
+cout &lt;&lt; &quot;chest = &quot; &lt;&lt; chest &lt;&lt; &quot; (decimal for 42)&quot; &lt;&lt; endl;
+cout &lt;&lt; hex;
+cout &lt;&lt; &quot;waist = &quot; &lt;&lt; waist &lt;&lt; &quot; (hexadecimal for 42)&quot; &lt;&lt; endl;
+cout &lt;&lt; oct;
+cout &lt;&lt; &quot;inseam = &quot; &lt;&lt; inseam &lt;&lt; &quot; (octal for 42)&quot; &lt;&lt; endl;
+return 0;
+</code></pre><p> }<br>(cout &lt;&lt; hex;不会显示任何内容，只是会改变cout显示整数的方式。）</p>
+</li>
+<li><p>数值类型<br>220L;<br>220LU == 220UL;<br>220ll == 220LL;<br>220ull == 220ULL == 220uLL == 220Ull;<br>(十六进制常用来表示内存地址，而内存地址是没有符号的，所以多用 “usigned int” 类型来表示十六位地址）</p>
+</li>
+<li><p>‘字符’ “字符串”</p>
+</li>
+<li><p>cout.put();//cout的成员函数<br>显示一个字符；<br> int main()<br> {</p>
+<pre><code>char ch = &apos;M&apos;;
+int i = ch;
+cout &lt;&lt; &quot;The ASCII code for &quot; &lt;&lt; ch &lt;&lt; &quot; is &quot; &lt;&lt; i &lt;&lt; endl;
+
+cout &lt;&lt; &quot;Add one to the character code:&quot; &lt;&lt; endl;
+ch = ch + 1;
+i = ch;
+cout &lt;&lt; &quot;The ASCII code for &quot; &lt;&lt; ch &lt;&lt; &quot; is &quot; &lt;&lt; i &lt;&lt; endl;
+
+cout &lt;&lt; &quot;Displaying char ch using cout.put(ch): &quot;;
+cout.put(ch) //&lt;&lt; &apos;!&apos;;
+//cout.put(&apos;!&apos;);//两个二选一即可；
+cout &lt;&lt; endl &lt;&lt; &quot;Done&quot; &lt;&lt; endl;
+return 0;
+</code></pre><p> }</p>
+</li>
+<li><p>bool<br>bool is_ready = true; //“is_ready” assigned true or 1;</p>
+</li>
+<li><p>创建符号常量<br>尽量使用const来创建，而非”#define”;<br>const type name = value;<br>声明时没有提供值，则该常量的值将是不确定的，且无法修改。<br>好处：<br>1, 限定类型<br>2, 限定范围</p>
+</li>
+<li><p>+d.dddE+n<br>指的是将小数点向右移动n位，<br>+换成~时，表示将小数点向左移动n位。</p>
+</li>
+<li><p>setf成员函数可以把强行把浮点数输出时用定点表示法<br>int main()<br>{</p>
+<pre><code>cout.setf(ios_base::fixed, ios_base::floatfield);
+cout &lt;&lt; &quot;Integer division: 9/5 = &quot; &lt;&lt; 9 / 5 &lt;&lt; endl;
+cout &lt;&lt; &quot;Floating-point division: 9.0 / 5.0 = &quot;;
+cout &lt;&lt; 9.0 / 5.0 &lt;&lt; endl;
+cout &lt;&lt; &quot;Mixed division: 9.0 / 5 = &quot; &lt;&lt; 9.0 / 5 &lt;&lt; endl;
+cout &lt;&lt; &quot;double constants: 1e7 / 9.0 = &quot;;
+cout &lt;&lt; 1.e7 / 9.0 &lt;&lt; endl;
+cout &lt;&lt; &quot;float constants: 1e7f / 9.0f = &quot;;
+cout &lt;&lt; 1.e7f / 9.0f &lt;&lt; endl;
+return 0;
+</code></pre><p>}</p>
+</li>
+<li><p>浮点类型默认为double类型</p>
+</li>
+<li><p>以{}方式初始化时进行的转换<br>使用大括号的初始化，陈作列表初始化，因为这种初始化，常用于给复杂的数据类型提供值列表，对类型转换更为严格，<br>此类初始化不允许对数据进行缩窄（narrowing），即使得变量类型有可能无法表示赋给它的值。</p>
+</li>
+<li><p>整型提升（integral promotion）<br>例如将 bool,char,unsigned char,…值转换为 int </p>
+</li>
+<li><p>强制转换<br>(typeName) value<br>typeName (value)<br>static_cast<typename> (value)//转换要求很严格</typename></p>
+</li>
+<li><p>运算符重载<br>使用相同符号，进行多种操作，叫做运算符重载(operator overloading)</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2018/02/15/langs/cpp/Cpp基础_1/" data-id="cjogni4ek003aqshsjaot6l12" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-C/">C++&C</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/02/15/langs/cpp/Cpp基础_2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          C++基础2
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/15/ee/认证无线电网络的多目标资源优化-论文阅读/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">认证无线电网络的多目标资源优化-论文阅读</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/幻想与现实/">幻想与现实</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术与进步/">技术与进步</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活与思考/">生活与思考</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影与艺术/">电影与艺术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程与生活/">编程与生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录与总结/">记录与总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C++&C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChucK/">ChucK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/org-mode/">org-mode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/佳片/">佳片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开心麻花/">开心麻花</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/影视/">影视</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/校园/">校园</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爱情/">爱情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/琐事/">琐事</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科幻/">科幻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机原理/">计算机原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进阶/">进阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信/">通信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随感/">随感</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-C/" style="font-size: 14.29px;">C++&C</a> <a href="/tags/ChucK/" style="font-size: 20px;">ChucK</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/org-mode/" style="font-size: 10px;">org-mode</a> <a href="/tags/python/" style="font-size: 18.57px;">python</a> <a href="/tags/python3/" style="font-size: 10px;">python3</a> <a href="/tags/佳片/" style="font-size: 10px;">佳片</a> <a href="/tags/学习/" style="font-size: 17.14px;">学习</a> <a href="/tags/工具/" style="font-size: 11.43px;">工具</a> <a href="/tags/开心麻花/" style="font-size: 10px;">开心麻花</a> <a href="/tags/影视/" style="font-size: 11.43px;">影视</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/校园/" style="font-size: 10px;">校园</a> <a href="/tags/汇编/" style="font-size: 15.71px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/爱情/" style="font-size: 10px;">爱情</a> <a href="/tags/琐事/" style="font-size: 10px;">琐事</a> <a href="/tags/生活/" style="font-size: 11.43px;">生活</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/科幻/" style="font-size: 10px;">科幻</a> <a href="/tags/计算机原理/" style="font-size: 12.86px;">计算机原理</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/进阶/" style="font-size: 10px;">进阶</a> <a href="/tags/通信/" style="font-size: 10px;">通信</a> <a href="/tags/随感/" style="font-size: 10px;">随感</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/14/ceshi/">ceshi</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/25/ee/上网背后的流程/">上网背后的流程</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/15/life/这些衰败的日子/">这些衰败的日子</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/30/life/如懿如意/">如懿，如意</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/05/life/开心麻花几部电影/">开心麻花</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Lart Pang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

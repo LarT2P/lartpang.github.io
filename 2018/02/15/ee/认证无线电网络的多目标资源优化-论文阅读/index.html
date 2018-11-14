@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>认证无线电网络的多目标资源优化-论文阅读 | 失乐园</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Multi-Objective Resource Allocation in a NOMACognitive Radio Network With a PracticalNon-Linear Energy Harvesting Model Yuhao Wang, Senior Member, IEEE, Yuhang Wu, Fuhui Zhou, Member, IEEE,Zheng Chu,">
+<meta name="keywords" content="通信">
+<meta property="og:type" content="article">
+<meta property="og:title" content="认证无线电网络的多目标资源优化-论文阅读">
+<meta property="og:url" content="https://plart.pw/2018/02/15/ee/认证无线电网络的多目标资源优化-论文阅读/index.html">
+<meta property="og:site_name" content="失乐园">
+<meta property="og:description" content="Multi-Objective Resource Allocation in a NOMACognitive Radio Network With a PracticalNon-Linear Energy Harvesting Model Yuhao Wang, Senior Member, IEEE, Yuhang Wu, Fuhui Zhou, Member, IEEE,Zheng Chu,">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-13T12:51:15.518Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="认证无线电网络的多目标资源优化-论文阅读">
+<meta name="twitter:description" content="Multi-Objective Resource Allocation in a NOMACognitive Radio Network With a PracticalNon-Linear Energy Harvesting Model Yuhao Wang, Senior Member, IEEE, Yuhang Wu, Fuhui Zhou, Member, IEEE,Zheng Chu,">
+  
+    <link rel="alternate" href="/atom.xml" title="失乐园" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">失乐园</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">代码与机器</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://plart.pw"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ee/认证无线电网络的多目标资源优化-论文阅读" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/15/ee/认证无线电网络的多目标资源优化-论文阅读/" class="article-date">
+  <time datetime="2018-02-15T10:44:22.000Z" itemprop="datePublished">2018-02-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术与进步/">技术与进步</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      认证无线电网络的多目标资源优化-论文阅读
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Multi-Objective Resource Allocation in a NOMA<br>Cognitive Radio Network With a Practical<br>Non-Linear Energy Harvesting Model</p>
+<p>Yuhao Wang, Senior Member, IEEE, Yuhang Wu, Fuhui Zhou, Member, IEEE,<br>Zheng Chu, Member, IEEE, Yongpeng Wu, Senior Member, IEEE, Fei Yuan</p>
+</blockquote>
+<p>主要内容：</p>
+<p>文章提出了一种基于同时传输信息与功率的无线传输技术的非正交多址的认证无线电网络的多目标资源优化（每个收集能量的次级用户收集的能量都为最大时）问题。</p>
+<p>主要提出了一种偏重于实际的非线性能量收集模型，相应的提出了一种连续凸逼近的解决方法来解决这种情况下的最优分配策略。</p>
+<p>文章背景：</p>
+<ol>
+<li>目前固定的频谱分配策略不再适应频谱使用的需求的增长。</li>
+<li>下一代通信技术的提出，有6大新能指标和3大效率指标。<ul>
+<li>6大性能指标：用户体验速率，流量密度，连接数密度，端到端时延，峰值速率，移动性</li>
+<li>3大效率指标：频谱效率(SE)，能效(EE)，成本效率。</li>
+</ul>
+</li>
+<li>新的多址接入技术的采用（非正交多址接入，文中主要指基于功率域复用的非正交多址接入技术，多天线PD-NOMA）。<br> 主要思想是恨据用户信道条件差异分配功率,为了保证用户的公平性,给差用户分配更多的功率;从而在保证差的用户的性能条件下,提高系统的整体性能。接收端利用串行干扰消除(SIC)技术来移除不同用户间的干扰。</li>
+<li>新的能量供应手段（使用能量获取技术供能）。<br> 通过从周围环境中获取能量，提供几乎无限的能量，从而极大地延长网络的运行时间；同时使用能量获取设备，可以免去布线等约束，从而极大地提高部暑节点的便利性。与传统能量供电网络不同的是，传统供能网络由于能量不是约束条件，其优化的目标是提高网络服务质量，如提高系统的吞吐量或降低用户的阻塞率，而在基于能量获取计数的无线系统中，由于能量获取技术的限制，必须要在优化能量使用的基础上考虑网络中的服务质量优化问题。<br> 本文中，关于能量获取的无线通信研究主要是SWIPT，信息与能量流同时传输系统。SWIPT是一种新的传输模式,可提高5G网络的能量效率。</li>
+<li>对于能量获取设备的组网技术采用认知无线电网络。<br> 在认知无线电网络中，认知节点具备学习能力，通过与周围环境交互信息来感知和利用该空间中的可用频谱。<br> 因此，认知无线电及数的出现将极大的提高无线通信系统的频谱利用率。通常假设次级用户使用能量获取技术。<br> 其中发送端的能量有电网或其他稳定的能量来源供应，而接收端通信使用的能量则从发送端的电磁波中获取之后再用于信息的发送，类似于无线充电技术，一般称为无线能量传输，即SWIPT。</li>
+</ol>
+<p>更为详细的记录：</p>
+<ol>
+<li><p>频谱使用现状</p>
+<p> 目前世界上大多数国家的频谱管理都采用固定的频谱分配策略，频谱资源由政府部门管理并分配给固定的授权用户，这样能确保各个用户之间避免过多的相互干扰，同时使得用户能够在一个稳定的环境中更好的利用频谱，然而，随着频谱使用的需求的不断增长，这种固定频谱分配策略的缺点也越来越明显，已经不能满足日益发展的通信需要了。</p>
+<p> 频谱资源一般可以分为两类，一类是受到严格限制和保护的频谱，另一类是开放的频谱资源，满足某一规范和标准的设备都可以接入和使用该频谱，但必须要保证不对其他用户造成干扰，称之为未授权频谱。现实的情况可以知道，仅有一小部分授权频谱被充分利用，而大部分未授权频谱的使用却非常拥挤。</p>
+</li>
+<li><p>多址接入技术</p>
+<p> 多址接入技术是每一代通信技术的关键，其目的是让多个用户能同时接入基站，享受基站提供的通信服务，保证各个用户之间的信号不会互相干扰。</p>
+<p> 在传统的正交多址接入(OrthogonalMultipleAccess,OMA)方式中,不同用户被分配到相互独立或彼此正交的资源上进行传输,比如:时域、频域、码域等正交资源,以避免不同资源块之间的干扰。</p>
+<p> 为了进一步提高频谱利用率,第四代移动通信系统引入了正交频分多址(OFDMA)接入技术,即通过将一系列在频域互不重叠的子载波分配给不同用户来完成多址接入。由于正交多址接入方式中一个正交资源只允许分配一个用户,这严重限制了区域的吞吐量和设备连接数。为了满足5G网络海量接入和超高容量需求,非正交多址接入技术(NOMA)被认为是下一代移动通信中最为关键的技术。从根本上来说,非正交多址允许可控的多用户干扰在接收机检测复杂度可容忍条件下来增加非正交的资源分配,从而提高系统的频谱效率。</p>
+<p> 这里就得提到5G技术的6大性能指标：</p>
+<ul>
+<li>6大性能指标：用户体验速率，流量密度，连接数密度，端到端时延，峰值速率，移动性</li>
+<li><p>3大效率指标：频谱效率(SE)，能效(EE)，成本效率。</p>
+<p>主流的非正交多址接入主要包括:</p>
+</li>
+<li><p>基于功率域复用的非正交多址接入技术-PD-NOMA;</p>
+</li>
+<li><p>引基于码域复用的稀疏码多址接入技术-SCMA</p>
+<p>PD-NOMA引入了新的维度-功率域,通过叠加编码的思想来发送信号,使得信道条件不同的用户可共享相同的频谱资源,比如时域、频域、码域等正交资源。功率复用的主要思想是恨据用户信道条件差异分配功率,为了保证用户的公平性,给差用户分配更多的功率;从而在保证差的用户的性能条件下,提高系统的整体性能。接收端利用串行干扰消除(SIC)技术来移除不同用户间的干扰。</p>
+<p>SIC的主要思想是接收信号根据用户信道条件的差异性逐级消除用户间干扰。比如下行PD-NOMA,某个用户对接收的信号从信道条件最差的用户开始检测其信号,并把该信号从多址干扰中移除；接若检测信道条件次差的用户的信号并移除,以此类推,消除所有信道条件比该用户差的信号。</p>
+<p>目前对PD-NOMA技术的研究主要包巧:</p>
+</li>
+<li><p>单天线PD-NOMA;</p>
+</li>
+<li>协作PD-NOMA；</li>
+<li>多天线PD-NOMA。</li>
+</ul>
+</li>
+<li><p>能量获取技术</p>
+<p> 在传统的能量受限的无线网络(如无线感知网络)中，感知节点通常使用电池供电, 乏稳定可靠的能量来源，运行时长受限。尽管可以适过替换电池或给电池重靳充电来廷长网络的运行时间，但通常存在替换不便、成本本过高或非常危险(如安装在腐蚀性环境中的传感器)等问题, 有时甚至不可能进行替换(如植入人体的传感器器)。在这些网络中，使用能量获取技术供能的设备优势明显：通过从周围环境中获取能量，提供几乎无限的能量，从而极大地延长网络的运行时间；同时使用能量获取设备，可以免去布线等约束，从而极大地提高部暑节点的便利性。</p>
+<p> 对能量获取拉术的研究最初集中在以太阳能、风能等可再生能源为能量来源的设备，而能量获取技术的含义井不仅仅包括可再生能源。通信节点从周围环境中获取的能量并不一定指太阳能、风能等清洁能源，也可能指其它设备特定发送的能量，类似于无线充电技术。</p>
+<p> 在无线通信系统中应用能量获取技术的时候，由于能量来源的变化，传统稳定的电网能量或有限的电池能量供能的网络问题即约束条件不再适用，需要基于能量获取技术的他特点对无线通信的算法、网络协议甚至传输节点的硬件进行重新设计。与传统能量供电网络不同的是，传统供能网络由于能量不是约束条件，其优化的目标是提高网络服务质量，如提高系统的吞吐量或降低用户的阻塞率，而在基于能量获取计数的无线系统中，由于能量获取技术的限制，必须要在优化能量使用的基础上考虑网络中的服务质量优化问题。</p>
+<p> 本文中，关于能量获取的无线通信研究主要是SWIPT，信息与能量流同时传输系统。主要研究的是能量来源稳定的发送节点向对个接收终端同时进行信息与能量流的传输问题。</p>
+<p> 对于能量获取设备的组网研究，本文主要研究了认知无线电网络。在认知无线电网络中，认知节点具备学习能力，通过与周围环境交互信息来感知和利用该空间中的可用频谱。通常假设次级用户使用能量获取技术。</p>
+<p> 对于能量获取设备组网，其能量获取的节点为发送节点，即发送端从周围环境中获取能量，并将收集的能量用于信息的发送。目前已有研究者将目关投向通信过程中信息的接收方获取能量的研究。其中发送端的能量有电网或其他稳定的能量来源供应，而接收端通信使用的能量则从发送端的电磁波中获取之后再用于信息的发送，类似于无线充电技术，一般称为无线能量传输，即SWIPT。</p>
+<p> SWIPT技术研究的可行性是基于以下事实：传输信息的无线电波在电磁能量可以被获取的情况下，也是一种能量的来源，也可以被获取。在这个研究方向中，接收端可以接受信息，也可以接收能量，或者两者同时进行。受实际电路限制，接收端不可能同时对同一个信息进行解调与能量收集。因此，SWIPT中接收端同时对信息解调和能量接收的无线电磁流的接受模式通常有两种，一种是时域切换，另一种为能量分割（PS）。本文介绍的是能量分割的工作模式。接受的信号被一个能量分割器分割为两路，一路传输给能量获取单元，一路传输给信息处理单元。</p>
+<p> 对于SWIPT系统方向地研究，多与物理层多输入多输出天线技术相关，即发送节点与接受节点都装备了多天线，而研究的场景相对较为简单。</p>
+<p> 本文为了提高能量效率和频谱效率，在实际的非线性能量获取模型下，研究了一种同时具有无线信息和功率传输的非正交多址认知无线网络。提出了一种多目标资源优化问题，以最大限度地提高每个能量采集接收机的收集力。这个问题是非凸的，而且很难解决。本文采用加权Tchebycheff方法求解该问题<br> 结果表明，非线性能量收集模型的性能优于线性能量收集模型。</p>
+<p> SWIPT是一种新的传输模式,可提高5G网络的能量效率。其主要思想是节点可从自然界获取能量,如风能、太阳能、机械振动等。</p>
+</li>
+<li><p>认知无线电</p>
+<p> 软件无线电视近几年来提出的一种实现无线通信的新概念和新体制，是作为多频带多模式的个人通信系统平台而出现的。其以硬件作为无线通信的基本平台，无线通信功能尽可能用软件实现。这样设计的无线通信系统具有很好的通用性、灵活性，使系统互联合升级备案的非常方便。</p>
+<p> 软件无线电为扩展平台的认知无线电是一种新的智能无线通信技术，它可以感知到周围环境得环境特征，采用构建理解的方法进行学习，通过无线电知识描述语言（RKRL）与通信网络进行智能交流，实时调整传输参数，是系统的无线规则与输入的无线电激励的变化相适应，已达到无论和是何地通信系统的高可靠性和频谱利用的高效性，认知无线电的一个最大优势是无线用户可以通过该技术实现“频谱共享”，认知无线电在特定频段上进行探索，如果发现该频段当前未被使用，可以在不影响受邀用户的前提下使用该频段。</p>
+<p> 这种被分配给某出示授权用户但在特定时间和具体位置该用户没有使用的频带被称为“频带空穴”。如果该频段的首要用户恢复无线传输，那么认知无线电设备就跳转到其他频段或者改变传输功率、调制方式等手段来避免对首要用户产生干扰。因此，认知无线电及数的出现将极大的提高无线通信系统的频谱利用率。</p>
+<p> 认知无线电技术具备认知能力与重构能力，认知能力指的是感知的能力，并且可以从周围环境中收集信息，例如传输频率、带宽、功率等。重构能力指的是为了达到最佳的性能，根据感知信息自适应地调整操作参数。</p>
+<p> 认知无线电的关键技术是频谱感知与频谱接入。频谱感知、频谱接入、频谱管理、频谱切换。</p>
+</li>
+<li><p>文章概述</p>
+<p> 认为，将NOMA与SWIPT相结合，可以同时改善SE和EE。</p>
+<p> 第I部分主要介绍了一些相关领域的研究成果。其中在B部分中，提到了，本文研究的特别之处。将SWIPT技术应用于NOMA认知无线电网络中，在多目标资源分配问题中研究了一个实际的非线性EH模型。</p>
+<p> 在实际的非线性能量收集模型下，研究了非正交多址接入技术下的认知无线电系统的多目标资源优化问题，使得在最小传输速率和最大干扰功率的约束下，每个单元的收获能量最大。</p>
+<p> 由于该问题具有非凸性不好解决，这里利用了加权切比雪夫方法，转化为单目标优化问题，并提出了一种基于逐次凸逼近的求解算法来解决这个问题。</p>
+</li>
+<li><p>通信网络中相关设定</p>
+<p> PBS表示主基站(PrimaryBaseStation)，通过光缆可以将各类监测数据、感知数据、计量数据等业务数据传输到变电站内的各种应用系统子站，也可以根据需要将数据通过电力骨干网络(SDH等)传输到省电力公司内的系统主站。</p>
+<p> CBS表示认知基站(CognitiveBaseStation)，通过光缆与主基站连接进行信息交互，通过无线方式与次用户通信。</p>
+<p> PU表示主用户即授权用户(PrimaryUser)，SU表示次用户即认知用户(SecondaryUser)，这里的用户在实际应用场景中泛指各种无线通信终端，各类业务数据通过授权用户或次用户将数据传输到基站，SB表示频谱经纪人(SpectrumBroker)，通过光缆或者网线形式与认知基站进行信息交互。</p>
+<p> 认知基站负责认知用户的控制和管理，主要包括对认知用户的感知结果进行融合、空闲信道资源分配、接入及切换管理。</p>
+<p> 频谱使用区域分授权频段区域和非授权频段区域，在授权频段区域，认知基站与主基站进行信息交互，降低感知目标频段的盲目性，认知用户根据认知基站的交互信息，感知授权用户的授权频段的空闲情况并利用。</p>
+<p> 在非授权频段区域，认知用户感知非授权频段的使用情况并进行竞争利用，能够及时规避干扰频段，使用动态分配的频谱资源，在该区域中频谱经纪人充当协调者角色，负责不同认知网络之间的频谱资源协调管理。</p>
+<p> 接受的信号被一个能量分割器分割为两路，一路传输给能量获取单元，一路传输给信息处理单元。其中由两个SU（SUi，SUj）来解码，处理信息，而剩余的N-2个SU来执行能量获取。所有设备都配备了单天线。PBS向所有M个PU传输信息，而CBS则使用一个功率域NOMA方案为SUi，SUj提供SWIPT服务，并将能量传输给其他SU，只要CBS强加于该系统的干扰是可以容忍的。</p>
+<p> 文中假设，涉及到的信道都是频率平坦慢衰落信道（即为如果信号带宽远小于相干带宽，则可以近似认为在信号的带宽内，信道的功率谱包络是平的（幅度增益为常数），此时称信号经历了平坦衰落）</p>
+<p> 给出了SUi，SUj和其他能量收集SU接收到的信号以及CBS施加在PUm上的干扰信号表达式。并对相关参数进行了假设。</p>
+</li>
+<li><p>模型设定</p>
+<p> 先提了线性能量收集模型。由于实际中，功率转换效率与输入功率水平有很大关系。特别是，效率首先随着输入功率的增加而增加，然后在一个常数处饱和。此外，最大可能的收获效率也有限制。引出了本文的更偏向于实际的非线性能量收集模型。这里引入了逻辑斯蒂函数，进而描述了由硬件限制引起的各种非线性现象的联合效应。</p>
+<p> 这些模型表示的是RF到直流(DC)转换电路的关系。</p>
+</li>
+<li><p>问题的约束与提出</p>
+<p> 最小传输速率、最大干扰功率、每个单元的收获能量最大。假定了SUi比SUj的信道条件差，这里SUi信道条件差，基站发送信号时提供更大的功率。进而给出了各自的信息解码速率。同时还要保证其各自的速率要满足不小于最小值。</p>
+<p> 而对于SUj对于本要SUi解码的信息进行解码的速率也有限制，因为要实现连续干扰消除，需要先处理功率更强的信号，需要对其解码重构，而这个操作是有速度要求的。同样，由前面提到可知，这里CBS对于PU的干扰必须要在允许范围内。</p>
+<p> 由以上条件，Pi和Pj是最优变量，为了最大化每个收集能量的次级用户收集的能量，得出了一个多目标优化问题。</p>
+<p> 这里的MOOP最优解构成一个可行的最优区域，定义为Pareto最优(多目标规划问题最优解)，即当且仅当存在唯一一组解，使得每个次级用户收集的能量最大化。</p>
+</li>
+<li><p>问题的变形</p>
+<p> 引入了理想收集能量（Utopia Harvesting Energy），表示每个用户能获得的最大量。上面的多目标优化问题可以表述为在最优参数Pi与Pj下，加上约束条件后，对于每个收集能量的次级用户收集的能量都为最大时的解。</p>
+<p> 进一步可以变形为一个关于Pi，Pj的凸问题，可以利用拉格朗日乘数法来解决。进而得到一个最优Pi，Pj分配策略，来获得理想收集能量。同时，提出了一种最优功率分配算法，从而可以获得理想收集能量。</p>
+<p> 获得理想收集能量后，多目标优化问题可以通过使用加权切比雪夫方法，转化为单目标优化问题。利用权重关系可以解决前面的多目标优化问题。帕累托最优收集能量，可以通过理想能量加权获得。</p>
+<p> 通过代换，设参数，一阶Taylor级数展开，替换约束条件，将问题转化为一个相对于Pi与Pj为凸的问题，从而利用拉格朗日乘数法来解决。进而得到了帕累托最优收集能量。</p>
+</li>
+<li><p>仿真结果</p>
+<p> 利用文献33与35设置非线性能量收集参数。也设置了一个线性能量收集模型，加上前面的约束条件，进行了测试。所有涉及的信道都被假定为瑞利平坦衰落。</p>
+<p> a. 仿真测试了不同PU干扰容限值下，理想收集功率与迭代次数的关系。该算法仅需少量迭代就能收敛到一个常数值。这验证了我们提出的算法的有效性。</p>
+<p> b. 也测试了在非线性与线性模型下，最大PU干扰容限值与理想收集效率的关系。可见都随最大干扰容限值而增加。这是因为CBS可以在更宽松的功率约束下，即更大的Γm值下，使用更多的功率将信息传输给SU。<br> 但是可见这里的非线性模型分配方案可以获得更大的理想收集功率。其原因是线性EH模型采用固定功率转换效率ηn=0.5，导致资源分配不匹配。</p>
+<p> c. 测试了SUi不同服务质量下的PU最大干扰容限值与理想收集功率的关系。可见理想收集功率随最大容限值增加而增加。这里可以类似地由以下事实来解释：较宽松的干扰约束可以让CBS提供更高的发射功率。这样，SU就能收获更多的功率。<br> 还可以观察到，SUi的QoS较低导致了更大的理想收集功率。这是因为在能量收集和信息传输之间存在着一种平衡。具体来说，当第SUi的QoS增加时，收集功率可能会降低。</p>
+<p> d. 测试了用户1的功率分配权重与帕累托收集功率之间的关系。将理想收集功率设置为每个用户收集能量的上限值，从结果可见，随着权重的增大，趋于1，则逐步趋向理想收集功率，帕累托收集功率与权重成正比。</p>
+<p> 仿真结果表明，非线性能量采集模型的性能要好于线性能量采集模型下的性能，并且信息解码用户的速率与采集能量之间存在权衡。</p>
+<p> 参考：</p>
+<ul>
+<li>5G移动网络非正交多址接入及相关技术研究_杨正</li>
+<li>Non-Orthogonal Multiple Access (NOMA):<ul>
+<li>Evolution towards 5G Cellular Networks - 28 April 2016 </li>
+</ul>
+</li>
+<li>基于能量获取的无线通信系统研究</li>
+<li>频谱管理的现状及其发展概述（(20180118130630)</li>
+<li>多用户信能同传系统的收发机优化设计</li>
+<li>多用户无线信能同传系统能效优化方法</li>
+<li>基于能量获取的无线通信系统研究</li>
+<li>认知MIMO系统下行链路干扰抑制算法研究</li>
+<li>认知无线电关键技术研究</li>
+<li>认知无线电网络性能分析以及能量收集研究_崔飞</li>
+<li>认知无线电中无线频谱感知技术的研究</li>
+<li>无线协作中继网络的资源分配和信息能量同传技术的研究</li>
+<li><p>信道质量对网络性能的影响</p>
+<p>下载链接： </p>
+<p>链接: <a href="https://pan.baidu.com/s/1bqzim3H" target="_blank" rel="noopener">https://pan.baidu.com/s/1bqzim3H</a> 密码: xh79</p>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2018/02/15/ee/认证无线电网络的多目标资源优化-论文阅读/" data-id="cjogni4a8000nqshsndl3ik7t" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/通信/">通信</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/02/15/langs/cpp/Cpp基础_1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          C++基础1
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/15/langs/python/多种字体的福的生成/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">生成任意字体的“福”字</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/幻想与现实/">幻想与现实</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术与进步/">技术与进步</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活与思考/">生活与思考</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影与艺术/">电影与艺术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程与生活/">编程与生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录与总结/">记录与总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C++&C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChucK/">ChucK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/org-mode/">org-mode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/佳片/">佳片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开心麻花/">开心麻花</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/影视/">影视</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/校园/">校园</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爱情/">爱情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/琐事/">琐事</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科幻/">科幻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机原理/">计算机原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进阶/">进阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信/">通信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随感/">随感</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-C/" style="font-size: 14.29px;">C++&C</a> <a href="/tags/ChucK/" style="font-size: 20px;">ChucK</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/org-mode/" style="font-size: 10px;">org-mode</a> <a href="/tags/python/" style="font-size: 18.57px;">python</a> <a href="/tags/python3/" style="font-size: 10px;">python3</a> <a href="/tags/佳片/" style="font-size: 10px;">佳片</a> <a href="/tags/学习/" style="font-size: 17.14px;">学习</a> <a href="/tags/工具/" style="font-size: 11.43px;">工具</a> <a href="/tags/开心麻花/" style="font-size: 10px;">开心麻花</a> <a href="/tags/影视/" style="font-size: 11.43px;">影视</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/校园/" style="font-size: 10px;">校园</a> <a href="/tags/汇编/" style="font-size: 15.71px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/爱情/" style="font-size: 10px;">爱情</a> <a href="/tags/琐事/" style="font-size: 10px;">琐事</a> <a href="/tags/生活/" style="font-size: 11.43px;">生活</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/科幻/" style="font-size: 10px;">科幻</a> <a href="/tags/计算机原理/" style="font-size: 12.86px;">计算机原理</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/进阶/" style="font-size: 10px;">进阶</a> <a href="/tags/通信/" style="font-size: 10px;">通信</a> <a href="/tags/随感/" style="font-size: 10px;">随感</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/14/ceshi/">ceshi</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/25/ee/上网背后的流程/">上网背后的流程</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/15/life/这些衰败的日子/">这些衰败的日子</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/30/life/如懿如意/">如懿，如意</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/05/life/开心麻花几部电影/">开心麻花</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Lart Pang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

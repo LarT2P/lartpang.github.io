@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>失乐园</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="失乐园">
+<meta property="og:url" content="https://plart.pw/index.html">
+<meta property="og:site_name" content="失乐园">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="失乐园">
+  
+    <link rel="alternate" href="/atom.xml" title="失乐园" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">失乐园</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">代码与机器</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://plart.pw"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-ceshi" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/14/ceshi/" class="article-date">
+  <time datetime="2018-11-14T04:07:58.000Z" itemprop="datePublished">2018-11-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/14/ceshi/">ceshi</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2018/11/14/ceshi/" data-id="cjognb0iw00025whsmmfxr53j" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ee/上网背后的流程" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/25/ee/上网背后的流程/" class="article-date">
+  <time datetime="2018-10-24T16:00:00.000Z" itemprop="datePublished">2018-10-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/记录与总结/">记录与总结</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/25/ee/上网背后的流程/">上网背后的流程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>当一个用户在地址栏输入<a href="http://www.baidu.com过程：" target="_blank" rel="noopener">www.baidu.com过程：</a></p>
+<blockquote>
+<p><a href="https://www.cnblogs.com/lidong94/p/8309130.html" target="_blank" rel="noopener">https://www.cnblogs.com/lidong94/p/8309130.html</a></p>
+</blockquote>
+<p>域名解析 –&gt;<br>发起TCP的3次握手 –&gt;<br>建立TCP连接后发起http请求 –&gt;<br>服务器响应http请求，浏览器得到html代码 –&gt;<br>浏览器解析html代码，并请求html代码中的资源 –&gt;<br>浏览器对页面进行渲染呈现给用户 –&gt;<br>传输完成，TCP挥手</p>
+<h2 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h2><ol>
+<li>浏览器先检查自身缓存中有没有被解析过的这个域名对应的ip地址，如果有，解析结束。同时域名被缓存的时间也可通过TTL属性来设置。浏览器会按照一定的频率缓存DNS记录。</li>
+<li>如果浏览器缓存中没有，浏览器会检查操作系统缓存中有没有对应的已解析过的结果。</li>
+<li>如果在Windows系统的DNS缓存也没有找到，那么尝试读取hosts文件（位于C:\Windows\System32\drivers\etc），看看这里面有没有该域名对应的IP地址，如果有则解析成功。</li>
+<li>如果在hosts文件中也没有找到对应的条目，便会查找路由器缓存，如果没有就<br>会真正的请求本地域名服务器（LDNS）来解析这个域名。</li>
+<li>浏览器就会发起一个DNS的系统调用，就会向本地配置的首选DNS服务器（一般是电信运营商提供的，也可以使用像Google提供的DNS服务器）发起域名解析请求（通过的是UDP协议向DNS的53端口发起请求，这个请求是递归的请求，也就是运营商的DNS服务器必须得提供给我们该域名的IP地址）。</li>
+<li>运营商的DNS服务器首先查找自身的缓存，找到对应的条目，且没有过期，则解析成功。如果没有找到对应的条目，则有运营商的DNS代我们的浏览器发起迭代DNS解析请求。<br>7 它首先是会找根域的DNS的IP地址（这个DNS服务器都内置13台根域的DNS的IP地址），找到根域的DNS地址，就会向其发起请求（请问<a href="http://www.baidu.com这个域名的IP地址是多少啊？），根域发现这是一个顶级域com域的一个域名，于是就告诉运营商的DNS我不知道这个域名的IP地址，但是我知道com域的IP地址，你去找它去" target="_blank" rel="noopener">www.baidu.com这个域名的IP地址是多少啊？），根域发现这是一个顶级域com域的一个域名，于是就告诉运营商的DNS我不知道这个域名的IP地址，但是我知道com域的IP地址，你去找它去</a></li>
+<li>于是运营商的DNS就得到了com域的IP地址，又向com域的IP地址发起了请求（请问<a href="http://www.baidu.com这个域名的IP地址是多少?）,com域这台服务器告诉运营商的DNS我不知道www.baidu.com这个域名的IP地址，但是我知道baidu.com这个域的DNS地址，你去找它去" target="_blank" rel="noopener">www.baidu.com这个域名的IP地址是多少?）,com域这台服务器告诉运营商的DNS我不知道www.baidu.com这个域名的IP地址，但是我知道baidu.com这个域的DNS地址，你去找它去</a>.</li>
+<li>于是运营商的DNS又向baidu.com这个域名的DNS地址（这个一般就是由域名注册商提供的，像万网，新网等）发起请求。</li>
+<li>这个时候baidu.com域的DNS服务器一查，在这里，于是就把找到的结果发送给运营商的DNS服务器，这个时候运营商的DNS服务器就拿到了<a href="http://www.baidu.com这个域名对应的IP地址。LDNS缓存这个域名和对应的ip。" target="_blank" rel="noopener">www.baidu.com这个域名对应的IP地址。LDNS缓存这个域名和对应的ip。</a></li>
+<li>运营商的DNS服务器返回给用户Windows系统内核。</li>
+<li>内核又把结果返回给浏览器</li>
+<li>浏览器拿到了<a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a>  对应的IP地址。</li>
+<li>域名解析过程至此结束了。</li>
+</ol>
+<p>浏览器缓存，系统缓存，路由器缓存，IPS服务器缓存，根域名服务器缓存，顶级域名服务器缓存，主域名服务器缓存。</p>
+<h2 id="发起TCP的3次握手"><a href="#发起TCP的3次握手" class="headerlink" title="发起TCP的3次握手"></a>发起TCP的3次握手</h2><p>TCP/IP协议是Internet最基本的协议、Internet国际互联网络的基础，由网络层的IP协议和传输层的TCP协议组成。通俗而言：TCP负责发现传输的问题，一有问题就发出信号，要求重新传输，直到所有数据安全正确地传输到目的地。而IP是给因特网的每一台联网设备规定一个地址。</p>
+<p>拿到域名对应的IP地址之后，User-Agent（一般是指浏览器）会根据url中输入的端口向服务器的WEB程序（常用的有httpd,nginx等）发起TCP的连接请求。这个连接请求经过网络中层层的路由到达机房路由之后，防火墙判断当前端口是否开放，如果开放则进入到服务器网卡，然后是进入到内核的TCP/IP协议栈（用于识别该连接请求，解封包，一层一层的剥开），最终到达WEB程序（本文就以Nginx为例），最终建立了TCP/IP的连接。</p>
+<p>连接建立阶段： </p>
+<ol>
+<li>客户端的应用进程主动打开，并向服务端发出请求报文段。其首部中：SYN=1,seq=x。 </li>
+<li>服务器应用进程被动打开。若同意客户端的请求，则发回确认报文，其首部中：SYN=1,ACK=1,ack=x+1,seq=y。 </li>
+<li>客户端收到确认报文之后，通知上层应用进程连接已建立，并向服务器发出确认报文，其首部：ACK=1,ack=y+1。当服务器收到客户端的确认报文之后，也通知其上层应用进程连接已建立。 </li>
+</ol>
+<p>至此，TCP连接就建立了，客户端和服务器可以愉快地玩耍了。只要通信双方没有一方发出连接释放的请求，连接就将一直保持。 </p>
+<h2 id="建立TCP连接后发起http请求"><a href="#建立TCP连接后发起http请求" class="headerlink" title="建立TCP连接后发起http请求"></a>建立TCP连接后发起http请求</h2><p>进过TCP3次握手之后，浏览器发起了http的请求，使用的http的方法 GET 方法，请求的URL是 <a href="http://www.baidu.com/" target="_blank" rel="noopener">http://www.baidu.com/</a> ,协议是HTTP/1.0</p>
+<h2 id="服务器响应http请求，浏览器得到html代码"><a href="#服务器响应http请求，浏览器得到html代码" class="headerlink" title="服务器响应http请求，浏览器得到html代码"></a>服务器响应http请求，浏览器得到html代码</h2><p>服务器端WEB程序接收到http请求以后，就开始处理该请求，处理之后就返回给浏览器html文件。</p>
+<p>服务器返回给客户端http响应包（200 ok 响应的MIME类型是text/html），代表这一次客户端发起的http请求已成功响应。200 代表是的 响应成功的状态码。</p>
+<h2 id="浏览器解析html代码，并请求html代码中的资源（如js、css、图片等）"><a href="#浏览器解析html代码，并请求html代码中的资源（如js、css、图片等）" class="headerlink" title="浏览器解析html代码，并请求html代码中的资源（如js、css、图片等）"></a>浏览器解析html代码，并请求html代码中的资源（如js、css、图片等）</h2><p>浏览器拿到index.html文件后，就开始解析其中的html代码，遇到js/css/image等静态资源时，就向服务器端去请求下载（会使用多线程下载，每个浏览器的线程数不一样），这个时候就用上keep-alive特性了，建立一次HTTP连接，可以请求多个资源，下载资源的顺序就是按照代码里的顺序，但是由于每个资源大小不一样，而浏览器又多线程请求请求资源，所以实际顺序并不一定是代码里面的顺序。</p>
+<p>浏览器在请求静态资源时（在未过期的情况下），向服务器端发起一个http请求（询问自从上一次修改时间到现在有没有对资源进行修改），如果服务器端返回304状态码（告诉浏览器服务器端没有修改），那么浏览器会直接读取本地的该资源的缓存文件。</p>
+<h2 id="浏览器对页面进行渲染呈现给用户"><a href="#浏览器对页面进行渲染呈现给用户" class="headerlink" title="浏览器对页面进行渲染呈现给用户"></a>浏览器对页面进行渲染呈现给用户</h2><p>最后，浏览器利用自己内部的工作机制，把请求到的静态资源和html代码进行渲染，渲染之后呈现给用户。</p>
+<h2 id="传输完成，TCP挥手"><a href="#传输完成，TCP挥手" class="headerlink" title="传输完成，TCP挥手"></a>传输完成，TCP挥手</h2><p>若是不再传输数据，应用进程就会通知TCP释放连接。</p>
+<blockquote>
+<p><a href="https://blog.csdn.net/sinat_21455985/article/details/53508115" target="_blank" rel="noopener">https://blog.csdn.net/sinat_21455985/article/details/53508115</a></p>
+</blockquote>
+<p>断开连接端可以是Client端，也可以是Server端。假设Client端发起中断连接请求：</p>
+<ol>
+<li>客户端先发送FIN报文（第24帧），用来关闭主动方到被动关闭方的数据传送，也就是客户端告诉服务器：我已经不会再给你发数据了(当然，在fin包之前发送出去的数据，如果没有收到对应的ack确认报文，客户端依然会重发这些数据)，但此时客户端还可以接受数据。</li>
+<li>Server端接到FIN报文后，但是如果还有数据没有发送完成，则不必急着关闭Socket，可以继续发送数据。所以服务器端先发送ACK（第25帧），告诉Client端：请求已经收到了，但是我还没准备好，请继续等待停止的消息。这个时候Client端就进入FIN_WAIT状态，继续等待Server端的FIN报文。</li>
+<li>当Server端确定数据已发送完成，则向Client端发送FIN报文（第26帧），告诉Client端：服务器这边数据发完了，准备好关闭连接了。</li>
+<li>Client端收到FIN报文后，就知道可以关闭连接了，但是他还是不相信网络，所以发送ACK后进入TIME_WAIT状态（第27帧）， Server端收到ACK后，就知道可以断开连接了。Client端等待了2MSL后依然没有收到回复，则证明Server端已正常关闭，最后，Client端也可以关闭连接了至此，TCP连接就已经完全关闭了！</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2018/10/25/ee/上网背后的流程/" data-id="cjogni4a8000kqshsg4ij44ma" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机网络/">计算机网络</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-life/这些衰败的日子" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/15/life/这些衰败的日子/" class="article-date">
+  <time datetime="2018-09-14T16:00:00.000Z" itemprop="datePublished">2018-09-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/生活与思考/">生活与思考</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/15/life/这些衰败的日子/">这些衰败的日子</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>想换主题了。</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/09/15/life/这些衰败的日子/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2018/09/15/life/这些衰败的日子/" data-id="cjogni4b3001hqshs66d94yh4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/琐事/">琐事</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-life/如懿如意" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/30/life/如懿如意/" class="article-date">
+  <time datetime="2018-08-29T16:00:00.000Z" itemprop="datePublished">2018-08-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/电影与艺术/">电影与艺术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/30/life/如懿如意/">如懿，如意</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近一直在看《如懿传》，如懿深陷冷宫，不知后续如何…</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/08/30/life/如懿如意/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2018/08/30/life/如懿如意/" data-id="cjogni4ao000wqshsmnzlgpzd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/影视/">影视</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随感/">随感</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-life/开心麻花几部电影" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/05/life/开心麻花几部电影/" class="article-date">
+  <time datetime="2018-08-04T16:00:00.000Z" itemprop="datePublished">2018-08-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/电影与艺术/">电影与艺术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/05/life/开心麻花几部电影/">开心麻花</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前天看了一下开心麻花的几部片子，很逗，一口气看了三部。</p>
+<p>先看的 <em>羞羞的铁拳</em> ，印象最深的上山练功那一部分。</p>
+<p>第一次爆笑是在秀念大师兄(王成思 Chengsi Wang)示范飞身插广告的那一段，纵身一跃，以为可以潇洒自在，结果飞来横祸，惨死街头……</p>
+<p>漫天的广告纸，见证着大师兄的陨落……</p>
+<p>突然镜头转切到祠堂祭奠，笑意再也忍不住了，哈哈！</p>
+<p>还有一段是山上众人看电视，第一次出现的镜头，众人凝视电视，第二次出现的时候，才发现还在调电视中——原来一直没有调好……</p>
+<p>当然，最让我无语唯有爆笑的是第一次沈腾出场的时候，潇洒的出场，尴尬的下跪落地……</p>
+<p>而对于 <em>一念天堂</em> ，我只记住了那个小姑娘，唱《睫毛弯弯》的那个小姑娘(何美璇 饰 兰兰)。</p>
+<p><img src="https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike116%2C5%2C5%2C116%2C38/sign=eccfc50d4b10b912abccfeaca2949766/d50735fae6cd7b89bf8fb835032442a7d8330ea0.jpg" alt="何美璇 饰 兰兰" title="何美璇"></p>
+<p><em>夏洛特烦恼</em> ，说实话，以前我以为是 夏洛特~烦恼 而非实际的 夏洛~特~烦恼……</p>
+<p>这个蛮有意思，恍惚之间穿越了(?)。不过倒是印证了一个道理——</p>
+<p>最爱你的人，往往是最容易被忽略的。</p>
+<p>珍惜眼前人吧！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2018/08/05/life/开心麻花几部电影/" data-id="cjogni4ao000zqshsbafo33ky" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开心麻花/">开心麻花</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/电影/">电影</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-langs/python/spyder_tool" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/03/langs/python/spyder_tool/" class="article-date">
+  <time datetime="2018-08-02T16:00:00.000Z" itemprop="datePublished">2018-08-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/记录与总结/">记录与总结</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/03/langs/python/spyder_tool/">spyder_tool</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="python爬虫工具集合"><a href="#python爬虫工具集合" class="headerlink" title="python爬虫工具集合"></a>python爬虫工具集合</h1><blockquote>
+<p>主要针对python3</p>
+</blockquote>
+<h2 id="常用库"><a href="#常用库" class="headerlink" title="常用库"></a>常用库</h2><ul>
+<li>urllib<ul>
+<li>Urllib是python提供的一个用于操作url的模块。</li>
+<li>在python2中，有urllib库和urllib2库。在python3中，urllib2合并到urllib库中,我们爬取网页的时候，经常用到这个库。</li>
+<li><a href="https://blog.csdn.net/moll_77/article/details/78581817" target="_blank" rel="noopener">urllib库在python2与python3中的区别</a></li>
+</ul>
+</li>
+<li>urllib3<ul>
+<li><a href="https://github.com/urllib3/urllib3" target="_blank" rel="noopener">github</a></li>
+<li>urllib3 is a powerful, sanity-friendly HTTP client for Python. Much of the Python ecosystem already uses urllib3 and you should too. urllib3 brings many critical features that are missing from the Python standard libraries.</li>
+</ul>
+</li>
+<li>requests<ul>
+<li><a href="https://github.com/requests/requests/" target="_blank" rel="noopener">github</a></li>
+<li>Requests allows you to send organic, grass-fed HTTP/1.1 requests, without the need for manual labor. There’s no need to manually add query strings to your URLs, or to form-encode your POST data. Keep-alive and HTTP connection pooling are 100% automatic, thanks to urllib3.</li>
+</ul>
+</li>
+<li>requests-html<ul>
+<li><a href="https://github.com/kennethreitz/requests-html" target="_blank" rel="noopener">github</a></li>
+<li>This library intends to make parsing HTML (e.g. scraping the web) as simple and intuitive as possible.</li>
+</ul>
+</li>
+<li>beautiful soup<ul>
+<li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/##" target="_blank" rel="noopener">doc</a></li>
+<li>Beautiful Soup 提供一些简单的、python 式的函数用来处理导航、搜索、修改分析树等功能。它是一个工具箱，通过解析文档为用户提供需要抓取的数据，因为简单，所以不需要多少代码就可以写出一个完整的应用程序。Beautiful Soup 自动将输入文档转换为 Unicode 编码，输出文档转换为 utf-8 编码。你不需要考虑编码方式，除非文档没有指定一个编码方式，这时，Beautiful Soup 就不能自动识别编码方式了。然后，你仅仅需要说明一下原始编码方式就可以了。Beautiful Soup 已成为和 lxml、html6lib 一样出色的 python 解释器，为用户灵活地提供不同的解析策略或强劲的速度。</li>
+</ul>
+</li>
+<li>lxml<ul>
+<li><a href="https://lxml.de/" target="_blank" rel="noopener">doc</a></li>
+<li>lxml is the most feature-rich and easy-to-use library for processing XML and HTML in the Python language.</li>
+</ul>
+</li>
+<li>phantomjs<ul>
+<li><a href="https://github.com/ariya/phantomjs" target="_blank" rel="noopener">github</a></li>
+<li>PhantomJS是一个基于webkit的JavaScript API。它使用QtWebKit作为它核心浏览器的功能，使用webkit来编译解释执行JavaScript代码。任何你可以在基于webkit浏览器 做的事情，它都能做到。它不仅是个隐形的浏览器，提供了诸如CSS选择器、支持Web标准、DOM操作、JSON、HTML5、Canvas、SVG等， 同时也提供了处理文件I/O的操作，从而使你可以向操作系统读写文件等。PhantomJS的用处可谓非常广泛，诸如前端无界面自动化测试（需要结合 Jasmin）、网络监测、网页截屏等。</li>
+</ul>
+</li>
+<li>selenium<ul>
+<li><a href="https://selenium-python.readthedocs.io/index.html" target="_blank" rel="noopener">doc</a></li>
+<li>Selenium 是自动化测试工具。它支持各种浏览器，包括 Chrome，Safari，Firefox 等主流界面式浏览器，如果你在这些浏览器里面安装一个 Selenium 的插件，那么便可以方便地实现Web界面的测试。换句话说叫 Selenium 支持这些浏览器驱动。PhantomJS是一个浏览器,那么 Selenium 支持，二者便可以实现无缝对接了。Selenium支持多种语言开发，安装一下 Python 的 Selenium 库，再安装好 PhantomJS，就可以实现 Python＋Selenium＋PhantomJS 的无缝对接。PhantomJS 用来渲染解析JS，Selenium 用来驱动以及与 Python 的对接，Python 进行后期的处理。</li>
+</ul>
+</li>
+<li>pyquery<ul>
+<li><a href="https://github.com/gawel/pyquery/" target="_blank" rel="noopener">github</a></li>
+<li><a href="https://pyquery.readthedocs.io/en/latest/" target="_blank" rel="noopener">doc</a></li>
+<li>PyQuery库也是一个非常强大又灵活的网页解析库，如果你有前端开发经验的，都应该接触过jQuery,那么PyQuery就是你非常绝佳的选择，PyQuery 是 Python 仿照 jQuery 的严格实现。语法与 jQuery 几乎完全相同.</li>
+</ul>
+</li>
+<li>pyspider<ul>
+<li><a href="https://github.com/binux/pyspider" target="_blank" rel="noopener">github</a></li>
+<li><a href="http://docs.pyspider.org/en/latest/" target="_blank" rel="noopener">doc</a></li>
+<li><a href="http://www.pyspider.cn/" target="_blank" rel="noopener">pyspider中文网</a></li>
+<li>一个国人编写的强大的网络爬虫系统并带有强大的WebUI。采用Python语言编写，分布式架构，支持多种数据库后端，强大的WebUI支持脚本编辑器，任务监视器，项目管理器以及结果查看器。</li>
+</ul>
+</li>
+<li>scrapy<ul>
+<li><a href="https://github.com/scrapy/scrapy" target="_blank" rel="noopener">github</a></li>
+<li><a href="https://scrapy-chs.readthedocs.io/zh_CN/latest/index.html" target="_blank" rel="noopener">doc</a></li>
+<li>Scrapy是一个为了爬取网站数据，提取结构性数据而编写的应用框架。 可以应用在包括数据挖掘，信息处理或存储历史数据等一系列的程序中。</li>
+</ul>
+</li>
+<li>re<ul>
+<li>python内置</li>
+<li><a href="https://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html" target="_blank" rel="noopener">指南</a></li>
+<li>正则表达式本身是一种小型的、高度专业化的编程语言，而在python中，通过内嵌集成re模块，程序员们可以直接调用来实现正则匹配。正则表达式模式被编译成一系列的字节码，然后由用C编写的匹配引擎执行。</li>
+</ul>
+</li>
+<li>spyder<ul>
+<li><a href="https://github.com/spyder-ide/spyder" target="_blank" rel="noopener">github</a></li>
+<li><a href="https://docs.spyder-ide.org/" target="_blank" rel="noopener">doc</a></li>
+<li><a href="https://github.com/kingmo888/Spyder_Simplified_Chinese" target="_blank" rel="noopener">汉化</a></li>
+<li>Spyder, the Scientific Python Development Environment,</li>
+</ul>
+</li>
+<li>ipython<ul>
+<li><a href="https://github.com/ipython/ipython" target="_blank" rel="noopener">github</a></li>
+<li>ipython是一个python的交互式shell，比默认的python shell好用得多，支持变量自动补全，自动缩进，支持bash shell命令，内置了许多很有用的功能和函数。它提供了一个强大的python交互式shell和供Jupyter notebooks使用的一个Jupyter内核（IPython notebook）</li>
+</ul>
+</li>
+<li>jupter notebook<ul>
+<li><a href="https://github.com/jupyter" target="_blank" rel="noopener">github</a></li>
+<li><a href="https://jupyter.readthedocs.io/en/latest/index.html" target="_blank" rel="noopener">doc</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="外部工具"><a href="#外部工具" class="headerlink" title="外部工具"></a>外部工具</h2><ul>
+<li>chrome<ul>
+<li><a href="https://coolshell.cn/articles/17634.html" target="_blank" rel="noopener">chrome开发者工具小技巧</a></li>
+</ul>
+<ul>
+<li><a href="http://www.codeceo.com/article/chrome-usage-most-useful.html" target="_blank" rel="noopener">史上最全的Chrome使用技巧集锦</a></li>
+</ul>
+</li>
+<li>fiddler<ul>
+<li><a href="">project</a></li>
+<li><a href="https://pc.qq.com/detail/10/detail_3330.html" target="_blank" rel="noopener">download-unofficial</a></li>
+<li><a href="https://telerik-fiddler.s3.amazonaws.com/fiddler/FiddlerSetup.exe" target="_blank" rel="noopener">download-official</a></li>
+<li><a href="https://www.cnblogs.com/miantest/p/7289694.html" target="_blank" rel="noopener">articles</a></li>
+<li>Fiddler是最强大最好用的Web调试工具之一，它能记录所有客户端和服务器的http和https请求，允许你监视，设置断点，甚至修改输入输出数据，使用Fiddler无论对开发还是测试来说，都有很大的帮助。Fiddler4基于4.0的.NET。</li>
+</ul>
+</li>
+<li>wireshark<ul>
+<li><a href="https://www.wireshark.org/download.html" target="_blank" rel="noopener">download</a></li>
+<li><a href="https://www.cnblogs.com/dragonir/p/6219541.html" target="_blank" rel="noopener">articles</a></li>
+<li>Wireshark（前称Ethereal）是一个网络封包分析软件。网络封包分析软件的功能是撷取网络封包，并尽可能显示出最为详细的网络封包资料。Wireshark使用WinPCAP作为接口，直接与网卡进行数据报文交换。</li>
+</ul>
+</li>
+</ul>
+<h2 id="关于爬虫技术"><a href="#关于爬虫技术" class="headerlink" title="关于爬虫技术"></a>关于爬虫技术</h2><ul>
+<li><a href="https://www.kawabangga.com/posts/2277" target="_blank" rel="noopener">如何成为一名爬虫工程师</a></li>
+<li><a href="https://www.kawabangga.com/posts/2365" target="_blank" rel="noopener">爬虫常用工具</a><ul>
+<li>curl</li>
+<li>postman、paw</li>
+<li>curl to requests</li>
+<li>python -m “json.tool”</li>
+<li>Proxifier</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2018/08/03/langs/python/spyder_tool/" data-id="cjogni4fv004aqshsjrkjochp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python3/">python3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-langs/python/python的高级技巧" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/22/langs/python/python的高级技巧/" class="article-date">
+  <time datetime="2018-07-21T16:00:00.000Z" itemprop="datePublished">2018-07-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/22/langs/python/python的高级技巧/">python高级技巧之生成器与装饰器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>链接 <a href="http://python.jobbole.com/61171/" target="_blank" rel="noopener">Python高级编程技巧</a><br>连接 <a href="https://www.liaoxuefeng.com" target="_blank" rel="noopener">廖雪峰</a></p>
+</blockquote>
+<h1 id="推导式-Comprehensions"><a href="#推导式-Comprehensions" class="headerlink" title="推导式(Comprehensions)"></a>推导式(Comprehensions)</h1><p>列表推导(list comprehensions)。这是一种将for循环、if表达式以及赋值语句放到单一语句中的一种方法。换句话说，你能够通过一个表达式对一个列表做映射或过滤操作。</p>
+<p>一个列表推导式包含以下几个部分：</p>
+<ul>
+<li>一个输入序列</li>
+<li>一个表示输入序列成员的变量</li>
+<li>一个可选的断言表达式</li>
+<li>一个将输入序列中满足断言表达式的成员变换成输出列表成员的输出表达式</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 原始</span></span><br><span class="line">num = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">-5</span>, <span class="number">10</span>, <span class="number">-7</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">-1</span>]</span><br><span class="line">filtered_and_squared = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> number <span class="keyword">in</span> num:</span><br><span class="line">    <span class="keyword">if</span> number &gt; <span class="number">0</span>:</span><br><span class="line">        filtered_and_squared.append(number ** <span class="number">2</span>)</span><br><span class="line"><span class="keyword">print</span> filtered_and_squared</span><br><span class="line"></span><br><span class="line"><span class="comment"># [1, 16, 100, 4, 9]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># lambda函数</span></span><br><span class="line">num = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">-5</span>, <span class="number">10</span>, <span class="number">-7</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">-1</span>]</span><br><span class="line">filtered_and_squared = map(<span class="keyword">lambda</span> x: x ** <span class="number">2</span>, filter(<span class="keyword">lambda</span> x: x &gt; <span class="number">0</span>, num))</span><br><span class="line"><span class="keyword">print</span> filtered_and_squared</span><br><span class="line"> </span><br><span class="line"><span class="comment"># [1, 16, 100, 4, 9]</span></span><br></pre></td></tr></table></figure>
+<p>上面都不是很好的方案，第一个虽然直观，但是代码较多，还有不必要的<code>append</code>，而第二个相当于就是将代码在水平上展开。</p>
+<p>考虑列表推导的技巧。</p>
+<h2 id="列表生成式"><a href="#列表生成式" class="headerlink" title="列表生成式"></a>列表生成式</h2><p>常见的形式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>[x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">11</span>)]</span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>, <span class="number">100</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">11</span>) <span class="keyword">if</span> x % <span class="number">2</span> == <span class="number">0</span>]</span><br><span class="line">[<span class="number">4</span>, <span class="number">16</span>, <span class="number">36</span>, <span class="number">64</span>, <span class="number">100</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[m + n <span class="keyword">for</span> m <span class="keyword">in</span> <span class="string">'ABC'</span> <span class="keyword">for</span> n <span class="keyword">in</span> <span class="string">'XYZ'</span>]</span><br><span class="line">[<span class="string">'AX'</span>, <span class="string">'AY'</span>, <span class="string">'AZ'</span>, <span class="string">'BX'</span>, <span class="string">'BY'</span>, <span class="string">'BZ'</span>, <span class="string">'CX'</span>, <span class="string">'CY'</span>, <span class="string">'CZ'</span>]</span><br><span class="line"><span class="comment"># 三层和三层以上的循环就很少用到了。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = &#123;<span class="string">'x'</span>: <span class="string">'A'</span>, <span class="string">'y'</span>: <span class="string">'B'</span>, <span class="string">'z'</span>: <span class="string">'C'</span> &#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[k + <span class="string">'='</span> + v <span class="keyword">for</span> k, v <span class="keyword">in</span> d.items()]</span><br><span class="line">[<span class="string">'y=B'</span>, <span class="string">'x=A'</span>, <span class="string">'z=C'</span>]</span><br></pre></td></tr></table></figure>
+<p>重回上面的问题</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列表推导</span></span><br><span class="line">num = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">-5</span>, <span class="number">10</span>, <span class="number">-7</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">-1</span>]</span><br><span class="line">filtered_and_squared = [ x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> num <span class="keyword">if</span> x &gt; <span class="number">0</span>]</span><br><span class="line"><span class="keyword">print</span> filtered_and_squared</span><br><span class="line"></span><br><span class="line"><span class="comment"># [1, 16, 100, 4, 9]</span></span><br></pre></td></tr></table></figure>
+<p><img src="&quot;http://jbcdn2.b0.upaiyun.com/2014/02/8db6c2a8d716d7788d0e526c921cc504.jpg&quot;" alt="列表推导" title="list-gen"></p>
+<ul>
+<li>迭代器(iterator)遍历输入序列num的每个成员x</li>
+<li>断言式判断每个成员是否大于零</li>
+<li>如果成员大于零，则被交给输出表达式，平方之后成为输出列表的成员。</li>
+</ul>
+<p>列表推导式被封装在一个列表中，所以很明显它能够立即生成一个新列表。这里只有一个type函数调用而没有隐式调用lambda函数，列表推导式正是使用了一个常规的迭代器、一个表达式和一个if表达式来控制可选的参数。</p>
+<h3 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h3><p>那就是整个列表必须一次性加载于内存之中，这对上面举的例子而言不是问题，甚至扩大若干倍之后也都不是问题。但是总会达到极限，内存总会被用完。</p>
+<p>针对上面的问题，生成器(Generator)能够很好的解决。<strong>生成器表达式不会一次将整个列表加载到内存之中，而是生成一个生成器对象(Generator objector)，所以一次只加载一个列表元素。</strong></p>
+<h2 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h2><p>生成器表达式同列表推导式有着几乎相同的语法结构，区别在于生成器表达式是被圆括号包围，而不是方括号</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 初始</span></span><br><span class="line">num = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">-5</span>, <span class="number">10</span>, <span class="number">-7</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">-1</span>]</span><br><span class="line">filtered_and_squared = ( x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> num <span class="keyword">if</span> x &gt; <span class="number">0</span> )</span><br><span class="line"><span class="keyword">print</span> filtered_and_squared</span><br><span class="line"> </span><br><span class="line"><span class="comment"># &lt;generator object &lt;genexpr&gt; at 0x00583E18&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> filtered_and_squared:</span><br><span class="line">    <span class="keyword">print</span> item</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 1, 16, 100 4,9</span></span><br><span class="line"><span class="comment"># </span></span><br><span class="line"><span class="comment"># 改进</span></span><br><span class="line">num = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">-5</span>, <span class="number">10</span>, <span class="number">-7</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">-1</span>]</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">square_generator</span><span class="params">(optional_parameter)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> (x ** <span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> num <span class="keyword">if</span> x &gt; optional_parameter)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">print</span> square_generator(<span class="number">0</span>)</span><br><span class="line"><span class="comment"># &lt;generator object &lt;genexpr&gt; at 0x004E6418&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># Option I</span></span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> square_generator(<span class="number">0</span>):</span><br><span class="line">    <span class="keyword">print</span> k</span><br><span class="line"><span class="comment"># 1, 16, 100, 4, 9</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># Option II</span></span><br><span class="line">g = list(square_generator(<span class="number">0</span>))</span><br><span class="line"><span class="keyword">print</span> g</span><br><span class="line"><span class="comment"># [1, 16, 100, 4, 9]</span></span><br></pre></td></tr></table></figure>
+<p>除非特殊的原因，应该经常在代码中使用生成器表达式。但除非是面对非常大的列表，否则是不会看出明显区别的。</p>
+<h2 id="多元素处理"><a href="#多元素处理" class="headerlink" title="多元素处理"></a>多元素处理</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">alist = [<span class="string">'a1'</span>, <span class="string">'a2'</span>, <span class="string">'a3'</span>]</span><br><span class="line">blist = [<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>]</span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> a, b <span class="keyword">in</span> zip(alist, blist):</span><br><span class="line">    <span class="keyword">print</span> a, b</span><br></pre></td></tr></table></figure>
+<h2 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h2><p>这就是定义generator的另一种方法。如果一个函数定义中包含yield关键字，那么这个函数就不再是一个普通函数，而是一个generator。</p>
+<p>fib函数实际上是定义了斐波拉契数列的推算规则，可以从第一个元素开始，推算出后续任意的元素，这种逻辑其实非常类似generator。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(max)</span>:</span></span><br><span class="line">    n, a, b = <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> n &lt; max:</span><br><span class="line">        <span class="keyword">yield</span> b</span><br><span class="line">        a, b = b, a + b</span><br><span class="line">        n = n + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'done'</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = fib(<span class="number">6</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f</span><br><span class="line">&lt;generator object fib at <span class="number">0x104feaaa0</span>&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>a, b = b, a + b 表示 (a, b) = (b, a+b)<br>更易理解可见下</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(max)</span>:</span></span><br><span class="line">    n, a, b = <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> n &lt; max:</span><br><span class="line">        <span class="keyword">yield</span> b</span><br><span class="line">        (a, b) = (b, a+b)</span><br><span class="line">        n = n + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'done'</span></span><br><span class="line"></span><br><span class="line">a = list(fib(<span class="number">3</span>))</span><br><span class="line"><span class="keyword">print</span> a</span><br></pre></td></tr></table></figure>
+<p>这里，最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。<strong>而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">odd</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'step 1'</span>)</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">1</span></span><br><span class="line">    print(<span class="string">'step 2'</span>)</span><br><span class="line">    <span class="keyword">yield</span>(<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">'step 3'</span>)</span><br><span class="line">    <span class="keyword">yield</span>(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>o = odd()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>next(o)</span><br><span class="line">step <span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>next(o)</span><br><span class="line">step <span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>next(o)</span><br><span class="line">step <span class="number">3</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>next(o)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">StopIteration</span><br></pre></td></tr></table></figure>
+<p>可以看到，odd不是普通函数，而是generator，在执行过程中，遇到yield就中断，下次又继续执行。执行3次yield后，已经没有yield可以执行了，所以，第4次调用next(o)就报错。</p>
+<p>把函数改成generator后，我们基本上从来不会用next()来获取下一个返回值，而是直接使用for循环来迭代：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> n <span class="keyword">in</span> fib(<span class="number">6</span>):</span><br><span class="line"><span class="meta">... </span>    print(n)</span><br></pre></td></tr></table></figure>
+<p>但是用for循环调用generator时，发现拿不到generator的return语句的返回值。如果想要拿到返回值，必须捕获StopIteration错误，返回值包含在StopIteration的value中。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">g = fib(<span class="number">6</span>)</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        x = next(g)</span><br><span class="line">        print(<span class="string">'g:'</span>, x)</span><br><span class="line">    <span class="keyword">except</span> StopIteration <span class="keyword">as</span> e:</span><br><span class="line">        print(<span class="string">'Generator return value:'</span>, e.value)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># g: 1</span></span><br><span class="line"><span class="comment"># g: 1</span></span><br><span class="line"><span class="comment"># g: 2</span></span><br><span class="line"><span class="comment"># g: 3</span></span><br><span class="line"><span class="comment"># g: 5</span></span><br><span class="line"><span class="comment"># g: 8</span></span><br><span class="line"><span class="comment"># Generator return value: done</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>可以直接作用于for循环的数据类型有以下几种：</p>
+<p>一类是集合数据类型，如list、tuple、dict、set、str等；</p>
+<p>一类是generator，包括生成器和带yield的generator function。</p>
+<p>这些可以直接作用于for循环的对象统称为可迭代对象：Iterable。</p>
+<p>而生成器不但可以作用于for循环，还可以被next()函数不断调用并返回下一个值，直到最后抛出StopIteration错误表示无法继续返回下一个值了。可以被next()函数调用并不断返回下一个值的对象称为迭代器：Iterator。</p>
+<p>生成器都是Iterator对象，但list、dict、str虽然是Iterable，却不是Iterator。</p>
+<p>你可能会问，为什么list、dict、str等数据类型不是Iterator？</p>
+<p>这是因为Python的Iterator对象表示的是一个数据流，Iterator对象可以被next()函数调用并不断返回下一个数据，直到没有数据时抛出StopIteration错误。可以把这个数据流看做是一个有序序列，但我们却不能提前知道序列的长度，只能不断通过next()函数实现按需计算下一个数据，所以Iterator的计算是惰性的，只有在需要返回下一个数据时它才会计算。</p>
+<p>Iterator甚至可以表示一个无限大的数据流，例如全体自然数。而使用list是永远不可能存储全体自然数的。</p>
+</blockquote>
+<h1 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h1><p>装饰器为我们提供了一个增加已有函数或类的功能的有效方法。</p>
+<p>装饰器是一个包装了另一个函数的特殊函数：主函数被调用，并且其 <em>返回值</em> 将会被传给装饰器，接下来装饰器将返回一个 <em>包装了主函数的替代函数</em>，程序的其他部分看到的将是这个包装函数。</p>
+<p>本质上，decorator就是一个返回函数的高阶函数。所以，我们要定义一个能打印日志的decorator，可以定义如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">log</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kw)</span>:</span></span><br><span class="line">        print(<span class="string">'call %s():'</span> % func.__name__)</span><br><span class="line">        <span class="keyword">return</span> func(*args, **kw)</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br></pre></td></tr></table></figure>
+<p>观察上面的log，因为它是一个decorator，所以接受一个函数作为参数，并返回一个函数。我们要借助Python的@语法，把decorator置于函数的定义处：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@log</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">now</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'2015-3-25'</span>)</span><br></pre></td></tr></table></figure>
+<p>调用now()函数，不仅会运行now()函数本身，还会在运行now()函数前打印一行日志：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>now()</span><br><span class="line">call now():</span><br><span class="line"><span class="number">2015</span><span class="number">-3</span><span class="number">-25</span></span><br></pre></td></tr></table></figure>
+<p>把@log放到now()函数的定义处，相当于执行了语句：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">now = log(now)</span><br></pre></td></tr></table></figure>
+<p>由于log()是一个decorator，返回一个函数，所以，原来的now()函数仍然存在，只是现在 <strong>同名的now变量指向了新的函数</strong> ，于是 <strong>调用now()将执行新函数</strong>，即在 <em>log()函数中返回的wrapper()函数</em>。</p>
+<p>wrapper()函数的参数定义是(<em>args, **kw)，因此，wrapper()函数可以接受任意参数的调用。在wrapper()函数内，首先打印日志，再紧接着调用原始函数(这里是在`return func(</em>args, **kw)`中实现的)。</p>
+<p>要注意，上面的装饰器形式上没有使用参数，但是实际上有一个函数对象参数。如果decorator本身需要传入参数，那就需要编写一个返回decorator的高阶函数，写出来会更复杂。比如，要自定义log的文本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">log</span><span class="params">(text)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">decorator</span><span class="params">(func)</span>:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kw)</span>:</span></span><br><span class="line">            print(<span class="string">'%s %s():'</span> % (text, func.__name__))</span><br><span class="line">            <span class="keyword">return</span> func(*args, **kw)</span><br><span class="line">        <span class="keyword">return</span> wrapper</span><br><span class="line">    <span class="keyword">return</span> decorator</span><br></pre></td></tr></table></figure>
+<p>这个3层嵌套的decorator用法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@log('execute')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">now</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'2015-3-25'</span>)</span><br></pre></td></tr></table></figure>
+<p>执行结果如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>now()</span><br><span class="line">execute now():</span><br><span class="line"><span class="number">2015</span><span class="number">-3</span><span class="number">-25</span></span><br></pre></td></tr></table></figure>
+<p>和两层嵌套的decorator相比，3层嵌套的效果是这样的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>now = log(<span class="string">'execute'</span>)(now)</span><br></pre></td></tr></table></figure>
+<p>我们来剖析上面的语句，首先执行log(‘execute’)，返回的是decorator函数，再调用返回的函数，参数是now函数，返回值最终是wrapper函数。</p>
+<p>以上两种decorator的定义都没有问题，但还差最后一步。因为我们讲了函数也是对象，它有<strong>name</strong>等属性，但你去看经过decorator装饰之后的函数，它们的<strong>name</strong>已经从原来的’now’变成了’wrapper’：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>now.__name__</span><br><span class="line"><span class="string">'wrapper'</span></span><br></pre></td></tr></table></figure>
+<p>因为返回的那个wrapper()函数名字就是’wrapper’，所以，需要把原始函数的<strong>name</strong>等属性复制到wrapper()函数中，否则，有些依赖函数签名的代码执行就会出错。</p>
+<p><strong>不需要编写wrapper.<strong>name</strong> = func.<strong>name</strong>这样的代码，Python内置的functools.wraps就是干这个事的</strong>，所以，一个完整的decorator的写法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> functools</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">log</span><span class="params">(func)</span>:</span></span><br><span class="line"><span class="meta">    @functools.wraps(func)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kw)</span>:</span></span><br><span class="line">        print(<span class="string">'call %s():'</span> % func.__name__)</span><br><span class="line">        <span class="keyword">return</span> func(*args, **kw)</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br></pre></td></tr></table></figure>
+<p>或者针对带参数的decorator：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> functools</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">log</span><span class="params">(text)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">decorator</span><span class="params">(func)</span>:</span></span><br><span class="line"><span class="meta">        @functools.wraps(func)</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kw)</span>:</span></span><br><span class="line">            print(<span class="string">'%s %s():'</span> % (text, func.__name__))</span><br><span class="line">            <span class="keyword">return</span> func(*args, **kw)</span><br><span class="line">        <span class="keyword">return</span> wrapper</span><br><span class="line">    <span class="keyword">return</span> decorator</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2018/07/22/langs/python/python的高级技巧/" data-id="cjogni4ff0047qshsl2sm9ycs" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/进阶/">进阶</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-life/我不是药神" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/20/life/我不是药神/" class="article-date">
+  <time datetime="2018-07-19T16:00:00.000Z" itemprop="datePublished">2018-07-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/电影与艺术/">电影与艺术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/20/life/我不是药神/">我不是药神</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于《我不是药神》</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/07/20/life/我不是药神/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2018/07/20/life/我不是药神/" data-id="cjogni4b30015qshskusocumg" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/佳片/">佳片</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-langs/asm/C51汇编典型代码&amp;一些org-mode技巧" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/13/langs/asm/C51汇编典型代码&一些org-mode技巧/" class="article-date">
+  <time datetime="2018-07-13T00:00:00.000Z" itemprop="datePublished">2018-07-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/13/langs/asm/C51汇编典型代码&一些org-mode技巧/">C51汇编典型代码&amp;一些org-mode技巧</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于51，关于org-mode..</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/07/13/langs/asm/C51汇编典型代码&一些org-mode技巧/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2018/07/13/langs/asm/C51汇编典型代码&一些org-mode技巧/" data-id="cjogni4cu0024qshsu1btgwci" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/org-mode/">org-mode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/汇编/">汇编</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-life/小诗一" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/11/life/小诗一/" class="article-date">
+  <time datetime="2018-06-11T15:24:59.000Z" itemprop="datePublished">2018-06-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/幻想与现实/">幻想与现实</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/11/life/小诗一/">小诗一首</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://goss.veer.com/creative/vcg/veer/1600water/veer-145909347.jpg" alt="配图" title="夜色下的玉兰花"></p>
+<p>参加活动，造诗一首。</p>
+<p>思绪反复，闹人，恼人。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">风吹过玉兰</span><br><span class="line">雨击打边栏</span><br><span class="line"></span><br><span class="line">摇摇晃晃  不断</span><br><span class="line">群星闪闪</span><br><span class="line">已向晚</span><br><span class="line"></span><br><span class="line">银杏叶呼扇呼扇</span><br><span class="line">搅动整个夏夜</span><br><span class="line"></span><br><span class="line">雨后金黄遍地</span><br><span class="line">人影匆匆</span><br><span class="line">不见影踪</span><br><span class="line"></span><br><span class="line">迷离夜色下</span><br><span class="line">呼吸这恼人的夏</span><br><span class="line"></span><br><span class="line">摇头摇头</span><br><span class="line">甩一把泪</span><br><span class="line">别过了头</span><br><span class="line"></span><br><span class="line">连理  理连着愁</span><br><span class="line">意浓浓  笑吟吟</span><br><span class="line">喜相逢  愁别离</span><br><span class="line"></span><br><span class="line">踏踏清脆脚步声</span><br><span class="line">是不悔的青春</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2018/06/11/life/小诗一/" data-id="cjogni4b30012qshs05emm0mt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/校园/">校园</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/幻想与现实/">幻想与现实</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术与进步/">技术与进步</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活与思考/">生活与思考</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影与艺术/">电影与艺术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程与生活/">编程与生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录与总结/">记录与总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C++&C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChucK/">ChucK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/org-mode/">org-mode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/佳片/">佳片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开心麻花/">开心麻花</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/影视/">影视</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/校园/">校园</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爱情/">爱情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/琐事/">琐事</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科幻/">科幻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机原理/">计算机原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进阶/">进阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信/">通信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随感/">随感</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-C/" style="font-size: 14.29px;">C++&C</a> <a href="/tags/ChucK/" style="font-size: 20px;">ChucK</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/org-mode/" style="font-size: 10px;">org-mode</a> <a href="/tags/python/" style="font-size: 18.57px;">python</a> <a href="/tags/python3/" style="font-size: 10px;">python3</a> <a href="/tags/佳片/" style="font-size: 10px;">佳片</a> <a href="/tags/学习/" style="font-size: 17.14px;">学习</a> <a href="/tags/工具/" style="font-size: 11.43px;">工具</a> <a href="/tags/开心麻花/" style="font-size: 10px;">开心麻花</a> <a href="/tags/影视/" style="font-size: 11.43px;">影视</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/校园/" style="font-size: 10px;">校园</a> <a href="/tags/汇编/" style="font-size: 15.71px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/爱情/" style="font-size: 10px;">爱情</a> <a href="/tags/琐事/" style="font-size: 10px;">琐事</a> <a href="/tags/生活/" style="font-size: 11.43px;">生活</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/科幻/" style="font-size: 10px;">科幻</a> <a href="/tags/计算机原理/" style="font-size: 12.86px;">计算机原理</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/进阶/" style="font-size: 10px;">进阶</a> <a href="/tags/通信/" style="font-size: 10px;">通信</a> <a href="/tags/随感/" style="font-size: 10px;">随感</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/14/ceshi/">ceshi</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/25/ee/上网背后的流程/">上网背后的流程</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/15/life/这些衰败的日子/">这些衰败的日子</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/30/life/如懿如意/">如懿，如意</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/05/life/开心麻花几部电影/">开心麻花</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Lart Pang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

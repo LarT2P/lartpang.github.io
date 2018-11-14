@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>R基本数据结构 | 失乐园</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="主站：https://lartpang.github.io/  之前一阵子，在EDX上学习了R语言的一门基础课程，这里做个总结。这门课程主要侧重于R的数据结构的介绍，当然也介绍了它的基本的绘图手段。 工作空间相关ls()  ## character(0)  rm(a)  ## Warning in rm(a): 找不到对象&amp;apos;a&amp;apos;  ls()  ## character(0)">
+<meta name="keywords" content="R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R基本数据结构">
+<meta property="og:url" content="https://plart.pw/2018/02/15/langs/r/R基本数据结构/index.html">
+<meta property="og:site_name" content="失乐园">
+<meta property="og:description" content="主站：https://lartpang.github.io/  之前一阵子，在EDX上学习了R语言的一门基础课程，这里做个总结。这门课程主要侧重于R的数据结构的介绍，当然也介绍了它的基本的绘图手段。 工作空间相关ls()  ## character(0)  rm(a)  ## Warning in rm(a): 找不到对象&amp;apos;a&amp;apos;  ls()  ## character(0)">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-13T12:51:29.159Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="R基本数据结构">
+<meta name="twitter:description" content="主站：https://lartpang.github.io/  之前一阵子，在EDX上学习了R语言的一门基础课程，这里做个总结。这门课程主要侧重于R的数据结构的介绍，当然也介绍了它的基本的绘图手段。 工作空间相关ls()  ## character(0)  rm(a)  ## Warning in rm(a): 找不到对象&amp;apos;a&amp;apos;  ls()  ## character(0)">
+  
+    <link rel="alternate" href="/atom.xml" title="失乐园" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">失乐园</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">代码与机器</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://plart.pw"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-langs/r/R基本数据结构" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/15/langs/r/R基本数据结构/" class="article-date">
+  <time datetime="2018-02-15T13:46:06.000Z" itemprop="datePublished">2018-02-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      R基本数据结构
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>主站：<a href="https://lartpang.github.io/" target="_blank" rel="noopener">https://lartpang.github.io/</a></p>
+</blockquote>
+<p>之前一阵子，在EDX上学习了R语言的一门基础课程，这里做个总结。这门课程主要侧重于R的数据结构的介绍，当然也介绍了它的基本的绘图手段。</p>
+<h1 id="工作空间相关"><a href="#工作空间相关" class="headerlink" title="工作空间相关"></a>工作空间相关</h1><pre><code>ls()
+
+## character(0)
+
+rm(a)
+
+## Warning in rm(a): 找不到对象&apos;a&apos;
+
+ls()
+
+## character(0)
+</code></pre><h1 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h1><ol>
+<li>logical<ul>
+<li>TRUE/FALSE/NA/T/F(推荐使用完整形式)/某些时候的0与非0</li>
+</ul>
+</li>
+<li>numeric<ul>
+<li>integer is numeric</li>
+<li>numeric not always integer</li>
+</ul>
+</li>
+<li>character</li>
+</ol>
+<p>Other atomic types:</p>
+<ul>
+<li>double: higher precision</li>
+<li>complex: complex numbers</li>
+<li>raw: store raw bytes</li>
+</ul>
+<blockquote>
+<p><code>is.*()</code>返回括号内内容是否是<code>*</code>对应类型。</p>
+</blockquote>
+<pre><code># logical
+TRUE
+
+## [1] TRUE
+
+class(TRUE)
+
+## [1] &quot;logical&quot;
+
+FALSE
+
+## [1] FALSE
+
+class(NA)
+
+## [1] &quot;logical&quot;
+
+T
+
+## [1] TRUE
+
+F
+
+## [1] FALSE
+
+# numeric
+2
+
+## [1] 2
+
+class(2)
+
+## [1] &quot;numeric&quot;
+
+2.5
+
+## [1] 2.5
+
+class(2.5)
+
+## [1] &quot;numeric&quot;
+
+2L
+
+## [1] 2
+
+class(2L) 
+
+## [1] &quot;integer&quot;
+
+is.numeric(2)
+
+## [1] TRUE
+
+is.numeric(2L)
+
+## [1] TRUE
+
+#integer is numeric 
+#numeric not always integer
+is.integer(2)
+
+## [1] FALSE
+
+is.integer(2L)
+
+## [1] TRUE
+
+# character
+ &quot;I love data science!&quot;
+
+## [1] &quot;I love data science!&quot;
+
+ class(&quot;I love data science!&quot;)
+
+## [1] &quot;character&quot;
+</code></pre><h2 id="强制转换"><a href="#强制转换" class="headerlink" title="强制转换"></a>强制转换</h2><blockquote>
+<p><code>as.*()</code>返回括号内内容转化为<code>*</code>对应类型后的结果，有些情况无法转换。</p>
+</blockquote>
+<pre><code>as.numeric(TRUE)
+
+## [1] 1
+
+as.numeric(FALSE)
+
+## [1] 0
+
+as.character(4)
+
+## [1] &quot;4&quot;
+
+as.numeric(&quot;4.5&quot;)
+
+## [1] 4.5
+
+as.integer(&quot;4.5&quot;)
+
+## [1] 4
+
+as.numeric(&quot;Hello&quot;)
+
+## Warning: 强制改变过程中产生了NA
+
+## [1] NA
+</code></pre><h1 id="向量-Vector"><a href="#向量-Vector" class="headerlink" title="向量 Vector"></a>向量 Vector</h1><ul>
+<li>Sequence of data elements</li>
+<li><strong>Same basic type</strong><ul>
+<li>Automatic coercion if necessary</li>
+</ul>
+</li>
+<li>character, numeric, logical</li>
+<li>Single value = Vector</li>
+</ul>
+<h2 id="创建-c-或者利用"><a href="#创建-c-或者利用" class="headerlink" title="创建 c()或者利用:"></a>创建 <code>c()</code>或者利用<code>:</code></h2><pre><code># c()
+drawn_suits &lt;- c(&quot;hearts&quot;, &quot;spades&quot;, &quot;diamonds&quot;,  
+                   &quot;diamonds&quot;, &quot;spades&quot;)
+drawn_suits
+
+## [1] &quot;hearts&quot;   &quot;spades&quot;   &quot;diamonds&quot; &quot;diamonds&quot; &quot;spades&quot;
+
+is.vector(drawn_suits)
+
+## [1] TRUE
+
+# :
+1:5
+
+## [1] 1 2 3 4 5
+
+is.vector(1:5)
+
+## [1] TRUE
+</code></pre><h2 id="命名-names"><a href="#命名-names" class="headerlink" title="命名 names()"></a>命名 <code>names()</code></h2><pre><code>remain &lt;- c(11, 12, 11, 13)
+suits &lt;- c(&quot;spades&quot;, &quot;hearts&quot;, &quot;diamonds&quot;, &quot;clubs&quot;)
+names(remain) &lt;- suits
+remain 
+
+##   spades   hearts diamonds    clubs 
+##       11       12       11       13
+
+#or
+remain &lt;- c(spades = 11, hearts = 12,  
+              diamonds = 11, clubs = 13)
+remain
+
+##   spades   hearts diamonds    clubs 
+##       11       12       11       13
+
+#or
+remain &lt;- c(&quot;spades&quot; = 11, &quot;hearts&quot; = 12,  
+              &quot;diamonds&quot; = 11, &quot;clubs&quot; = 13)
+remain
+
+##   spades   hearts diamonds    clubs 
+##       11       12       11       13
+</code></pre><h2 id="单值仍为向量"><a href="#单值仍为向量" class="headerlink" title="单值仍为向量"></a>单值仍为向量</h2><pre><code>my_apples &lt;- 5 
+my_oranges &lt;- &quot;six&quot; 
+is.vector(my_apples)
+
+## [1] TRUE
+
+is.vector(my_oranges)
+
+## [1] TRUE
+
+length(my_apples)
+
+## [1] 1
+
+length(my_oranges)
+
+## [1] 1
+</code></pre><h2 id="强制变换"><a href="#强制变换" class="headerlink" title="强制变换"></a>强制变换</h2><pre><code>drawn_ranks &lt;- c(7, 4, &quot;A&quot;, 10, &quot;K&quot;, 3, 2, &quot;Q&quot;)
+drawn_ranks
+
+## [1] &quot;7&quot;  &quot;4&quot;  &quot;A&quot;  &quot;10&quot; &quot;K&quot;  &quot;3&quot;  &quot;2&quot;  &quot;Q&quot;
+
+class(drawn_ranks)
+
+## [1] &quot;character&quot;
+</code></pre><h2 id="基本运算"><a href="#基本运算" class="headerlink" title="基本运算"></a>基本运算</h2><p>很自然的可以由单数的运算推广出来。</p>
+<pre><code># with number: +-*/
+earnings &lt;- c(50, 100, 30)
+earnings * 3
+
+## [1] 150 300  90
+
+earnings^2
+
+## [1]  2500 10000   900
+
+# with vector: +-*/
+earnings &lt;- c(50, 100, 30) 
+expenses &lt;- c(30, 40, 80) 
+bank &lt;- earnings - expenses
+## sum() &gt;
+sum(bank)
+
+## [1] 30
+
+earnings &gt; expenses
+
+## [1]  TRUE  TRUE FALSE
+
+## multiplication and division are done element-wise!
+earnings * c(1, 2, 3)
+
+## [1]  50 200  90
+</code></pre><h2 id="子集"><a href="#子集" class="headerlink" title="子集"></a>子集</h2><p>三种索引方式</p>
+<ul>
+<li>序号（R从1开始）</li>
+<li>名字 —— names()的利用</li>
+<li>逻辑值</li>
+</ul>
+<!-- -->
+<pre><code>remain &lt;- c(spades = 11, hearts = 12,  
+              diamonds = 11, clubs = 13)
+remain[1]
+
+## spades 
+##     11
+
+remain[&quot;spades&quot;]
+
+## spades 
+##     11
+
+remain[c(4, 1)] # 此法可以用来交换或者抽取特定位置的元素
+
+##  clubs spades 
+##     13     11
+
+remain[c(&quot;clubs&quot;, &quot;spades&quot;)]
+
+##  clubs spades 
+##     13     11
+
+# 逻辑值索引，短的会被自动循环使用
+remain[c(TRUE, FALSE)]
+
+##   spades diamonds 
+##       11       11
+
+remain[c(TRUE, FALSE, TRUE, FALSE)]
+
+##   spades diamonds 
+##       11       11
+
+# 负索引，“all but it”，返回除此之外的元素
+remain[-1]
+
+##   hearts diamonds    clubs 
+##       12       11       13
+
+remain[-c(1, 2)]
+
+## diamonds    clubs 
+##       11       13
+
+#remain[-&quot;spades&quot;] #can&apos;t work
+</code></pre><h1 id="矩阵-Matrix"><a href="#矩阵-Matrix" class="headerlink" title="矩阵 Matrix"></a>矩阵 Matrix</h1><ul>
+<li>Vector: 1D array of data elements</li>
+<li>Matrix: 2D array of data elements</li>
+<li>Rows and columns</li>
+<li>One atomic vector type</li>
+</ul>
+<h2 id="创建-matrix"><a href="#创建-matrix" class="headerlink" title="创建 matrix()"></a>创建 <code>matrix()</code></h2><p><strong>默认按列填充</strong></p>
+<pre><code># 直接创建
+matrix(1:6, nrow = 2)
+
+##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6
+
+matrix(1:6, ncol = 3)
+
+##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6
+
+matrix(1:6, nrow = 2, byrow = TRUE)
+
+##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+
+# 循环创建
+matrix(1:3, nrow = 2, ncol = 3)
+
+##      [,1] [,2] [,3]
+## [1,]    1    3    2
+## [2,]    2    1    3
+
+matrix(1:4, nrow = 2, ncol = 3)
+
+## Warning in matrix(1:4, nrow = 2, ncol = 3): 数据长度[4]不是矩阵列数[3]的整
+## 倍数
+
+##      [,1] [,2] [,3]
+## [1,]    1    3    1
+## [2,]    2    4    2
+
+# 组合创建
+cbind(1:3, 1:3)
+
+##      [,1] [,2]
+## [1,]    1    1
+## [2,]    2    2
+## [3,]    3    3
+
+rbind(1:3, 1:3)
+
+##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    1    2    3
+
+m &lt;- matrix(1:6, byrow = TRUE, nrow = 2)
+rbind(m, 7:9)
+
+##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+## [3,]    7    8    9
+
+cbind(m, c(10, 11))
+
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    2    3   10
+## [2,]    4    5    6   11
+</code></pre><h2 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h2><p><code>rownames()</code>, <code>colnames()</code></p>
+<pre><code>m &lt;- matrix(1:6, byrow = TRUE, nrow = 2)
+rownames(m) &lt;- c(&quot;row1&quot;, &quot;row2&quot;)
+m
+
+##      [,1] [,2] [,3]
+## row1    1    2    3
+## row2    4    5    6
+
+colnames(m) &lt;- c(&quot;col1&quot;, &quot;col2&quot;, &quot;col3&quot;)
+m
+
+##      col1 col2 col3
+## row1    1    2    3
+## row2    4    5    6
+
+# 直接命名
+m &lt;- matrix(1:6, byrow = TRUE, nrow = 2,  
+              dimnames = list(c(&quot;row1&quot;, &quot;row2&quot;),  
+                              c(&quot;col1&quot;, &quot;col2&quot;, &quot;col3&quot;))) 
+m
+
+##      col1 col2 col3
+## row1    1    2    3
+## row2    4    5    6
+</code></pre><h2 id="强制转换-1"><a href="#强制转换-1" class="headerlink" title="强制转换"></a>强制转换</h2><pre><code>num &lt;- matrix(1:8, ncol = 2)
+num
+
+##      [,1] [,2]
+## [1,]    1    5
+## [2,]    2    6
+## [3,]    3    7
+## [4,]    4    8
+
+char &lt;- matrix(LETTERS[1:6], nrow = 4, ncol = 3)
+char
+
+##      [,1] [,2] [,3]
+## [1,] &quot;A&quot;  &quot;E&quot;  &quot;C&quot; 
+## [2,] &quot;B&quot;  &quot;F&quot;  &quot;D&quot; 
+## [3,] &quot;C&quot;  &quot;A&quot;  &quot;E&quot; 
+## [4,] &quot;D&quot;  &quot;B&quot;  &quot;F&quot;
+
+num &lt;- matrix(1:8, ncol = 2)
+char &lt;- matrix(LETTERS[1:6], nrow = 4, ncol = 3)
+cbind(num, char)
+
+##      [,1] [,2] [,3] [,4] [,5]
+## [1,] &quot;1&quot;  &quot;5&quot;  &quot;A&quot;  &quot;E&quot;  &quot;C&quot; 
+## [2,] &quot;2&quot;  &quot;6&quot;  &quot;B&quot;  &quot;F&quot;  &quot;D&quot; 
+## [3,] &quot;3&quot;  &quot;7&quot;  &quot;C&quot;  &quot;A&quot;  &quot;E&quot; 
+## [4,] &quot;4&quot;  &quot;8&quot;  &quot;D&quot;  &quot;B&quot;  &quot;F&quot;
+</code></pre><h2 id="子集运算"><a href="#子集运算" class="headerlink" title="子集运算"></a>子集运算</h2><pre><code>m &lt;- matrix(sample(1:15, 12), nrow = 3)
+rownames(m) &lt;- c(&quot;r1&quot;, &quot;r2&quot;, &quot;r3&quot;) 
+colnames(m) &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;)
+m
+
+##     a  b  c  d
+## r1  7  5  6 10
+## r2  3  9 12  8
+## r3 15 13  2  4
+
+m[1,3]
+
+## [1] 6
+
+m[3,] 
+
+##  a  b  c  d 
+## 15 13  2  4
+
+m[,3]
+
+## r1 r2 r3 
+##  6 12  2
+
+m[4] # 默认按列计数 
+
+## [1] 5
+
+m[2, c(2, 3)]
+
+##  b  c 
+##  9 12
+
+m[c(1, 2), c(2, 3)]
+
+##    b  c
+## r1 5  6
+## r2 9 12
+
+m[c(1, 3), c(1, 3, 4)]
+
+##     a c  d
+## r1  7 6 10
+## r3 15 2  4
+
+m[&quot;r2&quot;,&quot;c&quot;]
+
+## [1] 12
+
+m[2,&quot;c&quot;]
+
+## [1] 12
+
+m[3, c(&quot;c&quot;, &quot;d&quot;)]
+
+## c d 
+## 2 4
+
+m[c(FALSE, FALSE, TRUE),  
+    c(FALSE, TRUE, FALSE, TRUE)] 
+
+##  b  d 
+## 13  4
+
+m[c(FALSE, FALSE, TRUE),  
+    c(FALSE, TRUE)]
+
+##  b  d 
+## 13  4
+</code></pre><h2 id="矩阵运算"><a href="#矩阵运算" class="headerlink" title="矩阵运算"></a>矩阵运算</h2><ul>
+<li><code>colSums(), rowSums()</code></li>
+<li>Standard arithmetic possible</li>
+<li><strong>Element-wise</strong> computation</li>
+</ul>
+<!-- -->
+<pre><code>the_fellowship &lt;- c(316, 556) 
+two_towers &lt;- c(343, 584) 
+return_king &lt;- c(378, 742) 
+lotr_matrix &lt;- rbind(the_fellowship, two_towers, return_king) 
+colnames(lotr_matrix) &lt;- c(&quot;US&quot;, &quot;non-US&quot;) 
+rownames(lotr_matrix) &lt;- c(&quot;Fellowship&quot;, &quot;Two Towers&quot;,  
+                             &quot;Return King&quot;) 
+lotr_matrix
+
+##              US non-US
+## Fellowship  316    556
+## Two Towers  343    584
+## Return King 378    742
+
+# 与数字 +-*/
+lotr_matrix / 1.12 
+
+##                   US   non-US
+## Fellowship  282.1429 496.4286
+## Two Towers  306.2500 521.4286
+## Return King 337.5000 662.5000
+
+lotr_matrix - 50
+
+##              US non-US
+## Fellowship  266    506
+## Two Towers  293    534
+## Return King 328    692
+
+# 与矩阵 +-*/ (这里不是线性代数中的矩阵计算)
+theater_cut &lt;- matrix(c(50, 80, 100), nrow = 3, ncol = 2)
+theater_cut
+
+##      [,1] [,2]
+## [1,]   50   50
+## [2,]   80   80
+## [3,]  100  100
+
+lotr_matrix - theater_cut
+
+##              US non-US
+## Fellowship  266    506
+## Two Towers  263    504
+## Return King 278    642
+
+# 与向量
+lotr_matrix - c(50, 80, 100) #按列循环计算
+
+##              US non-US
+## Fellowship  266    506
+## Two Towers  263    504
+## Return King 278    642
+</code></pre><h1 id="因子-Factors"><a href="#因子-Factors" class="headerlink" title="因子 Factors"></a>因子 Factors</h1><ul>
+<li>Factors for categorical variables</li>
+<li>Limited number of different values</li>
+<li>Belong to category</li>
+</ul>
+<h2 id="创建因子-factor"><a href="#创建因子-factor" class="headerlink" title="创建因子 factor()"></a>创建因子 <code>factor()</code></h2><pre><code>blood &lt;- c(&quot;B&quot;, &quot;AB&quot;, &quot;O&quot;, &quot;A&quot;, &quot;O&quot;, &quot;O&quot;, &quot;A&quot;, &quot;B&quot;)
+blood
+
+## [1] &quot;B&quot;  &quot;AB&quot; &quot;O&quot;  &quot;A&quot;  &quot;O&quot;  &quot;O&quot;  &quot;A&quot;  &quot;B&quot;
+
+blood_factor &lt;- factor(blood) # 默认等级按照字母顺序定
+blood_factor
+
+## [1] B  AB O  A  O  O  A  B 
+## Levels: A AB B O
+
+str(blood_factor)
+
+##  Factor w/ 4 levels &quot;A&quot;,&quot;AB&quot;,&quot;B&quot;,&quot;O&quot;: 3 2 4 1 4 4 1 3
+
+# 自定义level
+blood_factor2 &lt;- factor(blood, 
+                          levels = c(&quot;O&quot;, &quot;A&quot;, &quot;B&quot;, &quot;AB&quot;))
+blood_factor2
+
+## [1] B  AB O  A  O  O  A  B 
+## Levels: O A B AB
+
+str(blood_factor2)
+
+##  Factor w/ 4 levels &quot;O&quot;,&quot;A&quot;,&quot;B&quot;,&quot;AB&quot;: 3 4 1 2 1 1 2 3
+</code></pre><h2 id="Rename-factor-levels"><a href="#Rename-factor-levels" class="headerlink" title="Rename factor levels"></a>Rename factor levels</h2><pre><code>blood &lt;- c(&quot;B&quot;, &quot;AB&quot;, &quot;O&quot;, &quot;A&quot;, &quot;O&quot;, &quot;O&quot;, &quot;A&quot;, &quot;B&quot;)
+#1.1
+blood_factor &lt;- factor(blood)
+levels(blood_factor) &lt;- c(&quot;BT_A&quot;, &quot;BT_AB&quot;, &quot;BT_B&quot;, &quot;BT_O&quot;)
+#1.2
+blood &lt;- c(&quot;B&quot;, &quot;AB&quot;, &quot;O&quot;, &quot;A&quot;, &quot;O&quot;, &quot;O&quot;, &quot;A&quot;, &quot;B&quot;) 
+blood_factor &lt;- factor(blood) 
+factor(blood,  
+         levels = c(&quot;O&quot;, &quot;A&quot;, &quot;B&quot;, &quot;AB&quot;),  
+         labels = c(&quot;BT_O&quot;, &quot;BT_A&quot;, &quot;BT_B&quot;, &quot;BT_AB&quot;))
+
+## [1] BT_B  BT_AB BT_O  BT_A  BT_O  BT_O  BT_A  BT_B 
+## Levels: BT_O BT_A BT_B BT_AB
+
+#2
+factor(blood, labels = c(&quot;BT_A&quot;, &quot;BT_AB&quot;, &quot;BT_B&quot;, &quot;BT_O&quot;))
+
+## [1] BT_B  BT_AB BT_O  BT_A  BT_O  BT_O  BT_A  BT_B 
+## Levels: BT_A BT_AB BT_B BT_O
+</code></pre><h2 id="Ordered-factor"><a href="#Ordered-factor" class="headerlink" title="Ordered factor"></a>Ordered factor</h2><pre><code>blood &lt;- c(&quot;B&quot;, &quot;AB&quot;, &quot;O&quot;, &quot;A&quot;, &quot;O&quot;, &quot;O&quot;, &quot;A&quot;, &quot;B&quot;)
+blood_factor &lt;- factor(blood) 
+blood_factor[1] &lt; blood_factor[2] 
+
+## Warning in Ops.factor(blood_factor[1], blood_factor[2]): &apos;&lt;&apos; not meaningful
+## for factors
+
+## [1] NA
+
+# 下面比较大小才是有意义的
+tshirt &lt;- c(&quot;M&quot;, &quot;L&quot;, &quot;S&quot;, &quot;S&quot;, &quot;L&quot;, &quot;M&quot;, &quot;L&quot;, &quot;M&quot;)
+tshirt_factor &lt;- factor(tshirt, ordered = TRUE, 
+                          levels = c(&quot;S&quot;, &quot;M&quot;, &quot;L&quot;))
+tshirt_factor
+
+## [1] M L S S L M L M
+## Levels: S &lt; M &lt; L
+
+tshirt_factor[1] &lt; tshirt_factor[2]
+
+## [1] TRUE
+</code></pre><h1 id="列表-List"><a href="#列表-List" class="headerlink" title="列表 List"></a>列表 List</h1><p><em>Vector - Matrix - List</em></p>
+<ul>
+<li>Vector: 1D, same type</li>
+<li>Matrix: 2D, same type</li>
+<li>List:<ul>
+<li>Different R objects</li>
+<li>No coercion</li>
+<li>Loss of some functionality</li>
+</ul>
+</li>
+</ul>
+<h2 id="创建列表-list"><a href="#创建列表-list" class="headerlink" title="创建列表 list()"></a>创建列表 <code>list()</code></h2><pre><code>list(&quot;Rsome times&quot;, 190, 5)
+
+## [[1]]
+## [1] &quot;Rsome times&quot;
+## 
+## [[2]]
+## [1] 190
+## 
+## [[3]]
+## [1] 5
+
+song &lt;- list(&quot;Rsome times&quot;, 190, 5)
+is.list(song)
+
+## [1] TRUE
+</code></pre><h2 id="命名列表"><a href="#命名列表" class="headerlink" title="命名列表"></a>命名列表</h2><pre><code>#1
+song &lt;- list(&quot;Rsome times&quot;, 190, 5) 
+names(song) &lt;- c(&quot;title&quot;, &quot;duration&quot;, &quot;track&quot;)
+song
+
+## $title
+## [1] &quot;Rsome times&quot;
+## 
+## $duration
+## [1] 190
+## 
+## $track
+## [1] 5
+
+#2
+song &lt;- list(title = &quot;Rsome times&quot;,  
+               duration = 190,  
+               track = 5)
+song
+
+## $title
+## [1] &quot;Rsome times&quot;
+## 
+## $duration
+## [1] 190
+## 
+## $track
+## [1] 5
+
+str(song)
+
+## List of 3
+##  $ title   : chr &quot;Rsome times&quot;
+##  $ duration: num 190
+##  $ track   : num 5
+</code></pre><h2 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h2><pre><code>similar_song &lt;- list(title = &quot;R you on time?&quot;, 
+                       duration = 230)
+song &lt;- list(title = &quot;Rsome times&quot;, 
+               duration = 190, track = 5,  
+               similar = similar_song)
+str(song)
+
+## List of 4
+##  $ title   : chr &quot;Rsome times&quot;
+##  $ duration: num 190
+##  $ track   : num 5
+##  $ similar :List of 2
+##   ..$ title   : chr &quot;R you on time?&quot;
+##   ..$ duration: num 230
+</code></pre><h2 id="子集运算-1"><a href="#子集运算-1" class="headerlink" title="子集运算"></a>子集运算</h2><p><code>[</code> versus <code>[[</code></p>
+<pre><code>similar_song &lt;- list(title = &quot;R you on time?&quot;, 
+                       duration = 230) 
+song &lt;- list(title = &quot;Rsome times&quot;, 
+               duration = 190, track = 5, 
+               similar = similar_song) 
+str(song)
+
+## List of 4
+##  $ title   : chr &quot;Rsome times&quot;
+##  $ duration: num 190
+##  $ track   : num 5
+##  $ similar :List of 2
+##   ..$ title   : chr &quot;R you on time?&quot;
+##   ..$ duration: num 230
+
+song[1]
+
+## $title
+## [1] &quot;Rsome times&quot;
+
+song[[1]]
+
+## [1] &quot;Rsome times&quot;
+
+song[c(1, 3)] 
+
+## $title
+## [1] &quot;Rsome times&quot;
+## 
+## $track
+## [1] 5
+
+#song[[c(1, 3)]] #can&apos;t work
+#song[[1]][[3]] #can&apos;t work
+song[[&quot;duration&quot;]]
+
+## [1] 190
+
+song[&quot;duration&quot;]
+
+## $duration
+## [1] 190
+
+song[c(FALSE, TRUE, TRUE, FALSE)]
+
+## $duration
+## [1] 190
+## 
+## $track
+## [1] 5
+
+#song[[c(FALSE, TRUE, TRUE, FALSE)]] # can&apos;t work
+#song[[F]][[T]][[T]][[F]] #also
+
+# list in list
+song[[4]][[1]]
+
+## [1] &quot;R you on time?&quot;
+
+song[[c(4, 1)]]
+
+## [1] &quot;R you on time?&quot;
+
+song[c(&quot;duration&quot;, &quot;similar&quot;)] 
+
+## $duration
+## [1] 190
+## 
+## $similar
+## $similar$title
+## [1] &quot;R you on time?&quot;
+## 
+## $similar$duration
+## [1] 230
+</code></pre><p><strong>[[ or [ ?</strong> + [[ to select list <em>element</em> + [ results in<br><em>sublist</em> + <em>[[ and $</em> to subset and extend lists</p>
+<h2 id="列表扩展"><a href="#列表扩展" class="headerlink" title="列表扩展"></a>列表扩展</h2><p>这里引出了R中比较重要的一个符号<code>$</code></p>
+<pre><code>similar_song &lt;- list(title = &quot;R you on time?&quot;, 
+                       duration = 230) 
+song &lt;- list(title = &quot;Rsome times&quot;, 
+               duration = 190, track = 5, 
+               similar = similar_song) 
+#$
+song$duration
+
+## [1] 190
+
+#extending
+friends &lt;- c(&quot;Kurt&quot;, &quot;Florence&quot;,
+                &quot;Patti&quot;, &quot;Dave&quot;)
+song$sent &lt;- friends #或者 song[[&quot;sent&quot;]] &lt;- friends
+song$similar$reason &lt;- &quot;too long&quot;
+song
+
+## $title
+## [1] &quot;Rsome times&quot;
+## 
+## $duration
+## [1] 190
+## 
+## $track
+## [1] 5
+## 
+## $similar
+## $similar$title
+## [1] &quot;R you on time?&quot;
+## 
+## $similar$duration
+## [1] 230
+## 
+## $similar$reason
+## [1] &quot;too long&quot;
+## 
+## 
+## $sent
+## [1] &quot;Kurt&quot;     &quot;Florence&quot; &quot;Patti&quot;    &quot;Dave&quot;
+</code></pre><h1 id="数据框-Data-Frame"><a href="#数据框-Data-Frame" class="headerlink" title="数据框 Data Frame"></a>数据框 Data Frame</h1><ul>
+<li>Observations 观测值</li>
+<li>Variables 变量</li>
+<li>Example: people<ul>
+<li>each person = observation</li>
+<li>properties (name, age …) = variables</li>
+</ul>
+</li>
+<li>Rows = observations (persons)</li>
+<li>Columns = variables (age, name, …)</li>
+</ul>
+<p>不同的变量的观测值可以类型不同，但是变量自己的所有观测值类型一致。</p>
+<p>多在导入数据时使用。</p>
+<h2 id="创建数据框"><a href="#创建数据框" class="headerlink" title="创建数据框"></a>创建数据框</h2><pre><code>name &lt;- c(&quot;Anne&quot;, &quot;Pete&quot;, &quot;Frank&quot;, &quot;Julia&quot;, &quot;Cath&quot;) 
+age &lt;- c(28, 30, 21, 39, 35) 
+child &lt;- c(FALSE, TRUE, TRUE, FALSE, TRUE) 
+df &lt;- data.frame(name, age, child) 
+str(df)
+
+## &apos;data.frame&apos;:    5 obs. of  3 variables:
+##  $ name : Factor w/ 5 levels &quot;Anne&quot;,&quot;Cath&quot;,..: 1 5 3 4 2
+##  $ age  : num  28 30 21 39 35
+##  $ child: logi  FALSE TRUE TRUE FALSE TRUE
+</code></pre><h2 id="命名数据框"><a href="#命名数据框" class="headerlink" title="命名数据框"></a>命名数据框</h2><pre><code>name &lt;- c(&quot;Anne&quot;, &quot;Pete&quot;, &quot;Frank&quot;, &quot;Julia&quot;, &quot;Cath&quot;) 
+age &lt;- c(28, 30, 21, 39, 35) 
+child &lt;- c(FALSE, TRUE, TRUE, FALSE, TRUE) 
+df &lt;- data.frame(name, age, child)
+names(df) &lt;- c(&quot;Name&quot;, &quot;Age&quot;, &quot;Child&quot;) 
+str(df)
+
+## &apos;data.frame&apos;:    5 obs. of  3 variables:
+##  $ Name : Factor w/ 5 levels &quot;Anne&quot;,&quot;Cath&quot;,..: 1 5 3 4 2
+##  $ Age  : num  28 30 21 39 35
+##  $ Child: logi  FALSE TRUE TRUE FALSE TRUE
+
+df &lt;- data.frame(Name = name, Age = age, Child = child) #also
+str(df)
+
+## &apos;data.frame&apos;:    5 obs. of  3 variables:
+##  $ Name : Factor w/ 5 levels &quot;Anne&quot;,&quot;Cath&quot;,..: 1 5 3 4 2
+##  $ Age  : num  28 30 21 39 35
+##  $ Child: logi  FALSE TRUE TRUE FALSE TRUE
+</code></pre><p>可见，这里的字符串向量，被自动转化为因子类型，所以可以设置参数来避免此隐含行为。</p>
+<pre><code>name &lt;- c(&quot;Anne&quot;, &quot;Pete&quot;, &quot;Frank&quot;, &quot;Julia&quot;, &quot;Cath&quot;) 
+age &lt;- c(28, 30, 21, 39, 35) 
+child &lt;- c(FALSE, TRUE, TRUE, FALSE, TRUE)
+df &lt;- data.frame(name, age, child, 
+                   stringsAsFactors = FALSE)
+str(df)
+
+## &apos;data.frame&apos;:    5 obs. of  3 variables:
+##  $ name : chr  &quot;Anne&quot; &quot;Pete&quot; &quot;Frank&quot; &quot;Julia&quot; ...
+##  $ age  : num  28 30 21 39 35
+##  $ child: logi  FALSE TRUE TRUE FALSE TRUE
+</code></pre><h2 id="子集运算-2"><a href="#子集运算-2" class="headerlink" title="子集运算"></a>子集运算</h2><p>Subset Data Frame * Subsetting syntax from matrices and lists * [<br>from matrices * [[ and $ from lists</p>
+<pre><code>name &lt;- c(&quot;Anne&quot;, &quot;Pete&quot;, &quot;Frank&quot;, &quot;Julia&quot;, &quot;Cath&quot;) 
+age &lt;- c(28, 30, 21, 39, 35) 
+child &lt;- c(FALSE, TRUE, TRUE, FALSE, TRUE) 
+people &lt;- data.frame(name, age, child,  
+               stringsAsFactors = FALSE)
+
+# 类似矩阵的操作
+people[3,2] 
+
+## [1] 21
+
+people[3,&quot;age&quot;]
+
+## [1] 21
+
+people[,&quot;age&quot;]
+
+## [1] 28 30 21 39 35
+
+people[3,] # 由于返回的是一个数据框，我的R notebook不显示数据框
+
+##    name age child
+## 3 Frank  21  TRUE
+
+people[c(3, 5), c(&quot;age&quot;, &quot;child&quot;)] # 同上
+
+##   age child
+## 3  21  TRUE
+## 5  35  TRUE
+
+# 类似列表的操作
+people$age
+
+## [1] 28 30 21 39 35
+
+people[[&quot;age&quot;]]
+
+## [1] 28 30 21 39 35
+
+people[[2]]
+
+## [1] 28 30 21 39 35
+
+## 由于返回的是一个数据框，我的R notebook不显示数据框
+people[&quot;age&quot;]
+
+##   age
+## 1  28
+## 2  30
+## 3  21
+## 4  39
+## 5  35
+
+people[2]
+
+##   age
+## 1  28
+## 2  30
+## 3  21
+## 4  39
+## 5  35
+</code></pre><h2 id="扩展数据框"><a href="#扩展数据框" class="headerlink" title="扩展数据框"></a>扩展数据框</h2><p>Extend Data Frame * Add columns = add variables * Add rows = add<br>observations</p>
+<pre><code>name &lt;- c(&quot;Anne&quot;, &quot;Pete&quot;, &quot;Frank&quot;, &quot;Julia&quot;, &quot;Cath&quot;) 
+age &lt;- c(28, 30, 21, 39, 35) 
+child &lt;- c(FALSE, TRUE, TRUE, FALSE, TRUE) 
+people &lt;- data.frame(name, age, child,  
+               stringsAsFactors = FALSE)
+#Add column
+height &lt;- c(163, 177, 163, 162, 157) 
+people$height &lt;- height 
+str(people)
+
+## &apos;data.frame&apos;:    5 obs. of  4 variables:
+##  $ name  : chr  &quot;Anne&quot; &quot;Pete&quot; &quot;Frank&quot; &quot;Julia&quot; ...
+##  $ age   : num  28 30 21 39 35
+##  $ child : logi  FALSE TRUE TRUE FALSE TRUE
+##  $ height: num  163 177 163 162 157
+
+##also
+people[[&quot;height&quot;]] &lt;- height
+str(people)
+
+## &apos;data.frame&apos;:    5 obs. of  4 variables:
+##  $ name  : chr  &quot;Anne&quot; &quot;Pete&quot; &quot;Frank&quot; &quot;Julia&quot; ...
+##  $ age   : num  28 30 21 39 35
+##  $ child : logi  FALSE TRUE TRUE FALSE TRUE
+##  $ height: num  163 177 163 162 157
+
+weight &lt;- c(74, 63, 68, 55, 56) 
+cbind(people, weight)
+
+##    name age child height weight
+## 1  Anne  28 FALSE    163     74
+## 2  Pete  30  TRUE    177     63
+## 3 Frank  21  TRUE    163     68
+## 4 Julia  39 FALSE    162     55
+## 5  Cath  35  TRUE    157     56
+
+#Add row 这里要注意，有时候会出错
+tom &lt;- data.frame(&quot;Tom&quot;, 37, FALSE, 183)
+#rbind(people, tom)
+#会报错：
+#Error : names do not match previous names
+tom &lt;- data.frame(name = &quot;Tom&quot;, age = 37, 
+            child = FALSE, height = 183)
+rbind(people, tom) 
+
+##    name age child height
+## 1  Anne  28 FALSE    163
+## 2  Pete  30  TRUE    177
+## 3 Frank  21  TRUE    163
+## 4 Julia  39 FALSE    162
+## 5  Cath  35  TRUE    157
+## 6   Tom  37 FALSE    183
+</code></pre><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p>这里主要介绍了<code>sort()</code>与<code>order()</code>，其中，<code>order()</code>更适合用来为数据框调整顺序。</p>
+<pre><code>str(people)
+
+## &apos;data.frame&apos;:    5 obs. of  4 variables:
+##  $ name  : chr  &quot;Anne&quot; &quot;Pete&quot; &quot;Frank&quot; &quot;Julia&quot; ...
+##  $ age   : num  28 30 21 39 35
+##  $ child : logi  FALSE TRUE TRUE FALSE TRUE
+##  $ height: num  163 177 163 162 157
+
+#sort()直接对于向量元素进行了排序
+sort(people$age)
+
+## [1] 21 28 30 35 39
+
+#order()会返回对应大小等级所实际在的位置
+ranks &lt;- order(people$age) 
+ranks
+
+## [1] 3 1 2 5 4
+
+people$age
+
+## [1] 28 30 21 39 35
+
+people[ranks, ] #直接对行进行了排序
+
+##    name age child height
+## 3 Frank  21  TRUE    163
+## 1  Anne  28 FALSE    163
+## 2  Pete  30  TRUE    177
+## 5  Cath  35  TRUE    157
+## 4 Julia  39 FALSE    162
+
+#或者如下可以实现降序排序
+people[order(people$age, decreasing = TRUE), ] 
+
+##    name age child height
+## 4 Julia  39 FALSE    162
+## 5  Cath  35  TRUE    157
+## 2  Pete  30  TRUE    177
+## 1  Anne  28 FALSE    163
+## 3 Frank  21  TRUE    163
+</code></pre><h1 id="绘图-Graphics"><a href="#绘图-Graphics" class="headerlink" title="绘图 Graphics"></a>绘图 Graphics</h1><p>这里主要介绍了<code>graphics</code>包的<code>plot()</code>与<code>hist()</code></p>
+<p><code>plot()</code>会根据不同的数据类型，而画出不同的图像</p>
+<ol>
+<li>plot() (categorical) 条形图 例如：<code>plot(countries$continent)</code></li>
+<li>plot() (numerical) 散点图 例如：<code>plot(countries$population)</code></li>
+<li>plot() (2x numerical) 散点图<br>例如：<code>plot(countries$area, countries$population)</code>、<br><code>plot(log(countries$area), log(countries$population))</code></li>
+<li>plot() (2x categorical) 某种条形图的变形<br>例如：<code>plot(countries$continent, countries$religion)</code></li>
+</ol>
+<p><code>hist()</code>可以绘制直方图 例如： <code>hist(africa$population)</code>、<br><code>hist(africa$population, breaks = 10)</code></p>
+<p>Other graphics functions * barplot() * boxplot() * pairs()</p>
+<h2 id="自定义绘图"><a href="#自定义绘图" class="headerlink" title="自定义绘图"></a>自定义绘图</h2><p>这里就是修改参数了。无需多讲。</p>
+<p>这里，引出了函数<code>par()</code>，这是一个绘图的公共参数<strong>列表</strong>，里面存放着常用的一些绘图的公共属性，可以实现绘制多幅图形时，基本属性的一次性确定。</p>
+<p>例如：</p>
+<pre><code>par(col = &quot;blue&quot;) 
+plot(mercury$temperature, mercury$pressure) 
+</code></pre><p>常用的plot的属性有：</p>
+<pre><code>plot(mercury$temperature, mercury$pressure, 
+       xlab = &quot;Temperature&quot;, 
+       ylab = &quot;Pressure&quot;, 
+       main = &quot;T vs P for Mercury&quot;, #标题
+       type = &quot;o&quot;, 
+       col = &quot;orange&quot;, 
+       col.main = &quot;darkgray&quot;, 
+       cex.axis = 0.6, #cex系列属性表示缩放程度
+       lty = 5, #Line Type
+       pch = 4  #Plot Symbol
+       )
+</code></pre><h2 id="多图绘制"><a href="#多图绘制" class="headerlink" title="多图绘制"></a>多图绘制</h2><p><code>mfrow</code>与<code>mfcol</code>参数可以在一个图形框里，用来放置多个图像，区别是，前者是将后面plot语句生成的图像按行填充，而后者是按列填充。</p>
+<pre><code>#按行填充
+par(mfrow = c(2,2)) 
+plot(shop$ads, shop$sales) 
+plot(shop$comp, shop$sales) 
+plot(shop$inv, shop$sales) 
+plot(shop$size_dist, shop$sales)
+
+#按列填充
+par(mfcol = c(2,2)) 
+plot(shop$ads, shop$sales) 
+plot(shop$comp, shop$sales) 
+plot(shop$inv, shop$sales) 
+plot(shop$size_dist, shop$sales)
+</code></pre><p>Reset the grid</p>
+<pre><code>par(mfrow = c(1,1))
+</code></pre><p>相较于这个，<code>layout()</code>函数设置的更为灵活。</p>
+<pre><code>grid &lt;- matrix(c(1, 1, 2, 3), nrow = 2, 
+         ncol = 2, byrow = TRUE) 
+layout(grid)
+plot(shop$ads, shop$sales) #放在grid的1号位置
+plot(shop$comp, shop$sales) #放在grid的2号位置
+plot(shop$inv, shop$sales) #放在grid的3号位置
+</code></pre><p>Reset the grid</p>
+<pre><code>layout(1) 
+par(mfcol = c(1,1))
+</code></pre><p>Reset all parameters</p>
+<pre><code>old_par &lt;- par() 
+par(col = &quot;red&quot;) 
+plot(shop$ads, shop$sales) 
+par(old_par) 
+plot(shop$ads, shop$sales)
+</code></pre><h2 id="线性拟合"><a href="#线性拟合" class="headerlink" title="线性拟合"></a>线性拟合</h2><p>引出函数<code>lm()</code> —— <em>linear<br>model</em>，**lm(a~b)就是对a=k*b+c进行线性拟合**</p>
+<pre><code>plot(shop$ads, shop$sales, 
+      pch = 16, col = 2, 
+      xlab = &quot;advertisement&quot;, 
+      ylab = &quot;net sales&quot;)
+lm_sales &lt;- lm(shop$sales ~ shop$ads)
+abline(coef(lm_sales), lwd = 2) #取模型系数，线宽为2，画直线
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2018/02/15/langs/r/R基本数据结构/" data-id="cjogni4ga004sqshsgif0kodi" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/">R</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/02/24/life/2017总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          2017年总结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/15/langs/chuck/chuck9/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">chuck9</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/幻想与现实/">幻想与现实</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术与进步/">技术与进步</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活与思考/">生活与思考</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影与艺术/">电影与艺术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程与生活/">编程与生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录与总结/">记录与总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C++&C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChucK/">ChucK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/org-mode/">org-mode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/佳片/">佳片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开心麻花/">开心麻花</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/影视/">影视</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/校园/">校园</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爱情/">爱情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/琐事/">琐事</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科幻/">科幻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机原理/">计算机原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进阶/">进阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信/">通信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随感/">随感</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-C/" style="font-size: 14.29px;">C++&C</a> <a href="/tags/ChucK/" style="font-size: 20px;">ChucK</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/org-mode/" style="font-size: 10px;">org-mode</a> <a href="/tags/python/" style="font-size: 18.57px;">python</a> <a href="/tags/python3/" style="font-size: 10px;">python3</a> <a href="/tags/佳片/" style="font-size: 10px;">佳片</a> <a href="/tags/学习/" style="font-size: 17.14px;">学习</a> <a href="/tags/工具/" style="font-size: 11.43px;">工具</a> <a href="/tags/开心麻花/" style="font-size: 10px;">开心麻花</a> <a href="/tags/影视/" style="font-size: 11.43px;">影视</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/校园/" style="font-size: 10px;">校园</a> <a href="/tags/汇编/" style="font-size: 15.71px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/爱情/" style="font-size: 10px;">爱情</a> <a href="/tags/琐事/" style="font-size: 10px;">琐事</a> <a href="/tags/生活/" style="font-size: 11.43px;">生活</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/科幻/" style="font-size: 10px;">科幻</a> <a href="/tags/计算机原理/" style="font-size: 12.86px;">计算机原理</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/进阶/" style="font-size: 10px;">进阶</a> <a href="/tags/通信/" style="font-size: 10px;">通信</a> <a href="/tags/随感/" style="font-size: 10px;">随感</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/14/ceshi/">ceshi</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/25/ee/上网背后的流程/">上网背后的流程</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/15/life/这些衰败的日子/">这些衰败的日子</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/30/life/如懿如意/">如懿，如意</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/05/life/开心麻花几部电影/">开心麻花</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Lart Pang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

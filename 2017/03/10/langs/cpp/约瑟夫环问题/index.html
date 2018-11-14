@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>约瑟夫环问题 | 失乐园</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="问题：  约瑟夫环问题： 问题描述：设有编号为1，2，3……n的n个人顺时针方向围坐一圈，每人有一密码（正整数）。开始时给出一报数上限m，从编号为1的人开始报数，报m的人出列；以后将出列者的密码作为新的m，从顺时针方向紧挨着他的下一个人开始报数……直至所有人出列。试编算法，求出出列顺序。 要求：  用不带头结点的单向循环链表实现 从键盘输入n，m 各人的密码由计算机随机产生(1~10的正整数，也可">
+<meta name="keywords" content="数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="约瑟夫环问题">
+<meta property="og:url" content="https://plart.pw/2017/03/10/langs/cpp/约瑟夫环问题/index.html">
+<meta property="og:site_name" content="失乐园">
+<meta property="og:description" content="问题：  约瑟夫环问题： 问题描述：设有编号为1，2，3……n的n个人顺时针方向围坐一圈，每人有一密码（正整数）。开始时给出一报数上限m，从编号为1的人开始报数，报m的人出列；以后将出列者的密码作为新的m，从顺时针方向紧挨着他的下一个人开始报数……直至所有人出列。试编算法，求出出列顺序。 要求：  用不带头结点的单向循环链表实现 从键盘输入n，m 各人的密码由计算机随机产生(1~10的正整数，也可">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-13T12:49:41.540Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="约瑟夫环问题">
+<meta name="twitter:description" content="问题：  约瑟夫环问题： 问题描述：设有编号为1，2，3……n的n个人顺时针方向围坐一圈，每人有一密码（正整数）。开始时给出一报数上限m，从编号为1的人开始报数，报m的人出列；以后将出列者的密码作为新的m，从顺时针方向紧挨着他的下一个人开始报数……直至所有人出列。试编算法，求出出列顺序。 要求：  用不带头结点的单向循环链表实现 从键盘输入n，m 各人的密码由计算机随机产生(1~10的正整数，也可">
+  
+    <link rel="alternate" href="/atom.xml" title="失乐园" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">失乐园</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">代码与机器</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://plart.pw"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-langs/cpp/约瑟夫环问题" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/10/langs/cpp/约瑟夫环问题/" class="article-date">
+  <time datetime="2017-03-10T14:38:52.000Z" itemprop="datePublished">2017-03-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      约瑟夫环问题
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>问题：</strong></p>
+<blockquote>
+<p>约瑟夫环问题：</p>
+<p>问题描述：设有编号为1，2，3……n的n个人顺时针方向围坐一圈，每人有一密码（正整数）。开始时给出一报数上限m，从编号为1的人开始报数，报m的人出列；以后将出列者的密码作为新的m，从顺时针方向紧挨着他的下一个人开始报数……直至所有人出列。试编算法，求出出列顺序。</p>
+<p>要求：</p>
+<ol>
+<li>用不带头结点的单向循环链表实现</li>
+<li>从键盘输入n，m</li>
+<li>各人的密码由计算机随机产生(1~10的正整数，也可以自己指定)</li>
+</ol>
+<p>测试数据：</p>
+<p>假设m的初值为6；n=7。7个人的密码依次是：3,1,7,2,4,8,4  则出列的顺序为:  6,1,4,7,2,3,5</p>
+</blockquote>
+<p><strong>1.0 版本</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> NUM 7 <span class="comment">//人的总个数</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> members[<span class="number">1</span> + NUM] = &#123; <span class="number">0</span>, <span class="number">3</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">22</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">15</span> &#125;;<span class="comment">//间隔多少个人</span></span><br><span class="line">    <span class="comment">//将各个成员的存在状态用一个仅有0和1的int数组表述</span></span><br><span class="line">    <span class="comment">//1存在；0退出</span></span><br><span class="line">    <span class="keyword">int</span> <span class="keyword">bool</span>[<span class="number">1</span> + NUM];<span class="comment">//存在状态数组</span></span><br><span class="line">    <span class="keyword">int</span> *p = <span class="keyword">bool</span>;<span class="comment">//循环指针</span></span><br><span class="line">    <span class="keyword">int</span> i_1;<span class="comment">//循环指数</span></span><br><span class="line">    <span class="keyword">for</span> (i_1 = <span class="number">1</span>; i_1 &lt;= NUM; i_1++)<span class="comment">//初始化</span></span><br><span class="line">        *(p + i_1) = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//给定第一步进数</span></span><br><span class="line">    <span class="keyword">int</span> init_step = <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//先将特殊的第一个处理掉，后面的有规律</span></span><br><span class="line">    <span class="keyword">int</span> i_2;<span class="comment">//循环指数</span></span><br><span class="line">    <span class="keyword">if</span> (init_step % NUM != <span class="number">0</span>)<span class="comment">//有余数</span></span><br><span class="line">    &#123;</span><br><span class="line">        *(p + init_step % NUM) = <span class="number">0</span>;</span><br><span class="line">        i_2 = init_step % NUM;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span><span class="comment">//无余数</span></span><br><span class="line">    &#123;</span><br><span class="line">        *(p + NUM) = <span class="number">0</span>;</span><br><span class="line">        i_2 = NUM;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"退出：%d \n"</span>, i_2);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//处理后面的数据</span></span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">0</span>;      <span class="comment">//j统计经过的未退出的人数，至上一个退出人的数据后，归零</span></span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">1</span>;  <span class="comment">//统计退出的人数</span></span><br><span class="line">    <span class="keyword">int</span> death;      <span class="comment">//退出者的序号</span></span><br><span class="line">    death = i_2;</span><br><span class="line">    <span class="keyword">for</span> (;; ++i_2)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (*(p + i_2) == <span class="number">1</span>)<span class="comment">//此人还活着</span></span><br><span class="line">        &#123;</span><br><span class="line">            j++;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (j == members[death])</span><br><span class="line">            &#123;</span><br><span class="line">                *(p + i_2) = <span class="number">0</span>;</span><br><span class="line">                death = i_2;</span><br><span class="line">                j = <span class="number">0</span>;</span><br><span class="line">                count++;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"退出：%d \n"</span>, i_2);</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (count == NUM)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"最后退出：%d \n"</span>, i_2);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (i_2 == NUM)</span><br><span class="line">            i_2 = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>2.0 版本</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用循环链表来解决约瑟夫环问题</span></span><br><span class="line"><span class="comment">//需要对链表实现的功能：</span></span><br><span class="line"><span class="comment">//1. 初始化链表节点值</span></span><br><span class="line"><span class="comment">//2. 删掉对应元素</span></span><br><span class="line"><span class="comment">//3. 返回对应值和序号</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> NUM 7</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TRUE 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FALSE 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OK 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ERROR 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INFEASIBLE -1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OVERFLOW -2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Status;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> number;<span class="comment">// 序号</span></span><br><span class="line">    <span class="keyword">int</span> data;<span class="comment">// 对应的步进</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>* <span class="title">next</span>;</span><span class="comment">// 指向下一个节点的指针</span></span><br><span class="line">&#125;LinkNode, *LinkList;<span class="comment">// 指向结构体的指针</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> members[NUM] = &#123; <span class="number">3</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">22</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">15</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设立尾指针的单循环链表</span></span><br><span class="line"><span class="function">Status <span class="title">ListInit_CL</span><span class="params">(LinkList &amp;L)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList l = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct LinkNode));</span><br><span class="line">    <span class="keyword">if</span> (!l)</span><br><span class="line">        <span class="built_in">exit</span>(OVERFLOW);</span><br><span class="line"></span><br><span class="line">    L = l;<span class="comment">// L就当作首，方便最后传出时，L没有变化</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> index;</span><br><span class="line">    <span class="keyword">for</span> (index = <span class="number">0</span>; index &lt; NUM<span class="number">-1</span>; index++)<span class="comment">// 循环赋值</span></span><br><span class="line">    &#123;</span><br><span class="line">        l-&gt;data = members[index];</span><br><span class="line">        l-&gt;number = index + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        LinkList q = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct LinkNode));<span class="comment">// 临时存储</span></span><br><span class="line">        <span class="keyword">if</span> (!q) <span class="comment">// 分配失败</span></span><br><span class="line">            <span class="keyword">return</span> OVERFLOW;</span><br><span class="line"></span><br><span class="line">        l-&gt;next = q;</span><br><span class="line">        l = q;<span class="comment">// 移位，当在最后一次的循环中，l所在是空的</span></span><br><span class="line">        q = <span class="literal">NULL</span>;</span><br><span class="line">        <span class="built_in">free</span>(q);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    l-&gt;data = members[index];</span><br><span class="line">    l-&gt;number = index + <span class="number">1</span>;</span><br><span class="line">    l-&gt;next = L;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除第i个元素,并由number,data返回其序号和值</span></span><br><span class="line"><span class="function">Status <span class="title">ListDelete_CL</span><span class="params">(LinkList &amp;L, <span class="keyword">int</span> i, <span class="keyword">int</span> &amp;number, <span class="keyword">int</span> &amp;data)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList q;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; i - <span class="number">1</span>; j++)<span class="comment">// 移动i-1次，寻找后面第i-1个结点</span></span><br><span class="line">        L = L-&gt;next;</span><br><span class="line"></span><br><span class="line">    q = L-&gt;next;<span class="comment">// q指向待删除结点</span></span><br><span class="line">    L-&gt;next = q-&gt;next;<span class="comment">// L-&gt;next指向被删除节点的下一个，后面的计数就是从L现在往后第i个了</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//返回被删除节点序号与值</span></span><br><span class="line">    data = q-&gt;data;</span><br><span class="line">    number = q-&gt;number;</span><br><span class="line">    <span class="built_in">free</span>(q);<span class="comment">// 释放待删除结点</span></span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList L = <span class="literal">NULL</span>;<span class="comment">// 头指针，指向类似的结构体的指针</span></span><br><span class="line">    <span class="keyword">if</span> (!ListInit_CL(L))</span><br><span class="line">        <span class="keyword">return</span> ERROR;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i, get_data, get_number, given_num;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"请输入你想要的数字:\n"</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;given_num);</span><br><span class="line"></span><br><span class="line">    ListDelete_CL(L, given_num<span class="number">-1</span>, get_number, get_data);<span class="comment">// 删除第一个人对应的下一个人</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"第%d位被剔除,他的信息是%d\n"</span>, get_number, get_data);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> index;</span><br><span class="line">    <span class="keyword">for</span> (index = <span class="number">0</span>; index &lt; NUM - <span class="number">2</span>; index++)<span class="comment">// 只删除n-2个，除了前面删除的一个，最后剩下的就是没有删除的。</span></span><br><span class="line">    &#123;</span><br><span class="line">        ListDelete_CL(L, get_data, get_number, get_data);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"第%d位被剔除,他的信息是%d\n"</span>, get_number, get_data);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"第%d位被剩下\n"</span>, L-&gt;number);</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>3.0 版本</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用循环链表来解决约瑟夫环问题</span></span><br><span class="line"><span class="comment">//需要对链表实现的功能：</span></span><br><span class="line"><span class="comment">//1. 初始化链表节点值</span></span><br><span class="line"><span class="comment">//2. 删掉对应元素</span></span><br><span class="line"><span class="comment">//3. 返回对应值和序号</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TRUE 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FALSE 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OK 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ERROR 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INFEASIBLE -1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OVERFLOW -2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Status;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> number;<span class="comment">// 序号</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>* <span class="title">next</span>;</span><span class="comment">// 指向下一个节点的指针</span></span><br><span class="line">&#125;LinkNode, *LinkList;<span class="comment">// 指向结构体的指针</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 设立尾指针的单循环链表</span></span><br><span class="line"><span class="function">Status <span class="title">ListInit_CL</span><span class="params">(LinkList &amp;L, <span class="keyword">int</span> given_people)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList l = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct LinkNode));</span><br><span class="line">    <span class="keyword">if</span> (!l)</span><br><span class="line">        <span class="built_in">exit</span>(OVERFLOW);</span><br><span class="line"></span><br><span class="line">    L = l;<span class="comment">// L就当作首，方便最后传出时，L没有变化</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> index;</span><br><span class="line">    <span class="keyword">for</span> (index = <span class="number">0</span>; index &lt; given_people<span class="number">-1</span>; index++)<span class="comment">// 循环赋值</span></span><br><span class="line">    &#123;</span><br><span class="line">        l-&gt;number = index + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        LinkList q = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct LinkNode));<span class="comment">// 临时存储</span></span><br><span class="line">        <span class="keyword">if</span> (!q) <span class="comment">// 分配失败</span></span><br><span class="line">            <span class="keyword">return</span> OVERFLOW;</span><br><span class="line"></span><br><span class="line">        l-&gt;next = q;</span><br><span class="line">        l = q;<span class="comment">// 移位，当在最后一次的循环中，l所在是空的</span></span><br><span class="line">        q = <span class="literal">NULL</span>;</span><br><span class="line">        <span class="built_in">free</span>(q);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    l-&gt;number = index + <span class="number">1</span>;</span><br><span class="line">    l-&gt;next = L;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除第i个元素,并由number返回其序号</span></span><br><span class="line"><span class="function">Status <span class="title">ListDelete_CL</span><span class="params">(LinkList &amp;L, <span class="keyword">int</span> i, <span class="keyword">int</span> &amp;number)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList q;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; i - <span class="number">1</span>; j++)<span class="comment">// 移动i-1次，寻找后面第i-1个结点</span></span><br><span class="line">        L = L-&gt;next;</span><br><span class="line"></span><br><span class="line">    q = L-&gt;next;<span class="comment">// q指向待删除结点</span></span><br><span class="line">    L-&gt;next = q-&gt;next;<span class="comment">// L-&gt;next指向被删除节点的下一个，后面的计数就是从L现在往后第i个了</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//返回被删除节点序号</span></span><br><span class="line">    number = q-&gt;number;</span><br><span class="line">    <span class="built_in">free</span>(q);<span class="comment">// 释放待删除结点</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, get_number, given_people, given_maxnum;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"请输入人数n,报数上限m\n"</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;given_people, &amp;given_maxnum);</span><br><span class="line">    <span class="keyword">if</span> (given_people &lt;= <span class="number">0</span> || given_maxnum &lt;= <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> ERROR;</span><br><span class="line"></span><br><span class="line">    LinkList L = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">if</span> (!ListInit_CL(L, given_people))</span><br><span class="line">        <span class="keyword">return</span> ERROR;</span><br><span class="line"></span><br><span class="line">    srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>));</span><br><span class="line">    <span class="keyword">int</span> rand_number;</span><br><span class="line">    ListDelete_CL(L, rand_number = rand() % given_maxnum + <span class="number">1</span> - <span class="number">1</span>, get_number);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"第%d位被剔除,对应的随机数是%d\n"</span>, get_number, rand_number + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> index;</span><br><span class="line">    <span class="keyword">for</span> (index = <span class="number">0</span>; index &lt; given_people - <span class="number">2</span>; index++)<span class="comment">// 只删除n-2个，除了前面删除的一个，最后剩下的就是没有删除的。</span></span><br><span class="line">    &#123;</span><br><span class="line">        ListDelete_CL(L, rand_number = rand() % given_maxnum + <span class="number">1</span>, get_number);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"第%d位被剔除,对应的随机数是%d\n"</span>, get_number, rand_number);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"第%d位被剩下\n"</span>, L-&gt;number);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2017/03/10/langs/cpp/约瑟夫环问题/" data-id="cjogni4ez003pqshsr2071hsf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/12/langs/cpp/链表操作/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          数据结构之链表相关算法
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/幻想与现实/">幻想与现实</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术与进步/">技术与进步</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活与思考/">生活与思考</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影与艺术/">电影与艺术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程与生活/">编程与生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录与总结/">记录与总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C++&C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChucK/">ChucK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/org-mode/">org-mode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/佳片/">佳片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开心麻花/">开心麻花</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/影视/">影视</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/校园/">校园</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爱情/">爱情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/琐事/">琐事</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科幻/">科幻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机原理/">计算机原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进阶/">进阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信/">通信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随感/">随感</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-C/" style="font-size: 14.29px;">C++&C</a> <a href="/tags/ChucK/" style="font-size: 20px;">ChucK</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/org-mode/" style="font-size: 10px;">org-mode</a> <a href="/tags/python/" style="font-size: 18.57px;">python</a> <a href="/tags/python3/" style="font-size: 10px;">python3</a> <a href="/tags/佳片/" style="font-size: 10px;">佳片</a> <a href="/tags/学习/" style="font-size: 17.14px;">学习</a> <a href="/tags/工具/" style="font-size: 11.43px;">工具</a> <a href="/tags/开心麻花/" style="font-size: 10px;">开心麻花</a> <a href="/tags/影视/" style="font-size: 11.43px;">影视</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/校园/" style="font-size: 10px;">校园</a> <a href="/tags/汇编/" style="font-size: 15.71px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/爱情/" style="font-size: 10px;">爱情</a> <a href="/tags/琐事/" style="font-size: 10px;">琐事</a> <a href="/tags/生活/" style="font-size: 11.43px;">生活</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/科幻/" style="font-size: 10px;">科幻</a> <a href="/tags/计算机原理/" style="font-size: 12.86px;">计算机原理</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/进阶/" style="font-size: 10px;">进阶</a> <a href="/tags/通信/" style="font-size: 10px;">通信</a> <a href="/tags/随感/" style="font-size: 10px;">随感</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/14/ceshi/">ceshi</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/25/ee/上网背后的流程/">上网背后的流程</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/15/life/这些衰败的日子/">这些衰败的日子</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/30/life/如懿如意/">如懿，如意</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/05/life/开心麻花几部电影/">开心麻花</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Lart Pang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

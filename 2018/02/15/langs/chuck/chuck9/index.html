@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>chuck9 | 失乐园</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="concurrency, processes, shreds sporking shreds the &amp;apos;me&amp;apos; keyword using machine.add() inter-shred communication  #Concurrency &amp;amp; Shreds …is able to run many processes concurrently… A ChucKi">
+<meta name="keywords" content="ChucK">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chuck9">
+<meta property="og:url" content="https://plart.pw/2018/02/15/langs/chuck/chuck9/index.html">
+<meta property="og:site_name" content="失乐园">
+<meta property="og:description" content="concurrency, processes, shreds sporking shreds the &amp;apos;me&amp;apos; keyword using machine.add() inter-shred communication  #Concurrency &amp;amp; Shreds …is able to run many processes concurrently… A ChucKi">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-13T12:48:57.394Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="chuck9">
+<meta name="twitter:description" content="concurrency, processes, shreds sporking shreds the &amp;apos;me&amp;apos; keyword using machine.add() inter-shred communication  #Concurrency &amp;amp; Shreds …is able to run many processes concurrently… A ChucKi">
+  
+    <link rel="alternate" href="/atom.xml" title="失乐园" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">失乐园</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">代码与机器</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://plart.pw"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-langs/chuck/chuck9" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/15/langs/chuck/chuck9/" class="article-date">
+  <time datetime="2018-02-15T13:40:10.000Z" itemprop="datePublished">2018-02-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      chuck9
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>concurrency, processes, shreds</p>
+<pre><code>sporking shreds
+the &apos;me&apos; keyword
+using machine.add()
+inter-shred communication 
+</code></pre><p>#Concurrency &amp; Shreds</p>
+<p>…is able to run many processes concurrently…</p>
+<p><strong>A ChucKian process is called a shred.</strong> To <em>spork</em> a shred means <strong>creating and adding a new process to the virtual(虚拟的) machine</strong>. Shreds may be sporked from a variety of places(各种各样的地方), and may themselves spork new shreds.</p>
+<p>(直接代换理解：spork a shred == creating &amp; adding a process)</p>
+<blockquote>
+<p>ChucK supports sample-synchronous(采样同步), non-preemptive concurrency(非抢占式并发). Via the timing mechanism(机制). any number of programs/shreds can be automatically(自动的) <em>shreduled</em>(往后看，便于理解，实际上就是创建添加的过程，感觉就像是shred动作化了) and synchronized(同步的) use the timing information.A <em>shreduler</em> in the virtual(虚拟的) machine does the <em>shreduling</em>. The concurrency(并发性) is ‘sample-synchronous’, meaning that inter-process audio timing is guaranteed(保证) to be precise(精确的) to the sample(样品). <strong>Note</strong> that each process/shred does not necessarily need to know about each other - it only has to deal with time locally. The virtual machine will make sure things happen correctly “across the board(全体，全面)”. Finally, concurrency - like timing - is deterministic(确定性的) in ChucK. </p>
+</blockquote>
+<p>The simplest way to to run shreds concurrently is to specify(指定) them on the command line:</p>
+<pre><code>chuck foo.ck bar.ck boo.ck
+</code></pre><p>The above command runs chuck on foo.ck, bar.ck, and boo.ck concurrently. There are other ways to run shreds concurrently (see <a href="http://chuck.cs.princeton.edu/doc/program/otfp.html" target="_blank" rel="noopener">on-the-fly programming commands</a>). Next, we show how to create new shreds from within ChucK programs.</p>
+<p>#sporking shreds (in code)</p>
+<p>To <em>spork</em> means to <em>shredule a new shred.</em></p>
+<p>To spork a shred, use the <em>spork</em> keyword/operator:</p>
+<ul>
+<li><em>spork</em> dynamically(动态地) sporks shred from a function call从函数调用中动态创建进程</li>
+<li>this operation is sample-synchronous, the new shred is shreduled to execute(执行) immediately新进程创建来立即执行</li>
+<li>the parent shred continues to execute, until time is advanced (see manipulating time) or until the parent explicitly(显式地) yields(产生) (see next section).父进程继续执行，直到时间被推进或者直到父进程显示产生。</li>
+<li>in the current implementation(实现), when a parent shred exits, all child shreds all exit (this behavior(行为) will be enhanced(提高) in the future.)在当前实现中，当父进程退出，所有的子进程会退出。</li>
+<li><em>sporking</em> a functions returns reference to the new shred, <strong>note</strong> that this operation does not return what functions returns - <em>the ability to get back the return value at some later point in time will be provided in a future release.</em>产生一个函数返回新进程的引用，注意这个操作不会返回函数返回值-返回在某个靠后的时间点上的返回值的能力就被在未来的版本中提供。</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// define function go()</span></span><br><span class="line"><span class="function">fun <span class="keyword">void</span> <span class="title">go</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// insert code</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// spork a new shred to start running from go()</span></span><br><span class="line">spork ~ go();</span><br><span class="line"></span><br><span class="line"><span class="comment">// spork another, store reference to new shred in offspring</span></span><br><span class="line">spork ~ go() =&gt; Shred @ offspring;</span><br></pre></td></tr></table></figure>
+<p>a slightly longer example:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// define function</span></span><br><span class="line"><span class="function">fun <span class="keyword">void</span> <span class="title">foo</span><span class="params">( <span class="built_in">string</span> s )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="comment">// infinite time loop</span></span><br><span class="line">   <span class="keyword">while</span>( <span class="literal">true</span> )</span><br><span class="line">   &#123;</span><br><span class="line">       <span class="comment">// print s</span></span><br><span class="line">       &lt;&lt;&lt; s &gt;&gt;&gt;;</span><br><span class="line">       <span class="comment">// advance time</span></span><br><span class="line">       <span class="number">5</span>::second =&gt; now;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// spork shred, passing in "you" as argument to foo</span></span><br><span class="line">spork ~ foo( <span class="string">"you"</span> );</span><br><span class="line"><span class="comment">// advance time by 250 ms</span></span><br><span class="line"><span class="number">2</span>::second =&gt; now;</span><br><span class="line"><span class="comment">// spork another shred</span></span><br><span class="line">spork ~ foo( <span class="string">"me"</span> );</span><br><span class="line"></span><br><span class="line"><span class="comment">// infinite time loop - to keep child shreds around</span></span><br><span class="line"><span class="keyword">while</span>( <span class="literal">true</span> )</span><br><span class="line">    <span class="number">1</span>::second =&gt; now;</span><br><span class="line"></span><br><span class="line"><span class="comment">//测量：</span></span><br><span class="line"><span class="comment">//输出you后，第2s输出me，第5s再次输出</span></span><br></pre></td></tr></table></figure>
+<pre><code>两个进程互有交错，&quot;you&quot;先输出，&quot;me&quot;后输出，循环输出。
+
+个人理解：
+`1::second =&gt; now;`感觉上就像是将进程挂起，sleep()的感觉
+就像是1s后再跳到这个程序
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">you-&gt;me:2s</span><br><span class="line">me-&gt;you:3s</span><br></pre></td></tr></table></figure>
+<p>#the ‘me’ keyword</p>
+<p>The <code>me</code> keyword (type <code>Shred</code>) refers the current shred. </p>
+<p>Sometimes it is useful to suspend(暂停) the current shred without advancing time, and let other shreds shreduled for the current time to execute(实行). <code>me.yield()</code> does exactly that. <strong>This is often useful immediately after sporking a new shred, and you would like for that shred to have a chance to run but you do not want to advance time yet for yourself.</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// spork shred</span></span><br><span class="line">spork ~ go();</span><br><span class="line"></span><br><span class="line"><span class="comment">// suspend the current shred ...</span></span><br><span class="line"><span class="comment">// ... give other shreds (shreduled for 'now') a chance to run</span></span><br><span class="line">me.yield();</span><br></pre></td></tr></table></figure>
+<p>It may also be useful to exit the current shred. For example if a MIDI device(装置) fails to open, you may exit the current shred.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// make a MidiIn object</span></span><br><span class="line">MidiIn min;</span><br><span class="line"></span><br><span class="line"><span class="comment">// try to open device 0 (chuck --probe to list all device)</span></span><br><span class="line"><span class="keyword">if</span>( !min.open( <span class="number">0</span> ) )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// print error message</span></span><br><span class="line">    &lt;&lt;&lt; <span class="string">"can't open MIDI device"</span> &gt;&gt;&gt;;</span><br><span class="line">    <span class="comment">// exit the current shred</span></span><br><span class="line">    me.<span class="built_in">exit</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>You can get the shred id:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// print out the shred id</span></span><br><span class="line">&lt;&lt;&lt; me.id(); &gt;&gt;&gt;;</span><br></pre></td></tr></table></figure>
+<p>These functions are common to all shreds, but <code>yield()</code> and <code>exit()</code> are commonly used with the current shred.</p>
+<p>#using machine.add()</p>
+<p><code>Machine.add( string path )</code> takes the path to a chuck program, and sporks it. <em>Unlike <code>spork ~</code>, there is no parent-child relationship between the shred that calls the function and the new shred that is added</em>. This is useful for dynamically(动态地) running stored programs.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// spork "foo.ck"</span></span><br><span class="line">Machine.add( <span class="string">"foo.ck"</span> );</span><br></pre></td></tr></table></figure>
+<p>Presently, <strong>this returns the id of the new shred</strong>, not a reference to the shred. <em>This will likely be changed in the future.</em></p>
+<p>Similarly, you can remove shreds from the virtual(虚拟的) machine.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// add</span></span><br><span class="line">Machine.add( <span class="string">"foo.ck"</span> ) =&gt; <span class="keyword">int</span> id;</span><br><span class="line"></span><br><span class="line"><span class="comment">// remove shred with id</span></span><br><span class="line">Machine.remove( id );</span><br><span class="line"></span><br><span class="line"><span class="comment">// add</span></span><br><span class="line">Machine.add( <span class="string">"boo.ck"</span> ) =&gt; id</span><br><span class="line"></span><br><span class="line"><span class="comment">// replace shred with "bar.ck"</span></span><br><span class="line">Machine.replace( id, <span class="string">"bar.ck"</span> );</span><br></pre></td></tr></table></figure>
+<p>#inter-shred communication</p>
+<blockquote>
+<p>Shreds sporked in the same file can share the same global variables(变量). They can <em>use time and events to synchronize to each other</em>. (see <code>events</code>) <strong>Shreds sporked from different files can <em>share data</em> (including events).</strong>For now, this is done through a public class with static data (see <code>classes</code>). Static data is not completely implemented! We will fix this very soon!</p>
+</blockquote>
+<p>#command line arguments</p>
+<p><strong>ChucK supports passing arbitrary(任意的) data from the command line into ChucK programs using optional(可选择的) command line arguments.</strong> An argument is specified(指定) by appending(附加) a colon(冒号) character “:” to the name of the ChucK program to which you wish to send that argument, followed by the argument itself.</p>
+<pre><code>chuck foo.ck:foo
+</code></pre><p>Multiple arguments can be specified, each separated by the colon character.</p>
+<pre><code>chuck foo.ck:foo:bar:boo
+</code></pre><p>Furthermore(此外), each ChucK program has <em>its own set of arguments</em>, which are <em>specified separately</em>.</p>
+<pre><code>chuck foo.ck:foo bar.ck:bar boo.ck
+</code></pre><p>Command line arguments can also be used when using on-the-fly programming facilities(即时编程工具) of ChucK.</p>
+<pre><code>chuck + foo.ck:foo bar.ck:bar:boo
+</code></pre><p>(后面有一篇博文会讲解相关参数功能的，包括这里的<code>+</code>)</p>
+<p>Machine.add() and Machine.replace() accept command line arguments in a similar fashion.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// add foo.ck</span></span><br><span class="line"><span class="comment">// pass foo and bar as command line arguments</span></span><br><span class="line">Machine.add( <span class="string">"foo.ck:foo:bar"</span> ) =&gt; <span class="keyword">int</span> id;</span><br><span class="line"></span><br><span class="line"><span class="comment">// replace shred with "bar.ck"</span></span><br><span class="line"><span class="comment">// pass foo and bar as command line arguments</span></span><br><span class="line">Machine.replace( id, <span class="string">"bar.ck:foo:bar"</span> );</span><br></pre></td></tr></table></figure>
+<p>To access command line arguments within a ChucK program, use the <code>me.args()</code> and <code>me.arg()</code> functions.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// print out all arguments</span></span><br><span class="line"><span class="keyword">for</span>( <span class="keyword">int</span> i; i &lt; me.numArgs(); i++ )</span><br><span class="line">    &lt;&lt;&lt; me.arg( i ) &gt;&gt;&gt;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>直接运行会输出：<br>C:\Users\abc1\Desktop&gt;chuck test.ck:foo<br>[test.ck]:line(2): class ‘Shred’ has no member ‘numArgs’</p>
+</blockquote>
+<p>(真就尴尬了)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2018/02/15/langs/chuck/chuck9/" data-id="cjogni4e40037qshsfmwoqoly" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ChucK/">ChucK</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/02/15/langs/r/R基本数据结构/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          R基本数据结构
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/15/langs/chuck/chuck11/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">chuck11</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/幻想与现实/">幻想与现实</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术与进步/">技术与进步</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活与思考/">生活与思考</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影与艺术/">电影与艺术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程与生活/">编程与生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录与总结/">记录与总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C++&C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChucK/">ChucK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/org-mode/">org-mode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/佳片/">佳片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开心麻花/">开心麻花</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/影视/">影视</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/校园/">校园</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爱情/">爱情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/琐事/">琐事</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科幻/">科幻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机原理/">计算机原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进阶/">进阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信/">通信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随感/">随感</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-C/" style="font-size: 14.29px;">C++&C</a> <a href="/tags/ChucK/" style="font-size: 20px;">ChucK</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/org-mode/" style="font-size: 10px;">org-mode</a> <a href="/tags/python/" style="font-size: 18.57px;">python</a> <a href="/tags/python3/" style="font-size: 10px;">python3</a> <a href="/tags/佳片/" style="font-size: 10px;">佳片</a> <a href="/tags/学习/" style="font-size: 17.14px;">学习</a> <a href="/tags/工具/" style="font-size: 11.43px;">工具</a> <a href="/tags/开心麻花/" style="font-size: 10px;">开心麻花</a> <a href="/tags/影视/" style="font-size: 11.43px;">影视</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/校园/" style="font-size: 10px;">校园</a> <a href="/tags/汇编/" style="font-size: 15.71px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/爱情/" style="font-size: 10px;">爱情</a> <a href="/tags/琐事/" style="font-size: 10px;">琐事</a> <a href="/tags/生活/" style="font-size: 11.43px;">生活</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/科幻/" style="font-size: 10px;">科幻</a> <a href="/tags/计算机原理/" style="font-size: 12.86px;">计算机原理</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/进阶/" style="font-size: 10px;">进阶</a> <a href="/tags/通信/" style="font-size: 10px;">通信</a> <a href="/tags/随感/" style="font-size: 10px;">随感</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/14/ceshi/">ceshi</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/25/ee/上网背后的流程/">上网背后的流程</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/15/life/这些衰败的日子/">这些衰败的日子</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/30/life/如懿如意/">如懿，如意</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/05/life/开心麻花几部电影/">开心麻花</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Lart Pang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

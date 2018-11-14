@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>C51汇编典型代码&amp;一些org-mode技巧 | 失乐园</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="关于51，关于org-mode..">
+<meta name="keywords" content="汇编,python,org-mode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C51汇编典型代码&amp;一些org-mode技巧">
+<meta property="og:url" content="https://plart.pw/2018/07/13/langs/asm/C51汇编典型代码&一些org-mode技巧/index.html">
+<meta property="og:site_name" content="失乐园">
+<meta property="og:description" content="关于51，关于org-mode..">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-01T15:52:46.458Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C51汇编典型代码&amp;一些org-mode技巧">
+<meta name="twitter:description" content="关于51，关于org-mode..">
+  
+    <link rel="alternate" href="/atom.xml" title="失乐园" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">失乐园</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">代码与机器</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://plart.pw"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-langs/asm/C51汇编典型代码&amp;一些org-mode技巧" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/13/langs/asm/C51汇编典型代码&一些org-mode技巧/" class="article-date">
+  <time datetime="2018-07-13T00:00:00.000Z" itemprop="datePublished">2018-07-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C51汇编典型代码&amp;一些org-mode技巧
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于51，关于org-mode..</p>
+<a id="more"></a>
+<h1 id="C51汇编典型代码-amp-一些org-mode技巧"><a href="#C51汇编典型代码-amp-一些org-mode技巧" class="headerlink" title="C51汇编典型代码&amp;一些org-mode技巧"></a>C51汇编典型代码&amp;一些org-mode技巧</h1><p><a href="https://github.com/lartpang/somethings/tree/master/AT89C51%E7%BB%BC%E5%90%88%E8%AE%BE%E8%AE%A1" target="_blank" rel="noopener">文档存放</a></p>
+<p>具体内容可见存放的数据。</p>
+<p>下面主要介绍关键代码。</p>
+<h2 id="ASM-部分"><a href="#ASM-部分" class="headerlink" title="ASM 部分"></a>ASM 部分</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">;; LCD数据发送=============================================================</span><br><span class="line">OUT_DATA:</span><br><span class="line">    PUSH    01H</span><br><span class="line">    PUSH    02H</span><br><span class="line">    PUSH    03H</span><br><span class="line">    MOV     R2, #32             ;32行,(双屏结构中上半屏)</span><br><span class="line">    MOV     R3, #80H            ;Y地址寄存器</span><br><span class="line">LCD_ADDR_UP:</span><br><span class="line">    MOV     SONG, R3            ;设置绘图区的Y地址坐标</span><br><span class="line">    INC     R3                  ;Y地址加1</span><br><span class="line">    LCALL   SEND_ML</span><br><span class="line">    MOV     SONG, #80H          ;设置绘图区的X地址坐标</span><br><span class="line">    LCALL   SEND_ML</span><br><span class="line">    MOV     R1, #16              ;16*8列</span><br><span class="line">LCD_DISP_UP:</span><br><span class="line">    CLR     A</span><br><span class="line">    MOVC    A, @A+DPTR</span><br><span class="line">    MOV     SONG, A</span><br><span class="line">    LCALL   SEND_SJ</span><br><span class="line">    INC     DPTR</span><br><span class="line">    DJNZ    R1, LCD_DISP_UP</span><br><span class="line">    DJNZ    R2, LCD_ADDR_UP      ;写满全屏的16*8字节X64</span><br><span class="line">    MOV     R2, #32             ;32行,(双屏结构的下半屏)</span><br><span class="line">    MOV     R3, #80H            ;Y地址寄存器</span><br><span class="line">LCD_ADDR_DOWN:</span><br><span class="line">    MOV     SONG, R3            ;设置绘图区的Y地址坐标</span><br><span class="line">    INC     R3                  ;Y地址加1</span><br><span class="line">    LCALL   SEND_ML</span><br><span class="line">    MOV     SONG, #88H          ;设置绘图区的X地址坐标</span><br><span class="line">    LCALL   SEND_ML</span><br><span class="line">    MOV     R1, #16             ;16*8列</span><br><span class="line">LCD_DISP_DOWN:</span><br><span class="line">    CLR A</span><br><span class="line">    MOVC    A, @A+DPTR</span><br><span class="line">    MOV     SONG, A</span><br><span class="line">    LCALL   SEND_SJ</span><br><span class="line">    INC     DPTR</span><br><span class="line">    DJNZ    R1, LCD_DISP_DOWN</span><br><span class="line">    DJNZ    R2, LCD_ADDR_DOWN        ;写满全屏的16*8字节X64</span><br><span class="line">    POP     03H</span><br><span class="line">    POP     02H</span><br><span class="line">    POP     01H</span><br><span class="line">    RET</span><br></pre></td></tr></table></figure>
+<p>这部分介绍了如何在 LCD12864 上进行绘图操作。</p>
+<p>值得纪念的是，这部分代码是我自己摸索，对比着网上找来的资料，不断地调整，最后终于搞定的。</p>
+<p><em>开心的是，分享给了其他人，表现顽强</em></p>
+<p><a href="https://wx4.sinaimg.cn/mw690/a6bff99cly1fs3wcf3pv9j20bz06s0tp.jpg" target="_blank" rel="noopener">LCD12864 GDRAM存储结构</a></p>
+<blockquote>
+<p>目前还没学会如何在 org-mode 中直接插入网络图片，并且可以直接显示。。</p>
+</blockquote>
+<h2 id="python-部分"><a href="#python-部分" class="headerlink" title="python 部分"></a>python 部分</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> binascii</span><br><span class="line"><span class="keyword">import</span> serial</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> matplotlib.animation <span class="keyword">as</span> animation</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#初始数据绘图</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">update</span><span class="params">(frame)</span>:</span></span><br><span class="line">    <span class="comment">#读入模拟</span></span><br><span class="line">    read_string = binascii.hexlify(ser.read()).decode(<span class="string">'ascii'</span>)</span><br><span class="line">    a = (int(read_string[<span class="number">0</span>], <span class="number">16</span>) * <span class="number">16</span> + int(read_string[<span class="number">1</span>], <span class="number">16</span>))</span><br><span class="line">    print(a)</span><br><span class="line">    sleep(<span class="number">0.1</span>)</span><br><span class="line">    <span class="comment">#绘图数据生成</span></span><br><span class="line">    <span class="keyword">del</span>(data_read[<span class="number">0</span>])</span><br><span class="line">    data_read.append(a)</span><br><span class="line">    <span class="comment">#绘图</span></span><br><span class="line">    line.set_ydata(data_read)</span><br><span class="line">    <span class="comment">#颜色设置</span></span><br><span class="line">    <span class="keyword">if</span> abs(a) &gt;= <span class="number">40</span>:</span><br><span class="line">        plt.setp(line, <span class="string">'color'</span>, <span class="string">'r'</span>, <span class="string">'linewidth'</span>, <span class="number">2.0</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        plt.setp(line, <span class="string">'color'</span>, <span class="string">'b'</span>, <span class="string">'linewidth'</span>, <span class="number">2.0</span>)</span><br><span class="line">    <span class="keyword">return</span> line</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    data_read = list(range(<span class="number">100</span>))</span><br><span class="line">    fig, ax = plt.subplots()</span><br><span class="line">    line, = ax.plot(data_read)</span><br><span class="line">    ax.set_ylim(<span class="number">0</span>, <span class="number">100</span>)</span><br><span class="line">    plt.grid(<span class="keyword">True</span>)</span><br><span class="line">    ax.set_ylabel(<span class="string">"Temperature: ℃"</span>)</span><br><span class="line">    ax.set_xlabel(<span class="string">"Relative Time: s"</span>)</span><br><span class="line"></span><br><span class="line">    ser = serial.Serial(port=<span class="string">'COM3'</span>, baudrate=<span class="number">1200</span>)</span><br><span class="line">    ani = animation.FuncAnimation(fig, update, frames=<span class="keyword">None</span>, interval=<span class="number">100</span>)</span><br><span class="line">    plt.show()</span><br><span class="line">ser.close()</span><br></pre></td></tr></table></figure>
+<p>这段代码中使用了 matplotlib.animation 这个特殊的子模块，用来绘制动态图。</p>
+<p>最开始用的是 Tkinter 来配合 matplotlib 显示串口数据的状态，但是不适合大量数据连续的绘制。会出现卡死的状态。</p>
+<p>直到最后，还是放弃了自定义界面的想法，干脆只是单纯的做图，于是有了这个版本。</p>
+<p>但是还是要记录下之前的努力，下面的是原来的基于 Tkinter 和 matplotlib 的代码。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#  coding:utf-8</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">实现读取端口数据实现绘图</span></span><br><span class="line"><span class="string">2018年5月30日23:39:32</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">import</span> binascii</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> tkinter <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> serial</span><br><span class="line"><span class="keyword">from</span> matplotlib.backends.backend_tkagg <span class="keyword">import</span> FigureCanvasTkAgg</span><br><span class="line"><span class="keyword">from</span> matplotlib.backend_bases <span class="keyword">import</span> key_press_handler</span><br><span class="line"><span class="keyword">from</span> matplotlib.figure <span class="keyword">import</span> Figure</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">drawPic</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    获取GUI界面设置的参数，利用该参数绘制图片</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="comment"># 清空图像，以使得前后两次绘制的图像不会重叠</span></span><br><span class="line">    screen_draw.clf()</span><br><span class="line">    add_plot = screen_draw.add_subplot(<span class="number">111</span>)</span><br><span class="line">    add_plot.axis([<span class="number">0</span>, <span class="number">100</span>, <span class="number">00</span>, <span class="number">100</span>])</span><br><span class="line"></span><br><span class="line">    x = list(range(<span class="number">100</span>))</span><br><span class="line">    y = data_read</span><br><span class="line">    add_plot.plot(x, y, <span class="string">'r'</span>, label=<span class="string">'Temperature'</span>)</span><br><span class="line">    add_plot.set_title(<span class="string">'DRAW'</span>)</span><br><span class="line">    canvas_draw.draw()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">serial_data</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""处理串口数据"""</span></span><br><span class="line">    <span class="comment"># 打开端口</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        port = input_port.get()</span><br><span class="line">        baudrate = int(input_baudrate.get())</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        port = <span class="string">'COM3'</span></span><br><span class="line">        baudrate = <span class="number">9600</span></span><br><span class="line">        input_port.delete(<span class="number">0</span>)</span><br><span class="line">        input_baudrate.delete(<span class="number">0</span>)</span><br><span class="line">        input_port.insert(<span class="number">0</span>, <span class="string">'COM3'</span>)</span><br><span class="line">        input_baudrate.insert(<span class="number">0</span>, <span class="string">'9600'</span>)</span><br><span class="line"></span><br><span class="line">    ser = serial.Serial(port, baudrate)</span><br><span class="line">    list_index = list(range(<span class="number">50</span>))</span><br><span class="line">    data_read[<span class="number">0</span>: <span class="number">50</span>] = data_read[<span class="number">50</span>: <span class="number">100</span>]</span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> list_index:</span><br><span class="line">        read_string = binascii.hexlify(ser.read()).decode(<span class="string">'ascii'</span>)</span><br><span class="line">        data_read[x + <span class="number">50</span>] = int(read_string[<span class="number">0</span>], <span class="number">16</span>) * \</span><br><span class="line">            <span class="number">16</span> + int(read_string[<span class="number">1</span>], <span class="number">16</span>)</span><br><span class="line">        print(data_read[x])</span><br><span class="line">    print(<span class="string">"Over"</span>)</span><br><span class="line">    ser.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">now_draw</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""实时绘制图像"""</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        port = input_port.get()</span><br><span class="line">        baudrate = int(input_baudrate.get())</span><br><span class="line">        delay = int(input_delay.get())</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        port = <span class="string">'COM3'</span></span><br><span class="line">        baudrate = <span class="number">9600</span></span><br><span class="line">        delay = <span class="number">10</span></span><br><span class="line">        input_port.delete(<span class="number">0</span>)</span><br><span class="line">        input_baudrate.delete(<span class="number">0</span>)</span><br><span class="line">        input_delay.delete(<span class="number">0</span>)</span><br><span class="line">        input_port.insert(<span class="number">0</span>, <span class="string">'COM3'</span>)</span><br><span class="line">        input_baudrate.insert(<span class="number">0</span>, <span class="string">'9600'</span>)</span><br><span class="line">        input_delay.insert(<span class="number">0</span>, <span class="string">'10'</span>)</span><br><span class="line"></span><br><span class="line">    list_index_draw = list(range(<span class="number">100</span>))</span><br><span class="line">    ser = serial.Serial(port, baudrate)</span><br><span class="line"></span><br><span class="line">    start = time.clock()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        read_string = binascii.hexlify(ser.read()).decode(<span class="string">'ascii'</span>)</span><br><span class="line">        data_read[<span class="number">99</span>] = int(read_string[<span class="number">0</span>], <span class="number">16</span>) * <span class="number">16</span> + int(read_string[<span class="number">1</span>], <span class="number">16</span>)</span><br><span class="line">        data_read[<span class="number">0</span>: <span class="number">99</span>] = data_read[<span class="number">1</span>: <span class="number">100</span>]</span><br><span class="line"></span><br><span class="line">        drawPic()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 指定退出死循环方式</span></span><br><span class="line">        <span class="keyword">if</span>(data_read[<span class="number">99</span>] == <span class="number">85</span>):    <span class="comment"># 温度采集模块关闭后，串口传回来的值就是 55H = 85</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">elif</span>(delay &gt; <span class="number">0</span>):</span><br><span class="line">            <span class="keyword">if</span>(time.clock() - start &gt;= delay):</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    ser.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">on_key_event</span><span class="params">(event)</span>:</span></span><br><span class="line">    print(<span class="string">'推出程序 %s'</span> % event.key)</span><br><span class="line">    root.quit()</span><br><span class="line">    root.destroy()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    matplotlib.use(<span class="string">'TkAgg'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 用于接受数据的存储</span></span><br><span class="line">    data_read = list(range(<span class="number">100</span>))</span><br><span class="line">    root = Tk()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 在Tk的GUI上放置一个画布，并用.grid()来调整布局</span></span><br><span class="line">    screen_draw = Figure(figsize=(<span class="number">5</span>, <span class="number">4</span>), dpi=<span class="number">100</span>)</span><br><span class="line">    canvas_draw = FigureCanvasTkAgg(screen_draw, master=root)</span><br><span class="line">    <span class="comment"># 绑定任意键退出</span></span><br><span class="line">    canvas_draw.mpl_connect(<span class="string">'key_press_event'</span>, on_key_event)</span><br><span class="line"></span><br><span class="line">    canvas_draw.get_tk_widget().grid(row=<span class="number">0</span>, columnspan=<span class="number">3</span>)</span><br><span class="line">    canvas_draw.draw()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 放置标签、文本框和按钮等部件，并设置文本框的默认值和按钮的事件函数</span></span><br><span class="line">    Label(root, text=<span class="string">'请输入监测时长(s),0则无限,关闭测温即可停止:'</span>).grid(row=<span class="number">1</span>, column=<span class="number">0</span>)</span><br><span class="line">    input_delay = Entry(root)</span><br><span class="line">    input_delay.grid(row=<span class="number">1</span>, column=<span class="number">1</span>)</span><br><span class="line">    input_delay.insert(<span class="number">0</span>, <span class="string">'50'</span>)</span><br><span class="line"></span><br><span class="line">    Label(root, text=<span class="string">'请输入端口号:'</span>).grid(row=<span class="number">2</span>, column=<span class="number">0</span>)</span><br><span class="line">    input_port = Entry(root)</span><br><span class="line">    input_port.grid(row=<span class="number">2</span>, column=<span class="number">1</span>)</span><br><span class="line">    input_port.insert(<span class="number">0</span>, <span class="string">'COM3'</span>)</span><br><span class="line"></span><br><span class="line">    Label(root, text=<span class="string">'请输入波特率:'</span>).grid(row=<span class="number">3</span>, column=<span class="number">0</span>)</span><br><span class="line">    input_baudrate = Entry(root)</span><br><span class="line">    input_baudrate.grid(row=<span class="number">3</span>, column=<span class="number">1</span>)</span><br><span class="line">    input_baudrate.insert(<span class="number">0</span>, <span class="string">'9600'</span>)</span><br><span class="line"></span><br><span class="line">    Button(</span><br><span class="line">        root, text=<span class="string">'实时监控'</span>, command=now_draw).grid(</span><br><span class="line">            row=<span class="number">1</span>, column=<span class="number">2</span>, columnspan=<span class="number">1</span>)</span><br><span class="line">    Button(</span><br><span class="line">        root, text=<span class="string">'开始画图'</span>, command=drawPic).grid(</span><br><span class="line">            row=<span class="number">2</span>, column=<span class="number">2</span>, columnspan=<span class="number">1</span>)</span><br><span class="line">    Button(</span><br><span class="line">        root, text=<span class="string">'打开端口'</span>, command=serial_data).grid(</span><br><span class="line">            row=<span class="number">3</span>, column=<span class="number">2</span>, columnspan=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 启动事件循环</span></span><br><span class="line">    root.mainloop()</span><br></pre></td></tr></table></figure>
+<p>这里倒是学习了下 Tkinter 的相关操作，还是不错的。自定义的能力更强。不过很可惜。</p>
+<p>并不是很适合处理动态数据显示。</p>
+<h2 id="ORG-MODE-部分"><a href="#ORG-MODE-部分" class="headerlink" title="ORG-MODE 部分"></a>ORG-MODE 部分</h2><p><a href="http://www.3zso.com/archives/orgmode-babel.html" target="_blank" rel="noopener">org-mode-babel</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">简单模板对应快捷输入的首字母</span><br><span class="line"></span><br><span class="line">输入 &lt; 后面跟一个字母，然后按 TAB 键，就可以生成对应的模板。（eg: &lt;e + TAB ）</span><br><span class="line"></span><br><span class="line">s   #+BEGIN_SRC ... #+END_SRC</span><br><span class="line">e   #+BEGIN_EXAMPLE ... #+END_EXAMPLE</span><br><span class="line">q   #+BEGIN_QUOTE ... #+END_QUOTE</span><br><span class="line">v   #+BEGIN_VERSE ... #+END_VERSE</span><br><span class="line">c   #+BEGIN_CENTER ... #+END_CENTER</span><br><span class="line">l   #+BEGIN_LaTeX ... #+END_LaTeX</span><br><span class="line">L   #+LaTeX:</span><br><span class="line">h   #+BEGIN_HTML ... #+END_HTML</span><br><span class="line">H   #+HTML:</span><br><span class="line">a   #+BEGIN_ASCII ... #+END_ASCII</span><br><span class="line">A   #+ASCII:</span><br><span class="line">i   #+INDEX: line</span><br><span class="line">I   #+INCLUDE: line</span><br><span class="line">#+END_EXAMPLE</span><br><span class="line"></span><br><span class="line">#+BEGIN_EXAMPLE</span><br><span class="line">（7） 文档元数据</span><br><span class="line"></span><br><span class="line">#+TITLE:       the title to be shown (default is the buffer name)</span><br><span class="line">#+AUTHOR:      the author (default taken from user-full-name)</span><br><span class="line">#+DATE:        a date, an Org timestamp1, or a format string for format-time-string</span><br><span class="line">#+EMAIL:       his/her email address (default from user-mail-address)</span><br><span class="line">#+DESCRIPTION: the page description, e.g. for the XHTML meta tag</span><br><span class="line">#+KEYWORDS:    the page keywords, e.g. for the XHTML meta tag</span><br><span class="line">#+LANGUAGE:    language for HTML, e.g. ‘en’ (org-export-default-language)</span><br><span class="line">#+TEXT:        Some descriptive text to be inserted at the beginning.</span><br><span class="line">#+TEXT:        Several lines may be given.</span><br><span class="line">#+OPTIONS:     H:2 num:t toc:t \n:nil @:t ::t |:t ^:t f:t TeX:t ...</span><br><span class="line">#+BIND:        lisp-var lisp-val, e.g.: org-export-latex-low-levels itemize</span><br><span class="line">               You need to confirm using these, or configure org-export-allow-BIND</span><br><span class="line">#+LINK_UP:     the ``up&apos;&apos; link of an exported page</span><br><span class="line">#+LINK_HOME:   the ``home&apos;&apos; link of an exported page</span><br><span class="line">#+LATEX_HEADER: extra line(s) for the LaTeX header, like \usepackage&#123;xyz&#125;</span><br><span class="line">#+EXPORT_SELECT_TAGS:   Tags that select a tree for export</span><br><span class="line">#+EXPORT_EXCLUDE_TAGS:  Tags that exclude a tree from export</span><br><span class="line">#+XSLT:        the XSLT stylesheet used by DocBook exporter to generate FO file</span><br><span class="line"></span><br><span class="line">其中#+OPTIONS是复合的选项，包括：</span><br><span class="line"></span><br><span class="line">H:         set the number of headline levels for export</span><br><span class="line">num:       turn on/off section-numbers</span><br><span class="line">toc:       turn on/off table of contents, or set level limit (integer)</span><br><span class="line">\n:        turn on/off line-break-preservation (DOES NOT WORK)</span><br><span class="line">@:         turn on/off quoted HTML tags</span><br><span class="line">::         turn on/off fixed-width sections</span><br><span class="line">|:         turn on/off tables</span><br><span class="line">^:         turn on/off TeX-like syntax for sub- and superscripts.  If</span><br><span class="line">           you write &quot;^:&#123;&#125;&quot;, a_&#123;b&#125; will be interpreted, but</span><br><span class="line">           the simple a_b will be left as it is.</span><br><span class="line">-:         turn on/off conversion of special strings.</span><br><span class="line">f:         turn on/off footnotes like this[1].</span><br><span class="line">todo:      turn on/off inclusion of TODO keywords into exported text</span><br><span class="line">tasks:     turn on/off inclusion of tasks (TODO items), can be nil to remove</span><br><span class="line">           all tasks, todo to remove DONE tasks, or list of kwds to keep</span><br><span class="line">pri:       turn on/off priority cookies</span><br><span class="line">tags:      turn on/off inclusion of tags, may also be not-in-toc</span><br><span class="line">&lt;:         turn on/off inclusion of any time/date stamps like DEADLINES</span><br><span class="line">*:         turn on/off emphasized text (bold, italic, underlined)</span><br><span class="line">TeX:       turn on/off simple TeX macros in plain text</span><br><span class="line">LaTeX:     configure export of LaTeX fragments.  Default auto</span><br><span class="line">skip:      turn on/off skipping the text before the first heading</span><br><span class="line">author:    turn on/off inclusion of author name/email into exported file</span><br><span class="line">email:     turn on/off inclusion of author email into exported file</span><br><span class="line">creator:   turn on/off inclusion of creator info into exported file</span><br><span class="line">timestamp: turn on/off inclusion creation time into exported file</span><br><span class="line">d:         turn on/off inclusion of drawers</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2018/07/13/langs/asm/C51汇编典型代码&一些org-mode技巧/" data-id="cjogni4cu0024qshsu1btgwci" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/org-mode/">org-mode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/汇编/">汇编</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/07/20/life/我不是药神/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          我不是药神
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/11/life/小诗一/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">小诗一首</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/幻想与现实/">幻想与现实</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术与进步/">技术与进步</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活与思考/">生活与思考</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影与艺术/">电影与艺术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程与生活/">编程与生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录与总结/">记录与总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C++&C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChucK/">ChucK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/org-mode/">org-mode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/佳片/">佳片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开心麻花/">开心麻花</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/影视/">影视</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/校园/">校园</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爱情/">爱情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/琐事/">琐事</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科幻/">科幻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机原理/">计算机原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进阶/">进阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信/">通信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随感/">随感</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-C/" style="font-size: 14.29px;">C++&C</a> <a href="/tags/ChucK/" style="font-size: 20px;">ChucK</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/org-mode/" style="font-size: 10px;">org-mode</a> <a href="/tags/python/" style="font-size: 18.57px;">python</a> <a href="/tags/python3/" style="font-size: 10px;">python3</a> <a href="/tags/佳片/" style="font-size: 10px;">佳片</a> <a href="/tags/学习/" style="font-size: 17.14px;">学习</a> <a href="/tags/工具/" style="font-size: 11.43px;">工具</a> <a href="/tags/开心麻花/" style="font-size: 10px;">开心麻花</a> <a href="/tags/影视/" style="font-size: 11.43px;">影视</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/校园/" style="font-size: 10px;">校园</a> <a href="/tags/汇编/" style="font-size: 15.71px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/爱情/" style="font-size: 10px;">爱情</a> <a href="/tags/琐事/" style="font-size: 10px;">琐事</a> <a href="/tags/生活/" style="font-size: 11.43px;">生活</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/科幻/" style="font-size: 10px;">科幻</a> <a href="/tags/计算机原理/" style="font-size: 12.86px;">计算机原理</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/进阶/" style="font-size: 10px;">进阶</a> <a href="/tags/通信/" style="font-size: 10px;">通信</a> <a href="/tags/随感/" style="font-size: 10px;">随感</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/14/ceshi/">ceshi</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/25/ee/上网背后的流程/">上网背后的流程</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/15/life/这些衰败的日子/">这些衰败的日子</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/30/life/如懿如意/">如懿，如意</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/05/life/开心麻花几部电影/">开心麻花</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Lart Pang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

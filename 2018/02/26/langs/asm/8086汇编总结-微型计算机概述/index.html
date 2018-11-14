@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>8086汇编总结-微型计算机概述 | 失乐园</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="目录 第一章  微型计算机概述 第二章  16位微处理器8086 第三章  指令系统 第四章  汇编语言程序设计 第五章  存储器 第六章  输入/输出接口设计 第七章  中断系统 第八章  可编程接口芯片 第九章  AD/DA 转换 第十章  串行通信  第一章  微型计算机概述微型计算机基本组成：冯诺依曼结构  CPU（Central Processing Unit中央处理单元 ） ALU (">
+<meta name="keywords" content="汇编,计算机原理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="8086汇编总结-微型计算机概述">
+<meta property="og:url" content="https://plart.pw/2018/02/26/langs/asm/8086汇编总结-微型计算机概述/index.html">
+<meta property="og:site_name" content="失乐园">
+<meta property="og:description" content="目录 第一章  微型计算机概述 第二章  16位微处理器8086 第三章  指令系统 第四章  汇编语言程序设计 第五章  存储器 第六章  输入/输出接口设计 第七章  中断系统 第八章  可编程接口芯片 第九章  AD/DA 转换 第十章  串行通信  第一章  微型计算机概述微型计算机基本组成：冯诺依曼结构  CPU（Central Processing Unit中央处理单元 ） ALU (">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://plart.pw/images/asm-1/ScreenShot00017.jpg">
+<meta property="og:image" content="https://plart.pw/images/asm-1/ScreenShot00018.jpg">
+<meta property="og:image" content="https://plart.pw/images/asm-1/ScreenShot00019.jpg">
+<meta property="og:image" content="https://plart.pw/images/asm-1/ScreenShot00020.jpg">
+<meta property="og:image" content="https://plart.pw/images/asm-1/ScreenShot00021.jpg">
+<meta property="og:image" content="https://plart.pw/images/asm-1/ScreenShot00022.jpg">
+<meta property="og:image" content="https://plart.pw/images/asm-1/ScreenShot00023.jpg">
+<meta property="og:updated_time" content="2018-07-13T12:42:36.284Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="8086汇编总结-微型计算机概述">
+<meta name="twitter:description" content="目录 第一章  微型计算机概述 第二章  16位微处理器8086 第三章  指令系统 第四章  汇编语言程序设计 第五章  存储器 第六章  输入/输出接口设计 第七章  中断系统 第八章  可编程接口芯片 第九章  AD/DA 转换 第十章  串行通信  第一章  微型计算机概述微型计算机基本组成：冯诺依曼结构  CPU（Central Processing Unit中央处理单元 ） ALU (">
+<meta name="twitter:image" content="https://plart.pw/images/asm-1/ScreenShot00017.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="失乐园" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">失乐园</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">代码与机器</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://plart.pw"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-langs/asm/8086汇编总结-微型计算机概述" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/26/langs/asm/8086汇编总结-微型计算机概述/" class="article-date">
+  <time datetime="2018-02-25T16:00:00.000Z" itemprop="datePublished">2018-02-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      8086汇编总结-微型计算机概述
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
+<li>第一章  微型计算机概述</li>
+<li>第二章  16位微处理器8086</li>
+<li>第三章  指令系统</li>
+<li>第四章  汇编语言程序设计</li>
+<li>第五章  存储器</li>
+<li>第六章  输入/输出接口设计</li>
+<li>第七章  中断系统</li>
+<li>第八章  可编程接口芯片</li>
+<li>第九章  AD/DA 转换</li>
+<li>第十章  串行通信</li>
+</ul>
+<h1 id="第一章-微型计算机概述"><a href="#第一章-微型计算机概述" class="headerlink" title="第一章  微型计算机概述"></a>第一章  微型计算机概述</h1><h2 id="微型计算机基本组成："><a href="#微型计算机基本组成：" class="headerlink" title="微型计算机基本组成："></a>微型计算机基本组成：</h2><p><strong>冯诺依曼结构</strong></p>
+<ul>
+<li>CPU（Central Processing Unit<br>中央处理单元 ）<ul>
+<li>ALU (Arithmetic Logic Unit<br>算术逻辑单元)</li>
+<li>控制器</li>
+</ul>
+</li>
+<li>Memory<ul>
+<li>RAM (读写存储器）</li>
+<li>ROM (只读存储器)</li>
+</ul>
+</li>
+<li>I/O接口 - 主机与外设的匹配连接</li>
+<li>BUS（总线）：计算机用来传输信息的一组通信线<ul>
+<li>AB (地址总线)：用于传递地址信息，单向，成组使用，地址总线的宽度决定了CPU直接寻址内存的范围。如：8086有20根地址线，即地址总线宽度为20位，可寻址2^20B = 1MB</li>
+<li>DB (数据总线)：用于传递数据信息，双向，成组使用，计算机的位一般是指数据总线的宽度。如：8086有16根数据线，因此8086为16位机</li>
+<li>CB (控制总线)：用于传输控制信号，以便控制计算机各部件协调工作， 各自独立使用，有发出，也有接收。如：CPU向存储器发出的读信号、写信号</li>
+<li>地址数据复用总线：地址总线与数据总线共用一组通信线，<em>分时</em>传送地址，信息和数据信息（由同步信号区分），节省CPU引脚</li>
+</ul>
+</li>
+</ul>
+<h2 id="微型计算机系统（MCS-–-Micro-Computer-System）"><a href="#微型计算机系统（MCS-–-Micro-Computer-System）" class="headerlink" title="微型计算机系统（MCS – Micro-Computer System）"></a>微型计算机系统（MCS – Micro-Computer System）</h2><p>以微型计算机为主体，配上系统软件就构成微型计算机系统。</p>
+<ul>
+<li>系统软件包括操作系统和一系列系统应用程序<ul>
+<li>如编辑程序、编译程序、调试程序等</li>
+<li>有了系统软件才能发挥微机的硬件功能</li>
+</ul>
+</li>
+<li>外设<ul>
+<li>输入设备：鼠标、键盘、扫描仪</li>
+<li>输出设备：显示器、打印机、投影仪</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/asm-1/ScreenShot00017.jpg" alt="IBM PC/XT系统板框图"></p>
+<h2 id="微处理器、单板机和单片机概念"><a href="#微处理器、单板机和单片机概念" class="headerlink" title="微处理器、单板机和单片机概念"></a>微处理器、单板机和单片机概念</h2><ul>
+<li>微处理器<ul>
+<li>专指中央处理器(CPU)，是将计算机的运算器(ALU)和控制器集成在一个芯片上。</li>
+<li>如：8086，80386，Pentium，PII等</li>
+</ul>
+</li>
+<li>单板机<ul>
+<li>将CPU、存储器、I/O口以及简单的外设集成在一块板上，是一个简单的计算机系统。</li>
+<li>如：TP801A等。</li>
+</ul>
+</li>
+<li>单片机<ul>
+<li>将CPU、存储器、I/O口集成在一个芯片上。</li>
+<li>如：Intel MCS-48，MCS-51，MCS-96等</li>
+</ul>
+</li>
+</ul>
+<h2 id="微型计算机发展"><a href="#微型计算机发展" class="headerlink" title="微型计算机发展"></a>微型计算机发展</h2><ul>
+<li>CPU位数不断增加，集成度不断提高，频率不断提高<ul>
+<li>计算机的位<ul>
+<li>CPU片内数据总线的宽度决定了计算机的位数</li>
+<li>如：8位，16位，32位，64位，128位</li>
+</ul>
+</li>
+<li>准16位机<ul>
+<li>CPU片内数据线宽度为16位，片外数据线宽度为8位</li>
+<li>如：8088，8098</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>由单处理器向多处理器发展</li>
+<li>指令系统由复杂指令集向精简指令集发展<ul>
+<li>复杂指令集计算机（CISC – Complex Instruction Set Computer）</li>
+<li>精简指令集计算机（RISC – Reduced Instruction Set Computer）</li>
+<li>Intel在Pentium之前的CPU均属于CISC体系，从Pentium开始将CISC和RISC相结合，Pentium大多数指令是精简指令，但仍保留了一部分复杂指令</li>
+</ul>
+</li>
+</ul>
+<h2 id="计算机中的信息表示"><a href="#计算机中的信息表示" class="headerlink" title="计算机中的信息表示"></a>计算机中的信息表示</h2><ol>
+<li><p>计算机使用二进制存储，但书写时常用16进制</p>
+<ul>
+<li>计算机内所有代码以二进制表示，机器码又称二进制码</li>
+<li><p>1位16进制数对应半个字节（4位二进制码）</p>
+<p>例：1000 0101 B  二进制；85 H  16进制</p>
+<p><em>注：书写16进制数时，若最高位是字母，则前面加0，表示是数据，如0FEH</em></p>
+</li>
+<li><p>一些进制的简化符号:<br>  2进制 - B(Binary)、 16进制－ H(Hex)<br>  8进制 - O(Octal)、  10进制 - D(Decimal)</p>
+</li>
+</ul>
+</li>
+<li><p>无符号数表示</p>
+<ul>
+<li><p>二进制无符号数 — 码值与数值相等<br>  一个n位二进制无符号数表示的范围是0～(2^n - 1)</p>
+<p>  例：8位二进制无符号数表示的范围是0～255，16位二进制无符号数表示的范围是0～65535</p>
+</li>
+<li><p>BCD码(Binary Coded Decimal) - 用半个字节表示1位十进制数</p>
+<ul>
+<li>压缩BCD码: 用1个字节表示2位BCD码，又称8421BCD码</li>
+<li><p>非压缩BCD码：用1个字节的低四位表示1位BCD码，高四位忽略</p>
+<p>例 00111001b 在压缩格式下表示：39；在非压缩格式下表示：9</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>有符号数表示</p>
+<ul>
+<li>原码<ul>
+<li>将最高位作为符号位，正数的符号位为0，负数的符号位为1，余下的其他位为数值位</li>
+</ul>
+</li>
+<li>反码<ul>
+<li>正数的反码与原码相同；</li>
+<li>负数的反码由该负数的原码按位取反(符号位除外)得到 </li>
+</ul>
+</li>
+<li>补码<ul>
+<li>正数的补码与原码相同。</li>
+<li>负数的补码由该负数的原码按位取反(符号位除外)加1得到</li>
+<li><strong>计算机内有符号数默认用补码表示</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="一个字节有符号数范围"><a href="#一个字节有符号数范围" class="headerlink" title="一个字节有符号数范围"></a>一个字节有符号数范围</h3><p>原码表示： -127～+127  有+0，-0</p>
+<pre><code>1111 1111b – 1000 0000b - 0000 0000b – 0111 1111 
+-127           -0           +0           +127
+</code></pre><p>反码表示：-127～+127  有+0，-0</p>
+<pre><code>1000 0000b – 1111 1111b – 0000 0000b – 0111 1111b
+-127            -0           +0           +127
+</code></pre><p>补码表示：-128～+127  只有一个0</p>
+<pre><code>1000 0000b – 1111 1111b - 0000 0000b – 0111 1111b
+-128           -1            0            127
+</code></pre><p>一个字的补码表示范围: -32768 ~ +32767 (只有一个0)</p>
+<pre><code>1000 0000 0000 0000 ~ 1111 1111 1111 1111
+    -32768              -1
+0000 0000 0000 0000 ~ 0111 1111 1111 1111
+    0                   +32767
+</code></pre><p><strong>举例说明</strong></p>
+<pre><code>计算机内一个字节为 81H =&gt; 1000 0001b
+二进制    129 （二进制无符号数）
+BCD码     81 （压缩格式BCD码）
+原码     -1
+反码     -126（1111 1110b —&gt; 1000 0001b）
+补码     -127（1111 1111b —&gt; 1000 0000b—&gt;1000 0001b）
+</code></pre><p><strong>一个代码，赋予不同类型，其数值不一样。而类型要由人编程指定</strong></p>
+<p><strong>数学运算时，结果超出运算器所表示范围则会产生“溢出”</strong></p>
+<ul>
+<li>无符号数：通过进位或借位标志C标记“溢出”，避免产生错误结果</li>
+<li>有符号数：用标志O标记“溢出”，表示运算结果错误<ul>
+<li>字节运算，结果超出-128～127，则为溢出</li>
+<li>字运算，结果超出-32768～32767，则为溢出</li>
+<li>一般可以直接判断运算过程来确定是否溢出 - 双高位判别法：最高位（符号位）是否有进借位Cs异或次高位（数值的最高位）是否有进借位Cp。溢出 = Cs xor Cp</li>
+</ul>
+</li>
+</ul>
+<h3 id="字符代码"><a href="#字符代码" class="headerlink" title="字符代码"></a>字符代码</h3><ol>
+<li>ASCII码 — 美国标准信息交换码<ul>
+<li>用7位二进制数表示128个字符<ul>
+<li>包含26个英文大、小写字母，数字0～9，符号和命令符等</li>
+</ul>
+</li>
+<li>ASCII码在计算机内用一个字节表示，<em>最高位一般为0，有时候用作校验位</em>，计算机与外设交换信息一般都用ASCII码<ul>
+<li>如：字符显示器，字符打印机等</li>
+<li>注：需牢记字符 ‘0’～‘9’,‘A’～‘F’，‘a’～‘f’的ASCII码分别为30H～39H, 41H～46H， 61H～66H</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>汉字内码<ul>
+<li>GB2312定义了6763个汉字，其中一级字库3755字，二级字库3008字</li>
+<li>其他编码方式</li>
+</ul>
+</li>
+</ol>
+<h2 id="硬件基础知识补充"><a href="#硬件基础知识补充" class="headerlink" title="硬件基础知识补充"></a>硬件基础知识补充</h2><p>计算机硬件主要由 <strong>逻辑门、触发器（D触发器）、三态门</strong>构成，使用器件为 <em>CMOS、TTL和NMOS</em>。</p>
+<p>TTL和CMOS电平范围如下表所示：</p>
+<p><img src="/images/asm-1/ScreenShot00018.jpg" alt="TTL和CMOS电平范围"></p>
+<p>要了解逻辑电平的内容，首先要知道以下几个概念的含义：</p>
+<ol>
+<li>输入高电平（ViH）： 保证逻辑门输入为高电平时所允许的最小输入电压，当输入电平高于ViH时，则认为输入电平为高电平。 </li>
+<li>输入低电平（ViL）：保证逻辑门的输入为低电平时所允许的最大输入电压，当输入电平低于ViL时，则认为输入电平为低电平。 </li>
+<li>输出高电平（VoH）：保证逻辑门的输出为高电平时的最小输出电压，逻辑门的输出为高电平时的电平值都必须大于此VoH。 </li>
+<li>输出低电平（VoL）：保证逻辑门的输出为低电平时的最大输出电压，逻辑门的输出为低电平时的电平值都必须小于此VoL。 </li>
+<li>阀值电平 (Vt)： 数字电路芯片都存在一个阈值电平，就是电路刚刚勉强能翻转动作时的电平。它是一个界于ViL、ViH之间的电压值，对于CMOS电路的阈值电平，基本上是二分之一的电源电压值，但要保证稳定的输出，则必须要求输入高电平&gt; ViH，输入低电平 &lt; ViL，而如果输入电平在阈值上下，也就是ViL～ViH这个区域，电路的输出会处于不稳定状态 </li>
+</ol>
+<h3 id="逻辑门"><a href="#逻辑门" class="headerlink" title="逻辑门"></a>逻辑门</h3><p>重点在于其图像。<strong>直与弯或</strong>。</p>
+<p><img src="/images/asm-1/ScreenShot00019.jpg" alt="与逻辑"><br><img src="/images/asm-1/ScreenShot00020.jpg" alt="或逻辑"><br><img src="/images/asm-1/ScreenShot00021.jpg" alt="输出门"></p>
+<h3 id="三态缓冲器"><a href="#三态缓冲器" class="headerlink" title="三态缓冲器"></a>三态缓冲器</h3><ol>
+<li><p>三态门</p>
+<p> <img src="/images/asm-1/ScreenShot00022.jpg" alt="三态门"></p>
+</li>
+<li><p>单向三态缓冲器 — 74LS244</p>
+<p> 74LS244为TTL的单向三态缓冲器，有两个三态控制使能引脚G1和G2分别控制4个三态门</p>
+</li>
+<li><p>双向三态缓冲器 — 74LS245或INTEL 8286</p>
+<p> 74LS245为TTL双向三态缓冲器，有控制引脚DIR和EN</p>
+</li>
+</ol>
+<h3 id="锁存器"><a href="#锁存器" class="headerlink" title="锁存器"></a>锁存器</h3><ol>
+<li>D触发器</li>
+<li><p>具有异步清零的TTL上升沿锁存器－74LS273</p>
+<p> 当CLK上升沿到来时，将输入端的数据D0～D7锁存到输出端Q0～Q7，当CLR为低电平时将锁存器输出清零（具体逻辑可见对应的芯片图）</p>
+</li>
+<li><p>具有缓冲输出的TTL低电平锁存器－74LS373或INTEL8282</p>
+<ul>
+<li>OE为低电平时，输出三态门打开，此时LE为高电平，Q7～Q0跟随D7～D0；LE为低电平，数据锁存</li>
+<li>OE为高电平时，输出Q7～Q0为三态</li>
+</ul>
+</li>
+</ol>
+<h2 id="计算机内的总线连接"><a href="#计算机内的总线连接" class="headerlink" title="计算机内的总线连接"></a>计算机内的总线连接</h2><p>为减少计算机内各部件之间的连线，采用总线结构，使各部件共用一组数据线。</p>
+<ul>
+<li><strong>输入数据到总线的部件，一定要使用三态电路作缓冲</strong><ul>
+<li>需输出数据时，打开三态门，占用总线，传输信息</li>
+<li>不输出时，关闭三态门，使输出处于高阻状态，让出总线，不影响其它部件使用总线</li>
+</ul>
+</li>
+<li><strong>从总线输出数据的部件，常采用D触发器锁存总线数据</strong></li>
+<li>常用总线技术<ul>
+<li>时分技术：计算机内各部件之间的信息传送分时进行</li>
+<li>频分技术：CATV 有线电视，分频复用</li>
+</ul>
+</li>
+</ul>
+<h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><p>一个计算机系统包含多种类型总线，按 <em>所处位置</em>可分为：</p>
+<ol>
+<li><p>内部总线</p>
+<p> 位于CPU芯片内，用于连接片内各功能部件的总线<br> 内部总线的对外引线叫做CPU总线</p>
+</li>
+<li><p>局部总线</p>
+<p> 位于主机板上，用于连接主机板上各个主要部件，并通过扩展槽连接各种适配器（显卡、网卡、声卡）</p>
+<p> 常见的有ISA、EISA、PCI总线</p>
+<ul>
+<li>ISA — Industry Standard Architecture</li>
+<li>EISA — Extension Industry Standard Architecture</li>
+<li>PCI — Peripheral Component Interconnect</li>
+</ul>
+</li>
+<li><p>系统总线</p>
+<p> 位于机箱底板，多个CPU插件板以此互相连接，在PC机中，一般不用，常见的有MULTIBUS、VME等</p>
+</li>
+<li><p>外部总线</p>
+<p> 是微机与外部设备之间或几个微机系统之间的通信总线，如：</p>
+<ul>
+<li>IDE (Integrated Drive Electronic)总线，专用于连接硬盘</li>
+<li>SCSI (Small Computer System Interface)，专用于连接硬盘</li>
+<li>Centronics总线，用于与并行打印机连接</li>
+<li>USB (Universal Serial Bus)总线，用于连接USB设备</li>
+</ul>
+</li>
+</ol>
+<h3 id="总线性能"><a href="#总线性能" class="headerlink" title="总线性能"></a>总线性能</h3><p>主要从三方面来衡量</p>
+<ol>
+<li>总线宽度：指总线一次可以同时传输的数据位数</li>
+<li><p> 如：ISA为16位总线，一次可传输16位二进制数，EISA、PCI为32位总线</p>
+</li>
+<li><p>总线频率：指总线每秒能传输数据的次数</p>
+<p> 如：ISA、EISA的频率为8MHz，PCI的频率为33MHz，PCI-2的频率为66MHz</p>
+</li>
+<li><p>传输率：指每秒钟能够传输的字节数，用MB/s表示</p>
+<p> 传输率 = 宽度/8 ×频率</p>
+<p> 例：PCI总线宽度为32位，频率为33MHz，则传输率 = 32b / 8 ×33 = 132MB/s，即PCI总线每秒能够传输132M字节</p>
+</li>
+</ol>
+<h3 id="微机的层次化总线"><a href="#微机的层次化总线" class="headerlink" title="微机的层次化总线"></a>微机的层次化总线</h3><p><img src="/images/asm-1/ScreenShot00023.jpg" alt="微机的层次化总线"></p>
+<ol>
+<li><p>CPU总线</p>
+<ul>
+<li>CPU芯片内部总线的对外引线</li>
+<li>连接与CPU最密切、速度最快的部件，如二级Cache</li>
+</ul>
+</li>
+<li><p>PCI总线控制器</p>
+<ul>
+<li><p>像桥梁一样，一边连接CPU总线，一边连接CPU访问相对频繁、速度相对较快的部件，又称“PCI桥”</p>
+<p>  如：通过PCI总线连接主存储器，通过AGP总线连接高速图形卡</p>
+</li>
+<li><p>可级联下一级PCI总线控制器，形成多级PCI总线，容纳更多PCI卡</p>
+</li>
+</ul>
+</li>
+<li><p>PCI转换桥</p>
+<p> 完成PCI总线与ISA或EISA总线的连接转换</p>
+</li>
+<li><p>ISA总线：总线宽度16位，总线频率8MHz，传输率16MB/s</p>
+<ul>
+<li>24位地址线，16位数据线</li>
+<li>由主槽和扩展槽两部分组成，主槽为62脚，对应早期IBM PC/XT系统的62芯总线槽，扩展槽为36脚</li>
+<li>为和大量ISA适配卡兼容，目前计算机仍然通过“桥”来扩展ISA总线</li>
+</ul>
+</li>
+<li><p>EISA总线：是ISA的扩展，总线宽度32位，总线频率8MHz，传输率32MB/s</p>
+<ul>
+<li>32位地址线，32位数据线，能自动进行8位、16位、32位数据访问</li>
+<li>共198条信号线，98条为ISA原有的，扩展了100条信号线</li>
+</ul>
+</li>
+<li><p>PCI总线：目前微机中应用最广泛的局部总线</p>
+<ul>
+<li>总线宽度32位，总线频率33MHz，传输率为132MB/s</li>
+<li>支持即插即用功能</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">面对更大数据量传送的需求，传统PCI总线已无法满足应用要求，因此现在的设计对其进行扩展，称作PCI-X总线：</span><br><span class="line">PCI-X 66    64位     66MHz       Hot Plugging,       3.3 V   533MB/s</span><br><span class="line">PCI-X 133   64位     133MHz      Hot Plugging,       3.3 V   1.06GB/s</span><br><span class="line">PCI-X 266   64/16位  133MHz      Double Data Rate Hot Plugging, </span><br><span class="line">    3.3 &amp; 1.5 V,   ECC supported    2.13GB/s （主要应用到DDR内存）</span><br><span class="line">PCI-X 533   64/16位  133MHz      Quad Data Rate Hot Plugging, </span><br><span class="line">    3.3 &amp; 1.5 V,   ECC supported    4.26GB/s （主要应用在DDR2内存）</span><br><span class="line"></span><br><span class="line">说明：</span><br><span class="line">1. PCI-X 266 用上Double Data Rate技术，让每一个时钟脉冲的上升与下降边缘都可以传输数据，所以有多出了一 倍的机会来传输数据</span><br><span class="line">2. PCI-X 533规格更进一步采用每一个时钟脉冲可以传送四次（Quad Data Rate）的技术</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2018/02/26/langs/asm/8086汇编总结-微型计算机概述/" data-id="cjogni4cu001yqshs2cpxsmk2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/汇编/">汇编</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机原理/">计算机原理</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/11/langs/asm/8086汇编总结-指令系统/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          8086汇编总结-指令系统
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/26/langs/asm/8086汇编总结-16位微处理器8086/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">8086汇编总结-16位微处理器8086</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/幻想与现实/">幻想与现实</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术与进步/">技术与进步</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活与思考/">生活与思考</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影与艺术/">电影与艺术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程与生活/">编程与生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录与总结/">记录与总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C++&C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChucK/">ChucK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/org-mode/">org-mode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/佳片/">佳片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开心麻花/">开心麻花</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/影视/">影视</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/校园/">校园</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爱情/">爱情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/琐事/">琐事</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科幻/">科幻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机原理/">计算机原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进阶/">进阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信/">通信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随感/">随感</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-C/" style="font-size: 14.29px;">C++&C</a> <a href="/tags/ChucK/" style="font-size: 20px;">ChucK</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/org-mode/" style="font-size: 10px;">org-mode</a> <a href="/tags/python/" style="font-size: 18.57px;">python</a> <a href="/tags/python3/" style="font-size: 10px;">python3</a> <a href="/tags/佳片/" style="font-size: 10px;">佳片</a> <a href="/tags/学习/" style="font-size: 17.14px;">学习</a> <a href="/tags/工具/" style="font-size: 11.43px;">工具</a> <a href="/tags/开心麻花/" style="font-size: 10px;">开心麻花</a> <a href="/tags/影视/" style="font-size: 11.43px;">影视</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/校园/" style="font-size: 10px;">校园</a> <a href="/tags/汇编/" style="font-size: 15.71px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/爱情/" style="font-size: 10px;">爱情</a> <a href="/tags/琐事/" style="font-size: 10px;">琐事</a> <a href="/tags/生活/" style="font-size: 11.43px;">生活</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/科幻/" style="font-size: 10px;">科幻</a> <a href="/tags/计算机原理/" style="font-size: 12.86px;">计算机原理</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/进阶/" style="font-size: 10px;">进阶</a> <a href="/tags/通信/" style="font-size: 10px;">通信</a> <a href="/tags/随感/" style="font-size: 10px;">随感</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/14/ceshi/">ceshi</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/25/ee/上网背后的流程/">上网背后的流程</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/15/life/这些衰败的日子/">这些衰败的日子</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/30/life/如懿如意/">如懿，如意</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/05/life/开心麻花几部电影/">开心麻花</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Lart Pang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>chuck2 | 失乐园</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#Overview ChucK is a strongly-typed, strongly-timed, concurrent(并发的) audio and multimedia(多媒体的) programming language. It is compiled(编译) into virtual(虚拟的) instructions, which is immediately run in the">
+<meta name="keywords" content="ChucK">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chuck2">
+<meta property="og:url" content="https://plart.pw/2018/02/15/langs/chuck/chuck2/index.html">
+<meta property="og:site_name" content="失乐园">
+<meta property="og:description" content="#Overview ChucK is a strongly-typed, strongly-timed, concurrent(并发的) audio and multimedia(多媒体的) programming language. It is compiled(编译) into virtual(虚拟的) instructions, which is immediately run in the">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-13T12:46:35.009Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="chuck2">
+<meta name="twitter:description" content="#Overview ChucK is a strongly-typed, strongly-timed, concurrent(并发的) audio and multimedia(多媒体的) programming language. It is compiled(编译) into virtual(虚拟的) instructions, which is immediately run in the">
+  
+    <link rel="alternate" href="/atom.xml" title="失乐园" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">失乐园</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">代码与机器</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://plart.pw"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-langs/chuck/chuck2" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/15/langs/chuck/chuck2/" class="article-date">
+  <time datetime="2018-02-15T13:40:10.000Z" itemprop="datePublished">2018-02-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      chuck2
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#Overview</p>
+<p>ChucK is a strongly-typed, strongly-timed, concurrent(并发的) audio and multimedia(多媒体的) programming language. It is compiled(编译) into virtual(虚拟的) instructions, which is immediately run in the ChucK Virtual Machine. This guide documents the features(特色) of the Language, Compiler, and Virtual Machine for a ChucK programmer. </p>
+<p>#running ChucK</p>
+<p>…this is a quick overview(综述), see <a href="http://chuck.cs.princeton.edu/doc/program/vm.html" target="_blank" rel="noopener">VM options</a> for a more complete guide to command line options. </p>
+<p>To run ChucK with a program/patch called foo.ck simply run chuck and then the name of the file:</p>
+<pre><code>chuck foo.ck 
+</code></pre><p>To run ChucK with multiple patches concurrently(同时发生) (or the same one multiple times):</p>
+<pre><code>chuck foo.ck bar.ck bar.ck boo.ck 
+</code></pre><p>…the following probes(探查) the audio system and prints out all available audio devices and MIDI devices. You may then refer to them (by number usually) from the command line or from your program. (again, see VM Options for a complete list)</p>
+<pre><code>chuck --probe 
+</code></pre><p>ChucK can be run in a different terminal as a host/listener that patches may be sent to. The server should invoke(调用) the –loop flag to specify that the virtual machine should not halt(停止) automatically(自动地) (when the current programs exit).</p>
+<pre><code>chuck --loop     
+</code></pre><p>(See the guide to <a href="http://chuck.cs.princeton.edu/doc/program/otfp.html" target="_blank" rel="noopener">On-the-fly Programming</a> for more information)</p>
+<p>If a ChucK listener is running, we can (from a second terminal) send a program/patch to the listener by using the <code>+</code> command line option:</p>
+<pre><code>chuck + foo.ck 
+</code></pre><p>Similarly, you can use <code>-</code> and <code>=</code> to <em>remove/replace</em> a patch in the listener, and use <code>^</code> to find out the status. Again, see <a href="http://chuck.cs.princeton.edu/doc/program/otfp.html" target="_blank" rel="noopener">On-the-fly Programming</a> for more information.</p>
+<p>To run most of the code or examples in this language specification, you only need to use the basic chuck program.</p>
+<p>#comments(注释)</p>
+<p>(Note: block comments cannot be nested(嵌入的))</p>
+<pre><code>// this is a comment
+int foo; // another comment
+
+/* 
+   this is a block comment
+   still going...
+*/
+</code></pre><p>#debug print(调试输出)</p>
+<p>…we have provided a debug print syntax(语法):</p>
+<pre><code>// prints out value of expression
+&lt;&lt;&lt; expression &gt;&gt;&gt;;
+</code></pre><p>This will print the values and types of any expressions placed within them. This debug print construction may be placed around any non-declaration expression ( non l-value ) and will not affect the execution(执行) of the code. Expressions which represent an object will print the value of that object’s reference(引用) address:</p>
+<pre><code>// assign 5 to a newly declared variable
+5 =&gt; int i;
+// prints &quot;5 : (int)&quot;
+&lt;&lt;&lt;i&gt;&gt;&gt;;
+
+// prints &quot;hello! : (string)&quot;
+&lt;&lt;&lt;&quot;hello!&quot;&gt;&gt;&gt;; //prints &quot;hello! : (string)&quot;
+
+// prints &quot;3.5 : (float)&quot;
+&lt;&lt;&lt;1.0 + 2.5 &gt;&gt;&gt; =&gt; float x;
+</code></pre><p>(ChucK中似乎是没有了print这一类)<br>(Chuck中有<code>;</code>，还是类似C的)</p>
+<p>For more formatted(格式化) data output(输出), a comma-separated list of expressions will print only their respective(分别的) values (with one space between):</p>
+<pre><code>//接上段
+// prints &quot;the value of x is 3.5&quot; (x from above)
+&lt;&lt;&lt;&quot;the value of x is&quot; , x &gt;&gt;&gt;;
+
+// prints &quot;4 + 5 is 9&quot;
+&lt;&lt;&lt;&quot;4 + 5 is&quot;, 4 + 5&gt;&gt;&gt;;
+
+// prints &quot;here are 3 random numbers ? ? ?&quot;
+&lt;&lt;&lt;&quot;here are 3 random numbers&quot;, 
+    Std.rand2(0,9), 
+    Std.rand2(0,9),
+    Std.rand2(0,9) &gt;&gt;&gt;; 
+</code></pre><blockquote>
+<p>输出：<br>C:\Users\abc1\Desktop&gt;chuck “debug print.ck”<br>5 :(int)<br>“hello!” : (string)<br>3.500000 :(float)<br>the value of x is 3.500000<br>4 + 5 is 9<br>here are 3 random numbers 1 8 8</p>
+</blockquote>
+<p>#reserved words(关键字)</p>
+<pre><code>(primitive types原始类型)
+    int
+    float
+    time
+    dur
+    void
+    same (unimplemented未实现的) 
+
+(control structures)
+    if
+    else
+    while
+    until
+    for
+    repeat
+    break
+    continue
+    return
+    switch (unimplemented) 
+
+(class keywords)
+    class
+    extends
+    public
+    static
+    pure
+    this
+    super (unimplemented)
+    interface (unimplemented)
+    implements (unimplemented)
+    protected (unimplemented)
+    private (unimplemented) 
+
+(other chuck keywords)
+    function
+    fun
+    spork
+    const
+    new 
+
+(special values)
+    now
+    true
+    false
+    maybe
+    null
+    NULL
+    me
+    pi 
+
+(special : default durations(默认持续时间))
+    samp
+    ms
+    second
+    minute
+    hour
+    day
+    week 
+
+(special : global ugens(不理解))
+    dac
+    adc
+    blackhole 
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2018/02/15/langs/chuck/chuck2/" data-id="cjogni4do002mqshsypvx1l8i" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ChucK/">ChucK</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/02/15/langs/chuck/chuck13/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          chuck13
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/15/langs/cpp/Cpp基础_5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">C++基础5</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/幻想与现实/">幻想与现实</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术与进步/">技术与进步</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活与思考/">生活与思考</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影与艺术/">电影与艺术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程与生活/">编程与生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录与总结/">记录与总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C++&C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChucK/">ChucK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/org-mode/">org-mode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/佳片/">佳片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开心麻花/">开心麻花</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/影视/">影视</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/校园/">校园</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爱情/">爱情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/琐事/">琐事</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科幻/">科幻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机原理/">计算机原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进阶/">进阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信/">通信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随感/">随感</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-C/" style="font-size: 14.29px;">C++&C</a> <a href="/tags/ChucK/" style="font-size: 20px;">ChucK</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/org-mode/" style="font-size: 10px;">org-mode</a> <a href="/tags/python/" style="font-size: 18.57px;">python</a> <a href="/tags/python3/" style="font-size: 10px;">python3</a> <a href="/tags/佳片/" style="font-size: 10px;">佳片</a> <a href="/tags/学习/" style="font-size: 17.14px;">学习</a> <a href="/tags/工具/" style="font-size: 11.43px;">工具</a> <a href="/tags/开心麻花/" style="font-size: 10px;">开心麻花</a> <a href="/tags/影视/" style="font-size: 11.43px;">影视</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/校园/" style="font-size: 10px;">校园</a> <a href="/tags/汇编/" style="font-size: 15.71px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/爱情/" style="font-size: 10px;">爱情</a> <a href="/tags/琐事/" style="font-size: 10px;">琐事</a> <a href="/tags/生活/" style="font-size: 11.43px;">生活</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/科幻/" style="font-size: 10px;">科幻</a> <a href="/tags/计算机原理/" style="font-size: 12.86px;">计算机原理</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/进阶/" style="font-size: 10px;">进阶</a> <a href="/tags/通信/" style="font-size: 10px;">通信</a> <a href="/tags/随感/" style="font-size: 10px;">随感</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/14/ceshi/">ceshi</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/25/ee/上网背后的流程/">上网背后的流程</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/15/life/这些衰败的日子/">这些衰败的日子</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/30/life/如懿如意/">如懿，如意</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/05/life/开心麻花几部电影/">开心麻花</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Lart Pang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

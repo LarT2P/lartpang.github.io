@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>chuck13 | 失乐园</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="EventsIn addition to the built-in(嵌入的) timing mechanisms(机制) for internal(内部的) control, ChucK has an event class to allow exact synchronization(精确同步) across an arbitrary(任意的) number of shreds.事件类允许在任意">
+<meta name="keywords" content="ChucK">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chuck13">
+<meta property="og:url" content="https://plart.pw/2018/02/15/langs/chuck/chuck13/index.html">
+<meta property="og:site_name" content="失乐园">
+<meta property="og:description" content="EventsIn addition to the built-in(嵌入的) timing mechanisms(机制) for internal(内部的) control, ChucK has an event class to allow exact synchronization(精确同步) across an arbitrary(任意的) number of shreds.事件类允许在任意">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-13T12:46:29.400Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="chuck13">
+<meta name="twitter:description" content="EventsIn addition to the built-in(嵌入的) timing mechanisms(机制) for internal(内部的) control, ChucK has an event class to allow exact synchronization(精确同步) across an arbitrary(任意的) number of shreds.事件类允许在任意">
+  
+    <link rel="alternate" href="/atom.xml" title="失乐园" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">失乐园</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">代码与机器</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://plart.pw"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-langs/chuck/chuck13" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/15/langs/chuck/chuck13/" class="article-date">
+  <time datetime="2018-02-15T13:40:10.000Z" itemprop="datePublished">2018-02-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      chuck13
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h1><p>In addition to the built-in(嵌入的) timing mechanisms(机制) for internal(内部的) control, ChucK has an <strong>event</strong> class to allow exact synchronization(精确同步) across an arbitrary(任意的) number of shreds.<br>事件类允许在任意的进程间实现精确同步</p>
+<p><a href="http://chuck.cs.princeton.edu/doc/examples/index.html# event" target="_blank" rel="noopener">View sample code for events</a></p>
+<h1 id="what-they-are"><a href="#what-they-are" class="headerlink" title="what they are"></a>what they are</h1><p>ChucK events are a native class(原始类) within the ChucK language. We can create an event objects, and then chuck (<code>=&gt;</code>) that event to <strong>now</strong>.<br>The event places the current shred on the event’s waiting list, suspends(暂停) the current shred (letting time advance from that shred’s point of view).<br>时间放置在当前进程的事件的等待列表里，暂停当前进程(从时间的观测点推进时间)<br>When the event is triggered(引发), one or more of the shreds on its waiting list is shreduled to run immediately.<br>时间被引发时，在进程的等待列表里调用运行<br>This trigger(触发器) may originate(引起) <strong>from another ChucK shred, or from activities taking place outside the Virtual Machine</strong> ( MIDI, OSC, or IPC ).</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// declare event</span></span><br><span class="line">Event e;</span><br><span class="line"></span><br><span class="line"><span class="comment">// function for shred</span></span><br><span class="line"><span class="function">fun <span class="keyword">void</span> <span class="title">eventshred</span><span class="params">( Event event, <span class="built_in">string</span> msg )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// infinite loop</span></span><br><span class="line">    <span class="keyword">while</span> ( <span class="literal">true</span> )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// wait on event</span></span><br><span class="line">        event =&gt; now;</span><br><span class="line">        <span class="comment">// print</span></span><br><span class="line">        &lt;&lt;&lt;msg&gt;&gt;&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// create shreds</span></span><br><span class="line">spork ~ eventshred ( e, <span class="string">"fee"</span> );</span><br><span class="line">spork ~ eventshred ( e, <span class="string">"fi"</span> );</span><br><span class="line">spork ~ eventshred ( e, <span class="string">"fo"</span> );</span><br><span class="line">spork ~ eventshred ( e, <span class="string">"fum"</span> );</span><br><span class="line"></span><br><span class="line"><span class="comment">// infinite time loop</span></span><br><span class="line"><span class="keyword">while</span> ( <span class="literal">true</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// either signal or broadcast(信号或广播)</span></span><br><span class="line">    <span class="keyword">if</span>( maybe )</span><br><span class="line">    &#123; </span><br><span class="line">        &lt;&lt;&lt;<span class="string">"signaling..."</span>&gt;&gt;&gt;;</span><br><span class="line">        e.signal();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123; </span><br><span class="line">        &lt;&lt;&lt;<span class="string">"broadcasting..."</span>&gt;&gt;&gt;;</span><br><span class="line">        e.broadcast();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// advance time</span></span><br><span class="line">    <span class="number">0.5</span>::second =&gt; now;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="use"><a href="#use" class="headerlink" title="use"></a>use</h1><p>Chucking an event to <strong>now</strong> <em>suspends the current shred</em>, letting time advance:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// declare Event</span></span><br><span class="line">Event e;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// wait on the event</span></span><br><span class="line">e =&gt; now;</span><br><span class="line"></span><br><span class="line"><span class="comment">// after the event is trigger</span></span><br><span class="line">&lt;&lt;&lt; <span class="string">"I just woke up"</span> &gt;&gt;&gt;;</span><br></pre></td></tr></table></figure>
+<p>as shown above, events can be triggered in two ways, <em>depending on the desired behavior(行为).</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// signal one shred waiting on the event e</span></span><br><span class="line">e.signal();</span><br></pre></td></tr></table></figure>
+<p><code>signal()</code> releases the <em>first</em> shred in that event’s queue, and shredule it to run at the current time, respecting(考虑) the order in which shreds were added to the queue.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// wake up all shreds waiting on the event e</span></span><br><span class="line">e.broadcast();</span><br></pre></td></tr></table></figure>
+<p><code>broadcast()</code> releases <em>all</em> shreds queued by that event, in the order they were added, and at the same instant in time(在同一瞬间).</p>
+<p>The released shreds are shreduled to run immediately. But of course they will respect(涉及) other shreds also shreduled to run at the same time. Furthermore(此外), the shred that called <code>signal()</code> or <code>broadcast()</code> will continue to run until it advances time itself, or yield the virtual(虚拟的) machine without advancing time. (see <code>me.yield()</code> under <a href="http://chuck.cs.princeton.edu/doc/language/spork.html# me" target="_blank" rel="noopener">concurrency</a>)</p>
+<h1 id="MIDI-events"><a href="#MIDI-events" class="headerlink" title="MIDI events"></a>MIDI events</h1><p>ChucK contains built-in(嵌入的) MIDI classes to allow for interaction(相互作用) with MIDI based software or devices(装置).</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">MidiIn min;</span><br><span class="line">MidiMsg msg;</span><br><span class="line"></span><br><span class="line"><span class="comment">// open midi receiver, exit on fail</span></span><br><span class="line"><span class="keyword">if</span> ( !min.open(<span class="number">0</span>) ) me.<span class="built_in">exit</span>(); </span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>( <span class="literal">true</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// wait on midi event</span></span><br><span class="line">    min =&gt; now;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// receive midimsg(s)</span></span><br><span class="line">    <span class="keyword">while</span>( min.recv( msg ) )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// print content</span></span><br><span class="line">        &lt;&lt;&lt; msg.data1, msg.data2, msg.data3 &gt;&gt;&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p><strong>MidiIn</strong> is a subclass(子类) of <strong>Event</strong>, and as such can be ChucKed to <strong>now</strong>. MidiIn then takes a MidiMsg object to its <strong>.recv()</strong> method to access the MIDI data.<br><em>As a default, MidiIn events trigger(引发) the <strong>broadcast()</strong> event behavior.</em></p>
+<h1 id="OSC-events"><a href="#OSC-events" class="headerlink" title="OSC events"></a>OSC events</h1><p>In addition to MIDI, ChucK has OSC communication classes as well:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">// create our OSC receiver</span></span><br><span class="line">OscRecv orec;</span><br><span class="line"><span class="comment">// port 6449</span></span><br><span class="line"><span class="number">6449</span> =&gt; orec.port;</span><br><span class="line"><span class="comment">// start listening (launch thread)</span></span><br><span class="line">orec.listen();</span><br><span class="line"></span><br><span class="line"><span class="function">function <span class="keyword">void</span> <span class="title">rate_control_shred</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="comment">// create an address in the receiver </span></span><br><span class="line">    <span class="comment">// and store it in a new variable.</span></span><br><span class="line">    orec.event(<span class="string">"/sndbuf/buf/rate,f"</span>) @=&gt; OscEvent rate_event; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> ( <span class="literal">true</span> )</span><br><span class="line">    &#123; </span><br><span class="line">        rate_event =&gt; now; <span class="comment">// wait for events to arrive.</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// grab the next message from the queue. </span></span><br><span class="line">        <span class="keyword">while</span>( rate_event.nextMsg() != <span class="number">0</span> )</span><br><span class="line">        &#123; </span><br><span class="line">            <span class="comment">// getFloat fetches the expected float</span></span><br><span class="line">            <span class="comment">// as indicated in the type string ",f"</span></span><br><span class="line">            buf.play( rate_event.getFloat() );</span><br><span class="line">            <span class="number">0</span> =&gt; buf.pos;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;       </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>The <strong>OscRecv</strong> class listens for incoming OSC packets on the specified(特定的) port. Each instance(实例) of <strong>OscRecv</strong> can create OscEvent objects using its <code>event()</code> method to listen for packets at any valid OSC Address pattern.(在任何合法的OSC地址模式，使用事件方法来监听数据包)</p>
+<p>An OscEvent object can then be ChucKed to <strong>now</strong><br><em>to wait for messages to arrive</em>,<br>after which the <strong>nextMsg()</strong> and <strong>get{Float|String|Int}()</strong> methods can be used<br><em>to fetch message data</em>.</p>
+<h1 id="creating-custom-events"><a href="#creating-custom-events" class="headerlink" title="creating custom events"></a>creating custom events</h1><p>Events, like any other class, can be subclassed to add functionality(功能) and transmit(传输) data:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// extended event扩充事件</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TheEvent</span> <span class="title">extends</span> <span class="title">Event</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// the event</span></span><br><span class="line">TheEvent e;</span><br><span class="line"></span><br><span class="line"><span class="comment">// handler</span></span><br><span class="line"><span class="function">fun <span class="keyword">int</span> <span class="title">hi</span><span class="params">( TheEvent event )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>( <span class="literal">true</span> )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// wait on event</span></span><br><span class="line">        event =&gt; now;</span><br><span class="line">        <span class="comment">// get the data</span></span><br><span class="line">        &lt;&lt;&lt;e.value&gt;&gt;&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// spork</span></span><br><span class="line">spork ~ hi( e );</span><br><span class="line">spork ~ hi( e );</span><br><span class="line">spork ~ hi( e );</span><br><span class="line">spork ~ hi( e );</span><br><span class="line"></span><br><span class="line"><span class="comment">// infinite time loop</span></span><br><span class="line"><span class="keyword">while</span>( <span class="literal">true</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// advance time</span></span><br><span class="line">    <span class="number">1</span>::second =&gt; now;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// set data</span></span><br><span class="line">    Math.rand2( <span class="number">0</span>, <span class="number">5</span> ) =&gt; e.value;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// signal one waiting shred</span></span><br><span class="line">    e.signal();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2018/02/15/langs/chuck/chuck13/" data-id="cjogni4dn002jqshsu7rkw0d9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ChucK/">ChucK</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/02/15/langs/chuck/chuck12/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          chuck12
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/15/langs/chuck/chuck2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">chuck2</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/幻想与现实/">幻想与现实</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术与进步/">技术与进步</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活与思考/">生活与思考</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影与艺术/">电影与艺术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程与生活/">编程与生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录与总结/">记录与总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C++&C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChucK/">ChucK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/org-mode/">org-mode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/佳片/">佳片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开心麻花/">开心麻花</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/影视/">影视</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/校园/">校园</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爱情/">爱情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/琐事/">琐事</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科幻/">科幻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机原理/">计算机原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进阶/">进阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信/">通信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随感/">随感</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-C/" style="font-size: 14.29px;">C++&C</a> <a href="/tags/ChucK/" style="font-size: 20px;">ChucK</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/org-mode/" style="font-size: 10px;">org-mode</a> <a href="/tags/python/" style="font-size: 18.57px;">python</a> <a href="/tags/python3/" style="font-size: 10px;">python3</a> <a href="/tags/佳片/" style="font-size: 10px;">佳片</a> <a href="/tags/学习/" style="font-size: 17.14px;">学习</a> <a href="/tags/工具/" style="font-size: 11.43px;">工具</a> <a href="/tags/开心麻花/" style="font-size: 10px;">开心麻花</a> <a href="/tags/影视/" style="font-size: 11.43px;">影视</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/校园/" style="font-size: 10px;">校园</a> <a href="/tags/汇编/" style="font-size: 15.71px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/爱情/" style="font-size: 10px;">爱情</a> <a href="/tags/琐事/" style="font-size: 10px;">琐事</a> <a href="/tags/生活/" style="font-size: 11.43px;">生活</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/科幻/" style="font-size: 10px;">科幻</a> <a href="/tags/计算机原理/" style="font-size: 12.86px;">计算机原理</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/进阶/" style="font-size: 10px;">进阶</a> <a href="/tags/通信/" style="font-size: 10px;">通信</a> <a href="/tags/随感/" style="font-size: 10px;">随感</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/14/ceshi/">ceshi</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/25/ee/上网背后的流程/">上网背后的流程</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/15/life/这些衰败的日子/">这些衰败的日子</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/30/life/如懿如意/">如懿，如意</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/05/life/开心麻花几部电影/">开心麻花</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Lart Pang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

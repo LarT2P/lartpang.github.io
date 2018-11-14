@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>失乐园</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="失乐园">
+<meta property="og:url" content="https://plart.pw/page/6/index.html">
+<meta property="og:site_name" content="失乐园">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="失乐园">
+  
+    <link rel="alternate" href="/atom.xml" title="失乐园" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">失乐园</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">代码与机器</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://plart.pw"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-books/代码之髓-类&amp;继承" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/28/books/代码之髓-类&继承/" class="article-date">
+  <time datetime="2017-07-28T11:12:52.000Z" itemprop="datePublished">2017-07-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/28/books/代码之髓-类&继承/">代码之髓读后感——类&amp;继承</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><blockquote>
+<p>语言中的用语并不是共通的，在不同语言中，同一个用语的含义可能会有很大差别。</p>
+</blockquote>
+<p>C++的设计者本贾尼·斯特劳斯特卢普对类和继承给予了正面肯定，然而，“面向对象”这个词的发明者艾伦·凯（Alan kay，他同时也是 Smalltalk 语言的设计者）却持有不同的意见，他对类和继承持否定立场。</p>
+<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00062.jpeg" alt="img"></p>
+<h2 id="对于面向对象的理解"><a href="#对于面向对象的理解" class="headerlink" title="对于面向对象的理解"></a>对于面向对象的理解</h2><blockquote>
+<p>我们是怎样理解世界的呢？我们将生活中遇见的事物总结为特定的“物”的概念，它们就是诸如桌子、椅子、银行贷款、公式、人、多项式、三角形、晶体管之类的东西。我们的思考、语言以及行动就是建立在指示、说明和操作这些所谓的“物”的基础之上。我们在用计算机解决问题的时候，有必要将现实世界中的“物”的模型在计算机中建立起来。</p>
+</blockquote>
+<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00064.gif" alt="img"></p>
+<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p>大部分语言的程序设计中，类并不是不可或缺的，但 Java 语言是例外。Java 语言“把类定义为部件，将其组装起来即是程序设计”。因此，在用 Java 语言编写程序时类是必要的。其他诸如 C++、Python、Ruby 这样的语言，在编写程序时既可以使用类也可以不使用类。</p>
+<p><strong>那是使用类好呢，还是不使用也可以呢？</strong></p>
+<blockquote>
+<p>这取决于要编写的程序。如果仅是小规模的程序，没必要使用类的情况居多。也有人认为，在多人分工协作编写的大型程序中，使用类来划分责任范围比较好。图形用户界面的编写中面向对象的特性似乎非常管用。比如设计一个按钮，需要有放置按钮的座标和按钮的宽、高等值，也需要有表达按钮按下时的动作的函数。将实现按钮所必需的这些要素统一到类中，编写程序就会变得简单起来。</p>
+</blockquote>
+<h2 id="归集变量与函数建立模型的方法"><a href="#归集变量与函数建立模型的方法" class="headerlink" title="归集变量与函数建立模型的方法"></a>归集变量与函数建立模型的方法</h2><p>除类之外，还有几种其他的方式。</p>
+<ol>
+<li>模块（module）。模块原本是一种将相关联的函数集中到一起的功能。在 Perl 语言中类似的功能被称为包（package）。Perl 语言在引入面向对象时，采用了把用来归集函数的包和用来归集变量的散列（hash）绑定在一起的方法。</li>
+<li>把函数和变量放入散列中。这是 JavaScript 等语言采用的方法。</li>
+<li><p>闭包（closure）。使用函数执行时的命名空间来归集变量的方法。这种方法主要在函数式语言中使用。</p>
+<blockquote>
+<p>为什么把这称为闭包？一个包含了自由变量的开放表达式，它和该自由变量的约束环境组合在一起后，实现了一种封闭的状态。<br>类的存在只不过是因为人们觉得有了它编写程序会更方便些，而约定的一种事项。它并不是什么物理法则或宇宙真理，仅仅是人们的一种约定而已。所以，为了理解为什么会有这样一种约定，我们需要考虑语言设计者的意图。</p>
+</blockquote>
+</li>
+<li><p>类</p>
+</li>
+</ol>
+<p>C++ 语言和 Java 语言的类具有以下几个作用：</p>
+<ul>
+<li>整合体的生成器</li>
+<li>可行操作的功能说明</li>
+<li>代码再利用的单位</li>
+</ul>
+<h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><p>继承的不同实现策略。继承的实现策略大体可以分为三种。</p>
+<ul>
+<li>一般化与专门化</li>
+</ul>
+<p>第一种策略是在父类中实现那些一般化的功能，在子类中实现那些专门的个性化的功能。其设计方针就是子类是父类的专门化。</p>
+<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00070.jpeg" alt="img"></p>
+<ul>
+<li>共享部分的提取</li>
+</ul>
+<p>第二种策略是从多个类中提取出共享部分作为父类。它和一般化与专门化的考虑很不一样。对于子类是否为父类的一种，它的答案是否定的。这种提取出共享部分的设计方针是习惯了函数的一种考虑问题的方法。</p>
+<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00071.jpeg" alt="img"></p>
+<ul>
+<li>差异实现</li>
+</ul>
+<p>第三种策略认为继承之后仅实现有变更的那些属性会带来效率的提高。它把继承作为实现方式再利用的途径，旨在使编程实现更加轻松。的确有很多这样的情况。但这些情况下通常子类都不是父类的一种。</p>
+<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00072.jpeg" alt="img"> </p>
+<h2 id="继承的弊端"><a href="#继承的弊端" class="headerlink" title="继承的弊端"></a>继承的弊端</h2><p>方法的多样意味着控制的复杂，自由度太高往往会需要我们去限制。</p>
+<p>比如说 goto 。</p>
+<p>尤其是第三种使用方法——继承已有的类并实现差异部分，这种编程风格会造成<strong>多层级</strong>的继承树，很容易导致代码理解困难。</p>
+<p>这里就提到了编程中很重要的一点，就是可读性。</p>
+<h2 id="里氏置换原则"><a href="#里氏置换原则" class="headerlink" title="里氏置换原则"></a>里氏置换原则</h2><p>这个原则可以表述为：假设对于 T 类型的对象 x，属性 q(x) 恒为真。如果 S 为 T 的派生类，那么 S 类型的对象 y 的属性 q(y) 也必须恒为真。</p>
+<p>这句话换种表达就是，对于类 T 的对象一定成立的条件，对于类 T 的子类 S 的对象也必须成立。</p>
+<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00073.jpeg" alt=""></p>
+<p>为了保证类的继承关系和类型的父子关系这两种关系之间的一致性，有必要遵守这一原则。这一原则也可以表达为继承必须是 <strong>is-a</strong> 关系。把子类 S 的所有对象都看作是父类 T 的对象而不会有任何问题，必须要做到这一点。</p>
+<blockquote>
+<p>这一约束条件是非常严格的。当要继承某种类时，需要考虑该类是否可以被继承。假设继承的时候考虑的属性可以使里氏置换原则成立。但是在随后的程序编写过程中，需要的属性可能会越来越多。随着属性的增加，置换原则就有可能被打破。是在设计阶段就把所有属性列出来，只有当置换原则绝对不被打破时才去继承呢？还是在开发阶段如果发现新的属性就放弃类的继承呢？不管哪种方式都很费劲。</p>
+</blockquote>
+<h2 id="多重继承"><a href="#多重继承" class="headerlink" title="多重继承"></a>多重继承</h2><p>现实世界中一种事物有可能属于多种分类。为了实现对这种现实情况的模拟，作为工具的程序设计语言是不是应该支持对多个类的继承呢？这就是多重继承的初衷。</p>
+<p>多重继承对于实现方式再利用非常便利。</p>
+<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00074.jpeg" alt=""></p>
+<h3 id="多重继承的问题"><a href="#多重继承的问题" class="headerlink" title="多重继承的问题"></a>多重继承的问题</h3><p>多重继承看起来真的很方便。但是，使用多重继承时该如何解决名字解释的问题呢？当问到类中 x 值是什么时，该如何回答呢？</p>
+<p>首先，如果这个类本身知道答案，就直接给出回答。其次，如果这个类本身不知道答案，就去问它的父类再给出回答。</p>
+<p>但是如下情况就麻烦了。</p>
+<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00078.jpeg" alt=""></p>
+<ul>
+<li><p>解决方法 1：禁止多重继承。Java 语言中就禁止了类的多重继承。只要不认可类的多重继承这种方式，就不会有上述问题。这样可以把问题解决得很干脆，只是会以失去多重继承的良好便利性为代价。</p>
+<ul>
+<li>委托。取而代之发展起来的概念是委托。这种方法定义了具有待使用实现方式的类的对象，然后根据需要使用该对象来处理。使用继承后，从类型到命名空间都会被一起继承，从而导致问题的发生，这种方法只是停留在使用对象的层面上。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDelegate</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">new</span> UseInheritance().useHello(); <span class="comment">// -&gt; hello!</span></span><br><span class="line">        <span class="keyword">new</span> UseDelegate().useHello();    <span class="comment">// -&gt; hello!</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Hello</span></span>&#123;   ❶</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"hello!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UseInheritance</span> <span class="keyword">extends</span> <span class="title">Hello</span> </span>&#123;   ❷</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">useHello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        hello();                       ❸</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UseDelegate</span> </span>&#123;                    ❹</span><br><span class="line">    Hello h = <span class="keyword">new</span> Hello();             ❺</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">useHello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        h.hello();                     ❻</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>显示“Hello ！”的方法 hello 为类 Hello 所持有（❶）。类 UseInheritance 通过继承类 Hello 自身也持有了方法 hello（❷）并加以使用（❸）。与之不同，类 UseDelegate 并没有继承类 Hello（❹），而是通过句❺持有了类 Hello 的对象。当有需要使用时通过句❻将需要的处理委托给该对象操作。</p>
+<p>与从多个类中继承实现强耦合的方式相比，使用委托进行耦合的方式显然要更好一些。对于委托的使用，也不需要在源代码中写死，而是可以通过配置文件在合适的时候注入运行时中去。这个想法催生了依赖注入（Dependency Injection）的概念。</p>
+<ul>
+<li>接口。刚刚提到 Java 语言中禁止了多重继承，但它也具备实现多重继承的功能。这就需要借助接口（interface）。Java 语言中类的继承用 extends，接口的继承用 implements 来区别表示。另外接口的继承也称为实现。接口是没有实现方式的类。它的功能仅仅在于说明继承了该接口的类必须持有某某名字的方法。多重继承中发生的问题是多种实现方式相冲突时选取哪个的问题。而在接口的多重继承中，尽管有多个持有某某方法的信息存在，但这仅仅表明持有某某方法，不会造成任何困扰。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestMultiImpl</span> <span class="keyword">implements</span> <span class="title">Foo</span>, <span class="title">Bar</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"hello!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Foo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Bar</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>类 TestMultiImpl 继承了 Foo 和 Bar 两个接口。如果这个类中不实现 public void hello ()，编译时将出现“没有实现应该实现的方法”这样的错误。也就是说，继承了接口 Foo 后，这个类就作为一种类型表现出必须持有 public void hello () 的特点，可以让编译器对它进行类型检查。</p>
+<blockquote>
+<p>Java 语言为了仅实现功能上的多重继承引入了接口。PHP 语言和 Java 语言一样不认可多重继承，并从 2004 年发布的 PHP5 开始引入了接口的概念。</p>
+</blockquote>
+<ul>
+<li>解决方法 2：按顺序进行搜索</li>
+</ul>
+<p>曾经也有些语言试图通过明确定义搜索顺序来解决冲突问题。</p>
+<p>出现过深度优先搜索法，重载和菱形继承时会很麻烦。以及广度优先。</p>
+<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00080.jpeg" alt=""></p>
+<p>以及后来的C3线性化。</p>
+<pre><code>* 父类不比子类先被检查
+* 如果是从多个类中继承下来则优先检查先书写的类
+</code></pre><p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00081.jpeg" alt=""></p>
+<ul>
+<li>解决方法 3：混入式处理</li>
+</ul>
+<p>原本，问题是指从一个类到它的祖先类有多种追溯方法。定义仅包含所需功能的类并把它与需要添加这些功能的更大的类糅合在一起。把这种设计方针、混入式处理方式和用来混入的小的类统称为混入处理（Mix-in）。</p>
+<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00082.jpeg" alt=""></p>
+<p>通常这些小型的类最小限度地定义了一些方法，起到了作为代码再利用单位的作用。为了表明这一点，Python 语言会在该类的名字中加上 MixIn 来标识。</p>
+<p>Ruby 语言采用的规则是：类是单一继承的而模块则可以任意数量地做混入式处理。模块无法创建实例，但可以像类一样拥有成员变量和方法。也就是说，模块实质上是从类中去除了实例创建功能。即使类的多重继承被禁止了，通过使用模块的 Mix-In 方式照样可以实现对实现方式的再利用。</p>
+<ul>
+<li>解决方法 4：Trait</li>
+</ul>
+<p>类具有两种截然相反的作用。一种是用于创建实例的作用，它要求类是全面的、包含所有必需的内容的、大的类。另一种是作为再利用单元的作用，它要求类是按功能分的、没有多余内容的、小的类。当类用于创建实例时，作为再利用单元来说就显得太大了。既然如此，如果把再利用单元的作用特别化，设定一些更小的结构（特性＝方法的组合）是不是可以呢？这就是 Trait 的初衷。</p>
+<p>已有的 Trait，通过改写某些方法定义新的 Trait 实现继承。还可以通过组合多个 Trait 实现新的 Trait。这就是 Trait 的概要说明。它一方面把问题妥当地分而治之，一方面又因为功能繁多令人困惑。读者们想必都还记得 goto 语句就是因为其功能过于强大而退出历史的舞台的吧。所以说力量过于强大未必是件好事。</p>
+<p>Trait 技术是一个很好的开端。它认为类同时具有的作为再利用单元和实例生成器的两种作用是相反的。或许类这一概念作为面向对象的根基具有不可动摇的地位。然而这一概念本身也是从一个雏形慢慢发展得越来越复杂，进一步整理之后再逐渐让渡出某些功能的。现在备受关注的 Trait 和一些其他概念也必将不断地演变下去。经过长时间琢磨沉淀，一部分将臻于成熟被推广使用，最后将变成现在的静态作用域和 while 语句那样被认为是理所当然的存在。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2017/07/28/books/代码之髓-类&继承/" data-id="cjogni49s000eqshs6ea342y9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-books/代码之髓-容器&amp;并发" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/27/books/代码之髓-容器&并发/" class="article-date">
+  <time datetime="2017-07-27T13:39:47.000Z" itemprop="datePublished">2017-07-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/27/books/代码之髓-容器&并发/">代码之髓读后感——容器&amp;并发</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h1><p>单个地址存放单个数据，但是如果有多个数据，而这些数据互相关联，则我们更希望的是将他们能够更好的在内存中组织在一起。于是便出现了容器的概念。</p>
+<p>在不同的语言中，容器的名称不同，性质各异。比如，C 语言中的数组、LISP 语言中的列表、Python 语言中的元组以及 Ruby 语言中的数组。即使是名字相同，在不同语言中表达的意思也可能不一样。比如，LISP 语言和 Haskell 语言中的列表，与 Java 语言和 Python 语言中的列表在内部构造上完全不同。</p>
+<p>又由于<strong>所针对的问题不同</strong>（还是这句话，因为变成就是用来解决现实问题的一个工具），所以出现了各种样的容器——数组，链表，字典，散列，树等等。</p>
+<p>各种容器差别主要在于执行特定操作的优势与劣势。此时一般使用用大O表示法计量的时间复杂度栏衡量。</p>
+<p>万能的容器是不存在的。根据容器的使用目的、使用方式和操作类型的不同，最适宜的容器类型也会相应地变化。是想要节约内存、节约计算时间，还是两样都没有必要节约。没有绝对的正确答案，而是需要根据当时的状况仔细分析，寻求最佳平衡。这是非常重要的。</p>
+<p>魔术注释符——为了能让语言处理器正确地处理包含多字节字符的源代码，就需要告诉它源代码的编码方式。其中一个方法就是使用魔术注释符。魔术注释符最早是编辑器的一个功能。在 Emacs 和 Vim 等文本编辑器中，用特殊的记号事先写明文件的编码方式，编辑器要打开这一文件时就会以这一编码方式读取文件。语言处理器如果按这种方式去读，就能知道源代码中字符的编码了，这样一来问题就可以得到解决了。这一提案在 2001 年作为 Python 语言的扩展方案被公布出来。现在 Ruby 语言、Perl 语言和 Scheme 语言的处理器 Gauche 等都采用了这一方案。</p>
+<p>Python 语言进一步采取了更为激进的设计方法。源代码中只要是使用了 ASCII 码以外的字符，但没有使用魔术注释符时，都将导致语法错误，就会带来以下错误。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SyntaxError: Non-ASCII character &apos;\xe6&apos; in file tmp.py on line 1, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details</span><br></pre></td></tr></table></figure>
+<p>直到后来出现了Unicode编码。字符集得到了统一，但为适应不同的需求，字符的编码方式还有很多种，如 UTF-8 和 UTF-16 就是其中两种。</p>
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><p>字符串就是字符并列的结果，但在不同的语言中，字符串列的表现方式各不相同。</p>
+<p>这里书中介绍了 C、Pascal、Java、Ruby 和 Python 这几种语言中的字符串。这五种语言中，只有 C 语言中的字符串不知道自身的长度。其他语言中的字符串都携带有表现自身长度的整数。可以说 C 语言中的字符串是最为原始的字符串。</p>
+<p><em>那么 C 语言字符串是如何表现字符串本身到何处为止呢？</em></p>
+<p>用 NUL 字符表示字符串的终止。为达到这一目的使用了一种表现字符串终止的特殊字符，这就 NUL 字符 40。NUL 字符是一个与 0 对应的字符，在 C 语言代码中用 \0 表示。（40ASCII 规定将 null character 简称为 NUL，换行（line feed）简称为 LF。为了避免与 C 语言中的 NULL 指针相混淆，本书中用 NUL 字符来表述）</p>
+<blockquote>
+<p>C 语言字符串是把“从头开始读取，直到第一个 NUL 字符出现”的位置当作一个字符串处理。</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> C语言</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> x = <span class="number">9252</span>;</span><br><span class="line">  <span class="keyword">char</span> str[<span class="number">3</span>] = <span class="string">"abc"</span>;</span><br><span class="line">  <span class="keyword">char</span> str2[<span class="number">3</span>] = <span class="string">"defg"</span>;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, str2);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%zu\n"</span>, <span class="built_in">strlen</span>(str2));</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> 输出</span><br><span class="line">defabc$$</span><br><span class="line"><span class="number">8</span></span><br></pre></td></tr></table></figure>
+<p>(很可能因操作系统、编译器版本或选项的不同，执行结果也有所不同。)</p>
+<p>原因是 str 和 str2 都声明为 char[3]，只分配了 3 字节的空间。abc 这一 3 个字符的字符串要表达它在字符 c 的地方结束的话，需要 3 个字符再加 NUL 字符总共 4 个字符的空间，但是代码中只为其分配了 3 个字节的空间。因此，abc 后面的 NUL 字符以及 def 后面的 g 和 NUL 字符都没能放入而被舍弃了。故而在显示 str2 时，首先显示 def，然后是显示与之相邻的空间里保存的 abc。</p>
+<p>那么最后的 $$ 又是怎么回事呢？这其实是函数开始部分的 int x = 9252；语句在内存中写入的整数 9252. 9252 用 16 进制表示就是 2424，在 ASCII 码中 24 是 $。因此这个整数被解释为有两个 $ 并列的字符串的一部分。与之相邻的内存中是 00，被当作是 NUL 字符，显示到此终止。然而，在某些情况下可能显示出更多的内容，并且有可能会试图读取那些禁止读取的内容，从而造成程序的异常终止。</p>
+<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00058.gif" alt="img"></p>
+<p>C 语言风格的字符串处理起来还是比较困难的。实际上，大多数语言都采用了 Pascal 语言风格的字符串。</p>
+<h4 id="Python-3-中引入的设计变更"><a href="#Python-3-中引入的设计变更" class="headerlink" title="Python 3 中引入的设计变更"></a>Python 3 中引入的设计变更</h4><p>在 Python 2.x 版本中，源代码中有 “ あ “ 时，这是一个字节串列的字符串。如果源代码的编码方式为 UTF-8，这就变成一个有 [‘0xe3’, ‘0x81’, ‘0x82’] 三个字节的串列。写成 u” あ “ 时，表示这是一个 Unicode 的字符串，只有一个 Unicode 字符即 [‘0x3042’].</p>
+<p>因为同时存在两种类型的字符串，于是会有一个问题：两者混合使用的话会怎样？ Python 2.x 版本规定，在 ASCII 码环境下时字节串列被当作 ASCII 码并且可以自动转换成 Unicode。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> Python <span class="number">2.7</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">u"hello, "</span> + <span class="string">"Alice"</span></span><br><span class="line"><span class="string">u'hello, Alice'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">u"hello, "</span> + <span class="string">"太郎"</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">UnicodeDecodeError: <span class="string">'ascii'</span> codec can<span class="string">'t decode byte 0xe5 in position 0:</span></span><br><span class="line"><span class="string">ordinal not in range(128)</span></span><br></pre></td></tr></table></figure>
+<p>※ Python 2.7 中字节串列只在 ASCII 码时才能和 Unicode 字符串结合</p>
+<p>然而，在字符串内容不同时，这一规定有时正常有时却会导致错误。在只使用了 ASCII 字符的测试案例中可以正常运行，而在使用了 ASCII 字符以外的字符却会有问题。因此，Python 3.x 版本舍弃了 Python 2.x 版本中的兼容性，围绕字符串展开了大的变革。首先，规则发生了变化。默认直接是 Unicode 字符，写成 “b” 时是字节串列，这样 Unicode 其次，在 Unicode 字符串和字节串列结合的时候，不管其想结合的内容如何，都将抛出类型错误。在有需要混合字符串时，规定有必要显式地使用转换代码，这避免了在不知情的情况下进行了转换而导致问题发生的被动局面。</p>
+<ul>
+<li>Python 3.0 中将字节串列结合到 Unicode 字符串时常常发生错误。这时需要显示地将字节串列转换成 Unicode 字符串。</li>
+<li>在转换成 Unicode 字符串时为什么要写 ASCII 呢？也许有人这样问。这里的 decode(“ASCII”) 是指将使用 ASCII 编码方式编码了（encode）的内容做还原处理（decode）。</li>
+</ul>
+<h4 id="Ruby-1-9-的挑战"><a href="#Ruby-1-9-的挑战" class="headerlink" title="Ruby 1.9 的挑战"></a>Ruby 1.9 的挑战</h4><p>Python、Java 等众多语言都采用了以 Unicode 为基础的字符串，而 Ruby 语言却走出了独树一帜的路线。从 Ruby 1.9 开始，字符串就是 8 个比特，并且采用了追加编码方式信息的设计方法。这种方法的优点是可以直接书写那些不包含在 Unicode 字符集中的字符。</p>
+<h1 id="并发处理"><a href="#并发处理" class="headerlink" title="并发处理"></a>并发处理</h1><p>为了实现便利的并发处理，出现了进程和线程的概念。另外，由于并发处理产生了一些新的问题，为应对这些问题又发明了锁和光纤等概念。</p>
+<blockquote>
+<p>《程序设计语言：概念和结构》一书提到：程序设计语言中的并行性和硬件中的并列性是相互独立的两个概念。并列性是硬件层面的表述，比如英特尔公司于 1999 年发布的 Pentium III 中的可以同时针对四个值进行运算的 SSE 命令，以及 NVIDIA 为了记录因为 GPU 带来的高并列性的处理于 2007 年发布的 CUDA 等。而本书该章节将要讨论的是程序设计语言领域的并行性，具体来说是进程和线程的概念。</p>
+</blockquote>
+<p>对于单核，如何实现并行？答案就是在人们察觉不到的极短间隔内交替进行多项处理。尽管在某一瞬间实际只进行一项处理，但人们会觉得似乎有多项处理在同时进行。不过现在的计算机都实现了在CPU 上装载多个处理线路已经成为了主流，这称为多核。这是并发处理中最为重要的概念。在人们看来，程序是一刻不停地在执行，但实际上它被细分成了小段来执行。</p>
+<p>使用一个处理线路执行多项处理，就像两兄弟一起玩一台单人游戏机一样。如果能在彼此都同意的时间间隔内轮流玩，那么也就相当于两人各自在玩一台单人游戏机。“何时交替”可以分为两种情况。</p>
+<ol>
+<li><p>协作式多任务模式——在合适的节点交替</p>
+<p> 这种方法有一个问题，有可能某个处理一直找不到合适的节点进行任务切换从而持续地进行，导致其他处理无法等到执行的机会。归根结底，采取这种方法是基于一种信任，即所有的处理都会在适当的间隔后进行交替。</p>
+<p> 再看一下那个游戏机的比喻，如果哥哥一直玩下去不给弟弟玩的话，弟弟无论等多久都玩不上了。这时弟弟估计会向妈妈告状，哥哥会被责怪吧。</p>
+<blockquote>
+<p>Windows 3.1 和 Mac OS 9 都是协作式多任务系统。即使不是有意为之，有时也会遇到程序缺陷进入无限循环，待并发处理的程序完全没有交替，全部程序都变得没有响应了。</p>
+</blockquote>
+</li>
+<li><p>抢占式多任务模式——一定时间后进行交替</p>
+<p> 这个方法中，有一个比其他程序都具有优势的程序叫<strong>任务管理器</strong>。它在一定时间后强制中断现在正在进行的处理，以便允许其他程序执行。</p>
+<p> 还是再来看一下那个游戏机的类比，这好比妈妈每隔十五分钟命令换人玩。换成计算机，它能在人们察觉不到中断发生的间隔时间（比如 20 毫秒或 0.02 秒）实现交替。</p>
+<blockquote>
+<p>Windows 95、Mac OS 以后的版本以及 Unix、Linux 等操作系统都是使用这种方法实现的多个程序的并发处理。</p>
+</blockquote>
+<p> 对程序使用者来说，抢占式多任务模式十分方便，但对于程序设计者来讲会出现其他问题。在不知道何时被喝令终止并交替的前提下，要编写一个能稳妥执行的程序是非常困难的。</p>
+</li>
+</ol>
+<p>如例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">如果存款余额高于10 000元 &#123;</span><br><span class="line">    存款余额减去10 000元、</span><br><span class="line">    取出10 000元的钞票</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">（假设存款余额有15 000元。首先程序A执行）</span><br><span class="line">A：存款余额高于10 000元吗？→Yes</span><br><span class="line">（这里又交替到程序B的执行上）</span><br><span class="line">B：存款余额高于10 000元吗？→ Yes</span><br><span class="line">B：存款余额减去10 000元、取出10 000元的钞票</span><br><span class="line">（这里存款余额变为5，000元。然后再交替回程序A）</span><br><span class="line">A：存款余额减去10 000元、取出10 000元的钞票</span><br><span class="line">（存款余额仅有5000元却取出了1万元！）</span><br></pre></td></tr></table></figure>
+<p>这种局面被称为竞态条件（race condition），或者说这个程序是非线程安全的。</p>
+<blockquote>
+<p>竞态条件（race condition），从多进程间通信的角度来讲，是指两个或多个进程对共享的数据进行读或写的操作时，最终的结果取决于这些进程的执行顺序。</p>
+</blockquote>
+<h4 id="竞态条件成立的三个条件"><a href="#竞态条件成立的三个条件" class="headerlink" title="竞态条件成立的三个条件"></a>竞态条件成立的三个条件</h4><p>并行执行的两个处理之间出现竞态条件必须同时满足以下三个条件。</p>
+<ul>
+<li>两个处理共享变量</li>
+<li>至少一个处理会对变量进行修改</li>
+<li>一个处理未完成之前另一个处理有可能介入进来</li>
+</ul>
+<p>反之，只要三个条件中有一个不具备，就可以编写适于并发处理的安全的程序。</p>
+<p>针对以上的几个方面，有了以下处理。</p>
+<ol>
+<li><p>没有共享——进程和 actor 模型</p>
+<p> 如果最初就没有共享任何数据，条件a就不可能发生，也就没有必要在意竞态条件了。</p>
+<p> 在进程中没有内存共享。相信很多人都知道 UNIX 将执行的程序叫做进程（process）。不同的进程<em>不会共享内存</em>，所以在多个程序之间不会在内存上出现竞态条件。只需要注意与数据库连接或文件读写时共享数据的情形就够了。</p>
+<p> 在 UNIX 发布大约 10 年后，人们设计出了“轻量级进程”。它是一种共享内存、具有 UNIX 出现以前风格的进程。后来，这个被称为线程。</p>
+<p> 在不共享内存的设计方针下，还有一个流派——actor 模型。</p>
+<p> 我们以行政文员、资料和公文格为例来说明。甲打开桌上的资料进行处理时，如果乙走过来希望甲处理其他资料，这就影响了甲正在进行中的工作，这就是<strong>共享内存</strong>的问题所在。一方面，在甲的工作告一段落之前，即使乙在旁边一直等候也是浪费时间。这就是后面要讲到的<strong>死锁</strong>的问题。如果不这样，乙在往甲的公文格中放入新的资料后马上回去处理自己的工作，这就变成 actor 模型。</p>
+<p> 这种模型中处理是<em>非同步</em>的。乙不知道甲何时会处理完公文格中的资料。不管何时处理完，如果在资料中写明“处理完毕请送回乙处”等信息，<em>一旦乙在自己的公文格中看到了甲的回复，也就知道了这些资料已经处理完毕</em>。</p>
+</li>
+<li><p>不修改——const、val、Immutable</p>
+<p> 即使共享内存，只要不作修改也不会有任何问题。</p>
+<p> 但是更多的语言采用了更加现实的折衷策略——使一部分变更无法作修改。</p>
+<p> 在 C++ 语言中，使用 const 声明变量时，这个变量就是无法修改的。</p>
+<p> 在 Scala 语言中，有 var 和 val 两种声明变量的方法，val 声明的变量就无法作修改。</p>
+<p> Java 语言经常使用到 Mark Grand 提出的设计模式之一的 Immutable 模式。这种模式下，类中定义了 private 字段，同时定义了读取这些字段的 getter 方法，但不定义对这些字段作修改的 setter 方法。因为没有准备用于修改的方法，所以实现了只能读取但不能改写的效果。</p>
+</li>
+<li><p>不介入</p>
+<p> 在处理期间如何杜绝别的作业介入进来？</p>
+<ul>
+<li><p>线程的协调——fibre、coroutine、green thread</p>
+<p>毫无疑问，由于是协作式多任务模式，如果有某个线程独占 CPU，其他处理就只能停止。说到底，这种方法的前提是各个线程能保证合理的执行时间在合适的时候做出让步。</p>
+</li>
+<li><p>表示不便介入的标志——锁、mutex、semaphore</p>
+<p>这和试衣间中的门帘或单人浴室包间的状态牌类似。门帘关闭时表示这时试衣间正被占用，现在进去的话不方便。想使用试衣间的人只能在外面一直等到门帘打开为止。</p>
+<p>锁这个名字很容易让人误解为只要上了锁其他人就进不来了，然而实际上它只是一个表示“使用中”的状态牌。<strong>如果有线程不去检查状态牌的状态，那它也就变得没有意义了</strong>。</p>
+<blockquote>
+<p>这一机制是艾兹格·迪科斯彻（Edsger Wybe Dijkstra）于 1965 年发明的。1974 年霍尔（Hoare）发明了更加方便的改良版本，即 Concurrent Pascal 中采用的 monitor 的概念。1974 年时 C 语言已经问世 3 年了，直到 20 年后问世的 Java 语言采用了 monitor 的概念，它才得以广泛使用。</p>
+</blockquote>
+<p>在进入之前先检查是否挂有“使用中”的状态牌，如果有则等待，如果没有挂则挂上“使用中”的状态牌再进入。要实现这一系列约定的动作是件比较麻烦的事情。比如使用 if 语句时，在“做值的检查”和“判断为 0 则改为 1”时，有可能有其他处理介入进来。这样一来检查就毫无意义了。为了不让其他处理在中间介入进来，就有必要使用一种能将值的检查和修改同时执行的命令。</p>
+<blockquote>
+<p>Java 直接使用 synchronized lock 就可以轻松地使用实现如此功能的锁。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="锁的问题及对策"><a href="#锁的问题及对策" class="headerlink" title="锁的问题及对策"></a>锁的问题及对策</h4><ol>
+<li><p>锁的问题</p>
+<ul>
+<li>陷入死锁——多个锁互相限制了对方，陷入了等待对方的解锁而形成的死结。为了避免这一问题，程序员就需要在程序的整体上注意上锁的顺序，不仅要把握应该对什么上锁，还要把握好按什么顺序去上锁。</li>
+<li>无法组合——对于多步骤的总体进行上锁，杜绝干扰的实现。要防止中间介入，程序员必须用新的锁将这两个处理步骤包括起来，用 synchronized lock 把所有这些相关的代码包括起来。但是，这样就没能达到让程序员无需担心锁的控制方式的目的。</li>
+</ul>
+</li>
+<li><p>借助事务内存来解决</p>
+<p> 有一种叫做事务内存的方法可以解决这一问题 13。这种方法把数据库中事务的理念运用到内存上，做法是先试着执行，如果失败则回退到最初状态重新执行，如果成功则共享这一变更。它不是直接修改 X 或 Y，而是临时性地创建了一个版本对其进行修改，将一个完整不可分的过程执行完毕后才反映出最终的成果。</p>
+<p> <img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00060.jpeg" alt="img"></p>
+<p> 假设有写入操作在中间介入进来，那么临时创建的版本就会被丢弃，重新回退到最初状态开始执行。这样一来，即使不上锁也可以顺利地进行并发处理。要注意的是，当写入的频率太高时，回退重 新执行的操作就会多次执行到，这样会导致性能下降。</p>
+<p> <img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00061.jpeg" alt="img"></p>
+</li>
+</ol>
+<h4 id="事务内存成功吗"><a href="#事务内存成功吗" class="headerlink" title="事务内存成功吗"></a>事务内存成功吗</h4><p>未来会怎样没人知道。</p>
+<p>微软公司于 2010 年中止了面向 .NET Framework 平台搭载软件事务内存的实验。</p>
+<p>据说后续的 Intel 处理器将搭载事物内存的部分功能。如若实现，届时对于硬件事务内存就可以轻松一试了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2017/07/27/books/代码之髓-容器&并发/" data-id="cjogni49s000bqshskiw3k9oj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-books/代码之髓-名字&amp;作用域&amp;类型" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/27/books/代码之髓-名字&作用域&类型/" class="article-date">
+  <time datetime="2017-07-27T04:33:13.000Z" itemprop="datePublished">2017-07-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/27/books/代码之髓-名字&作用域&类型/">代码之髓读后感——名字&amp;作用域&amp;类型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="名字和作用域"><a href="#名字和作用域" class="headerlink" title="名字和作用域"></a>名字和作用域</h1><h2 id="为什么要取名"><a href="#为什么要取名" class="headerlink" title="为什么要取名"></a>为什么要取名</h2><p>看着代码中遍地都是的变量，函数，或多或少的我们都应该想过，为什么会有这些名字呢？</p>
+<p>我们知道，计算机将数据存储到对应的物理内存中去。我们的操作就是基于数据的。我们需要使用这些数据，所以一个问题就是如何寻找到这些数据。一个较为直接的方式就是为它起个名字。</p>
+<p>联系现实生活中的，最典型的就是图书馆。一本本书，一块块数据。为了查找，我们使用的是对各个数据地址进行编码。一一映射到一组唯一的数据上，以此<em>便于查找的唯一</em>替代彼<em>不便于查找的唯一</em>。</p>
+<blockquote>
+<p>仔细想来，这种替代的方法似乎和哈希函数的思想有思想倒是有些接近。或许其中就是使用了呢？</p>
+</blockquote>
+<p>实际上，每个名字对应的都是实际内存中的地址。因此也必须要有一个表来存储映射关系。</p>
+<p>所以在语言的发展过程中，对照表的设计也是一个关键之处。</p>
+<h2 id="作用域的演变"><a href="#作用域的演变" class="headerlink" title="作用域的演变"></a>作用域的演变</h2><p>在早期的程序设计语言中对照表是整个程序共有的。这样的设计，虽然一定程度上解决了映射的管理的问题，但是，这就相当于现在全局的作用域的概念，一处变，处处变，一次变，次次变。为了防止变量名的重复使用，防止名字的冲突，一种方法就是使用更长的变量名。在这种过程中，各种命名法就出现了。当然，对于现在来说，合理的命名对于程序的可读性，易扩展性也是有极大的帮助的。再有就是使用作用域的限定。</p>
+<p>随着程序规模的扩大，为了更方便管理变量，将不同层级的变量各自划分范围，将各个变量的有效范围进行约束，于是出现了作用域的概念。</p>
+<blockquote>
+<p>正是由于原先的类似于全局作用域的设定，导致当前出现了作用范围太大，出现冲突的可能性太大，进而由此想出了解决办法——缩小作用域。</p>
+</blockquote>
+<p>作用域随着后来的发展，出现了两种类型——动态与静态。</p>
+<blockquote>
+<p>所谓的作用域就是指某段程序文本代码。一个声明起作用的那一段程序文本区域，则称为这个声明的作用域。静态作用域是指声明的作用域是根据程序正文在编译时就确定的，有时也称为词法作用域。而在采用动态作用域的语言中，程序中某个变量所引用的对象是在程序运行时刻根据程序的控制流信息来确定的。</p>
+</blockquote>
+<p>从对照表的角度来分析一下静态作用域和动态作用域。</p>
+<h3 id="动态"><a href="#动态" class="headerlink" title="动态"></a>动态</h3><p><strong>动态作用域中的对照表能被全部代码读取</strong></p>
+<ol>
+<li>最初全局对照表中记录了x与global的映射。</li>
+<li>进入函数a，准备新的全局可见的对照表。</li>
+<li>函数a写入变量x的值记录在新的对照表中。</li>
+<li>进入函数b，由于还未退出a，故其对照表仍有效。所以读取其中的x的值。（参照变量的时候，按照由近及远的顺序读取。若是访问该对照表中没有记录的变量时，就翻转到外层的对照表查找，这里是全局对照表）</li>
+<li>退出b。</li>
+<li>退出a时，作废新的对照表。</li>
+</ol>
+<p>如下例子：</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$x = <span class="string">"global"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">sub</span> <span class="title">a</span> </span>&#123;</span><br><span class="line">    <span class="keyword">local</span> $x = <span class="string">"local"</span>;</span><br><span class="line">    &amp;b();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">sub</span> <span class="title">b</span> </span>&#123;</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"$x\n"</span>;</span><br><span class="line">    <span class="comment"># 输出“local”</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&amp;a();</span><br></pre></td></tr></table></figure>
+<p>把变量原来的值实现保存在函数入口处，在出口处写回变量中。这样一来，在程序中间的改写在退出函数的时候不会继续影响。但是这样就要要求，<strong>凡当函数退出时，所有地方就要毫无遗漏的加上返回值的代码</strong>。于是处于<em>懒惰</em>的心理，我们总希望让计算机去完成这样的工作。</p>
+<blockquote>
+<p>1991年发布的Perl4开始，Perl语言就增加了这样的功能。它通过把变量声明为<code>local</code>，就可以长程序处理器去承担“把原来的值另存起来随后返回”的任务。<br>这样的作用域称为<strong>动态作用域</strong>。动态作用域中被改写的值会影响到被调用函数，因此在引用变量时是什么样的值，不看函数调用方是无从得知的。这就使得在代码规模庞大时，不便于把握。</p>
+</blockquote>
+<h3 id="静态（又叫字面作用域，词法域等等）"><a href="#静态（又叫字面作用域，词法域等等）" class="headerlink" title="静态（又叫字面作用域，词法域等等）"></a>静态（又叫字面作用域，词法域等等）</h3><p><strong>静态作用域按照函数区分对照表</strong></p>
+<ol>
+<li>最初全局对照表中记录了x与global的映射。</li>
+<li>进入函数a，准备函数a专用的对照表。</li>
+<li>函数a写入变量x的值记录在专用的的对照表中。</li>
+<li>进入函数b，准备函数b专用的对照表。</li>
+<li>读取变量值，会先读取b专用表，没有结果则去读取全局变量的表。</li>
+<li>退出b，作废该张对照表。</li>
+<li>退出a，作废该张对照表。</li>
+</ol>
+<p>如下例子：</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$x = <span class="string">"global"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">sub</span> <span class="title">a</span> </span>&#123;</span><br><span class="line">    <span class="keyword">my</span> $x = <span class="string">"my"</span>;</span><br><span class="line">    &amp;b();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">sub</span> <span class="title">b</span> </span>&#123;</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"$x\n"</span>;</span><br><span class="line">    <span class="comment"># 输出“global”</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&amp;a();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>现在说全局变量不好或者全局污染原因便是在此。实际操作中尽量减小作用范围，是一种明智的选择。</p>
+</blockquote>
+<h2 id="静态作用域的不足"><a href="#静态作用域的不足" class="headerlink" title="静态作用域的不足"></a>静态作用域的不足</h2><p>以一开始就采用了静态作用域的python语言为例：</p>
+<p>2000年发布的python2.0中，对照表有三个层次（作用域）。从大到小分别是内置的，全局的，局部的。简单而言，每个程序都有一张整体对照表（内置），一张文件级别的对照表（全局），一张函数级别的对照表（局部）。</p>
+<p>内置对照表，可以在程序的任何地方使用参照，全局对照表是针对每个文件的，因为有的语言也称之为文件作用域，局部作用域则是针对每个函数的对照表。</p>
+<p>在实际使用中，主要出现以下问题：</p>
+<h3 id="嵌套函数的问题"><a href="#嵌套函数的问题" class="headerlink" title="嵌套函数的问题"></a>嵌套函数的问题</h3><p>python支持函数嵌套定义。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="string">"global"</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">a</span><span class="params">()</span>:</span></span><br><span class="line">    x = <span class="string">"a"</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">b</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="keyword">print</span> x</span><br><span class="line">    b()</span><br><span class="line">a()</span><br></pre></td></tr></table></figure>
+<p>在python2.0最初的设计中，如上函数嵌套时，当b中的局部作用域中找不到x，接下来去找的是全局作用域。</p>
+<p>这样的设计引来很多误解，人们常常会以为，从表面看，因为a中包含b，所以a的作用域也包含b的作用域，当b中找不到x时，参照相邻的外部a的作用域。</p>
+<p>后来在2011年发布的python2.1中设计修改为了<em>逐层</em>往外寻找的策略。</p>
+<h3 id="外部作用域的再绑定问题"><a href="#外部作用域的再绑定问题" class="headerlink" title="外部作用域的再绑定问题"></a>外部作用域的再绑定问题</h3><p>指的是采用静态作用域时，无法变更嵌套作用域外部的变量。当嵌套的内层函数变量赋值时，若是当前作用域没有该值时，就会在当前的作用域定义一个新的局部变量。对这个名字进行了一次再次绑定，为他关联了另外的值。但是，这并不会影响外部的作用域。即无法变更外部的变量。</p>
+<p>为了解决这个小问题，2006年的python3.0提供了关键字<code>nolocal</code>，在函数开始时，声明变量为<code>nolocal</code>性质。即主动地声明是非本地的。</p>
+<p>这个关键字的选取，主要考虑了对于过往代码的兼容性，他在过去的代码中，出现的频度是最低的。</p>
+<blockquote>
+<p>这样的<code>nolocal</code>和<code>global</code>关键字有区别么？</p>
+</blockquote>
+<p>对于和python很类似的ruby而言，则是使用了方法与代码段的区分。</p>
+<p>函数发生嵌套，形式上有两种类型。方法套方法，方法套代码段。</p>
+<p>如下两例：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方法在进行嵌套时作用于不嵌套</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span></span></span><br><span class="line">    x = <span class="string">"outside"</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">()</span></span> <span class="comment"># 方法嵌套</span></span><br><span class="line">        p x   <span class="comment"># 会出错，因为无法访问外部的x</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法中有代码段时，方法的局部作用域中有的名字，在代码段中视为方法的局部变量，除此以外被视为代码段的局部变量。</span></span><br><span class="line"><span class="comment"># 相同名字则为方法的，不同的，则是自己的。</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span></span></span><br><span class="line">    x = <span class="string">"old"</span></span><br><span class="line">    lambda &#123;x = <span class="string">"new"</span>; y = <span class="string">"new"</span>&#125;.call</span><br><span class="line">    <span class="comment"># x -&gt; foo(), y -&gt; lambda的本地变量</span></span><br><span class="line">    p x <span class="comment"># new</span></span><br><span class="line">    p y <span class="comment"># lambda的本地变量，外部无法访问</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h2 id="作用域总结"><a href="#作用域总结" class="headerlink" title="作用域总结"></a>作用域总结</h2><blockquote>
+<p>虽然现在很少会使用动态作用域，但这一概念并不是完全没有用处。与<strong>静态作用域中作用域是源代码级别上的一块完整独立的范围</strong>不同，在<strong>动态作用域中，作用域则是进入该作用域开始直至离开这一时间轴上的完整独立的范围</strong>。与此相同的特征也体现在其他好多地方。比如，在某处理进行期间，一时改变某变量的值随后将原值返回的代码编写方式就相当于创建了自己专属的动态作用域。又如，<em>异常处理与动态作用域也很相似，函数抛出异常时的处理方式受到调用函数的 try/catch 语句的影响</em>。<br>面向对象中像 <code>private</code> 声明这样的访问修饰符，在限制可访问范围的作用上和作用域是非常相似的。<code>private</code> 将可访问范围限制在类之内，而 <code>protected</code> 将此范围扩大到其继承类。这和函数调用处的变更会影响到调用里面的操作这一动态作用域表现是相似的，两者都具有这么一个缺点，这就是<strong>影响范围没有能限制在代码的某一个地方</strong>。<br>比如 Java 语言，它是静态作用域语言，它的类可以在源代码的任意处被访问。这意味着<strong>类是具有全局作用域的</strong>。但是<strong>类的名字具有层次并且只有导入后才能被使用</strong>，这避免了全局变量带来的无意的名字冲突。<em>但是不管是全局变量还是类的静态成员都可以在源代码的任意地方被变更</em>。这提醒我们，在享受使用上的便利的同时，要谨防滥用导致的代码难以理解的情况发生。<br>作用域是编写易于理解的代码的有力工具，很多地方都应用了这一概念。</p>
+</blockquote>
+<hr>
+<h1 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h1><p>C，java，C++等语言中的int，void，double，float等等，这些是怎么出现的？现在又有了怎样的变化与发展？</p>
+<h2 id="类型是什么"><a href="#类型是什么" class="headerlink" title="类型是什么"></a>类型是什么</h2><blockquote>
+<p>类型是人们给数据附加的一种追加数据。计算机中保存的数据是由 on 和 off 或 0 和 1 的组合来表达的。至于 on 和 off 的组合（比特列）是如何表达各种数值的，哪种比特列表示哪种值，这些只不过是人们简单的约定事项而已。同样的比特列，当其被解释为的数据的类型不同时，得到的数值是不同的。为了避免这一情况的发生，人们追加了关于数据的类型信息，这就是类型的起源。</p>
+</blockquote>
+<blockquote>
+<p>计算机中的数值是整数、浮点数还是其他类型的数，为了在计算机中管理这一信息，于是催生了类型。起初，类型中只加入了数值的种类信息，最后又有多种多样的信息加入进来。比如，能在这个数值上施加的操作、此函数可能抛出的异常等信息都被加入到类型中来了。现在，像静态类型和动态类型那样连内存地址和使用时间都不一样的事物也被称为类型，这使得类型这种东西变得越来越难以捉摸。什么样的信息放在什么地方，在什么样的时间被使用，从这个视角来看反而更容易理解。</p>
+</blockquote>
+<h2 id="表达数字的思考"><a href="#表达数字的思考" class="headerlink" title="表达数字的思考"></a>表达数字的思考</h2><p>如何在电子计算机中表达数值呢？如前所述，在计算机中所有的数值都用 on 和 off 或 0 和 1 的组合来表达。为了更形象地说明，我们换个角度来思考，该如何用灯泡的点亮与熄灭来表达数值呢？为了充分利用资源，只能是用最少的技术标量来表示最多的数。</p>
+<pre><code>完全按个数(n个计数标量) 
+        -&gt; 数位(阿拉伯数字)(10个计数标量) 
+                    -&gt; 七段数码管(7个计数标量) 
+                                    -&gt; 算盘(最少的5个，上一下四)
+                                                -&gt; 从十进制到二进制(9也只需要4个，1001)
+</code></pre><p>把二进制中某几个字符组合在一起用一个字符来表示，使之变得更容易读，这种表达方式就是八进制或十六进制。</p>
+<h2 id="如何表达实数"><a href="#如何表达实数" class="headerlink" title="如何表达实数"></a>如何表达实数</h2><p>实数的复杂之处在于在正整数的基础上添加了小数和负数。所以针对这两种情况进行设计。</p>
+<h3 id="定点数——小数点位置确定"><a href="#定点数——小数点位置确定" class="headerlink" title="定点数——小数点位置确定"></a>定点数——小数点位置确定</h3><p>一种方法是确定小数点的的位置。比如，约定好把整数的小数点向左移动四位，最低四位就是小数部分。这样一来，1 变成 0.0001，100 变成 0.0100 即 0.01.这种方法有个问题，它无法表达比 0.0001 小的数，比如无法表达 0.00001。当然只要把约定改为把整数的小数点向左移动五位得到小数部分就可以，但这样针对每一个新的小数都要记一句新的约定很困难，而且还容易出错。那该怎么办呢？</p>
+<h3 id="浮点数-floating-point-number-——数值本身包含小数部分何处开始的信息"><a href="#浮点数-floating-point-number-——数值本身包含小数部分何处开始的信息" class="headerlink" title="浮点数(floating point number)——数值本身包含小数部分何处开始的信息"></a>浮点数(floating point number)——数值本身包含小数部分何处开始的信息</h3><blockquote>
+<p>以前关于浮点数有各种不同的约定，现在都标准化为 IEEE 75415。15官方名称为“IEEE Standard for Floating-Point Arithmetic (ANSI/IEEE Std 754-2008)”。IEEE 754 最早制定于 1985 年，后于 2008 年进行了修订。另外，在此标准规定有 5 种标准类型，这里仅仅说明了其中的单精度二进制浮点数。</p>
+</blockquote>
+<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00036.gif" alt="img"></p>
+<p>左边那盏灯（最高比特位）,也可以称之为 MSB（most significant bit），最高有效位 代表了数的符号。该位为 0 时表示正数，为 1 时表示负数,在标准中，零区分为正的零和负的零。</p>
+<p>接下来的 8 盏灯是表示位数的指数部分。指数部分作为整数理解的话可以表达 0~255 之间的数，减去 127 得到范围－127~128。－127 和 128 分别代表了零和无限大，剩下的－126~127 代表了小数点的位置。－126 是指小数点向左移动 126 位，127 是指小数点向右移动 127 位。</p>
+<p>其余的 23 盏灯是尾数部分，表示了小数点以下的部分。尾数部最左边的灯泡表示 1/2（二进制中的 0.1），接下来是 1/4（二进制中的 0.01）。请看图中的 1.75 这个数，它等于 1+1/2+1/4，用二进制来表示就是 1.11。所以，1/2 位的灯泡和 1/4 位的灯泡都点亮。指数部分为 127（要减去 127 就是范围中的 0），这表示小数点的位置移动 0 位。这两点组合起来就是 1.75。</p>
+<pre><code>准确来讲，尾数是在二进制表达中为使得整数部分变成 1 而移动小数点得到的小数部分。
+</code></pre><p>接下来的数 3.5，用二进制来表示是 11.1。小数点向左移动一位就得到 1.11。所以它的尾数部分和 1.75 一样，1/2 位和 1/4 位点亮。指数部分变成 128（减去 127 就是范围中的 1）。3.5（二进制中的 11.1）其实就是 1.75（二进制中的 1.11）的小数点向右移动一位得到的数 19。而 7.0 则是由指数部分继续加 1 得到。</p>
+<p>19在二进制中，小数点移动一位进位不是 10 倍而是 2 倍。指数部分加 1，变成 2 倍，减 1 变成 1/2。</p>
+<h4 id="浮点数的问题"><a href="#浮点数的问题" class="headerlink" title="浮点数的问题"></a>浮点数的问题</h4><p>现今大家接触到的语言中，实数大多用浮点数 IEEE 754 表达。从实用角度来看，大部分情况下这没有任何问题。但是，这种方法要表达 3 除以 10 的答案时，十进制中可以确切表达出来的 0.3 在二进制中却变成了 0.0100110011001100110011……这样的无限循环小数，无论怎么写都有误差存在。正因为如此，会出现对0.3做十次加法并舍去某些位数后得到2这样的现象。银行和外汇交易等涉及资金操作的场合尤其不欢迎这种系统行为，所以这些场合使用的是定点数或者加三码（excess-3）这样的十进制计算方式。</p>
+<h2 id="为什么出现类型"><a href="#为什么出现类型" class="headerlink" title="为什么出现类型"></a>为什么出现类型</h2><p>在内存中记录的数值是整数还是浮点数，单靠人的记忆很难避免错误。有没有更为简易的方法呢？</p>
+<ul>
+<li><p>一种方法是用确定的规则来表示变量名所表达的内容。比如，早期的 FORTRAN 语言使用了一系列规则，指定以 I~N 开头的变量名表示整数，除此以外的表示浮点数。</p>
+</li>
+<li><p>另一种更好的方法是告诉处理器某某变量是整数，让计算机而不是人去记忆这一信息。<strong>这就是变量的类型的声明产生的原因</strong>。比如 C 语言中，声明 int x; 表示名字为 x 的变量指向的内存被解释为整数，声明 float y; 表示名字为 y 的变量指向的内存被解释为浮点数。这样通过提供关于类型的信息，处理器在进行运算时，就能自动判断该做整数相加运算还是浮点数相加运算，而不需要人们逐个去指定。</p>
+<ul>
+<li>整数之间、浮点数之间的运算计算机参照数据的类型来决定怎样执行。如果 x 和 y 同为整数，就做整数之间的加法运算。如果 x 和 y 同为浮点数，就做浮点数之间的加法运算。</li>
+<li>整数与浮点数之间的计算，则依据语言不同采用了不同的方法。有显示使用转换函数(如早期的 FORTRAN 语言)，也有隐式自动转换的(如C)。<ul>
+<li>C 语言中采用的设计方法是由计算对象的类型来决定是否舍去小数部分。这一方法在很长时间内被很多语言使用，以至于很多程序员都非常习惯，认为理所当然。然而，这个不是恒久不变的物理法则，只不过是人们确立的设计方法而已。因此并不是所有的语言都采用这种设计。</li>
+<li>一些语言使用特定的运算符来处理是否保留小数的情况。<ul>
+<li>1973 年问世的 ML 语言中，整数的除法运算就表达为 x div y， 而浮点数的除法运算表达为 x / y。</li>
+<li>OCaml 中也用 x / y 和 x /. y 来区分整数的除法运算和浮点数的除法运算。</li>
+<li>1991 年问世的 Python 语言起初使用的是混杂着 C 语言风格的除法运算方式。</li>
+<li>2008 年发布的 Python 3.0 中，把 x / y 作为与 x 和 y 类型无关不做舍去的除法运算，带舍去的除法运算用 x // y 来表示。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="类型的发展"><a href="#类型的发展" class="headerlink" title="类型的发展"></a>类型的发展</h2><ol>
+<li>使用语言中自带的基本数据类型通过组合定义新的类型的这一功能被发明出来。这被称为<em>用户定义型</em>。</li>
+</ol>
+<ul>
+<li>如 C 语言中的结构体。</li>
+<li>在 C 语言之前的 COBOL 语言中，可以用基本的类型组合起来定义一种带有层次结构的记录类型。</li>
+<li>PL/I 语言也有能组合基本类型并创建新的类型的语句 <code>DEFINE STRUCTURE</code>。(结构体（structure）这个术语应该就是从那时候开始使用)的。</li>
+</ul>
+<blockquote>
+<p>其实，不仅限于整数这样的数据，函数这样决定数据如何被处理的对象也被糅合到类型中来了。C++ 语言的设计者本贾尼·斯特劳斯特卢普把用户能自定义的类型当作构造程序的基本要素，把这种类型冠名为类。</p>
+</blockquote>
+<ol start="2">
+<li>后来出现了类型既是功能的观念。这种观念认为，构成结构体和类的类型不应该是全部公开而是最小限度地公开，类型是否一致这个交由编译器来检查，用类型来表达功能，与功能是否一致也是由编译器来检查。因此，只需要将与外部有交互的部分作为类型公开，而实现的细节则隐藏起来。这样类型就被区分为公开部分和非公开部分了。</li>
+<li>出现了不包含有具体的实现细节的类型（Java 语言中的接口等）。</li>
+<li>另外把函数是否抛出异常这一信息也当作类型。</li>
+</ol>
+<blockquote>
+<p>类型即是功能的方法得到了越来越广泛地应用，但遗憾的是，用类型来实现所有功能的想法却还没有成功。如果它能成功，就很理想了：<strong>只要类型一致就不用关心内部的实现细节，功能与类型的不一致交由编译器来检查，编译通过意味着没有 bug</strong>。然而，仍有不少类型无法表达的信息，如输入这个数据需要多少处理时间，这个处理过程需要多少内存，线程中是否可以进行这种操作等。至今，这些问题也只能通过人为地读取文档和源代码来判断。</p>
+</blockquote>
+<h3 id="总称型、泛型和模板"><a href="#总称型、泛型和模板" class="headerlink" title="总称型、泛型和模板"></a>总称型、泛型和模板</h3><p>通过将不同类型进行组合得到复杂的类型后，使用中会出现<strong>想更改其中一部分却又不想全部重新定义的再利用</strong>需求。</p>
+<p>因此出现了构成要素部分可变的类型，即总称型。想要表现不同的情况时，出现了以类型为参数创建类型的函数(C++ 语言中的模板、Java 语言中的泛型以及 Haskell 语言中的类型构造器可以说就是这种创建类型的机制)。</p>
+<h3 id="动态静态类型"><a href="#动态静态类型" class="headerlink" title="动态静态类型"></a>动态静态类型</h3><p>到目前为止，我们介绍的类型的机制中，处理器把变量名、保存数值的内存地址、内存里的内容的类型三者作为一个整体来看待。把类型的信息和数值看作整体的方式叫动态类型。作为其反义词，到目前为止介绍的类型机制都叫静态类型。现在大多数的脚本语言都采用了动态类型。</p>
+<p>动态类型如何实现的呢？</p>
+<p>是因为在内存上使用了同等类型对待的设计方法。比如 Python 语言中，不管是整数还是浮点数还是字符串，全部都作为 PyObject 对待，开始部分都是一样的。另外在 PyObject 类型的结构中还预留了保存值的类型信息的地方。这一点在其它的脚本语言中也是同样的情况，比如在 Ruby 语言中，任何数值都是 VALUE 类型的。</p>
+<p><img src="http://xb.hubwiz.com/api/book/57bbdc1a109ee9d927c25ab3/images/00039.gif" alt="img"></p>
+<pre><code>※ 使用次数是指在内存管理中记录这个数值有几处被参照引用的数值（引用计数）。
+※ 字符串的散列值是散列函数的计算结果（详见第 9 章），状态是表示该字符串是否记录在 Internpool 里（处理器是否把该字符串进行唯一处理的标志）。
+</code></pre><h3 id="动态类型的优势与不足"><a href="#动态类型的优势与不足" class="headerlink" title="动态类型的优势与不足"></a>动态类型的优势与不足</h3><p>使用这种数值类型处理方法，能实现历来静态类型语言不能实现的灵活处理。运行时确定类型和改变类型成为可能。然而，它也有一些不足。静态类型语言在编译时确定类型，同时编译时也检查了类型的一致性。有了这种类型检查，在实际执行前，便能发现一部分bug。这一点动态类型语言是无法做到的。</p>
+<h3 id="类型推断"><a href="#类型推断" class="headerlink" title="类型推断"></a>类型推断</h3><p>既不放弃编译时的类型检查，也想尽量减少麻烦的类型声明，要实现这一要求就要用到计算机自动推论确定类型的方法。</p>
+<p>同样是使用类型推断这一术语，在不同的语言中，如何做类型推断以及类型推断的能力如何，情况是不一样的。我们来比较一下 Haskell 语言和 Scala 语言。</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="type">GHCi</span></span><br><span class="line">&gt; :<span class="class"><span class="keyword">type</span> identity identity</span></span><br><span class="line"><span class="title">identity</span> identity :: t -&gt; t</span><br><span class="line">&gt; identity identity <span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>Scala 语言中类型推断的行为和 Haskell 语言是不一样的。它会首先来定义 identify 函数。</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> <span class="type">Scala</span>的对话终端</span><br><span class="line">scala&gt; <span class="function"><span class="keyword">def</span> <span class="title">identity</span> </span>= x =&gt; x</span><br><span class="line">&lt;console&gt;:<span class="number">7</span>: error: missing parameter <span class="class"><span class="keyword">type</span></span></span><br><span class="line"><span class="class">       <span class="title">def</span> <span class="title">identity</span> </span>= x =&gt; x</span><br><span class="line">                      ^</span><br><span class="line"></span><br><span class="line">scala&gt; <span class="function"><span class="keyword">def</span> <span class="title">identity</span></span>[<span class="type">T</span>] = (x : <span class="type">T</span>) =&gt; x</span><br><span class="line">identity: [<span class="type">T</span>]=&gt; <span class="type">T</span> =&gt; <span class="type">T</span></span><br><span class="line"></span><br><span class="line">scala&gt; identity(identity)</span><br><span class="line">res0: <span class="type">Nothing</span> =&gt; <span class="type">Nothing</span> = &lt;function1&gt;</span><br><span class="line">scala&gt; identity(identity)(<span class="number">1</span>)</span><br><span class="line">&lt;console&gt;:<span class="number">9</span>: error: <span class="class"><span class="keyword">type</span> <span class="title">mismatch</span></span>;</span><br><span class="line"> found   : <span class="type">Int</span>(<span class="number">1</span>)</span><br><span class="line"> required: <span class="type">Nothing</span></span><br><span class="line">              identity(identity)(<span class="number">1</span>)</span><br><span class="line">                                 ^</span><br></pre></td></tr></table></figure>
+<p>由此可见，同样是使用类型推断的表达方法，不同语言指示的具体内容是不一样的。刚刚展示了 Scala 语言推论失败的一个例子，即使推论成功了，在实用价值上有没有优势这个问题上，大家也是有意见分歧的。即使承认它的优势而对类型推断的机制进行修改，在由此带来的作业代价与推论失败的代价之间做权衡之后，再决定否应该做改进和变更将是一个更加困难的问题。</p>
+<h3 id="强类型下是否可以做到程序没有bug"><a href="#强类型下是否可以做到程序没有bug" class="headerlink" title="强类型下是否可以做到程序没有bug"></a>强类型下是否可以做到程序没有bug</h3><p>类型推断与理论推论之间有对应关系。于是有些语言发出挑战，试图通过使用比 C 语言和 Java 语言更强力的类型系统来证明程序中没有任何 bug。今后在改善类型系统的表现力和类型推断规则方面应该会开展各种研究。</p>
+<pre><code>比如，在一个接受 X 型参数返回 Y 型返回值的函数中传递一个 X 型的数值，会得到 Y 型的返回值。这一关于类型的描述与“X 为真在如果 X 则 Y 的情况下，Y 就为真”这一逻辑的描述是相对应的，被称为 Curry-Howard 对应。
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2017/07/27/books/代码之髓-名字&作用域&类型/" data-id="cjogni49d0008qshsjxdz7qjh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-books/代码之髓-关于学习" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/11/books/代码之髓-关于学习/" class="article-date">
+  <time datetime="2017-07-11T02:52:59.000Z" itemprop="datePublished">2017-07-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/11/books/代码之髓-关于学习/">代码之髓读后感——关于学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一些学习的方法：</p>
+<h2 id="具体的知识与抽象的知识"><a href="#具体的知识与抽象的知识" class="headerlink" title="具体的知识与抽象的知识"></a>具体的知识与抽象的知识</h2><p>学习之路必经从具体到抽象的这样一个过程。</p>
+<p>具体的知识只能应对特定的具体环境，而面对瞬息万变的世界，唯有抽象出来的 <em>元知识</em>才能真正起到作用。具体的知识在特定的环境下可以快速提升你的工作效率，但是环境一变，这种知识就无法使用。而抽象的 <em>元知识</em>， 也需要与具体的实践相结合，才能在实际应用中发挥价值。实践是检验真理的唯一标准。这是毋庸置疑的。</p>
+<p>这样也引出来一种判别我们所学有没有成为真正的知识的方式。那就是，可以考察能否具体的举例或者实现来确认。真正的知识是可以使得我们 <strong>触类旁通</strong>的。只是一味的鹦鹉学舌，重复讲讲，也无法利用知识创造价值。</p>
+<h2 id="学习的策略"><a href="#学习的策略" class="headerlink" title="学习的策略"></a>学习的策略</h2><p>学习，终究想吃肉一样，一口吃不成个大胖子。到底讲求的还是 <strong>细嚼慢咽</strong>。这个词中，一个“细”字点出了真意。“分而治之”，小块消化。</p>
+<p>这样的思想，在面对少量的信息时，效果很好，效率也可以。</p>
+<p>但是，现在这样一个信息爆炸的年代，这样是远远不够的。</p>
+<p>所以现在我们就面临着一个问题——如何对信息作取舍？什么样的信息重要，什么样的信息需要，什么样的信息可以被扔掉…</p>
+<p>但是，若要得出一个明确的答案，那我们实际上应该对于该领域十分熟悉，水平并不低，那这样不就和我们的现况正好冲突了么？先有鸡还是先有蛋？</p>
+<p>书中提到了一些方法：</p>
+<ul>
+<li>向身边的熟悉这些信息的人请教——可能身边没有，而网上的又不一定可信</li>
+<li>查阅作者本人的资料——及直接阅读第一手信息——可能会难懂，内容太多，或者语言阻碍等等</li>
+<li>阅读其他人的理解总结——二手资料——可信度，准确度等等难以保障</li>
+</ul>
+<p>这里面其实暗含着一种对于大量信息进行阅读的一个必要过程（因为我们实际上多数是偏向于后两种），这个过程一般等价于一种煎熬。而且费时费力，有时还不得好。书中提到了三种策略：</p>
+<ol>
+<li>从需要的地方开始阅读</li>
+<li>从概要开始阅读再细读</li>
+<li>从头到尾通篇阅读手抄</li>
+</ol>
+<p>各有各的实用价值。</p>
+<p><strong>按需获取简单直接迅速便捷</strong></p>
+<p>从需要的地方开始阅读，则现需要 <strong>明确自己的需求</strong>，对于整体内筒有了大致的把握，并且对于该领域已经有些了解。若是一无所知，你也很难知道，哪里对于自己的需求是有实际帮助的。这样的方式对于解决实际问题很有帮助，因为它忽略了一些不相关的，对于自己的当前问题没有目前没有价值的内容。可以节省我们的精力，以用到更需要的地方去。</p>
+<p>若是不知道如何把握整体内容，可见下段。</p>
+<p><strong>掌握概要把握整体内容再渐进式追求细节</strong></p>
+<p>从概要开始阅读，从目录可以了解大体构造，然后就可以开始正文的跳跃式阅读。不要逐字逐句的阅读，首先看副标题和粗体字强调的内容、图表、及其标题。阅读源代码时，首先要看一眼文件架结构和文件名，然后开始粗略读取文件内容，对于定义了的函数和类，以及出现频次较高的名称（函数，变量等等）要扫一眼。阅读代码的时候，切入口不同，其中一种就是使用调试器中的逐步执行功能。依照执行的顺序及调用的层次作为切入口去阅读。这实际上也是先大致掌握整个处理流，然后再深入到具体模块具体函数具体类中。</p>
+<p>此法可能会有信息感觉很快就变淡的感觉，可参考下段。</p>
+<p><strong>逐章手抄减少漫无目的难以专注的终极方法</strong></p>
+<p>这也是最后的方法。当没有明确的目的，简单浏览内容过目即忘，这种学习状态下，只能“抄写”书籍，其他的不要想，直接做知识的搬运工吧——逐章手抄。</p>
+<p>对于学习，适当的激励是极为有助的。关键是选择 <strong>可以获得成就感的合适的学习间隔</strong>。</p>
+<h2 id="学习的态度"><a href="#学习的态度" class="headerlink" title="学习的态度"></a>学习的态度</h2><p>其实学习最关键的还是实际的应用。</p>
+<p>学习即为了解决问题，有明确问题驱动下的学习是极其有效率的。</p>
+<p>但是，问题的深度，难度，都将或多或少的影响着学习的进度和考验着人的意志。通常，事实是，大多数人无疾而终，因为所研究的问题，已经超出了自己的理解范围，太过于偏离自己的知识领域。</p>
+<p>所以说，真正的学习，还应当是 <strong>循序渐进的</strong>，即使是有需求的学习，那也是需要起码的了解，是建立在已有知识基础之上的。</p>
+<p>让一个毫无编程经验的人去研究游戏制作，虽然他的兴趣不小，激励不少，但是他还是必要经过一系列编程的学习。而且还需要学到一定的层次。不然，即使照着一本专业书籍从头做到尾，轮到自己真正去做自己的想法时，却还是什么也做不出来。</p>
+<p>因为这些事并不是想要做就能做的，这中间还是要经过一个漫长的过度期。</p>
+<p>有些知识，有些常识，看似和自己的想法相去甚远，但是还是得去学习吸收。因为这就是我们的知识领域扩张的一个必要过程。这样的结果，往往就是我们距离那个美好的梦想越来越近。这就像平地上的一滩水，随着一滴一滴的外来水滴的融入，我们不断扩张，也只有不断的融入，我们才有机会有一刻，实现抵达远方的那份期望。</p>
+<p>我们实际上需要的还是脚踏实地。上面的三种思路，在我看来实际上是倒着来的。</p>
+<p>逐章手抄-&gt;由概要到细节-&gt;按需索取</p>
+<p>这就是一个不断细化的过程。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2017/07/11/books/代码之髓-关于学习/" data-id="cjogni49d0003qshszewhbx0k" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-books/代码之髓-语法&amp;流程&amp;函数&amp;错误处理" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/08/books/代码之髓-语法&流程&函数&错误处理/" class="article-date">
+  <time datetime="2017-07-08T09:33:11.000Z" itemprop="datePublished">2017-07-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/08/books/代码之髓-语法&流程&函数&错误处理/">代码之髓读后感——语法&amp;流程&amp;函数&amp;错误处理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Perl的设计者：Larry Wall在《Programming Perl》中提出，优秀的程序员有三大美德：懒惰，急躁和傲慢。</p>
+</blockquote>
+<p>懒惰是因为为减少总的能量支出而不遗余力的努力。</p>
+<p>急躁是因为无法忍受程序执行的低效。</p>
+<p>傲慢是因为容不下错误。</p>
+<hr>
+<h1 id="语言的诞生"><a href="#语言的诞生" class="headerlink" title="语言的诞生"></a>语言的诞生</h1><p>程序设计语言的出现就是为了解决各种各样的问题，而这些问题以现在的语言是无法更合适的处理。</p>
+<p>于是乎，语言之于语言，就是目标问题的差异。</p>
+<hr>
+<h1 id="语法的诞生"><a href="#语法的诞生" class="headerlink" title="语法的诞生"></a>语法的诞生</h1><p>语法是程序设计者制定的规则。因语言而异。</p>
+<p>比如运算符的优先顺序，计算流程的规定等等。</p>
+<p>对于式子<code>(2+1)*3</code></p>
+<p>书中提到了比较有特点的FORTH语言，书写成：<code>12+3*</code> </p>
+<p>即后缀表达式的形式。利用的是栈来实现。</p>
+<p>而LISP语言则是前缀表达式：<code>*+123</code></p>
+<p>从语法树的角度来看，连着实际上就是对于相同的树结构进行了不同的遍历方式。</p>
+<blockquote>
+<p>LISP语言语法简单，代码与语法树容易理解并且对应比较直观，此外它还具有宏这样的语法树替换机制，这两个特点催生了结构化编程等一系列现象。</p>
+</blockquote>
+<p>而语言FORTRAN则是引入了运算符优先级和结合性等复杂语法，使得程序员们编写数学表达式更为习惯。编译程序时，它的语法分析器（把原代码作为字符串，读入解析并建立语法树的程序）会将源代码的字符串转换为语法树。</p>
+<p>现代语言大多崇尚FORTRAN的语言风格，追求简单便利的编写规则。</p>
+<blockquote>
+<p>但是因为不存在任何解析矛盾的语法体系的设计是十分困难的，又要不断地融入新语法时又要避免与现有的发生冲突，这样更难，正是因此，现代程序设计语言中仍然保留着不少别扭复杂的编写规则。</p>
+</blockquote>
+<hr>
+<h1 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h1><p>源自结构化程序设计的诞生。</p>
+<p>他们的功能原本都可以借助goto来实现。</p>
+<h2 id="if…-amp-if…else…"><a href="#if…-amp-if…else…" class="headerlink" title="if… &amp; if…else…"></a>if… &amp; if…else…</h2><p>很早以前存在满足条件后跳的命令。</p>
+<blockquote>
+<p>1949年发明的EDSAC就有“特定内存值大于零时跳转”和“特定内存值为负时跳转”这两条命令。</p>
+</blockquote>
+<p>这使得本来要表达 <em>如果满足条件就执行某事</em>的逻辑，不得不变成了 <em>若是满足条件则跳转到某处执行某事</em>。</p>
+<p>而导入if语句则使得逻辑更为清楚，理解更为直观。</p>
+<h2 id="while…-amp-break"><a href="#while…-amp-break" class="headerlink" title="while… &amp; break"></a>while… &amp; break</h2><p>主要是用来做那些只要有goto语句就能做的事。带来的附加值是程序的易读性和易写性。</p>
+<h2 id="for…"><a href="#for…" class="headerlink" title="for…"></a>for…</h2><p>让数值渐增的while更加简洁。for主要通过循环次数来控制循环操作。</p>
+<p>升级版的foreach，则根据处理的对象来控制循环操作。</p>
+<p>但是并非所有的for语句都可以写成foreach。</p>
+<p><strong>这些流程控制语句主要是为了实现程序的 <em>简洁易懂</em></strong></p>
+<hr>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p>随着程序的庞大，把握全局愈发困难，同时有可能多次要用到相同的操作。函数因此诞生。把一整块代码切分出来而命名。同时伴随着函数的出现，也产生了递归调用这一编程技巧，非常适合处理嵌套形式的数据。</p>
+<p>函数的使用使得程序便于理解和重复使用。</p>
+<p>从冗长的程序中切分出反复使用的代码将其封装成一个整体。</p>
+<p><em>遇到问题：一个程序中有几处执行相同的代码若是封装，那怎么返回到原来的地方？</em></p>
+<p>我们希望的是，执行跳转时，记住该位置，之后返回时，又能跳转到该位置后面。</p>
+<p>EDSAC的方法是通过修改程序中跳转命令的跳转目的地而实现调用后返回原来的位置。</p>
+<p><em>遇到问题：函数调用者必须知道跳转目的地和返回命令所在地。</em></p>
+<p>创建用来事先记录返回目的地的内存空间，并设计能跳转到该内存空间所记录的地址的命令。</p>
+<p><em>遇到问题：当调用函数X时又调用了Y，返回目的地的内存被覆写，X执行后的返回目的地发生错误。</em></p>
+<p>人们开始使用栈。</p>
+<p>这一切都是因为栈这种结构的特性决定的。</p>
+<p>由于函数的实际上是代码段的封闭环境，有起始就得有结束，而对于嵌套函数调用而言，必然是越深的，越晚调用的越要及早结束，及早返回，正好符合后入先出的特点。使用栈来实现函数的调用，是极为合适的。</p>
+<p>将数据存储的地址依次压入栈中，而栈顶元素内容就是最后被存入数据的地址。</p>
+<p><em>关于递归调用</em></p>
+<p>关键在于如何退出。</p>
+<hr>
+<h1 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h1><p>主要有两种方法：</p>
+<ol>
+<li>使用返回值</li>
+<li>使用异常</li>
+</ol>
+<h2 id="使用返回值"><a href="#使用返回值" class="headerlink" title="使用返回值"></a>使用返回值</h2><p>通过判断错误的返回值来判断错误并进行相应的处理。</p>
+<p>传递错误信息既可以使用返回值，也可以使用事先定义好的全局变量，还可以传递引用形参等方法。</p>
+<p>这种方法可以在C语言中见到。</p>
+<p><em>遇到问题：</em> </p>
+<ul>
+<li>遗漏错误——忘记做返回值检查；出错条件难以确保完全…</li>
+<li>错误处理导致代码可读性下降——为了避免错误导致出现大量错误处理代码，影响可读性…</li>
+</ul>
+<p>对于第二个问题，可以在错误处理相同时，使用goto进行集中处理。从代码形式来看，实现了代码和错误处理的分离。</p>
+<blockquote>
+<p>Linus在《Linux内核编码风格》中推荐使用goto语句把函数的结尾处理集中起来。</p>
+</blockquote>
+<p>小栗子：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!fun(A)) <span class="keyword">goto</span> ERROR;</span><br><span class="line">    <span class="keyword">if</span>(!fun(B)) <span class="keyword">goto</span> ERROR;</span><br><span class="line">    <span class="keyword">if</span>(!fun(C)) <span class="keyword">goto</span> ERROR;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">ERROR:</span><br><span class="line">    <span class="comment">/* 失败处理 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="使用异常（异常处理），出错后跳转"><a href="#使用异常（异常处理），出错后跳转" class="headerlink" title="使用异常（异常处理），出错后跳转"></a>使用异常（异常处理），出错后跳转</h2><p>调用函数前设定好错误处理的代码，错误发生时能跳转至相应的错误处理代码。</p>
+<p>C之前出现过事先定义好错误发生时跳转的位置，后来演变为了现在的异常处理。</p>
+<p>计算机UNIVACI：在计算中出现溢出时，它会执行000处编写的命令。（即 <em>中断(interrupt)</em>，键盘按键按下，CPU可以接收信号，传达信息的就是中断）</p>
+<p>语言COBOL：只有两种针对性的错误处理。见下例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">READ &lt;文件名&gt; AT END &lt;错误处理语句&gt;</span><br><span class="line">ADD &lt;函数名&gt; ON SIZE ERROR &lt;错误处理语句&gt;</span><br></pre></td></tr></table></figure>
+<p>语言PL/I: 引入ON语句。可以自定义增加新的错误类型，也可以主动触发新定义的错误类型。</p>
+<p>相较于PL/I的错误处理，现代的JAVA，C++，PYTHON语言的方式有所不同，前者先定义好出错的处理操作，在编写可能出错的代码，而后者则是先用<code>try{...}</code>编写可能出错的代码，在编写出错时的处理。</p>
+<h3 id="一些历史"><a href="#一些历史" class="headerlink" title="一些历史"></a>一些历史</h3><p>这样的设计的改变源自当初John Goodenough的论文中所提出的方法。</p>
+<blockquote>
+<p>命令有可能会抛出异常，而程序员有可能忘记这种可能性，也可能在不正确的地方编写异常处理或者编写不正确类型的异常处理。为使编译器能够对程序员的错误发出警告，减少这种可能性，需要做到两点。一是明确声明命令可能抛出何种异常，二是需要有将可能出错的操作括起来的语句结构。</p>
+</blockquote>
+<p>这里提议的括起来的语句为基础，现代大部分语言采用了先括起来可能出错的操作，再编写错误处理的语句结构。明确声明命令可能抛出何种异常，这个设计方针在 Java语言的异常检查中得以继承。</p>
+<p>1977年语言CLU11引入了异常处理的机制，追加了置于命令后面的错误处理语句结构<code>except</code>。CLU语言从最初就具有用<code>begin…end</code>将代码括成块状的功能，这一功能和<code>except</code>相结合，就实现了将可能出错的操作括起来再补充错误处理的代码编写方式。</p>
+<p>1983年C++诞生。针对异常处理的语句结构问题从1984年到1989年间经历了多次讨论，C++语言最终确认追加一种语句结构，把关键字<code>try</code>放在那些被括起来的可能出错代码的前面，把关键字<code>catch</code>放在捕捉并处理错误的代码块前面。<em>按照C++语言设计者斯特劳斯特卢普（Bjarne Stroustrup）的说法，<code>try</code>只是一个为了方便理解的修饰符。</em> 另外还使用<code>throw</code>这一关键字作为触发异常的命令，是因为更易理解的<code>raise</code>和<code>singal</code>两个关键字已经在标准库作为函数名字占用了。</p>
+<p>1993年发布的Windows NT 3.1在操作系统和C语言编译器导入了结构化异常处理（Structured Exception Handling，SEH）的概念。结构化异常处理中，除了将可能出错的代码括起来的<code>__try</code>和将错误处理的代码括起来的<code>__except</code>之外，还有将即使出错也要执行的代码括起来的<code>__finally</code>。</p>
+<h3 id="为什么要引入finally"><a href="#为什么要引入finally" class="headerlink" title="为什么要引入finally"></a>为什么要引入finally</h3><p>程序在意料之外结束时，也可以正常的释放锁定的内存和文件等资源，无遗漏的执行成对操作。对于错误处理，要能够不使用返回值检查和<code>goto</code>语句，简洁的实现。</p>
+<p>后来Java，Python，Ruby等语言都使用了<code>finally</code>。</p>
+<p>C++语言中没有<code>finally</code>。C++语言中使用了一种名叫RAII（Resource Acquisition Is Initialization，资源获取即初始化）的技术。比如，在操作打开了就要关闭的文件对象时，定义来操作该对象的类，用构造函数打开，用析构函数关闭。函数结束时，针对函数局部变量，程序可以自动调用析构函数。</p>
+<p>2001年出现的D语言以改良C++语言为目标，反对 <em>RAII是优雅的</em>这一意见。<strong>打开了就要关闭这样紧密关联的操作，反映在代码上时，如果能放在相近的位置就容易理解多了。</strong>基于这一考虑，D语言中引入了作用域守护（scope guard）的概念。通过使用作用域守护，可以事先定义从某一 <em>作用域</em>（如函数）跳出时执行的操作。 </p>
+<h3 id="何时抛出异常"><a href="#何时抛出异常" class="headerlink" title="何时抛出异常"></a>何时抛出异常</h3><p>发生错误应该停止操作立刻报告，这一设计思想被称为错误优先（fail first）。</p>
+<h3 id="异常传递"><a href="#异常传递" class="headerlink" title="异常传递"></a>异常传递</h3><p>包括Java在内的很多现代语言的异常处理机制中，异常可以传递到调用方。这一设计有一个很大的问题。那就是，即使看到了函数f的代码也不知道函数f可能会抛出什么异常。有可能是函数f调用的另外的函数g中抛出的异常传递过来的，也有可能是函数g调用的函数h抛出的异常。也就是说，如果不看见函数f调用的所有的函数代码，就无从得知函数f抛出何种异常。万一没有察觉到抛出某种异常的可能性，程序就有可能异常终止。</p>
+<p>Goodenough主张为了避免这一问题，需要明确地声明可能抛出的异常。Java语言就采用了这一方针。</p>
+<p>其他语言中所谓的异常，Java语言中的<code>throw</code>语句也能抛出，并进一步分为三类：</p>
+<ul>
+<li>不应该做异常处理的重大问题</li>
+<li>可做异常处理的运行时异常</li>
+<li>可做异常处理的其他异常</li>
+</ul>
+<p>这里的其他异常叫做 <strong>检查型异常</strong>，如果在方法之外抛出，就需要在定义方法时声明，<code>throws</code>就是为这个目的准备的。</p>
+<p>实现异常处理的小栗子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;</span><br><span class="line">    <span class="comment">// shippai跑出MyException异常</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">shippai</span><span class="params">()</span> <span class="keyword">throws</span> MyException </span>&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> MyException();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 1. 使用shippai方法声明`throws MyException`</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span> <span class="keyword">throws</span> MyException </span>&#123;</span><br><span class="line">        shippai();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 2. 使用catch捕获MyException异常，进行错误处理</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">bar</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            shippai();</span><br><span class="line">        &#125;<span class="keyword">catch</span>(MyException e) &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyException</span> <span class="keyword">extends</span> <span class="title">Exception</span>()</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="异常处理的问题"><a href="#异常处理的问题" class="headerlink" title="异常处理的问题"></a>异常处理的问题</h3><p>一个是当函数有不只一个出口时，必须成对处理的操作很难正确地成对处理。另一个是即便看了代码也不知道函数将抛出何种异常。Java语言的开发者为了解决第二个问题导入了检查型异常，但是这种方法并不太被接受。C#语言的开发者一方面承认检查型异常的优势，另一方面希望有更好的方法出现。</p>
+<p>检查型异常的问题：可以说检查型异常是一种非常好的机制。但是这种机制并没有很好地普及到其他语言中。因为它太麻烦。一旦<code>throws</code>或<code>try/catch</code>中异常的数目增多，或者某一方法需要追加一种异常，就不得不修改调用了该方法的所有方法，特别麻烦。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2017/07/08/books/代码之髓-语法&流程&函数&错误处理/" data-id="cjogni49s000hqshsc6chqfaj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-books/代码之髓-如何高效的学习语言" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/08/books/代码之髓-如何高效的学习语言/" class="article-date">
+  <time datetime="2017-07-08T09:17:00.000Z" itemprop="datePublished">2017-07-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/08/books/代码之髓-如何高效的学习语言/">代码之髓读后感——如何高效的学习语言</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://news.cnblogs.com/n/153825/" target="_blank" rel="noopener">王垠：如何掌握程序语言</a></p>
+<p>《代码之髓》这本书里提出了三种学习语言的方法—— <em>如何高效的学习语言？</em></p>
+<ol>
+<li>在比较中学习</li>
+<li>在历史中学习</li>
+<li>在实践中学习</li>
+</ol>
+<h1 id="在比较中学习"><a href="#在比较中学习" class="headerlink" title="在比较中学习"></a>在比较中学习</h1><p>通过比较多种语言，总结出某种语言的独有特点，以及多种语言的共有特点。</p>
+<p>借用王垠的一些话——</p>
+<blockquote>
+<p>重视语言特性，而不是语言。<br>何一种“语言”，都是各种“语言特性”的组合。<br>每一种语言里面必然有一套“通用”的特性。比如变量，函数，整数和浮点数运算，等等。这些是每个通用程序语言里面都必须有的，一个都不能少。你只要通过“某种语言”学会了这些特性，掌握这些特性的根本概念，就能随时把这些知识应用到任何其它语言。<br>掌握了通用的语言特性，剩下的就只剩某些语言“特有”的特性了。研究语言的人都知道，要设计出新的，好的，无害的特性，是非常困难的。所以一般说来，一种好的语言，它所特有的新特性，终究不会超过一两种。如果有个语言号称自己有超过 5 种新特性，那你就得小心了，因为它们带来的和可能不是优势，而是灾难！</p>
+</blockquote>
+<p>各种语言之中，都有着共性，这是基本，而个性只是部分点。</p>
+<p>在比较中学习，可以帮助我们更清楚地意识到：</p>
+<p>哪些点是共性——就是上面王垠所谓的“语言特性”，因为这才是语言的基本。掌握了这些共性，对于我们的语言学习有着极大的帮助。这通常确定着一门语言的基本架构方式，大致的代码雏形，以及基本流程。这会告诉我们如何去站立，如何去行走。</p>
+<p>哪些点是个性——这个是需要我们深入使用时需要考虑的点。因为一般这些东西，都是一些在当前特定的条件下的，“如此做更为方便”的方法。有时候这些东西可能不是必要的考量，但是掌握他们，对于此门语言使用往往会起到提升整体质量的作用。甚至促使我们对于解决适当的问题有着更为灵活多选的方式。这会告诉我们如何在现在的路上奔跑，跳跃。因为这时候更加关注了这条路上的细节，哪里有坑，哪里有捷径…</p>
+<blockquote>
+<p>因为掌握了语言特性的人都知道，自己需要的特性，在任何语言里面一定有对应的表达方式。</p>
+</blockquote>
+<p>借用在当下的语境中，重视在对比中学习，体会到更多的语言特性，会帮助我们对于语言的学习变得更加有一种直观的感受。我们的思维中，解决问题变得自然而然。编程就是把思维映射到机器中的途径而已。我们已经知道什么样的想法可以用怎样的工具来实现，那实现想法也不就是一段段思路的拼接的过程么？</p>
+<p>我们有时会发现，编程其实并不难，似乎就是需要了解下这门语言中有着哪些工具可供我们利用，我们需要做的就是熟悉这样一套系统，一台大型设备的各种功能。但是我们最后会发现，也只有那些其他工具也具有的功能，才是我们最起码要知道的。那些高精尖的技巧，也不过是在特殊环境下的应对方式。</p>
+<p>感觉学起来好像很容易，但是实际上我们在学习中总是会迷失在各种细节中，最典型的就是类似于C中关于输出的格式的翻炒——</p>
+<blockquote>
+<p>举个夸张点的例子。我发现很多编程培训班和野鸡大学的编程入门课，往往一来就教学生如何使用 printf 打印“Hello World！”，进而要他们记忆 printf 的各种“格式字符”的意义，要他们实现各种复杂格式的打印输出，甚至要求打印到文本文件里，然后再读出来……</p>
+</blockquote>
+<p>对于掌握编程的核心概念来说，这些其实都是次要的。</p>
+<p>总而言之，通过对比学习，你会更容易发现真正的语言特性究竟是什么。学习编程到底要学习什么。</p>
+<h1 id="在历史中学习"><a href="#在历史中学习" class="headerlink" title="在历史中学习"></a>在历史中学习</h1><p>通过追溯语言的发展历史，了解语言是如何产生，变化，消失的，探寻语言发展演变的轨迹。</p>
+<p>有时候，我们在学习中，对于一些功能的学习，往往会不明所以，这其实是因为，对于这种功能，你自己从内在其实并没有觉得理所当然，就像是为什么要有类这一类的问题其实潜在的就在你的心头萦绕着，这使得你的学习，会变得茫然，就像我们最初学习线性代数，上来就整一堆定义，先把你整晕，再来一堆定理，往往不明所以，直接就迷失了，到头来脑袋空空，真正的实际应用中，什么也变不出来。所以我到现在对于线性代数还是充满了敬畏。</p>
+<p>在历史中学习，能帮助我们更加清晰地了解那些被掩埋的细节。回看语言设计者为了解决何种问题而创造出这样一种语言，阅读其发展变迁的历史，那些功能的缘由就会变得清晰，你也就会更加认同其中所蕴含的现实意义。</p>
+<p>而从历史中学习，也是有助于我们更容易了解到语言的特性，那些非特性的部分为什么被创造出来，是为了解决一种什么样的具体问题。这些都有助于加深我们对于语言的理解。</p>
+<h1 id="在实践中学习"><a href="#在实践中学习" class="headerlink" title="在实践中学习"></a>在实践中学习</h1><p>亲自进行程序设计，边实践边思考如何编程，才能深入了解设计者的意图，同时也能发现自己原先理解的不到位之处。</p>
+<p>这是这行的至上真理。</p>
+<hr>
+<p><strong>三种学习的方式，实际上是为了满足我们学习语言的三种情绪：希望快速掌握的迫切，对于未知事物的求真以及对于自我认知的测验</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2017/07/08/books/代码之髓-如何高效的学习语言/" data-id="cjogni49d0005qshsnnn5ixxf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-langs/java/Java初入" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/01/langs/java/Java初入/" class="article-date">
+  <time datetime="2017-07-01T10:40:59.000Z" itemprop="datePublished">2017-07-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/01/langs/java/Java初入/">Java学习笔记——基础1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>(因为我粗略学过C,C++,Python，了解过他们的一些语法，所以为了使得java的入门更为顺畅，便会忽略一些和C语法相类似的地方，着重点明一些java自己的特色之处。也减轻一下自己写文字的负担。)</p>
+</blockquote>
+<p>JAVA是一门<a href="https://www.zhihu.com/question/19918532" target="_blank" rel="noopener">静态的强类型</a>的面向对象的重量级的编程语言。</p>
+<p>一般写JAVA程序需要的组件是JDK，到甲骨文的网站上下载即可。</p>
+<p>初级阶段使用文本编辑器即可，当然，我正处在这个阶段。</p>
+<p>此时用来编译运行JAVA文件常用的两条命令是</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">javac -encoding utf-<span class="number">8</span> filename.java</span><br><span class="line">java filename</span><br></pre></td></tr></table></figure>
+<p>以上命令就是先使用<code>javac</code>在java文件当前目录下，编译生成字节码文件<code>filename.class</code>，之后再用<code>java</code>解释执行成特定平台的机器码，输出。<br>这里指定了编码格式，因为java默认文件为unicode编码，但是文件中有中文，会有错误提示。</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">错误：编码GBK的不可映射字符</span><br></pre></td></tr></table></figure>
+<p>若是你没有这个问题，则可以忽略那个<code>-encoding utf-8</code></p>
+<hr>
+<h2 id="java源文件的命名"><a href="#java源文件的命名" class="headerlink" title="java源文件的命名"></a>java源文件的命名</h2><p>和c，c++，python不同，java要求，源文件后缀名为<code>.java</code>，文件名字一般要求和文件中的 <em>public class</em> 同名，若是没有定义，那就没有限制了。这也可以看出，<strong>一个java源文件中只能最多有一个 <em>public class</em></strong>。通常建议一个java源文件只定义一个类，让java的源文件主文件名与该源文件中定义的 <em>public class</em>同名。</p>
+<h2 id="java程序的结构"><a href="#java程序的结构" class="headerlink" title="java程序的结构"></a>java程序的结构</h2><p><em>java程序必须以类的形式存在</em>，类是java程序的最小单位，java不允许除类外的可执行语句，方法等成分独立存在。他们必须放在类定义里。</p>
+<p>例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello World"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>观察上例，与文件同名的 <em>public class</em> <code>HelloWorld</code>，内部包含一个<code>main()</code>方法，使用<code>System.out.println(&quot;Hello World&quot;);</code>实现对于文本的输出，类似的有个<code>System.out.print(&quot;Hello World&quot;);</code>，差别就在于前者会换行。</p>
+<p>目前用到的<code>main()</code>函数都是这样写的，关于详细内容之后的文章会介绍。</p>
+<p><em>若是存在多个类怎么办？</em></p>
+<p>可见下例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">jump</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"正在执行jump方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.jump();</span><br><span class="line">        System.out.println(<span class="string">"正在执行run方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DogTest</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Dog dog = <span class="keyword">new</span> Dog();</span><br><span class="line">        dog.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因为只允许有一个<code>public class</code>，故而其他的就是普通的类的形式。</p>
+<h2 id="java中的流程控制语句"><a href="#java中的流程控制语句" class="headerlink" title="java中的流程控制语句"></a>java中的流程控制语句</h2><pre><code>if (...){
+    ...
+}
+else if{
+    ...
+}
+else{
+    ...
+}
+
+switch (...){
+    case ...:{
+    ...
+    break;
+    }
+    ...
+    default:{
+    ...
+    }
+}
+
+while (...){
+    ...
+}
+
+do{
+    ...
+}while (...);
+
+for (...; ...; ...){
+    ...
+}
+</code></pre><p>Java中出现了一种迭代式的for的用法。python和C++都有类似的语法结构。</p>
+<pre><code>for ( type variableName : array | collection){
+    // variableName 自动迭代访问每个元素
+}
+</code></pre><p>例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ForEachTest</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        String[] books = &#123;<span class="string">"轻量级"</span>,</span><br><span class="line">                        <span class="string">"fengkuang"</span>,</span><br><span class="line">                        <span class="string">"jiangyi"</span>&#125;;</span><br><span class="line">        <span class="comment">// 使用foreach迭代遍历。</span></span><br><span class="line">        <span class="keyword">for</span>(String book : books)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(book);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2017/07/01/langs/java/Java初入/" data-id="cjogni4ff003yqshsmfm3qvux" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-langs/cpp/链表操作" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/12/langs/cpp/链表操作/" class="article-date">
+  <time datetime="2017-03-12T15:42:09.000Z" itemprop="datePublished">2017-03-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/12/langs/cpp/链表操作/">数据结构之链表相关算法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>问题：</strong></p>
+<blockquote>
+<p>请编写算法实现：<br>(1) InsertAtHead()：从键盘读入正整数n,再读入n个升序整数，用头插法建立带表头结点的降序单链表La；<br>(2) InsertAtTail()：从键盘读入正整数m,再读入m个升序整数，用尾插法建立带表头结点的升序单链表Lb；<br>(3) PrintList()：分别输出显示有序单链表La和Lb;<br>(4) ReverseList()：将降序单链表La就地逆置成升序；<br>(5) MergeList()：将两个升序单链表La和Lb合并成升序单链表Lc并输出显示；<br>(6) DelOdd()：将有序单链表Lc中数据域值为奇数的所有元素删除，然后输出显示。</p>
+</blockquote>
+<p><strong>遇到的比较严重的问题：</strong></p>
+<p><em>for条件部分使用变量</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">InsertAtHead</span><span class="params">(LinkList &amp;La)</span></span></span><br><span class="line"><span class="function"></span>&#123;<span class="comment">// 从键盘读入正整数n, 再读入n个升序整数，用头插法建立带表头结点的降序单链表La；</span></span><br><span class="line">    <span class="keyword">int</span> n, j;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"请输入正整数n:"</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"请输入n个升序整数:\n"</span>);</span><br><span class="line">    LinkList s;</span><br><span class="line"><span class="comment">//*********************************************************************//</span></span><br><span class="line"><span class="comment">//这里的n会在后面被变化。所以说，在条件部分使用变量，后面再次使用时要小心</span></span><br><span class="line"><span class="comment">//*********************************************************************//</span></span><br><span class="line">    <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; n; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">        <span class="keyword">if</span> (n &lt;= <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> ERROR;</span><br><span class="line"></span><br><span class="line">        s = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LinkNode));</span><br><span class="line">        s-&gt;number = n;</span><br><span class="line">        s-&gt;next = La-&gt;next;</span><br><span class="line">        La-&gt;next = s;<span class="comment">//s插到了La的后面</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        La = La-&gt;next;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>, La-&gt;number);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>在链表使用引用传递到子函数指针后，误对同名量进行一些操作，而导致头指针变化，是的后面的继续使用出现不可预知的麻烦。</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">"\n删减后的链表:\n"</span>);</span><br><span class="line">p = Lc;</span><br><span class="line"><span class="comment">//**********************************************//</span></span><br><span class="line"><span class="comment">//这里使用了新的指针来代替运算，避免了引用量的改变</span></span><br><span class="line"><span class="comment">//**********************************************//</span></span><br><span class="line"><span class="keyword">int</span> j = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span> (j++)</span><br><span class="line">&#123;</span><br><span class="line">    p = p-&gt;next;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d "</span>, p-&gt;number);</span><br><span class="line">    <span class="keyword">if</span> (!p-&gt;next)</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>正确版本（待优化）：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TRUE 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FALSE 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OK 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ERROR 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INFEASIBLE -1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OVERFLOW -2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Status;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> number;<span class="comment">// 序号</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>* <span class="title">next</span>;</span><span class="comment">// 指向下一个节点的指针</span></span><br><span class="line">&#125;LinkNode, *LinkList;<span class="comment">// 指向结构体的指针</span></span><br><span class="line"></span><br><span class="line"><span class="function">Status <span class="title">InsertAtHead</span><span class="params">(LinkList &amp;La)</span></span></span><br><span class="line"><span class="function"></span>&#123;<span class="comment">// 从键盘读入正整数n, 再读入n个升序整数，用头插法建立带表头结点的降序单链表La；</span></span><br><span class="line">    La = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct LinkNode));</span><br><span class="line">    La-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"请输入正整数n:"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> n, j;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"请输入%d个升序整数:\n"</span>, n);</span><br><span class="line"></span><br><span class="line">    LinkList s;</span><br><span class="line">    <span class="keyword">for</span> (j = n; j &gt; <span class="number">0</span>; j--)</span><br><span class="line">    &#123;</span><br><span class="line">        s = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LinkNode));</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;s-&gt;number);</span><br><span class="line">        <span class="keyword">if</span> (s-&gt;number &lt;= <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> ERROR;</span><br><span class="line"></span><br><span class="line">        s-&gt;next = La-&gt;next;</span><br><span class="line">        La-&gt;next = s;<span class="comment">//s插到了La的后面</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Status <span class="title">InsertAtTail</span><span class="params">(LinkList &amp;Lb)</span></span></span><br><span class="line"><span class="function"></span>&#123;<span class="comment">// 从键盘读入正整数m,再读入m个升序整数，用尾插法建立带表头结点的升序单链表Lb；</span></span><br><span class="line">    Lb = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct LinkNode));</span><br><span class="line">    Lb-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"请输入正整数m:"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> m, j;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;m);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"请输入%d个升序整数:\n"</span>, m);</span><br><span class="line"></span><br><span class="line">    LinkList s, tail;</span><br><span class="line">    tail = Lb;</span><br><span class="line">    <span class="keyword">for</span> (j = m; j &gt; <span class="number">0</span>; j--)</span><br><span class="line">    &#123;</span><br><span class="line">        s = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LinkNode));</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;s-&gt;number);</span><br><span class="line">        <span class="keyword">if</span> (s-&gt;number &lt;= <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> ERROR;</span><br><span class="line"></span><br><span class="line">        s-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">        tail-&gt;next = s;</span><br><span class="line">        tail = s;<span class="comment">// tail就相当于是帮助s移动的一个游标</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Status <span class="title">PrintList</span><span class="params">(LinkList La, LinkList Lb)</span></span></span><br><span class="line"><span class="function"></span>&#123;<span class="comment">// 分别输出显示有序单链表La和Lb;</span></span><br><span class="line">    <span class="keyword">int</span> i_a, i_b;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\nLa:\n"</span>);</span><br><span class="line">    <span class="keyword">for</span> (i_a = <span class="number">0</span>;; i_a++)</span><br><span class="line">    &#123;</span><br><span class="line">        La = La-&gt;next;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, La-&gt;number);</span><br><span class="line">        <span class="keyword">if</span> (!La-&gt;next)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\nLb:\n"</span>);</span><br><span class="line">    <span class="keyword">for</span> (i_b = <span class="number">0</span>;; i_b++)</span><br><span class="line">    &#123;</span><br><span class="line">        Lb = Lb-&gt;next;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, Lb-&gt;number);</span><br><span class="line">        <span class="keyword">if</span> (!Lb-&gt;next)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Status <span class="title">ReverseList</span><span class="params">(LinkList &amp;La)</span></span></span><br><span class="line"><span class="function"></span>&#123;<span class="comment">// 将降序单链表La就地逆置成升序；</span></span><br><span class="line">    LinkList o = La-&gt;next, p, q;<span class="comment">// 用于交换的一个中介指针。</span></span><br><span class="line"></span><br><span class="line">    p = o-&gt;next;</span><br><span class="line">    q = p-&gt;next;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (index++)</span><br><span class="line">    &#123;</span><br><span class="line">        p-&gt;next = o;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (q == <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            La-&gt;next-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">            La-&gt;next = p;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        o = p;</span><br><span class="line">        p = q;</span><br><span class="line">        q = q-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n调整后的La:\n"</span>);</span><br><span class="line">    q = La;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i_a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (i_a++)</span><br><span class="line">    &#123;</span><br><span class="line">        q = q-&gt;next;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, q-&gt;number);</span><br><span class="line">        <span class="keyword">if</span> (!q-&gt;next)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Status <span class="title">MergeList</span><span class="params">(LinkList La, LinkList Lb, LinkList &amp;Lc)</span></span></span><br><span class="line"><span class="function"></span>&#123;<span class="comment">// 将两个升序单链表La和Lb合并成升序单链表Lc并输出显示；</span></span><br><span class="line">    LinkList p, q;</span><br><span class="line"></span><br><span class="line">    Lc = Lb;</span><br><span class="line">    p = La-&gt;next;</span><br><span class="line">    q = Lb-&gt;next;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (index++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (p-&gt;number &lt;= q-&gt;number)</span><br><span class="line">        &#123;<span class="comment">// La中的数据小于Lb的，则插到Lb的q的前面</span></span><br><span class="line">            Lb-&gt;next = p;<span class="comment">// 关联上要插入的节点</span></span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">            Lb = Lb-&gt;next;<span class="comment">// Lb移动到插入的节点上</span></span><br><span class="line">            Lb-&gt;next = q;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;<span class="comment">// La中的数据更大，则向后移动Lb和q，</span></span><br><span class="line">            Lb = Lb-&gt;next;</span><br><span class="line">            q = q-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!p)<span class="comment">// La中的游标先到最后节点</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (!q)<span class="comment">// Lb中的游标先到最后节点</span></span><br><span class="line">        &#123;</span><br><span class="line">            Lb-&gt;next = p;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n合并后的链表:\n"</span>);</span><br><span class="line">    p = Lc;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (j++)</span><br><span class="line">    &#123;</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, p-&gt;number);</span><br><span class="line">        <span class="keyword">if</span> (!p-&gt;next)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Status <span class="title">DelOdd</span><span class="params">(LinkList &amp;Lc)</span></span></span><br><span class="line"><span class="function"></span>&#123;<span class="comment">// 将有序单链表Lc中数据域值为奇数的所有元素删除，然后输出显示。</span></span><br><span class="line">    LinkList q = Lc;</span><br><span class="line">    LinkList p = Lc-&gt;next;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (index++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (p-&gt;number % <span class="number">2</span>)<span class="comment">// p是要被删除的</span></span><br><span class="line">        &#123;</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">            <span class="keyword">if</span> (!p)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        q-&gt;next = p;</span><br><span class="line">        q = q-&gt;next;</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">        <span class="keyword">if</span> (!p)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n删减后的链表:\n"</span>);</span><br><span class="line">    p = Lc;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (j++)</span><br><span class="line">    &#123;</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, p-&gt;number);</span><br><span class="line">        <span class="keyword">if</span> (!p-&gt;next)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList La, Lb, Lc;</span><br><span class="line">    InsertAtHead(La);</span><br><span class="line">    InsertAtTail(Lb);</span><br><span class="line">    PrintList(La, Lb);</span><br><span class="line">    ReverseList(La);</span><br><span class="line">    MergeList(La, Lb, Lc);</span><br><span class="line">    DelOdd(Lc);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2017/03/12/langs/cpp/链表操作/" data-id="cjogni4ez003sqshs9pjnvwp8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-langs/cpp/约瑟夫环问题" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/10/langs/cpp/约瑟夫环问题/" class="article-date">
+  <time datetime="2017-03-10T14:38:52.000Z" itemprop="datePublished">2017-03-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/10/langs/cpp/约瑟夫环问题/">约瑟夫环问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>问题：</strong></p>
+<blockquote>
+<p>约瑟夫环问题：</p>
+<p>问题描述：设有编号为1，2，3……n的n个人顺时针方向围坐一圈，每人有一密码（正整数）。开始时给出一报数上限m，从编号为1的人开始报数，报m的人出列；以后将出列者的密码作为新的m，从顺时针方向紧挨着他的下一个人开始报数……直至所有人出列。试编算法，求出出列顺序。</p>
+<p>要求：</p>
+<ol>
+<li>用不带头结点的单向循环链表实现</li>
+<li>从键盘输入n，m</li>
+<li>各人的密码由计算机随机产生(1~10的正整数，也可以自己指定)</li>
+</ol>
+<p>测试数据：</p>
+<p>假设m的初值为6；n=7。7个人的密码依次是：3,1,7,2,4,8,4  则出列的顺序为:  6,1,4,7,2,3,5</p>
+</blockquote>
+<p><strong>1.0 版本</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> NUM 7 <span class="comment">//人的总个数</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> members[<span class="number">1</span> + NUM] = &#123; <span class="number">0</span>, <span class="number">3</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">22</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">15</span> &#125;;<span class="comment">//间隔多少个人</span></span><br><span class="line">    <span class="comment">//将各个成员的存在状态用一个仅有0和1的int数组表述</span></span><br><span class="line">    <span class="comment">//1存在；0退出</span></span><br><span class="line">    <span class="keyword">int</span> <span class="keyword">bool</span>[<span class="number">1</span> + NUM];<span class="comment">//存在状态数组</span></span><br><span class="line">    <span class="keyword">int</span> *p = <span class="keyword">bool</span>;<span class="comment">//循环指针</span></span><br><span class="line">    <span class="keyword">int</span> i_1;<span class="comment">//循环指数</span></span><br><span class="line">    <span class="keyword">for</span> (i_1 = <span class="number">1</span>; i_1 &lt;= NUM; i_1++)<span class="comment">//初始化</span></span><br><span class="line">        *(p + i_1) = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//给定第一步进数</span></span><br><span class="line">    <span class="keyword">int</span> init_step = <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//先将特殊的第一个处理掉，后面的有规律</span></span><br><span class="line">    <span class="keyword">int</span> i_2;<span class="comment">//循环指数</span></span><br><span class="line">    <span class="keyword">if</span> (init_step % NUM != <span class="number">0</span>)<span class="comment">//有余数</span></span><br><span class="line">    &#123;</span><br><span class="line">        *(p + init_step % NUM) = <span class="number">0</span>;</span><br><span class="line">        i_2 = init_step % NUM;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span><span class="comment">//无余数</span></span><br><span class="line">    &#123;</span><br><span class="line">        *(p + NUM) = <span class="number">0</span>;</span><br><span class="line">        i_2 = NUM;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"退出：%d \n"</span>, i_2);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//处理后面的数据</span></span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">0</span>;      <span class="comment">//j统计经过的未退出的人数，至上一个退出人的数据后，归零</span></span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">1</span>;  <span class="comment">//统计退出的人数</span></span><br><span class="line">    <span class="keyword">int</span> death;      <span class="comment">//退出者的序号</span></span><br><span class="line">    death = i_2;</span><br><span class="line">    <span class="keyword">for</span> (;; ++i_2)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (*(p + i_2) == <span class="number">1</span>)<span class="comment">//此人还活着</span></span><br><span class="line">        &#123;</span><br><span class="line">            j++;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (j == members[death])</span><br><span class="line">            &#123;</span><br><span class="line">                *(p + i_2) = <span class="number">0</span>;</span><br><span class="line">                death = i_2;</span><br><span class="line">                j = <span class="number">0</span>;</span><br><span class="line">                count++;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"退出：%d \n"</span>, i_2);</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (count == NUM)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"最后退出：%d \n"</span>, i_2);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (i_2 == NUM)</span><br><span class="line">            i_2 = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>2.0 版本</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用循环链表来解决约瑟夫环问题</span></span><br><span class="line"><span class="comment">//需要对链表实现的功能：</span></span><br><span class="line"><span class="comment">//1. 初始化链表节点值</span></span><br><span class="line"><span class="comment">//2. 删掉对应元素</span></span><br><span class="line"><span class="comment">//3. 返回对应值和序号</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> NUM 7</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TRUE 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FALSE 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OK 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ERROR 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INFEASIBLE -1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OVERFLOW -2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Status;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> number;<span class="comment">// 序号</span></span><br><span class="line">    <span class="keyword">int</span> data;<span class="comment">// 对应的步进</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>* <span class="title">next</span>;</span><span class="comment">// 指向下一个节点的指针</span></span><br><span class="line">&#125;LinkNode, *LinkList;<span class="comment">// 指向结构体的指针</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> members[NUM] = &#123; <span class="number">3</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">22</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">15</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设立尾指针的单循环链表</span></span><br><span class="line"><span class="function">Status <span class="title">ListInit_CL</span><span class="params">(LinkList &amp;L)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList l = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct LinkNode));</span><br><span class="line">    <span class="keyword">if</span> (!l)</span><br><span class="line">        <span class="built_in">exit</span>(OVERFLOW);</span><br><span class="line"></span><br><span class="line">    L = l;<span class="comment">// L就当作首，方便最后传出时，L没有变化</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> index;</span><br><span class="line">    <span class="keyword">for</span> (index = <span class="number">0</span>; index &lt; NUM<span class="number">-1</span>; index++)<span class="comment">// 循环赋值</span></span><br><span class="line">    &#123;</span><br><span class="line">        l-&gt;data = members[index];</span><br><span class="line">        l-&gt;number = index + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        LinkList q = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct LinkNode));<span class="comment">// 临时存储</span></span><br><span class="line">        <span class="keyword">if</span> (!q) <span class="comment">// 分配失败</span></span><br><span class="line">            <span class="keyword">return</span> OVERFLOW;</span><br><span class="line"></span><br><span class="line">        l-&gt;next = q;</span><br><span class="line">        l = q;<span class="comment">// 移位，当在最后一次的循环中，l所在是空的</span></span><br><span class="line">        q = <span class="literal">NULL</span>;</span><br><span class="line">        <span class="built_in">free</span>(q);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    l-&gt;data = members[index];</span><br><span class="line">    l-&gt;number = index + <span class="number">1</span>;</span><br><span class="line">    l-&gt;next = L;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除第i个元素,并由number,data返回其序号和值</span></span><br><span class="line"><span class="function">Status <span class="title">ListDelete_CL</span><span class="params">(LinkList &amp;L, <span class="keyword">int</span> i, <span class="keyword">int</span> &amp;number, <span class="keyword">int</span> &amp;data)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList q;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; i - <span class="number">1</span>; j++)<span class="comment">// 移动i-1次，寻找后面第i-1个结点</span></span><br><span class="line">        L = L-&gt;next;</span><br><span class="line"></span><br><span class="line">    q = L-&gt;next;<span class="comment">// q指向待删除结点</span></span><br><span class="line">    L-&gt;next = q-&gt;next;<span class="comment">// L-&gt;next指向被删除节点的下一个，后面的计数就是从L现在往后第i个了</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//返回被删除节点序号与值</span></span><br><span class="line">    data = q-&gt;data;</span><br><span class="line">    number = q-&gt;number;</span><br><span class="line">    <span class="built_in">free</span>(q);<span class="comment">// 释放待删除结点</span></span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList L = <span class="literal">NULL</span>;<span class="comment">// 头指针，指向类似的结构体的指针</span></span><br><span class="line">    <span class="keyword">if</span> (!ListInit_CL(L))</span><br><span class="line">        <span class="keyword">return</span> ERROR;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i, get_data, get_number, given_num;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"请输入你想要的数字:\n"</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;given_num);</span><br><span class="line"></span><br><span class="line">    ListDelete_CL(L, given_num<span class="number">-1</span>, get_number, get_data);<span class="comment">// 删除第一个人对应的下一个人</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"第%d位被剔除,他的信息是%d\n"</span>, get_number, get_data);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> index;</span><br><span class="line">    <span class="keyword">for</span> (index = <span class="number">0</span>; index &lt; NUM - <span class="number">2</span>; index++)<span class="comment">// 只删除n-2个，除了前面删除的一个，最后剩下的就是没有删除的。</span></span><br><span class="line">    &#123;</span><br><span class="line">        ListDelete_CL(L, get_data, get_number, get_data);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"第%d位被剔除,他的信息是%d\n"</span>, get_number, get_data);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"第%d位被剩下\n"</span>, L-&gt;number);</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>3.0 版本</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用循环链表来解决约瑟夫环问题</span></span><br><span class="line"><span class="comment">//需要对链表实现的功能：</span></span><br><span class="line"><span class="comment">//1. 初始化链表节点值</span></span><br><span class="line"><span class="comment">//2. 删掉对应元素</span></span><br><span class="line"><span class="comment">//3. 返回对应值和序号</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TRUE 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FALSE 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OK 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ERROR 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INFEASIBLE -1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OVERFLOW -2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Status;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> number;<span class="comment">// 序号</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>* <span class="title">next</span>;</span><span class="comment">// 指向下一个节点的指针</span></span><br><span class="line">&#125;LinkNode, *LinkList;<span class="comment">// 指向结构体的指针</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 设立尾指针的单循环链表</span></span><br><span class="line"><span class="function">Status <span class="title">ListInit_CL</span><span class="params">(LinkList &amp;L, <span class="keyword">int</span> given_people)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList l = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct LinkNode));</span><br><span class="line">    <span class="keyword">if</span> (!l)</span><br><span class="line">        <span class="built_in">exit</span>(OVERFLOW);</span><br><span class="line"></span><br><span class="line">    L = l;<span class="comment">// L就当作首，方便最后传出时，L没有变化</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> index;</span><br><span class="line">    <span class="keyword">for</span> (index = <span class="number">0</span>; index &lt; given_people<span class="number">-1</span>; index++)<span class="comment">// 循环赋值</span></span><br><span class="line">    &#123;</span><br><span class="line">        l-&gt;number = index + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        LinkList q = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct LinkNode));<span class="comment">// 临时存储</span></span><br><span class="line">        <span class="keyword">if</span> (!q) <span class="comment">// 分配失败</span></span><br><span class="line">            <span class="keyword">return</span> OVERFLOW;</span><br><span class="line"></span><br><span class="line">        l-&gt;next = q;</span><br><span class="line">        l = q;<span class="comment">// 移位，当在最后一次的循环中，l所在是空的</span></span><br><span class="line">        q = <span class="literal">NULL</span>;</span><br><span class="line">        <span class="built_in">free</span>(q);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    l-&gt;number = index + <span class="number">1</span>;</span><br><span class="line">    l-&gt;next = L;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除第i个元素,并由number返回其序号</span></span><br><span class="line"><span class="function">Status <span class="title">ListDelete_CL</span><span class="params">(LinkList &amp;L, <span class="keyword">int</span> i, <span class="keyword">int</span> &amp;number)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList q;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; i - <span class="number">1</span>; j++)<span class="comment">// 移动i-1次，寻找后面第i-1个结点</span></span><br><span class="line">        L = L-&gt;next;</span><br><span class="line"></span><br><span class="line">    q = L-&gt;next;<span class="comment">// q指向待删除结点</span></span><br><span class="line">    L-&gt;next = q-&gt;next;<span class="comment">// L-&gt;next指向被删除节点的下一个，后面的计数就是从L现在往后第i个了</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//返回被删除节点序号</span></span><br><span class="line">    number = q-&gt;number;</span><br><span class="line">    <span class="built_in">free</span>(q);<span class="comment">// 释放待删除结点</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, get_number, given_people, given_maxnum;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"请输入人数n,报数上限m\n"</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;given_people, &amp;given_maxnum);</span><br><span class="line">    <span class="keyword">if</span> (given_people &lt;= <span class="number">0</span> || given_maxnum &lt;= <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> ERROR;</span><br><span class="line"></span><br><span class="line">    LinkList L = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">if</span> (!ListInit_CL(L, given_people))</span><br><span class="line">        <span class="keyword">return</span> ERROR;</span><br><span class="line"></span><br><span class="line">    srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>));</span><br><span class="line">    <span class="keyword">int</span> rand_number;</span><br><span class="line">    ListDelete_CL(L, rand_number = rand() % given_maxnum + <span class="number">1</span> - <span class="number">1</span>, get_number);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"第%d位被剔除,对应的随机数是%d\n"</span>, get_number, rand_number + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> index;</span><br><span class="line">    <span class="keyword">for</span> (index = <span class="number">0</span>; index &lt; given_people - <span class="number">2</span>; index++)<span class="comment">// 只删除n-2个，除了前面删除的一个，最后剩下的就是没有删除的。</span></span><br><span class="line">    &#123;</span><br><span class="line">        ListDelete_CL(L, rand_number = rand() % given_maxnum + <span class="number">1</span>, get_number);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"第%d位被剔除,对应的随机数是%d\n"</span>, get_number, rand_number);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"第%d位被剩下\n"</span>, L-&gt;number);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2017/03/10/langs/cpp/约瑟夫环问题/" data-id="cjogni4ez003pqshsr2071hsf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/5/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/幻想与现实/">幻想与现实</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术与进步/">技术与进步</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活与思考/">生活与思考</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影与艺术/">电影与艺术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程与生活/">编程与生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录与总结/">记录与总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C++&C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChucK/">ChucK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/org-mode/">org-mode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/佳片/">佳片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开心麻花/">开心麻花</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/影视/">影视</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/校园/">校园</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爱情/">爱情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/琐事/">琐事</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科幻/">科幻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机原理/">计算机原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进阶/">进阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信/">通信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随感/">随感</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-C/" style="font-size: 14.29px;">C++&C</a> <a href="/tags/ChucK/" style="font-size: 20px;">ChucK</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/org-mode/" style="font-size: 10px;">org-mode</a> <a href="/tags/python/" style="font-size: 18.57px;">python</a> <a href="/tags/python3/" style="font-size: 10px;">python3</a> <a href="/tags/佳片/" style="font-size: 10px;">佳片</a> <a href="/tags/学习/" style="font-size: 17.14px;">学习</a> <a href="/tags/工具/" style="font-size: 11.43px;">工具</a> <a href="/tags/开心麻花/" style="font-size: 10px;">开心麻花</a> <a href="/tags/影视/" style="font-size: 11.43px;">影视</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/校园/" style="font-size: 10px;">校园</a> <a href="/tags/汇编/" style="font-size: 15.71px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/爱情/" style="font-size: 10px;">爱情</a> <a href="/tags/琐事/" style="font-size: 10px;">琐事</a> <a href="/tags/生活/" style="font-size: 11.43px;">生活</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/科幻/" style="font-size: 10px;">科幻</a> <a href="/tags/计算机原理/" style="font-size: 12.86px;">计算机原理</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/进阶/" style="font-size: 10px;">进阶</a> <a href="/tags/通信/" style="font-size: 10px;">通信</a> <a href="/tags/随感/" style="font-size: 10px;">随感</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/14/ceshi/">ceshi</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/25/ee/上网背后的流程/">上网背后的流程</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/15/life/这些衰败的日子/">这些衰败的日子</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/30/life/如懿如意/">如懿，如意</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/05/life/开心麻花几部电影/">开心麻花</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Lart Pang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

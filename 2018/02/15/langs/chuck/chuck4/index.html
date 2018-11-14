@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>chuck4 | 失乐园</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="arrays * declaring * multi-dimensional * lookup * associative arrays * assignment  #Arrays This sections specifies(指定) how arrays are declared and used in ChucK. Some quick notes: * arrays can be inde">
+<meta name="keywords" content="ChucK">
+<meta property="og:type" content="article">
+<meta property="og:title" content="chuck4">
+<meta property="og:url" content="https://plart.pw/2018/02/15/langs/chuck/chuck4/index.html">
+<meta property="og:site_name" content="失乐园">
+<meta property="og:description" content="arrays * declaring * multi-dimensional * lookup * associative arrays * assignment  #Arrays This sections specifies(指定) how arrays are declared and used in ChucK. Some quick notes: * arrays can be inde">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-13T12:46:46.446Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="chuck4">
+<meta name="twitter:description" content="arrays * declaring * multi-dimensional * lookup * associative arrays * assignment  #Arrays This sections specifies(指定) how arrays are declared and used in ChucK. Some quick notes: * arrays can be inde">
+  
+    <link rel="alternate" href="/atom.xml" title="失乐园" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">失乐园</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">代码与机器</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://plart.pw"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-langs/chuck/chuck4" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/15/langs/chuck/chuck4/" class="article-date">
+  <time datetime="2018-02-15T13:40:10.000Z" itemprop="datePublished">2018-02-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/编程与生活/">编程与生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      chuck4
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>arrays</p>
+<pre><code>* declaring
+* multi-dimensional
+* lookup
+* associative arrays
+* assignment 
+</code></pre><p>#Arrays</p>
+<p>This sections specifies(指定) how arrays are declared and used in ChucK. Some quick notes:</p>
+<pre><code>* arrays can be indexed by integer(整数) (0-indexed).
+* **any array can also be used as an associative(联想的) map, indexed by strings.**
+* it is important to note that the *integer-indexed portion(部分)* and the *associative portion* of an array are stored in separate namespaces
+* arrays are objects, and will behave similarly under *reference assignment(引用赋值)* and other operations common to objects. 
+</code></pre><p>#declaration</p>
+<p>Arrays(数组) can be declared in the following way:</p>
+<pre><code>// declare 10 element array of int, called foo
+int foo[10];
+
+// since array of int (primitive type), the contents
+// are automatically initialized to 0
+</code></pre><p>Arrays can also be initialized(初始化):</p>
+<pre><code>// chuck intializer(初始化器，程序) to array reference
+[ 1, 1, 2, 3, 5, 8 ] @=&gt; int foo[];
+</code></pre><p>In the above code, there are several things to note:</p>
+<pre><code>* initializers must contain *the same or similar types*. the compiler(编译器) will attempt to find *the highest common base type of all the elements(元素)*. **if no such common element is found, an error is reported.**
+* the type of the initializer `[ 1, 1, 2, 3, 5, 8 ]` is int[]. *the intializer is an array that can be used directly* when arrays are expected.
+* the at-chuck operator (`@=&gt;`) means assignment(分配), and is discussed at length(详细地) in operators and operations.
+* `int foo[]` is declaring an empty reference(引用) to an array(数组). the statement(声明) assigns(分配) the initializer array to foo.
+* arrays are objects. 
+</code></pre><p>When declaring an array of objects, the objects inside the array are automatically(自动的) instantiated(实例化).</p>
+<pre><code>// objects in arrays are automatically instantiated
+Object group[10];
+</code></pre><p>If you only want an array of object references:(对象引用数组)</p>
+<pre><code>// array of null object references
+Object @ group[10];
+</code></pre><p><a href="http://chuck.cs.princeton.edu/doc/language/class.html" target="_blank" rel="noopener">Check here</a> more information on object declaration and instantation in Chuck.</p>
+<p>The above examples are 1-dimensional arrays (or vectors(矢量)).</p>
+<p>#multi-dimensional arrays</p>
+<p>It is possible (and equally easy) to declare multi-dimensional arrays:</p>
+<pre><code>// declare 4 by 6 by 8 array of float
+float foo3D[4][6][8];//和C还是很像
+</code></pre><p>Initializers work in similar ways:</p>
+<pre><code>// declare 2 by 2 array of int
+[ [1,3], [2,4] ] @=&gt; int bar[][];
+</code></pre><p>In the above code, note the two <code>[][]</code> since we make a matrix. </p>
+<p>#lookup</p>
+<p>Elements in an array can be accessed using [] /(in the appropriate quantities).</p>
+<pre><code>// declare an array of floats
+[ 3.2, 5.0, 7 ] @=&gt; float foo[];
+
+// access the 0th element (debug print)
+&lt;&lt;&lt; foo[0] &gt;&gt;&gt;; // hopefully 3.2
+
+// set the 2nd element
+8.5 =&gt; foo[2];
+</code></pre><p>Looping over the elements of an array:</p>
+<pre><code>// array of floats again
+[ 1, 2, 3, 4, 5, 6 ] @=&gt; int foo[];
+//官方的例子这里是float，但是实际测试，整型不可以被分配到float里。
+
+// loop over the entire array
+for( 0 =&gt; int i; i &lt; foo.cap(); i++ )//foo.cap()
+{
+    // do something (debug print)
+    &lt;&lt;&lt; foo[i] &gt;&gt;&gt;;//自带换行
+}
+</code></pre><p>Accessing multi-dimensional array:</p>
+<pre><code>// 2D array
+int foo[4][4];
+
+// set an element
+10 =&gt; foo[2][2];
+</code></pre><p>If the index exceeds(超过) the bounds of the array in any dimension(标出尺寸), an exception(异常) is issued(被放出) and the current shred(片段) is halted(停止).</p>
+<pre><code>// array capacity is 5
+int foo[5];
+
+// this should cause ArrayOutOfBoundsException
+// access element 6 (index 5)
+&lt;&lt;&lt; foo[5] &gt;&gt;&gt;;
+</code></pre><p>a longer program: <code>otf_06.ck</code> from <a href="http://chuck.cs.princeton.edu/doc/examples/" target="_blank" rel="noopener">examples</a>:</p>
+<pre><code>// the period
+.5::second =&gt; dur T;
+// synchronize to period (for on-the-fly(运行中) synchronization)
+T - (now % T) =&gt; now;
+
+// our patch
+SinOsc s =&gt; JCRev r =&gt; dac;//JCRev是指什么类型？
+// initialize
+.05 =&gt; s.gain;
+.25 =&gt; r.mix;
+
+// scale (pentatonic(五音阶的); in semitones(半音程))
+[ 0, 2, 4, 7, 9 ] @=&gt; int scale[];
+
+// infinite time loop
+while( true )
+{
+    // pick something from the scale
+    scale[ Math.rand2(0,4) ] =&gt; float freq;
+    // get the final freq
+    Std.mtof( 69 + (Std.rand2(0,3)*12 + freq) ) =&gt; s.freq;
+    // reset phase for extra bandwidth(为额外带宽重置相位)
+    0 =&gt; s.phase;
+
+    // advance time
+    if( Std.randf() &gt; -.5 ) .25::T =&gt; now;
+    else .5::T =&gt; now;
+}
+</code></pre><p>#associative arrays(关联数组)<br>(类似于python中的字典，用字符串索引)</p>
+<p>Any array(数组) can be used also as an associative array, indexed on strings. Once the regular array is instantiated, no further work has to be done to make it associative as well - just start using it as such.</p>
+<pre><code>// declare regular array(正规数组) (capacity(容量) doesn&apos;t matter so much)
+float foo[4];
+
+// use as int-based array
+2.5 =&gt; foo[0];
+
+// use as associative array
+4.0 =&gt; foo[&quot;yoyo&quot;];
+
+// access as associative (print)
+&lt;&lt;&lt; foo[&quot;yoyo&quot;] &gt;&gt;&gt;;
+
+// access empty element
+&lt;&lt;&lt; foo[&quot;gaga&quot;] &gt;&gt;&gt;;  // -&gt; should print 0.0
+</code></pre><p>It is important to note (again), that the address space of the integer(整数) portion(部分) and the associative portion of the array are completely separate. For example:</p>
+<pre><code>// declare array
+int foo[2];
+
+// put something in element 0
+10 =&gt; foo[0];
+
+// put something in element &quot;0&quot;
+20 =&gt; foo[&quot;0&quot;];
+
+// this should print out 10 20
+&lt;&lt;&lt; foo[0], foo[&quot;0&quot;] &gt;&gt;&gt;;
+</code></pre><p>The capacity(容量) of an array relates only to the integer portion of it. An array with an integer portion of capacity 0, for example, can <em>still have any number of associative indexes.</em></p>
+<pre><code>// declare array of 0 capacity
+int foo[0];
+
+// put something in element &quot;here&quot;
+20 =&gt; foo[&quot;here&quot;];
+
+// this should print out 20
+&lt;&lt;&lt; foo[&quot;here&quot;] &gt;&gt;&gt;
+
+// this should cause an exception
+&lt;&lt;&lt; foo[0] &gt;&gt;&gt;
+</code></pre><blockquote>
+<p><strong>Note</strong>: The associative capacity of an array is not defined(定义), so objects used in the associative namespace must be explicitly(明确的) instantiated, in contrast(对比) to those in the integer namespace<br>(<strong>此处不甚明白</strong>)</p>
+</blockquote>
+<p>Accessing an uninstantiated element(元素) of the associate array will return a null reference. Please check the <a href="http://chuck.cs.princeton.edu/doc/language/class.html" target="_blank" rel="noopener">class documentation page</a> for an explanation of ChucK objects and references.</p>
+<pre><code>class Item { 
+   float weight; 
+}
+
+Item box[10]; 
+
+// integer indices(指数；目录（index的复数）) ( up to capacity ) are pre-instantiated.
+1.2 =&gt; box[1].weight; 
+
+// instantiate element &quot;lamp&quot;;
+new Item @=&gt; box[&quot;lamp&quot;]; 
+
+// access allowed to &quot;lamp&quot;
+2.0 =&gt; box[&quot;lamp&quot;].weight; 
+
+// access causes a `NullPointerException`    
+2.0 =&gt; box[&quot;sweater&quot;].weight; 
+</code></pre><p>#array assignment</p>
+<p>Arrays are objects. So when we declare an array, we are actually </p>
+<pre><code>(1) declaring a reference to array (reference variable(引用变量))
+(2) instantiating a new array and reference assigned(分配) to the variable. 
+</code></pre><p>A (null) reference is a reference variable that points to no object or null. A null reference to an array can be created in this fashion:</p>
+<pre><code>// declare array reference (by not specifying(指定) a capacity)
+int foo[];
+
+// we can now assign any int[] to foo
+[ 1, 2, 3 ] @=&gt; foo;
+
+// print out 0th element
+&lt;&lt;&lt; foo[0] &gt;&gt;&gt;;
+</code></pre><p>This is also useful in declaring functions that have arrays(数组) as arguments or return type.</p>
+<pre><code>// our function
+fun void print( int bar[] )
+{
+    // print it
+    for( 0 =&gt; int i; i &lt; bar.cap(); i++ )
+        &lt;&lt;&lt; bar[0] &gt;&gt;&gt;;
+}
+
+// we can call the function with a literal
+print( [ 1, 2, 3, 4, 5 ] );
+
+// or can we can pass a reference variable
+int foo[10];
+print( foo );
+</code></pre><p>Like other objects, it is possible make multiple references(多个引用) to a single array. Like other objects, all assignments(分配) are <em>reference assignments</em>, meaning the contents are NOT copied, only a reference to array is duplicated(被复制).(传递引用)</p>
+<pre><code>// our single array
+int the_array[10];
+
+// assign reference to foo and bar
+the_array =&gt; int foo[] =&gt; int bar[];
+
+// (the_array, foo, and bar now all reference the same array)
+
+// we change the_array and print foo...
+// they reference the same array, changing one is like changing the other
+// 连锁反应，内存中的存储信息改变了
+5 =&gt; the_array[0];
+&lt;&lt;&lt; foo[0] &gt;&gt;&gt;; // should be 5
+</code></pre><p>It is possible to reference sub-sections(小节) of multi-dimensional(多维) arrays.</p>
+<pre><code>// a 3D array
+int foo3D[4][4][4];
+
+// we can make a reference to a sub-section
+foo3D[2] =&gt; int bar[][];
+
+// (note that the dimensions must add up!)
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://plart.pw/2018/02/15/langs/chuck/chuck4/" data-id="cjogni4do002sqshs8hl04x69" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ChucK/">ChucK</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/02/15/langs/chuck/chuck5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          chuck5
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/15/langs/chuck/chuck1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">chuck1</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/幻想与现实/">幻想与现实</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术与进步/">技术与进步</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活与思考/">生活与思考</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/电影与艺术/">电影与艺术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程与生活/">编程与生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/记录与总结/">记录与总结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C++&C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ChucK/">ChucK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R/">R</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/org-mode/">org-mode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/佳片/">佳片</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开心麻花/">开心麻花</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/影视/">影视</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/校园/">校园</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爱情/">爱情</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/琐事/">琐事</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科幻/">科幻</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机原理/">计算机原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进阶/">进阶</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信/">通信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随感/">随感</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-C/" style="font-size: 14.29px;">C++&C</a> <a href="/tags/ChucK/" style="font-size: 20px;">ChucK</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/org-mode/" style="font-size: 10px;">org-mode</a> <a href="/tags/python/" style="font-size: 18.57px;">python</a> <a href="/tags/python3/" style="font-size: 10px;">python3</a> <a href="/tags/佳片/" style="font-size: 10px;">佳片</a> <a href="/tags/学习/" style="font-size: 17.14px;">学习</a> <a href="/tags/工具/" style="font-size: 11.43px;">工具</a> <a href="/tags/开心麻花/" style="font-size: 10px;">开心麻花</a> <a href="/tags/影视/" style="font-size: 11.43px;">影视</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/校园/" style="font-size: 10px;">校园</a> <a href="/tags/汇编/" style="font-size: 15.71px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/爱情/" style="font-size: 10px;">爱情</a> <a href="/tags/琐事/" style="font-size: 10px;">琐事</a> <a href="/tags/生活/" style="font-size: 11.43px;">生活</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a> <a href="/tags/科幻/" style="font-size: 10px;">科幻</a> <a href="/tags/计算机原理/" style="font-size: 12.86px;">计算机原理</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/进阶/" style="font-size: 10px;">进阶</a> <a href="/tags/通信/" style="font-size: 10px;">通信</a> <a href="/tags/随感/" style="font-size: 10px;">随感</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/14/ceshi/">ceshi</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/25/ee/上网背后的流程/">上网背后的流程</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/15/life/这些衰败的日子/">这些衰败的日子</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/30/life/如懿如意/">如懿，如意</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/05/life/开心麻花几部电影/">开心麻花</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Lart Pang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>失乐园</title>
+  
+  <subtitle>代码与机器</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://plart.pw/"/>
+  <updated>2018-11-14T04:08:08.624Z</updated>
+  <id>https://plart.pw/</id>
+  
+  <author>
+    <name>Lart Pang</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ceshi</title>
+    <link href="https://plart.pw/2018/11/14/ceshi/"/>
+    <id>https://plart.pw/2018/11/14/ceshi/</id>
+    <published>2018-11-14T04:07:58.000Z</published>
+    <updated>2018-11-14T04:08:08.624Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>上网背后的流程</title>
+    <link href="https://plart.pw/2018/10/25/ee/%E4%B8%8A%E7%BD%91%E8%83%8C%E5%90%8E%E7%9A%84%E6%B5%81%E7%A8%8B/"/>
+    <id>https://plart.pw/2018/10/25/ee/上网背后的流程/</id>
+    <published>2018-10-24T16:00:00.000Z</published>
+    <updated>2018-10-25T14:35:17.406Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;当一个用户在地址栏输入&lt;a href=&quot;http://www.baidu.com过程：&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;www.baidu.com过程：&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="记录与总结" scheme="https://plart.pw/categories/%E8%AE%B0%E5%BD%95%E4%B8%8E%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="计算机网络" scheme="https://plart.pw/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>这些衰败的日子</title>
+    <link href="https://plart.pw/2018/09/15/life/%E8%BF%99%E4%BA%9B%E8%A1%B0%E8%B4%A5%E7%9A%84%E6%97%A5%E5%AD%90/"/>
+    <id>https://plart.pw/2018/09/15/life/这些衰败的日子/</id>
+    <published>2018-09-14T16:00:00.000Z</published>
+    <updated>2018-11-14T04:13:42.713Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;想换主题了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="生活与思考" scheme="https://plart.pw/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%80%9D%E8%80%83/"/>
+    
+    
+      <category term="生活" scheme="https://plart.pw/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="琐事" scheme="https://plart.pw/tags/%E7%90%90%E4%BA%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如懿，如意</title>
+    <link href="https://plart.pw/2018/08/30/life/%E5%A6%82%E6%87%BF%E5%A6%82%E6%84%8F/"/>
+    <id>https://plart.pw/2018/08/30/life/如懿如意/</id>
+    <published>2018-08-29T16:00:00.000Z</published>
+    <updated>2018-09-12T01:21:27.272Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近一直在看《如懿传》，如懿深陷冷宫，不知后续如何…&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="电影与艺术" scheme="https://plart.pw/categories/%E7%94%B5%E5%BD%B1%E4%B8%8E%E8%89%BA%E6%9C%AF/"/>
+    
+    
+      <category term="影视" scheme="https://plart.pw/tags/%E5%BD%B1%E8%A7%86/"/>
+    
+      <category term="随感" scheme="https://plart.pw/tags/%E9%9A%8F%E6%84%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>开心麻花</title>
+    <link href="https://plart.pw/2018/08/05/life/%E5%BC%80%E5%BF%83%E9%BA%BB%E8%8A%B1%E5%87%A0%E9%83%A8%E7%94%B5%E5%BD%B1/"/>
+    <id>https://plart.pw/2018/08/05/life/开心麻花几部电影/</id>
+    <published>2018-08-04T16:00:00.000Z</published>
+    <updated>2018-10-01T15:54:57.078Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;前天看了一下开心麻花的几部片子，很逗，一口气看了三部。&lt;/p&gt;
+&lt;p&gt;先看的 &lt;em&gt;羞羞的铁拳&lt;/em&gt; ，印象最深的上山练功那一部分。&lt;/p&gt;
+&lt;p&gt;第一次爆笑是在秀念大师兄(王成思 Chengsi
+        
+      
+    
+    </summary>
+    
+      <category term="电影与艺术" scheme="https://plart.pw/categories/%E7%94%B5%E5%BD%B1%E4%B8%8E%E8%89%BA%E6%9C%AF/"/>
+    
+    
+      <category term="开心麻花" scheme="https://plart.pw/tags/%E5%BC%80%E5%BF%83%E9%BA%BB%E8%8A%B1/"/>
+    
+      <category term="电影" scheme="https://plart.pw/tags/%E7%94%B5%E5%BD%B1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>spyder_tool</title>
+    <link href="https://plart.pw/2018/08/03/langs/python/spyder_tool/"/>
+    <id>https://plart.pw/2018/08/03/langs/python/spyder_tool/</id>
+    <published>2018-08-02T16:00:00.000Z</published>
+    <updated>2018-08-03T03:09:48.057Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;python爬虫工具集合&quot;&gt;&lt;a href=&quot;#python爬虫工具集合&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="记录与总结" scheme="https://plart.pw/categories/%E8%AE%B0%E5%BD%95%E4%B8%8E%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="python3" scheme="https://plart.pw/tags/python3/"/>
+    
+      <category term="爬虫" scheme="https://plart.pw/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python高级技巧之生成器与装饰器</title>
+    <link href="https://plart.pw/2018/07/22/langs/python/python%E7%9A%84%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7/"/>
+    <id>https://plart.pw/2018/07/22/langs/python/python的高级技巧/</id>
+    <published>2018-07-21T16:00:00.000Z</published>
+    <updated>2018-07-22T12:28:05.168Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;链接 &lt;a href=&quot;http://python.jobbole.com/61171/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Python高级编程技巧&lt;/a&gt;&lt;br&gt;连接 &lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="编程与生活" scheme="https://plart.pw/categories/%E7%BC%96%E7%A8%8B%E4%B8%8E%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="python" scheme="https://plart.pw/tags/python/"/>
+    
+      <category term="进阶" scheme="https://plart.pw/tags/%E8%BF%9B%E9%98%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我不是药神</title>
+    <link href="https://plart.pw/2018/07/20/life/%E6%88%91%E4%B8%8D%E6%98%AF%E8%8D%AF%E7%A5%9E/"/>
+    <id>https://plart.pw/2018/07/20/life/我不是药神/</id>
+    <published>2018-07-19T16:00:00.000Z</published>
+    <updated>2018-10-01T15:53:41.194Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关于《我不是药神》&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="电影与艺术" scheme="https://plart.pw/categories/%E7%94%B5%E5%BD%B1%E4%B8%8E%E8%89%BA%E6%9C%AF/"/>
+    
+    
+      <category term="佳片" scheme="https://plart.pw/tags/%E4%BD%B3%E7%89%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C51汇编典型代码&amp;一些org-mode技巧</title>
+    <link href="https://plart.pw/2018/07/13/langs/asm/C51%E6%B1%87%E7%BC%96%E5%85%B8%E5%9E%8B%E4%BB%A3%E7%A0%81&amp;%E4%B8%80%E4%BA%9Borg-mode%E6%8A%80%E5%B7%A7/"/>
+    <id>https://plart.pw/2018/07/13/langs/asm/C51汇编典型代码&amp;一些org-mode技巧/</id>
+    <published>2018-07-13T00:00:00.000Z</published>
+    <updated>2018-10-01T15:52:46.458Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;关于51，关于org-mode..&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程与生活" scheme="https://plart.pw/categories/%E7%BC%96%E7%A8%8B%E4%B8%8E%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="汇编" scheme="https://plart.pw/tags/%E6%B1%87%E7%BC%96/"/>
+    
+      <category term="python" scheme="https://plart.pw/tags/python/"/>
+    
+      <category term="org-mode" scheme="https://plart.pw/tags/org-mode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>小诗一首</title>
+    <link href="https://plart.pw/2018/06/11/life/%E5%B0%8F%E8%AF%97%E4%B8%80/"/>
+    <id>https://plart.pw/2018/06/11/life/小诗一/</id>
+    <published>2018-06-11T15:24:59.000Z</published>
+    <updated>2018-10-01T16:17:48.925Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;https://goss.veer.com/creative/vcg/veer/1600water/veer-145909347.jpg&quot; alt=&quot;配图&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="幻想与现实" scheme="https://plart.pw/categories/%E5%B9%BB%E6%83%B3%E4%B8%8E%E7%8E%B0%E5%AE%9E/"/>
+    
+    
+      <category term="生活" scheme="https://plart.pw/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="校园" scheme="https://plart.pw/tags/%E6%A0%A1%E5%9B%AD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Manjaro小记</title>
+    <link href="https://plart.pw/2018/05/24/tools/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEmanjaro%E5%B0%8F%E8%AE%B0/"/>
+    <id>https://plart.pw/2018/05/24/tools/安装配置manjaro小记/</id>
+    <published>2018-05-23T16:03:55.000Z</published>
+    <updated>2018-07-13T12:50:59.004Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;又是一次新的尝试&quot;&gt;&lt;a href=&quot;#又是一次新的尝试&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="记录与总结" scheme="https://plart.pw/categories/%E8%AE%B0%E5%BD%95%E4%B8%8E%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="Linux" scheme="https://plart.pw/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一千天的时候</title>
+    <link href="https://plart.pw/2018/04/04/life/%E5%8D%83%E6%97%A5/"/>
+    <id>https://plart.pw/2018/04/04/life/千日/</id>
+    <published>2018-04-04T13:31:10.000Z</published>
+    <updated>2018-07-13T12:51:40.831Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;https://cdn.gratisography.com/photos/444H.jpg&quot; alt=&quot;飞翔的鲸&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;第一千天的时候&quot;&gt;&lt;a href=&quot;#第一千天的时候&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="幻想与现实" scheme="https://plart.pw/categories/%E5%B9%BB%E6%83%B3%E4%B8%8E%E7%8E%B0%E5%AE%9E/"/>
+    
+    
+      <category term="科幻" scheme="https://plart.pw/tags/%E7%A7%91%E5%B9%BB/"/>
+    
+      <category term="爱情" scheme="https://plart.pw/tags/%E7%88%B1%E6%83%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Processing权威指南阅读记录</title>
+    <link href="https://plart.pw/2018/03/29/books/Processing%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/"/>
+    <id>https://plart.pw/2018/03/29/books/Processing权威指南阅读记录/</id>
+    <published>2018-03-29T14:41:22.000Z</published>
+    <updated>2018-07-13T12:50:45.082Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;https://img1.doubanio.com/lpic/s27080847.jpg&quot; alt=&quot;Processing权威指南&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;我与Processing&quot;&gt;&lt;a href=&quot;#我与Processing&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="编程与生活" scheme="https://plart.pw/categories/%E7%BC%96%E7%A8%8B%E4%B8%8E%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="学习" scheme="https://plart.pw/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>8086_i386试验箱综合设计实验</title>
+    <link href="https://plart.pw/2018/03/27/langs/asm/8086%E6%B1%87%E7%BC%96%E6%80%BB%E7%BB%93-i386%E8%AF%95%E9%AA%8C%E7%AE%B1%E7%BB%BC%E5%90%88%E8%AE%BE%E8%AE%A1%E5%AE%9E%E9%AA%8C/"/>
+    <id>https://plart.pw/2018/03/27/langs/asm/8086汇编总结-i386试验箱综合设计实验/</id>
+    <published>2018-03-26T16:00:00.000Z</published>
+    <updated>2018-07-13T12:42:28.384Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;设计要求&quot;&gt;&lt;a href=&quot;#设计要求&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="编程与生活" scheme="https://plart.pw/categories/%E7%BC%96%E7%A8%8B%E4%B8%8E%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="汇编" scheme="https://plart.pw/tags/%E6%B1%87%E7%BC%96/"/>
+    
+      <category term="计算机原理" scheme="https://plart.pw/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Processing精彩例程之细胞自动机</title>
+    <link href="https://plart.pw/2018/03/25/langs/processing/Processing%E7%B2%BE%E5%BD%A9%E4%BE%8B%E7%A8%8B%E4%B9%8B%E7%BB%86%E8%83%9E%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
+    <id>https://plart.pw/2018/03/25/langs/processing/Processing精彩例程之细胞自动机/</id>
+    <published>2018-03-25T14:19:41.000Z</published>
+    <updated>2018-07-13T12:50:47.660Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一维细胞自动机&quot;&gt;&lt;a href=&quot;#一维细胞自动机&quot; class=&quot;headerlink&quot; title=&quot;一维细胞自动机&quot;&gt;&lt;/a&gt;一维细胞自动机&lt;/h1&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="编程与生活" scheme="https://plart.pw/categories/%E7%BC%96%E7%A8%8B%E4%B8%8E%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="Java" scheme="https://plart.pw/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>8086汇编总结-指令系统</title>
+    <link href="https://plart.pw/2018/03/11/langs/asm/8086%E6%B1%87%E7%BC%96%E6%80%BB%E7%BB%93-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/"/>
+    <id>https://plart.pw/2018/03/11/langs/asm/8086汇编总结-指令系统/</id>
+    <published>2018-03-10T16:00:00.000Z</published>
+    <updated>2018-07-13T12:58:09.608Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;第一章  微型计算机概述&lt;/li&gt;
+&lt;li&gt;第二章  16位微处理器8086&lt;/li&gt;
+&lt;li&gt;第三章 
+        
+      
+    
+    </summary>
+    
+      <category term="编程与生活" scheme="https://plart.pw/categories/%E7%BC%96%E7%A8%8B%E4%B8%8E%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="汇编" scheme="https://plart.pw/tags/%E6%B1%87%E7%BC%96/"/>
+    
+      <category term="计算机原理" scheme="https://plart.pw/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>8086汇编总结-微型计算机概述</title>
+    <link href="https://plart.pw/2018/02/26/langs/asm/8086%E6%B1%87%E7%BC%96%E6%80%BB%E7%BB%93-%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%BF%B0/"/>
+    <id>https://plart.pw/2018/02/26/langs/asm/8086汇编总结-微型计算机概述/</id>
+    <published>2018-02-25T16:00:00.000Z</published>
+    <updated>2018-07-13T12:42:36.284Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;第一章  微型计算机概述&lt;/li&gt;
+&lt;li&gt;第二章  16位微处理器8086&lt;/li&gt;
+&lt;li&gt;第三章 
+        
+      
+    
+    </summary>
+    
+      <category term="编程与生活" scheme="https://plart.pw/categories/%E7%BC%96%E7%A8%8B%E4%B8%8E%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="汇编" scheme="https://plart.pw/tags/%E6%B1%87%E7%BC%96/"/>
+    
+      <category term="计算机原理" scheme="https://plart.pw/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>8086汇编总结-16位微处理器8086</title>
+    <link href="https://plart.pw/2018/02/26/langs/asm/8086%E6%B1%87%E7%BC%96%E6%80%BB%E7%BB%93-16%E4%BD%8D%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A88086/"/>
+    <id>https://plart.pw/2018/02/26/langs/asm/8086汇编总结-16位微处理器8086/</id>
+    <published>2018-02-25T16:00:00.000Z</published>
+    <updated>2018-07-13T12:43:08.816Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;第一章  微型计算机概述&lt;/li&gt;
+&lt;li&gt;第二章  16位微处理器8086&lt;/li&gt;
+&lt;li&gt;第三章 
+        
+      
+    
+    </summary>
+    
+      <category term="编程与生活" scheme="https://plart.pw/categories/%E7%BC%96%E7%A8%8B%E4%B8%8E%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="汇编" scheme="https://plart.pw/tags/%E6%B1%87%E7%BC%96/"/>
+    
+      <category term="计算机原理" scheme="https://plart.pw/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2017年总结</title>
+    <link href="https://plart.pw/2018/02/24/life/2017%E6%80%BB%E7%BB%93/"/>
+    <id>https://plart.pw/2018/02/24/life/2017总结/</id>
+    <published>2018-02-24T04:05:20.000Z</published>
+    <updated>2018-07-13T12:52:02.878Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一&quot;&gt;&lt;a href=&quot;#一&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="生活与思考" scheme="https://plart.pw/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%80%9D%E8%80%83/"/>
+    
+    
+      <category term="总结" scheme="https://plart.pw/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>R基本数据结构</title>
+    <link href="https://plart.pw/2018/02/15/langs/r/R%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <id>https://plart.pw/2018/02/15/langs/r/R基本数据结构/</id>
+    <published>2018-02-15T13:46:06.000Z</published>
+    <updated>2018-07-13T12:51:29.159Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;主站：&lt;a href=&quot;https://lartpang.github.io/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="编程与生活" scheme="https://plart.pw/categories/%E7%BC%96%E7%A8%8B%E4%B8%8E%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="R" scheme="https://plart.pw/tags/R/"/>
+    
+  </entry>
+  
+</feed>
