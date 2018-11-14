@@ -12,7 +12,7 @@
 
 
 
-<html class="theme-next mist" lang="zh-CN">
+<html class="theme-next pisces" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -101,7 +101,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Pisces',
     version: '6.5.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -337,9 +337,6 @@
   
 
   
-    
-
-  
 
   
     <div class="site-search">
@@ -390,6 +387,9 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+            
+
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -409,7 +409,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://plart.pw/langs/chuck/chuck5/">
+    <link itemprop="mainEntityOfPage" href="https://plart.pw/langs/chuck/chuck2/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lart Pang">
@@ -429,7 +429,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/langs/chuck/chuck5/" class="post-title-link" itemprop="https://plart.pw/page/4/index.html">chuck5</a>
+                <a href="/langs/chuck/chuck2/" class="post-title-link" itemprop="https://plart.pw/page/4/index.html">chuck2</a>
               
             
           </h2>
@@ -471,7 +471,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-07-13 20:46:51" itemprop="dateModified" datetime="2018-07-13T20:46:51+08:00">2018-07-13</time>
+                <time title="修改时间：2018-07-13 20:46:35" itemprop="dateModified" datetime="2018-07-13T20:46:35+08:00">2018-07-13</time>
               
             
           </span>
@@ -524,79 +524,128 @@
       
         
           
-            <p>operators &amp; operations</p>
-<ul>
-<li>=&gt; (chuck)</li>
-<li><ul>
-<li><ul>
-<li><ul>
-<li>/ (arithmetic)</li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li>% (modulo)</li>
-<li>&amp;&amp; || == != &gt;= &lt;=&quot; (logic)</li>
-<li>&amp; | ^ (bitwise)</li>
-<li>++ -- (inc / dec)</li>
-<li>! + - new (unary)</li>
-</ul>
-<p>You may have seen many of the operators in other programming languages (C/Java). <em>Some others are native to ChucK</em>. We start with the family of ChucK operators.</p>
-<p>#=&gt; (the ChucK operator)</p>
-<p>The ChucK operator (<code>=&gt;</code>) is a massively(大量地) overloaded operator that, depending on the types involved(包含), performs various actions(执行各种操作). <code>It denotes(表示) **action**, can be chained(链接), and imposes(强制执行) and clarifies order(理清顺序) (always goes *from left to right*).</code> The ChucK operator is the means by which work is done in ChucK. Furthermore(此外), the ChucK operator is not a single operator, but a family of operators.</p>
-<p>##=&gt; (foundational(基础的) ChucK operator)</p>
-<p>We start with the standard, plain-vanilla(普通的，无修饰的) ChucK operator (<code>=&gt;</code>). It is left-associative (<strong>all ChucK operators are</strong>), which allows us to specify(指定) any ordered flow of data/tasks/modules (such as unit generator connection) from left to right, as in written (English) text. <strong>What <code>=&gt;</code> does depends on the context(环境).</strong> It always depends on the type of the entity(实体) on the left (the chucker(投手)) and the one on the right (the chuckee(接球手)), and it sometimes also depends on the nature of the entity (such as whether it is a variable(变量的) or not).</p>
-<p>Some examples: (用了c的高亮，至少好看点)</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a unit generator patch - the signal flow is apparent</span></span><br><span class="line"><span class="comment">// (in this case, =&gt; connects two unit generators)</span></span><br><span class="line">SinOsc b =&gt; Gain g =&gt; BiQuad f =&gt; dac;</span><br><span class="line"></span><br><span class="line"><span class="comment">// add 4 to foo, chuck result to new 'int' variable 'bar'</span></span><br><span class="line"><span class="comment">// (in this case, =&gt; assigns a value to a variable (int)</span></span><br><span class="line"><span class="number">4</span> + foo =&gt; <span class="keyword">int</span> bar;</span><br><span class="line"></span><br><span class="line"><span class="comment">// chuck values to a function == function call</span></span><br><span class="line"><span class="comment">// (same as Math.rand2f( 30, 1000))</span></span><br><span class="line">( <span class="number">30</span>, <span class="number">1000</span> ) =&gt; Math.rand2f;</span><br></pre></td></tr></table></figure>
-<p>There are many other well-defined(定义明确的) uses of the ChucK operator, depending on the context.</p>
-<p>##<code>@=&gt;</code> (explicit(明确的) assignment(分配) ChucK operator)</p>
-<p>In ChucK, <em>there is no stardard assignment operator (=)</em>, found in many other programming languages. Assignment is carried out using ChucK operators. In the previous examples, we have used =&gt; for assignment:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// assign 4 to variable foo</span></span><br><span class="line"><span class="number">4</span> =&gt; <span class="keyword">int</span> foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// assign 1.5 to variable bar</span></span><br><span class="line"><span class="number">1.5</span> =&gt; <span class="keyword">float</span> bar;</span><br><span class="line"></span><br><span class="line"><span class="comment">// assign duration of 100 millisecond to duh</span></span><br><span class="line"><span class="number">100</span>::ms =&gt; dur duh;</span><br><span class="line"></span><br><span class="line"><span class="comment">// assign the time "5 second from now" to later</span></span><br><span class="line"><span class="number">5</span>::second + now =&gt; time later;</span><br></pre></td></tr></table></figure>
-<p>The <code>@=&gt;</code> explicit assignment ChucK operator behaves exactly the same for the above types (int, float, dur, time). However, the difference is that <code>@=&gt;</code> can also be used for reference assignments(分配) of objects (see objects and classes) whereas(然而) <code>=&gt;</code> only does assignment on primitive(原始的) types (int, float, dur, time). The behavior(行为) of <code>=&gt;</code> on objects is completely context-dependent(上下文相关的).</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// using @=&gt; is same as =&gt; for primitive types</span></span><br><span class="line"><span class="number">4</span> @=&gt; <span class="keyword">int</span> foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// assign 1.5 to variable bar</span></span><br><span class="line"><span class="number">1.5</span> @=&gt; <span class="keyword">float</span> bar;</span><br><span class="line"></span><br><span class="line"><span class="comment">// (only @=&gt; can perform reference assignment on objects)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// reference assign moe to larry</span></span><br><span class="line"><span class="comment">// (such that both moe and larry reference the same object)</span></span><br><span class="line">Object moe @=&gt; Object @ larry;</span><br><span class="line"></span><br><span class="line"><span class="comment">// array initialization</span></span><br><span class="line">[ <span class="number">1</span>, <span class="number">2</span> ] @=&gt; <span class="keyword">int</span> ar[];</span><br><span class="line"></span><br><span class="line"><span class="comment">// using new</span></span><br><span class="line"><span class="keyword">new</span> Object @=&gt; moe;</span><br></pre></td></tr></table></figure>
-<p>In its own screwed-up(糟透了的) way, this is kind of nice because there is no confusion(混淆) between assignment (<code>@=&gt;</code> or <code>=&gt;</code>) and equality (<code>==</code>). In fact, the following is not a valid ChucK statement(声明):</p>
-<pre><code>// not a valid ChucK statement!
-int foo = 4;</code></pre>
-<p>##+=&gt; -=&gt; *=&gt; /=&gt; etc. (arithmetic(算数) ChucK operators)</p>
-<p>These operators are used with variables(变量) (using 'int' and 'float') to perform one operation with assignment(执行一个有分配的操作).</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// add 4 to foo and assign result to foo</span></span><br><span class="line">foo + <span class="number">4</span> =&gt; foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// add 4 to foo and assign result to foo</span></span><br><span class="line"><span class="number">4</span> +=&gt; foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// subtract 10 from foo and assign result to foo</span></span><br><span class="line"><span class="comment">// remember this is (foo-10), not (10-foo)</span></span><br><span class="line"><span class="number">10</span> -=&gt; foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2 times foo assign result to foo</span></span><br><span class="line"><span class="number">2</span> *=&gt; foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// divide 4 into foo and assign result to foo</span></span><br><span class="line"><span class="comment">// again remember this is (foo/4), not (4/foo)</span></span><br><span class="line"><span class="number">4</span> /=&gt; foo;</span><br></pre></td></tr></table></figure>
-<p>It is important to note the relationship between the value and variable when using <code>-=&gt;</code> and <code>/=&gt;</code>, since these operations are not commutative(交换的).</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// mod foo by T and assign result to foo</span></span><br><span class="line">T %=&gt; foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// bitwise(按位) AND 0xff and bar and assign result to bar</span></span><br><span class="line"><span class="number">0xff</span> &amp;=&gt; bar;</span><br><span class="line"></span><br><span class="line"><span class="comment">// bitwise OR 0xff and bar and assign result to bar</span></span><br><span class="line"><span class="number">0xff</span> |=&gt; bar;</span><br></pre></td></tr></table></figure>
-<p>#+ - * / (arithmetic)</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// divide (and assign)</span></span><br><span class="line"><span class="number">16</span> / <span class="number">4</span> =&gt; <span class="keyword">int</span> four;</span><br><span class="line"></span><br><span class="line"><span class="comment">// multiply</span></span><br><span class="line"><span class="number">2</span> * <span class="number">2</span> =&gt; four;</span><br><span class="line"></span><br><span class="line"><span class="comment">// add</span></span><br><span class="line"><span class="number">3</span> + <span class="number">1</span> =&gt; four;</span><br><span class="line"></span><br><span class="line"><span class="comment">// subtract</span></span><br><span class="line"><span class="number">93</span> - <span class="number">89</span> =&gt; four;</span><br></pre></td></tr></table></figure>
-<p><strong>cast(转换)</strong></p>
-<p><em>ChucK implicitly(隐式地) casts int values to float when float is expected, but not the other around.</em> The latter could result in a loss of information and requires an explicit(明确的) cast.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// adding float and int produces a float</span></span><br><span class="line"><span class="number">9.1</span> + <span class="number">2</span> =&gt; <span class="keyword">float</span> result;</span><br><span class="line"></span><br><span class="line"><span class="comment">// however, going from float to int requires cast</span></span><br><span class="line"><span class="number">4.8</span> $ <span class="keyword">int</span> =&gt; <span class="keyword">int</span> foo;  <span class="comment">// foo == 4</span></span><br><span class="line"><span class="comment">//这里的$是什么意思？</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// this function expects two floats</span></span><br><span class="line">Math.rand2f( <span class="number">30.0</span>, <span class="number">1000.0</span> );</span><br><span class="line"></span><br><span class="line"><span class="comment">// this is ok because of implicit cast</span></span><br><span class="line">Math.rand2f( <span class="number">30</span>, <span class="number">1000</span> );</span><br></pre></td></tr></table></figure>
-<p>#% (modulo(取模))</p>
-<p>The modulo operator <code>%</code> computes the remainder(余数) after integer(整数), floating point, duration, and time/duration division.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 7 mod 4 (should yield(产生) 3)</span></span><br><span class="line"><span class="number">7</span> % <span class="number">4</span> =&gt; <span class="keyword">int</span> result;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 7.3 mod 3.2 floating point mod (should yield .9)</span></span><br><span class="line"><span class="number">7.3</span> % <span class="number">3.2</span> =&gt; <span class="keyword">float</span> resultf;</span><br><span class="line"></span><br><span class="line"><span class="comment">// duration mod</span></span><br><span class="line"><span class="number">5</span>::second % <span class="number">2</span>::second =&gt; dur foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// time/duration mod</span></span><br><span class="line">now % <span class="number">5</span>::second =&gt; dur bar;</span><br></pre></td></tr></table></figure>
-<p>the latter (time/duration mod) is one of many ways to dynamically(动态地) synchronize(同步) timing in shreds. the examples <code>otf_01.ck</code> through <code>otf_07.ck</code> (see under <code>examples</code>) make use of this to on-the-fly(运行时) synchronize its various parts, no matter when each shred is added to the virtual(虚拟的) machine:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// define period (agreed upon by several shreds)</span></span><br><span class="line"><span class="number">.5</span>::second =&gt; dur T;</span><br><span class="line"></span><br><span class="line"><span class="comment">// compute the remainder(余数) of the current period ...</span></span><br><span class="line"><span class="comment">// and advance time by that amount</span></span><br><span class="line">T - (now % T) =&gt; now;</span><br><span class="line"></span><br><span class="line"><span class="comment">// when we reach this point, we are synchronized to T period boundary</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// the rest of the code</span></span><br><span class="line"><span class="comment">// ...</span></span><br></pre></td></tr></table></figure>
-<p>This is one of many ways to compute and reason about(思考) time in ChucK. The appropriate(适当的) solution(解决方案)(s) in each case depends on the intended(打算的) functionality(功能).</p>
-<p>#&amp;&amp; || == != &gt; &gt;= &lt; &lt;= (logic)(逻辑)</p>
-<p>Logical operators - each of these need two operands(操作数). <strong>The result is an integer value of 0 or 1.</strong></p>
-<ul>
-<li>&amp;&amp; : and</li>
-<li>|| : or</li>
-<li>== : equals</li>
-<li>!= : does not equal</li>
-<li><blockquote>
-<p>: greater than</p>
-</blockquote></li>
-<li><blockquote>
-<p>= : greater than or equal to</p>
-</blockquote></li>
-<li>&lt; : less than</li>
-<li>&lt;= : less than or equal to</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// test some universal truths(普遍的真理)</span></span><br><span class="line"><span class="keyword">if</span>( <span class="number">1</span> &lt;= <span class="number">4</span> &amp;&amp; <span class="literal">true</span> )</span><br><span class="line">    &lt;&lt;&lt;<span class="string">"horray"</span>&gt;&gt;&gt;;</span><br></pre></td></tr></table></figure>
-<p>#&gt;&gt; &lt;&lt; &amp; | ^ (bitwise)(按位)</p>
-<p>These are used on int values at the bit level, often for bit masking.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; : <span class="function">shift bits <span class="title">right</span><span class="params">(右移位)</span> <span class="params">( <span class="number">8</span> &gt;&gt; <span class="number">1</span> = <span class="number">4</span> )</span></span></span><br><span class="line">&lt;&lt; : shift bits left ( 8 &lt;&lt; 1 = 16 )</span><br><span class="line">&amp; : bitwise AND</span><br><span class="line">| : bitwise OR</span><br><span class="line">^ : bitwise XOR</span><br></pre></td></tr></table></figure>
-<p>#++ -- (inc / dec) Values may be incremented or decremented by appending(附加) the <code>++</code> or <code>--</code> operators.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span> =&gt; <span class="keyword">int</span> foo;</span><br><span class="line">foo++;</span><br><span class="line">foo--;</span><br></pre></td></tr></table></figure>
-<p>#! + - new (unary(一元的))</p>
-<p>These operators come before(位于...之前) one operand(操作数).</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// logical invert</span></span><br><span class="line"><span class="keyword">if</span>( !<span class="literal">true</span> == <span class="literal">false</span> )</span><br><span class="line">    &lt;&lt;&lt;<span class="string">"yes"</span>&gt;&gt;&gt;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// negative</span></span><br><span class="line"><span class="number">-1</span> =&gt; <span class="keyword">int</span> foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// instantiate object</span></span><br><span class="line"><span class="keyword">new</span> object @=&gt; object @ bar;</span><br></pre></td></tr></table></figure>
+            <p>#Overview</p>
+<p>ChucK is a strongly-typed, strongly-timed, concurrent(并发的) audio and multimedia(多媒体的) programming language. It is compiled(编译) into virtual(虚拟的) instructions, which is immediately run in the ChucK Virtual Machine. This guide documents the features(特色) of the Language, Compiler, and Virtual Machine for a ChucK programmer.</p>
+<p>#running ChucK</p>
+<p>...this is a quick overview(综述), see <a href="http://chuck.cs.princeton.edu/doc/program/vm.html" target="_blank" rel="noopener">VM options</a> for a more complete guide to command line options.</p>
+<p>To run ChucK with a program/patch called foo.ck simply run chuck and then the name of the file:</p>
+<pre><code>chuck foo.ck </code></pre>
+<p>To run ChucK with multiple patches concurrently(同时发生) (or the same one multiple times):</p>
+<pre><code>chuck foo.ck bar.ck bar.ck boo.ck </code></pre>
+<p>...the following probes(探查) the audio system and prints out all available audio devices and MIDI devices. You may then refer to them (by number usually) from the command line or from your program. (again, see VM Options for a complete list)</p>
+<pre><code>chuck --probe </code></pre>
+<p>ChucK can be run in a different terminal as a host/listener that patches may be sent to. The server should invoke(调用) the --loop flag to specify that the virtual machine should not halt(停止) automatically(自动地) (when the current programs exit).</p>
+<pre><code>chuck --loop     </code></pre>
+<p>(See the guide to <a href="http://chuck.cs.princeton.edu/doc/program/otfp.html" target="_blank" rel="noopener">On-the-fly Programming</a> for more information)</p>
+<p>If a ChucK listener is running, we can (from a second terminal) send a program/patch to the listener by using the <code>+</code> command line option:</p>
+<pre><code>chuck + foo.ck </code></pre>
+<p>Similarly, you can use <code>-</code> and <code>=</code> to <em>remove/replace</em> a patch in the listener, and use <code>^</code> to find out the status. Again, see <a href="http://chuck.cs.princeton.edu/doc/program/otfp.html" target="_blank" rel="noopener">On-the-fly Programming</a> for more information.</p>
+<p>To run most of the code or examples in this language specification, you only need to use the basic chuck program.</p>
+<p>#comments(注释)</p>
+<p>(Note: block comments cannot be nested(嵌入的))</p>
+<pre><code>// this is a comment
+int foo; // another comment
+
+/* 
+   this is a block comment
+   still going...
+*/</code></pre>
+<p>#debug print(调试输出)</p>
+<p>...we have provided a debug print syntax(语法):</p>
+<pre><code>// prints out value of expression
+&lt;&lt;&lt; expression &gt;&gt;&gt;;</code></pre>
+<p>This will print the values and types of any expressions placed within them. This debug print construction may be placed around any non-declaration expression ( non l-value ) and will not affect the execution(执行) of the code. Expressions which represent an object will print the value of that object's reference(引用) address:</p>
+<pre><code>// assign 5 to a newly declared variable
+5 =&gt; int i;
+// prints &quot;5 : (int)&quot;
+&lt;&lt;&lt;i&gt;&gt;&gt;;
+
+// prints &quot;hello! : (string)&quot;
+&lt;&lt;&lt;&quot;hello!&quot;&gt;&gt;&gt;; //prints &quot;hello! : (string)&quot;
+
+// prints &quot;3.5 : (float)&quot;
+&lt;&lt;&lt;1.0 + 2.5 &gt;&gt;&gt; =&gt; float x;</code></pre>
+<p>(ChucK中似乎是没有了print这一类) (Chuck中有<code>;</code>，还是类似C的)</p>
+<p>For more formatted(格式化) data output(输出), a comma-separated list of expressions will print only their respective(分别的) values (with one space between):</p>
+<pre><code>//接上段
+// prints &quot;the value of x is 3.5&quot; (x from above)
+&lt;&lt;&lt;&quot;the value of x is&quot; , x &gt;&gt;&gt;;
+
+// prints &quot;4 + 5 is 9&quot;
+&lt;&lt;&lt;&quot;4 + 5 is&quot;, 4 + 5&gt;&gt;&gt;;
+
+// prints &quot;here are 3 random numbers ? ? ?&quot;
+&lt;&lt;&lt;&quot;here are 3 random numbers&quot;, 
+    Std.rand2(0,9), 
+    Std.rand2(0,9),
+    Std.rand2(0,9) &gt;&gt;&gt;; </code></pre>
+<blockquote>
+<p>输出： C:1&gt;chuck &quot;debug print.ck&quot; 5 :(int) &quot;hello!&quot; : (string) 3.500000 :(float) the value of x is 3.500000 4 + 5 is 9 here are 3 random numbers 1 8 8</p>
+</blockquote>
+<p>#reserved words(关键字)</p>
+<pre><code>(primitive types原始类型)
+    int
+    float
+    time
+    dur
+    void
+    same (unimplemented未实现的) 
+
+(control structures)
+    if
+    else
+    while
+    until
+    for
+    repeat
+    break
+    continue
+    return
+    switch (unimplemented) 
+
+(class keywords)
+    class
+    extends
+    public
+    static
+    pure
+    this
+    super (unimplemented)
+    interface (unimplemented)
+    implements (unimplemented)
+    protected (unimplemented)
+    private (unimplemented) 
+
+(other chuck keywords)
+    function
+    fun
+    spork
+    const
+    new 
+
+(special values)
+    now
+    true
+    false
+    maybe
+    null
+    NULL
+    me
+    pi 
+
+(special : default durations(默认持续时间))
+    samp
+    ms
+    second
+    minute
+    hour
+    day
+    week 
+
+(special : global ugens(不理解))
+    dac
+    adc
+    blackhole </code></pre>
 
           
         
@@ -2829,7 +2878,7 @@ cmp $ polar + %(10, .25*pi) - pol =&gt; polar pol2;</code></pre>
 
 
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.5.0</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v6.5.0</div>
 
 
 
@@ -2953,6 +3002,13 @@ cmp $ polar + %(10, .25*pi) - pol =&gt; polar pol2;</code></pre>
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.5.0"></script>
+
+
 
   
 
