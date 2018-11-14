@@ -553,11 +553,11 @@
   </entry>
   
   <entry>
-    <title>chuck5</title>
-    <link href="https://plart.pw/langs/chuck/chuck5/"/>
-    <id>https://plart.pw/langs/chuck/chuck5/</id>
+    <title>chuck6</title>
+    <link href="https://plart.pw/langs/chuck/chuck6/"/>
+    <id>https://plart.pw/langs/chuck/chuck6/</id>
     <published>2018-02-15T13:40:10.000Z</published>
-    <updated>2018-07-13T12:46:51.362Z</updated>
+    <updated>2018-07-13T12:46:56.071Z</updated>
     
     <summary type="html">
     
@@ -565,13 +565,13 @@
       
         
         
-          &lt;p&gt;operators &amp;amp; operations&lt;/p&gt;
+          &lt;p&gt;control structures&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;=&amp;gt; (chuck)&lt;/li&gt;
-&lt;li&gt;&lt;ul&gt;
-&lt;li&gt;&lt;ul&gt;
-&lt;li&gt;&lt;ul&gt;
-&lt;li&gt;/
+&lt;li&gt;if / else&lt;/li&gt;
+&lt;li&gt;while &amp;amp; do...while...&lt;/li&gt;
+&lt;li&gt;until&lt;/li&gt;
+&lt;li&gt;for&lt;/li&gt;
+&lt;li&gt;break /
         
       
     
