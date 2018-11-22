@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://plart.pw/"/>
-  <updated>2018-10-25T14:35:17.406Z</updated>
+  <updated>2018-11-22T07:29:29.810Z</updated>
   <id>https://plart.pw/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于态度的一段思考</title>
+    <link href="https://plart.pw/life/%E5%85%B3%E4%BA%8E%E6%80%81%E5%BA%A6%E7%9A%84%E4%B8%80%E6%AE%B5%E6%80%9D%E8%80%83/"/>
+    <id>https://plart.pw/life/关于态度的一段思考/</id>
+    <published>2018-11-20T16:00:00.000Z</published>
+    <updated>2018-11-22T07:29:29.810Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近经历了一些事情,有些小小的思考.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src=&quot;https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/03/public-domain-images-archive-high-quality-resolution-free-download-splitshire-0002-1000x666.jpg&quot; title=&quot;图片来自designrush&quot; alt=&quot;烦心&quot;&gt;&lt;figcaption&gt;烦心&lt;/figcaption&gt;
+&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="生活与思考" scheme="https://plart.pw/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%80%9D%E8%80%83/"/>
+    
+    
+      <category term="学习" scheme="https://plart.pw/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="态度" scheme="https://plart.pw/tags/%E6%80%81%E5%BA%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>上网背后的流程</title>
@@ -427,11 +452,11 @@
   </entry>
   
   <entry>
-    <title>8086汇编总结-微型计算机概述</title>
-    <link href="https://plart.pw/langs/asm/8086%E6%B1%87%E7%BC%96%E6%80%BB%E7%BB%93-%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%BF%B0/"/>
-    <id>https://plart.pw/langs/asm/8086汇编总结-微型计算机概述/</id>
+    <title>8086汇编总结-16位微处理器8086</title>
+    <link href="https://plart.pw/langs/asm/8086%E6%B1%87%E7%BC%96%E6%80%BB%E7%BB%93-16%E4%BD%8D%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A88086/"/>
+    <id>https://plart.pw/langs/asm/8086汇编总结-16位微处理器8086/</id>
     <published>2018-02-25T16:00:00.000Z</published>
-    <updated>2018-07-13T12:42:36.284Z</updated>
+    <updated>2018-07-13T12:43:08.816Z</updated>
     
     <summary type="html">
     
@@ -461,11 +486,11 @@
   </entry>
   
   <entry>
-    <title>8086汇编总结-16位微处理器8086</title>
-    <link href="https://plart.pw/langs/asm/8086%E6%B1%87%E7%BC%96%E6%80%BB%E7%BB%93-16%E4%BD%8D%E5%BE%AE%E5%A4%84%E7%90%86%E5%99%A88086/"/>
-    <id>https://plart.pw/langs/asm/8086汇编总结-16位微处理器8086/</id>
+    <title>8086汇编总结-微型计算机概述</title>
+    <link href="https://plart.pw/langs/asm/8086%E6%B1%87%E7%BC%96%E6%80%BB%E7%BB%93-%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%BF%B0/"/>
+    <id>https://plart.pw/langs/asm/8086汇编总结-微型计算机概述/</id>
     <published>2018-02-25T16:00:00.000Z</published>
-    <updated>2018-07-13T12:43:08.816Z</updated>
+    <updated>2018-07-13T12:42:36.284Z</updated>
     
     <summary type="html">
     
@@ -549,37 +574,6 @@
     
     
       <category term="R" scheme="https://plart.pw/tags/R/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>chuck8</title>
-    <link href="https://plart.pw/langs/chuck/chuck8/"/>
-    <id>https://plart.pw/langs/chuck/chuck8/</id>
-    <published>2018-02-15T13:40:10.000Z</published>
-    <updated>2018-07-13T12:47:04.900Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;functions&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;writing
-calling
-overloading &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;#writing&lt;/p&gt;
-&lt;p&gt;keyword &lt;code&gt;fun&lt;/code&gt; (or
-        
-      
-    
-    </summary>
-    
-      <category term="编程与生活" scheme="https://plart.pw/categories/%E7%BC%96%E7%A8%8B%E4%B8%8E%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="ChucK" scheme="https://plart.pw/tags/ChucK/"/>
     
   </entry>
   

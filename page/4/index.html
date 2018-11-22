@@ -293,7 +293,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">30</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">31</span></a>
 
   </li>
         
@@ -331,7 +331,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">58</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">59</span></a>
 
   </li>
 
@@ -405,6 +405,232 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://plart.pw/langs/chuck/chuck13/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lart Pang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="失乐园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/langs/chuck/chuck13/" class="post-title-link" itemprop="https://plart.pw/page/4/index.html">chuck13</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-02-15 21:40:10" itemprop="dateCreated datePublished" datetime="2018-02-15T21:40:10+08:00">2018-02-15</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-07-13 20:46:29" itemprop="dateModified" datetime="2018-07-13T20:46:29+08:00">2018-07-13</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程与生活/" itemprop="url" rel="index"><span itemprop="name">编程与生活</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">5.5k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">10 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="events">Events</h1>
+<p>In addition to the built-in(嵌入的) timing mechanisms(机制) for internal(内部的) control, ChucK has an <strong>event</strong> class to allow exact synchronization(精确同步) across an arbitrary(任意的) number of shreds. 事件类允许在任意的进程间实现精确同步</p>
+<p><a href="http://chuck.cs.princeton.edu/doc/examples/index.html#%20event" target="_blank" rel="noopener">View sample code for events</a></p>
+<h1 id="what-they-are">what they are</h1>
+<p>ChucK events are a native class(原始类) within the ChucK language. We can create an event objects, and then chuck (<code>=&gt;</code>) that event to <strong>now</strong>. The event places the current shred on the event's waiting list, suspends(暂停) the current shred (letting time advance from that shred's point of view). 时间放置在当前进程的事件的等待列表里，暂停当前进程(从时间的观测点推进时间) When the event is triggered(引发), one or more of the shreds on its waiting list is shreduled to run immediately. 时间被引发时，在进程的等待列表里调用运行 This trigger(触发器) may originate(引起) <strong>from another ChucK shred, or from activities taking place outside the Virtual Machine</strong> ( MIDI, OSC, or IPC ).</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// declare event</span></span><br><span class="line">Event e;</span><br><span class="line"></span><br><span class="line"><span class="comment">// function for shred</span></span><br><span class="line"><span class="function">fun <span class="keyword">void</span> <span class="title">eventshred</span><span class="params">( Event event, <span class="built_in">string</span> msg )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// infinite loop</span></span><br><span class="line">    <span class="keyword">while</span> ( <span class="literal">true</span> )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// wait on event</span></span><br><span class="line">        event =&gt; now;</span><br><span class="line">        <span class="comment">// print</span></span><br><span class="line">        &lt;&lt;&lt;msg&gt;&gt;&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// create shreds</span></span><br><span class="line">spork ~ eventshred ( e, <span class="string">"fee"</span> );</span><br><span class="line">spork ~ eventshred ( e, <span class="string">"fi"</span> );</span><br><span class="line">spork ~ eventshred ( e, <span class="string">"fo"</span> );</span><br><span class="line">spork ~ eventshred ( e, <span class="string">"fum"</span> );</span><br><span class="line"></span><br><span class="line"><span class="comment">// infinite time loop</span></span><br><span class="line"><span class="keyword">while</span> ( <span class="literal">true</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// either signal or broadcast(信号或广播)</span></span><br><span class="line">    <span class="keyword">if</span>( maybe )</span><br><span class="line">    &#123; </span><br><span class="line">        &lt;&lt;&lt;<span class="string">"signaling..."</span>&gt;&gt;&gt;;</span><br><span class="line">        e.signal();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123; </span><br><span class="line">        &lt;&lt;&lt;<span class="string">"broadcasting..."</span>&gt;&gt;&gt;;</span><br><span class="line">        e.broadcast();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// advance time</span></span><br><span class="line">    <span class="number">0.5</span>::second =&gt; now;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="use">use</h1>
+<p>Chucking an event to <strong>now</strong> <em>suspends the current shred</em>, letting time advance:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// declare Event</span></span><br><span class="line">Event e;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// wait on the event</span></span><br><span class="line">e =&gt; now;</span><br><span class="line"></span><br><span class="line"><span class="comment">// after the event is trigger</span></span><br><span class="line">&lt;&lt;&lt; <span class="string">"I just woke up"</span> &gt;&gt;&gt;;</span><br></pre></td></tr></table></figure>
+<p>as shown above, events can be triggered in two ways, <em>depending on the desired behavior(行为).</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// signal one shred waiting on the event e</span></span><br><span class="line">e.signal();</span><br></pre></td></tr></table></figure>
+<p><code>signal()</code> releases the <em>first</em> shred in that event's queue, and shredule it to run at the current time, respecting(考虑) the order in which shreds were added to the queue.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// wake up all shreds waiting on the event e</span></span><br><span class="line">e.broadcast();</span><br></pre></td></tr></table></figure>
+<p><code>broadcast()</code> releases <em>all</em> shreds queued by that event, in the order they were added, and at the same instant in time(在同一瞬间).</p>
+<p>The released shreds are shreduled to run immediately. But of course they will respect(涉及) other shreds also shreduled to run at the same time. Furthermore(此外), the shred that called <code>signal()</code> or <code>broadcast()</code> will continue to run until it advances time itself, or yield the virtual(虚拟的) machine without advancing time. (see <code>me.yield()</code> under <a href="http://chuck.cs.princeton.edu/doc/language/spork.html#%20me" target="_blank" rel="noopener">concurrency</a>)</p>
+<h1 id="midi-events">MIDI events</h1>
+<p>ChucK contains built-in(嵌入的) MIDI classes to allow for interaction(相互作用) with MIDI based software or devices(装置).</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">MidiIn min;</span><br><span class="line">MidiMsg msg;</span><br><span class="line"></span><br><span class="line"><span class="comment">// open midi receiver, exit on fail</span></span><br><span class="line"><span class="keyword">if</span> ( !min.open(<span class="number">0</span>) ) me.<span class="built_in">exit</span>(); </span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>( <span class="literal">true</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// wait on midi event</span></span><br><span class="line">    min =&gt; now;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// receive midimsg(s)</span></span><br><span class="line">    <span class="keyword">while</span>( min.recv( msg ) )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// print content</span></span><br><span class="line">        &lt;&lt;&lt; msg.data1, msg.data2, msg.data3 &gt;&gt;&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p><strong>MidiIn</strong> is a subclass(子类) of <strong>Event</strong>, and as such can be ChucKed to <strong>now</strong>. MidiIn then takes a MidiMsg object to its <strong>.recv()</strong> method to access the MIDI data. <em>As a default, MidiIn events trigger(引发) the <strong>broadcast()</strong> event behavior.</em></p>
+<h1 id="osc-events">OSC events</h1>
+<p>In addition to MIDI, ChucK has OSC communication classes as well:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">// create our OSC receiver</span></span><br><span class="line">OscRecv orec;</span><br><span class="line"><span class="comment">// port 6449</span></span><br><span class="line"><span class="number">6449</span> =&gt; orec.port;</span><br><span class="line"><span class="comment">// start listening (launch thread)</span></span><br><span class="line">orec.listen();</span><br><span class="line"></span><br><span class="line"><span class="function">function <span class="keyword">void</span> <span class="title">rate_control_shred</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="comment">// create an address in the receiver </span></span><br><span class="line">    <span class="comment">// and store it in a new variable.</span></span><br><span class="line">    orec.event(<span class="string">"/sndbuf/buf/rate,f"</span>) @=&gt; OscEvent rate_event; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> ( <span class="literal">true</span> )</span><br><span class="line">    &#123; </span><br><span class="line">        rate_event =&gt; now; <span class="comment">// wait for events to arrive.</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// grab the next message from the queue. </span></span><br><span class="line">        <span class="keyword">while</span>( rate_event.nextMsg() != <span class="number">0</span> )</span><br><span class="line">        &#123; </span><br><span class="line">            <span class="comment">// getFloat fetches the expected float</span></span><br><span class="line">            <span class="comment">// as indicated in the type string ",f"</span></span><br><span class="line">            buf.play( rate_event.getFloat() );</span><br><span class="line">            <span class="number">0</span> =&gt; buf.pos;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;       </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>The <strong>OscRecv</strong> class listens for incoming OSC packets on the specified(特定的) port. Each instance(实例) of <strong>OscRecv</strong> can create OscEvent objects using its <code>event()</code> method to listen for packets at any valid OSC Address pattern.(在任何合法的OSC地址模式，使用事件方法来监听数据包)</p>
+<p>An OscEvent object can then be ChucKed to <strong>now</strong> <em>to wait for messages to arrive</em>, after which the <strong>nextMsg()</strong> and <strong>get{Float|String|Int}()</strong> methods can be used <em>to fetch message data</em>.</p>
+<h1 id="creating-custom-events">creating custom events</h1>
+<p>Events, like any other class, can be subclassed to add functionality(功能) and transmit(传输) data:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// extended event扩充事件</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TheEvent</span> <span class="title">extends</span> <span class="title">Event</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// the event</span></span><br><span class="line">TheEvent e;</span><br><span class="line"></span><br><span class="line"><span class="comment">// handler</span></span><br><span class="line"><span class="function">fun <span class="keyword">int</span> <span class="title">hi</span><span class="params">( TheEvent event )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>( <span class="literal">true</span> )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// wait on event</span></span><br><span class="line">        event =&gt; now;</span><br><span class="line">        <span class="comment">// get the data</span></span><br><span class="line">        &lt;&lt;&lt;e.value&gt;&gt;&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// spork</span></span><br><span class="line">spork ~ hi( e );</span><br><span class="line">spork ~ hi( e );</span><br><span class="line">spork ~ hi( e );</span><br><span class="line">spork ~ hi( e );</span><br><span class="line"></span><br><span class="line"><span class="comment">// infinite time loop</span></span><br><span class="line"><span class="keyword">while</span>( <span class="literal">true</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// advance time</span></span><br><span class="line">    <span class="number">1</span>::second =&gt; now;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// set data</span></span><br><span class="line">    Math.rand2( <span class="number">0</span>, <span class="number">5</span> ) =&gt; e.value;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// signal one waiting shred</span></span><br><span class="line">    e.signal();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -2633,295 +2859,6 @@ cmp $ polar + %(10, .25*pi) - pol =&gt; polar pol2;</code></pre>
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://plart.pw/langs/asm/8086汇编总结-一些汇编练习/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lart Pang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="失乐园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/langs/asm/8086汇编总结-一些汇编练习/" class="post-title-link" itemprop="https://plart.pw/page/4/index.html">一些汇编练习</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-02-15 00:00:00" itemprop="dateCreated datePublished" datetime="2018-02-15T00:00:00+08:00">2018-02-15</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-13 20:42:51" itemprop="dateModified" datetime="2018-07-13T20:42:51+08:00">2018-07-13</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程与生活/" itemprop="url" rel="index"><span itemprop="name">编程与生活</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">18k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">33 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>作者：lart 时间：2017年11月27日22:33:58</p>
-</blockquote>
-<p><a href="https://github.com/lartpang/myasm" target="_blank" rel="noopener">GitHub</a></p>
-<h1 id="习题4">习题4：</h1>
-<ol type="1">
-<li>从屏幕上输入大写字母，转换为小写字母并输出（生成.com文件） 要求：程序具有可读性、容错性</li>
-</ol>
-<h3 id="思路">思路：</h3>
-<p>由于要生成.com文件，所以需要将文件代码设置到一个代码段里。本问题涉及到读入与显示，这里可以使用21h中断的1,2,9号子功能。 读入字符后，将al中存放的字符通过判断其是否为大写字母来保证程序的正确性。利用大小写ascii码上的对应关系，实现了大小写的转化。</p>
-<h3 id="代码如下">代码如下：</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">code    segment para</span><br><span class="line">    assume  cs:code, ds:code, ss:code</span><br><span class="line">    org     0100h</span><br><span class="line">    main    proc near</span><br><span class="line">    again:</span><br><span class="line">        lea     dx, str_dis</span><br><span class="line">        mov     ah, 9</span><br><span class="line">        int     21h             ;显示初始字符串，提示输入</span><br><span class="line">        mov     ah, 1</span><br><span class="line">        int     21h             ;获得输入字符，存到al里</span><br><span class="line">        cmp     al, &apos;A&apos;         ;判断输入字符是否是A~Z的字符</span><br><span class="line">        jb      error</span><br><span class="line">        cmp     al, &apos;Z&apos;</span><br><span class="line">        ja      error           ;保证输入合法</span><br><span class="line">        add     al, 20h         ;大写+20h=小写</span><br><span class="line">        mov     str_num, ax     ;将ax保存</span><br><span class="line">        lea     dx, str_res</span><br><span class="line">        mov     ah, 9</span><br><span class="line">        int     21h             ;显示结果提示字符串</span><br><span class="line">        mov     ax, str_num     ;将ax恢复</span><br><span class="line">        mov     dl, al</span><br><span class="line">        mov     ah, 2</span><br><span class="line">        int     21h             ;显示最终结果</span><br><span class="line">        mov     ax, 4c00h</span><br><span class="line">        int     21h</span><br><span class="line">    error:</span><br><span class="line">        lea     dx, str_err</span><br><span class="line">        mov     ah, 9</span><br><span class="line">        int     21h</span><br><span class="line">        jmp     again</span><br><span class="line">    main    endp</span><br><span class="line">    str_num dw 0000h</span><br><span class="line">    str_dis db 0dh, 0ah, &apos;Please input(A~Z):$&apos;</span><br><span class="line">    str_res db 0dh, 0ah, &apos;The result is:$&apos;</span><br><span class="line">    str_err db 0dh, 0ah, &apos;The data of input is invalid!$&apos;</span><br><span class="line">code    ends</span><br><span class="line">    end     main</span><br></pre></td></tr></table></figure>
-<ol start="2" type="1">
-<li>编写一子程序 asc2bin ，将 ASCII 转换为二进制数 要求： 输入参数：AL 中存放需要转换的 ASCII 输出参数：AL 中存放转换后的二进制数并返回</li>
-</ol>
-<h3 id="思路-1">思路：</h3>
-<p>对于ascii码，先都当做数字来处理，即都减30h，在与9比大小，大于9的说明是10~15，再减7即可。</p>
-<h3 id="代码如下-1">代码如下：</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">asc2bin     proc</span><br><span class="line">    sub     al, 30h         ;先都当做表示数字的acsii</span><br><span class="line">    cmp     al, 9           ;与9比较，小于等于9的，直接跳转，大</span><br><span class="line">                            ;于9的，仍然需要处理</span><br><span class="line">    jbe     asc2bin_sub     ;跳转子程序</span><br><span class="line">    sub     al, 7           ;继续减7</span><br><span class="line">asc2bin_sub:</span><br><span class="line">    ret                     ;返回主程序</span><br><span class="line">asc2bin     endp</span><br></pre></td></tr></table></figure>
-<ol start="3" type="1">
-<li>内存中存放8个16位有符号数，求8个数值之和，并将结果存放在内存变量SUM中 注：程序中应用到字扩展为双字的指令CWD</li>
-</ol>
-<h3 id="思路-2">思路：</h3>
-<p>通过使用循环加法，扩展双字的指令，转化为双字的计算加和。</p>
-<h3 id="代码如下-2">代码如下：</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">data    segment para</span><br><span class="line">    buf dw -1, 2, -33, 44, -555, 666, -7777, 8888</span><br><span class="line">    sum dd 0</span><br><span class="line">data    ends</span><br><span class="line">ss_seg  segment stack</span><br><span class="line">    dw  100 dup(0)</span><br><span class="line">ss_seg  ends</span><br><span class="line">code    segment para</span><br><span class="line">    assume  cs:code, ds:data, ss:ss_seg</span><br><span class="line">        main    proc far</span><br><span class="line">        mov     ax, data</span><br><span class="line">        mov     ds, ax              ;指定数据位置</span><br><span class="line">        lea     bx, buf             ;bx指向buf首地址</span><br><span class="line">        mov     cx, 8               ;指定循环次数</span><br><span class="line">    w2d:</span><br><span class="line">        mov     ax, [bx]</span><br><span class="line">        cwd                         ;有符号数字扩展为双字，默认使用&#123;dx,ax&#125;</span><br><span class="line">        add     word ptr sum, ax    ;32 位数相加</span><br><span class="line">        adc     word ptr sum + 2, dx</span><br><span class="line">        inc     bx</span><br><span class="line">        inc     bx</span><br><span class="line">        loop    w2d                 ;循环 8 次</span><br><span class="line">        mov     ax, 4c00h</span><br><span class="line">        int     21h</span><br><span class="line">    main    endp</span><br><span class="line">code    ends</span><br><span class="line">    end     main</span><br></pre></td></tr></table></figure>
-<ol start="4" type="1">
-<li>内存中存放 8 个 8 位有符号数，请按从大到小顺序排列</li>
-</ol>
-<h3 id="思路-3">思路：</h3>
-<p>利用冒泡排序，设置两个循环，将相邻的数字进行比较，大的放在低位地址，小的放在高位地址。 对于循环的次数的设置这里有些需要注意的地方。一般而言，n个数的问题，外层循环需要n-1次，而内层循环也是需要n-1次比较，所以可以设置使用相同的循环计数器。只需要内层循环计数的时候将之前的压栈保存即可。</p>
-<h3 id="代码如下-3">代码如下：</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">;低地址到高地址，大数到小数。</span><br><span class="line">data    segment para</span><br><span class="line">    buf db -1, 2, -33, 44, -55, 66, -77, 88</span><br><span class="line">data    ends</span><br><span class="line">stack   segment stack</span><br><span class="line">    dw 100 dup(0)</span><br><span class="line">stack   ends</span><br><span class="line">code    segment para</span><br><span class="line">    assume  cs:code, ds:data, ss:stack</span><br><span class="line">    main    proc far</span><br><span class="line">        ;将ds:bx指向存放数据的位置</span><br><span class="line">        mov     ax, data</span><br><span class="line">        mov     ds, ax</span><br><span class="line">        mov     cx, 7           ;主循环仅需要7次</span><br><span class="line">    loop_main:</span><br><span class="line">        lea     bx, buf</span><br><span class="line">        push    cx              ;cx=n, 子循环正好也要循环n次</span><br><span class="line">                                ;压栈保存外循环循环次数</span><br><span class="line">        mov     si, 0           ;标志是否有交换，当后面检测si==0时，说明</span><br><span class="line">                                ;内部已经排序完毕</span><br><span class="line">    loop_sub:</span><br><span class="line">        ;取得第一个数据到ax里，将之与第二个数据比较大小</span><br><span class="line">        ;ax大等于[bx]的话，保留原样</span><br><span class="line">        ;ax小的话，就得将两个数据进行交换位置</span><br><span class="line">        mov     al, [bx]</span><br><span class="line">        cmp     al, [bx+1]</span><br><span class="line">        jge     not_xchg        ;&gt;=不交换</span><br><span class="line">        ;ax小，进行交换</span><br><span class="line">        xchg    al, [bx+1]</span><br><span class="line">        mov     [bx], al</span><br><span class="line">        mov     si, 1           ;标志有交换</span><br><span class="line">    not_xchg:</span><br><span class="line">        ;第一步交换完成，需要依次进行一遍</span><br><span class="line">        inc     bx</span><br><span class="line">        loop    loop_sub</span><br><span class="line">        ;完毕后，只完成了初步的重排，这时数据段中的情况是，高地址存放最小的数</span><br><span class="line">        ;还需要继续执行，之后每次都减少一次</span><br><span class="line">        cmp     si, 0</span><br><span class="line">        je      done_xchg</span><br><span class="line">        ; 仍有交换，还需重复      </span><br><span class="line">        pop     cx              ;出栈，恢复cx</span><br><span class="line">        loop    loop_main</span><br><span class="line">    done_xchg:</span><br><span class="line">        mov     ax, 4c00h</span><br><span class="line">        int     21h</span><br><span class="line">    main    endp</span><br><span class="line">code     ends</span><br><span class="line">  end main</span><br></pre></td></tr></table></figure>
-<ol start="5" type="1">
-<li>内存中有8个16位数，请编写程序将8个数倒序排放 例：定义内存中8个数 buf dw 100, 3, 1, 20, 40, -2, 7, 10 程序运行后，buf 开始应为： buf dw 10, 7, -2, 40, 20, 1, 3, 100</li>
-</ol>
-<h3 id="思路-4">思路：</h3>
-<p>要实现倒序存放，利用栈的入栈出栈，或者反复循环交换。但是使用栈，更为便捷。</p>
-<h3 id="代码如下-4">代码如下：</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">data    segment para</span><br><span class="line">    buf dw -1, 2, -33, 44, -555, 666, -7777, 8888</span><br><span class="line">data    ends</span><br><span class="line">stack   segment stack</span><br><span class="line">    dw 100 dup(0)</span><br><span class="line">stack   ends</span><br><span class="line">code    segment para</span><br><span class="line">    assume  cs:code, ds:data, ss:stack</span><br><span class="line">    main    proc far</span><br><span class="line">        mov     ax, data</span><br><span class="line">        mov     ds, ax</span><br><span class="line">        lea     bx, buf</span><br><span class="line">        mov     cx, 8</span><br><span class="line">    stack_push:</span><br><span class="line">        push    [bx]</span><br><span class="line">        add     bx, 2</span><br><span class="line">        loop    stack_push</span><br><span class="line">        lea     bx, buf</span><br><span class="line">        mov     cx, 8</span><br><span class="line">    stack_pop:</span><br><span class="line">        pop     [bx]</span><br><span class="line">        add     bx, 2</span><br><span class="line">        loop    stack_pop</span><br><span class="line">        mov     ax, 4c00h</span><br><span class="line">        int     21h</span><br><span class="line">    main    endp</span><br><span class="line">code    ends</span><br><span class="line">    end     main</span><br></pre></td></tr></table></figure>
-<ol start="6" type="1">
-<li>从键盘输入 4 位十进制数，然后以 16 进制形式显示在屏幕上 例：键盘输入：1024 屏幕上应显示：0400H 要求：键盘输入和显示结果时均应有提示</li>
-</ol>
-<h3 id="思路-5">思路：</h3>
-<p>输入四位十进制数，将ascii码利用中断功能，读入（此处会对输入字符做出合法性判断），转换为十进制数并以二进制的形式存在内存里，最后，转换为十六进制，并拆分各个数字，显示ascii码输出。具体流程详见注释。</p>
-<h3 id="代码如下-5">代码如下：</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">;具体流程：ASCII码输入-&gt;十进制-&gt;十六进制-&gt;ASCII码显示</span><br><span class="line">;故需要子函数完成进制转换、ascii转换</span><br><span class="line">data    segment para</span><br><span class="line">    buf         db 4 dup(0)</span><br><span class="line">    var_10      dw 0</span><br><span class="line">    str_input   db 0dh, 0ah, &apos;Please input four numbers(0-9):$&apos;</span><br><span class="line">    str_error   db 0dh, 0ah, &apos;The input is error, please try again.$&apos;</span><br><span class="line">    str_output  db 0dh, 0ah, &apos;The hex result is:$&apos;</span><br><span class="line">data    ends</span><br><span class="line">stack   segment stack</span><br><span class="line">    dw 100 dup(0)</span><br><span class="line">stack   ends</span><br><span class="line">code    segment para</span><br><span class="line">    assume  cs:code, ds:data, ss:stack   </span><br><span class="line">    main    proc far</span><br><span class="line">        mov     ax, data</span><br><span class="line">        mov     ds, ax</span><br><span class="line">    loop_again:                 ;输入有错误需要重新读取输入</span><br><span class="line">        lea     dx, str_input   ;显示数据输入提示信息</span><br><span class="line">        mov     ah, 9</span><br><span class="line">        int     21h</span><br><span class="line">        lea     bx, buf         ;用bx来作为buf的指代</span><br><span class="line">        mov     cx, 4           ;循环输入4个数</span><br><span class="line">    loop_input: </span><br><span class="line">        mov     ah, 1           ;输入数据</span><br><span class="line">        int     21h</span><br><span class="line">        cmp     al, &apos;0&apos;         ;判断输入字符是否为‘0’~‘9’</span><br><span class="line">        jb      error</span><br><span class="line">        cmp     al, &apos;9&apos;</span><br><span class="line">        ja      error           ;非法字符，进行错误处理</span><br><span class="line">        ;直接输入一个字符，处理一个字符</span><br><span class="line">        sub     al, 30h         ;ASCII转换为二进制，得到 0-9</span><br><span class="line">        mov     [bx], al        ;存入缓冲区</span><br><span class="line">        inc     bx</span><br><span class="line">        loop    loop_input</span><br><span class="line">        jmp     input_valid     ;数据输入正确后 ,跳转到后续处理</span><br><span class="line">    error: </span><br><span class="line">        lea     dx, str_error   ;显示错误提示信息</span><br><span class="line">        mov     ah, 9</span><br><span class="line">        int     21h</span><br><span class="line">        jmp     loop_again      ;跳转到重新输入</span><br><span class="line">    input_valid:                ;现在数据以二进制的形式存储</span><br><span class="line">        mov     ax, 0           ;以(((0*10+dl3)*10+dl2)*10+dl1)*10+dl0计算</span><br><span class="line">                                ;十进制数据结果存放到ax中</span><br><span class="line">        mov     dx, 0           ;因为ax可以满足存放四位十进制数的需求</span><br><span class="line">        mov     si, 10          </span><br><span class="line">        mov     bx, 0</span><br><span class="line">        mov     cx, 4</span><br><span class="line">    loop_mul10: </span><br><span class="line">        mul     si              ;相乘后dx仍然保持 0</span><br><span class="line">        mov     dl, [bx]        ;将buf数据取到dl中</span><br><span class="line">        mov     dh, 0</span><br><span class="line">        add     ax, dx</span><br><span class="line">        inc     bx</span><br><span class="line">        loop    loop_mul10      ;循环4次乘10</span><br><span class="line">        mov     var_10, ax      ;得到的 4 位十进制数存放到 var_10 中</span><br><span class="line">                                ;var_10共16位，存放十进制数对应的二进制</span><br><span class="line">        lea     dx, str_output</span><br><span class="line">        mov     ah, 9</span><br><span class="line">        int     21h             ;显示输出提示符</span><br><span class="line">        mov     ch, 4           ;以16进制显示输入的数据，循环四次</span><br><span class="line">        mov     cl, 4</span><br><span class="line">    loop_display: </span><br><span class="line">        rol     var_10, cl      ;循环左移4位，因为要先显示高位</span><br><span class="line">        mov     ax, var_10</span><br><span class="line">        and     ax, 000fh       ;仅保留最低四位</span><br><span class="line">        call    bin2asc         ;二进制转换为 ASCII</span><br><span class="line">        call    pchar           ;显示一个十六进制字符</span><br><span class="line">        dec     ch</span><br><span class="line">        jnz     loop_display</span><br><span class="line">        mov     al, &apos;H&apos;         ;显示十六进制‘H’记号</span><br><span class="line">        call    pchar</span><br><span class="line">        mov     ax, 4c00h</span><br><span class="line">        int     21h</span><br><span class="line">    main    endp</span><br><span class="line"></span><br><span class="line">    ;功能: 将一个二进制数字转换为ASCII</span><br><span class="line">    ;输入参数 : AL中存放二进制数（有效位只有低四位）</span><br><span class="line">    ;输出参数 : AL中存放ASCII</span><br><span class="line">    bin2asc     proc</span><br><span class="line">        and     al, 0fh</span><br><span class="line">        add     al, 30h</span><br><span class="line">        cmp     al, 39h</span><br><span class="line">        jbe     done_b2a</span><br><span class="line">        add     al, 07h         ;是A~Z</span><br><span class="line">    done_b2a: </span><br><span class="line">        ret                     ;返回</span><br><span class="line">    bin2asc     endp</span><br><span class="line"></span><br><span class="line">    ;功能：显示单个字符</span><br><span class="line">    ;输入参数：AL中存放ASCII</span><br><span class="line">    ;输出参数：无</span><br><span class="line">    pchar   proc</span><br><span class="line">        mov     dl, al</span><br><span class="line">        mov     ah, 2</span><br><span class="line">        int     21h</span><br><span class="line">        ret                     ;返回</span><br><span class="line">    pchar   endp</span><br><span class="line">code    ends</span><br><span class="line">    end     main</span><br></pre></td></tr></table></figure>
-<ol start="7" type="1">
-<li>数据段从100H开始存放字符串str1，从200H开始存放str2，二者均以NULL字符为结束符，编写程序将str2拷贝到str1末尾，形成一个完整字符串 例： ORG 100H str1 db 0dh, 0ah, ‘Hello ’, 0 ORG 200H str2 db ‘Automation!’, 0 程序运行后结果应为： str1 db 0dh, 0ah, ‘Hello Automation!’, 0</li>
-</ol>
-<h3 id="思路-6">思路：</h3>
-<p>利用<code>repnz   scasb</code>指令，将扫描的字符与al中预存的0比较，即查找str_first的结束位置，找到后，利用<code>mov cx, count</code> &amp; <code>rep movsb</code>两条命令，以及<code>count equ ($-str_second)</code>，将str_secon复制到str_first之后。 最后再利用lodsb，配合中断功能，显示最终的合并字符串。</p>
-<h3 id="代码如下-6">代码如下：</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">data    segment para</span><br><span class="line">    ORG     100H</span><br><span class="line">    str_first   db 0dh, 0ah, &apos;Hello &apos;, 0</span><br><span class="line">    ORG     200H</span><br><span class="line">    str_second  db &apos;Automation! &apos;, 0</span><br><span class="line">    count       equ ($-str_second)</span><br><span class="line">data    ends</span><br><span class="line">ss_seg  segment stack</span><br><span class="line">    dw 100 dup(0)</span><br><span class="line">ss_seg  ends</span><br><span class="line">code    segment para</span><br><span class="line">    assume  cs:code, ds:data, ss:ss_seg</span><br><span class="line">    main    proc far</span><br><span class="line">        mov     ax, data</span><br><span class="line">        mov     ds, ax</span><br><span class="line">        mov     es, ax</span><br><span class="line">        lea     di, str_first   ;es:di 指向str_first首地址</span><br><span class="line">        mov     al, 0</span><br><span class="line">        repnz   scasb           ;查找到str_first结束符NULL，最后di会多加一次</span><br><span class="line">        dec     di              ;让es:di指向该位置</span><br><span class="line">        lea     si, str_second  ;ds:si指向str_second首地址</span><br><span class="line">        cld                     ;DF置零，右移</span><br><span class="line">        mov     cx, count</span><br><span class="line">        rep     movsb           ;重复搬移</span><br><span class="line">        lea     si, str_first   ;ds:si 指向拷贝后的 str_first 首地址</span><br><span class="line">    display: </span><br><span class="line">        lodsb                   ;显示拷贝后的 str_first 字符串</span><br><span class="line">        cmp     al, 0</span><br><span class="line">        jz      exit            ;显示完毕</span><br><span class="line">        call    pchar</span><br><span class="line">        jmp     display</span><br><span class="line">    exit: </span><br><span class="line">        mov     ax, 4c00h</span><br><span class="line">        int     21h</span><br><span class="line">    main    endp</span><br><span class="line"></span><br><span class="line">    ;功能：显示单个字符</span><br><span class="line">    ;输入参数：AL中存放ASCII</span><br><span class="line">    ;输出参数：无</span><br><span class="line">    pchar   proc</span><br><span class="line">        mov     dl, al</span><br><span class="line">        mov     ah, 2</span><br><span class="line">        int     21h</span><br><span class="line">        ret</span><br><span class="line">    pchar   endp</span><br><span class="line">code    ends</span><br><span class="line">    end     main</span><br></pre></td></tr></table></figure>
-<ol start="8" type="1">
-<li>以 10 进制形式显示 内存中一有符号字节数据 例：var db 0ffH 屏幕应显示：The result is: -1 代码如下：</li>
-</ol>
-<h3 id="思路-7">思路：</h3>
-<p>主要是二进制转化为十进制后拆分成单个数字，在将之处理为ascii码。 首先需要与0比较，利用jg/jl等有符号数比较指令实现跳转处理。分别将第一个字符设置为对应的符号。 再将实际数值部分进行处理，转换为ascii码，进行显示。</p>
-<h3 id="代码如下-7">代码如下：</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">;思路：二进制-&gt;十进制-&gt;ascii码</span><br><span class="line">data    segment para</span><br><span class="line">    var_signed      db 0ffH</span><br><span class="line">    str_result      db 0dh, 0ah, &apos;The result is: &apos;</span><br><span class="line">    num_signed      db 4 dup(&apos; &apos;);因为有符号字节数，最多就是三位十进制</span><br><span class="line">                    db &apos;$&apos;</span><br><span class="line">data    ends</span><br><span class="line">stack   segment stack</span><br><span class="line">    dw 100 dup(0)</span><br><span class="line">stack   ends</span><br><span class="line">code    segment para</span><br><span class="line">    assume  cs:code, ds:data, ss:stack</span><br><span class="line">    main    proc far</span><br><span class="line">        mov     ax, data</span><br><span class="line">        mov     ds, ax</span><br><span class="line">        mov     num_signed, &apos;+&apos;</span><br><span class="line">        cmp     var_signed, 0   ;判断 var_signed 是正数 ,还是负数</span><br><span class="line">        jge     is_pos          ;&gt;= 为正数</span><br><span class="line">        mov     num_signed, &apos;-&apos; ;&lt;  为负数</span><br><span class="line">        neg     var_signed      ;若 var_signed 为负，则补码的相反数</span><br><span class="line">    is_pos: </span><br><span class="line">        mov     al, var_signed</span><br><span class="line">        mov     cx, 3</span><br><span class="line">        mov     dl, 10          ;进制</span><br><span class="line">        lea     bx, num_signed+3;倒着放数据</span><br><span class="line">    again: </span><br><span class="line">        mov     ah, 0           ;高八位置零</span><br><span class="line">        div     dl</span><br><span class="line">        add     ah, 30h         ;余数 ah</span><br><span class="line">        mov     [bx], ah</span><br><span class="line">        dec     bx</span><br><span class="line">        loop    again           ;循环 3 次,分别得到百、十、个位</span><br><span class="line">    done:</span><br><span class="line">        lea     dx, str_result  ;显示 10 进制数</span><br><span class="line">        mov     ah, 9</span><br><span class="line">        int     21h</span><br><span class="line">    exit: </span><br><span class="line">        mov     ax, 4c00h</span><br><span class="line">        int     21h</span><br><span class="line">    main    endp</span><br><span class="line">code    ends</span><br><span class="line">    end     main</span><br></pre></td></tr></table></figure>
-<ol start="9" type="1">
-<li>将一个16位的无符号数var，转换为非压缩格式BCD码，存放在内存中buf开始的单元中。（按高位在 前、低位在后的顺序存放）</li>
-</ol>
-<h3 id="思路-8">思路：</h3>
-<p>利用二进制转换十进制：((0<em>2 + B15)</em>2 + B14)<em>2 + ? + )</em>2 + B0 在运算过程中利用非压缩格式bcd码调整指令aaa，处理为非压缩格式bcd码，使得最终结果即为非压缩格式bcd码。</p>
-<h3 id="代码如下-8">代码如下：</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">;二进制数 0FFFH，十进制 4095，非压缩BCD 4 0 9 5 各一个字节的低四位</span><br><span class="line">;二进制转换十进制：((0*2 + B15)*2 + B14)*2 + ? + )*2 + B0</span><br><span class="line">data    segment para</span><br><span class="line">    buf     db 4 dup(0)</span><br><span class="line">    var     dw 0FFFH    </span><br><span class="line">data    ends</span><br><span class="line">stack   segment stack</span><br><span class="line">    dw  100 dup(0)</span><br><span class="line">stack   ends</span><br><span class="line">code    segment para </span><br><span class="line">    assume  cs:code, ds:data, ss:stack</span><br><span class="line">    main    proc far</span><br><span class="line">        mov     ax, data</span><br><span class="line">        mov     ds, ax</span><br><span class="line">        mov     cx, 16          ;要进行十六次移位，利用adc获得</span><br><span class="line">    loop_wai: </span><br><span class="line">        shl     var, 1          ;得到 var 的 Bi 位</span><br><span class="line">        mov     bx, 3</span><br><span class="line">        push    cx</span><br><span class="line">        mov     cx, 4</span><br><span class="line">    loop_nei:                   </span><br><span class="line">        mov     al, [bx]        ;执行 buf*2 + Bi 操作</span><br><span class="line">        adc     al, al</span><br><span class="line">        aaa                     ;非压缩格式 BCD 码调整</span><br><span class="line">        mov     [bx], al</span><br><span class="line">        dec     bx</span><br><span class="line">        loop    loop_nei        ;内循环为 4 次</span><br><span class="line">        pop     cx</span><br><span class="line">        loop    loop_wai        ;外循环为 16 次</span><br><span class="line">    exit: </span><br><span class="line">        mov     ax, 4c00h</span><br><span class="line">        int     21h</span><br><span class="line">    main    endp</span><br><span class="line">code    ends</span><br><span class="line">    end     main</span><br></pre></td></tr></table></figure>
-<ol start="10" type="1">
-<li>内存中有两个32位有符号数，请编写完整汇编语言程序，将二者相乘，结果保存在64位有符号数RESULT中</li>
-</ol>
-<h3 id="思路-9">思路：</h3>
-<p>两个32位与符号数相乘，只要处理好符号位，就可以转化为无符号数相乘。</p>
-<h3 id="代码如下-9">代码如下：</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">data    segment para</span><br><span class="line">    num_1   dd 80000002h</span><br><span class="line">    num_2   dd 80005000h</span><br><span class="line">    result  dw 4 dup (?)</span><br><span class="line">data    ends</span><br><span class="line">ss_seg  segment stack</span><br><span class="line">    dw 100 dup (0)</span><br><span class="line">ss_seg  ends</span><br><span class="line">code    segment para</span><br><span class="line">    assume  cs:code, ds:data, ss:ss_seg</span><br><span class="line">    main    proc far</span><br><span class="line">        mov     ax, data</span><br><span class="line">        mov     ds, ax</span><br><span class="line">        shl     byte ptr [num_1+3], 1	;处理符号位</span><br><span class="line">        jc      num_1_l0 				;num_1&lt;0</span><br><span class="line">        xor     ax, ax   </span><br><span class="line">        shr     byte ptr [num_1+3], 1	;剥离符号位</span><br><span class="line">        mov     bh, 0h					;用bh存放符号位</span><br><span class="line">        jmp     next					;符号位被置零</span><br><span class="line">    num_1_l0:;num_1&lt;0</span><br><span class="line">        mov     bh, 1h					;用bh存放符号位</span><br><span class="line">    next:</span><br><span class="line">        shl     byte ptr [num_2+3], 1	;对num_2做相同处理</span><br><span class="line">        jc      num_2_l0</span><br><span class="line">        xor     ax, ax</span><br><span class="line">        shr     byte ptr [num_2+3], 1</span><br><span class="line">        mov     bl, 0h</span><br><span class="line">        jmp     continue</span><br><span class="line">    num_2_l0:;num_2&lt;0</span><br><span class="line">        mov     bl, 1h</span><br><span class="line">    continue:							; 当做无符号数处理，计算相乘</span><br><span class="line">        lea     si, num_1</span><br><span class="line">        lea     di, num_2</span><br><span class="line">        mov     ax, [si]</span><br><span class="line">        mov     dx, [di]</span><br><span class="line">        mul     dx</span><br><span class="line">        mov     [result],ax</span><br><span class="line">        mov     [result+2],dx</span><br><span class="line">        mov     ax, [si+2]</span><br><span class="line">        mov     dx, [di]</span><br><span class="line">        mul     dx</span><br><span class="line">        add     [result+2],ax</span><br><span class="line">        adc     [result+4],dx</span><br><span class="line">        mov     ax, [si]</span><br><span class="line">        mov     dx, [di+2]</span><br><span class="line">        mul     dx</span><br><span class="line">        add     [result+2],ax</span><br><span class="line">        adc     [result+4],dx</span><br><span class="line">        adc     [result+6],0</span><br><span class="line">        mov     ax, [si+2]</span><br><span class="line">        mov     dx, [di+2]</span><br><span class="line">        mul     dx</span><br><span class="line">        add     [result+4],ax</span><br><span class="line">        adc     [result+6],dx</span><br><span class="line">        sub     bh, bl					;处理符号</span><br><span class="line">        jnz     bh_nz_bl				;num_1 num_2异号</span><br><span class="line">        and     [result+7], 01111111b	;同号就将结果最高位置0</span><br><span class="line">        jmp     exit</span><br><span class="line">    bh_nz_bl:;不同号</span><br><span class="line">        or      [result+7], 10000000b	;异号就将结果最高位置1</span><br><span class="line">    exit:</span><br><span class="line">        mov     ah, 4ch</span><br><span class="line">        int     21h</span><br><span class="line">    main    endp</span><br><span class="line">code    ends</span><br><span class="line">    end     main</span><br></pre></td></tr></table></figure>
-<ol start="11" type="1">
-<li>将一个 8 位压缩 BCD 码转换为二进制数</li>
-</ol>
-<h3 id="思路-10">思路：</h3>
-<p>对于四位压缩bcd码的过程比较简单，可以利用不断循环左移四位，将高位字节的两个bcd码置于字单元的最后位置，整体赋给寄存器，现在寄存器里存放的是一位压缩bcd码，乘以10再加上下一位如此获得的bcd码，反复如此，就可以获得四位的压缩bcd对应的十进制，存放到内存中，就变为了二进制。 而对于八位压缩bcd码，则可以拆成高四位对应的十进制，乘以10000，加上低四位对应的十进制数。这里就是这样处理的。 高四位低四位分别求出了对应的十进制，按上述规则相加，得到了最终结果。</p>
-<h3 id="代码如下-10">代码如下：</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">data    segment para</span><br><span class="line">    BCD_num     dd 12345678h</span><br><span class="line">    bin_num     db 4 dup(0)</span><br><span class="line">    loop_num    db 2</span><br><span class="line">data    ends</span><br><span class="line">ss_seg  segment stack</span><br><span class="line">    dw      100 dup(0)</span><br><span class="line">ss_seg  ends</span><br><span class="line">code    segment para </span><br><span class="line">    assume  cs:code, ds:data, ss:ss_seg</span><br><span class="line">    main    proc far</span><br><span class="line">        mov     ax, data</span><br><span class="line">        mov     ds, ax</span><br><span class="line">        mov     si, 10</span><br><span class="line">        mov     ax, 0</span><br><span class="line">        mov     dl, 2   ;分两段</span><br><span class="line">        mov     di, 2</span><br><span class="line">    again_loop:</span><br><span class="line">        mov     cx, 0404h	;ch 乘法循环计数器； cl 移位计数器</span><br><span class="line">    again_mul:</span><br><span class="line">        mul     si</span><br><span class="line">        rol     word ptr [BCD_num+di], cl</span><br><span class="line">        mov     bx, word ptr [BCD_num+di]</span><br><span class="line">        and     bx, 000fh</span><br><span class="line">        add     ax, bx</span><br><span class="line">        dec     ch</span><br><span class="line">        jnz     again_mul</span><br><span class="line">        mov     word ptr [bin_num+di], ax</span><br><span class="line">        xor     di, di</span><br><span class="line">        xor     ax, ax</span><br><span class="line">        sub     [loop_num], 1</span><br><span class="line">        jnz     again_loop</span><br><span class="line">        ; 高四位对应的十进制乘以10，加上低四位对应的十进制</span><br><span class="line">        mov     ax, word ptr [bin_num+2]</span><br><span class="line">        mov     bx, 10000</span><br><span class="line">        mul     bx</span><br><span class="line">        add     ax, word ptr [bin_num]</span><br><span class="line">        adc     dx, 0</span><br><span class="line">        mov     word ptr [bin_num], ax</span><br><span class="line">        mov     word ptr [bin_num+2], dx</span><br><span class="line">        mov     ax, 4c00h</span><br><span class="line">        int     21h</span><br><span class="line">    main    endp</span><br><span class="line">code    ends</span><br><span class="line">    end     main</span><br></pre></td></tr></table></figure>
-<p>选作题：</p>
-<ol start="12" type="1">
-<li>内存中从str开始存放一字符串，结束符为NULL字符，请编写程序统计该字符串中单词的个数 例：str1 db 0dh, 0ah, ‘Hello world, welcome to DUT. CPU is central processing unit!’, 0h 统计 ’….’ 中的单词个数，结果为10</li>
-</ol>
-<h3 id="思路-11">思路：</h3>
-<p>如题所述，主要统计空格。通过扫描字符串，统计空格，但是有效的空格前一个字符是有效的字符，只有这样的空格才会统计。</p>
-<h3 id="代码如下-11">代码如下：</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">data    segment para</span><br><span class="line">jj    string  db 0dh, 0ah, &apos;Hello world, welcome to DUT. CPU is central &apos;</span><br><span class="line">            db &apos;processing unit!&apos;, 0h</span><br><span class="line">    words   dw 0</span><br><span class="line">data    ends</span><br><span class="line">stack   segment stack</span><br><span class="line">    db  256 dup(0)</span><br><span class="line">stack   ends</span><br><span class="line">code    segment para</span><br><span class="line">    assume  cs:code, ds:data, ss:stack</span><br><span class="line">    main    proc far</span><br><span class="line">        mov     ax, data</span><br><span class="line">        mov     ds, ax</span><br><span class="line">        mov     cx, 0       ;用 cx 存放单词数</span><br><span class="line">        lea     si, string</span><br><span class="line">        mov     bl, &apos; &apos;     ;bl 总保存当前字符的前一个字符</span><br><span class="line">        cld                 ;保证右移</span><br><span class="line">    load_al: </span><br><span class="line">        lodsb               ;从ds:si中以字节为单位获取数据，al只判断0以及空格</span><br><span class="line">        and     al, al      ;判断 al 是否为结束符 0，al=0 zf=1，al!=0，zf=0</span><br><span class="line">        jz      al_0</span><br><span class="line">        cmp     al, &apos; &apos;     ;比较是否是空格，只对空格计数</span><br><span class="line">        jnz     bl_new</span><br><span class="line">    al_douhao:              ;处理重复计数：计数只是根据空格的个数来计算。</span><br><span class="line">                            ;重复计数主要是因为多个空格以及逗号空格连续所致。</span><br><span class="line">        cmp     bl, &apos; &apos;     ;比较前一个字符是否为空格，如果是则此空格</span><br><span class="line">                            ;不能算一个单词，即为了防止多个空格的情况</span><br><span class="line">        jz      bl_new</span><br><span class="line">        inc     cx          ;只有当前字符为 &apos; &apos;或&apos;,&apos; 而且前一个字符为有</span><br><span class="line">                            ;效字符时，才对单词数加 1</span><br><span class="line">        jmp     bl_new</span><br><span class="line">    bl_new: </span><br><span class="line">        mov     bl, al      ;进入这里表明此时 al 中内容不是 0 或者 &apos; &apos;</span><br><span class="line">                            ;符号 ,保存 al 到 bl</span><br><span class="line">        jmp     load_al</span><br><span class="line">    al_0:                   ;判断结束符前面是否有&apos; &apos;，删掉多余的计数</span><br><span class="line">        cmp     bl, &apos; &apos;     </span><br><span class="line">        jz      done</span><br><span class="line">        inc     cx          ;若结束符前是一个有效字符，那么单词数应该加 1</span><br><span class="line">    done: </span><br><span class="line">        mov     words, cx</span><br><span class="line">        mov     ax, 4c00h</span><br><span class="line">        int     21h</span><br><span class="line">    main    endp</span><br><span class="line">code    ends</span><br><span class="line">    end     main</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2971,7 +2908,7 @@ cmp $ polar + %(10, .25*pi) - pol =&gt; polar pol2;</code></pre>
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">58</span>
+                    <span class="site-state-item-count">59</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -3069,7 +3006,9 @@ cmp $ polar + %(10, .25*pi) - pol =&gt; polar pol2;</code></pre>
                     
                       
                     
-                    <span class="site-state-item-count">30</span>
+                      
+                    
+                    <span class="site-state-item-count">31</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -3182,7 +3121,7 @@ cmp $ polar + %(10, .25*pi) - pol =&gt; polar pol2;</code></pre>
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">356k</span>
+    <span title="站点总字数">358k</span>
   
 
   
@@ -3191,7 +3130,7 @@ cmp $ polar + %(10, .25*pi) - pol =&gt; polar pol2;</code></pre>
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">10:48</span>
+    <span title="站点阅读时长">10:51</span>
   
 </div>
 

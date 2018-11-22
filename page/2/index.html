@@ -293,7 +293,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">30</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">31</span></a>
 
   </li>
         
@@ -331,7 +331,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">58</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">59</span></a>
 
   </li>
 
@@ -405,6 +405,265 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://plart.pw/tools/安装配置manjaro小记/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lart Pang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="失乐园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/tools/安装配置manjaro小记/" class="post-title-link" itemprop="https://plart.pw/page/2/index.html">Manjaro小记</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-24 00:03:55" itemprop="dateCreated datePublished" datetime="2018-05-24T00:03:55+08:00">2018-05-24</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-07-13 20:50:59" itemprop="dateModified" datetime="2018-07-13T20:50:59+08:00">2018-07-13</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/记录与总结/" itemprop="url" rel="index"><span itemprop="name">记录与总结</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2.4k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">4 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="又是一次新的尝试">又是一次新的尝试</h1>
+<blockquote>
+<p>写下这篇文章的时间：2018年5月23日22:46:25</p>
+</blockquote>
+<h2 id="使用的工具">使用的工具</h2>
+<ul>
+<li>manjaro-kde-17.1.7-stable-x86_64.iso</li>
+<li>rufus-2.18.exe</li>
+<li>AUSU X555L Core i3-5010U CPU @ 2.10GHz 2.10GHz RAM 4.00GB</li>
+<li>Win8.1 X64</li>
+<li>一个容量合适的U盘</li>
+</ul>
+<h2 id="安装">安装</h2>
+<p>使用 rufus 来制作启动U盘。BIOS设置U盘启动。</p>
+<p>由于直接使用ISO模式，我这里出现了非法错误的提示，转而使用DD模式，成功进入安装设置界面。</p>
+<p>界面很清晰，关键是驱动设定，选择闭源 —— non-free。</p>
+<p>选择中文。</p>
+<p>点击 boot 那项启动安装流程。</p>
+<p>进入新的图形界面后，开始安装。</p>
+<p>流程主要参看 <a href="https://blog.csdn.net/aaazz47/article/details/77416136?locationNum=6&amp;fps=1" target="_blank" rel="noopener">Manjaro Linux 17.0.2 KDE环境安装、配置记录</a>。</p>
+<p>问题是，我在手动分区的时候，划分了 /boot/efi（这里文件系统我是用的是fat32，安装后win下会出现一个新的盘符，在磁盘管理中，我将其隐藏了），/，/var，但是安装过程会提示出错。</p>
+<p>这里具体的错误已经忘记，但是多番尝试后，修改了挂载点，把 /var 改成了 交换分区。诶，这次竟然装上去了。</p>
+<h2 id="配置">配置</h2>
+<p>初次进入系统后，首先要配置好源的问题。</p>
+<p>用vi（或者KDE自带编辑器Kate，当然命令行里的Nano也不错）编辑/etc/pacman.conf文件(sudo vi /etc/pacman.conf)，在文件底部添加下面几行:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustedOnly</span><br><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch</span><br></pre></td></tr></table></figure>
+<p>再执行来调整源顺序，<a href="https://blog.csdn.net/kxp9545/article/details/76138980" target="_blank" rel="noopener">使用国内源</a>。并更新系统，估计会有一个多G的内容要更新，等着吧。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman-mirrors -c China -g</span><br><span class="line"><span class="comment"># 这里我直接使用了KDE的更新管理器，就是托盘里那个小妖精...简单直接</span></span><br><span class="line">sudo pacman -Syyu</span><br></pre></td></tr></table></figure>
+<p>关于 pacman 命令可见以下文章：</p>
+<p>https://wiki.archlinux.org/index.php/Pacman</p>
+<p>https://www.cnblogs.com/shengansong/archive/2011/11/19/2255129.html</p>
+<p>之后就是常用软件的安装了。</p>
+<ol type="1">
+<li>终端使用vim（个人喜好，用了自己的配置文件。需要修改一些路径，字体就不用管，终端使用就这好处。）</li>
+<li>图形使用emacs —— spacemacs（使用develop版本，参考配置可见子龙山人的）。</li>
+<li>输入法使用fcitx-googlepinyin，我这里安装搜狗总是有问题，直接换了谷歌拼音。</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S gvim</span><br><span class="line">sudo pacman -S emacs</span><br><span class="line">sudo pacman -S git</span><br><span class="line"><span class="comment"># 关于fcitx可见 https://wiki.archlinux.org/index.php/Fcitx</span></span><br><span class="line">sudo pacman -S fcitx-googlepinyin</span><br><span class="line">sudo pacman -S fcitx-im         <span class="comment"># 全部安装</span></span><br><span class="line">sudo pacman -S fcitx-configtool <span class="comment"># 图形化配置工具</span></span><br><span class="line">sudo pacman -S kcm-fcitx <span class="comment"># KDE 的 Fcitx 输入法模块，似乎是可选的</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置中文输入法环境变量，相当于开启启动输入法，编辑~/.xprofile文件，增加下面几行(如果文件不存在，则新建)</span></span><br><span class="line"><span class="comment"># 可以通过 </span></span><br><span class="line"><span class="comment"># echo ~</span></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line"><span class="comment"># echo $HOME</span></span><br><span class="line"><span class="comment"># 来查看对应的位置</span></span><br><span class="line"></span><br><span class="line">exportGTK_IM_MODULE=fcitx</span><br><span class="line">exportQT_IM_MODULE=fcitx</span><br><span class="line">exportXMODIFIERS=<span class="string">"@im=fcitx"</span></span><br></pre></td></tr></table></figure>
+<p>如上安装后，gvim和emacs基本没有什么问题，但是输入法有些小问题，多次尝试后，就是输入字符出来的候选菜单里面不能显示文字，当我使用了 <code>fcitx-ui-light</code> 这个轻量级UI，发现正常了。（可在配置菜单里的高级中配置）。</p>
+<h2 id="没完没了">没完没了</h2>
+<p>KDE启动内存占用将近五百兆，虽然比win要省一些，但是还是想尝试点新的更给力的环境。于是，我瞄上了 <a href="https://i3wm.org/" target="_blank" rel="noopener">i3wm</a>，一个平铺式窗口管理器。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S i3</span><br></pre></td></tr></table></figure>
+<p>注销用户，登录界面的 <code>会话</code> 选择 <code>i3</code> 。</p>
+<p>进来的时候，发现只有屏幕最下方的显示有变化，变成了一条看似酷炫缺什么也做不了的状态栏。</p>
+<p>不要慌，要知道i3主要是使用快捷键。</p>
+<p>所以刚进的时候，会问你要不要使用默认配置。还是自己创建配置吧。会问你使用哪个作为主要的功能键，mod键设定为windows键。</p>
+<p>这时需要 <code>win+return</code> 打开终端。</p>
+<p>可以使用这个较为完整的配置：</p>
+<p>https://github.com/ID1258/oh-my-i3</p>
+<p>注意，里面的安装最后，要运行脚本，这里需要这样执行，详见 https://github.com/ID1258/oh-my-i3/issues/2 ：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout HEAD^</span><br><span class="line">./install.sh</span><br></pre></td></tr></table></figure>
+<p>注意安装依赖：</p>
+<pre><code>调用conky作为i3bar输出
+dmenu启动程序
+feh显示壁纸
+xcompmgr透明插件（可选）
+infinality字体渲染美化（可选）</code></pre>
+<p>关于配置，网上有很多，但是都需要仔细调教，可以仔细阅读i3官网手册，慢慢摸索。</p>
+<h2 id="相关参考">相关参考</h2>
+<p><a href="https://github.com/lartpang/.vim_runtime" target="_blank" rel="noopener">我的vim配置</a> <a href="https://github.com/syl20bnr/spacemacs#windows" target="_blank" rel="noopener">spacemacs</a> <a href="https://blog.csdn.net/lingsuifenfei123/article/details/79155369" target="_blank" rel="noopener">Manjaro安装与配置</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -2209,6 +2468,502 @@ BSF ;从最低位往最高位扫描，若全为0，则ZF置1，若某位为1，�
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://plart.pw/langs/asm/8086汇编总结-16位微处理器8086/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lart Pang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="失乐园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/langs/asm/8086汇编总结-16位微处理器8086/" class="post-title-link" itemprop="https://plart.pw/page/2/index.html">8086汇编总结-16位微处理器8086</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-02-26 00:00:00" itemprop="dateCreated datePublished" datetime="2018-02-26T00:00:00+08:00">2018-02-26</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-07-13 20:43:08" itemprop="dateModified" datetime="2018-07-13T20:43:08+08:00">2018-07-13</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程与生活/" itemprop="url" rel="index"><span itemprop="name">编程与生活</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">7k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">13 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="目录">目录</h1>
+<ul>
+<li>第一章 微型计算机概述</li>
+<li>第二章 16位微处理器8086</li>
+<li>第三章 指令系统</li>
+<li>第四章 汇编语言程序设计</li>
+<li>第五章 存储器</li>
+<li>第六章 输入/输出接口设计</li>
+<li>第七章 中断系统</li>
+<li>第八章 可编程接口芯片</li>
+<li>第九章 AD/DA 转换</li>
+<li>第十章 串行通信</li>
+</ul>
+<h1 id="第二章-16位微处理器8086">第二章 16位微处理器8086</h1>
+<h2 id="微处理器性能指标">微处理器性能指标</h2>
+<p>微处理器性能指标主要有2项：</p>
+<ol type="1">
+<li><p>字长：指CPU能同时处理的数据位数</p>
+<p>如：8086为16位字长，80386为32位字长</p></li>
+<li><p>主频：即CPU时钟频率，主频越高，速度越快</p>
+<p>如：8086为5MHz，80386为16MHz，Pentium IV可达3GHz</p></li>
+</ol>
+<h2 id="指令执行过程">指令执行过程</h2>
+<p><strong>取指令 -&gt; 指令译码 -&gt; 指令执行</strong></p>
+<p>微型计算机的工作过程，也就是不断地取指令、译码和执行的过程，直到遇到停机指令时才结束机器的运行。</p>
+<h2 id="流水线的概念">流水线的概念</h2>
+<p>cpu流水线技术是一种将指令分解为多步，并让不同指令的各步操作重叠，从而实现几条指令并行处理，以加速程序运行过程的技术。指令的每步有各自独立的电路来处理，每完成一步，就进到下一步，而前一步则处理后续指令。</p>
+<h2 id="内部结构">8086内部结构</h2>
+<figure>
+<img src="/images/asm-2/ScreenShot00024.jpg" alt="8086内部结构"><figcaption>8086内部结构</figcaption>
+</figure>
+<ul>
+<li>(EU Execution Unit)执行单元:负责 指令的译码和执行</li>
+<li>(BIU Bus Interface Unit)总线接口单元:负责与存储器、I/O口传送数据</li>
+</ul>
+<h3 id="总线接口单元biu">总线接口单元BIU</h3>
+<ol type="1">
+<li>具体功能
+<ul>
+<li>负责从内存取指令送到CPU内部的指令队列</li>
+<li>CPU执行指令时，配合EU从指定存储单元或I/O口取数据，或把运算结果传送到指定存储单元或I/O口</li>
+</ul></li>
+<li>组成
+<ul>
+<li>4个16位段地址寄存器
+<ul>
+<li>CS (Code Segment) —代码段寄存器，代码段存放代码</li>
+<li>DS (Data Segment) —数据段寄存器，数据段存放数据</li>
+<li>SS (Stack Segment)—堆栈段寄存器，堆栈段用作堆栈操作</li>
+<li>ES (Extra Segment)—扩展段寄存器，扩展段存放数据</li>
+</ul>
+<p>注：8086对存储器采用分段管理，4个段寄存器分别存放4个当前段的段地址，又称作段基址寄存器。</p></li>
+<li><p>指令指针寄存器IP (Instruction Pointer)</p>
+<p>16位IP存放当前代码段(CS)所要取出的下一条指令的偏移地址</p></li>
+<li><p>地址加法器∑</p>
+<p>8086用20位地址线寻址1MB内存空间，但其内部寄存器是16位的，因此需要用地址加法器∑根据16位寄存器的值计算出20位物理地址</p></li>
+<li>指令缓冲队列
+<ul>
+<li>8086执行指令的同时，会从内存取1条或几条指令，取来的指令就存放在指令队列中，8086执行完一条指令就可立即执行下一条指令，无需轮番的取指令和执行指令，提高了CPU效率；</li>
+<li>8086指令队列为6个字节，8088指令队列为4个字节；</li>
+</ul></li>
+<li>其他
+<ul>
+<li>暂存器：用于与EU通信的内部寄存器</li>
+<li>总线控制电路：负责总线操作控制</li>
+</ul></li>
+</ul></li>
+</ol>
+<h3 id="执行单元eu">执行单元EU</h3>
+<ul>
+<li><p>16位算术逻辑单元ALU</p>
+<p>主要是加法器，绝大部分指令执行都由加法器完成</p></li>
+<li>4个16位数据寄存器（AX、BX、CX、DX）
+<ul>
+<li>可分为8个8位寄存器使用AH、AL、BH、BL、CH、CL、DH、DL</li>
+<li>数据寄存器用于存放操作数及中间结果，AX和AL可用作累加操作，因此又称作累加器</li>
+</ul></li>
+<li>4个16位地址指针寄存器：通常用于存放操作数偏移地址
+<ul>
+<li>SP (Stack Pointer) — 堆栈指针寄存器，指示堆栈段栈顶位置</li>
+<li>BP (Base Pointer) — 基址指针寄存器，指示堆栈段数据区基址</li>
+<li>SI (Source Index) — 源变址寄存器，指示数据段源串地址</li>
+<li>DI (Destination Index) — 目的变址寄存器，指示扩展段目的串地址</li>
+</ul></li>
+<li><p>标志寄存器 FLAG</p>
+<p>6位状态标志，3位控制标志IF、DF、TF，剩下7位保留</p>
+<figure>
+<img src="/images/asm-2/ScreenShot00025.jpg" alt="标志寄存器"><figcaption>标志寄存器</figcaption>
+</figure>
+<p><strong>状态标志：</strong></p>
+<ul>
+<li>CF（Carry Flag）进(借)位标志，加法运算最高位产生进位或减法运算最高位产生借位，则CF置1，否则置0</li>
+<li>AF（Auxiliary Carry Flag）辅助进位标志，加法运算时第3位往第4位有进位，或减法运算时第3位往第4位有借位，则AF置1，否则置0</li>
+<li>ZF（Zero Flag）零标志, 若当前运算结果为零, 则ZF置1,否则置0</li>
+<li>SF（Sign Flag）符号标志，与运算结果最高位相同，若为负数，则SF置1，否则置0，SF指示了当前运算结果是正还是负</li>
+<li>OF（Overflow Flag）溢出标志，有符号数算术运算结果溢出，则OF置1，否则置0</li>
+<li>PF（Parity Flag）奇偶标志，运算结果低8位所含1的个数为偶数则PF置1，否则置0，即奇校验低八位</li>
+</ul>
+<p><strong>控制标志：</strong></p>
+<ul>
+<li>DF（Direction Flag）方向标志 DF=1，串操作时，地址不断递减；DF=0，串操作时，地址不断递增</li>
+<li>IF（Interrupt enable Flag）中断允许标志 IF=1，CPU允许接收可屏蔽中断请求，即开中断；IF=0，则关中断</li>
+<li>TF（Trap Flag）跟踪标志，又称单步标志</li>
+<li>TF=1，CPU为单步工作方式，每执行完一条指令产生一次软件中断</li>
+<li>TF=0，CPU为正常工作，连续处理指令</li>
+</ul></li>
+</ul>
+<h2 id="biu与eu的配合">BIU与EU的配合</h2>
+<ol type="1">
+<li>指令队列中出现两个字节为空时，BIU自动按CS和IP值组成20位物理 地址，到存储器中取指令，一次取两个字节指令存放到指令队列中</li>
+<li>EU从BIU指令队列中读取指令</li>
+<li>由EU控制电路对指令进行译码分析，指出操作性质及操作对象</li>
+<li>EU执行指令，如需访问存储器或I/端口中的数据，则由EU给出数据 的16位偏移地址送给BIU</li>
+<li>BIU由地址加法器∑形成20位绝对物理地址,并传递给存储器</li>
+<li>存储器给出数据，BIU通过总线控制电路将其传送到CPU内部总线</li>
+<li>EU将从内部总线获得数据，并送入ALU进行运算</li>
+<li>EU运算出的结果，经内部总线送到指定的寄存器或暂存器，若需要将结果送给存储器，则由EU给出偏移地址，请求BIU产生20位实际物理地址，将结果写入存储器</li>
+</ol>
+<h2 id="存储器和io管理">存储器和I/O管理</h2>
+<ol type="1">
+<li><p>8086存储器编址</p>
+<p><strong>8086具有20位地址线，可寻址1MB存储空间，编址为00000H～FFFFFH</strong></p></li>
+<li><p>8086存储器管理</p>
+<p>8086对存储器采用分段管理，将1MB空间分为若干个段，每段最多为64KB，一个程序可以有代码、数据、堆栈和扩展数据4个部分，每部分又可包含一个或几个段，代码部分包含的段均称为代码段，其余部分类似，分别由CS、DS、SS、ES指示每部分当前正在操作的段起始地址。实际CS、DS等存放的是20位段起始地址的高16位，即段地址。</p>
+<p>对存储单元访问时，需要知道该存储单元所在段的起始地址，还需要知道该存储单元距离段起始位置的偏移量，即偏移地址，才能访问该存储单元。由于每段大小不会超过64KB，因此偏移地址用16位表示。</p>
+<p>由于段寄存器是16位，偏移地址也为16位，而一个存储单元的物理地址是20位，因此8086需要通过地址加法器∑根据段地址和偏移地址形成20位物理地址。段地址和偏移地址组合称为逻辑地址。</p>
+<p><strong>逻辑地址形式为 -&gt; 段地址 : 偏移地址</strong></p></li>
+</ol>
+<h3 id="位物理地址的形成">20位物理地址的形成</h3>
+<p>(物理地址) 20 = 段地址左移4位 + 偏移地址 (物理地址) 20 = (段地址)*16 + 偏移地址</p>
+<p>例：若逻辑地址为FFFFH : 0000H，则对应的物理地址为：</p>
+<pre><code>    F  F  F  F       |   段地址     16位
++      0  0  0  0    |  + 偏移地址  16位
+------------------   |  -----------------
+    F  F  F  F  0    |   物理地址   20位</code></pre>
+<p>**段寄存器 -&gt; 段地址，地址指针寄存器 -&gt; 偏移地址* 二者配对使用</p>
+<h3 id="存储器管理的几点说明">存储器管理的几点说明</h3>
+<ul>
+<li>一个段总是从16字节边界开始，20位段起始地址的低4位总为0</li>
+<li>同一个物理地址可以采取不同的逻辑地址形式表示</li>
+<li><p>例：物理地址 12345H 可表示为1200 : 0345H 或 1230 : 0045H</p></li>
+<li><p>尽管代码段、数据段、堆栈段、扩展段均为64KB，但实际应用时，不同段可以相互重叠或重合，但段内地址连续</p></li>
+</ul>
+<p>基本的对应的使用关系可见下图</p>
+<figure>
+<img src="/images/asm-2/ScreenShot00026.jpg" alt="段寄存器的对应关系"><figcaption>段寄存器的对应关系</figcaption>
+</figure>
+<h2 id="io-编址">8086 I/O 编址</h2>
+<ul>
+<li>8086用低16根地址线，寻址64KB的I/O端口，编址为0000H～FFFFH
+<ul>
+<li>一个I/O端口通常对应I/O接口电路中的一个存储单元，微机为每个端口分配一个地址，即为端口号</li>
+<li>实际使用中8086只使用低10根地址线，寻址1KB的I/O端口</li>
+</ul></li>
+<li>8086对I/O端口操作，需要专门的IN、OUT指令，并且只能通过累加器（AX/AL）来完成，例： IN AL, 80H</li>
+<li>8086系统中，<strong>存储器和I/O端口分别独立编址</strong>
+<ul>
+<li>存储器的地址范围是 00000H – 0FFFFFH</li>
+<li>I/O端口的地址范围是 0000H – 0FFFFH</li>
+</ul></li>
+</ul>
+<h2 id="引脚信号和工作模式">8086引脚信号和工作模式</h2>
+<ol type="1">
+<li><p>最小模式与最大模式</p>
+<ul>
+<li>两种工作模式，由 <span class="math inline">\(MN/\overline{MX}\)</span> 引脚决定。</li>
+<li>最小模式：系统中只有一个处理器；<span class="math inline">\(MN/\overline{MX}\)</span>为高电平；</li>
+<li>最大模式：系统中包括两个或多个处理器；<span class="math inline">\(MN/\overline{MX}\)</span>为低电平。</li>
+<li>不同模式下，部分引脚定义不同</li>
+</ul></li>
+<li><p>8086引脚信号和功能</p>
+<ul>
+<li><p>8086引脚图和引脚分类图</p>
+<p>8086 CPU为40pin双列直插（DIP)封装</p>
+<figure>
+<img src="/images/asm-2/ScreenShot00027.jpg" alt="8086引脚分类图"><figcaption>8086引脚分类图</figcaption>
+</figure></li>
+<li><p>最小模式下引脚信号和功能</p>
+<p>1）总线信号</p>
+<p>① AD0～AD15: 地址/数据复用引脚，双向工作。分时传送16位数据和地址的低16位，由ALE锁存地址信息。</p>
+<p>② A16～A19（S3～S6）: 地址/状态复用引脚，输出。分时输出地址的高4位和CPU当前状态，地址信息由ALE锁存。</p>
+<p>③ BHE/S7: 高8位数据总线允许/状态复用引脚，输出。低电平有效，表示高8位数据线D15～D8上数据有效</p>
+<p>④ ALE: 地址锁存允许信号输出。高电平有效，表示总线上的信息是地址信息。</p>
+<p>2）总线控制信号</p>
+<p>① HOLD: 总线保持请求信号输入。高电平有效，表示其他模块（如DMA)申请占用总线</p>
+<p>② HLDA: 总线保持响应信号输出，高电平有效，表示CPU已让出总线</p>
+<p>3）系统控制信号</p>
+<p>① M/IO: 存储器/输入输出选择信号，输出，高电平表示CPU访问存储器，低电平表示CPU访问I/O端口</p>
+<p>② RD: 读信号输出，低电平有效，表示CPU从存储器或I/O口读入信息</p>
+<p>③ WR: 写信号输出，低电平有效，表示CPU向存储器或I/O口输出数据</p>
+<p>④ DT/R: 数据收发信号输出。高电平表示CPU正在发送数据，低电平表示CPU接收数据</p>
+<p>⑤ DEN: 数据允许信号输出。低电平有效，表示CPU当前准备发送或接收一个数据</p>
+<p>4）中断控制信号</p>
+<p>① INTR: 可屏蔽中断请求信号输入。高电平有效，表示外部向CPU提出中断申请</p>
+<p>② INTA: 中断响应信号输出，<strong>低电平有效</strong>，表示CPU响应外设中断请求</p>
+<p>③ NMI: 非屏蔽中断请求信号输入。<strong>上升沿有效</strong>。表示外部有非屏蔽中断申请。非屏蔽中断不受软件控制，CPU必须响应</p>
+<p>5）CPU控制信号</p>
+<p>① RESET: 复位信号输入。高电平有效，至少保持4个时钟周期的高电平。复位时CPU停止现行操作，开始复位，并进行初始化：标志寄存器FLAG、IP、DS、SS、ES及指令队列均清零，CS为FFFFH，复位结束时CPU从FFFF0H开始执行程序</p>
+<p>② MN/MX：最小模式/最大模式选择信号输入</p>
+<p>③ READY：“准备好”信号输入，高电平有效，表示存储器或I/O口已准备就绪，可进行一次数据传输</p>
+<p>④ TEST: 测试信号输入，低电平有效，有效时CPU退出WAIT指令</p>
+<p>6）其它信号</p>
+<p>① CLK: 时钟信号，8086主频为4.77MHZT=210ns；单相，占空比为1/3。</p>
+<p>② VCC,GND: 电源及地，+5V，满足TTL规范</p></li>
+</ul></li>
+<li><p>最大模式下8086有8个控制信号被重新定义，对应关系如下：</p>
+<figure>
+<img src="/images/asm-2/ScreenShot00034.jpg" alt="最大模式重新定义"><figcaption>最大模式重新定义</figcaption>
+</figure></li>
+</ol>
+<h2 id="引脚信号与功能">8088引脚信号与功能</h2>
+<p>8088为准16位机，片内数据总线宽度为16位，片外为8位，引脚信号和功能与8086类似，二者 <strong><em>差别如下</em></strong>：</p>
+<pre><code>8086微处理器                8088微处理器
+16位AD复用                  8位AD复用
+BHE高八位数据允许           SS0/高电平
+M/IO引脚选择存储器/IO口     M/IO引脚选择存储器/IO口</code></pre>
+<h2 id="总线连接">总线连接</h2>
+<ol type="1">
+<li><p>8086最小模式下的总线连接</p>
+<p>很重要的图。</p>
+<figure>
+<img src="/images/asm-2/ScreenShot00028.jpg" alt="8086最小模式连接图"><figcaption>8086最小模式连接图</figcaption>
+</figure>
+<p>1）Intel 8282</p>
+<p>把AD复用引脚连接到地址总线的8位地址锁存器。3片8282(功能同74LS373)A0～A19和BHE，ALE为锁存信号。</p>
+<p>2）Intel 8286</p>
+<p>把AD复用引脚连接到数据总线的8位数据缓冲器。2片8286(功能同74LS245)做D15～D0的缓冲器，DT/R做方向选择，DEN为选通信号。</p>
+<p>3） 控制信号M/IO、RD和WR</p>
+<p>完成信息传递控制。组合起来完成右面的控制。</p>
+<p>4）中断控制信号INTR、INTA、NMI</p>
+<ul>
+<li>INTR: 外部可屏蔽中断请求引脚，高电平有效</li>
+<li>INTA: 中断响应信号，低电平有效</li>
+<li>NMI: 不可屏蔽中断请求引脚，上升沿有效</li>
+</ul>
+<p>5）总线控制信号HOLD、HLDA</p>
+<ul>
+<li>HOLD：总线保持请求引脚,高电平有效</li>
+<li>HLDA：总线保持响应引脚，高电平有效</li>
+<li>HLDA控制8282的OE，当CPU总线保持响应时让出总线</li>
+</ul></li>
+<li><p>8086最大模式下的总线</p>
+<figure>
+<img src="/images/asm-2/ScreenShot00029.jpg" alt="8086最大模式下总线连接"><figcaption>8086最大模式下总线连接</figcaption>
+</figure></li>
+</ol>
+<h2 id="时钟电路与复位电路">8086时钟电路与复位电路</h2>
+<figure>
+<img src="/images/asm-2/ScreenShot00030.jpg" alt="8086时钟电路与复位电路"><figcaption>8086时钟电路与复位电路</figcaption>
+</figure>
+<p>8284为8086提供CLK时钟信号、RESET复位信号和READY准备好信号</p>
+<ul>
+<li>8086/8088内部无时钟发生器，时钟由8284提供，频率为4.77MHz</li>
+<li>输入/RES经8284内部斯密特触发器整形，同步后产生RESET信号,给CPU复位</li>
+<li>外界准备好信号输入到8284的RDY端，同步后产生READY信号给CPU</li>
+</ul>
+<figure>
+<img src="/images/asm-2/ScreenShot00031.jpg" alt="8284内部逻辑图"><figcaption>8284内部逻辑图</figcaption>
+</figure>
+<h2 id="系统的复位操作和启动过程">8086/8088系统的复位操作和启动过程</h2>
+<ol type="1">
+<li>CPU接到RESET信号，停止现有工作，进行复位操作：CS置FFFFH，IP置0，指令队列清空，其余寄存器清0；</li>
+<li>从存储器FFFFH :0000H取第一条指令，一般在此处放一条跳转指令，跳转到ROM BIOS中的系统测试程序；</li>
+<li>系统测试程序执行硬件自检(对CPU、RAM、ROM等硬件进行测试)，然后执行ROM BIOS中的初始引导程序；</li>
+<li>初始引导程序再从磁盘0面0道1扇区装入引导程序，执行引导操作；</li>
+<li>按引导程序的指令，顺序装入其他程序模块，完成操作系统的引导操作；</li>
+</ol>
+<p>注：在3、4步之间微机还会检查C0000H开始的扩展ROM空间中是否有程序，如果有，并且校验正确，则先执行这些程序</p>
+<h2 id="总线周期">8086总线周期</h2>
+<p>CPU取指令或传送数据时，均需要通过BIU进行总线操作，而总线操作是 根据时钟脉冲CLK一个节拍一个节拍的完成。</p>
+<ol type="1">
+<li>时钟周期T（T状态）</li>
+</ol>
+<p>时钟脉冲的一个循环时间叫做一个时钟周期。每个时钟周期T又称为一个“状态”。它是CPU工作的最小时间单位，是计算机系统工作速度的重要标 志。8086 CPU的F=4.77M，T=210ns</p>
+<ol start="2" type="1">
+<li><p>总线周期</p>
+<p><strong>CPU通过总线从存储器或I/O端口存取一个字或字节的时间称为总线周期</strong></p>
+<ul>
+<li>包括三类：存储器读写周期、I/O端口读写周期、中断响应周期</li>
+<li>一个基本总线周期包括4个状态：T1，T2，T3，T4</li>
+</ul></li>
+<li><p>指令周期</p>
+<p>执行一条指令所需要的时间称为指令周期。8086指令周期最短为2个时 钟周期，最长为200个时钟周期。</p></li>
+</ol>
+<p>例：时钟周期、总线周期、指令周期举例</p>
+<figure>
+<img src="/images/asm-2/ScreenShot00032.jpg" alt="各种周期"><figcaption>各种周期</figcaption>
+</figure>
+<ul>
+<li>在总线周期的T3状态，CPU会检查READY引脚，若为低电平无效，则CPU会在T3之后插入等待周期Tw，等待外界准备好，在每个Tw状态会继续检查READY引脚，直到READY变为高电平有效才进入T4状态</li>
+<li>在两个总线操作中间，系统总线处于空闲状态，CPU便会在两个总线周期之间插入空闲周期Ti，在Ti状态，CPU不执行任何总线操作</li>
+</ul>
+<h2 id="总线操作时序">8086总线操作时序</h2>
+<p>这里的图上的BHE描述的是8282锁存前方位置的信号。所以T2会有变换。实际上真正到了存储存储器作用的是被锁存住的信号。</p>
+<figure>
+<img src="/images/asm-2/ScreenShot00033.jpg" alt="时序"><figcaption>时序</figcaption>
+</figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://plart.pw/langs/asm/8086汇编总结-微型计算机概述/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -2666,502 +3421,6 @@ BCD码     81 （压缩格式BCD码）
 </ul></li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">面对更大数据量传送的需求，传统PCI总线已无法满足应用要求，因此现在的设计对其进行扩展，称作PCI-X总线：</span><br><span class="line">PCI-X 66    64位     66MHz       Hot Plugging,       3.3 V   533MB/s</span><br><span class="line">PCI-X 133   64位     133MHz      Hot Plugging,       3.3 V   1.06GB/s</span><br><span class="line">PCI-X 266   64/16位  133MHz      Double Data Rate Hot Plugging, </span><br><span class="line">    3.3 &amp; 1.5 V,   ECC supported    2.13GB/s （主要应用到DDR内存）</span><br><span class="line">PCI-X 533   64/16位  133MHz      Quad Data Rate Hot Plugging, </span><br><span class="line">    3.3 &amp; 1.5 V,   ECC supported    4.26GB/s （主要应用在DDR2内存）</span><br><span class="line"></span><br><span class="line">说明：</span><br><span class="line">1. PCI-X 266 用上Double Data Rate技术，让每一个时钟脉冲的上升与下降边缘都可以传输数据，所以有多出了一 倍的机会来传输数据</span><br><span class="line">2. PCI-X 533规格更进一步采用每一个时钟脉冲可以传送四次（Quad Data Rate）的技术</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://plart.pw/langs/asm/8086汇编总结-16位微处理器8086/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lart Pang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="失乐园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/langs/asm/8086汇编总结-16位微处理器8086/" class="post-title-link" itemprop="https://plart.pw/page/2/index.html">8086汇编总结-16位微处理器8086</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-02-26 00:00:00" itemprop="dateCreated datePublished" datetime="2018-02-26T00:00:00+08:00">2018-02-26</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-13 20:43:08" itemprop="dateModified" datetime="2018-07-13T20:43:08+08:00">2018-07-13</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程与生活/" itemprop="url" rel="index"><span itemprop="name">编程与生活</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">7k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">13 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="目录">目录</h1>
-<ul>
-<li>第一章 微型计算机概述</li>
-<li>第二章 16位微处理器8086</li>
-<li>第三章 指令系统</li>
-<li>第四章 汇编语言程序设计</li>
-<li>第五章 存储器</li>
-<li>第六章 输入/输出接口设计</li>
-<li>第七章 中断系统</li>
-<li>第八章 可编程接口芯片</li>
-<li>第九章 AD/DA 转换</li>
-<li>第十章 串行通信</li>
-</ul>
-<h1 id="第二章-16位微处理器8086">第二章 16位微处理器8086</h1>
-<h2 id="微处理器性能指标">微处理器性能指标</h2>
-<p>微处理器性能指标主要有2项：</p>
-<ol type="1">
-<li><p>字长：指CPU能同时处理的数据位数</p>
-<p>如：8086为16位字长，80386为32位字长</p></li>
-<li><p>主频：即CPU时钟频率，主频越高，速度越快</p>
-<p>如：8086为5MHz，80386为16MHz，Pentium IV可达3GHz</p></li>
-</ol>
-<h2 id="指令执行过程">指令执行过程</h2>
-<p><strong>取指令 -&gt; 指令译码 -&gt; 指令执行</strong></p>
-<p>微型计算机的工作过程，也就是不断地取指令、译码和执行的过程，直到遇到停机指令时才结束机器的运行。</p>
-<h2 id="流水线的概念">流水线的概念</h2>
-<p>cpu流水线技术是一种将指令分解为多步，并让不同指令的各步操作重叠，从而实现几条指令并行处理，以加速程序运行过程的技术。指令的每步有各自独立的电路来处理，每完成一步，就进到下一步，而前一步则处理后续指令。</p>
-<h2 id="内部结构">8086内部结构</h2>
-<figure>
-<img src="/images/asm-2/ScreenShot00024.jpg" alt="8086内部结构"><figcaption>8086内部结构</figcaption>
-</figure>
-<ul>
-<li>(EU Execution Unit)执行单元:负责 指令的译码和执行</li>
-<li>(BIU Bus Interface Unit)总线接口单元:负责与存储器、I/O口传送数据</li>
-</ul>
-<h3 id="总线接口单元biu">总线接口单元BIU</h3>
-<ol type="1">
-<li>具体功能
-<ul>
-<li>负责从内存取指令送到CPU内部的指令队列</li>
-<li>CPU执行指令时，配合EU从指定存储单元或I/O口取数据，或把运算结果传送到指定存储单元或I/O口</li>
-</ul></li>
-<li>组成
-<ul>
-<li>4个16位段地址寄存器
-<ul>
-<li>CS (Code Segment) —代码段寄存器，代码段存放代码</li>
-<li>DS (Data Segment) —数据段寄存器，数据段存放数据</li>
-<li>SS (Stack Segment)—堆栈段寄存器，堆栈段用作堆栈操作</li>
-<li>ES (Extra Segment)—扩展段寄存器，扩展段存放数据</li>
-</ul>
-<p>注：8086对存储器采用分段管理，4个段寄存器分别存放4个当前段的段地址，又称作段基址寄存器。</p></li>
-<li><p>指令指针寄存器IP (Instruction Pointer)</p>
-<p>16位IP存放当前代码段(CS)所要取出的下一条指令的偏移地址</p></li>
-<li><p>地址加法器∑</p>
-<p>8086用20位地址线寻址1MB内存空间，但其内部寄存器是16位的，因此需要用地址加法器∑根据16位寄存器的值计算出20位物理地址</p></li>
-<li>指令缓冲队列
-<ul>
-<li>8086执行指令的同时，会从内存取1条或几条指令，取来的指令就存放在指令队列中，8086执行完一条指令就可立即执行下一条指令，无需轮番的取指令和执行指令，提高了CPU效率；</li>
-<li>8086指令队列为6个字节，8088指令队列为4个字节；</li>
-</ul></li>
-<li>其他
-<ul>
-<li>暂存器：用于与EU通信的内部寄存器</li>
-<li>总线控制电路：负责总线操作控制</li>
-</ul></li>
-</ul></li>
-</ol>
-<h3 id="执行单元eu">执行单元EU</h3>
-<ul>
-<li><p>16位算术逻辑单元ALU</p>
-<p>主要是加法器，绝大部分指令执行都由加法器完成</p></li>
-<li>4个16位数据寄存器（AX、BX、CX、DX）
-<ul>
-<li>可分为8个8位寄存器使用AH、AL、BH、BL、CH、CL、DH、DL</li>
-<li>数据寄存器用于存放操作数及中间结果，AX和AL可用作累加操作，因此又称作累加器</li>
-</ul></li>
-<li>4个16位地址指针寄存器：通常用于存放操作数偏移地址
-<ul>
-<li>SP (Stack Pointer) — 堆栈指针寄存器，指示堆栈段栈顶位置</li>
-<li>BP (Base Pointer) — 基址指针寄存器，指示堆栈段数据区基址</li>
-<li>SI (Source Index) — 源变址寄存器，指示数据段源串地址</li>
-<li>DI (Destination Index) — 目的变址寄存器，指示扩展段目的串地址</li>
-</ul></li>
-<li><p>标志寄存器 FLAG</p>
-<p>6位状态标志，3位控制标志IF、DF、TF，剩下7位保留</p>
-<figure>
-<img src="/images/asm-2/ScreenShot00025.jpg" alt="标志寄存器"><figcaption>标志寄存器</figcaption>
-</figure>
-<p><strong>状态标志：</strong></p>
-<ul>
-<li>CF（Carry Flag）进(借)位标志，加法运算最高位产生进位或减法运算最高位产生借位，则CF置1，否则置0</li>
-<li>AF（Auxiliary Carry Flag）辅助进位标志，加法运算时第3位往第4位有进位，或减法运算时第3位往第4位有借位，则AF置1，否则置0</li>
-<li>ZF（Zero Flag）零标志, 若当前运算结果为零, 则ZF置1,否则置0</li>
-<li>SF（Sign Flag）符号标志，与运算结果最高位相同，若为负数，则SF置1，否则置0，SF指示了当前运算结果是正还是负</li>
-<li>OF（Overflow Flag）溢出标志，有符号数算术运算结果溢出，则OF置1，否则置0</li>
-<li>PF（Parity Flag）奇偶标志，运算结果低8位所含1的个数为偶数则PF置1，否则置0，即奇校验低八位</li>
-</ul>
-<p><strong>控制标志：</strong></p>
-<ul>
-<li>DF（Direction Flag）方向标志 DF=1，串操作时，地址不断递减；DF=0，串操作时，地址不断递增</li>
-<li>IF（Interrupt enable Flag）中断允许标志 IF=1，CPU允许接收可屏蔽中断请求，即开中断；IF=0，则关中断</li>
-<li>TF（Trap Flag）跟踪标志，又称单步标志</li>
-<li>TF=1，CPU为单步工作方式，每执行完一条指令产生一次软件中断</li>
-<li>TF=0，CPU为正常工作，连续处理指令</li>
-</ul></li>
-</ul>
-<h2 id="biu与eu的配合">BIU与EU的配合</h2>
-<ol type="1">
-<li>指令队列中出现两个字节为空时，BIU自动按CS和IP值组成20位物理 地址，到存储器中取指令，一次取两个字节指令存放到指令队列中</li>
-<li>EU从BIU指令队列中读取指令</li>
-<li>由EU控制电路对指令进行译码分析，指出操作性质及操作对象</li>
-<li>EU执行指令，如需访问存储器或I/端口中的数据，则由EU给出数据 的16位偏移地址送给BIU</li>
-<li>BIU由地址加法器∑形成20位绝对物理地址,并传递给存储器</li>
-<li>存储器给出数据，BIU通过总线控制电路将其传送到CPU内部总线</li>
-<li>EU将从内部总线获得数据，并送入ALU进行运算</li>
-<li>EU运算出的结果，经内部总线送到指定的寄存器或暂存器，若需要将结果送给存储器，则由EU给出偏移地址，请求BIU产生20位实际物理地址，将结果写入存储器</li>
-</ol>
-<h2 id="存储器和io管理">存储器和I/O管理</h2>
-<ol type="1">
-<li><p>8086存储器编址</p>
-<p><strong>8086具有20位地址线，可寻址1MB存储空间，编址为00000H～FFFFFH</strong></p></li>
-<li><p>8086存储器管理</p>
-<p>8086对存储器采用分段管理，将1MB空间分为若干个段，每段最多为64KB，一个程序可以有代码、数据、堆栈和扩展数据4个部分，每部分又可包含一个或几个段，代码部分包含的段均称为代码段，其余部分类似，分别由CS、DS、SS、ES指示每部分当前正在操作的段起始地址。实际CS、DS等存放的是20位段起始地址的高16位，即段地址。</p>
-<p>对存储单元访问时，需要知道该存储单元所在段的起始地址，还需要知道该存储单元距离段起始位置的偏移量，即偏移地址，才能访问该存储单元。由于每段大小不会超过64KB，因此偏移地址用16位表示。</p>
-<p>由于段寄存器是16位，偏移地址也为16位，而一个存储单元的物理地址是20位，因此8086需要通过地址加法器∑根据段地址和偏移地址形成20位物理地址。段地址和偏移地址组合称为逻辑地址。</p>
-<p><strong>逻辑地址形式为 -&gt; 段地址 : 偏移地址</strong></p></li>
-</ol>
-<h3 id="位物理地址的形成">20位物理地址的形成</h3>
-<p>(物理地址) 20 = 段地址左移4位 + 偏移地址 (物理地址) 20 = (段地址)*16 + 偏移地址</p>
-<p>例：若逻辑地址为FFFFH : 0000H，则对应的物理地址为：</p>
-<pre><code>    F  F  F  F       |   段地址     16位
-+      0  0  0  0    |  + 偏移地址  16位
-------------------   |  -----------------
-    F  F  F  F  0    |   物理地址   20位</code></pre>
-<p>**段寄存器 -&gt; 段地址，地址指针寄存器 -&gt; 偏移地址* 二者配对使用</p>
-<h3 id="存储器管理的几点说明">存储器管理的几点说明</h3>
-<ul>
-<li>一个段总是从16字节边界开始，20位段起始地址的低4位总为0</li>
-<li>同一个物理地址可以采取不同的逻辑地址形式表示</li>
-<li><p>例：物理地址 12345H 可表示为1200 : 0345H 或 1230 : 0045H</p></li>
-<li><p>尽管代码段、数据段、堆栈段、扩展段均为64KB，但实际应用时，不同段可以相互重叠或重合，但段内地址连续</p></li>
-</ul>
-<p>基本的对应的使用关系可见下图</p>
-<figure>
-<img src="/images/asm-2/ScreenShot00026.jpg" alt="段寄存器的对应关系"><figcaption>段寄存器的对应关系</figcaption>
-</figure>
-<h2 id="io-编址">8086 I/O 编址</h2>
-<ul>
-<li>8086用低16根地址线，寻址64KB的I/O端口，编址为0000H～FFFFH
-<ul>
-<li>一个I/O端口通常对应I/O接口电路中的一个存储单元，微机为每个端口分配一个地址，即为端口号</li>
-<li>实际使用中8086只使用低10根地址线，寻址1KB的I/O端口</li>
-</ul></li>
-<li>8086对I/O端口操作，需要专门的IN、OUT指令，并且只能通过累加器（AX/AL）来完成，例： IN AL, 80H</li>
-<li>8086系统中，<strong>存储器和I/O端口分别独立编址</strong>
-<ul>
-<li>存储器的地址范围是 00000H – 0FFFFFH</li>
-<li>I/O端口的地址范围是 0000H – 0FFFFH</li>
-</ul></li>
-</ul>
-<h2 id="引脚信号和工作模式">8086引脚信号和工作模式</h2>
-<ol type="1">
-<li><p>最小模式与最大模式</p>
-<ul>
-<li>两种工作模式，由 <span class="math inline">\(MN/\overline{MX}\)</span> 引脚决定。</li>
-<li>最小模式：系统中只有一个处理器；<span class="math inline">\(MN/\overline{MX}\)</span>为高电平；</li>
-<li>最大模式：系统中包括两个或多个处理器；<span class="math inline">\(MN/\overline{MX}\)</span>为低电平。</li>
-<li>不同模式下，部分引脚定义不同</li>
-</ul></li>
-<li><p>8086引脚信号和功能</p>
-<ul>
-<li><p>8086引脚图和引脚分类图</p>
-<p>8086 CPU为40pin双列直插（DIP)封装</p>
-<figure>
-<img src="/images/asm-2/ScreenShot00027.jpg" alt="8086引脚分类图"><figcaption>8086引脚分类图</figcaption>
-</figure></li>
-<li><p>最小模式下引脚信号和功能</p>
-<p>1）总线信号</p>
-<p>① AD0～AD15: 地址/数据复用引脚，双向工作。分时传送16位数据和地址的低16位，由ALE锁存地址信息。</p>
-<p>② A16～A19（S3～S6）: 地址/状态复用引脚，输出。分时输出地址的高4位和CPU当前状态，地址信息由ALE锁存。</p>
-<p>③ BHE/S7: 高8位数据总线允许/状态复用引脚，输出。低电平有效，表示高8位数据线D15～D8上数据有效</p>
-<p>④ ALE: 地址锁存允许信号输出。高电平有效，表示总线上的信息是地址信息。</p>
-<p>2）总线控制信号</p>
-<p>① HOLD: 总线保持请求信号输入。高电平有效，表示其他模块（如DMA)申请占用总线</p>
-<p>② HLDA: 总线保持响应信号输出，高电平有效，表示CPU已让出总线</p>
-<p>3）系统控制信号</p>
-<p>① M/IO: 存储器/输入输出选择信号，输出，高电平表示CPU访问存储器，低电平表示CPU访问I/O端口</p>
-<p>② RD: 读信号输出，低电平有效，表示CPU从存储器或I/O口读入信息</p>
-<p>③ WR: 写信号输出，低电平有效，表示CPU向存储器或I/O口输出数据</p>
-<p>④ DT/R: 数据收发信号输出。高电平表示CPU正在发送数据，低电平表示CPU接收数据</p>
-<p>⑤ DEN: 数据允许信号输出。低电平有效，表示CPU当前准备发送或接收一个数据</p>
-<p>4）中断控制信号</p>
-<p>① INTR: 可屏蔽中断请求信号输入。高电平有效，表示外部向CPU提出中断申请</p>
-<p>② INTA: 中断响应信号输出，<strong>低电平有效</strong>，表示CPU响应外设中断请求</p>
-<p>③ NMI: 非屏蔽中断请求信号输入。<strong>上升沿有效</strong>。表示外部有非屏蔽中断申请。非屏蔽中断不受软件控制，CPU必须响应</p>
-<p>5）CPU控制信号</p>
-<p>① RESET: 复位信号输入。高电平有效，至少保持4个时钟周期的高电平。复位时CPU停止现行操作，开始复位，并进行初始化：标志寄存器FLAG、IP、DS、SS、ES及指令队列均清零，CS为FFFFH，复位结束时CPU从FFFF0H开始执行程序</p>
-<p>② MN/MX：最小模式/最大模式选择信号输入</p>
-<p>③ READY：“准备好”信号输入，高电平有效，表示存储器或I/O口已准备就绪，可进行一次数据传输</p>
-<p>④ TEST: 测试信号输入，低电平有效，有效时CPU退出WAIT指令</p>
-<p>6）其它信号</p>
-<p>① CLK: 时钟信号，8086主频为4.77MHZT=210ns；单相，占空比为1/3。</p>
-<p>② VCC,GND: 电源及地，+5V，满足TTL规范</p></li>
-</ul></li>
-<li><p>最大模式下8086有8个控制信号被重新定义，对应关系如下：</p>
-<figure>
-<img src="/images/asm-2/ScreenShot00034.jpg" alt="最大模式重新定义"><figcaption>最大模式重新定义</figcaption>
-</figure></li>
-</ol>
-<h2 id="引脚信号与功能">8088引脚信号与功能</h2>
-<p>8088为准16位机，片内数据总线宽度为16位，片外为8位，引脚信号和功能与8086类似，二者 <strong><em>差别如下</em></strong>：</p>
-<pre><code>8086微处理器                8088微处理器
-16位AD复用                  8位AD复用
-BHE高八位数据允许           SS0/高电平
-M/IO引脚选择存储器/IO口     M/IO引脚选择存储器/IO口</code></pre>
-<h2 id="总线连接">总线连接</h2>
-<ol type="1">
-<li><p>8086最小模式下的总线连接</p>
-<p>很重要的图。</p>
-<figure>
-<img src="/images/asm-2/ScreenShot00028.jpg" alt="8086最小模式连接图"><figcaption>8086最小模式连接图</figcaption>
-</figure>
-<p>1）Intel 8282</p>
-<p>把AD复用引脚连接到地址总线的8位地址锁存器。3片8282(功能同74LS373)A0～A19和BHE，ALE为锁存信号。</p>
-<p>2）Intel 8286</p>
-<p>把AD复用引脚连接到数据总线的8位数据缓冲器。2片8286(功能同74LS245)做D15～D0的缓冲器，DT/R做方向选择，DEN为选通信号。</p>
-<p>3） 控制信号M/IO、RD和WR</p>
-<p>完成信息传递控制。组合起来完成右面的控制。</p>
-<p>4）中断控制信号INTR、INTA、NMI</p>
-<ul>
-<li>INTR: 外部可屏蔽中断请求引脚，高电平有效</li>
-<li>INTA: 中断响应信号，低电平有效</li>
-<li>NMI: 不可屏蔽中断请求引脚，上升沿有效</li>
-</ul>
-<p>5）总线控制信号HOLD、HLDA</p>
-<ul>
-<li>HOLD：总线保持请求引脚,高电平有效</li>
-<li>HLDA：总线保持响应引脚，高电平有效</li>
-<li>HLDA控制8282的OE，当CPU总线保持响应时让出总线</li>
-</ul></li>
-<li><p>8086最大模式下的总线</p>
-<figure>
-<img src="/images/asm-2/ScreenShot00029.jpg" alt="8086最大模式下总线连接"><figcaption>8086最大模式下总线连接</figcaption>
-</figure></li>
-</ol>
-<h2 id="时钟电路与复位电路">8086时钟电路与复位电路</h2>
-<figure>
-<img src="/images/asm-2/ScreenShot00030.jpg" alt="8086时钟电路与复位电路"><figcaption>8086时钟电路与复位电路</figcaption>
-</figure>
-<p>8284为8086提供CLK时钟信号、RESET复位信号和READY准备好信号</p>
-<ul>
-<li>8086/8088内部无时钟发生器，时钟由8284提供，频率为4.77MHz</li>
-<li>输入/RES经8284内部斯密特触发器整形，同步后产生RESET信号,给CPU复位</li>
-<li>外界准备好信号输入到8284的RDY端，同步后产生READY信号给CPU</li>
-</ul>
-<figure>
-<img src="/images/asm-2/ScreenShot00031.jpg" alt="8284内部逻辑图"><figcaption>8284内部逻辑图</figcaption>
-</figure>
-<h2 id="系统的复位操作和启动过程">8086/8088系统的复位操作和启动过程</h2>
-<ol type="1">
-<li>CPU接到RESET信号，停止现有工作，进行复位操作：CS置FFFFH，IP置0，指令队列清空，其余寄存器清0；</li>
-<li>从存储器FFFFH :0000H取第一条指令，一般在此处放一条跳转指令，跳转到ROM BIOS中的系统测试程序；</li>
-<li>系统测试程序执行硬件自检(对CPU、RAM、ROM等硬件进行测试)，然后执行ROM BIOS中的初始引导程序；</li>
-<li>初始引导程序再从磁盘0面0道1扇区装入引导程序，执行引导操作；</li>
-<li>按引导程序的指令，顺序装入其他程序模块，完成操作系统的引导操作；</li>
-</ol>
-<p>注：在3、4步之间微机还会检查C0000H开始的扩展ROM空间中是否有程序，如果有，并且校验正确，则先执行这些程序</p>
-<h2 id="总线周期">8086总线周期</h2>
-<p>CPU取指令或传送数据时，均需要通过BIU进行总线操作，而总线操作是 根据时钟脉冲CLK一个节拍一个节拍的完成。</p>
-<ol type="1">
-<li>时钟周期T（T状态）</li>
-</ol>
-<p>时钟脉冲的一个循环时间叫做一个时钟周期。每个时钟周期T又称为一个“状态”。它是CPU工作的最小时间单位，是计算机系统工作速度的重要标 志。8086 CPU的F=4.77M，T=210ns</p>
-<ol start="2" type="1">
-<li><p>总线周期</p>
-<p><strong>CPU通过总线从存储器或I/O端口存取一个字或字节的时间称为总线周期</strong></p>
-<ul>
-<li>包括三类：存储器读写周期、I/O端口读写周期、中断响应周期</li>
-<li>一个基本总线周期包括4个状态：T1，T2，T3，T4</li>
-</ul></li>
-<li><p>指令周期</p>
-<p>执行一条指令所需要的时间称为指令周期。8086指令周期最短为2个时 钟周期，最长为200个时钟周期。</p></li>
-</ol>
-<p>例：时钟周期、总线周期、指令周期举例</p>
-<figure>
-<img src="/images/asm-2/ScreenShot00032.jpg" alt="各种周期"><figcaption>各种周期</figcaption>
-</figure>
-<ul>
-<li>在总线周期的T3状态，CPU会检查READY引脚，若为低电平无效，则CPU会在T3之后插入等待周期Tw，等待外界准备好，在每个Tw状态会继续检查READY引脚，直到READY变为高电平有效才进入T4状态</li>
-<li>在两个总线操作中间，系统总线处于空闲状态，CPU便会在两个总线周期之间插入空闲周期Ti，在Ti状态，CPU不执行任何总线操作</li>
-</ul>
-<h2 id="总线操作时序">8086总线操作时序</h2>
-<p>这里的图上的BHE描述的是8282锁存前方位置的信号。所以T2会有变换。实际上真正到了存储存储器作用的是被锁存住的信号。</p>
-<figure>
-<img src="/images/asm-2/ScreenShot00033.jpg" alt="时序"><figcaption>时序</figcaption>
-</figure>
 
           
         
@@ -4869,220 +5128,6 @@ abline(coef(lm_sales), lwd = 2) #取模型系数，线宽为2，画直线</code>
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://plart.pw/langs/chuck/chuck8/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lart Pang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="失乐园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/langs/chuck/chuck8/" class="post-title-link" itemprop="https://plart.pw/page/2/index.html">chuck8</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-02-15 21:40:10" itemprop="dateCreated datePublished" datetime="2018-02-15T21:40:10+08:00">2018-02-15</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-13 20:47:04" itemprop="dateModified" datetime="2018-07-13T20:47:04+08:00">2018-07-13</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程与生活/" itemprop="url" rel="index"><span itemprop="name">编程与生活</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">1.4k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">3 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>functions</p>
-<pre><code>writing
-calling
-overloading </code></pre>
-<p>#writing</p>
-<p>keyword <code>fun</code> (or <code>function</code>) followed by the <em>return type</em> and then <em>the name</em> of the function. After the name of the function parentheses(括号) must be opened to declare the types of the input arguments.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// define function call 'funk'</span></span><br><span class="line"><span class="function">fun <span class="keyword">void</span> <span class="title">funk</span><span class="params">( <span class="keyword">int</span> arg )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// insert code here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// define function 'addOne'</span></span><br><span class="line"><span class="function">fun <span class="keyword">int</span> <span class="title">addOne</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// result</span></span><br><span class="line">    <span class="keyword">return</span> x + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>#calling</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// define 'hey'</span></span><br><span class="line"><span class="function">fun <span class="keyword">int</span> <span class="title">hey</span><span class="params">( <span class="keyword">int</span> a, <span class="keyword">int</span> b )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// call the function; store result</span></span><br><span class="line">hey( <span class="number">1</span>, <span class="number">2</span> ) =&gt; <span class="keyword">int</span> result;</span><br></pre></td></tr></table></figure>
-<p>You can also use the ChucK operator to call functions!</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// call hey</span></span><br><span class="line">( <span class="number">1</span>, <span class="number">2</span> ) =&gt; hey =&gt; <span class="keyword">int</span> result;</span><br><span class="line"></span><br><span class="line"><span class="comment">// same</span></span><br><span class="line">hey( <span class="number">1</span>, <span class="number">2</span> ) =&gt; <span class="keyword">int</span> result;</span><br><span class="line"></span><br><span class="line"><span class="comment">// several in a row</span></span><br><span class="line">( <span class="number">10</span>, <span class="number">100</span> ) =&gt; Std.rand2 =&gt; Std.mtof =&gt; <span class="keyword">float</span> foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// same 返回值做参数</span></span><br><span class="line">Std.mtof( Std.rand2( <span class="number">10</span>, <span class="number">100</span> ) ) =&gt; <span class="keyword">float</span> foo;</span><br></pre></td></tr></table></figure>
-<p>#overloading</p>
-<p>Overloading a function allows functions <em>with the same name</em> to be defined(定义) <em>with different arguments</em>. The function must be written in <strong>separate instances(实例) to handle the input</strong>, and the <strong>return type must agree(一致)</strong>.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// funk( int )</span></span><br><span class="line"><span class="function">fun <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// funk( int, int )</span></span><br><span class="line"><span class="function">fun <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// compiler automatically choose the right one to call</span></span><br><span class="line">add( <span class="number">1</span> ) =&gt; <span class="keyword">int</span> foo;</span><br><span class="line">add( <span class="number">1</span>, <span class="number">2</span> ) =&gt; <span class="keyword">int</span> bar;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -5132,7 +5177,7 @@ overloading </code></pre>
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">58</span>
+                    <span class="site-state-item-count">59</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -5230,7 +5275,9 @@ overloading </code></pre>
                     
                       
                     
-                    <span class="site-state-item-count">30</span>
+                      
+                    
+                    <span class="site-state-item-count">31</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -5343,7 +5390,7 @@ overloading </code></pre>
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">356k</span>
+    <span title="站点总字数">358k</span>
   
 
   
@@ -5352,7 +5399,7 @@ overloading </code></pre>
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">10:48</span>
+    <span title="站点阅读时长">10:51</span>
   
 </div>
 

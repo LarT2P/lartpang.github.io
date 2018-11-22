@@ -293,7 +293,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">30</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">31</span></a>
 
   </li>
         
@@ -331,7 +331,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">58</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">59</span></a>
 
   </li>
 
@@ -405,281 +405,6 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://plart.pw/langs/chuck/chuck7/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lart Pang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="失乐园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/langs/chuck/chuck7/" class="post-title-link" itemprop="https://plart.pw/page/3/index.html">chuck7</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-02-15 21:40:10" itemprop="dateCreated datePublished" datetime="2018-02-15T21:40:10+08:00">2018-02-15</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-13 20:47:00" itemprop="dateModified" datetime="2018-07-13T20:47:00+08:00">2018-07-13</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程与生活/" itemprop="url" rel="index"><span itemprop="name">编程与生活</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">5.2k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">9 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>manipulating time</p>
-<ul>
-<li>time and duration</li>
-<li>operations (arithmetic)</li>
-<li>the keyword 'now'</li>
-<li>advancing time</li>
-<li>properties</li>
-</ul>
-<p>#Manipulating Time</p>
-<p>ChucK is a <strong>strongly-timed</strong> language, meaning that time is fundamentally(根本地) embedded(嵌入) in the language. ChucK allows the programmer to explicitly(明确的) reason about time from the code. This gives extremely flexible(灵活的) and precise(精确的) control over time and (therefore) sound synthesis(综合).</p>
-<p>In ChucK:</p>
-<ul>
-<li>time and duration are native types in the language</li>
-<li>keyword <code>now</code> holds the current logical time</li>
-<li>time is advanced (and can only be advanced) by explicitly(显式地) manipulating(操纵) <code>now</code></li>
-<li>you have flexible(灵活的) and precise(精确的) control</li>
-</ul>
-<p>#time and duration</p>
-<p><code>Time</code> and <code>duration</code> are native types in ChucK.</p>
-<pre><code>`time` represents an absolute(绝对的) point in time (from the beginning of ChucK time). 时间点
-`dur` represents a duration (with the same logical units as time). 时间段</code></pre>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a duration of one second</span></span><br><span class="line"><span class="number">1</span>::second =&gt; dur foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// a point in time (duration of foo from now)</span></span><br><span class="line">now + foo =&gt; time later;</span><br></pre></td></tr></table></figure>
-<p>Later in this section, we outline(概述) the various arithmetic operations(各种数学运算) to perform on time and duration.</p>
-<p>Durations can be used to construct new durations, which then be used to inductively(归纳地) construct yet other durations. For example:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .5 second is a quarter</span></span><br><span class="line"><span class="number">.5</span>::second =&gt; dur quarter;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4 quarters is whole</span></span><br><span class="line"><span class="number">4</span>::quarter =&gt; dur whole;</span><br></pre></td></tr></table></figure>
-<p>By default, ChucK provides these preset(预先装置的) duration values:</p>
-<ul>
-<li>samp : duration(持续) of 1 sample(样本 in ChucK time</li>
-<li>ms : duration of 1 millisecond(毫秒)</li>
-<li>second : duration of 1 second</li>
-<li>minute : 1 minute</li>
-<li>hour : 1 hour</li>
-<li>day : 1 day</li>
-<li>week : 1 week</li>
-</ul>
-<p>Use these to represent any duration.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// the duration of half a sample</span></span><br><span class="line"><span class="number">.5</span>::samp =&gt; dur foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 20 weeks</span></span><br><span class="line"><span class="number">20</span>::week =&gt; dur waithere;</span><br><span class="line"></span><br><span class="line"><span class="comment">// use in combination</span></span><br><span class="line"><span class="number">2</span>::minute + <span class="number">30</span>::second =&gt; dur bar;</span><br><span class="line"></span><br><span class="line"><span class="comment">// same value as above</span></span><br><span class="line"><span class="number">2.5</span>::minute =&gt; dur bar;</span><br></pre></td></tr></table></figure>
-<p>#operations on time and duration (arithmetic)</p>
-<p>In ChucK, there are well-defined(定义明确的) arithmetic operations on values of type time and dur.</p>
-<p>#the keyword 'now'</p>
-<p>The keyword <code>now</code> is the key to reasoning about and controlling time in ChucK.思考控制时间的关键</p>
-<p>Some properties(属性) of <code>now</code> include:</p>
-<ul>
-<li><code>now</code> is a special variable(变量) of type time.</li>
-<li><code>now</code> holds the current ChucK time (when read).</li>
-<li>modifying <code>now</code> has the side effects(副作用) of:
-<ul>
-<li>advancing time (see below);</li>
-<li>suspending(暂停) the current process (called <em>shred</em>) until the desired time is reached - allowing other shreds and audio synthesis to compute;</li>
-</ul></li>
-<li>the value of <code>now</code> only changes when it is explicitly(明确地) modified(改动).</li>
-</ul>
-<p>(also see next section on advancing time).</p>
-<p>Example:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// compute value that represents "5 seconds from now"</span></span><br><span class="line">now + <span class="number">5</span>::second =&gt; time later;</span><br><span class="line"></span><br><span class="line"><span class="comment">// while we are not at later yet...</span></span><br><span class="line"><span class="keyword">while</span>( now &lt; later )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// print out value of now</span></span><br><span class="line">    &lt;&lt;&lt; now &gt;&gt;&gt;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// advance time by 1 second</span></span><br><span class="line">    <span class="number">1</span>::second =&gt; now;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>#advancing time(推进时间)</p>
-<p>Advancing time allows other shreds (processes进程) to run and <em>allows audio to be computed</em> in a controlled manner. There are three ways of advancing time in ChucK:</p>
-<ul>
-<li>chucking (=&gt;) a duration to <code>now</code>: this will advance time by that duration.</li>
-<li>chucking (=&gt;) a time to <code>now</code>: this will advance time to that point. (note that the desired time must be later than the current time, or at least be equal to it.)</li>
-<li>chucking (=&gt;) an <code>Event</code> to <code>now</code>: time will advance until the event is triggered(引发). (also see <code>event</code>)</li>
-</ul>
-<p><strong>advancing time by duration</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// advance time by 1 second</span></span><br><span class="line"><span class="number">1</span>::second =&gt; now;</span><br><span class="line"></span><br><span class="line"><span class="comment">// advance time by 100 millisecond</span></span><br><span class="line"><span class="number">100</span>::ms =&gt; now;</span><br><span class="line"></span><br><span class="line"><span class="comment">// advance time by 1 samp (every sample)</span></span><br><span class="line"><span class="number">1</span>::samp =&gt; now;</span><br><span class="line"></span><br><span class="line"><span class="comment">// advance time by less than 1 samp</span></span><br><span class="line"><span class="number">.024</span>::samp =&gt; now;</span><br></pre></td></tr></table></figure>
-<p><strong>advancing time by absolute(绝对的) time</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// figure out when</span></span><br><span class="line">now + <span class="number">4</span>::hour =&gt; time later;</span><br><span class="line"></span><br><span class="line"><span class="comment">// advance time to later</span></span><br><span class="line">later =&gt; now;</span><br></pre></td></tr></table></figure>
-<p>A time chucked to now will have ChucK wait until the appointed(约定的) time. <em>ChucK never misses an appointment (unless it crashes)!</em> Again, the time chucked to now must be greater than or equal to now, otherwise an exception(异常) is thrown.</p>
-<p>#advancing time by event</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// wait on event</span></span><br><span class="line">e =&gt; now;</span><br></pre></td></tr></table></figure>
-<p>The advancement(推进) of time can occur(发生) at any point in the code.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// our patch: sine oscillator -&gt; dac</span></span><br><span class="line">SinOsc s =&gt; dac;</span><br><span class="line"></span><br><span class="line"><span class="comment">// infinite time loop</span></span><br><span class="line"><span class="keyword">while</span>( <span class="literal">true</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// randomly choose frequency from 30 to 1000</span></span><br><span class="line">    Std.rand2f( <span class="number">30</span>, <span class="number">1000</span> ) =&gt; s.freq;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// advance time by 100 millisecond</span></span><br><span class="line">    <span class="number">100</span>::ms =&gt; now;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Furthermore(此外), there are no restrictions(限制) (other than underlying floating point precision除了基本的浮点精度) on how much time is advanced. So it is possible to advance time by a microsecond(微秒), a samp, 2 hours, or 10 years. The system will behave accordingly(相应地) and deterministically(确切地).</p>
-<p>This mechanism(机制) <em>allows time to be controlled at any desired rate</em>, according to any programmable(可编程的) pattern. With respect to(关于) sound synthesis(合成), it is possible to control any unit generator at literally(字面地) any rate, even sub-sample rate.</p>
-<p>The power of the timing mechanism is extended(延伸) by the ability to write parallel(并行) code, which is discussed in concurrency(并发性) and shreds.</p>
-<p>#properties</p>
-<p>(see above)</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
     
       
 
@@ -910,6 +635,623 @@ inter-shred communication </code></pre>
 <p>直接运行会输出： C:1&gt;chuck test.ck:foo [test.ck]:line(2): class 'Shred' has no member 'numArgs'</p>
 </blockquote>
 <p>(真就尴尬了)</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://plart.pw/langs/chuck/chuck8/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lart Pang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="失乐园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/langs/chuck/chuck8/" class="post-title-link" itemprop="https://plart.pw/page/3/index.html">chuck8</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-02-15 21:40:10" itemprop="dateCreated datePublished" datetime="2018-02-15T21:40:10+08:00">2018-02-15</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-07-13 20:47:04" itemprop="dateModified" datetime="2018-07-13T20:47:04+08:00">2018-07-13</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程与生活/" itemprop="url" rel="index"><span itemprop="name">编程与生活</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">1.4k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">3 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>functions</p>
+<pre><code>writing
+calling
+overloading </code></pre>
+<p>#writing</p>
+<p>keyword <code>fun</code> (or <code>function</code>) followed by the <em>return type</em> and then <em>the name</em> of the function. After the name of the function parentheses(括号) must be opened to declare the types of the input arguments.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// define function call 'funk'</span></span><br><span class="line"><span class="function">fun <span class="keyword">void</span> <span class="title">funk</span><span class="params">( <span class="keyword">int</span> arg )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// insert code here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// define function 'addOne'</span></span><br><span class="line"><span class="function">fun <span class="keyword">int</span> <span class="title">addOne</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// result</span></span><br><span class="line">    <span class="keyword">return</span> x + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>#calling</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// define 'hey'</span></span><br><span class="line"><span class="function">fun <span class="keyword">int</span> <span class="title">hey</span><span class="params">( <span class="keyword">int</span> a, <span class="keyword">int</span> b )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// call the function; store result</span></span><br><span class="line">hey( <span class="number">1</span>, <span class="number">2</span> ) =&gt; <span class="keyword">int</span> result;</span><br></pre></td></tr></table></figure>
+<p>You can also use the ChucK operator to call functions!</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// call hey</span></span><br><span class="line">( <span class="number">1</span>, <span class="number">2</span> ) =&gt; hey =&gt; <span class="keyword">int</span> result;</span><br><span class="line"></span><br><span class="line"><span class="comment">// same</span></span><br><span class="line">hey( <span class="number">1</span>, <span class="number">2</span> ) =&gt; <span class="keyword">int</span> result;</span><br><span class="line"></span><br><span class="line"><span class="comment">// several in a row</span></span><br><span class="line">( <span class="number">10</span>, <span class="number">100</span> ) =&gt; Std.rand2 =&gt; Std.mtof =&gt; <span class="keyword">float</span> foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// same 返回值做参数</span></span><br><span class="line">Std.mtof( Std.rand2( <span class="number">10</span>, <span class="number">100</span> ) ) =&gt; <span class="keyword">float</span> foo;</span><br></pre></td></tr></table></figure>
+<p>#overloading</p>
+<p>Overloading a function allows functions <em>with the same name</em> to be defined(定义) <em>with different arguments</em>. The function must be written in <strong>separate instances(实例) to handle the input</strong>, and the <strong>return type must agree(一致)</strong>.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// funk( int )</span></span><br><span class="line"><span class="function">fun <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// funk( int, int )</span></span><br><span class="line"><span class="function">fun <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// compiler automatically choose the right one to call</span></span><br><span class="line">add( <span class="number">1</span> ) =&gt; <span class="keyword">int</span> foo;</span><br><span class="line">add( <span class="number">1</span>, <span class="number">2</span> ) =&gt; <span class="keyword">int</span> bar;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://plart.pw/langs/chuck/chuck4/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lart Pang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="失乐园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/langs/chuck/chuck4/" class="post-title-link" itemprop="https://plart.pw/page/3/index.html">chuck4</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-02-15 21:40:10" itemprop="dateCreated datePublished" datetime="2018-02-15T21:40:10+08:00">2018-02-15</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-07-13 20:46:46" itemprop="dateModified" datetime="2018-07-13T20:46:46+08:00">2018-07-13</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程与生活/" itemprop="url" rel="index"><span itemprop="name">编程与生活</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">8.4k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">15 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>arrays * declaring * multi-dimensional * lookup * associative arrays * assignment</p>
+<p>#Arrays</p>
+<p>This sections specifies(指定) how arrays are declared and used in ChucK. Some quick notes: * arrays can be indexed by integer(整数) (0-indexed). * <strong>any array can also be used as an associative(联想的) map, indexed by strings.</strong> * it is important to note that the <em>integer-indexed portion(部分)</em> and the <em>associative portion</em> of an array are stored in separate namespaces * arrays are objects, and will behave similarly under <em>reference assignment(引用赋值)</em> and other operations common to objects.</p>
+<p>#declaration</p>
+<p>Arrays(数组) can be declared in the following way:</p>
+<pre><code>// declare 10 element array of int, called foo
+int foo[10];
+
+// since array of int (primitive type), the contents
+// are automatically initialized to 0</code></pre>
+<p>Arrays can also be initialized(初始化):</p>
+<pre><code>// chuck intializer(初始化器，程序) to array reference
+[ 1, 1, 2, 3, 5, 8 ] @=&gt; int foo[];</code></pre>
+<p>In the above code, there are several things to note: * initializers must contain <em>the same or similar types</em>. the compiler(编译器) will attempt to find <em>the highest common base type of all the elements(元素)</em>. <strong>if no such common element is found, an error is reported.</strong> * the type of the initializer <code>[ 1, 1, 2, 3, 5, 8 ]</code> is int[]. <em>the intializer is an array that can be used directly</em> when arrays are expected. * the at-chuck operator (<code>@=&gt;</code>) means assignment(分配), and is discussed at length(详细地) in operators and operations. * <code>int foo[]</code> is declaring an empty reference(引用) to an array(数组). the statement(声明) assigns(分配) the initializer array to foo. * arrays are objects.</p>
+<p>When declaring an array of objects, the objects inside the array are automatically(自动的) instantiated(实例化).</p>
+<pre><code>// objects in arrays are automatically instantiated
+Object group[10];</code></pre>
+<p>If you only want an array of object references:(对象引用数组)</p>
+<pre><code>// array of null object references
+Object @ group[10];</code></pre>
+<p><a href="http://chuck.cs.princeton.edu/doc/language/class.html" target="_blank" rel="noopener">Check here</a> more information on object declaration and instantation in Chuck.</p>
+<p>The above examples are 1-dimensional arrays (or vectors(矢量)).</p>
+<p>#multi-dimensional arrays</p>
+<p>It is possible (and equally easy) to declare multi-dimensional arrays:</p>
+<pre><code>// declare 4 by 6 by 8 array of float
+float foo3D[4][6][8];//和C还是很像</code></pre>
+<p>Initializers work in similar ways:</p>
+<pre><code>// declare 2 by 2 array of int
+[ [1,3], [2,4] ] @=&gt; int bar[][];</code></pre>
+<p>In the above code, note the two <code>[][]</code> since we make a matrix.</p>
+<p>#lookup</p>
+<p>Elements in an array can be accessed using [] /(in the appropriate quantities).</p>
+<pre><code>// declare an array of floats
+[ 3.2, 5.0, 7 ] @=&gt; float foo[];
+
+// access the 0th element (debug print)
+&lt;&lt;&lt; foo[0] &gt;&gt;&gt;; // hopefully 3.2
+
+// set the 2nd element
+8.5 =&gt; foo[2];</code></pre>
+<p>Looping over the elements of an array:</p>
+<pre><code>// array of floats again
+[ 1, 2, 3, 4, 5, 6 ] @=&gt; int foo[];
+//官方的例子这里是float，但是实际测试，整型不可以被分配到float里。
+
+// loop over the entire array
+for( 0 =&gt; int i; i &lt; foo.cap(); i++ )//foo.cap()
+{
+    // do something (debug print)
+    &lt;&lt;&lt; foo[i] &gt;&gt;&gt;;//自带换行
+}</code></pre>
+<p>Accessing multi-dimensional array:</p>
+<pre><code>// 2D array
+int foo[4][4];
+
+// set an element
+10 =&gt; foo[2][2];</code></pre>
+<p>If the index exceeds(超过) the bounds of the array in any dimension(标出尺寸), an exception(异常) is issued(被放出) and the current shred(片段) is halted(停止).</p>
+<pre><code>// array capacity is 5
+int foo[5];
+
+// this should cause ArrayOutOfBoundsException
+// access element 6 (index 5)
+&lt;&lt;&lt; foo[5] &gt;&gt;&gt;;</code></pre>
+<p>a longer program: <code>otf_06.ck</code> from <a href="http://chuck.cs.princeton.edu/doc/examples/" target="_blank" rel="noopener">examples</a>:</p>
+<pre><code>// the period
+.5::second =&gt; dur T;
+// synchronize to period (for on-the-fly(运行中) synchronization)
+T - (now % T) =&gt; now;
+
+// our patch
+SinOsc s =&gt; JCRev r =&gt; dac;//JCRev是指什么类型？
+// initialize
+.05 =&gt; s.gain;
+.25 =&gt; r.mix;
+
+// scale (pentatonic(五音阶的); in semitones(半音程))
+[ 0, 2, 4, 7, 9 ] @=&gt; int scale[];
+
+// infinite time loop
+while( true )
+{
+    // pick something from the scale
+    scale[ Math.rand2(0,4) ] =&gt; float freq;
+    // get the final freq
+    Std.mtof( 69 + (Std.rand2(0,3)*12 + freq) ) =&gt; s.freq;
+    // reset phase for extra bandwidth(为额外带宽重置相位)
+    0 =&gt; s.phase;
+
+    // advance time
+    if( Std.randf() &gt; -.5 ) .25::T =&gt; now;
+    else .5::T =&gt; now;
+}</code></pre>
+<p>#associative arrays(关联数组) (类似于python中的字典，用字符串索引)</p>
+<p>Any array(数组) can be used also as an associative array, indexed on strings. Once the regular array is instantiated, no further work has to be done to make it associative as well - just start using it as such.</p>
+<pre><code>// declare regular array(正规数组) (capacity(容量) doesn&#39;t matter so much)
+float foo[4];
+
+// use as int-based array
+2.5 =&gt; foo[0];
+
+// use as associative array
+4.0 =&gt; foo[&quot;yoyo&quot;];
+
+// access as associative (print)
+&lt;&lt;&lt; foo[&quot;yoyo&quot;] &gt;&gt;&gt;;
+
+// access empty element
+&lt;&lt;&lt; foo[&quot;gaga&quot;] &gt;&gt;&gt;;  // -&gt; should print 0.0</code></pre>
+<p>It is important to note (again), that the address space of the integer(整数) portion(部分) and the associative portion of the array are completely separate. For example:</p>
+<pre><code>// declare array
+int foo[2];
+
+// put something in element 0
+10 =&gt; foo[0];
+
+// put something in element &quot;0&quot;
+20 =&gt; foo[&quot;0&quot;];
+
+// this should print out 10 20
+&lt;&lt;&lt; foo[0], foo[&quot;0&quot;] &gt;&gt;&gt;;</code></pre>
+<p>The capacity(容量) of an array relates only to the integer portion of it. An array with an integer portion of capacity 0, for example, can <em>still have any number of associative indexes.</em></p>
+<pre><code>// declare array of 0 capacity
+int foo[0];
+
+// put something in element &quot;here&quot;
+20 =&gt; foo[&quot;here&quot;];
+
+// this should print out 20
+&lt;&lt;&lt; foo[&quot;here&quot;] &gt;&gt;&gt;
+
+// this should cause an exception
+&lt;&lt;&lt; foo[0] &gt;&gt;&gt;</code></pre>
+<blockquote>
+<p><strong>Note</strong>: The associative capacity of an array is not defined(定义), so objects used in the associative namespace must be explicitly(明确的) instantiated, in contrast(对比) to those in the integer namespace (<strong>此处不甚明白</strong>)</p>
+</blockquote>
+<p>Accessing an uninstantiated element(元素) of the associate array will return a null reference. Please check the <a href="http://chuck.cs.princeton.edu/doc/language/class.html" target="_blank" rel="noopener">class documentation page</a> for an explanation of ChucK objects and references.</p>
+<pre><code>class Item { 
+   float weight; 
+}
+
+Item box[10]; 
+
+// integer indices(指数；目录（index的复数）) ( up to capacity ) are pre-instantiated.
+1.2 =&gt; box[1].weight; 
+
+// instantiate element &quot;lamp&quot;;
+new Item @=&gt; box[&quot;lamp&quot;]; 
+
+// access allowed to &quot;lamp&quot;
+2.0 =&gt; box[&quot;lamp&quot;].weight; 
+
+// access causes a `NullPointerException`    
+2.0 =&gt; box[&quot;sweater&quot;].weight; </code></pre>
+<p>#array assignment</p>
+<p>Arrays are objects. So when we declare an array, we are actually</p>
+<pre><code>(1) declaring a reference to array (reference variable(引用变量))
+(2) instantiating a new array and reference assigned(分配) to the variable. </code></pre>
+<p>A (null) reference is a reference variable that points to no object or null. A null reference to an array can be created in this fashion:</p>
+<pre><code>// declare array reference (by not specifying(指定) a capacity)
+int foo[];
+
+// we can now assign any int[] to foo
+[ 1, 2, 3 ] @=&gt; foo;
+
+// print out 0th element
+&lt;&lt;&lt; foo[0] &gt;&gt;&gt;;</code></pre>
+<p>This is also useful in declaring functions that have arrays(数组) as arguments or return type.</p>
+<pre><code>// our function
+fun void print( int bar[] )
+{
+    // print it
+    for( 0 =&gt; int i; i &lt; bar.cap(); i++ )
+        &lt;&lt;&lt; bar[0] &gt;&gt;&gt;;
+}
+
+// we can call the function with a literal
+print( [ 1, 2, 3, 4, 5 ] );
+
+// or can we can pass a reference variable
+int foo[10];
+print( foo );</code></pre>
+<p>Like other objects, it is possible make multiple references(多个引用) to a single array. Like other objects, all assignments(分配) are <em>reference assignments</em>, meaning the contents are NOT copied, only a reference to array is duplicated(被复制).(传递引用)</p>
+<pre><code>// our single array
+int the_array[10];
+
+// assign reference to foo and bar
+the_array =&gt; int foo[] =&gt; int bar[];
+
+// (the_array, foo, and bar now all reference the same array)
+
+// we change the_array and print foo...
+// they reference the same array, changing one is like changing the other
+// 连锁反应，内存中的存储信息改变了
+5 =&gt; the_array[0];
+&lt;&lt;&lt; foo[0] &gt;&gt;&gt;; // should be 5</code></pre>
+<p>It is possible to reference sub-sections(小节) of multi-dimensional(多维) arrays.</p>
+<pre><code>// a 3D array
+int foo3D[4][4][4];
+
+// we can make a reference to a sub-section
+foo3D[2] =&gt; int bar[][];
+
+// (note that the dimensions must add up!)</code></pre>
 
           
         
@@ -1453,6 +1795,246 @@ while (true) {
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://plart.pw/langs/chuck/chuck6/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lart Pang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="失乐园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/langs/chuck/chuck6/" class="post-title-link" itemprop="https://plart.pw/page/3/index.html">chuck6</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-02-15 21:40:10" itemprop="dateCreated datePublished" datetime="2018-02-15T21:40:10+08:00">2018-02-15</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-07-13 20:46:56" itemprop="dateModified" datetime="2018-07-13T20:46:56+08:00">2018-07-13</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程与生活/" itemprop="url" rel="index"><span itemprop="name">编程与生活</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2.5k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">5 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>control structures</p>
+<ul>
+<li>if / else</li>
+<li>while &amp; do...while...</li>
+<li>until</li>
+<li>for</li>
+<li>break / continue</li>
+</ul>
+<p>#Control Structures</p>
+<p>ChucK includes standard control structures similar to those in most programming languages. A condition (of type 'int') is evaluated and then a proceeding block is potentially executed. Blocks are separated either by semicolons(分号) or by curly brackets(花括号).</p>
+<p>#if / else</p>
+<p>The if statement executes a block if the condition is evaluated as <em>non-zero</em>.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>( condition )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// insert code here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>In the above code, condition is any expression that evaluates to an int. (条件是一个值为整数的表达式)</p>
+<p>The else statement(声明) can be put after the if block to handle the case where the condition evaluates(求值) to 0.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>( condition )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// your code here</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// your other code here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>If statements can be nested(嵌套).</p>
+<p>#while &amp; do...while...</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// here is an infinite loop</span></span><br><span class="line"><span class="keyword">while</span>( <span class="literal">true</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// your code loops forever!</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// (sometimes this is desirable because we can create</span></span><br><span class="line">    <span class="comment">// infinite time loops this way, and because we have</span></span><br><span class="line">    <span class="comment">// concurrency)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="comment">// your code executes here at least once</span></span><br><span class="line">&#125; <span class="keyword">while</span>( condition );</span><br></pre></td></tr></table></figure>
+<p>A few more points:</p>
+<ul>
+<li><code>while</code> statements can be nested.</li>
+<li>see <code>break/continue</code> for additional(附加的) control over your loops</li>
+</ul>
+<p>#until</p>
+<p>The until statement is the opposite of while, semantically(语义地). A until loop repeatedly executes the body until the condition evaluates as non-zero.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// an infinite loop</span></span><br><span class="line">until( <span class="literal">false</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// your great code loops forever!</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>A few more points:</p>
+<ul>
+<li><code>while</code> statements can be nested.</li>
+<li>see <code>break/continue</code> for additional(附加的) control over your loops</li>
+</ul>
+<p>#for</p>
+<p>A loop that iterates(迭代) a given number of times.(迭代给定次数) A temporary(暂时的) variable(变量) is declared that keeps track(跟踪) of the current index and is evaluated and incremented at each iteration(迭代).</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// for loop</span></span><br><span class="line"><span class="keyword">for</span>( <span class="number">0</span> =&gt; <span class="keyword">int</span> foo; foo &lt; <span class="number">4</span> ; foo++ )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// debug-print value of 'foo'</span></span><br><span class="line">    &lt;&lt;&lt;foo&gt;&gt;&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>#break / continue</p>
+<p><code>Break</code> allows the program flow to jump out of a loop.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// infinite loop</span></span><br><span class="line"><span class="keyword">while</span>( <span class="number">1</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>( condition ) </span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>Continue</code> allows a loop to continue looping but not to execute(实行) the rest of the block for the iteration where continue was executed.(跳过当前的循环)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// another infinite loop</span></span><br><span class="line"><span class="keyword">while</span>( <span class="number">1</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// check condition</span></span><br><span class="line">    <span class="keyword">if</span>( condition )</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// some great code that may get skipped (if continue is taken)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://plart.pw/langs/chuck/chuck5/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1669,409 +2251,6 @@ int foo = 4;</code></pre>
 <p>#! + - new (unary(一元的))</p>
 <p>These operators come before(位于...之前) one operand(操作数).</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// logical invert</span></span><br><span class="line"><span class="keyword">if</span>( !<span class="literal">true</span> == <span class="literal">false</span> )</span><br><span class="line">    &lt;&lt;&lt;<span class="string">"yes"</span>&gt;&gt;&gt;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// negative</span></span><br><span class="line"><span class="number">-1</span> =&gt; <span class="keyword">int</span> foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// instantiate object</span></span><br><span class="line"><span class="keyword">new</span> object @=&gt; object @ bar;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://plart.pw/langs/chuck/chuck4/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lart Pang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="失乐园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/langs/chuck/chuck4/" class="post-title-link" itemprop="https://plart.pw/page/3/index.html">chuck4</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-02-15 21:40:10" itemprop="dateCreated datePublished" datetime="2018-02-15T21:40:10+08:00">2018-02-15</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-13 20:46:46" itemprop="dateModified" datetime="2018-07-13T20:46:46+08:00">2018-07-13</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程与生活/" itemprop="url" rel="index"><span itemprop="name">编程与生活</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">8.4k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">15 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>arrays * declaring * multi-dimensional * lookup * associative arrays * assignment</p>
-<p>#Arrays</p>
-<p>This sections specifies(指定) how arrays are declared and used in ChucK. Some quick notes: * arrays can be indexed by integer(整数) (0-indexed). * <strong>any array can also be used as an associative(联想的) map, indexed by strings.</strong> * it is important to note that the <em>integer-indexed portion(部分)</em> and the <em>associative portion</em> of an array are stored in separate namespaces * arrays are objects, and will behave similarly under <em>reference assignment(引用赋值)</em> and other operations common to objects.</p>
-<p>#declaration</p>
-<p>Arrays(数组) can be declared in the following way:</p>
-<pre><code>// declare 10 element array of int, called foo
-int foo[10];
-
-// since array of int (primitive type), the contents
-// are automatically initialized to 0</code></pre>
-<p>Arrays can also be initialized(初始化):</p>
-<pre><code>// chuck intializer(初始化器，程序) to array reference
-[ 1, 1, 2, 3, 5, 8 ] @=&gt; int foo[];</code></pre>
-<p>In the above code, there are several things to note: * initializers must contain <em>the same or similar types</em>. the compiler(编译器) will attempt to find <em>the highest common base type of all the elements(元素)</em>. <strong>if no such common element is found, an error is reported.</strong> * the type of the initializer <code>[ 1, 1, 2, 3, 5, 8 ]</code> is int[]. <em>the intializer is an array that can be used directly</em> when arrays are expected. * the at-chuck operator (<code>@=&gt;</code>) means assignment(分配), and is discussed at length(详细地) in operators and operations. * <code>int foo[]</code> is declaring an empty reference(引用) to an array(数组). the statement(声明) assigns(分配) the initializer array to foo. * arrays are objects.</p>
-<p>When declaring an array of objects, the objects inside the array are automatically(自动的) instantiated(实例化).</p>
-<pre><code>// objects in arrays are automatically instantiated
-Object group[10];</code></pre>
-<p>If you only want an array of object references:(对象引用数组)</p>
-<pre><code>// array of null object references
-Object @ group[10];</code></pre>
-<p><a href="http://chuck.cs.princeton.edu/doc/language/class.html" target="_blank" rel="noopener">Check here</a> more information on object declaration and instantation in Chuck.</p>
-<p>The above examples are 1-dimensional arrays (or vectors(矢量)).</p>
-<p>#multi-dimensional arrays</p>
-<p>It is possible (and equally easy) to declare multi-dimensional arrays:</p>
-<pre><code>// declare 4 by 6 by 8 array of float
-float foo3D[4][6][8];//和C还是很像</code></pre>
-<p>Initializers work in similar ways:</p>
-<pre><code>// declare 2 by 2 array of int
-[ [1,3], [2,4] ] @=&gt; int bar[][];</code></pre>
-<p>In the above code, note the two <code>[][]</code> since we make a matrix.</p>
-<p>#lookup</p>
-<p>Elements in an array can be accessed using [] /(in the appropriate quantities).</p>
-<pre><code>// declare an array of floats
-[ 3.2, 5.0, 7 ] @=&gt; float foo[];
-
-// access the 0th element (debug print)
-&lt;&lt;&lt; foo[0] &gt;&gt;&gt;; // hopefully 3.2
-
-// set the 2nd element
-8.5 =&gt; foo[2];</code></pre>
-<p>Looping over the elements of an array:</p>
-<pre><code>// array of floats again
-[ 1, 2, 3, 4, 5, 6 ] @=&gt; int foo[];
-//官方的例子这里是float，但是实际测试，整型不可以被分配到float里。
-
-// loop over the entire array
-for( 0 =&gt; int i; i &lt; foo.cap(); i++ )//foo.cap()
-{
-    // do something (debug print)
-    &lt;&lt;&lt; foo[i] &gt;&gt;&gt;;//自带换行
-}</code></pre>
-<p>Accessing multi-dimensional array:</p>
-<pre><code>// 2D array
-int foo[4][4];
-
-// set an element
-10 =&gt; foo[2][2];</code></pre>
-<p>If the index exceeds(超过) the bounds of the array in any dimension(标出尺寸), an exception(异常) is issued(被放出) and the current shred(片段) is halted(停止).</p>
-<pre><code>// array capacity is 5
-int foo[5];
-
-// this should cause ArrayOutOfBoundsException
-// access element 6 (index 5)
-&lt;&lt;&lt; foo[5] &gt;&gt;&gt;;</code></pre>
-<p>a longer program: <code>otf_06.ck</code> from <a href="http://chuck.cs.princeton.edu/doc/examples/" target="_blank" rel="noopener">examples</a>:</p>
-<pre><code>// the period
-.5::second =&gt; dur T;
-// synchronize to period (for on-the-fly(运行中) synchronization)
-T - (now % T) =&gt; now;
-
-// our patch
-SinOsc s =&gt; JCRev r =&gt; dac;//JCRev是指什么类型？
-// initialize
-.05 =&gt; s.gain;
-.25 =&gt; r.mix;
-
-// scale (pentatonic(五音阶的); in semitones(半音程))
-[ 0, 2, 4, 7, 9 ] @=&gt; int scale[];
-
-// infinite time loop
-while( true )
-{
-    // pick something from the scale
-    scale[ Math.rand2(0,4) ] =&gt; float freq;
-    // get the final freq
-    Std.mtof( 69 + (Std.rand2(0,3)*12 + freq) ) =&gt; s.freq;
-    // reset phase for extra bandwidth(为额外带宽重置相位)
-    0 =&gt; s.phase;
-
-    // advance time
-    if( Std.randf() &gt; -.5 ) .25::T =&gt; now;
-    else .5::T =&gt; now;
-}</code></pre>
-<p>#associative arrays(关联数组) (类似于python中的字典，用字符串索引)</p>
-<p>Any array(数组) can be used also as an associative array, indexed on strings. Once the regular array is instantiated, no further work has to be done to make it associative as well - just start using it as such.</p>
-<pre><code>// declare regular array(正规数组) (capacity(容量) doesn&#39;t matter so much)
-float foo[4];
-
-// use as int-based array
-2.5 =&gt; foo[0];
-
-// use as associative array
-4.0 =&gt; foo[&quot;yoyo&quot;];
-
-// access as associative (print)
-&lt;&lt;&lt; foo[&quot;yoyo&quot;] &gt;&gt;&gt;;
-
-// access empty element
-&lt;&lt;&lt; foo[&quot;gaga&quot;] &gt;&gt;&gt;;  // -&gt; should print 0.0</code></pre>
-<p>It is important to note (again), that the address space of the integer(整数) portion(部分) and the associative portion of the array are completely separate. For example:</p>
-<pre><code>// declare array
-int foo[2];
-
-// put something in element 0
-10 =&gt; foo[0];
-
-// put something in element &quot;0&quot;
-20 =&gt; foo[&quot;0&quot;];
-
-// this should print out 10 20
-&lt;&lt;&lt; foo[0], foo[&quot;0&quot;] &gt;&gt;&gt;;</code></pre>
-<p>The capacity(容量) of an array relates only to the integer portion of it. An array with an integer portion of capacity 0, for example, can <em>still have any number of associative indexes.</em></p>
-<pre><code>// declare array of 0 capacity
-int foo[0];
-
-// put something in element &quot;here&quot;
-20 =&gt; foo[&quot;here&quot;];
-
-// this should print out 20
-&lt;&lt;&lt; foo[&quot;here&quot;] &gt;&gt;&gt;
-
-// this should cause an exception
-&lt;&lt;&lt; foo[0] &gt;&gt;&gt;</code></pre>
-<blockquote>
-<p><strong>Note</strong>: The associative capacity of an array is not defined(定义), so objects used in the associative namespace must be explicitly(明确的) instantiated, in contrast(对比) to those in the integer namespace (<strong>此处不甚明白</strong>)</p>
-</blockquote>
-<p>Accessing an uninstantiated element(元素) of the associate array will return a null reference. Please check the <a href="http://chuck.cs.princeton.edu/doc/language/class.html" target="_blank" rel="noopener">class documentation page</a> for an explanation of ChucK objects and references.</p>
-<pre><code>class Item { 
-   float weight; 
-}
-
-Item box[10]; 
-
-// integer indices(指数；目录（index的复数）) ( up to capacity ) are pre-instantiated.
-1.2 =&gt; box[1].weight; 
-
-// instantiate element &quot;lamp&quot;;
-new Item @=&gt; box[&quot;lamp&quot;]; 
-
-// access allowed to &quot;lamp&quot;
-2.0 =&gt; box[&quot;lamp&quot;].weight; 
-
-// access causes a `NullPointerException`    
-2.0 =&gt; box[&quot;sweater&quot;].weight; </code></pre>
-<p>#array assignment</p>
-<p>Arrays are objects. So when we declare an array, we are actually</p>
-<pre><code>(1) declaring a reference to array (reference variable(引用变量))
-(2) instantiating a new array and reference assigned(分配) to the variable. </code></pre>
-<p>A (null) reference is a reference variable that points to no object or null. A null reference to an array can be created in this fashion:</p>
-<pre><code>// declare array reference (by not specifying(指定) a capacity)
-int foo[];
-
-// we can now assign any int[] to foo
-[ 1, 2, 3 ] @=&gt; foo;
-
-// print out 0th element
-&lt;&lt;&lt; foo[0] &gt;&gt;&gt;;</code></pre>
-<p>This is also useful in declaring functions that have arrays(数组) as arguments or return type.</p>
-<pre><code>// our function
-fun void print( int bar[] )
-{
-    // print it
-    for( 0 =&gt; int i; i &lt; bar.cap(); i++ )
-        &lt;&lt;&lt; bar[0] &gt;&gt;&gt;;
-}
-
-// we can call the function with a literal
-print( [ 1, 2, 3, 4, 5 ] );
-
-// or can we can pass a reference variable
-int foo[10];
-print( foo );</code></pre>
-<p>Like other objects, it is possible make multiple references(多个引用) to a single array. Like other objects, all assignments(分配) are <em>reference assignments</em>, meaning the contents are NOT copied, only a reference to array is duplicated(被复制).(传递引用)</p>
-<pre><code>// our single array
-int the_array[10];
-
-// assign reference to foo and bar
-the_array =&gt; int foo[] =&gt; int bar[];
-
-// (the_array, foo, and bar now all reference the same array)
-
-// we change the_array and print foo...
-// they reference the same array, changing one is like changing the other
-// 连锁反应，内存中的存储信息改变了
-5 =&gt; the_array[0];
-&lt;&lt;&lt; foo[0] &gt;&gt;&gt;; // should be 5</code></pre>
-<p>It is possible to reference sub-sections(小节) of multi-dimensional(多维) arrays.</p>
-<pre><code>// a 3D array
-int foo3D[4][4][4];
-
-// we can make a reference to a sub-section
-foo3D[2] =&gt; int bar[][];
-
-// (note that the dimensions must add up!)</code></pre>
 
           
         
@@ -3060,7 +3239,7 @@ while( true )
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://plart.pw/langs/chuck/chuck6/">
+    <link itemprop="mainEntityOfPage" href="https://plart.pw/langs/chuck/chuck7/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lart Pang">
@@ -3080,7 +3259,7 @@ while( true )
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/langs/chuck/chuck6/" class="post-title-link" itemprop="https://plart.pw/page/3/index.html">chuck6</a>
+                <a href="/langs/chuck/chuck7/" class="post-title-link" itemprop="https://plart.pw/page/3/index.html">chuck7</a>
               
             
           </h2>
@@ -3122,7 +3301,7 @@ while( true )
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-07-13 20:46:56" itemprop="dateModified" datetime="2018-07-13T20:46:56+08:00">2018-07-13</time>
+                <time title="修改时间：2018-07-13 20:47:00" itemprop="dateModified" datetime="2018-07-13T20:47:00+08:00">2018-07-13</time>
               
             
           </span>
@@ -3167,7 +3346,7 @@ while( true )
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.5k</span>
+                <span title="本文字数">5.2k</span>
               
 
               
@@ -3181,7 +3360,7 @@ while( true )
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">5 分钟</span>
+                <span title="阅读时长">9 分钟</span>
               
             </div>
           
@@ -3203,273 +3382,82 @@ while( true )
       
         
           
-            <p>control structures</p>
+            <p>manipulating time</p>
 <ul>
-<li>if / else</li>
-<li>while &amp; do...while...</li>
-<li>until</li>
-<li>for</li>
-<li>break / continue</li>
+<li>time and duration</li>
+<li>operations (arithmetic)</li>
+<li>the keyword 'now'</li>
+<li>advancing time</li>
+<li>properties</li>
 </ul>
-<p>#Control Structures</p>
-<p>ChucK includes standard control structures similar to those in most programming languages. A condition (of type 'int') is evaluated and then a proceeding block is potentially executed. Blocks are separated either by semicolons(分号) or by curly brackets(花括号).</p>
-<p>#if / else</p>
-<p>The if statement executes a block if the condition is evaluated as <em>non-zero</em>.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>( condition )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// insert code here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>In the above code, condition is any expression that evaluates to an int. (条件是一个值为整数的表达式)</p>
-<p>The else statement(声明) can be put after the if block to handle the case where the condition evaluates(求值) to 0.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>( condition )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// your code here</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// your other code here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>If statements can be nested(嵌套).</p>
-<p>#while &amp; do...while...</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// here is an infinite loop</span></span><br><span class="line"><span class="keyword">while</span>( <span class="literal">true</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// your code loops forever!</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// (sometimes this is desirable because we can create</span></span><br><span class="line">    <span class="comment">// infinite time loops this way, and because we have</span></span><br><span class="line">    <span class="comment">// concurrency)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="comment">// your code executes here at least once</span></span><br><span class="line">&#125; <span class="keyword">while</span>( condition );</span><br></pre></td></tr></table></figure>
-<p>A few more points:</p>
+<p>#Manipulating Time</p>
+<p>ChucK is a <strong>strongly-timed</strong> language, meaning that time is fundamentally(根本地) embedded(嵌入) in the language. ChucK allows the programmer to explicitly(明确的) reason about time from the code. This gives extremely flexible(灵活的) and precise(精确的) control over time and (therefore) sound synthesis(综合).</p>
+<p>In ChucK:</p>
 <ul>
-<li><code>while</code> statements can be nested.</li>
-<li>see <code>break/continue</code> for additional(附加的) control over your loops</li>
+<li>time and duration are native types in the language</li>
+<li>keyword <code>now</code> holds the current logical time</li>
+<li>time is advanced (and can only be advanced) by explicitly(显式地) manipulating(操纵) <code>now</code></li>
+<li>you have flexible(灵活的) and precise(精确的) control</li>
 </ul>
-<p>#until</p>
-<p>The until statement is the opposite of while, semantically(语义地). A until loop repeatedly executes the body until the condition evaluates as non-zero.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// an infinite loop</span></span><br><span class="line">until( <span class="literal">false</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// your great code loops forever!</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>A few more points:</p>
+<p>#time and duration</p>
+<p><code>Time</code> and <code>duration</code> are native types in ChucK.</p>
+<pre><code>`time` represents an absolute(绝对的) point in time (from the beginning of ChucK time). 时间点
+`dur` represents a duration (with the same logical units as time). 时间段</code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a duration of one second</span></span><br><span class="line"><span class="number">1</span>::second =&gt; dur foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// a point in time (duration of foo from now)</span></span><br><span class="line">now + foo =&gt; time later;</span><br></pre></td></tr></table></figure>
+<p>Later in this section, we outline(概述) the various arithmetic operations(各种数学运算) to perform on time and duration.</p>
+<p>Durations can be used to construct new durations, which then be used to inductively(归纳地) construct yet other durations. For example:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .5 second is a quarter</span></span><br><span class="line"><span class="number">.5</span>::second =&gt; dur quarter;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4 quarters is whole</span></span><br><span class="line"><span class="number">4</span>::quarter =&gt; dur whole;</span><br></pre></td></tr></table></figure>
+<p>By default, ChucK provides these preset(预先装置的) duration values:</p>
 <ul>
-<li><code>while</code> statements can be nested.</li>
-<li>see <code>break/continue</code> for additional(附加的) control over your loops</li>
+<li>samp : duration(持续) of 1 sample(样本 in ChucK time</li>
+<li>ms : duration of 1 millisecond(毫秒)</li>
+<li>second : duration of 1 second</li>
+<li>minute : 1 minute</li>
+<li>hour : 1 hour</li>
+<li>day : 1 day</li>
+<li>week : 1 week</li>
 </ul>
-<p>#for</p>
-<p>A loop that iterates(迭代) a given number of times.(迭代给定次数) A temporary(暂时的) variable(变量) is declared that keeps track(跟踪) of the current index and is evaluated and incremented at each iteration(迭代).</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// for loop</span></span><br><span class="line"><span class="keyword">for</span>( <span class="number">0</span> =&gt; <span class="keyword">int</span> foo; foo &lt; <span class="number">4</span> ; foo++ )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// debug-print value of 'foo'</span></span><br><span class="line">    &lt;&lt;&lt;foo&gt;&gt;&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>#break / continue</p>
-<p><code>Break</code> allows the program flow to jump out of a loop.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// infinite loop</span></span><br><span class="line"><span class="keyword">while</span>( <span class="number">1</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>( condition ) </span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>Continue</code> allows a loop to continue looping but not to execute(实行) the rest of the block for the iteration where continue was executed.(跳过当前的循环)</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// another infinite loop</span></span><br><span class="line"><span class="keyword">while</span>( <span class="number">1</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// check condition</span></span><br><span class="line">    <span class="keyword">if</span>( condition )</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// some great code that may get skipped (if continue is taken)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-       
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://plart.pw/langs/chuck/chuck13/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lart Pang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="失乐园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/langs/chuck/chuck13/" class="post-title-link" itemprop="https://plart.pw/page/3/index.html">chuck13</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-02-15 21:40:10" itemprop="dateCreated datePublished" datetime="2018-02-15T21:40:10+08:00">2018-02-15</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-13 20:46:29" itemprop="dateModified" datetime="2018-07-13T20:46:29+08:00">2018-07-13</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/编程与生活/" itemprop="url" rel="index"><span itemprop="name">编程与生活</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">5.5k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">10 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="events">Events</h1>
-<p>In addition to the built-in(嵌入的) timing mechanisms(机制) for internal(内部的) control, ChucK has an <strong>event</strong> class to allow exact synchronization(精确同步) across an arbitrary(任意的) number of shreds. 事件类允许在任意的进程间实现精确同步</p>
-<p><a href="http://chuck.cs.princeton.edu/doc/examples/index.html#%20event" target="_blank" rel="noopener">View sample code for events</a></p>
-<h1 id="what-they-are">what they are</h1>
-<p>ChucK events are a native class(原始类) within the ChucK language. We can create an event objects, and then chuck (<code>=&gt;</code>) that event to <strong>now</strong>. The event places the current shred on the event's waiting list, suspends(暂停) the current shred (letting time advance from that shred's point of view). 时间放置在当前进程的事件的等待列表里，暂停当前进程(从时间的观测点推进时间) When the event is triggered(引发), one or more of the shreds on its waiting list is shreduled to run immediately. 时间被引发时，在进程的等待列表里调用运行 This trigger(触发器) may originate(引起) <strong>from another ChucK shred, or from activities taking place outside the Virtual Machine</strong> ( MIDI, OSC, or IPC ).</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// declare event</span></span><br><span class="line">Event e;</span><br><span class="line"></span><br><span class="line"><span class="comment">// function for shred</span></span><br><span class="line"><span class="function">fun <span class="keyword">void</span> <span class="title">eventshred</span><span class="params">( Event event, <span class="built_in">string</span> msg )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// infinite loop</span></span><br><span class="line">    <span class="keyword">while</span> ( <span class="literal">true</span> )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// wait on event</span></span><br><span class="line">        event =&gt; now;</span><br><span class="line">        <span class="comment">// print</span></span><br><span class="line">        &lt;&lt;&lt;msg&gt;&gt;&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// create shreds</span></span><br><span class="line">spork ~ eventshred ( e, <span class="string">"fee"</span> );</span><br><span class="line">spork ~ eventshred ( e, <span class="string">"fi"</span> );</span><br><span class="line">spork ~ eventshred ( e, <span class="string">"fo"</span> );</span><br><span class="line">spork ~ eventshred ( e, <span class="string">"fum"</span> );</span><br><span class="line"></span><br><span class="line"><span class="comment">// infinite time loop</span></span><br><span class="line"><span class="keyword">while</span> ( <span class="literal">true</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// either signal or broadcast(信号或广播)</span></span><br><span class="line">    <span class="keyword">if</span>( maybe )</span><br><span class="line">    &#123; </span><br><span class="line">        &lt;&lt;&lt;<span class="string">"signaling..."</span>&gt;&gt;&gt;;</span><br><span class="line">        e.signal();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123; </span><br><span class="line">        &lt;&lt;&lt;<span class="string">"broadcasting..."</span>&gt;&gt;&gt;;</span><br><span class="line">        e.broadcast();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// advance time</span></span><br><span class="line">    <span class="number">0.5</span>::second =&gt; now;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="use">use</h1>
-<p>Chucking an event to <strong>now</strong> <em>suspends the current shred</em>, letting time advance:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// declare Event</span></span><br><span class="line">Event e;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// wait on the event</span></span><br><span class="line">e =&gt; now;</span><br><span class="line"></span><br><span class="line"><span class="comment">// after the event is trigger</span></span><br><span class="line">&lt;&lt;&lt; <span class="string">"I just woke up"</span> &gt;&gt;&gt;;</span><br></pre></td></tr></table></figure>
-<p>as shown above, events can be triggered in two ways, <em>depending on the desired behavior(行为).</em></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// signal one shred waiting on the event e</span></span><br><span class="line">e.signal();</span><br></pre></td></tr></table></figure>
-<p><code>signal()</code> releases the <em>first</em> shred in that event's queue, and shredule it to run at the current time, respecting(考虑) the order in which shreds were added to the queue.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// wake up all shreds waiting on the event e</span></span><br><span class="line">e.broadcast();</span><br></pre></td></tr></table></figure>
-<p><code>broadcast()</code> releases <em>all</em> shreds queued by that event, in the order they were added, and at the same instant in time(在同一瞬间).</p>
-<p>The released shreds are shreduled to run immediately. But of course they will respect(涉及) other shreds also shreduled to run at the same time. Furthermore(此外), the shred that called <code>signal()</code> or <code>broadcast()</code> will continue to run until it advances time itself, or yield the virtual(虚拟的) machine without advancing time. (see <code>me.yield()</code> under <a href="http://chuck.cs.princeton.edu/doc/language/spork.html#%20me" target="_blank" rel="noopener">concurrency</a>)</p>
-<h1 id="midi-events">MIDI events</h1>
-<p>ChucK contains built-in(嵌入的) MIDI classes to allow for interaction(相互作用) with MIDI based software or devices(装置).</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">MidiIn min;</span><br><span class="line">MidiMsg msg;</span><br><span class="line"></span><br><span class="line"><span class="comment">// open midi receiver, exit on fail</span></span><br><span class="line"><span class="keyword">if</span> ( !min.open(<span class="number">0</span>) ) me.<span class="built_in">exit</span>(); </span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>( <span class="literal">true</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// wait on midi event</span></span><br><span class="line">    min =&gt; now;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// receive midimsg(s)</span></span><br><span class="line">    <span class="keyword">while</span>( min.recv( msg ) )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// print content</span></span><br><span class="line">        &lt;&lt;&lt; msg.data1, msg.data2, msg.data3 &gt;&gt;&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p><strong>MidiIn</strong> is a subclass(子类) of <strong>Event</strong>, and as such can be ChucKed to <strong>now</strong>. MidiIn then takes a MidiMsg object to its <strong>.recv()</strong> method to access the MIDI data. <em>As a default, MidiIn events trigger(引发) the <strong>broadcast()</strong> event behavior.</em></p>
-<h1 id="osc-events">OSC events</h1>
-<p>In addition to MIDI, ChucK has OSC communication classes as well:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">// create our OSC receiver</span></span><br><span class="line">OscRecv orec;</span><br><span class="line"><span class="comment">// port 6449</span></span><br><span class="line"><span class="number">6449</span> =&gt; orec.port;</span><br><span class="line"><span class="comment">// start listening (launch thread)</span></span><br><span class="line">orec.listen();</span><br><span class="line"></span><br><span class="line"><span class="function">function <span class="keyword">void</span> <span class="title">rate_control_shred</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="comment">// create an address in the receiver </span></span><br><span class="line">    <span class="comment">// and store it in a new variable.</span></span><br><span class="line">    orec.event(<span class="string">"/sndbuf/buf/rate,f"</span>) @=&gt; OscEvent rate_event; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> ( <span class="literal">true</span> )</span><br><span class="line">    &#123; </span><br><span class="line">        rate_event =&gt; now; <span class="comment">// wait for events to arrive.</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// grab the next message from the queue. </span></span><br><span class="line">        <span class="keyword">while</span>( rate_event.nextMsg() != <span class="number">0</span> )</span><br><span class="line">        &#123; </span><br><span class="line">            <span class="comment">// getFloat fetches the expected float</span></span><br><span class="line">            <span class="comment">// as indicated in the type string ",f"</span></span><br><span class="line">            buf.play( rate_event.getFloat() );</span><br><span class="line">            <span class="number">0</span> =&gt; buf.pos;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;       </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>The <strong>OscRecv</strong> class listens for incoming OSC packets on the specified(特定的) port. Each instance(实例) of <strong>OscRecv</strong> can create OscEvent objects using its <code>event()</code> method to listen for packets at any valid OSC Address pattern.(在任何合法的OSC地址模式，使用事件方法来监听数据包)</p>
-<p>An OscEvent object can then be ChucKed to <strong>now</strong> <em>to wait for messages to arrive</em>, after which the <strong>nextMsg()</strong> and <strong>get{Float|String|Int}()</strong> methods can be used <em>to fetch message data</em>.</p>
-<h1 id="creating-custom-events">creating custom events</h1>
-<p>Events, like any other class, can be subclassed to add functionality(功能) and transmit(传输) data:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// extended event扩充事件</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TheEvent</span> <span class="title">extends</span> <span class="title">Event</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// the event</span></span><br><span class="line">TheEvent e;</span><br><span class="line"></span><br><span class="line"><span class="comment">// handler</span></span><br><span class="line"><span class="function">fun <span class="keyword">int</span> <span class="title">hi</span><span class="params">( TheEvent event )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>( <span class="literal">true</span> )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// wait on event</span></span><br><span class="line">        event =&gt; now;</span><br><span class="line">        <span class="comment">// get the data</span></span><br><span class="line">        &lt;&lt;&lt;e.value&gt;&gt;&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// spork</span></span><br><span class="line">spork ~ hi( e );</span><br><span class="line">spork ~ hi( e );</span><br><span class="line">spork ~ hi( e );</span><br><span class="line">spork ~ hi( e );</span><br><span class="line"></span><br><span class="line"><span class="comment">// infinite time loop</span></span><br><span class="line"><span class="keyword">while</span>( <span class="literal">true</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// advance time</span></span><br><span class="line">    <span class="number">1</span>::second =&gt; now;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// set data</span></span><br><span class="line">    Math.rand2( <span class="number">0</span>, <span class="number">5</span> ) =&gt; e.value;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// signal one waiting shred</span></span><br><span class="line">    e.signal();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Use these to represent any duration.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// the duration of half a sample</span></span><br><span class="line"><span class="number">.5</span>::samp =&gt; dur foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 20 weeks</span></span><br><span class="line"><span class="number">20</span>::week =&gt; dur waithere;</span><br><span class="line"></span><br><span class="line"><span class="comment">// use in combination</span></span><br><span class="line"><span class="number">2</span>::minute + <span class="number">30</span>::second =&gt; dur bar;</span><br><span class="line"></span><br><span class="line"><span class="comment">// same value as above</span></span><br><span class="line"><span class="number">2.5</span>::minute =&gt; dur bar;</span><br></pre></td></tr></table></figure>
+<p>#operations on time and duration (arithmetic)</p>
+<p>In ChucK, there are well-defined(定义明确的) arithmetic operations on values of type time and dur.</p>
+<p>#the keyword 'now'</p>
+<p>The keyword <code>now</code> is the key to reasoning about and controlling time in ChucK.思考控制时间的关键</p>
+<p>Some properties(属性) of <code>now</code> include:</p>
+<ul>
+<li><code>now</code> is a special variable(变量) of type time.</li>
+<li><code>now</code> holds the current ChucK time (when read).</li>
+<li>modifying <code>now</code> has the side effects(副作用) of:
+<ul>
+<li>advancing time (see below);</li>
+<li>suspending(暂停) the current process (called <em>shred</em>) until the desired time is reached - allowing other shreds and audio synthesis to compute;</li>
+</ul></li>
+<li>the value of <code>now</code> only changes when it is explicitly(明确地) modified(改动).</li>
+</ul>
+<p>(also see next section on advancing time).</p>
+<p>Example:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// compute value that represents "5 seconds from now"</span></span><br><span class="line">now + <span class="number">5</span>::second =&gt; time later;</span><br><span class="line"></span><br><span class="line"><span class="comment">// while we are not at later yet...</span></span><br><span class="line"><span class="keyword">while</span>( now &lt; later )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// print out value of now</span></span><br><span class="line">    &lt;&lt;&lt; now &gt;&gt;&gt;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// advance time by 1 second</span></span><br><span class="line">    <span class="number">1</span>::second =&gt; now;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>#advancing time(推进时间)</p>
+<p>Advancing time allows other shreds (processes进程) to run and <em>allows audio to be computed</em> in a controlled manner. There are three ways of advancing time in ChucK:</p>
+<ul>
+<li>chucking (=&gt;) a duration to <code>now</code>: this will advance time by that duration.</li>
+<li>chucking (=&gt;) a time to <code>now</code>: this will advance time to that point. (note that the desired time must be later than the current time, or at least be equal to it.)</li>
+<li>chucking (=&gt;) an <code>Event</code> to <code>now</code>: time will advance until the event is triggered(引发). (also see <code>event</code>)</li>
+</ul>
+<p><strong>advancing time by duration</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// advance time by 1 second</span></span><br><span class="line"><span class="number">1</span>::second =&gt; now;</span><br><span class="line"></span><br><span class="line"><span class="comment">// advance time by 100 millisecond</span></span><br><span class="line"><span class="number">100</span>::ms =&gt; now;</span><br><span class="line"></span><br><span class="line"><span class="comment">// advance time by 1 samp (every sample)</span></span><br><span class="line"><span class="number">1</span>::samp =&gt; now;</span><br><span class="line"></span><br><span class="line"><span class="comment">// advance time by less than 1 samp</span></span><br><span class="line"><span class="number">.024</span>::samp =&gt; now;</span><br></pre></td></tr></table></figure>
+<p><strong>advancing time by absolute(绝对的) time</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// figure out when</span></span><br><span class="line">now + <span class="number">4</span>::hour =&gt; time later;</span><br><span class="line"></span><br><span class="line"><span class="comment">// advance time to later</span></span><br><span class="line">later =&gt; now;</span><br></pre></td></tr></table></figure>
+<p>A time chucked to now will have ChucK wait until the appointed(约定的) time. <em>ChucK never misses an appointment (unless it crashes)!</em> Again, the time chucked to now must be greater than or equal to now, otherwise an exception(异常) is thrown.</p>
+<p>#advancing time by event</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// wait on event</span></span><br><span class="line">e =&gt; now;</span><br></pre></td></tr></table></figure>
+<p>The advancement(推进) of time can occur(发生) at any point in the code.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// our patch: sine oscillator -&gt; dac</span></span><br><span class="line">SinOsc s =&gt; dac;</span><br><span class="line"></span><br><span class="line"><span class="comment">// infinite time loop</span></span><br><span class="line"><span class="keyword">while</span>( <span class="literal">true</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// randomly choose frequency from 30 to 1000</span></span><br><span class="line">    Std.rand2f( <span class="number">30</span>, <span class="number">1000</span> ) =&gt; s.freq;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// advance time by 100 millisecond</span></span><br><span class="line">    <span class="number">100</span>::ms =&gt; now;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Furthermore(此外), there are no restrictions(限制) (other than underlying floating point precision除了基本的浮点精度) on how much time is advanced. So it is possible to advance time by a microsecond(微秒), a samp, 2 hours, or 10 years. The system will behave accordingly(相应地) and deterministically(确切地).</p>
+<p>This mechanism(机制) <em>allows time to be controlled at any desired rate</em>, according to any programmable(可编程的) pattern. With respect to(关于) sound synthesis(合成), it is possible to control any unit generator at literally(字面地) any rate, even sub-sample rate.</p>
+<p>The power of the timing mechanism is extended(延伸) by the ability to write parallel(并行) code, which is discussed in concurrency(并发性) and shreds.</p>
+<p>#properties</p>
+<p>(see above)</p>
 
           
         
@@ -3560,7 +3548,7 @@ while( true )
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">58</span>
+                    <span class="site-state-item-count">59</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -3658,7 +3646,9 @@ while( true )
                     
                       
                     
-                    <span class="site-state-item-count">30</span>
+                      
+                    
+                    <span class="site-state-item-count">31</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -3771,7 +3761,7 @@ while( true )
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">356k</span>
+    <span title="站点总字数">358k</span>
   
 
   
@@ -3780,7 +3770,7 @@ while( true )
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">10:48</span>
+    <span title="站点阅读时长">10:51</span>
   
 </div>
 
