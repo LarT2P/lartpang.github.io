@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://plart.pw/"/>
-  <updated>2018-12-06T16:34:01.656Z</updated>
+  <updated>2018-12-22T16:22:01.914Z</updated>
   <id>https://plart.pw/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>论文&amp;代码&amp;生活</title>
+    <link href="https://plart.pw/%E7%94%9F%E6%B4%BB-2018%E5%B9%B412%E6%9C%8821%E6%97%A5/"/>
+    <id>https://plart.pw/生活-2018年12月21日/</id>
+    <published>2018-12-21T16:00:00.000Z</published>
+    <updated>2018-12-22T16:22:01.914Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;论文代码生活&quot;&gt;论文&amp;amp;代码&amp;amp;生活&lt;/h1&gt;
+&lt;figure&gt;
+&lt;img src=&quot;https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?ixlib=rb-1.2.1&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=750&amp;amp;q=80&quot; alt=&quot;upslash&quot;&gt;&lt;figcaption&gt;upslash&lt;/figcaption&gt;
+&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="生活与思考" scheme="https://plart.pw/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%80%9D%E8%80%83/"/>
+    
+    
+      <category term="随笔" scheme="https://plart.pw/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
     <title>雪&amp;毕设&amp;代码</title>
     <link href="https://plart.pw/%E7%94%9F%E6%B4%BB-2018%E5%B9%B412%E6%9C%886%E6%97%A5/"/>
     <id>https://plart.pw/生活-2018年12月6日/</id>
     <published>2018-12-05T16:00:00.000Z</published>
-    <updated>2018-12-06T16:34:01.656Z</updated>
+    <updated>2018-12-21T15:50:29.835Z</updated>
     
     <summary type="html">
     
