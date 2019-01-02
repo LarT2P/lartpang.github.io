@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://plart.pw/"/>
-  <updated>2018-12-22T16:22:01.914Z</updated>
+  <updated>2019-01-02T16:48:38.259Z</updated>
   <id>https://plart.pw/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>努力与情绪</title>
+    <link href="https://plart.pw/%E6%80%9D%E8%80%83-%E5%8A%AA%E5%8A%9B%E4%B8%8E%E6%83%85%E7%BB%AA/"/>
+    <id>https://plart.pw/思考-努力与情绪/</id>
+    <published>2019-01-01T16:00:00.000Z</published>
+    <updated>2019-01-02T16:48:38.259Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;努力与情绪&quot;&gt;努力与情绪&lt;/h1&gt;
+&lt;figure&gt;
+&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="生活与思考" scheme="https://plart.pw/categories/%E7%94%9F%E6%B4%BB%E4%B8%8E%E6%80%9D%E8%80%83/"/>
+    
+    
+      <category term="随笔" scheme="https://plart.pw/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="情绪" scheme="https://plart.pw/tags/%E6%83%85%E7%BB%AA/"/>
+    
+  </entry>
   
   <entry>
     <title>论文&amp;代码&amp;生活</title>
@@ -44,7 +74,7 @@
     <link href="https://plart.pw/%E7%94%9F%E6%B4%BB-2018%E5%B9%B412%E6%9C%886%E6%97%A5/"/>
     <id>https://plart.pw/生活-2018年12月6日/</id>
     <published>2018-12-05T16:00:00.000Z</published>
-    <updated>2018-12-21T15:50:29.835Z</updated>
+    <updated>2019-01-02T15:05:38.246Z</updated>
     
     <summary type="html">
     
@@ -52,9 +82,9 @@
       
         
         
-          &lt;h1 id=&quot;年12月6日&quot;&gt;2018年12月6日&lt;/h1&gt;
+          &lt;h1 id=&quot;雪毕设代码&quot;&gt;雪&amp;amp;毕设&amp;amp;代码&lt;/h1&gt;
 &lt;figure&gt;
-&lt;img src=&quot;https://images.pexels.com/photos/38196/pexels-photo-38196.jpeg&quot; title=&quot;来自pixels.com&quot;
+&lt;img src=&quot;https://images.pexels.com/photos/38196/pexels-photo-38196.jpeg&quot;
         
       
     
@@ -72,7 +102,7 @@
     <link href="https://plart.pw/%E7%94%9F%E6%B4%BB-2018%E5%B9%B412%E6%9C%882%E6%97%A5/"/>
     <id>https://plart.pw/生活-2018年12月2日/</id>
     <published>2018-12-02T15:17:04.000Z</published>
-    <updated>2018-12-02T16:15:45.208Z</updated>
+    <updated>2019-01-02T15:05:26.459Z</updated>
     
     <summary type="html">
     
@@ -80,7 +110,8 @@
       
         
         
-          &lt;figure&gt;
+          &lt;h1 id=&quot;论文手写报告胜者即正义&quot;&gt;论文&amp;amp;手写报告&amp;amp;胜者即正义&lt;/h1&gt;
+&lt;figure&gt;
 &lt;img
         
       
