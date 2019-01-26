@@ -1,11 +1,14 @@
 # 给你我的想法
 
-|真是 | 巧合呀
-| --- | ---
-| By | Lart
-| From | 2017
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可.
+
+{== 所有的文章都是由 ==} [@lartpang](https://github.com/lartpang) {== 书写, 文章起始日期为17年. ==}
+
+---
 
 [TOC]
+
+---
 
 ## 文章列表
 
@@ -30,32 +33,29 @@
 * [课程-LearningHowtoLearn-1](./课程-LearningHowtoLearn-1.html)
 * [课程-LearningHowtoLearn-2](./课程-LearningHowtoLearn-2.html)
 
-## 关于
+---
 
-> date: 2018-07-13
-> lastmod: 2018-07-13
+## 关于我
+
+<details>
+
+> created: 2018-07-13
 
 ### 个人介绍
 
-即将开始为期三年的研究生生活，前途迷茫。
+即将开始为期三年的研究生生活, 前途迷茫.
 
-热衷于计算机。
+热衷于计算机.
 
 ### 兴趣爱好
 
-喜欢的语言：C、Python
-
-好奇的语言：Lisp、R、Julia
-
-喜欢的编辑器：Vim（Linux——Vim）
-
-喜欢的IDE：VS、WingIDE、PyCharm
-
-喜欢的电影：星爷的《功夫》
-
-喜爱的演员：迅哥（周迅）、裴斗娜、新垣结衣
-
-向往的城市：厦门
+* 喜欢的语言：C, Python
+* 好奇的语言：Lisp, R, Julia
+* 喜欢的编辑器：Vim, VSCode
+* 喜欢的IDE：VS, WingIDE, PyCharm
+* 喜欢的电影：星爷的《功夫》
+* 喜爱的演员：迅哥（周迅）, 裴斗娜, 新垣结衣, 石原里美, 桥本环奈
+* 向往的城市：厦门
 
 ### 理想
 
@@ -63,4 +63,6 @@
 
 ### 从事领域
 
-研究生方向为深度学习。
+研究生方向为深度学习, 当前主要在做显著性检测的相关内容.
+
+</details>
