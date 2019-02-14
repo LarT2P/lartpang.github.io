@@ -15,7 +15,7 @@ html = '''
 <html lang="zh-cn">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<link href="tools/asserts/css/default.css" rel="stylesheet">
+<link href="tools/asserts/css/default.css" rel="stylesheet"></link>
 <link href="tools/asserts/css/html.css" rel="stylesheet"></link>
 </head>
 <body>
