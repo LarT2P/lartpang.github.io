@@ -2,52 +2,13 @@
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可.
 
-{== 所有的文章都是由 ==} [@lartpang](https://github.com/lartpang) {== 书写, 文章起始日期为17年. ==}
-
----
-
-[TOC]
-
----
-
-## 关于我
-
-<details>
-
-> created: 2018-07-13
-
-### 个人介绍
-
-即将开始为期三年的研究生生活, 前途迷茫.
-
-热衷于计算机.
-
-### 兴趣爱好
-
-* 喜欢的语言：C, Python
-* 好奇的语言：Lisp, R, Julia
-* 喜欢的编辑器：Vim, VSCode
-* 喜欢的IDE：VS, WingIDE, PyCharm
-* 喜欢的电影：星爷的《功夫》
-* 喜爱的演员：迅哥（周迅）, 裴斗娜, 新垣结衣, 石原里美, 桥本环奈
-* 向往的城市：厦门
-
-### 理想
-
-技术、爱情、生活
-
-### 从事领域
-
-研究生方向为深度学习, 当前主要在做显著性检测的相关内容.
-
-</details>
-
----
+所有的文章都是由 [@lartpang](https://github.com/lartpang) 书写, 文章起始日期为17年.
 
 ## 文章列表
 
 为了更新方便, 新文在最下面.
 
+* [记录-我的一些信息](./记录-我的一些信息.html)
 * [生活-论文&代码&生活](./生活-论文&代码&生活.html)
 * [生活-论文&手写报告&胜者即正义](./生活-论文&手写报告&胜者即正义.html)
 * [生活-生产与学术](./生活-生产与学术.html)
@@ -66,6 +27,7 @@
 * [故事-第一千日](./故事-第一千日.html)
 * [生活-二零一六](./生活-二零一六.html)
 * [生活-二零一七](./生活-二零一七.html)
+* [生活-二零一八](./生活-二零一八.html)
 * [课程-LearningHowtoLearn-1](./课程-LearningHowtoLearn-1.html)
 * [课程-LearningHowtoLearn-2](./课程-LearningHowtoLearn-2.html)
 * [生活-生病时想到的](./生活-生病时想到的.html)
