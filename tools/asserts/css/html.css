@@ -118,8 +118,11 @@ blockquote {
   font-size: 12px;
   line-height: 1.2em;
   margin: 0;
-  padding-left: 2em;
   border-left: 0.5em #eee solid;
+  padding-left: 1em;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-right: 1em;
 }
 
 hr {
