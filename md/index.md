@@ -1,8 +1,8 @@
 # 给你我的想法
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可.
+所有的文章都是由 [@lartpang](https://github.com/lartpang) 书写, 文章起始日期为17年. 都遵循**知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议**, 可见对应的页脚.
 
-所有的文章都是由 [@lartpang](https://github.com/lartpang) 书写, 文章起始日期为17年.
+最近开了一个公众号, 主要是将这里的一些文章放到了公众号平台上, 有缘人可以关注下.
 
 ## 文章列表
 
