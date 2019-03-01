@@ -31,3 +31,4 @@
 * [课程-LearningHowtoLearn-1](./课程-LearningHowtoLearn-1.html)
 * [课程-LearningHowtoLearn-2](./课程-LearningHowtoLearn-2.html)
 * [生活-生病时想到的](./生活-生病时想到的.html)
+* [思考-终生学习](./思考-终生学习.html)
