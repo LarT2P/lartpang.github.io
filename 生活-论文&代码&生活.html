@@ -69,36 +69,20 @@
 <p>两者实际上都是使用了CNN的提取特征的强大能力，通过利用获得的多尺度的特征，进行了各种改进的后续融合处理。而对于类FCN结构，则是进一步对得到的最终的特征图进一步处理细化，没有太多的使用早期的卷积特征图。</p>
 <p>这些论文，都会先使用一个用于分类的骨干网络（VGG、ResNet），得到压缩后的特征图，然后要在这个特征图的基础上进行尺寸恢复，这就需要考虑是用什么样的手段进行恢复。比较有意思的一个地方就是恢复分辨率的手段。这里在<a href="https://github.com/lartpang/ML_markdown/issues/25#issuecomment-448911117">issue里</a>总结了下：</p>
 <ul>
-<li>
-<p>语义分割体系结构的另一个重要方面是使用学习好的deconvolutions对低分辨率分割图进行特征图上采样以获得输入图像分辨率的机制，或者在编码器中使用以计算为代价的扩张卷积来避免部分的分辨率下降。即使在现代GPU上，扩张卷积（Dilated convolutions ）也非常昂贵。</p>
-<p>这篇关于<a href="http://link.zhihu.com/?target=http%3A//distill.pub/2016/deconv-checkerboard/">distill.pub</a>的文章解释了有关反卷积的更多细节。</p>
-</li>
-<li>
-<p>不同网络如何实现上采样</p>
-</li>
-<li>
-<p>FCN 双线性插值初始化(虽然还不理解), 分数卷积实现上采样</p>
-</li>
-<li>
-<p>SegNet 使用对应的最大值索引进行恢复, 变成稀疏的特征图, 再利用后接的卷积实现进一步的密集化 [unpooling]</p>
-<p>虽然这有助于保持高频信息的完整性，但是当从低分辨率特征图中unpooling时，它也会错过相邻的信息。</p>
-</li>
-<li>
-<p>Deeplab 通过空洞卷积的组合来恢复全分辨率的特征映射，这种方法计算的特征映射更加密集，然后简单地对特征的响应进行<strong>双线性插值</strong>恢复到原始图像大小</p>
-</li>
-<li>
-<p>U‐Net 2x2卷积外围补零, 实现的上采样</p>
-<p>通过其跳过concatenation连接的架构允许每个阶段的解码器学习在编码器中池化时丢失的相关特征。</p>
-</li>
-<li>
-<p>RefineNet 上采样是在Multi-resolution fusion单元完成的, 这里感觉更像是使用的双线性插值</p>
-</li>
-<li>
-<p>PSPNet 双线性插值直接对低维特征映射进行上采样，以获得与原始特征图相同的大小特征, 最后，不同级别的特征被连接为最终的金字塔池化全局特征。</p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/16298490/50284453-04942780-0494-11e9-8084-8abb06cc5e25.png" /></p>
-</li>
-<li>
-<p>Mask‐RCNN 不需要上采样, 因为它是基于Faster R-CNN的, 所有预测的结果都是针对于原始图像大小的.</p>
+<li>语义分割体系结构的另一个重要方面是使用学习好的deconvolutions对低分辨率分割图进行特征图上采样以获得输入图像分辨率的机制，或者在编码器中使用以计算为代价的扩张卷积来避免部分的分辨率下降。即使在现代GPU上，扩张卷积（Dilated convolutions ）也非常昂贵。
+    这篇关于<a href="http://link.zhihu.com/?target=http%3A//distill.pub/2016/deconv-checkerboard/">distill.pub</a>的文章解释了有关反卷积的更多细节。</li>
+<li>不同网络如何实现上采样<ul>
+<li>FCN 双线性插值初始化(虽然还不理解), 分数卷积实现上采样</li>
+<li>SegNet 使用对应的最大值索引进行恢复, 变成稀疏的特征图, 再利用后接的卷积实现进一步的密集化 [unpooling]
+    虽然这有助于保持高频信息的完整性，但是当从低分辨率特征图中unpooling时，它也会错过相邻的信息。</li>
+<li>Deeplab 通过空洞卷积的组合来恢复全分辨率的特征映射，这种方法计算的特征映射更加密集，然后简单地对特征的响应进行<strong>双线性插值</strong>恢复到原始图像大小</li>
+<li>U‐Net 2x2卷积外围补零, 实现的上采样
+    通过其跳过concatenation连接的架构允许每个阶段的解码器学习在编码器中池化时丢失的相关特征。</li>
+<li>RefineNet 上采样是在Multi-resolution fusion单元完成的, 这里感觉更像是使用的双线性插值</li>
+<li>PSPNet 双线性插值直接对低维特征映射进行上采样，以获得与原始特征图相同的大小特征, 最后，不同级别的特征被连接为最终的金字塔池化全局特征。
+    <img alt="image" src="https://user-images.githubusercontent.com/16298490/50284453-04942780-0494-11e9-8084-8abb06cc5e25.png" /></li>
+<li>Mask‐RCNN 不需要上采样, 因为它是基于Faster R-CNN的, 所有预测的结果都是针对于原始图像大小的.</li>
+</ul>
 </li>
 </ul>
 <h2 id="_3">代码</h2>
