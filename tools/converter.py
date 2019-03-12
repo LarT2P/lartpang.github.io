@@ -28,7 +28,8 @@ exts = [
     'markdown.extensions.extra',
     'markdown.extensions.codehilite',
     'markdown.extensions.admonition',
-    'markdown.extensions.toc', ]
+    'markdown.extensions.toc',
+    'markdown.extensions.sane_lists' ]
 
 
 def split_body(body):
@@ -41,8 +42,8 @@ def main(args):
     input_path = os.path.join('..', args.target)
     print(input_path)
     output_path = '..'
-    
-    with open('./assets/template/templated-caminar.html') as temp:
+
+    with open('./assets/template/templated-caminar.html', encoding='utf-8') as temp:
         html = temp.read()
     if os.path.isdir(input_path):
         # 输入为目录
@@ -54,7 +55,7 @@ def main(args):
             ofile_path = os.path.join(
                 output_path,
                 input_file.replace('.md', '.html'))
-            
+
             with open(ifile_path, mode='r', encoding='utf-8') as ifile:
                 itext = ifile.read()
                 body = markdown.markdown(itext, extensions=exts)
@@ -67,7 +68,7 @@ def main(args):
         ofile_path = os.path.join(
             output_path,
             input_path.replace('.md', '.html').split(os.sep)[-1])
-        
+
         with open(ifile_path, mode='r', encoding='utf-8') as ifile:
             itext = ifile.read()
             body = markdown.markdown(itext, extensions=exts)
