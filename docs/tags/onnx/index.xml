@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Onnx on 给你我的想法</title>
+    <link>https://plart.pw/tags/onnx/</link>
+    <description>Recent content in Onnx on 给你我的想法</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 08 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://plart.pw/tags/onnx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>生产与学术</title>
+      <link>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E7%94%9F%E4%BA%A7%E4%B8%8E%E5%AD%A6%E6%9C%AF/</link>
+      <pubDate>Tue, 08 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E7%94%9F%E4%BA%A7%E4%B8%8E%E5%AD%A6%E6%9C%AF/</guid>
+      <description>&lt;h1 id=&#34;生产与学术&#34;&gt;生产与学术&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;By Lart, 2019-01-08&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://images.unsplash.com/photo-1535540878298-a155c6d065ef?ixlib=rb-1.2.1&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=750&amp;amp;q=80&#34; alt=&#34;upsplash&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;生产与学术, 真实的对立&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;这是我这两天对&lt;code&gt;pytorch深度学习-&amp;gt;android实际使用&lt;/code&gt;的这个流程的一个切身感受.&lt;/p&gt;
+
+&lt;p&gt;说句实在的, 对于模型转换的探索, 算是我这两天最大的收获了&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/lartpang/DHSNet-PyTorch/blob/master/converter.ipynb&#34;&gt;https://github.com/lartpang/DHSNet-PyTorch/blob/master/converter.ipynb&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

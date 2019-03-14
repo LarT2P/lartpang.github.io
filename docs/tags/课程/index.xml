@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>课程 on 给你我的想法</title>
+    <link>https://plart.pw/tags/%E8%AF%BE%E7%A8%8B/</link>
+    <description>Recent content in 课程 on 给你我的想法</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 30 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://plart.pw/tags/%E8%AF%BE%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>学会学习-1</title>
+      <link>https://plart.pw/post/%E5%AD%A6%E4%B9%A0-learninghowtolearn-1/</link>
+      <pubDate>Fri, 30 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E5%AD%A6%E4%B9%A0-learninghowtolearn-1/</guid>
+      <description>学会学习-1 By Lart, 2018-11-30 学习模式：专注模式和发散模式 两种模式不会同时存在，我们学习时通常是两种模式在不断地切换。这种随时能转换的能力，对于我们的学</description>
+    </item>
+    
+    <item>
+      <title>学会学习-2</title>
+      <link>https://plart.pw/post/%E5%AD%A6%E4%B9%A0-learninghowtolearn-2/</link>
+      <pubDate>Fri, 30 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E5%AD%A6%E4%B9%A0-learninghowtolearn-2/</guid>
+      <description>学会学习-2 By Lart, 2018-11-30 组块 组块化是一种思维的跃进，根据意义将信息碎片拼接起来，而新的逻辑整体让组块更容易记忆，同时也可以让你更轻松地将组块整合到</description>
+    </item>
+    
+  </channel>
+</rss>

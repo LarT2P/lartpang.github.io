@@ -1,0 +1,1707 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>给你我的想法</title>
+    <link>https://plart.pw/</link>
+    <description>Recent content on 给你我的想法</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 13 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://plart.pw/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://plart.pw/about/</link>
+      <pubDate>Fri, 13 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/about/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;关于我&#34;&gt;关于我&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;created: 2018-07-13&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;个人介绍&#34;&gt;个人介绍&lt;/h2&gt;
+
+&lt;p&gt;即将开始为期三年的研究生生活, 前途迷茫.&lt;/p&gt;
+
+&lt;p&gt;热衷于计算机.&lt;/p&gt;
+
+&lt;h2 id=&#34;兴趣爱好&#34;&gt;兴趣爱好&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;喜欢的语言：C, Python&lt;/li&gt;
+&lt;li&gt;好奇的语言：Lisp, R, Julia&lt;/li&gt;
+&lt;li&gt;喜欢的编辑器：Vim, VSCode&lt;/li&gt;
+&lt;li&gt;喜欢的IDE：VS, WingIDE, PyCharm&lt;/li&gt;
+&lt;li&gt;喜欢的电影：星爷的《功夫》&lt;/li&gt;
+&lt;li&gt;喜爱的演员：迅哥（周迅）, 裴斗娜, 新垣结衣, 石原里美, 桥本环奈&lt;/li&gt;
+&lt;li&gt;向往的城市：厦门&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;理想&#34;&gt;理想&lt;/h2&gt;
+
+&lt;p&gt;技术、爱情、生活&lt;/p&gt;
+
+&lt;h2 id=&#34;从事领域&#34;&gt;从事领域&lt;/h2&gt;
+
+&lt;p&gt;研究生方向为深度学习, 当前主要在做显著性检测的相关内容.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>琐事记录1</title>
+      <link>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E7%90%90%E4%BA%8B%E8%AE%B0%E5%BD%951/</link>
+      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E7%90%90%E4%BA%8B%E8%AE%B0%E5%BD%951/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;琐事记录1&#34;&gt;琐事记录1&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;By Lart, 2019-3-8&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://images.pexels.com/photos/1183434/pexels-photo-1183434.jpeg?auto=compress&amp;amp;cs=tinysrgb&amp;amp;dpr=2&amp;amp;h=650&amp;amp;w=940&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;就业&#34;&gt;就业&lt;/h2&gt;
+
+&lt;p&gt;都说就业很难, 也有很多我所知道的同学, 为了就业忙来忙去, 赶赴外地提前实习积累经验. 但是相比之下, 身边的一个同学却并没有花费多长的时间就收获了一份还算不错的offer, 当天谈完, 当天就签字了. 速度之快, 令人咂舌, 出乎意料.&lt;/p&gt;
+
+&lt;p&gt;问题出在了哪里?&lt;/p&gt;
+
+&lt;p&gt;我觉得是一种&lt;strong&gt;付出与预期收益的平衡&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;后者找的工作, 可能对于前者来说, 并不是愿意去的, 即使要去, 也会有更多的要求. 毕竟&lt;strong&gt;付出的越多, 想要收获的也就越多&lt;/strong&gt;, 这是一个正相关关系. 而后面的那位同学, 却没有这样的心理负担, 感觉不错, 差不多就会接受. 因为他本来也正处于一个尴尬的时期(考研成绩不够高, 调剂也不会很顺利), 此时突然送过来这样一份礼物, 大多数人还是会愿意接受的.&lt;/p&gt;
+
+&lt;h2 id=&#34;读书&#34;&gt;读书&lt;/h2&gt;
+
+&lt;p&gt;最近读完了 池建强 的 &lt;em&gt;MacTalk 人生元编程&lt;/em&gt;, 读过之后, 感觉这本书主要是讲了下几个点:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;如书名所透露出来的信息, 池大大对于苹果系的产品有着极致的喜爱, 对于苹果产品系统的发展十分的熟悉.&lt;/li&gt;
+&lt;li&gt;讲了一些Linux/Unix(主要是基于苹果的系统)下的工作经验, 推荐了一些软件, 专门推荐介绍了Vim/Zsh/Alfred这几大利器.&lt;/li&gt;
+&lt;li&gt;介绍了几位牛逼闪闪的技术精英, 使他们改变了我们这个世界, 改变了当下的生活.&lt;/li&gt;
+&lt;li&gt;其他的一些就是作者对于工作职场学习生活的感悟与总结了. 作为前辈, 值得学习.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;具体让我有所改变的是, 进一步激发了我使用Vim和Zsh的欲望, 虽然当前也在用, 但是这给了我更多的动力. 还有, 以后要是有钱了, 还是想用用苹果的产品呢.&lt;/p&gt;
+
+&lt;p&gt;学习生活, 细微之处尽是鸡毛, 很容易被这些琐碎遮住我们的思想, 挡住我们的视线. 偶尔还是要探出头来, 看看星空, 感受一下这个世界的美好.&lt;/p&gt;
+
+&lt;h2 id=&#34;比赛&#34;&gt;比赛&lt;/h2&gt;
+
+&lt;p&gt;最近让oppo那个比赛折腾的够呛. 一路下来, 我倒是感觉并没有学习到什么, 就是在那里凭借自己高超的臆想功力, 瞎几把乱改. 也不知道什么依据, 只能把一些论文里的方法直接拿过来用.&lt;/p&gt;
+
+&lt;p&gt;至于比赛结果, 相比最开始确实现在有了一些改进. 然而也架不住主办方学校有大佬(真假?), 竟是把一个分割比赛的mIOU和F-score加权结果硬生生刷到了了0.98, 而且这只是人家第二次提交! 而且前三名都是赛方学校. 还有各种问题, 包括一开始赛方各种消极怠工, 以及赛制不合理, 评测不合理, 比赛宣传与实际评测基本是两个任务, 等等&amp;hellip; 已经不想说什么了.&lt;/p&gt;
+
+&lt;p&gt;破比赛, 没意思. 浪费时间, 浪费生命, 还不如看论文.&lt;/p&gt;
+
+&lt;h2 id=&#34;学习&#34;&gt;学习&lt;/h2&gt;
+
+&lt;p&gt;忙着折腾那个破比赛, 也看就要开题答辩了, 也不知道论文要写点啥, 文章要翻译谁&amp;hellip; 忙成一团, 扭不开. 最近也选了研究生的课, 费劲, 一堆事.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>图卷积网络小结</title>
+      <link>https://plart.pw/post/%E5%AD%A6%E4%B9%A0-%E5%9B%BE%E5%8D%B7%E7%A7%AF%E7%BD%91%E7%BB%9C%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E5%AD%A6%E4%B9%A0-%E5%9B%BE%E5%8D%B7%E7%A7%AF%E7%BD%91%E7%BB%9C%E5%B0%8F%E7%BB%93/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;图卷积网络小结&#34;&gt;图卷积网络小结&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;By Lart, 2019-03-06&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;花了好长时间, 做了个PPT, 简单介绍了图神经网络中的图卷积网络的内容. 没有在本地做, 使用的是 &lt;em&gt;声享&lt;/em&gt; 的在线PPT的制作工具.&lt;/p&gt;
+
+&lt;iframe src=&#34;https://ppt.baomitu.com/embed/1aa94da6?style=dark&#34; width=&#34;576&#34; height=&#34;420&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;自我感觉一般, 只有自己尝试了才发现, 原来这里面的东西好多呀!&lt;/p&gt;
+
+&lt;p&gt;权做留念, 希望越来越好.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>终生学习</title>
+      <link>https://plart.pw/post/%E6%80%9D%E8%80%83-%E7%BB%88%E7%94%9F%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Sat, 02 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E6%80%9D%E8%80%83-%E7%BB%88%E7%94%9F%E5%AD%A6%E4%B9%A0/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;终生学习&#34;&gt;终生学习&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;By Lart 2019-3-2&lt;/p&gt;
+
+&lt;p&gt;这是之前写的一篇文章, 转存过来.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;火车上遇到了一位阿姨，在这个冬日里，这个漫长归途中，让我感到了一丝温暖和鼓舞。&lt;/p&gt;
+
+&lt;p&gt;身边坐了一位阿姨，年纪感觉也得有四五十了，戴着一顶黑色呢子圆帽。
+阿姨似乎是在做会计的职务，手机在放着计量经济学的课程。似乎是这个课程的开头。主讲人正在介绍一些相关的信息，说着一些统计学，经济学的介绍。
+她还在忙着收拾票据，火车上有些不方便，便只好暂停了播放。&lt;/p&gt;
+
+&lt;p&gt;最开始阿姨打电话的时候，隐约听到了“去日本”，“上班”，“假期”等等字眼，便感觉这位阿姨应该是个经历丰富，生活充实的人。
+本来只是自己最近在幻想着以后如果可能，想去日本韩国这两个国家瞧一瞧，当然也更希望，可以会他们语言，和当地的人交流，尝一尝当地的美食，看一看当地的风景。所以对于阿姨打电话所隐约透露出来的信息感到羡慕，和向往。
+但是后面阿姨的行为却又让我感到了敬佩。
+即使在忙碌的生活中，也不忘学习，不断的提升自己。&lt;/p&gt;
+
+&lt;p&gt;阿姨的生活应该也是很忙的吧，看着她即使在坐火车的时候都在忙活着收拾那些票据，我不由得这样想到。
+我猜阿姨的孩子也不少，估计都已经成家立业，这个时候，阿姨却没有让自己放松下来，还在努力的生活着，拼搏着。
+但或许，只有这样的人才更能理解知识的珍贵，仍然在不断的学习。因为他们明白，经历，收获着知识所带来的改变和帮助。&lt;/p&gt;
+
+&lt;p&gt;忽然又想到了那个 我的前半生 里让人印象深刻的 Miss 吴，一位独立优秀的女性。
+其中有一幕是马伊琍和她在前往工作地的路上，她边开车边在学习英语。
+这是这部剧里让我感觉最正面，最值得学习的一位角色。
+相比剧里的其他人，她是那么的潇洒，那么睿智。也只有她，才是认清了生活的人。她明白，什么是重要的，什么是应有的选择。&lt;/p&gt;
+
+&lt;p&gt;两位阿姨，都真正是热爱生活的人。因为她们都是看清了生活后，更加热爱生活。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>2018年总结</title>
+      <link>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E4%BA%8C%E9%9B%B6%E4%B8%80%E5%85%AB/</link>
+      <pubDate>Mon, 04 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E4%BA%8C%E9%9B%B6%E4%B8%80%E5%85%AB/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;2018年总结&#34;&gt;2018年总结&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;By Lart, 2019-2-4&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://images.pexels.com/photos/426893/pexels-photo-426893.jpeg?auto=compress&amp;amp;cs=tinysrgb&amp;amp;dpr=2&amp;amp;h=650&amp;amp;w=940&#34; alt=&#34;图片来自pexels.com&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;新的开始-一切从头&#34;&gt;新的开始, 一切从头&lt;/h2&gt;
+
+&lt;p&gt;不知不觉, 这篇之前的文章硬是拖到了现在&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;转眼之间, 二零一八年就这样过去了, 回看这一年, 有许多的意料之中, 自然也有许多的意料之外; 有许多的顺其自然, 亦有许多的无可奈何.&lt;/p&gt;
+
+&lt;p&gt;纷纷扰扰, 尘埃落定, 繁华过后, 仅是一地鸡毛.&lt;/p&gt;
+
+&lt;h2 id=&#34;既非朝花-何必夕拾&#34;&gt;既非朝花, 何必夕拾&lt;/h2&gt;
+
+&lt;p&gt;繁琐小事不断, 一堆的鸡毛蒜皮, 都已经扔掉了, 就没必要再重新拾起来, 又不是什么&amp;rdquo;朝花&amp;rdquo;, &amp;ldquo;夕拾&amp;rdquo;自然也是不存在的.&lt;/p&gt;
+
+&lt;p&gt;人脑就是个大筛子, 一年到头, 细小的琐碎的, 似有无关紧要的事情, 就这样在不知不觉中, 彻底被埋在了历史的角落, 和窗外枯树的枝丫缝隙间的冷风一道, 起起落落, 不着痕迹. 到头来, 只剩下了一些&amp;rdquo;大块头&amp;rdquo;, 想忘忘不掉, 想割割不断. 又是那句话, 剪不断, 理还乱&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;当然, 另一个角度来说, 若是捡着小事来, 要写的东西那可就长了, 絮絮叨叨, 得写到猴年马月里去.&lt;/p&gt;
+
+&lt;h2 id=&#34;书海拾遗&#34;&gt;书海拾遗&lt;/h2&gt;
+
+&lt;p&gt;从小到大, 还自认为蛮爱看书的, 所以, 去年到现在, 也就算是完整看了三本书, 各种拖拉, 没看完的/准备看的/说是要看的好多, 不能算.&lt;/p&gt;
+
+&lt;p&gt;三本是分别是&amp;lt;无声告白&amp;gt;, &amp;lt;大清相国&amp;gt;, &amp;lt;流浪地球&amp;gt;, 内容, 风格, 人物各不相同, 各有特色.&lt;/p&gt;
+
+&lt;h3 id=&#34;无声告白&#34;&gt;无声告白&lt;/h3&gt;
+
+&lt;p&gt;这本书还是学校图书馆搞活动, 分发旧书, 我主动去领的. 第一眼看到的时候, 我就知道这本书蛮合我胃口. 幸好合胃口, 不然可真实看不完了.&lt;/p&gt;
+
+&lt;p&gt;这是 &lt;a href=&#34;https://book.douban.com/search/%E4%BC%8D%E7%BB%AE%E8%AF%97&#34;&gt;[美] 伍绮诗 的作品&lt;/a&gt;, 文章的核心在阅读过程中我略有偏移, 但是最后看了书的简介后, 仔细想想, 确实我本身想的偏了一些.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;我们终此一生，就是要摆脱他人的期待，找到真正的自己。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这是&lt;a href=&#34;https://book.douban.com/subject/26382433/&#34;&gt;简介&lt;/a&gt;中的第一句.&lt;/p&gt;
+
+&lt;h4 id=&#34;沟通&#34;&gt;&amp;ldquo;沟通&amp;rdquo;&lt;/h4&gt;
+
+&lt;p&gt;这本书讲了一个看似复杂, 实则简单的小故事, 本来是很简单的一些事, 却在特定的社会环境中, 导致了一个令人叹息的结局.&lt;/p&gt;
+
+&lt;p&gt;开始看完此书, 我脑海里剩下来的, 只是一个词&amp;rdquo;沟通&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;父母与儿女之间缺少沟通, 这一点在父母与父母的母亲之间, 儿子与两个女儿之间, 儿子与男同学之间, 妹妹与哥哥的男同学之间. 沟通的缺乏, 导致感情缺少直接有力的表达, 或直接或间接的都导致了感情上的伤害, 以及更进一步的痛苦.&lt;/p&gt;
+
+&lt;p&gt;不能否定的是, 故事中, 走向女孩自杀的结局的这条路上, 这些矛盾, 内在的纠结, 感情的压抑, 都起到了重要的催化作用.&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;千里之堤, 溃于蚁穴&amp;rdquo;这句话倒是蛮适合这个故事的. 生活中的似乎并不重要的小事反而间接地导致了最终的不幸.&lt;/p&gt;
+
+&lt;h4 id=&#34;他人的期望&#34;&gt;&amp;ldquo;他人的期望&amp;rdquo;&lt;/h4&gt;
+
+&lt;p&gt;但是这只是直观的感受, 若是进一步的思考, 其实这个概括还是有些偏颇的. 小说中, 有一点很关键, 那就是所谓的&amp;rdquo;他人的期望&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;故事中的母亲, 从小被自己的母亲所期望, &amp;ldquo;灌输&amp;rdquo;着自己人生的理想, 渴望弥补自己缺憾. 而她却中途违背了母亲的期望, 放手一搏, 去寻找了属于自己的道路. 但是慢慢的, 又反而活成了自己母亲的样子. 对于自己的女儿, 她逐渐变得和自己的母亲一样, 渴望女儿可以更加优秀, 不要活成她现在的样子&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;这感觉像是一个轮回. 兜兜转转, 似乎又回到了原点, 倒是更添了一份悲剧的意味, 想得不能得.&lt;/p&gt;
+
+&lt;p&gt;而对于故事中的父亲, 则是陷入了身份认知的痛苦, 身为华裔, 黄皮肤, 身处于白皮肤的世界, 充满了焦虑, 和自卑. 虽然他是当地学校的教授, 却似乎与周围的人那么的格格不入. 也只有在同为黄种人的助教的怀里, 他才能安稳的静下心来.&lt;/p&gt;
+
+&lt;p&gt;而处于这样的父母(不甘又急切的母亲, 自卑与焦虑的父亲)的家庭里, 三个孩子过得也似乎并不是那么的开心.&lt;/p&gt;
+
+&lt;p&gt;三个孩子间的感情, 书中描写的很细腻, 也很特别. 互相依赖, 各自成为了对方心中最软弱的那一部分, 但是各自又不晓得自己对于他人所代表的价值. 这也或许就是我之所以会感受到&amp;rdquo;沟通&amp;rdquo;这一点的原因, 心里有话, 心里有事, 都在心里揣着, 各自的压抑与痛苦, 都要自己承受, 到头来还想要希望其他人来理解.&lt;/p&gt;
+
+&lt;p&gt;似乎有些&amp;rdquo;矫情&amp;rdquo;的感觉, 不过, 毕竟还是孩子, 也可以接受. 从这里来看, 倒是有些*青春期的那些事*的感觉了.&lt;/p&gt;
+
+&lt;p&gt;但是, 换个角度来讲, 这不就是所谓的&amp;rdquo;他人的期望&amp;rdquo;么? 两对儿&lt;strong&gt;母亲对女儿&lt;/strong&gt;, 父亲对儿子, 妹妹对姐姐, 姐姐对哥哥, 妹妹对哥哥的男同学. 感情这个东西, 在某种意义上来讲, 倒也算是一种期望的极致状态(这里似乎有些强行解释的感觉)&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;所有人, 终其一生, 都在尝试摆脱他人的期望, 因为这种期望已经演化成了一种负担, 一种束缚.&lt;/p&gt;
+
+&lt;p&gt;还算让人舒心的是, 在故事的最后, 所有人之间, 算是达成了一种和解.&lt;/p&gt;
+
+&lt;h3 id=&#34;大清相国&#34;&gt;大清相国&lt;/h3&gt;
+
+&lt;p&gt;讲了清代康熙年间的名相陈廷敬的故事, 从最开始乡试到最后的原品休致, 回家颐养天年, 将近五十年的官宦生涯. 给出了陈廷敬从官的五字要诀: &lt;strong&gt;等, 忍, 稳, 狠, 隐&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;当年卫大人告诉他一个等字, 岳父告诉他一个忍字, 自己悟出一个稳字, 最后又被逼出一个狠字, 亏得月媛又点醒他一个隐字&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;在一定程度上反映出了顺治康熙年间的官场情况, 而陈廷敬的数度沉浮, 又颇为令人感慨.&lt;/p&gt;
+
+&lt;h3 id=&#34;流浪地球&#34;&gt;流浪地球&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://pic3.zhimg.com/80/v2-c908aa70a0a41596187f20b4bea27042_hd.jpg&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;图片来自: &lt;a href=&#34;https://zhuanlan.zhihu.com/p/56432194&#34;&gt;https://zhuanlan.zhihu.com/p/56432194&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;最近看了 流浪地球 这部电影. 个人很喜欢, 感觉电影的造梦能力果然是无与伦比的.&lt;/p&gt;
+
+&lt;p&gt;网上对这部电影的整体评价也是很好的. 虽然有很多恶意的负面评价, 但是, 不能否定它对我的吸引力. 应用一段 &lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MjM5ODQ2MDIyMA==&amp;amp;mid=2650715419&amp;amp;idx=1&amp;amp;sn=651b72ae2a4596d877cd35cbcdb9a331&amp;amp;chksm=bec07b4889b7f25e9422ffa4caab5457518fd0932adf7af0c4f10bfa1af8ba8f903468a6b7ce&amp;amp;xtrack=1&amp;amp;scene=0&amp;amp;subscene=131&amp;amp;clicktime=1550143997&amp;amp;ascene=7&amp;amp;devicetype=android-28&amp;amp;version=27000334&amp;amp;nettype=WIFI&amp;amp;abtest_cookie=BQABAAoACwASABMAFAAFACOXHgBamR4Am5keAJ2ZHgDTmR4AAAA%3D&amp;amp;lang=zh_CN&amp;amp;pass_ticket=57QPzp%2F8JkWILhDhtZvMVdKLW9ABNP%2BJAEa5BReHI0mdlVUFmaF9K7IlEl%2Fmu7fY&amp;amp;wx_header=1&#34;&gt;池建强&lt;/a&gt; 的评论:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;春节无大事，于是一堆人围着电影吵来吵去，尤其是流浪地球，我看很多影评人和自媒体已经将其上升到国际主义、民族主义、个人英雄主义、犬儒主义、PTSD……还有东西方文化。大过年的，累不累？喷的也不如票房涨的快啊。流浪地球我看了，评价两个字，好看。&lt;/p&gt;
+
+&lt;p&gt;有没有硬伤，有。有没有逻辑错误，有。有没有宏大场面，有。有没有科学论证，也有。就是好看啊。另外，好看是个非常主观的看法，你完全没必要去说服别人，大过年的，开心就好。&lt;/p&gt;
+
+&lt;p&gt;其实春节期间另一段视频看得我挺扎心，星爷的新喜剧之王票房寥寥，有记者问星爷怎么看，明显是恶心人家嘛。周星驰却说，其实人生中甜酸苦辣，都经过了。过气啦，我早都过气了。然后一笑而过……&lt;/p&gt;
+
+&lt;p&gt;苦海翻起爱恨，在世间难逃避命运。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;他捎带评价了 新喜剧之王 , 我没有看, 但是我关注的几个影评人都对其评价不错.&lt;/p&gt;
+
+&lt;p&gt;看完 流浪地球 电影后, 我就赶忙找到了它的小说, 没花多长时间就看完了. 整体两个词: 壮阔, 伟大.&lt;/p&gt;
+
+&lt;p&gt;首先是带着地球流浪的这个设定, 充满了浓浓的家园情怀. 其次就是故事了, 小说原本的剧情是有些黑暗的, 在流浪的过程中, 出现了对于联合政府的反抗和叛乱, 犹记得这部分中, 联合政府的最后一些人被处决的时候, 说的这段话所给我带来的震撼:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;“我们本来可以战斗到底的，但这可能导致地球发动机失控，这种情况一旦发生，过量聚变的物质将烧穿地球，或蒸发全部海洋，所以我们决定投降。我们理解所有的人，因为在已经进行了四十代人、还要延续一百代人的艰难奋斗中，永远保持理智确实是一个奢求。但也请所有的人记住我们，站在这里的这五千多人，这里有联合政府的最高执政官，也有普通的列兵，是我们把信念坚持到了最后。我们都知道自己看不到真理被证实的那一天，但如果人类得以延续万代，以后所有的人将在我们的墓前洒下自己的眼泪，这颗叫地球的行星，就是我们永恒的纪念碑！”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;小说很短, 但是文字极其大气, 却又不失动人. 这里再次摘录一段:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;我知道已被忘却&lt;/p&gt;
+
+&lt;p&gt;流浪的航程太长太长&lt;/p&gt;
+
+&lt;p&gt;但那一时刻要叫我一声啊&lt;/p&gt;
+
+&lt;p&gt;当东方再次出现霞光&lt;/p&gt;
+
+&lt;p&gt;我知道已被忘却&lt;/p&gt;
+
+&lt;p&gt;启航的时代太远太远&lt;/p&gt;
+
+&lt;p&gt;但那一时刻要叫我一声啊&lt;/p&gt;
+
+&lt;p&gt;当人类又看到了蓝天&lt;/p&gt;
+
+&lt;p&gt;我知道已被忘却&lt;/p&gt;
+
+&lt;p&gt;太阳系的往事太久太久&lt;/p&gt;
+
+&lt;p&gt;但那一时刻要叫我一声啊&lt;/p&gt;
+
+&lt;p&gt;当鲜花重新挂上枝头&lt;/p&gt;
+
+&lt;p&gt;……&lt;/p&gt;
+
+&lt;p&gt;每当听到这首歌，一股暖流就涌进我这年迈僵硬的身躯，我干涸的老眼又湿润了。我好像看到半人马座三颗金色的太阳在地平线上依次升起，万物沐浴在它温暖的光芒中。固态的空气融化了，变成了碧蓝的天。两千多年前的种子从解冻的土层中复苏，大地绿了。我看到我的第一百代孙子孙女们在绿色的草原上欢笑，草原上有清澈的小溪，溪中有银色的小鱼……我看到了加代子，她从绿色的大地上向我跑来，年轻美丽，像个天使……&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;我还记得, 看完的时候, 眼睛已经湿润了.&lt;/p&gt;
+
+&lt;p&gt;“你听着亲爱的，我们必须抱有希望，这并不是因为希望真的存在，而是因为我们要做高贵的人。在前太阳时代，做一个高贵的人必须拥有金钱、权力或才能，而在今天只要拥有希望，&lt;strong&gt;希望是这个时代的黄金和宝石&lt;/strong&gt;，不管活多长，我们都要拥有它！明天把这话告诉孩子。”&lt;/p&gt;
+
+&lt;p&gt;人类如此伟大!&lt;/p&gt;
+
+&lt;h2 id=&#34;研究生&#34;&gt;研究生&lt;/h2&gt;
+
+&lt;p&gt;保研的事, 在最终终于确定了下来, 从事了自己所向往的领域, 虽然具体的细节还有很多, 不过大方向却是一致的, 终于可以安心踏实的步入研零的生活. 之前也写了几篇关于研究生生活的文字, 就不说了.&lt;/p&gt;
+
+&lt;p&gt;且行且珍惜.&lt;/p&gt;
+
+&lt;h2 id=&#34;生活&#34;&gt;生活&lt;/h2&gt;
+
+&lt;p&gt;年前又生了一场大病&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;感冒在我这里造成了极大的伤害, 一不小心就勾起了气管炎, 甚至是肺炎. 想想我就难受啊. 之前写了一下这段时间的一些想法, 可见之前的文字.&lt;/p&gt;
+
+&lt;h2 id=&#34;未来&#34;&gt;未来&lt;/h2&gt;
+
+&lt;p&gt;即将到来的大四下半个学期, 要做的事说起来就那么几件, 也不过是继续看论文, 积累知识, 准备毕设和未来研究生的学习资本.&lt;/p&gt;
+
+&lt;p&gt;但是想想其中细节, 就有些烦躁, 也不知道毕设要怎么做, 还没有什么头绪, 而且研究生的压力也已经开始逐渐可以感受到. 最近的就是来自同学以及联系较多的学姐学长们的压力. 自己还有很多的不足, 知识的积累吸收转化尚待提升, 目前看论文公式一复杂就会很吃力, 新的创意缺少了必要的基础和对于该领域的了解, 就会收到很多的约束和局限.&lt;/p&gt;
+
+&lt;p&gt;鉴于这些情况, 接下来的日子, 还是有些想法的.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;做了一个&lt;a href=&#34;https://www.yuque.com/lart/papers&#34;&gt;文档项目&lt;/a&gt;, 记录起来更方便, 日后考虑和&lt;a href=&#34;https://github.com/lartpang/Machine-Deep-Learning&#34;&gt;github上的文档&lt;/a&gt;进行一下整合&lt;/li&gt;
+&lt;li&gt;关于&lt;strong&gt;使用显著性检测来提升视频传输效率&lt;/strong&gt;的使用做出更多的实践与尝试&lt;/li&gt;
+&lt;li&gt;多多接触了解图卷积网络的知识&lt;/li&gt;
+&lt;li&gt;提升英文论文阅读能力, 速度和信息提取的能力&lt;/li&gt;
+&lt;li&gt;再进一步阅读更多的优秀的显著性检测的论文&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;二零一八年就这么过去了, 不知不觉, 后知后觉.&lt;/p&gt;
+
+&lt;p&gt;这一年里发生了很多的事, 童年和自己越来越远了.&lt;/p&gt;
+
+&lt;h2 id=&#34;参考链接&#34;&gt;参考链接&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;《流浪地球》从物理上来说有哪些地方是很「bug」的？ - 伊卡鲁斯二号的回答 - 知乎 &lt;a href=&#34;https://www.zhihu.com/question/311007231/answer/588301058&#34;&gt;https://www.zhihu.com/question/311007231/answer/588301058&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;刘慈欣作品集: &lt;a href=&#34;http://liucixin.zuopinj.com/&#34;&gt;http://liucixin.zuopinj.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MjM5ODQ2MDIyMA==&amp;amp;mid=2650715419&amp;amp;idx=1&amp;amp;sn=651b72ae2a4596d877cd35cbcdb9a331&amp;amp;chksm=bec07b4889b7f25e9422ffa4caab5457518fd0932adf7af0c4f10bfa1af8ba8f903468a6b7ce&amp;amp;xtrack=1&amp;amp;scene=0&amp;amp;subscene=131&amp;amp;clicktime=1550143997&amp;amp;ascene=7&amp;amp;devicetype=android-28&amp;amp;version=27000334&amp;amp;nettype=WIFI&amp;amp;abtest_cookie=BQABAAoACwASABMAFAAFACOXHgBamR4Am5keAJ2ZHgDTmR4AAAA%3D&amp;amp;lang=zh_CN&amp;amp;pass_ticket=57QPzp%2F8JkWILhDhtZvMVdKLW9ABNP%2BJAEa5BReHI0mdlVUFmaF9K7IlEl%2Fmu7fY&amp;amp;wx_header=1&#34;&gt;流浪的沙盒 原创： 池建强  MacTalk&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>生病时想到的</title>
+      <link>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E7%94%9F%E7%97%85%E6%97%B6%E6%83%B3%E5%88%B0%E7%9A%84/</link>
+      <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E7%94%9F%E7%97%85%E6%97%B6%E6%83%B3%E5%88%B0%E7%9A%84/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;生病时想到的&#34;&gt;生病时想到的&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;By Lart, 2019-1-27&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;最近放假回了家, 本以为可以开开心心的享受假期的学习休闲时光, 可是最终迎来的反而是一个折腾难搞的生病时刻.&lt;/p&gt;
+
+&lt;h2 id=&#34;自我审视&#34;&gt;自我审视&lt;/h2&gt;
+
+&lt;p&gt;这几天都在不断地&amp;rdquo;自我审视&amp;rdquo;与&amp;rdquo;自我分析&amp;rdquo;中, 到底是哪里出了问题, 导致的感冒? 普通的感冒倒不是什么大问题, 身体内正常的一个流程基本上慢慢就可以处理, 但是对于现在的状态而言, 隐约可以感觉到气管的不舒服. 之所以担心这个, 也是因为之前有过两次肺炎的经历, 那时折腾的我够呛.&lt;/p&gt;
+
+&lt;p&gt;第一次因为拖延时间比较长, 住了院, 前后花费超过了万五, 让我一阵肉痛, 当时也正好是在寒假, 也因此导致开学去晚了几周, 去了学校, 一阵狂追猛赶. 第二次则是上次暑假放假前, 在宿舍宅了几天, 就出了个四肢无力, 浑身肉痛, 本以为是简单的感冒, 折腾了几天后, 临走回家之前, 去医院检查了一下, 原来是有肺炎&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;这真是个无奈的话题, 不明不白的得了病, 虽然似乎是好了, 但是却不知道有没有什么隐含的毛病. 究竟是什么导致了这些?&lt;/p&gt;
+
+&lt;p&gt;第一次肺炎, 在我看来, 一定程度上可以归因于大连的雾霾天气, 那个冬天雾霾特别严重, 基本上整个冬天雾霾&amp;rdquo;随处可见&amp;rdquo;. 虽说我家这边, 盛产煤炭, 但是我们居住的地方确从未见过雾霾的影子, 仅有的一些印象还是小的时候, 去矿务局路上, 那昏黄的天际. 近几年, 基本上是没有的.&lt;/p&gt;
+
+&lt;p&gt;第二次肺炎, 个人感觉, 主要和自己的作息, 饮食有一定关系, 那时受赵同学的蛊惑, 想要尝试减肥, 于是在饮食上做了一些约束, 量比平常减少了一些. 而且, 也在一定程度上增大了运动量, 每天晚上都会跑五圈, 跳五百个跳绳&amp;hellip; 但是在作息上并没有什么太大的改变, 受同学以及自己个人意愿的影响, 每天都还是十二点后睡觉, 早晨八九点起床. 这归根到底还是不健康的, 对于身体的危害是缓慢而长期的. 话说到这里, 此次的生病, 是否, 和自己的作息不健康有一些隐约的联系? 毕竟这个作息习惯基本上持续了一个学期. 在这个学期里, 我并没有可以约束自己的饮食, 有一点还是看得比较清楚的, &lt;strong&gt;吃好喝好睡好, 也算是一种养生&lt;/strong&gt;(不知道对不对&amp;hellip;). 所以(可以这么说?), 这个学期也没怎么生病, 只是在后期偶犯感冒, 但是在我&amp;rdquo;顽强的意志&amp;rdquo;, 与&amp;rdquo;强悍的免疫系统&amp;rdquo;的双重夹击下, 没几天就好了, 也不怎么严重, 就是打了几个喷嚏而已.&lt;/p&gt;
+
+&lt;p&gt;但是现在, 真正让我较为确信的原因并没有找到, 说是是被嫂子传染, 但是之前买衣服那一下子的忽然泛起的头痛, 却应该是没有关联的. 现在鼻子, 肚子都也不是很舒服, 不过相比昨天来说已经有了一些缓解.&lt;/p&gt;
+
+&lt;p&gt;感冒才是人类最大的天敌啊, 无法彻底治愈, 喝不喝药都是那么个样子, 有时还会勾引起其他的毛病, 无法预防, 无从抵抗&amp;hellip; 颇有一种宿命的感觉.&lt;/p&gt;
+
+&lt;h2 id=&#34;一些想法&#34;&gt;一些想法&lt;/h2&gt;
+
+&lt;p&gt;现在的医学手段有办法查到一个病症的真正的根源么? 从我的一些仅有的了解来看, 有些时候是可以的, 其他大多是基于已有经验的推断.&lt;/p&gt;
+
+&lt;p&gt;我得过两次肺炎, 却从未得到真正的关于原因的解释, 只能从自我的一些推断中, 尽力去避免未来的&amp;rdquo;重现&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;这种情况的出现, 实际上也不是偶然, 因为想要推断一个病症的真正根源, 所需要的人力物力往往是极大的, 这也不是一般的门诊或者医院有义务或者说必要去做的, 大多数特殊情况下的一些个人行为.&lt;/p&gt;
+
+&lt;p&gt;我们做科研, 学技术, 归根到底就是为了改变社会, 帮助人类更好的发展, 面对这个问题我们可以做些什么呢?&lt;/p&gt;
+
+&lt;p&gt;想到了吴恩达, 他一直致力于推动AI造福社会造物人类的事业, 最近他领导团队在AI医疗领域做出了很多的进展性的工作, 那是否我们可以在&lt;strong&gt;探究病症根源&lt;/strong&gt;的问题上进行进一步的研究呢? 或者对于&lt;strong&gt;病症诊断&lt;/strong&gt;, &lt;strong&gt;解决方案的提供&lt;/strong&gt;的问题上做出更多的帮助?&lt;/p&gt;
+
+&lt;h2 id=&#34;普通人的生活&#34;&gt;普通人的生活&lt;/h2&gt;
+
+&lt;p&gt;最近有一部电影, 很特别, 是导演记录自己父母生活琐事的一部片子, 细腻中散发着温情. 虽然可以说&amp;rdquo;这样的生活就是爱情啊&amp;rdquo;, 这种煽情的话, 但是有一个现实的问题, 忽然映到了我的脑海, 这是家里人没有遭受大病的困扰啊, 要是生了病, 还能这么快乐起来么? 柴米油盐酱醋茶, 那是健健康康人家才会去想的, 对于那些想要治病, 却苦于治疗费用的人家, 钱才是一天天思考的中心.&lt;/p&gt;
+
+&lt;p&gt;但是就算你有了钱, 可是就一定能有好的医生来治你么? 说起高素质医生的短缺, 在我家周围这一问题十分明显. 小区里只有一个卖药的, 却估计只能买点感冒咳嗽, 连打针输液我妈都不让他来做. 隔壁小区那位医生似乎是水平还高些, 感冒咳嗽, 输液打针还是可以看看的. 但是, 在如今的西医体制下, 光听病人口述, 能得出些什么结论呢? 我说感冒, 你就开感冒药, 我说咳嗽, 你就开止咳药&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;反正我是不敢信的.&lt;/p&gt;
+
+&lt;p&gt;但是又能如何? 无可选择. 总不能为了这么个&amp;rdquo;小病&amp;rdquo;, 就去大医院查一查吧, 那成本可就高了. 一套服务下来, 可不是几十块钱就能解决的事.&lt;/p&gt;
+
+&lt;h2 id=&#34;结语&#34;&gt;结语&lt;/h2&gt;
+
+&lt;p&gt;希望世界更美好.&lt;/p&gt;
+
+&lt;p&gt;希望自己快快康复, 健健康康才是最大的财富, 健康了, 才能有闲心欣赏这个世界.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>一些额外的生活</title>
+      <link>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E4%B8%80%E4%BA%9B%E9%A2%9D%E5%A4%96%E7%9A%84%E7%94%9F%E6%B4%BB/</link>
+      <pubDate>Sat, 19 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E4%B8%80%E4%BA%9B%E9%A2%9D%E5%A4%96%E7%9A%84%E7%94%9F%E6%B4%BB/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;一些额外的生活&#34;&gt;一些额外的生活&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;By Lart, 2019-01-19&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;今天没怎么学习, 一来是在忙活一些明天(不久就是&amp;rdquo;今天&amp;rdquo;了)的活动的事项, 二来是当前的进度到了一个较为尴尬的过程, 比赛的相关信息尚未有更多的公布, 还待赛方进一步行动&amp;hellip; 三是最近在看的论文, 略微让人感到恶心, 没想到显著性检测也有这样的描述起来的文字(让人读起来感到恶心&amp;hellip;).&lt;/p&gt;
+
+&lt;p&gt;所以, 就, 停摆了.&lt;/p&gt;
+
+&lt;h2 id=&#34;掠夺城市&#34;&gt;掠夺城市&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://n.sinaimg.cn/translate/688/w600h888/20190119/orYF-hrvcwnk7311500.jpg&#34; alt=&#34;掠夺城市&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;今天看了皮得杰克逊编剧的&amp;lt;掠夺城市&amp;gt;, 强烈的蒸汽朋克风格. 末世, 废土, 都是我喜欢的风格.&lt;/p&gt;
+
+&lt;p&gt;让我一下子想起了以前看过的一个动漫&amp;lt;钢壳都市雷吉欧斯&amp;gt;, 都是移动的居民城堡, 只不过一个是抢夺资源, 一个是和新生成的怪兽作战, 前者反而更为具有末世感, 更有真实感, 特效的制作也是极好的, 不想再重复描述了, 贴一段自己之前写的.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;最为惊喜的是这个蒸汽朋克世界的构建, 特效无比强大, 话说宣传里的&amp;rdquo;&amp;lt;指环王&amp;gt;&amp;hellip;&amp;lt;霍比特人&amp;gt;&amp;hellip;&amp;ldquo;, 感觉从特效看来, 并没有什么不合理的.&lt;/p&gt;
+
+&lt;p&gt;帅气逼人潇洒勇敢的安娜大姐, 出场的时候真心把我帅到了. 这才是反抗者头领的样子.&lt;/p&gt;
+
+&lt;p&gt;男主也就是个&amp;rdquo;傻白甜&amp;rdquo;, 印象一般, 但是女主刺杀之前的情绪渲染, 之后的各种回忆的闪现, 与&amp;rdquo;恶魔老爸&amp;rdquo;的情感纠葛(话说, 这段感情满动人的, 失去了一切的记忆, 把女主当成自己的女儿来养, 为了让她远离痛苦, 想要让她也变成他那样的机器, 忘记一切, 可是仇恨还是让她决定离开, 愤怒的他便开始了他的追逐&amp;hellip;), 很不错, 感觉即使没有男主, 女主的线也值得一看.&lt;/p&gt;
+
+&lt;p&gt;疯狂的掠夺城市, 倒是让我想起了&amp;rdquo;钢壳都市雷吉欧斯&amp;rdquo;, 一个也是移动的城堡的动漫, 也有点想到了&amp;rdquo;哈尔的移动城堡&amp;rdquo;, 但是这里是真人电影, 感觉更是拍出了那种壮阔宏大的感觉.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;电影真的是一个造梦的工具啊, 展现了一切不可能的幻想. 电影工业太伟大了!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;贴几张剧照:&lt;/p&gt;
+
+&lt;p&gt;杀气满满的女主:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img5.mtime.cn/pi/2018/06/05/155438.42302311_235X235.jpg&#34; alt=&#34;女主&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;帅气的安娜, 倒是让我想起了&amp;lt;实习医生格蕾&amp;gt;里的克里斯蒂娜(吴珊卓):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img5.mtime.cn/pi/2018/06/05/155442.66388557_235X235.jpg&#34; alt=&#34;安娜&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;壮阔的世界:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://img5.mtime.cn/pi/2017/12/19/144928.81906922_1000X1000.jpg&#34; alt=&#34;壮阔的世界&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;明天&#34;&gt;明天&lt;/h2&gt;
+
+&lt;p&gt;再有几天就回家了, 归心似箭啊, 但是却更想充分的利用下假期的生活, 有想看的书, 有想看的剧, 亦有想看的片子, 贪念太多, 倒无从下手了&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;明天(今天)就要进行活动了. 不知道午餐如何. 以及下午的电影如何. 别被吓到&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;希望赛方赶快把更详细的要求发布出来, 争取临走之前, 提交一次&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;也不知道毕设要不要改, 自己实现的DDRNN有点太吃显存, 都不清楚是什么在搞鬼&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;前路艰难呀.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>深度学习的学习</title>
+      <link>https://plart.pw/post/%E6%80%9D%E8%80%83-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Sun, 13 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E6%80%9D%E8%80%83-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AD%A6%E4%B9%A0/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;深度学习的学习&#34;&gt;深度学习的学习&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;By Lart, 2019-01-13&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://images.pexels.com/photos/129742/pexels-photo-129742.jpeg&#34; alt=&#34;pixels.com&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;入门深度学习已经好几个月了, 从去年的暑假下旬, 也就是8月后半段, 从吴恩达的机器学习课程入门, 之后历经UFLDL, CS231n算是正式进入了深度学习的大门, github上整理的笔记, 也已经有好几十个文档了, 基础的深度学习的知识也已经具备, 之后也看了好多的论文, 分类网络, 目标检测网路, 语义分割网络, 在深度学习图像处理这一块, 更多的是图像分类任务推动了其他任务的进一步改进与发展.&lt;/p&gt;
+
+&lt;p&gt;对于深度学习的理解, 目前最直观的感受就是使用深度网络在特定任务的真值的监督约束下, 不断地逼近拟合出训练集在这种任务下的特征映射关系, 也就是所谓的深度网络的普适近似定理.&lt;/p&gt;
+
+&lt;p&gt;但是对于深度学习黑盒子, 这样的深度网络的使用还是大多数处于模糊混沌的状态, 目前的学习, 只能在其他学者的已有架构的基础上进行改进, 但是所谓改进, 更多的是随机性的尝试, 没有什么指导性的方针.&lt;/p&gt;
+
+&lt;p&gt;就拿目前遇到的一个问题而言, 在处理高分辨率的输入图像时候, (接下来是个人理解), 由于图像太大, 直接缩小送入网络, 会导致很多细节信息的丢失, 不利于最终结果的预测. 所以在考虑实际的操作的时候, 就会想到一个切块的操作, 这里就收到了U-Net的启发, 它当初是为了处理高分辨率的医学图像来进行开发的, 它的输入是切片过得, 一块一块的送入网络中, 为了更多的考虑最后的边缘的拼接的时候的不连贯的问题, 送入网络的输入是要比实际输出的要大的, 相当于有重复的切块采样, 网路中更是使用的valid方式的卷积, 每卷一次就会少一圈像素, 所以最后的输出正好只保留了实际需要的那部分区域的大小, 最后可以直接拼接起来. 但是对于输入和输出一样大的时候, 就像我们现在的网络, 以及其他在应用U-Net结构的时候, 多是一样大的, 这个时候, 如果要多重复裁一部分, 那么输出就得考虑怎么裁剪了. 这是一个问题, 而且真值也得考虑剪裁的问题, 因为写代码的时候, 是都要送到DataLoader类里的, 要保证计算损失的时候, 二者是一样大的.&lt;/p&gt;
+
+&lt;p&gt;目前的结果中, 拼接后的效果和直接放缩图像输入网络后的结果, 拿真值观察比对, 可以看出, 各有优劣, 前者确实细节上有些优势, 保留的还不错, 但是整体来看, 拼接痕迹很重, 而且有些区域连贯性不好, 会出现漏洞, 而后者更多的像是很多细节被更大范围的显著性区域主体所淹没. 看着这样的结果, 最直接的想法就是是否可以将二者直接融合呢? 以获得二者所同时具有的优势? 兼顾全局与局部细节?&lt;/p&gt;
+
+&lt;p&gt;想法很好, 可是该如何去做呢? 这个时候, 对于深度学习的那种迷茫的感觉就出来了, 如何下手呢? 缺乏更多的直观的理性的知识, 感觉目前所建立的知识体系, 更多的是建立在感性的基础上, 虽然想是可以尝试再搭一个小的融合模块网络, 可是细节又有很多, 如何融合这两个可以说基于不同尺度的信息, 如何利用这些基于不同位置的信息, 对于前者, 直接的, 上卷积网络, 差别就是直接放一起还是先对局部切块的输出卷积操作后再放一起进行整体预测. 对于后者是直接拼接, 还是可以参考@代季峰的RFCN中提到的那种位置敏感得分图的结构, 不同位置的特征图可以放到不同的通道上?&lt;/p&gt;
+
+&lt;p&gt;都是需要思考的问题.&lt;/p&gt;
+
+&lt;h2 id=&#34;关于图像分割任务的一些思考&#34;&gt;关于图像分割任务的一些思考&lt;/h2&gt;
+
+&lt;p&gt;因为有这样的常识, 保留的相关信息越多, 对于结果的预测也越好.&lt;/p&gt;
+
+&lt;p&gt;在语义分割这个任务里, 很多的深度网络架构, 都在尽可能的获得更多的上下文信息, 充分利用全局和局部的信息, 利用更多的低级空间结构信息和高级的更抽象的语义信息, 进而实现更为细致, 更为连续的边缘和显著性目标检测, 这里有一些手段, 就是为了实现这样的目的, 比如利用先前网络的特征输出, 结合多级, 多尺度特征, 比如利用CRF后处理, 进一步利用概率图模型, 综合考量特征图之间的统计特性, 使得相似的像素预测更为趋于一致的预测, 还有利用RNN(这个和毕设有关)来代替CRF进行像素之间的关联性信息的利用, 效果也很好, 还有利用扩张卷积来在一定程度上代替池化操作, 在不需要降低分辨率的基础上, 扩大感受野, 获得更多的上下文信息. 同时, 为了更多的考量, 上采样这部分也是一个关键的操作, 因为在恢复空间分辨率和提取更为高层的语义信息间存在着一定的联系, 因为深度网络的架构中, 池化操作和大步长卷积的操作, 对于提取更为抽象的更为高层的信息来说是有一定的必要的, 正所谓, 浓缩的都是精华&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;快要睡觉了&#34;&gt;快要睡觉了&lt;/h2&gt;
+
+&lt;p&gt;深度学习感觉&amp;hellip;很随意的样子, 缺少实际的可靠地理论性的知识体系, 这让我有时候真的很不开心, 学习如此迷茫&amp;hellip;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>生产与学术</title>
+      <link>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E7%94%9F%E4%BA%A7%E4%B8%8E%E5%AD%A6%E6%9C%AF/</link>
+      <pubDate>Tue, 08 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E7%94%9F%E4%BA%A7%E4%B8%8E%E5%AD%A6%E6%9C%AF/</guid>
+      
+        <description>&lt;h1 id=&#34;生产与学术&#34;&gt;生产与学术&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;By Lart, 2019-01-08&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://images.unsplash.com/photo-1535540878298-a155c6d065ef?ixlib=rb-1.2.1&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=750&amp;amp;q=80&#34; alt=&#34;upsplash&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;生产与学术, 真实的对立&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;这是我这两天对&lt;code&gt;pytorch深度学习-&amp;gt;android实际使用&lt;/code&gt;的这个流程的一个切身感受.&lt;/p&gt;
+
+&lt;p&gt;说句实在的, 对于模型转换的探索, 算是我这两天最大的收获了&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/lartpang/DHSNet-PyTorch/blob/master/converter.ipynb&#34;&gt;https://github.com/lartpang/DHSNet-PyTorch/blob/master/converter.ipynb&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;这两天&#34;&gt;这两天&lt;/h2&gt;
+
+&lt;p&gt;最近在研究将pytorch的模型转换为独立的app, 网上寻找, 找到了一个流程: pytorch-&amp;gt;onnx-&amp;gt;caffe2-&amp;gt;android apk. 主要是基于这篇文章的启发: &lt;a href=&#34;https://zhuanlan.zhihu.com/p/32342366&#34;&gt;caffe2&amp;amp;pytorch之在移动端部署深度学习模型(全过程!)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;这两天就在折腾这个工具链，为了导出onnx的模型, 不确定要基于怎样的网络, 是已经训练好的, 还是原始搭建网络后再训练来作为基础. 所以不断地翻阅&lt;a href=&#34;https://pytorch.org/tutorials/advanced/super_resolution_with_caffe2.html&#34;&gt;pytorch&lt;/a&gt;和&lt;a href=&#34;https://github.com/onnx/tutorials/tree/master/tutorials&#34;&gt;onnx&lt;/a&gt;的官方示例, 想要研究出来点什么, 可是, 都是自己手动搭建的模型. 而且使用的是预训练权重, 不是这样:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;squeezenet1_1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pretrained&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;False&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;**&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;kwargs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;sa&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&amp;#34;SqueezeNet 1.1 model from the `official SqueezeNet repo
+&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;    &amp;lt;https://github.com/DeepScale/SqueezeNet/tree/master/SqueezeNet_v1.1&amp;gt;`_.
+&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;    SqueezeNet 1.1 has 2.4x less computation and slightly fewer parameters
+&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;    than SqueezeNet 1.0, without sacrificing accuracy.
+&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;    Args:
+&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;        pretrained (bool): If True, returns a model pre-trained on ImageNet
+&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;model&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SqueezeNet&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;1.1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;**&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;kwargs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pretrained&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;load_state_dict&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;model_zoo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;load_url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;model_urls&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;squeezenet1_1&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]))&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;model&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# Get pretrained squeezenet model&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;torch_model&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;squeezenet1_1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;torch.autograd&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Variable&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;batch_size&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;# just a random number&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# Input to the model&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Variable&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;torch&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;randn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;batch_size&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;224&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;224&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;requires_grad&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# Export the model&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;torch_out&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;torch&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;onnx&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_export&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;torch_model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;        &lt;span class=&#34;c1&#34;&gt;# model being run&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;                  &lt;span class=&#34;c1&#34;&gt;# model input (or a tuple for multiple inputs)&lt;/span&gt;
+    &lt;span class=&#34;s2&#34;&gt;&amp;#34;squeezenet.onnx&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; 	&lt;span class=&#34;c1&#34;&gt;# where to save the model (can be a file or file-like object)&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;export_params&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# store the trained parameter weights inside the model file&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;就是这样:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Create the super-resolution model by using the above model definition.&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;torch_model&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SuperResolutionNet&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;upscale_factor&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# Load pretrained model weights&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;model_url&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;https://s3.amazonaws.com/pytorch/test_data/export/superres_epoch100-44c6958e.pth&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;batch_size&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;# just a random number&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# Initialize model with the pretrained weights&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;torch_model&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;load_state_dict&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;model_zoo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;load_url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;model_url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# set the train mode to false since we will only run the forward pass.&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;torch_model&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;train&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;False&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;两种都在载入预训练权重, 直接加载到搭建好的网络上. 对于我手头有的已经训练好的模型, 似乎并不符合这样的条件.&lt;/p&gt;
+
+&lt;h3 id=&#34;导出整体模型&#34;&gt;导出整体模型&lt;/h3&gt;
+
+&lt;p&gt;最后采用尽可能模仿上面的例子代码的策略, 将整个网络完整的导出(&lt;code&gt;torch.save(model)&lt;/code&gt;), 然后再仿照上面那样, 将完整的网络加载(&lt;code&gt;torch.load()&lt;/code&gt;)到转换的代码中, 照猫画虎, 以进一步处理.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;这里也很大程度上受到这里的启发: &lt;a href=&#34;https://github.com/akirasosa/mobile-semantic-segmentation&#34;&gt;https://github.com/akirasosa/mobile-semantic-segmentation&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;本来想尝试使用之前找到的不论效果还是性能都很强的R3Net进行转换, 可是, 出于作者搭建网络使用的特殊手段, 加上&lt;a href=&#34;#pickle和onnx的限制&#34;&gt;pickle和onnx的限制&lt;/a&gt;, 这个尝试没有奏效, 只好转回头使用之前学习的DHS-Net的代码, 因为它的实现是基于VGG的, 里面的搭建的网络也是需要修改来符合onnx的要求, 主要是更改上采样操作为转置卷积(也就是分数步长卷积, 这里顺带温习了下pytorch里的&lt;code&gt;nn.ConvTranspose2d()&lt;/code&gt;的&lt;a href=&#34;https://github.com/lartpang/Machine-Deep-Learning/issues/39&#34;&gt;计算方式&lt;/a&gt;), 因为pytorch的上采样在onnx转换过程中有很多的问题, 特别麻烦, 外加上修改最大池化的一个参数(&lt;code&gt;nn.MaxPool2d(kernel_size=2, stride=2, ceil_mode=False)&lt;/code&gt;的参数&lt;code&gt;ceil_mode&lt;/code&gt;改为&lt;code&gt;ceil_mode=False&lt;/code&gt;, 这里参考自前面的知乎专栏的那篇文章), 这样终于可以转换了, 为了方便和快速的测试, 我只是训练了一个epoch, 就直接导出模型, 这次终于可以顺利的&lt;code&gt;torch.save()&lt;/code&gt;了.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;filename_opti&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;%s&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;/model-best.pth&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;check_root_model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;torch&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;save&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;filename_opti&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;之后便利用类似的代码进行了书写.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;n&#34;&gt;IMG_SIZE&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;224&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;TMP_ONNX&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;cache/onnx/DHSNet.onnx&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;MODEL_PATH&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;cache/opti/total-opti-current.pth&amp;#39;&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# Convert to ONNX once&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;model&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;torch&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;load&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MODEL_PATH&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cuda&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;train&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;False&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Variable&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;torch&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;randn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;224&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;224&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;requires_grad&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cuda&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;torch_out&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;torch&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;onnx&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_export&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;TMP_ONNX&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;export_params&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;caffe2模型转换&#34;&gt;caffe2模型转换&lt;/h3&gt;
+
+&lt;p&gt;载入模型后, 便可以开始转换了, 这里需要安装caffe2, 官方推荐直接conda安装pytorch1每夜版即可, 会自动安装好依赖.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;说起来这个conda, 就让我又爱又恨, 用它装pytorch从这里可以看出来, 确实不错, 对系统自身的环境没有太多的破坏, 可是用它装tensorflow-gpu的时候, 却是要自动把conda源里的cuda, cudnn工具包都给带上, 有时候似乎会破坏掉系统自身装载的cuda环境(? 不太肯定, 反正现在我不这样装, 直接上pip装, 干净又快速).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;之后的代码中, 主要的问题也就是tensor的cpu/cuda, 或者numpy的转换的问题了. 多尝试一下, 输出下类型就可以看到了.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Let&amp;#39;s also save the init_net and predict_net to a file that we will later use for running them on mobile&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;with&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;./cache/model_mobile/init_net.pb&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;wb&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fopen&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;fopen&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;write&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;init_net&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SerializeToString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;())&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;with&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;./cache/model_mobile/predict_net.pb&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;wb&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fopen&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;fopen&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;write&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;predict_net&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SerializeToString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;())&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;预处理的补充&#34;&gt;预处理的补充&lt;/h3&gt;
+
+&lt;p&gt;这里记录下, 查看pytorch的tensor的形状使用&lt;code&gt;tensor.size()&lt;/code&gt;方法, 查看numpy数组的形状则使用numpy数组的&lt;code&gt;adarray.shape&lt;/code&gt;方法, 而对于PIL(&lt;code&gt;from PIL import Image&lt;/code&gt;)读取的Image对象而言, 使用&lt;code&gt;Image.size&lt;/code&gt;查看, 而且, 这里只会显示宽和高的长度, 而且Image的对象, 是三维, 在于pytorch的tensor转换的时候, 或者输入网络的时候, 要注意添加维度, 而且要调整通道位置(&lt;code&gt;img = img.transpose(2, 0, 1)&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;由于网络保存的部分中, 只涉及到了网络的结构内的部分, 对于数据的预处理的部分并不涉及, 所以说要想真正的利用网络, 还得调整真实的输入, 来作为更适合网络的数据输入.&lt;/p&gt;
+
+&lt;p&gt;要注意, 这里针对导出的模型的相关测试, 程实际上是&lt;strong&gt;按照测试网络的流程&lt;/strong&gt;来的.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# load the resized image and convert it to Ybr format&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;mean&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;0.485&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.456&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.406&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;0.229&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.224&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.225&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Image&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;./data/ILSVRC2012_test_00000004_224x224.jpg&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;img&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;img&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;astype&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;float64&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;255&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mean&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;img&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;transpose&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;安卓的尝试&#34;&gt;安卓的尝试&lt;/h3&gt;
+
+&lt;p&gt;首先安卓环境的配置就折腾了好久, 一堆破事, 真实的生产开发, 真心不易啊&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;这里最终还是失败了, 因为对于安卓的代码是在是不熟悉, 最起码的基础认知都不足, 只有这先前学习Java的一点皮毛知识, 根本不足以二次开发. 也就跑了跑几个完整的demo而已.&lt;/p&gt;
+
+&lt;h4 id=&#34;aicamera-https-github-com-caffe2-aicamera&#34;&gt;&lt;a href=&#34;https://github.com/caffe2/AICamera&#34;&gt;AiCamera&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;这个跑通了, 但是这是个分类网络的例子, 对于我们要做的分割的任务而言, 有很多细节不一样.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;输入有差异: 比赛要求的是若是提交apk, 那么要求可以从相册读取图片, 而例子是从摄像头读取的视频数据流. 虽然也处理的是视频帧, 但是要我们再次补充的内容又多了起来, 还是那句话, android一窍不通.&lt;/li&gt;
+&lt;li&gt;输出有差异: 自我猜测, 比赛为了测评, 输出必然也要输出到相册里, 不然何来测评一说?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;aicamera-style-transfer-https-github-com-caffe2-aicamera-style-transfer&#34;&gt;&lt;a href=&#34;https://github.com/caffe2/AICamera-Style-Transfer&#34;&gt;AICamera-Style-Transfer&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;这个例子我们参考了一下, 只是因为它的任务是对摄像头视频流数据风格迁移, 而且会直接回显到手机屏幕上, 这里我们主要是想初步实现对于我们网络模型安卓迁移的测试, 在第一个例子的基础上能否实现初步的摄像头视频流的分割, 然后下一步再进一步满足比赛要求.&lt;/p&gt;
+
+&lt;p&gt;可是, 尝试失败了. 虽然AS打包成了APK, &lt;a href=&#34;#打包apk安装&#34;&gt;手机也安装上了&lt;/a&gt;, 可是莫名的, 在&amp;rdquo;loading&amp;hellip;&amp;ldquo;中便闪退了&amp;hellip;&lt;/p&gt;
+
+&lt;h4 id=&#34;jejunet-https-github-com-tantara-jejunet&#34;&gt;&lt;a href=&#34;https://github.com/tantara/JejuNet&#34;&gt;JejuNet&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;这个例子很给力, 但是使用的是tensorflowlite, 虽然可以用, 能够实现下面的效果, 可是, 不会改.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/tantara/JejuNet/master/docs/20180726-current-results-deeplabv3_on_tf-lite.gif&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;而且是量化网络, 准确率还是有待提升.&lt;/p&gt;
+
+&lt;h2 id=&#34;最后的思考&#34;&gt;最后的思考&lt;/h2&gt;
+
+&lt;p&gt;最后还是要思考一下的, 做个总结.&lt;/p&gt;
+
+&lt;h3 id=&#34;没经验&#34;&gt;没经验&lt;/h3&gt;
+
+&lt;p&gt;吃就吃在没经验的亏上了, 都是初次接触, 之前没怎么接触过安卓, 主要是安卓的开发对于电脑的配置要求太高了, 自己的笔记本根本不够玩的. 也就没有接触过了.&lt;/p&gt;
+
+&lt;p&gt;外加上之前的研究学习, 主要是在学术的环境下搞得, 和实际的生产还有很大的距离, 科研与生产的分离, 这对于深度学习这一实际上更偏重实践的领域来说, 有些时候是尤为致命的. 关键时刻下不去手, 这多么无奈, 科学技术无法转化为实实在在的生产力, 忽然有些如梦一般的缥缈.&lt;/p&gt;
+
+&lt;p&gt;当然, 最关键的还是, 没有仔细分析赛方的需求, 没有完全思考清楚, 直接就开干了, 这个鲁莽的毛病, 还是没有改掉, 浪费时间不说, 也无助于实际的进度. 赛方的说明含糊, 应该问清楚.&lt;/p&gt;
+
+&lt;p&gt;若是担心时间, 那更应该看清楚要求, 切莫随意下手. 比赛说明里只是说要提交一个打包好的应用, 把环境, 依赖什么都处理好, 但是不一定是安卓apk呀, 可以有很多的形式, 但是这也只是最后的一点额外的辅助而已, 重点是模型的性能和效率呢.&lt;/p&gt;
+
+&lt;p&gt;莫忘初心, 方得始终. 为什么我想到的是这句.&lt;/p&gt;
+
+&lt;h3 id=&#34;下一步&#34;&gt;下一步&lt;/h3&gt;
+
+&lt;p&gt;基本上就定了还是使用R3Net, 只能是进一步的细节修改了, 换换后面的循环结构了, 改改连接什么的.&lt;/p&gt;
+
+&lt;p&gt;我准备再开始看论文, 学姐的论文可以看看, 似乎提出了一种很不错的后处理的方法, 效果提升很明显, 需要研究下.&lt;/p&gt;
+
+&lt;h2 id=&#34;pickle和onnx的限制&#34;&gt;pickle和onnx的限制&lt;/h2&gt;
+
+&lt;p&gt;pytorch的&lt;code&gt;torch.save(model)&lt;/code&gt;保存模型的时候, 模型架构的代码里&lt;strong&gt;不能使用一些特殊的构建形式&lt;/strong&gt;, &lt;a href=&#34;https://github.com/zijundeng/R3Net/blob/master/resnext/resnext_101_32x4d_.py&#34;&gt;R3Net的ResNeXt结构&lt;/a&gt;就用了, 主要是一些lambda结构, 虽然不是太清楚, 但是一般的搭建手段都是可以的.&lt;/p&gt;
+
+&lt;p&gt;onnx对于pytorch的支持的操作, 在我的转化中, 主要是最大池化和上采样的问题, 前者可以修改&lt;code&gt;ceil_mode&lt;/code&gt;为&lt;code&gt;False&lt;/code&gt;, 后者则建议修改为转置卷积, 避免不必要的麻烦. 可见&lt;a href=&#34;#导出整体模型&#34;&gt;&amp;ldquo;导出整体模型&amp;rdquo;&lt;/a&gt;小节的描述.&lt;/p&gt;
+
+&lt;h2 id=&#34;打包apk安装&#34;&gt;打包apk安装&lt;/h2&gt;
+
+&lt;p&gt;这里主要是用release版本构建的apk.&lt;/p&gt;
+
+&lt;p&gt;未签名的apk在我的mi 8se(android 8.1)上不能安装, 会解析失败, 需要签名, AS的签名的生成也很简单, 和生成apk在同一级上, 有生成的选项.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>比赛进度&amp;下一步的想法</title>
+      <link>https://plart.pw/post/%E6%80%9D%E8%80%83-%E5%85%B3%E4%BA%8E%E6%AF%94%E8%B5%9B%E4%B8%8E%E4%B8%8B%E4%B8%80%E6%AD%A5/</link>
+      <pubDate>Sun, 06 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E6%80%9D%E8%80%83-%E5%85%B3%E4%BA%8E%E6%AF%94%E8%B5%9B%E4%B8%8E%E4%B8%8B%E4%B8%80%E6%AD%A5/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;比赛进度-下一步的想法&#34;&gt;比赛进度&amp;amp;下一步的想法&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;By Lart, 2019-01-06&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://images.unsplash.com/photo-1502679718843-1c1d20c1090b?ixlib=rb-1.2.1&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1500&amp;amp;q=80&#34; alt=&#34;From unsplash&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;关于比赛&#34;&gt;关于比赛&lt;/h2&gt;
+
+&lt;p&gt;现在找到了一个18年的IJCAI的论文，实现了一个架构——R3Net，在ResNeXt的基础上外扩了一系列的循环残差式的结构，按照论文的描述，实现了当时的“state of the art”。&lt;/p&gt;
+
+&lt;p&gt;按照老师的说法，没有时间去尝试比较哪个网络架构更有效，直接尝试最优的就可以。确实如此，毕竟直接使用，起步就不一样，与其按照之前的，在DHSNet的基础上改动，倒不如直接使用最好的。&lt;/p&gt;
+
+&lt;p&gt;当时老师推荐的是@Tiantian Wang的一篇论文提出的架构——SRM，但是在我搜索这篇论文的时候，却找到了这个&lt;a href=&#34;https://drive.google.com/file/d/1GavhYgp-4RlmO5IqAhtfcnDahy9FX3BZ/view?usp=drive_open&#34;&gt;R3Net的PPT&lt;/a&gt;，论文标题是《R3Net: Recurrent Residual Refinement Network for Saliency Detection》，之所以被吸引，主要是因为他题目让我想到了最近在思考的RNN，点进去一看，顿时发现了这个论文的给力之处。&lt;/p&gt;
+
+&lt;p&gt;最明显的感觉就是，快，就一个字。论文里在实验的时候，使用的就是6000次迭代，就花了80min，还是GTX1080Ti，这让我很惊讶，相比之下，DHSNet那个可就是龟速了。为了尝试一下，clone，注释，阅读，运行，确实快！基本上一晚上可以来三四次，很快。感觉主要的快速之处在于大量的残差结构的使用，尤其是作为backbone的ResNeXt，它的横向扩展的思路，使其参数量大大减少，又实现了足够的复杂结构，在速度与准确度上做到了一个较好的平衡。当然还有全卷积的结构，没有多余的全连接，也在一定程度上实现了加速，而且这里对于输入的数据并没有放缩操作，直接按照原大小进行的处理，这一点很棒，因为如果评测是外部的（非自己实现的），那么肯定默认是使用原图大小的输出来与真值评价，而我们之前使用的DHSNet，不论在训练还是测试的时候，都实现进行了对于数据的预处理，这个预处理里存在着固定大小的缩放。这一点对于未来的扩展不是很有利。相比之下，R3Net的实现就很科学了。&lt;/p&gt;
+
+&lt;p&gt;在阅读代码的时候，总体的感觉就是结构很清晰，代码很直观，对于架构的实现简单粗暴，反而使得阅读和修改更为方便，确实给力！而且作者&lt;a href=&#34;https://zijundeng.github.io&#34;&gt;@Zijun Deng&lt;/a&gt;的&lt;a href=&#34;https://github.com/zijundeng/pytorch-semantic-segmentation&#34;&gt;另一个仓库&lt;/a&gt;又是一个值得学习的实现，实现了很多的分割架构，顿时感觉这一下知道了好多的知识。这个作者确实厉害！&lt;/p&gt;
+
+&lt;p&gt;尝试了R3Net，在MSRA10K上进行了6000次迭代的训练，按照作者的论文的训练参数，只是batch_size由于当时操作环境所限，只能设定为2，实现了在ECSSD数据集上的0.90的Fm，达不到作者论文里的0.935的地步，初步认为是这个batch_size太小所致。&lt;/p&gt;
+
+&lt;p&gt;为了进一步的得到更好的成绩，我们打算利用caff2来实现对于pytorch模型的转化，在配合android来实现app的实现，这样会可以有更多的加分。但是这里又是一堆坑。外加上这个比赛的赛题有很多不合理的地方，给出的指标不适合于题目描述的“人像精细分割”的对应的matting任务，倒是有些像显著性检测的标准，给了F测度和mae两个指标，若是matting，这根本不合适，按照之前的一篇matting领域的重要的论文&lt;a href=&#34;http://www.ims.tuwien.ac.at/publications/tuw-180666&#34;&gt;《A Perceptually Motivated Online Benchmark for Image Matting》&lt;/a&gt;给出的四个指标——SAE，MSE，连通误差，梯度误差，这才是更适合matting的评价的。所以矛盾存在，就导致我们选择架构就存在了犹豫。&lt;/p&gt;
+
+&lt;p&gt;多方考量后，还是如前描述，选择从显著性检测的架构入手，有可能再考虑matting细化的情况。&lt;/p&gt;
+
+&lt;h2 id=&#34;下一步的打算&#34;&gt;下一步的打算&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;暂先确定一个模型&lt;/li&gt;
+&lt;li&gt;**关键行尝试：&lt;code&gt;pytorch -&amp;gt; app&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;寻找最好的模型&lt;/li&gt;
+&lt;li&gt;转换最好的模型&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;pytorch真心适合搞学术研究，没有tensorflow那么多套路，那么复杂。同一个想法，实现不会差上太多，反而更是贴合python的精神，一个想法只有一种实现。但是论实际来讲，tensorflow的布局是真大，各种领域都要插上一脚，不论是工业还是学术，感觉都是它最初设计就在考虑的，这导致它自身在不同领域的转换应该是没有太大的成本的，而pytorch还需要借助FB的工业级产品caffe2来实现。&lt;/p&gt;
+
+&lt;p&gt;但是，pytorch自身的吸引力，已经足够了，其他都是点缀而已。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>努力与情绪</title>
+      <link>https://plart.pw/post/%E6%80%9D%E8%80%83-%E5%8A%AA%E5%8A%9B%E4%B8%8E%E6%83%85%E7%BB%AA/</link>
+      <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E6%80%9D%E8%80%83-%E5%8A%AA%E5%8A%9B%E4%B8%8E%E6%83%85%E7%BB%AA/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;努力与情绪&#34;&gt;努力与情绪&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;By Lart, 2019-01-02&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://images.unsplash.com/photo-1534950581589-28511e00ed67?ixlib=rb-1.2.1&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=736&amp;amp;q=80&#34; alt=&#34;迷惘&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;情绪&#34;&gt;情绪&lt;/h2&gt;
+
+&lt;p&gt;这段时间过得很压抑，自我的提升，现实的需求，理想的渴求，以及实际的压抑与焦虑，不安与混乱互相混杂，搅成一团。&lt;/p&gt;
+
+&lt;h2 id=&#34;比赛与matting&#34;&gt;比赛与matting&lt;/h2&gt;
+
+&lt;p&gt;老师要我们做 oppo 的一个比赛，人像分割的任务，zengyu学姐给安排了一些显著性的论文让我们看，这之后老师又安排我收集总结数据集。&lt;/p&gt;
+
+&lt;p&gt;也算是明确了方向，这个比赛实际上是 matting 的问题。开始还不是很理解这个任务，只是简单的认识到，也就是所谓的“抠图”任务。在收集数据集的过程中，发现这个任务更是小众，每年的出名的论文也不多，一搜就能搜出来的也就是 adobe 的一篇和港中文的两篇，以及阿里的一片最新的论文。&lt;/p&gt;
+
+&lt;p&gt;这个任务里，最严重的问题是数据集的缺少，这个领域的论文好多都是在提出方法的同时，都要自己制作一个数据集。这里面最大的问题是，这个任务在早期，还不是深度学习方法泛滥的时期，问题还不大，但是到了后期，开始使用深度学习来处理这个问题的时候，数据集的问题就被放大了，直到adobe这一篇出来的时候，才出现了一个较为精细的量也较大一点的数据集，可是不公开，要和作者要。而港中文也出了两篇文章，也是做人像matting的，也算是公开了一个自己的数据集，目前而言只能在这个基础上进行训练了。但是当前也有一个很大的数据集，但是并不是很精细，也开放了下载，(@supervise.ly)，目前在下载，不知道会如何。&lt;/p&gt;
+
+&lt;h2 id=&#34;实验&#34;&gt;实验&lt;/h2&gt;
+
+&lt;p&gt;很压抑，想起了之前的数字图像处理的实验，眼看就要验收了，可是最后有些东西没有满足要求，最后还是放弃了，明天，哦不，今天下午就要最后验收了，拖了这么久，希望一切顺利啊。又想起了之前SOPC实验，真烦人，还得修改报告，最后才能算结束。&lt;/p&gt;
+
+&lt;p&gt;这里还是态度问题呀，唉。原本就没有认真完成这最后的要求。&lt;/p&gt;
+
+&lt;h2 id=&#34;努力&#34;&gt;努力&lt;/h2&gt;
+
+&lt;p&gt;不知道研究生的日子会怎么度过，感觉会很有压力，但是想想，如果不能发论文的话，那岂不更是一件悲伤的事情？&lt;/p&gt;
+
+&lt;p&gt;最难过的事，莫过于看着别人似有所成，而自己却一事无成。&lt;/p&gt;
+
+&lt;p&gt;在目前的matting的进度上，就似乎有这样的问题，@Z, 他主要看代码，进展很快，目前已经小有成效，而我阅读论文，虽然看了不少，但是却还没有关注过实现，实践上有些差上了，看着他在忙碌，而自己却还未动手，再想想四号就要开组会，有些小慌张，还得准备自己的汇报PPT啊，也不知道要汇报哪些内容。&lt;/p&gt;
+
+&lt;p&gt;努力是一件烧脑的事情啊，找不准方向就得空耗时间，空费精力。&lt;/p&gt;
+
+&lt;p&gt;但找准方向，又是多么的难。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>论文&amp;代码&amp;生活</title>
+      <link>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E8%AE%BA%E6%96%87%E4%BB%A3%E7%A0%81%E7%94%9F%E6%B4%BB/</link>
+      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E8%AE%BA%E6%96%87%E4%BB%A3%E7%A0%81%E7%94%9F%E6%B4%BB/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;论文-代码-生活&#34;&gt;论文&amp;amp;代码&amp;amp;生活&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;By Lart, 2018-12-22&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?ixlib=rb-1.2.1&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=750&amp;amp;q=80&#34; alt=&#34;upslash&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;论文&#34;&gt;论文&lt;/h2&gt;
+
+&lt;p&gt;这些日子主要在看论文，忙着跟随学姐的脚步，尽快补充相关的知识，尽快踏上显著性检测的道路。在读了一些论文后，最大的感受就是，显著性检测使用深度网路的时候，感觉套路很直观。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;主要参考了这篇综述：&lt;a href=&#34;https://github.com/lartpang/ML_markdown/blob/0562f11ccc8cedb2d9f69e9f74f6769b6cbc41dc/图像分割/A%202017%20Guide%20to%20Semantic%20Segmentation%20with%20Deep%20Learning.md&#34;&gt;https://github.com/lartpang/ML_markdown/blob/0562f11ccc8cedb2d9f69e9f74f6769b6cbc41dc/图像分割/A%202017%20Guide%20to%20Semantic%20Segmentation%20with%20Deep%20Learning.md&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;主要是遇到了两种类型的结构：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;第一种是由&lt;em&gt;U-Net&lt;/em&gt; 开创的&lt;strong&gt;编码-解码式&lt;/strong&gt;的对称型结构，例如SegNet，RefineNet等。这种结构，编码器通过池化层逐渐的减少空间维度, 然后解码器逐逐渐的恢复物体的详细信息和空间维度. 通常在编码器和解码器之间有转换关系, 方便解码器更好的恢复物体的详细信息。在这里跨层链接是常见的，因为要结合各种尺度的特征。&lt;/li&gt;
+&lt;li&gt;而另一种则是采用各种上采样手段的非对称式结构，主要是由*FCN*启发的一系列模型，例如DeepLab系列，PSPNet等。这种结构主要是通过后续的一系列“花式操作”，来对于之前卷积层获得的特征图进行进一步细化和融合，在这里主要的是一些比较特殊的卷积策略。例如DeepLab使用的空洞卷积，FCN使用的分数卷积（分数卷积也是一种转置卷积，它对应的是*步长不为1*的原始卷积过程）。
+&amp;gt; 具体结构动态图可见：&lt;a href=&#34;https://github.com/vdumoulin/conv_arithmetic&#34;&gt;https://github.com/vdumoulin/conv_arithmetic&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;还涉及到了一个比较经典的后处理操作：CRF，这个操作主要被用来基于周边像素来‘平滑’分割。它们的工作原理是相似的像素会趋向于分为同一个类别。&lt;/p&gt;
+
+&lt;p&gt;两者实际上都是使用了CNN的提取特征的强大能力，通过利用获得的多尺度的特征，进行了各种改进的后续融合处理。而对于类FCN结构，则是进一步对得到的最终的特征图进一步处理细化，没有太多的使用早期的卷积特征图。&lt;/p&gt;
+
+&lt;p&gt;这些论文，都会先使用一个用于分类的骨干网络（VGG、ResNet），得到压缩后的特征图，然后要在这个特征图的基础上进行尺寸恢复，这就需要考虑是用什么样的手段进行恢复。比较有意思的一个地方就是恢复分辨率的手段。这里在&lt;a href=&#34;https://github.com/lartpang/ML_markdown/issues/25#issuecomment-448911117&#34;&gt;issue里&lt;/a&gt;总结了下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;语义分割体系结构的另一个重要方面是使用学习好的deconvolutions对低分辨率分割图进行特征图上采样以获得输入图像分辨率的机制，或者在编码器中使用以计算为代价的扩张卷积来避免部分的分辨率下降。即使在现代GPU上，扩张卷积（Dilated convolutions ）也非常昂贵。&lt;/p&gt;
+
+&lt;p&gt;这篇关于&lt;a href=&#34;http://link.zhihu.com/?target=http%3A//distill.pub/2016/deconv-checkerboard/&#34;&gt;distill.pub&lt;/a&gt;的文章解释了有关反卷积的更多细节。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不同网络如何实现上采样&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;FCN 双线性插值初始化(虽然还不理解), 分数卷积实现上采样&lt;/li&gt;
+&lt;li&gt;SegNet 使用对应的最大值索引进行恢复, 变成稀疏的特征图, 再利用后接的卷积实现进一步的密集化 [unpooling]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;虽然这有助于保持高频信息的完整性，但是当从低分辨率特征图中unpooling时，它也会错过相邻的信息。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Deeplab 通过空洞卷积的组合来恢复全分辨率的特征映射，这种方法计算的特征映射更加密集，然后简单地对特征的响应进行&lt;strong&gt;双线性插值&lt;/strong&gt;恢复到原始图像大小&lt;/li&gt;
+&lt;li&gt;U‐Net 2x2卷积外围补零, 实现的上采样&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;通过其跳过concatenation连接的架构允许每个阶段的解码器学习在编码器中池化时丢失的相关特征。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;RefineNet 上采样是在Multi-resolution fusion单元完成的, 这里感觉更像是使用的双线性插值&lt;/li&gt;
+&lt;li&gt;PSPNet 双线性插值直接对低维特征映射进行上采样，以获得与原始特征图相同的大小特征, 最后，不同级别的特征被连接为最终的金字塔池化全局特征。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/16298490/50284453-04942780-0494-11e9-8084-8abb06cc5e25.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Mask‐RCNN 不需要上采样, 因为它是基于Faster R-CNN的, 所有预测的结果都是针对于原始图像大小的.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;代码&#34;&gt;代码&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;准备数据&lt;/li&gt;
+&lt;li&gt;调整输入&lt;/li&gt;
+&lt;li&gt;搭建网络&lt;/li&gt;
+&lt;li&gt;设定损失&lt;/li&gt;
+&lt;li&gt;设定优化器&lt;/li&gt;
+&lt;li&gt;开始迭代训练&lt;/li&gt;
+&lt;li&gt;执行前向传播 &lt;code&gt;model.forward(inputs)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;计算损失&lt;/li&gt;
+&lt;li&gt;损失反向传播 &lt;code&gt;loss.backward()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;执行优化&lt;/li&gt;
+&lt;li&gt;保存模型&lt;/li&gt;
+&lt;li&gt;验证集上测试效果，获得指标 &lt;code&gt;F_measure, mae&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;存储最好的模型&lt;/li&gt;
+&lt;li&gt;直到迭代结束&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;之前研究的是学姐给的代码，略微有些复杂，可能是为了兼容更多的骨干网络，导致整体复杂了些。但是看了&lt;code&gt;@guanwenlong&lt;/code&gt;学长的&lt;em&gt;DHSNet&lt;/em&gt; 的复现后，感觉挺直观的，可以参考着用。这个修改起来感觉会容易一些。&lt;/p&gt;
+
+&lt;h2 id=&#34;生活&#34;&gt;生活&lt;/h2&gt;
+
+&lt;p&gt;这些天看电脑都看的脑子疼，眼睛疼，真是蛋疼，感觉睡觉一直都睡得不踏实，昏昏的。&lt;/p&gt;
+
+&lt;p&gt;前些日子流星雨，也没看到过一个。&lt;/p&gt;
+
+&lt;p&gt;今日冬至，吃饺子，人是死啦多，又吃了灵芝米线，死啦贵。最讨厌这种所谓“名小吃”，不接地气，不实在。&lt;/p&gt;
+
+&lt;p&gt;个人对于吃饭还是有些想法的，有些东西不适合充饥，就比如米线，这个让我很容易想起来家乡那边的粉条，那个东西烩菜的时候加一些，很不错，但是单独吃，进了胃，总感觉滑滑的不踏实。不如米饭面条来得实在一些。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>雪&amp;毕设&amp;代码</title>
+      <link>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E9%9B%AA%E6%AF%95%E8%AE%BE%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E9%9B%AA%E6%AF%95%E8%AE%BE%E4%BB%A3%E7%A0%81/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;雪-毕设-代码&#34;&gt;雪&amp;amp;毕设&amp;amp;代码&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;By Lart, 2018-12-06&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://images.pexels.com/photos/38196/pexels-photo-38196.jpeg&#34; alt=&#34;恍惚&#34; title=&#34;来自pixels.com&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;雪&#34;&gt;雪&lt;/h2&gt;
+
+&lt;p&gt;今天迎来了二零一八年的第一场雪，比平常来的更晚了一些。寒意也随之到来了，弄得我终于换下了穿了许久的单衣。&lt;/p&gt;
+
+&lt;p&gt;大连的寒风，真是叫人瑟瑟发抖哦。&lt;/p&gt;
+
+&lt;h2 id=&#34;毕设&#34;&gt;毕设&lt;/h2&gt;
+
+&lt;p&gt;学校开始定毕设的题目了，我的题目老师给大体确定了下，题目有些宽泛，属于“xx模型研究”类的题目，老师想的是希望我们可以打好扎实的编程基础，可以掌握主流框架的使用。&lt;/p&gt;
+
+&lt;p&gt;老师今天把几篇参考论文发了过来，看了下，涉及到一个新的任务，“sence labeling”，这个是要把图片中的所有成分都要划分出来，不同于语义分割的分割目标的要求，较之更为复杂一点。&lt;/p&gt;
+
+&lt;p&gt;当我网上搜索的时候，发现&lt;a href=&#34;http://yann.lecun.com/exdb/publis/pdf/farabet-pami-13.pdf&#34;&gt;LeCun大神竟然有篇相关的文章&lt;/a&gt;，顿时一喜，但是又看了看老师给的&lt;a href=&#34;https://github.com/LarT2P/MyPaper/issues/1&#34;&gt;那篇文章&lt;/a&gt;，是今年的文章，有代码的几率很低呀，我都在想，要不要考虑和作者要下代码？暂时先等等看，看看文章，话说，老师催的也是关于编程能力的积累，而不是这个毕设的任务，毕设开始还在明年呢，不用太着急，但是也不能完全放置，应该细细准备下，代码能力，相关资料，都得做好准备。&lt;/p&gt;
+
+&lt;p&gt;话说，六级考试又要到了，可是，准备了什么呢？匆匆缴费，却并未有所准备，英语一事，感觉自己已经没有了当初的动力，只能听之任之，尽量安心。话说这个追求也是基于一些功利了，因为据说六级分数较高的话，可以不用参加研究生的英语课。现在已经很讨厌英语课了，真不知道，会有怎样的感觉。&lt;/p&gt;
+
+&lt;p&gt;无法想象。&lt;/p&gt;
+
+&lt;h2 id=&#34;代码&#34;&gt;代码&lt;/h2&gt;
+
+&lt;p&gt;tensorflow真是一个繁杂牛逼的框架，但是学习起来可也真是无从下手啊。&lt;/p&gt;
+
+&lt;p&gt;在网上找到了一个“cifar10-tensorflow”的代码仓库，代码结构很棒，准备在它的基础上进行学习。&lt;/p&gt;
+
+&lt;p&gt;准备先进行代码的整理，尽可能整理到一个文件中，压缩结构，也方便对于整体进行再次学习与复现。先考虑从简单的vgg11入手，今天实现了接近（还是相差百分之一左右）于这个代码作者的实现的准确率。可是却不知道后续要怎么调整了。&lt;/p&gt;
+
+&lt;p&gt;只好先从代码的角度入手了，仿照着实现了ResNet的结构，这里有个小的失误，一开始的实现是按照ImageNet的针对的结构实现的，这就怪自己没有细看论文了。针对cifar10数据集，ResNet网络在结构上进行了精简，主要变成了6n的结构，2n+1-&amp;gt;2n-&amp;gt;2n，主要是因为cifar10的数据大小所限。改了一晚上，倒也终于跑了起来，不知道最后的结果如何。希望可以好一些。&lt;/p&gt;
+
+&lt;p&gt;vgg11代码基本上是原本的代码，resnet20这里有了些自己的思考，但是一些关键处的处理，还是仿照着原本的代码写的，下一步就是在实现一下其他的，逐渐增多属于自己的部分的代码量，渐渐地，到最后，希望的是可以能把那个最重要的Solver类自己写出来。&lt;/p&gt;
+
+&lt;p&gt;写代码还是很有意思的，哈哈。&lt;/p&gt;
+
+&lt;h2 id=&#34;写在结束&#34;&gt;写在结束&lt;/h2&gt;
+
+&lt;p&gt;天气越来越冷了，希望自己不会生病，生病一次就太麻烦了。&lt;/p&gt;
+
+&lt;p&gt;健健康康，顺顺利利，开开心心，这也就是我的2018最大的年末心愿了。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>论文&amp;手写报告&amp;胜者即正义</title>
+      <link>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E8%AE%BA%E6%96%87%E6%89%8B%E5%86%99%E6%8A%A5%E5%91%8A%E8%83%9C%E8%80%85%E5%8D%B3%E6%AD%A3%E4%B9%89/</link>
+      <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E8%AE%BA%E6%96%87%E6%89%8B%E5%86%99%E6%8A%A5%E5%91%8A%E8%83%9C%E8%80%85%E5%8D%B3%E6%AD%A3%E4%B9%89/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;论文-手写报告-胜者即正义&#34;&gt;论文&amp;amp;手写报告&amp;amp;胜者即正义&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;By Lart, 2018-12-2&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://images.pexels.com/photos/950902/pexels-photo-950902.jpeg?auto=compress&amp;amp;cs=tinysrgb&amp;amp;dpr=2&amp;amp;h=650&amp;amp;w=940&#34; alt=&#34;加油&#34; title=&#34;来自pexels.com&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;早上九点多才起床，天阴下雨，阴阴沉沉，睡意更显浓厚。在被窝里又挣扎了许久。稍微放松了下，才下了床。&lt;/p&gt;
+
+&lt;p&gt;迟起的早晨也注定了这一天整体的偏移。&lt;/p&gt;
+
+&lt;p&gt;上午看了看RFCN的论文，因为昨天看了这篇论文之后的一篇文章，讲述可变形卷积，因为是一个作者，所以在可变形卷积中提到了对于RFCN的一个改进，因为自己对于其中的可变形位置敏感RoI池化的设定不太了解，没想到在搜索的时候，搜索到了&lt;a href=&#34;https://zhuanlan.zhihu.com/p/30867916&#34;&gt;讲解RFCN的文章&lt;/a&gt;，对于位置敏感RoI池化介绍的很详细，阅读的很畅快。没想到，博客也可以这么写，写得好棒。忽然一下子感觉到了，好的文章分享是应该这样的，详细详细，关键之处要详细到小白文，无关之处要简略带过，没必要多谈，只针对最有疑惑的地方进行详细介绍。不过，对于目前的学习的过程来看，想要做到这样最大的问题就是不能很好地做到“舍得”，搞不清文章的重点与难点，虽然疑惑的地方有很多，但是关键的地方不好区分出来。还是需要阅读与思考。还是需要一定的积累的。&lt;/p&gt;
+
+&lt;p&gt;中午自己一个人吃了饭，又看了一个小时的小说。才决定睡觉。这一睡，又是一个多小时。雨还是淅淅沥沥，没个完。起床后洗了个澡，之后便开始了持续到晚上的报告时光，报告，手写，真有创意哈。&lt;/p&gt;
+
+&lt;p&gt;没有丝毫的意义。笔下的文字和脑中的想法根本不是一条线上的。写的手疼不想多谈。&lt;/p&gt;
+
+&lt;p&gt;今天发现了一部剧，《胜者即是正义》，口碑很好的一部日剧，新垣结衣呀！一部讲“套路”的律政剧。由此也认识到了这个鬼畜的男人——堺（jie）雅人。这剧漫画性比较强，但是对于日剧而言，这却也算一种风格，但这轻浮的表面之下，确实更为现实和实际的作为律师的根本准则——只对当事人负责，判断真实与否交给法律，而自己只是要保护当事人。这才是正义的基础，正义的判定应该交给法律，而非律师，抑或警察、检察官或者某个人自己的想法。各司其职，各尽其能，自己做好自己的事，或许才能开始谈论正义吧！&lt;/p&gt;
+
+&lt;p&gt;话说，新垣结衣，笑起来好美呀！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://08.imgmini.eastday.com/mobile/20180128/20180128150427_fd605d5b66ad5fa10670a4b611f2e58e_26.jpeg&#34; alt=&#34;新垣结衣&#34; title=&#34;新垣结衣&#34; /&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>学会学习-1</title>
+      <link>https://plart.pw/post/%E5%AD%A6%E4%B9%A0-learninghowtolearn-1/</link>
+      <pubDate>Fri, 30 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E5%AD%A6%E4%B9%A0-learninghowtolearn-1/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;学会学习-1&#34;&gt;学会学习-1&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;By Lart, 2018-11-30&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;学习模式-专注模式和发散模式&#34;&gt;学习模式：专注模式和发散模式&lt;/h2&gt;
+
+&lt;p&gt;两种模式不会同时存在，我们学习时通常是两种模式在不断地切换。这种随时能转换的能力，对于我们的学习，尤其是接触一些新的较难的东西时，尤为重要。学习困难的东西需要相当的时间，因为你的大脑需要转变它的学习方式以此来努力面对和消化新的事物。&lt;/p&gt;
+
+&lt;p&gt;专注模式下，我们的思维活动范围会局限在一个小部分，这通常是我们已经熟知的知识部分、思维模式，而这些面对未知的新知识的时候，往往就不够处理了，就会成为思维的局限，也就是惯性思维的束缚。这时我们就需要发散模式上场了。&lt;/p&gt;
+
+&lt;p&gt;发散模式下，我们的思维没有了束缚，会更加发散的活动，这也就导致我们的思维活动，往往会出现一些意料之外的惊喜。新的观点，新的角度，这些似乎隐藏在你的大脑的边缘地带的知识，思维方式被勾连起来。&lt;/p&gt;
+
+&lt;h2 id=&#34;影响大脑运作的因素&#34;&gt;影响大脑运作的因素&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;思考过程&lt;/li&gt;
+&lt;li&gt;记忆&lt;/li&gt;
+&lt;li&gt;情绪&lt;/li&gt;
+&lt;li&gt;动机&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;克服拖延症&#34;&gt;克服拖延症&lt;/h2&gt;
+
+&lt;p&gt;当你看到一件你极度不情愿做的事情时，就好像是你激活了大脑中与疼痛相关的区域，你的大脑就会自然而然地去寻找停止这种负面刺激的方式，而这一方式便是将你的注意力转移到其他事情上。这也就是拖延症的关键所在。&lt;/p&gt;
+
+&lt;p&gt;但是我们真正去做的时候，这种不适很快就会消失。这也就是更为直接的解决拖延症的方法。&lt;/p&gt;
+
+&lt;h2 id=&#34;练习&#34;&gt;练习&lt;/h2&gt;
+
+&lt;p&gt;所谓熟能生巧就是如此。适当的练习，会帮助我们加强记忆以及对于知识的熟悉程度。&lt;/p&gt;
+
+&lt;p&gt;比较合适的练习策略是间隔重复，具体做法是不断重复你尝试记忆的内容，但重复的过程必须间隔开来。就像是砌墙的过程一样，如果你不留足够的时间等灰浆变干，正如等待突触连接的形成与强化，你将无法获得好的记忆结构。&lt;/p&gt;
+
+&lt;p&gt;对于新的知识，实践出真知，同时最好有专家的指点，这样会让我们学习起来更为容易些。&lt;/p&gt;
+
+&lt;h2 id=&#34;劳逸结合&#34;&gt;劳逸结合&lt;/h2&gt;
+
+&lt;p&gt;高强度的专注学习应该注意休息放松的重要性。适当的注意力的转移，表面的放松，会促使发散模式的工作，帮你完成对概念的理解，从某种意义上说，你的神经通路就可以像砂浆一样有个得到固化的机会。&lt;/p&gt;
+
+&lt;p&gt;强行的填鸭式有时并不能真正起到我们期望的作用。&lt;/p&gt;
+
+&lt;p&gt;即所谓劳逸结合。&lt;/p&gt;
+
+&lt;p&gt;这一方面，使用番茄工作法是值得借鉴的。定时的高强度学习，适度的休息奖励，互相促进。&lt;/p&gt;
+
+&lt;h2 id=&#34;睡眠&#34;&gt;睡眠&lt;/h2&gt;
+
+&lt;p&gt;绝对地清醒会让你的大脑产生有毒的物质，而睡觉期间，大脑会进行排毒的工作，这件事有时候看起来像是浪费时间，实际上是大脑保持清洁和健康的一种方式。这些有毒物质会让你思维混乱，长时间的睡眠不足，更会让各种令人厌恶的情况发生，包括头疼、抑郁症、心脏类疾病、糖尿病，甚至寿命缩短，但是良好的睡眠不仅仅会帮你的大脑祛除有毒物质。实际上，它还是记忆力和学习过程中很重要的一部分。&lt;/p&gt;
+
+&lt;p&gt;在你睡觉的时候，它会清除掉一些记忆中不太重要的部分，同时增强你需要或想要记住的区域的记忆。在睡梦中，你的大脑也会，将你所努力学习到的东西，在神经中枢一遍遍排演以增强加深记忆力。研究表明，睡眠对人们区分找出困难问题的能力，和理解所学知识的能力有显著影响。当然，这一切的前提是，你必须通过做集中精力状态下的工作，在脑中搭建发散思维模型。&lt;/p&gt;
+
+&lt;p&gt;这实际上也算是一种发散模式与专注模式转换的情形。&lt;/p&gt;
+
+&lt;p&gt;如果你在打个小盹或者晚上睡觉之前，复习一遍所学东西的话 可以有更大可能性梦到它。如果你更进一步，告诉自己你想要梦到这些内容的话，可能你梦到它的几率也会大大提高，梦见你所学的知识，本质上能够增强你的理解能力。在一定程度上，它可以将你的记忆整合成更易被掌握的组块信息。&lt;/p&gt;
+
+&lt;h2 id=&#34;积极学习&#34;&gt;积极学习&lt;/h2&gt;
+
+&lt;p&gt;在一场枯燥的讲座中保持注意力，可以考虑用提问来“伏击”演讲者，这种打断通常会带出更有趣的讨论。事实上，这符合一般准则，即比起被动的听讲，积极参与会让你学到更多。&lt;/p&gt;
+
+&lt;h2 id=&#34;运动和交流&#34;&gt;运动和交流&lt;/h2&gt;
+
+&lt;p&gt;慢跑或户外锻炼是让我的思维跳出常规想法的绝佳方法，而且这时极其可能迸发灵感，而且这时极其可能迸发灵感，这就像你的大脑进入了一个新模式。&lt;/p&gt;
+
+&lt;p&gt;同时，处于一个富有创造力的环境中，是一种提升自身创造力的方法。事实上，我认为同周围的人讨论自己的想法，对我的科研来说是极其重要的组成部分。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>学会学习-2</title>
+      <link>https://plart.pw/post/%E5%AD%A6%E4%B9%A0-learninghowtolearn-2/</link>
+      <pubDate>Fri, 30 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E5%AD%A6%E4%B9%A0-learninghowtolearn-2/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;学会学习-2&#34;&gt;学会学习-2&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;By Lart, 2018-11-30&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;组块&#34;&gt;组块&lt;/h2&gt;
+
+&lt;p&gt;组块化是一种思维的跃进，根据意义将信息碎片拼接起来，而新的逻辑整体让组块更容易记忆，同时也可以让你更轻松地将组块整合到所学内容的大框架内。&lt;/p&gt;
+
+&lt;p&gt;从神经科学的角度说，组块就是通过使用或意义连接在一起的信息碎片。通过集中注意力从而将大脑的不同部分连接起来，并将不同的想法联系在一起，是专注模式下学习的重要部分。&lt;/p&gt;
+
+&lt;p&gt;在紧张的时候，你的注意力会失去一些连接能力，这也是在你生气、紧张、害怕的时候，大脑似乎不能正常工作的原因所在。&lt;/p&gt;
+
+&lt;p&gt;事实上，在某个学术领域获得专业知识的第一步都是创建出概念组块。专业的培养是一小步一小步的，这个过程中小的组块可以形成更大的组块，而且随着你对学习材料的理解越来越深入，所有的专业知识都只是更有创造性的见解的铺路石。组块化可以让大脑工作得更有效。一旦你把某个想法、概念或动作组块化后，你就不再需要记住和这个想法、概念或动作有关的全部细节，你只需要知道最主要的那个概念就行了，也就是只需要记住组块。&lt;/p&gt;
+
+&lt;h2 id=&#34;建立&#34;&gt;建立&lt;/h2&gt;
+
+&lt;p&gt;由小到大，先建立小的组块，再将小的组合成大的，之后再将这些大组块组合成更复杂更大型的组块，你随时都可以使用它们。&lt;/p&gt;
+
+&lt;p&gt;对于我们建立新的知识体系，示范性的例子则能在起步时帮助理解。但是在关注这些栗子的时候，一个顾虑是我们会过于关注某一个单独的步骤，而忽略步骤之间的联系，也就是说我们忽略了“为什么接下来就该进行到这个步骤”这个问题。所以说，我们要时刻保持一种陌生的状态，不能一味地去重复，要关注周围的变化，不能陷入脱离自我的状态，要时刻记得自己的目的是要学习过程方法，而非重复解决问题。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;对于组块的建立，首先我们要专注于想要组块化的信息，其次呢，要求对之有基本的了解。再者就是需要有一定的背景知识。最终，练习也是极其重要的。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;理解就像是强力胶，将潜在的记忆痕迹粘合在一起，它可以建立起一大圈记忆痕迹，并和其他痕迹链接起来。没有理解而建立的组块是无法利用的。&lt;/p&gt;
+
+&lt;p&gt;获取背景知识，这样你就不仅知道如何使用组块，还明白应该什么时候用它，能帮你认识新建立的组块是如何融入整体框架的。&lt;strong&gt;背景认识意味着学会在特定的时候使用正确的方法&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;当然，还有在学习中，早期先掌握一个关键的框架（图片，小标题&amp;hellip;），明白课程的层次结构，对于我们弄清楚应在哪里建立组块，以及如何把不同组块联系起来，是有帮助的。&lt;/p&gt;
+
+&lt;h2 id=&#34;回顾与自测&#34;&gt;回顾与自测&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;你才是解决问题和掌握概念的主体。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;及时的自我检测是有价值的。能够帮你检验那些你以为已经明白了的问题，并且能够加快你的学习速度，当你能独自完成某件事时，你才是真正掌握了它。只是在看，或者就算理解了如何去做，也不代表你能真正做到，只有在你自己实际操作和完全掌握的情况下才能建立起神经模型。&lt;strong&gt;这时我们所发现的错误对于我们是极其重要的。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;仅仅是扫一眼答案就以为你真的理解了，&lt;strong&gt;是一种学习中最为常见的自欺欺人式错觉&lt;/strong&gt;，你需要*让这些知识在你脑海里生根发芽*。&lt;/p&gt;
+
+&lt;p&gt;当然可以提到的也有做标记。做笔记时高亮和下划线必须要谨慎，否则不仅没有效果还容易产生&lt;strong&gt;误导&lt;/strong&gt;。试着在勾画前找到中心思想，并试着尽量减少划线和高亮的内容，每段不超过一句。另一方面，在空白处写笔记总结关键概念是一种很好的办法。&lt;/p&gt;
+
+&lt;p&gt;在我们的学习中，回顾往往很重要，有时要比反复阅读更有效。回顾知识时，我们并非机械地复述，而是在通过回顾这个过程加深理解，这也有助于我们形成知识组块。单纯回忆，脱离书本努力想起关键点，是促进组块化的最佳方式之一。&lt;/p&gt;
+
+&lt;p&gt;只有隔上一定时间后再重读才会有效果，因为这样，重读就更像是间隔重复练习。看书比回顾做起来简单，但学生会陷入 (一种自欺欺人的) 错觉，这种学习方式效率很低。&lt;strong&gt;在学习资料上花太多时间并不能保证你真的懂了，自测是一种极其有用的办法。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;另一个小贴士：在常规学习场所以外回顾材料，会帮助你加深对材料的理解。当你学习新事物的时候 *你通常会把最开始接触材料的地方，当作潜意识中的提示，但一到考试就乱了阵脚，因为考试与学习场所通常不同*，&lt;strong&gt;通过在不同物理环境下回顾和思考学习资料，你会脱离对给定场所的依赖，这会帮助你避免由于考试与学习场所的不同而产生的问题。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;同样的，在根基还没打牢就开始空建框架联系，例如进行思维导图，或者概念关联等等，实属徒劳无功。&lt;/p&gt;
+
+&lt;h2 id=&#34;影响实质&#34;&gt;影响实质&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;乙酰胆碱能让神经元与负责专注学习的大脑皮层间形成神经递质性的联系&lt;/strong&gt;。当你注意力高度集中的时候，这些乙酰胆碱神经元就会广泛地投射出来，并且激活环路来控制突触可塑性 从而形成新的长期记忆，神经递质也对你的无意识有着深远的影响。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多巴胺的特殊的化学物质控制着我们的动力&lt;/strong&gt;。这些多巴胺神经元是一个控制报酬性学习的大型脑部系统的一部分。当接受到一个毫无预期的奖励时，这些神经元将分泌出多巴胺，多巴胺的信号将广泛投射，这会对学习产生强有力的影响。同时也会影响决策，甚至是感官输入的价值所在。*多巴胺参与预测未来奖励*，它可以激励你做一些现在可能得不到奖励，但在将来会有一个更好的奖励的事情。
+&amp;gt; *缺少多巴胺神经元会导致动力缺乏，这就是我们俗称的快感缺乏*，它会让你对那些曾经令你感到快乐的事物失去感兴趣。*严重的多巴胺神经元缺乏会导致静止性震颤*，迟缓、僵硬。这些症状就被称为帕金森氏病，最终它会导致紧张症，一种完全缺乏行动的病症。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;血清素的水平也与风险行为有着紧密的联系&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;情绪也可以强烈地影响你的学习&lt;/strong&gt; 。
+&amp;gt; 杏仁核是认知和情绪进行有效结合的主要中心之一，是大脑边缘系统的一部分,它与海马体共同参与记忆和决策的进行过程。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;知识迁移&#34;&gt;知识迁移&lt;/h2&gt;
+
+&lt;p&gt;首先，我们需要不断地增加我们的组块，组块式心理图书馆越大，运用越熟练，无论你学什么科目。你都将能够更轻易地解决问题，找到解决方法。&lt;/p&gt;
+
+&lt;p&gt;这有助于我们理解新概念，相似组块的联系，也就是迁移学习的基础。随着组块的增加，我们可以建立更大的组块，如果你将一系列的概念和解决方法吸纳为组块形式，你可以将它们看成是一簇神经模式。当你试图理清头绪时，如果你有一组结构良好的组块，你可以更容易地找到正确的解决方法。但如果你不训练变大的组块，它们就会保持模糊的状态，把你要学习的东西拼到一起就会更为困难。&lt;/p&gt;
+
+&lt;p&gt;建立组块式图书馆，就是在训练你的大脑，不仅要认出一个特定的概念，还要认出概念的类别，以便你能够自如地知晓，如何快速解决或处理你遇到的问题，你将开始看到一些为你简化解决方法的模式，并很快发现不同的解决手法，就潜藏在你的记忆边缘。&lt;/p&gt;
+
+&lt;p&gt;有两种途径理清头绪或解决问题：一是顺序性地一步步推理，二是通过整体性的直觉，顺序性思维涉及到专注模式，它的每一小步都有意地导向一个解决方法；另一方面，直觉通常似乎需要创造性的发散模式，来联系几个看上去在专注模式下不同的想法。&lt;/p&gt;
+
+&lt;p&gt;大多数较难的问题和概念都是通过直觉来理解的，因为新的想法和你熟悉的领域相去甚远。记住，*发散模式是半随机地进行连接，这意味着它们带来的解决方法，应该由专注模式进行小心验证，直觉性的理解不是永远正确的*。专注于你正在学习的单元，*你会发现一旦你把第一个问题或概念放进心理图书馆，不论那是什么，第二个概念的进入就会容易一些，然后第三个概念也就更容易，这并不都那么简单*，但会越来越容易。&lt;/p&gt;
+
+&lt;h2 id=&#34;过度识记&#34;&gt;过度识记&lt;/h2&gt;
+
+&lt;p&gt;过度识记是有意义的，它能帮助使得行为自动化。自动性，(Automaticity)，确实很有用，但要警惕在单一学习阶段的重复性过度识记，研究表明，这可能是对宝贵的学习时间造成浪费，事实上，一旦你在某一阶段学会了一个基本概念，在这段时间不断地巩固它，并不能加强你所期许的长期记忆联系，重复你已经掌握的东西非常容易，但这可能会造成能力错觉，让你误以为自己已掌握了所有材料，而其实你只掌握了简单的部分，所以，你应该均衡学习，把精力集中在你认为困难的部分。&lt;/p&gt;
+
+&lt;h2 id=&#34;刻意训练&#34;&gt;刻意训练&lt;/h2&gt;
+
+&lt;p&gt;专注于学习的困难部分称为刻意训练，(deliberate，practice)。&lt;/p&gt;
+
+&lt;p&gt;在学习和生活中，理解如何得到真正的解决方法很重要，掌握一门新学科不仅要学习基础组块，更要学会如何选择和应用不同的组块，最佳的学习方法是练习如何在，需要不同技术和策略的问题以及情形中来回转换，这就是所谓的交替学习，当你掌握了某一技巧的基本概念，就好像在辅助轮的帮助下学会骑车时，你该开始交替练习，交叉于不同类别的问题、方法、概念和过程间，有时这么做会有点困难，。&lt;/p&gt;
+
+&lt;p&gt;例如在科学和数学上，提前看章末不同类型的习题，对于学习可能会有帮助，或者你可以偶尔探索，为什么一道题要用这种解法而不用别的，你需要让自己的大脑习惯这种思想，即仅仅知道如何使用特定的概念、方法或解题技巧是不够的，你也需要知道何时去使用，要贯彻交替学习的思想。&lt;/p&gt;
+
+&lt;h2 id=&#34;交替学习&#34;&gt;交替学习&lt;/h2&gt;
+
+&lt;p&gt;这样有时可能会让你感到学习变得更困难了，但事实上它能帮助你学习得更深入，交替学习非常重要，尽管练习和重复，对帮助建立稳固的神经模式很重要，但却是交替学习能让大脑更具灵活性和创造性，这样你才能脱离仅会练习和重复，而开始学会独立思考。&lt;/p&gt;
+
+&lt;p&gt;当你在一个学科内交替学习，你开始在这个学科内发展创造力，当你在多个不同学科间交替学习，你能更容易地在不同领域的组块间创造联系，这能进一步提高你的创造性，当然，在不同领域间发展固定知识组块需要时间，所以有时需要取舍，成为几个领域的专家，意味着，你可以将一个领域的新思想引入另一个领域，但这也可能意味着，你在某个领域的专业知识，并不如专攻一个领域的人那么深厚，另一方面，如果你只专研一个学科，你可能对它有很深刻的理解，但也变得只习惯某种思考方式，这种根深蒂固的思考模式，让你很难把握新思想。而前者，则更具有创造力，更有可能出现改变。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>关于态度的一段思考</title>
+      <link>https://plart.pw/post/%E6%80%9D%E8%80%83-%E5%85%B3%E4%BA%8E%E6%80%81%E5%BA%A6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/</link>
+      <pubDate>Wed, 21 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E6%80%9D%E8%80%83-%E5%85%B3%E4%BA%8E%E6%80%81%E5%BA%A6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;关于态度的一段思考&#34;&gt;关于态度的一段思考&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;By Lart, 2018-11-21&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;最近经历了一些事情,有些小小的思考.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/03/public-domain-images-archive-high-quality-resolution-free-download-splitshire-0002-1000x666.jpg&#34; alt=&#34;烦心&#34; title=&#34;图片来自designrush&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;最近&#34;&gt;最近&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.designrush.com/resources/publicdomainarchive/wp-content/uploads/2014/03/public-domain-images-archive-high-quality-resolution-free-download-splitshire-0009-1000x666.jpg&#34; alt=&#34;心思&#34; title=&#34;图片来自designrush&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;最近做了两次实验,一次是计算机网络实验,一次是电子工程训练.让我有了更多的思考的是实验报告.&lt;/p&gt;
+
+&lt;p&gt;我还记得前三年里,也经历了很多的实验课,写过很多的实验报告,不管那门课如何的重要,抑或如何的不重要,都未曾有过一丝丝的轻视,仔细的构思每一个细节,完成每一个任务,一切都追求的是尽己所能.当然,结果都是好的,努力的付出是必然有回报的.在学校这个地方,还是很公平的,付出与收获大多数时候是成正比的.&lt;/p&gt;
+
+&lt;p&gt;记得大一大二时候做的物理实验,那段经历可以说是&amp;rdquo;辉煌&amp;rdquo;,分了两个学期,第一个学期的最终实验成绩据我所知,在我周围的同学里,我是最高的分数.当然,也与自己复习的到位有关系.后一个学期后劲不足,但是也还可以,将近九十的分数.也不算低了.每份报告,都是要求手写,回想起那一个个的夜晚/下午/上午的埋头计算/绘图/书写,绞尽脑汁,尽可能的&amp;rdquo;提高&amp;rdquo;数据的正确程度/合理程度,这份心思,虽然有些不太正确,但是却也极大地反映出了那个时候对于完美结果的追求.&lt;/p&gt;
+
+&lt;p&gt;后来还有一些上机的实验课,两次汇编实验,还有FPGA的实验,以及模拟电路实验,好多好多,我们专业,实验课不少,为了获得一个好的成绩,为了为现在的保研努一份力,多加一点机会,受了不少的煎熬,付出了不少的精力与心思.当时也想过,如果有机会,肯定不会在那样来一次,那种为了一次完美的报告,反复的修改打印,一丝一毫都不愿放过,一次次被我的强迫症逼得精疲力竭.&lt;/p&gt;
+
+&lt;p&gt;但是现在在我看来,当初的那种态度,却是现在的我极度需要的.&lt;/p&gt;
+
+&lt;p&gt;现在的生活,每天只要没课,早晨基本是九点起床,早餐也基本自行解决,喝包奶,吃点细碎的零食,若是有课,只能努力起床,瞌睡一上午;晚上基本都是十二点半睡觉,有时看个小说,就要拖到一点以后.&lt;/p&gt;
+
+&lt;p&gt;生活的习惯和心理上的放松时离不开的.毕竟,奋斗了三年,终于找到了出路,找到了下一站,再那么努力,总是会有些不愿意的.人就是一种懒惰的动物,惰性是本性,舒服的生活,会上瘾的.&lt;/p&gt;
+
+&lt;p&gt;回到学习上,如前面提到的,最近做了两次实验,实验做的一般,实验报告写的一般.计算机网络/电子工程训练,这两门课的报告,最主要的共同点,就是老师安排的很少,所以我就写的很少,内容很简陋.&lt;/p&gt;
+
+&lt;p&gt;所以,我就写的很少,内容很简陋&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;在报告上操的心,放的心思少了,没有,也没想过要好好写.最终只能看着别人的优秀的结果,自我反思了.&lt;/p&gt;
+
+&lt;p&gt;报告给的模板里,并没有太多的内容,很简单,我写报告就是按着报告的模板来完成的,但是看着别人的充实的内容,我才意识到,目前自己的状态很不好.要是放在以前,估计是不会出现这样的问题的吧.以前只会多,不会少.现在只要写完,就会急匆匆的交上去,再也不想看一眼,而以前虽然也会有这样的感受,可是却一直会等到最后才做出最终的判断,得到最终的版本.&lt;/p&gt;
+
+&lt;p&gt;这又让我想起了之前的计算机网络的考试,我竟然这次提前交卷了!虽然这个和当时的身体问题有点关系,着急解决生理问题,但是我明显有感觉,那种想上厕所的感觉是被不断放大了的,被那一位位提前交卷的同学,被那一份自己心里的小小的开始蠢动的松懈,所鼓动,所&amp;rdquo;挑拨&amp;rdquo;.以前是不会这样的.&lt;/p&gt;
+
+&lt;p&gt;保研的结果带给了我很多之前三年没有却一直期望着的那份轻松,也让我终于可以如愿以偿的学习和探索自己中意喜爱的领域,但是也带给了我生活和意志上的松懈,对于学业功课上的粗糙/马虎.&lt;/p&gt;
+
+&lt;p&gt;这是我不能忍的事情.对于学习的态度,是我长久以来一直引以为傲的事情,可是,现在我却失掉了这一份立足之本,我又如何能够有多的进步和更大的收获呢?&lt;/p&gt;
+
+&lt;p&gt;除此之外,还想说说关于那个选修的事.&lt;/p&gt;
+
+&lt;p&gt;遇到了比较大的困难.本来是要上课的一门实验课,老师脑袋一热,反而建议我们参加一个比赛,正好就不用上课了&amp;hellip;对于这个决定,很反感,因为我只想安安稳稳拿到学分,度过一段轻松的时光,没想到,出了这样的波折.比赛就比赛吧,也是各种让人不开心的事.说好的fpga板子,现在也没见到影子.也不知道怎么回事.幸好之前和老师接了一款板子.用起来有点繁琐,先得烧录一个系统到sd卡里,再启动,使用电脑网线与之相连,配置ipv4对应的配置,浏览器打开对应的ip地址就可以实现交互了.但是,过两天比赛提交作品就截止了&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;我现在最烦心的是,不知道我们这个比赛要做到什么地步,才能算是满足老师的要求&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;想想,本来一个也不算太难的事,若是早早就做了的话,估计也做完了,反而一直拖到了现在,弄到最后,简直是自寻烦恼.&lt;/p&gt;
+
+&lt;p&gt;结合之前的思考,这些其实是&amp;rdquo;一脉相承&amp;rdquo;的,心里的放松,思想上的松懈,对于学业的轻视,这些糟糕的,错误额态度,都是现在的状况的诱因.&lt;/p&gt;
+
+&lt;p&gt;说了这么多,希望算是一个小小的反思,日后再次看到这篇文章的时候,能够想起现在的状况,也会更多的注意当下的行为和心态.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>这些衰败的日子</title>
+      <link>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E8%BF%99%E4%BA%9B%E8%A1%B0%E8%B4%A5%E7%9A%84%E6%97%A5%E5%AD%90/</link>
+      <pubDate>Sat, 15 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E8%BF%99%E4%BA%9B%E8%A1%B0%E8%B4%A5%E7%9A%84%E6%97%A5%E5%AD%90/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;这些衰败的日子&#34;&gt;这些衰败的日子&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;By Lart, 2018-09-15&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;想换主题了。&lt;/p&gt;
+
+&lt;h2 id=&#34;一&#34;&gt;一&lt;/h2&gt;
+
+&lt;p&gt;突然心血来潮，想换主题了。搜了将近一个小时，打算用这个了。
+&lt;a href=&#34;https://github.com/rujews/maupassant-hugo&#34;&gt;https://github.com/rujews/maupassant-hugo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;可是，hugo的基本配置，有点蛋疼啊。。折腾的心烦。&lt;/p&gt;
+
+&lt;p&gt;好想换回hexo了。&lt;/p&gt;
+
+&lt;p&gt;安安心心写点东西。&lt;/p&gt;
+
+&lt;h2 id=&#34;二&#34;&gt;二&lt;/h2&gt;
+
+&lt;p&gt;愈发的懒惰了，根本不想重新再搭一遍博客，费时费力，这个Jane已经很不错了，只是可能觉得略微有些偏窄，没有侧栏设计，三段式的布局。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;头 - 体 - 脚&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;不过功能很全面，不想再改动了。&lt;/p&gt;
+
+&lt;p&gt;没时间，没心情，没动力了。&lt;/p&gt;
+
+&lt;h2 id=&#34;三&#34;&gt;三&lt;/h2&gt;
+
+&lt;p&gt;最近一直在linux下学习CS231n课程，电脑配置的劣势凸显的无比明显，jupyter notebook使用在浏览器上，本身就比较耗费资源，尤其我用的还是Chrome。&lt;/p&gt;
+
+&lt;p&gt;尤其在读取样本数据集的时候&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;不过话说回来，Chrome用起来，在linux上确实比windows上好用些。字体发虚的问题并没有出现，清晰流畅（这个稍微有点不贴切，还是有点卡顿的），但是比firefox用起来还是好用些。&lt;/p&gt;
+
+&lt;p&gt;学习主要看了知乎上的《智能单元》的专栏，将以前的笔记进行了翻译，适当的也添加了自己的补充。很不错。&lt;/p&gt;
+
+&lt;p&gt;看的有些细节还是有些疑惑，都复制并添加补充了自己的思考和引用。希望对于自己的日后的学习能起到更多的帮助。&lt;/p&gt;
+
+&lt;h2 id=&#34;四&#34;&gt;四&lt;/h2&gt;
+
+&lt;p&gt;在学习课程的时候，相关的作业基于python，作业在忙第二次的，现在做到了卷积网络的部分。前面的作业还没有使用到框架，还是在手动练习，熟悉各个环节和流程的时候，这个时候趁手的编辑器和给力的补全提示操作就很重要了。&lt;/p&gt;
+
+&lt;p&gt;先把功能提升的首要考虑放在了jupyter notebook上了，因为作业的主文件是.ipynb文件，通过交互式的编辑方式，调用很多具体的函数的.py文件，以及类的.py文件，来实现代码的交流沟通。查了好久，知道了有一个jupyter notebook插件包，里面提供了多种功能的插件，翻译，补全的自动提示（默认需要tab），高亮选中的部分等等，各种。当然，也安装了主题，有一个主题包 jupyterthemes，提供了数种皮肤主题，默认不显示菜单，后来查了issue，原来需要指定一个额外的参数来应用主题。&lt;/p&gt;
+
+&lt;p&gt;用它来写notebook文件可以，但是写py文件却不是很合适，很不方便。&lt;/p&gt;
+
+&lt;p&gt;开始是在gnome默认的终端模拟器里，使用另一个标签页来使用vim。&lt;/p&gt;
+
+&lt;p&gt;vim也是配置了好久，才基本上实现了需求。但是，总是有些想法，想要使用一种能平铺的终端，最后选择了tilix。&lt;/p&gt;
+
+&lt;p&gt;但是vim用着还是不痛快，我考虑了Sublime text3，本身很不错，轻量但是又可以很给力，配合插件系统，很给力，但是有一个要命的问题，总是卡着闪退。&lt;/p&gt;
+
+&lt;p&gt;为了稳定，我又尝试了VSCode，但是，更大的卡顿的问题又来了。有时候卡死，没办法，只好另寻他路，最后，还是落在了emacs上，但是又不想使用evil，找到了一个使用原生键位的配置，很不错，尤其是主题用的是doom的配色主题。&lt;/p&gt;
+
+&lt;p&gt;对于python需要安装一个语言系统服务包，但是一时脑热，装到了子环境里，导致正常启动的emacs，在主环境里没法检测到这个，会报错，为此我还到作者那里提了个issue，尴尬。最后巧合下发现了这个问题，即时修改了issue。&lt;/p&gt;
+
+&lt;h2 id=&#34;五&#34;&gt;五&lt;/h2&gt;
+
+&lt;p&gt;这一路来，最坑的还是输入法了，最一开始并未想过换输入法，本以为ubuntu18.04自带的ibus拼音输入法感觉不错，可以一用，没想到，时间长了自己还是崩了。&lt;/p&gt;
+
+&lt;p&gt;此时只好想要试试搜狗输入法，但是各种问题，坑的一笔，没办法，最后还是选择了稍逊一筹的谷歌拼音输入法，还是省事些。&lt;/p&gt;
+
+&lt;p&gt;后来帮同学收拾了下，没想到倒也简单。只是最好不要直接双击利用ubuntu软件商店来安装，还是使用指令安装吧：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;sudo dpkg -i sogou....deb
+sudo apt install -f&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;我就动了心思。&lt;/p&gt;
+
+&lt;p&gt;没想到，到了我的机子上就坑的一笔，多番测试，还是重新装了下fcitx和搜狗，才搞定了。&lt;/p&gt;
+
+&lt;p&gt;测试了好久，知道了不可以取消具体的fcitx的高级选项，需要保证各项都保持好原本的状态，但是最好把那个简单的界面取消，一来确实鸡肋，因为其中大多选项选不了，二来最好把输入法的状态栏显示出来。&lt;/p&gt;
+
+&lt;h2 id=&#34;六&#34;&gt;六&lt;/h2&gt;
+
+&lt;p&gt;看了下《云图》，因为《如懿传》尚未更新。&lt;/p&gt;
+
+&lt;p&gt;裴斗娜，周迅，这就够了。&lt;/p&gt;
+
+&lt;p&gt;裴斗娜，之前看过她的《秘密森林》，善良、可爱，但又不失智商。笑起来和新垣结衣有着同样的魅力。&lt;/p&gt;
+
+&lt;p&gt;迅哥，唉，这个优秀的演员。&lt;/p&gt;
+
+&lt;h2 id=&#34;七&#34;&gt;七&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;2018年9月17日23:20:53&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;今天重新装了下emacs。ubuntu自带的版本还是25.2，最新的正式版都是26.1了，没办法，只好编译安装了。找了好多资料，才算安上了。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;wget http://mirrors.ustc.edu.cn/gnu/emacs/emacs-26.1.tar.xz
+tar xvf emacs-26.1.tar.xz
+&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ...&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;emacs解包路径&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+sudo aptitude install libgtk2.0-dev
+sudo apt-get install libxpm-dev libjpeg-dev libgif-dev libtiff5-dev&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;最好先把各种配置依赖项安装好，可以先执行一下下面的指令，会在最后提示各种依赖问题，可以查找方式解决&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;./configure --prefix&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/usr/local/emacs
+make -j4 &lt;span class=&#34;c1&#34;&gt;# j的选项依赖cpu核心数&lt;/span&gt;
+sudo make install&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;把emacs的安装目录加入环境变量&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;vim ~/.profile&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;添加下面这行&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;PATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$PATH&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;:/usr/local/emacs/bin&amp;#34;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;然后执行&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; /home/bboysoul/.profile&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;创建emacs的图标&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /usr/local/emacs/share/applications&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;把下面这个文件复制到&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;cp emacs.desktop /usr/share/applications/&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;之后注销重新登录一下就可以找到图标了&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>如懿，如意</title>
+      <link>https://plart.pw/post/%E5%BD%B1%E8%A7%86-%E5%A6%82%E6%87%BF%E5%A6%82%E6%84%8F/</link>
+      <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E5%BD%B1%E8%A7%86-%E5%A6%82%E6%87%BF%E5%A6%82%E6%84%8F/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;如懿-如意&#34;&gt;如懿，如意&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;By Lart, 2018-08-30&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;最近一直在看《如懿传》，如懿深陷冷宫，不知后续如何&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ws1.sinaimg.cn/large/a6bff99cly1fus1f45z5ej211y0lcqv5.jpg&#34; alt=&#34;如懿&#34; title=&#34;如懿&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;周迅一直是我极其喜欢的一个演员，从12年的《听风者》，到后来的《龙门飞甲》、《撒娇女人最好命》、《如果·爱》，以及如《表演者言》之类的节目，都可以感觉出来她是一个很特别的演员。&lt;/p&gt;
+
+&lt;p&gt;最初认识到这么一个演员的时候，是在小时候看《格言》杂志，有一篇她的文章，回忆她当年表演之路上的种种规划和努力（翻了下，找到了这篇文章——&lt;a href=&#34;http://www.jiyifa.com/lizhi/143922.html&#34;&gt;《想想十年后的自己》&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;十八岁之前，我是个不晓得本人想要什么的人，那时我天天就在浙江艺术学校里随着同窗唱唱歌，跳舞蹈。偶然有导演来找我拍戏，我就会很高兴地去拍，无论多小的角色。假如没有老师跟我的那次谈话，那么兴许直到今天，依然不人知道周迅是谁。&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;当然，这是一篇“鸡汤文”，但是真情实感在其中，总会有能产生共鸣的时候。当年我就颇为感动，记下了这个特别的演员。&lt;/p&gt;
+
+&lt;p&gt;这本杂志中还提到了周迅，是讲她的《画皮》。&lt;/p&gt;
+
+&lt;p&gt;话说，这本杂志是《格言》杂志的第一百期的纪念刊，很厚，收录了不少文章，许多是我现在回想起来还是颇为感动的。&lt;/p&gt;
+
+&lt;p&gt;后来，生活水平好了些，用上了“大锅”天线，可以搜到很多以前看不到的频道，尤其是中央六台（真是好频道啊，哈哈，有多少美好的回忆~），于是便接触到了《听风者》。这是梁朝伟和迅哥一起演的一部谍战片。&lt;/p&gt;
+
+&lt;p&gt;周迅真漂亮啊！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://img1.doubanio.com/view/photo/l/public/p1641251968.webp&#34; alt=&#34;周迅&#34; title=&#34;听风者&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://img1.doubanio.com/view/photo/l/public/p1640439429.webp&#34; alt=&#34;周迅&#34; title=&#34;听风者&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;不行了，受不了了~&lt;/p&gt;
+
+&lt;p&gt;这个电影，看完以后真心不舒服，极度难受，迅哥在中途就挂了，死得好惨，只记得那个镜头，一地的鲜红。豆瓣上，很多人都有同感。&lt;/p&gt;
+
+&lt;p&gt;这部电影，让我知道了周迅，知道了这个声音如此特别，笑容又如此可爱，而且又可以如此帅气的演员。&lt;/p&gt;
+
+&lt;p&gt;后来也没怎么有机会找她的电影去看，直到徐老怪的《龙门飞甲》，又一次让我看到了那个独特的周迅，帅，真的帅！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://img1.doubanio.com/view/photo/l/public/p1327842417.webp&#34; alt=&#34;周迅&#34; title=&#34;龙门飞甲&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;不过此时我还不识陈坤，耀眼啊~&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://img1.doubanio.com/view/photo/l/public/p1301822337.webp&#34; alt=&#34;陈坤&#34; title=&#34;龙门飞甲&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;剧情记不得了，但是这部片子，算是老怪3D技术试水之作，不能不说技术上十分出彩。&lt;/p&gt;
+
+&lt;p&gt;机缘巧合之下，看了《撒娇女人最好命》，这个片子里，迅哥好可爱。而在最近，又看了陈可辛的《如果·爱》，感觉迅哥真的是美极了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://img3.doubanio.com/view/photo/l/public/p576819814.webp&#34; alt=&#34;周迅&#34; title=&#34;如果·爱&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这么多年来，从最一开始认识了周迅这个人，到现在渐渐对她有了更多的更立体地了解，发现周迅是一个很有理想、而且很有实力的一个演员。&lt;/p&gt;
+
+&lt;p&gt;对她的喜爱愈发落实在心里。&lt;/p&gt;
+
+&lt;p&gt;《如懿传》终于开播了，拖了好久，前途不明。&lt;/p&gt;
+
+&lt;p&gt;但是，有周迅，我还是愿意看一下。&lt;/p&gt;
+
+&lt;p&gt;迅哥现在43了，依旧年轻、帅气、可爱。&lt;/p&gt;
+
+&lt;p&gt;这个不老的精灵，真的希望她可以永远幸福。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>开心麻花</title>
+      <link>https://plart.pw/post/%E5%BD%B1%E8%A7%86-%E5%BC%80%E5%BF%83%E9%BA%BB%E8%8A%B1%E5%87%A0%E9%83%A8%E7%94%B5%E5%BD%B1/</link>
+      <pubDate>Sun, 05 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E5%BD%B1%E8%A7%86-%E5%BC%80%E5%BF%83%E9%BA%BB%E8%8A%B1%E5%87%A0%E9%83%A8%E7%94%B5%E5%BD%B1/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;开心麻花&#34;&gt;开心麻花&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;By Lart, 2018-08-05&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;前天看了一下开心麻花的几部片子，很逗，一口气看了三部。&lt;/p&gt;
+
+&lt;p&gt;先看的 &lt;em&gt;羞羞的铁拳&lt;/em&gt; ，印象最深的上山练功那一部分。&lt;/p&gt;
+
+&lt;p&gt;第一次爆笑是在秀念大师兄(王成思 Chengsi Wang)示范飞身插广告的那一段，纵身一跃，以为可以潇洒自在，结果飞来横祸，惨死街头……&lt;/p&gt;
+
+&lt;p&gt;漫天的广告纸，见证着大师兄的陨落……&lt;/p&gt;
+
+&lt;p&gt;突然镜头转切到祠堂祭奠，笑意再也忍不住了，哈哈！&lt;/p&gt;
+
+&lt;p&gt;还有一段是山上众人看电视，第一次出现的镜头，众人凝视电视，第二次出现的时候，才发现还在调电视中——原来一直没有调好……&lt;/p&gt;
+
+&lt;p&gt;当然，最让我无语唯有爆笑的是第一次沈腾出场的时候，潇洒的出场，尴尬的下跪落地……&lt;/p&gt;
+
+&lt;p&gt;而对于 &lt;em&gt;一念天堂&lt;/em&gt; ，我只记住了那个小姑娘，唱《睫毛弯弯》的那个小姑娘(何美璇 饰 兰兰)。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike116%2C5%2C5%2C116%2C38/sign=eccfc50d4b10b912abccfeaca2949766/d50735fae6cd7b89bf8fb835032442a7d8330ea0.jpg&#34; alt=&#34;何美璇 饰 兰兰&#34; title=&#34;何美璇&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;夏洛特烦恼&lt;/em&gt; ，说实话，以前我以为是 夏洛特~烦恼 而非实际的 夏洛~特~烦恼……&lt;/p&gt;
+
+&lt;p&gt;这个蛮有意思，恍惚之间穿越了(?)。不过倒是印证了一个道理——&lt;/p&gt;
+
+&lt;p&gt;最爱你的人，往往是最容易被忽略的。&lt;/p&gt;
+
+&lt;p&gt;珍惜眼前人吧！&lt;/p&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>
