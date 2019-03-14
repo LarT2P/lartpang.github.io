@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>比赛 on 给你我的想法</title>
+    <link>https://plart.pw/tags/%E6%AF%94%E8%B5%9B/</link>
+    <description>Recent content in 比赛 on 给你我的想法</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 06 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://plart.pw/tags/%E6%AF%94%E8%B5%9B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>比赛进度&amp;下一步的想法</title>
+      <link>https://plart.pw/post/%E6%80%9D%E8%80%83-%E5%85%B3%E4%BA%8E%E6%AF%94%E8%B5%9B%E4%B8%8E%E4%B8%8B%E4%B8%80%E6%AD%A5/</link>
+      <pubDate>Sun, 06 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E6%80%9D%E8%80%83-%E5%85%B3%E4%BA%8E%E6%AF%94%E8%B5%9B%E4%B8%8E%E4%B8%8B%E4%B8%80%E6%AD%A5/</guid>
+      <description>比赛进度&amp;amp;下一步的想法 By Lart, 2019-01-06 关于比赛 现在找到了一个18年的IJCAI的论文，实现了一个架构——R3Net，在ResNeXt的基础上外</description>
+    </item>
+    
+    <item>
+      <title>努力与情绪</title>
+      <link>https://plart.pw/post/%E6%80%9D%E8%80%83-%E5%8A%AA%E5%8A%9B%E4%B8%8E%E6%83%85%E7%BB%AA/</link>
+      <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E6%80%9D%E8%80%83-%E5%8A%AA%E5%8A%9B%E4%B8%8E%E6%83%85%E7%BB%AA/</guid>
+      <description>努力与情绪 By Lart, 2019-01-02 情绪 这段时间过得很压抑，自我的提升，现实的需求，理想的渴求，以及实际的压抑与焦虑，不安与混乱互相混杂，搅成一团。 比赛与mat</description>
+    </item>
+    
+  </channel>
+</rss>
