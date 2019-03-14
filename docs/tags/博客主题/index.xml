@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>博客主题 on 给你我的想法</title>
+    <link>https://plart.pw/tags/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/</link>
+    <description>Recent content in 博客主题 on 给你我的想法</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 15 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://plart.pw/tags/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>这些衰败的日子</title>
+      <link>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E8%BF%99%E4%BA%9B%E8%A1%B0%E8%B4%A5%E7%9A%84%E6%97%A5%E5%AD%90/</link>
+      <pubDate>Sat, 15 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E8%BF%99%E4%BA%9B%E8%A1%B0%E8%B4%A5%E7%9A%84%E6%97%A5%E5%AD%90/</guid>
+      <description>这些衰败的日子 By Lart, 2018-09-15 想换主题了。 一 突然心血来潮，想换主题了。搜了将近一个小时，打算用这个了。 https://github.com/rujews/maupassant-hugo 可是，hugo的基本配置，有点蛋疼啊。。折腾的</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>代码 on 给你我的想法</title>
+    <link>https://plart.pw/tags/%E4%BB%A3%E7%A0%81/</link>
+    <description>Recent content in 代码 on 给你我的想法</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 22 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://plart.pw/tags/%E4%BB%A3%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>论文&amp;代码&amp;生活</title>
+      <link>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E8%AE%BA%E6%96%87%E4%BB%A3%E7%A0%81%E7%94%9F%E6%B4%BB/</link>
+      <pubDate>Sat, 22 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E8%AE%BA%E6%96%87%E4%BB%A3%E7%A0%81%E7%94%9F%E6%B4%BB/</guid>
+      <description>论文&amp;amp;代码&amp;amp;生活 By Lart, 2018-12-22 论文 这些日子主要在看论文，忙着跟随学姐的脚步，尽快补充相关的知识，尽快踏上显著性检测的道路。在读了一些</description>
+    </item>
+    
+    <item>
+      <title>雪&amp;毕设&amp;代码</title>
+      <link>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E9%9B%AA%E6%AF%95%E8%AE%BE%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E9%9B%AA%E6%AF%95%E8%AE%BE%E4%BB%A3%E7%A0%81/</guid>
+      <description>雪&amp;amp;毕设&amp;amp;代码 By Lart, 2018-12-06 雪 今天迎来了二零一八年的第一场雪，比平常来的更晚了一些。寒意也随之到来了，弄得我终于换下了穿了许久的单衣</description>
+    </item>
+    
+  </channel>
+</rss>

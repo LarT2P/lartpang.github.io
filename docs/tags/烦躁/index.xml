@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>烦躁 on 给你我的想法</title>
+    <link>https://plart.pw/tags/%E7%83%A6%E8%BA%81/</link>
+    <description>Recent content in 烦躁 on 给你我的想法</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 19 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://plart.pw/tags/%E7%83%A6%E8%BA%81/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>一些额外的生活</title>
+      <link>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E4%B8%80%E4%BA%9B%E9%A2%9D%E5%A4%96%E7%9A%84%E7%94%9F%E6%B4%BB/</link>
+      <pubDate>Sat, 19 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E4%B8%80%E4%BA%9B%E9%A2%9D%E5%A4%96%E7%9A%84%E7%94%9F%E6%B4%BB/</guid>
+      <description>一些额外的生活 By Lart, 2019-01-19 今天没怎么学习, 一来是在忙活一些明天(不久就是&amp;rdquo;今天&amp;rdquo;了)的活动的事项, 二来是当前的进度到了一个</description>
+    </item>
+    
+    <item>
+      <title>这些衰败的日子</title>
+      <link>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E8%BF%99%E4%BA%9B%E8%A1%B0%E8%B4%A5%E7%9A%84%E6%97%A5%E5%AD%90/</link>
+      <pubDate>Sat, 15 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E8%BF%99%E4%BA%9B%E8%A1%B0%E8%B4%A5%E7%9A%84%E6%97%A5%E5%AD%90/</guid>
+      <description>这些衰败的日子 By Lart, 2018-09-15 想换主题了。 一 突然心血来潮，想换主题了。搜了将近一个小时，打算用这个了。 https://github.com/rujews/maupassant-hugo 可是，hugo的基本配置，有点蛋疼啊。。折腾的</description>
+    </item>
+    
+  </channel>
+</rss>

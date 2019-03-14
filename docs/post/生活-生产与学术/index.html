@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>生产与学术 - 给你我的想法</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="lart" />
+  <meta name="description" content="生产与学术  By Lart, 2019-01-08
+ 生产与学术, 真实的对立&amp;hellip;
+这是我这两天对pytorch深度学习-&amp;gt;android实际使用的这个流程的一个切身感受.
+说句实在的, 对于模型转换的探索, 算是我这两天最大的收获了&amp;hellip;
+https://github.com/lartpang/DHSNet-PyTorch/blob/master/converter.ipynb
+" />
+
+  <meta name="keywords" content="生活, 学习, 工作" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0" />
+
+
+<link rel="canonical" href="https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E7%94%9F%E4%BA%A7%E4%B8%8E%E5%AD%A6%E6%9C%AF/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="生产与学术" />
+<meta property="og:description" content="生产与学术
+
+
+By Lart, 2019-01-08
+
+
+
+
+生产与学术, 真实的对立&hellip;
+
+这是我这两天对pytorch深度学习-&gt;android实际使用的这个流程的一个切身感受.
+
+说句实在的, 对于模型转换的探索, 算是我这两天最大的收获了&hellip;
+
+https://github.com/lartpang/DHSNet-PyTorch/blob/master/converter.ipynb" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://plart.pw/post/%E7%94%9F%E6%B4%BB-%E7%94%9F%E4%BA%A7%E4%B8%8E%E5%AD%A6%E6%9C%AF/" />
+<meta property="article:published_time" content="2019-01-08T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-01-08T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="生产与学术">
+<meta itemprop="description" content="生产与学术
+
+
+By Lart, 2019-01-08
+
+
+
+
+生产与学术, 真实的对立&hellip;
+
+这是我这两天对pytorch深度学习-&gt;android实际使用的这个流程的一个切身感受.
+
+说句实在的, 对于模型转换的探索, 算是我这两天最大的收获了&hellip;
+
+https://github.com/lartpang/DHSNet-PyTorch/blob/master/converter.ipynb">
+
+
+<meta itemprop="datePublished" content="2019-01-08T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-01-08T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="3414">
+
+
+
+<meta itemprop="keywords" content="总结,编程,pytorch,onnx,安卓," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="生产与学术"/>
+<meta name="twitter:description" content="生产与学术
+
+
+By Lart, 2019-01-08
+
+
+
+
+生产与学术, 真实的对立&hellip;
+
+这是我这两天对pytorch深度学习-&gt;android实际使用的这个流程的一个切身感受.
+
+说句实在的, 对于模型转换的探索, 算是我这两天最大的收获了&hellip;
+
+https://github.com/lartpang/DHSNet-PyTorch/blob/master/converter.ipynb"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">给你我的想法</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://plart.pw/">Home</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://plart.pw/post/">Archives</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://plart.pw/tags/">Tags</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://plart.pw/categories/">Categories</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://plart.pw/about/">About</a>
+          
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+    <style>
+      .fork-me-on-github {
+        position: absolute; top: 0; left: 0; border: 0;
+      }
+      @media (max-width: 1080px) {
+        .fork-me-on-github {
+          display: none;
+        }
+      }
+    </style>
+
+    <a href="https://github.com/lartpang">
+      <img class="fork-me-on-github"
+        src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"
+        alt="Fork me on GitHub">
+    </a>
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      给你我的想法
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://plart.pw/">Home</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://plart.pw/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://plart.pw/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://plart.pw/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://plart.pw/about/">About</a>
+          
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">生产与学术</h1>
+      
+      <div class="post-meta">
+        <time datetime="2019-01-08" class="post-time">
+          2019-01-08
+        </time>
+        <div class="post-category">
+            <a href="https://plart.pw/categories/%E7%94%9F%E6%B4%BB/"> 生活 </a>
+            
+          </div>
+        <span class="more-meta"> 3414 words </span>
+          <span class="more-meta"> 7 min read </span>
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#生产与学术">生产与学术</a>
+<ul>
+<li><a href="#这两天">这两天</a>
+<ul>
+<li><a href="#导出整体模型">导出整体模型</a></li>
+<li><a href="#caffe2模型转换">caffe2模型转换</a></li>
+<li><a href="#预处理的补充">预处理的补充</a></li>
+<li><a href="#安卓的尝试">安卓的尝试</a>
+<ul>
+<li><a href="#aicamera-https-github-com-caffe2-aicamera"><a href="https://github.com/caffe2/AICamera">AiCamera</a></a></li>
+<li><a href="#aicamera-style-transfer-https-github-com-caffe2-aicamera-style-transfer"><a href="https://github.com/caffe2/AICamera-Style-Transfer">AICamera-Style-Transfer</a></a></li>
+<li><a href="#jejunet-https-github-com-tantara-jejunet"><a href="https://github.com/tantara/JejuNet">JejuNet</a></a></li>
+</ul></li>
+</ul></li>
+<li><a href="#最后的思考">最后的思考</a>
+<ul>
+<li><a href="#没经验">没经验</a></li>
+<li><a href="#下一步">下一步</a></li>
+</ul></li>
+<li><a href="#pickle和onnx的限制">pickle和onnx的限制</a></li>
+<li><a href="#打包apk安装">打包apk安装</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <h1 id="生产与学术">生产与学术</h1>
+
+<blockquote>
+<p>By Lart, 2019-01-08</p>
+</blockquote>
+
+<p><img src="https://images.unsplash.com/photo-1535540878298-a155c6d065ef?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=750&amp;q=80" alt="upsplash" /></p>
+
+<p>生产与学术, 真实的对立&hellip;</p>
+
+<p>这是我这两天对<code>pytorch深度学习-&gt;android实际使用</code>的这个流程的一个切身感受.</p>
+
+<p>说句实在的, 对于模型转换的探索, 算是我这两天最大的收获了&hellip;</p>
+
+<p><a href="https://github.com/lartpang/DHSNet-PyTorch/blob/master/converter.ipynb">https://github.com/lartpang/DHSNet-PyTorch/blob/master/converter.ipynb</a></p>
+
+<h2 id="这两天">这两天</h2>
+
+<p>最近在研究将pytorch的模型转换为独立的app, 网上寻找, 找到了一个流程: pytorch-&gt;onnx-&gt;caffe2-&gt;android apk. 主要是基于这篇文章的启发: <a href="https://zhuanlan.zhihu.com/p/32342366">caffe2&amp;pytorch之在移动端部署深度学习模型(全过程!)</a>.</p>
+
+<p>这两天就在折腾这个工具链，为了导出onnx的模型, 不确定要基于怎样的网络, 是已经训练好的, 还是原始搭建网络后再训练来作为基础. 所以不断地翻阅<a href="https://pytorch.org/tutorials/advanced/super_resolution_with_caffe2.html">pytorch</a>和<a href="https://github.com/onnx/tutorials/tree/master/tutorials">onnx</a>的官方示例, 想要研究出来点什么, 可是, 都是自己手动搭建的模型. 而且使用的是预训练权重, 不是这样:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">squeezenet1_1</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sa">r</span><span class="s2">&#34;&#34;&#34;SqueezeNet 1.1 model from the `official SqueezeNet repo
+</span><span class="s2">    &lt;https://github.com/DeepScale/SqueezeNet/tree/master/SqueezeNet_v1.1&gt;`_.
+</span><span class="s2">    SqueezeNet 1.1 has 2.4x less computation and slightly fewer parameters
+</span><span class="s2">    than SqueezeNet 1.0, without sacrificing accuracy.
+</span><span class="s2">    Args:
+</span><span class="s2">        pretrained (bool): If True, returns a model pre-trained on ImageNet
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">SqueezeNet</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pretrained</span><span class="p">:</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">model_zoo</span><span class="o">.</span><span class="n">load_url</span><span class="p">(</span><span class="n">model_urls</span><span class="p">[</span><span class="s1">&#39;squeezenet1_1&#39;</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">model</span>
+<span class="c1"># Get pretrained squeezenet model</span>
+<span class="n">torch_model</span> <span class="o">=</span> <span class="n">squeezenet1_1</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">torch.autograd</span> <span class="kn">import</span> <span class="n">Variable</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">1</span>    <span class="c1"># just a random number</span>
+<span class="c1"># Input to the model</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">),</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="c1"># Export the model</span>
+<span class="n">torch_out</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">onnx</span><span class="o">.</span><span class="n">_export</span><span class="p">(</span>
+    <span class="n">torch_model</span><span class="p">,</span>        <span class="c1"># model being run</span>
+    <span class="n">x</span><span class="p">,</span>                  <span class="c1"># model input (or a tuple for multiple inputs)</span>
+    <span class="s2">&#34;squeezenet.onnx&#34;</span><span class="p">,</span> 	<span class="c1"># where to save the model (can be a file or file-like object)</span>
+    <span class="n">export_params</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1"># store the trained parameter weights inside the model file</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>就是这样:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create the super-resolution model by using the above model definition.</span>
+<span class="n">torch_model</span> <span class="o">=</span> <span class="n">SuperResolutionNet</span><span class="p">(</span><span class="n">upscale_factor</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1"># Load pretrained model weights</span>
+<span class="n">model_url</span> <span class="o">=</span> <span class="s1">&#39;https://s3.amazonaws.com/pytorch/test_data/export/superres_epoch100-44c6958e.pth&#39;</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">1</span>    <span class="c1"># just a random number</span>
+<span class="c1"># Initialize model with the pretrained weights</span>
+<span class="n">torch_model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">model_zoo</span><span class="o">.</span><span class="n">load_url</span><span class="p">(</span><span class="n">model_url</span><span class="p">))</span>
+<span class="c1"># set the train mode to false since we will only run the forward pass.</span>
+<span class="n">torch_model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>两种都在载入预训练权重, 直接加载到搭建好的网络上. 对于我手头有的已经训练好的模型, 似乎并不符合这样的条件.</p>
+
+<h3 id="导出整体模型">导出整体模型</h3>
+
+<p>最后采用尽可能模仿上面的例子代码的策略, 将整个网络完整的导出(<code>torch.save(model)</code>), 然后再仿照上面那样, 将完整的网络加载(<code>torch.load()</code>)到转换的代码中, 照猫画虎, 以进一步处理.</p>
+
+<blockquote>
+<p>这里也很大程度上受到这里的启发: <a href="https://github.com/akirasosa/mobile-semantic-segmentation">https://github.com/akirasosa/mobile-semantic-segmentation</a></p>
+</blockquote>
+
+<p>本来想尝试使用之前找到的不论效果还是性能都很强的R3Net进行转换, 可是, 出于作者搭建网络使用的特殊手段, 加上<a href="#pickle和onnx的限制">pickle和onnx的限制</a>, 这个尝试没有奏效, 只好转回头使用之前学习的DHS-Net的代码, 因为它的实现是基于VGG的, 里面的搭建的网络也是需要修改来符合onnx的要求, 主要是更改上采样操作为转置卷积(也就是分数步长卷积, 这里顺带温习了下pytorch里的<code>nn.ConvTranspose2d()</code>的<a href="https://github.com/lartpang/Machine-Deep-Learning/issues/39">计算方式</a>), 因为pytorch的上采样在onnx转换过程中有很多的问题, 特别麻烦, 外加上修改最大池化的一个参数(<code>nn.MaxPool2d(kernel_size=2, stride=2, ceil_mode=False)</code>的参数<code>ceil_mode</code>改为<code>ceil_mode=False</code>, 这里参考自前面的知乎专栏的那篇文章), 这样终于可以转换了, 为了方便和快速的测试, 我只是训练了一个epoch, 就直接导出模型, 这次终于可以顺利的<code>torch.save()</code>了.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">filename_opti</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">/model-best.pth&#39;</span> <span class="o">%</span> <span class="n">check_root_model</span><span class="p">)</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">filename_opti</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>之后便利用类似的代码进行了书写.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">IMG_SIZE</span> <span class="o">=</span> <span class="mi">224</span>
+<span class="n">TMP_ONNX</span> <span class="o">=</span> <span class="s1">&#39;cache/onnx/DHSNet.onnx&#39;</span>
+<span class="n">MODEL_PATH</span> <span class="o">=</span> <span class="s1">&#39;cache/opti/total-opti-current.pth&#39;</span>
+
+<span class="c1"># Convert to ONNX once</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">MODEL_PATH</span><span class="p">)</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">),</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+<span class="n">torch_out</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">onnx</span><span class="o">.</span><span class="n">_export</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">TMP_ONNX</span><span class="p">,</span> <span class="n">export_params</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="caffe2模型转换">caffe2模型转换</h3>
+
+<p>载入模型后, 便可以开始转换了, 这里需要安装caffe2, 官方推荐直接conda安装pytorch1每夜版即可, 会自动安装好依赖.</p>
+
+<blockquote>
+<p>说起来这个conda, 就让我又爱又恨, 用它装pytorch从这里可以看出来, 确实不错, 对系统自身的环境没有太多的破坏, 可是用它装tensorflow-gpu的时候, 却是要自动把conda源里的cuda, cudnn工具包都给带上, 有时候似乎会破坏掉系统自身装载的cuda环境(? 不太肯定, 反正现在我不这样装, 直接上pip装, 干净又快速).</p>
+</blockquote>
+
+<p>之后的代码中, 主要的问题也就是tensor的cpu/cuda, 或者numpy的转换的问题了. 多尝试一下, 输出下类型就可以看到了.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Let&#39;s also save the init_net and predict_net to a file that we will later use for running them on mobile</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./cache/model_mobile/init_net.pb&#39;</span><span class="p">,</span> <span class="s2">&#34;wb&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fopen</span><span class="p">:</span>
+    <span class="n">fopen</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">init_net</span><span class="o">.</span><span class="n">SerializeToString</span><span class="p">())</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./cache/model_mobile/predict_net.pb&#39;</span><span class="p">,</span> <span class="s2">&#34;wb&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fopen</span><span class="p">:</span>
+    <span class="n">fopen</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">predict_net</span><span class="o">.</span><span class="n">SerializeToString</span><span class="p">())</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="预处理的补充">预处理的补充</h3>
+
+<p>这里记录下, 查看pytorch的tensor的形状使用<code>tensor.size()</code>方法, 查看numpy数组的形状则使用numpy数组的<code>adarray.shape</code>方法, 而对于PIL(<code>from PIL import Image</code>)读取的Image对象而言, 使用<code>Image.size</code>查看, 而且, 这里只会显示宽和高的长度, 而且Image的对象, 是三维, 在于pytorch的tensor转换的时候, 或者输入网络的时候, 要注意添加维度, 而且要调整通道位置(<code>img = img.transpose(2, 0, 1)</code>).</p>
+
+<p>由于网络保存的部分中, 只涉及到了网络的结构内的部分, 对于数据的预处理的部分并不涉及, 所以说要想真正的利用网络, 还得调整真实的输入, 来作为更适合网络的数据输入.</p>
+
+<p>要注意, 这里针对导出的模型的相关测试, 程实际上是<strong>按照测试网络的流程</strong>来的.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># load the resized image and convert it to Ybr format</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.485</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">])</span>
+<span class="n">std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">])</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="nb">open</span><span class="p">(</span><span class="s2">&#34;./data/ILSVRC2012_test_00000004_224x224.jpg&#34;</span><span class="p">)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">/</span> <span class="mi">255</span>
+<span class="n">img</span> <span class="o">-=</span> <span class="n">mean</span>
+<span class="n">img</span> <span class="o">/=</span> <span class="n">std</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="安卓的尝试">安卓的尝试</h3>
+
+<p>首先安卓环境的配置就折腾了好久, 一堆破事, 真实的生产开发, 真心不易啊&hellip;</p>
+
+<p>这里最终还是失败了, 因为对于安卓的代码是在是不熟悉, 最起码的基础认知都不足, 只有这先前学习Java的一点皮毛知识, 根本不足以二次开发. 也就跑了跑几个完整的demo而已.</p>
+
+<h4 id="aicamera-https-github-com-caffe2-aicamera"><a href="https://github.com/caffe2/AICamera">AiCamera</a></h4>
+
+<p>这个跑通了, 但是这是个分类网络的例子, 对于我们要做的分割的任务而言, 有很多细节不一样.</p>
+
+<ul>
+<li>输入有差异: 比赛要求的是若是提交apk, 那么要求可以从相册读取图片, 而例子是从摄像头读取的视频数据流. 虽然也处理的是视频帧, 但是要我们再次补充的内容又多了起来, 还是那句话, android一窍不通.</li>
+<li>输出有差异: 自我猜测, 比赛为了测评, 输出必然也要输出到相册里, 不然何来测评一说?</li>
+</ul>
+
+<h4 id="aicamera-style-transfer-https-github-com-caffe2-aicamera-style-transfer"><a href="https://github.com/caffe2/AICamera-Style-Transfer">AICamera-Style-Transfer</a></h4>
+
+<p>这个例子我们参考了一下, 只是因为它的任务是对摄像头视频流数据风格迁移, 而且会直接回显到手机屏幕上, 这里我们主要是想初步实现对于我们网络模型安卓迁移的测试, 在第一个例子的基础上能否实现初步的摄像头视频流的分割, 然后下一步再进一步满足比赛要求.</p>
+
+<p>可是, 尝试失败了. 虽然AS打包成了APK, <a href="#打包apk安装">手机也安装上了</a>, 可是莫名的, 在&rdquo;loading&hellip;&ldquo;中便闪退了&hellip;</p>
+
+<h4 id="jejunet-https-github-com-tantara-jejunet"><a href="https://github.com/tantara/JejuNet">JejuNet</a></h4>
+
+<p>这个例子很给力, 但是使用的是tensorflowlite, 虽然可以用, 能够实现下面的效果, 可是, 不会改.</p>
+
+<p><img src="https://raw.githubusercontent.com/tantara/JejuNet/master/docs/20180726-current-results-deeplabv3_on_tf-lite.gif" alt="img" /></p>
+
+<p>而且是量化网络, 准确率还是有待提升.</p>
+
+<h2 id="最后的思考">最后的思考</h2>
+
+<p>最后还是要思考一下的, 做个总结.</p>
+
+<h3 id="没经验">没经验</h3>
+
+<p>吃就吃在没经验的亏上了, 都是初次接触, 之前没怎么接触过安卓, 主要是安卓的开发对于电脑的配置要求太高了, 自己的笔记本根本不够玩的. 也就没有接触过了.</p>
+
+<p>外加上之前的研究学习, 主要是在学术的环境下搞得, 和实际的生产还有很大的距离, 科研与生产的分离, 这对于深度学习这一实际上更偏重实践的领域来说, 有些时候是尤为致命的. 关键时刻下不去手, 这多么无奈, 科学技术无法转化为实实在在的生产力, 忽然有些如梦一般的缥缈.</p>
+
+<p>当然, 最关键的还是, 没有仔细分析赛方的需求, 没有完全思考清楚, 直接就开干了, 这个鲁莽的毛病, 还是没有改掉, 浪费时间不说, 也无助于实际的进度. 赛方的说明含糊, 应该问清楚.</p>
+
+<p>若是担心时间, 那更应该看清楚要求, 切莫随意下手. 比赛说明里只是说要提交一个打包好的应用, 把环境, 依赖什么都处理好, 但是不一定是安卓apk呀, 可以有很多的形式, 但是这也只是最后的一点额外的辅助而已, 重点是模型的性能和效率呢.</p>
+
+<p>莫忘初心, 方得始终. 为什么我想到的是这句.</p>
+
+<h3 id="下一步">下一步</h3>
+
+<p>基本上就定了还是使用R3Net, 只能是进一步的细节修改了, 换换后面的循环结构了, 改改连接什么的.</p>
+
+<p>我准备再开始看论文, 学姐的论文可以看看, 似乎提出了一种很不错的后处理的方法, 效果提升很明显, 需要研究下.</p>
+
+<h2 id="pickle和onnx的限制">pickle和onnx的限制</h2>
+
+<p>pytorch的<code>torch.save(model)</code>保存模型的时候, 模型架构的代码里<strong>不能使用一些特殊的构建形式</strong>, <a href="https://github.com/zijundeng/R3Net/blob/master/resnext/resnext_101_32x4d_.py">R3Net的ResNeXt结构</a>就用了, 主要是一些lambda结构, 虽然不是太清楚, 但是一般的搭建手段都是可以的.</p>
+
+<p>onnx对于pytorch的支持的操作, 在我的转化中, 主要是最大池化和上采样的问题, 前者可以修改<code>ceil_mode</code>为<code>False</code>, 后者则建议修改为转置卷积, 避免不必要的麻烦. 可见<a href="#导出整体模型">&ldquo;导出整体模型&rdquo;</a>小节的描述.</p>
+
+<h2 id="打包apk安装">打包apk安装</h2>
+
+<p>这里主要是用release版本构建的apk.</p>
+
+<p>未签名的apk在我的mi 8se(android 8.1)上不能安装, 会解析失败, 需要签名, AS的签名的生成也很简单, 和生成apk在同一级上, 有生成的选项.</p>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">lart</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2019-01-08</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://plart.pw/tags/%E6%80%BB%E7%BB%93/">总结</a>
+          <a href="https://plart.pw/tags/%E7%BC%96%E7%A8%8B/">编程</a>
+          <a href="https://plart.pw/tags/pytorch/">pytorch</a>
+          <a href="https://plart.pw/tags/onnx/">onnx</a>
+          <a href="https://plart.pw/tags/%E5%AE%89%E5%8D%93/">安卓</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/%E6%80%9D%E8%80%83-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AD%A6%E4%B9%A0/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">深度学习的学习</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/%E6%80%9D%E8%80%83-%E5%85%B3%E4%BA%8E%E6%AF%94%E8%B5%9B%E4%B8%8E%E4%B8%8B%E4%B8%80%E6%AD%A5/">
+            <span class="next-text nav-default">比赛进度&amp;下一步的想法</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+    
+
+
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="lartpang#163.com" rel="me noopener" class="iconfont"
+      title="email"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/lartpang" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+
+
+<a href="https://plart.pw/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2019
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        lart
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
