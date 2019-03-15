@@ -57,11 +57,6 @@ defaultContentLanguage = "en"           # Default language to use
   weight = 50
   identifier = "wiki"
   url = "/wiki/"
-[[menu.main]]
-  name = "About"
-  weight = 60
-  identifier = "about"
-  url = "/about/"
 
 [params]
   debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
