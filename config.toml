@@ -52,6 +52,16 @@ defaultContentLanguage = "en"           # Default language to use
   weight = 40
   identifier = "categories"
   url = "/categories/"
+[[menu.wiki]]
+  name = "WiKi"
+  weight = 50
+  identifier = "wiki"
+  url = "/wiki/"
+[[menu.main]]
+  name = "About"
+  weight = 60
+  identifier = "about"
+  url = "/about/"
 
 [params]
   debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
@@ -61,7 +71,7 @@ defaultContentLanguage = "en"           # Default language to use
 
   # site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
   logoTitle = "给你我的想法"        # default: the title value    # 默认值: 上面设置的title值
-  keywords = ["生活", "学习","工作"]
+  keywords = ["生活", "学习", "工作"]
   description = "个人生活记录."
 
   # paginate of archives, tags and categories             # 归档、标签、分类每页显示的文章数目，建议修改为一个较大的值
@@ -78,7 +88,7 @@ defaultContentLanguage = "en"           # Default language to use
   moreMeta = true
 
   # show language chooser in menu
-  showMenuLanguageChooser = true
+  showMenuLanguageChooser = false
 
   showAuthorInfo = true # show author info below the article
 
@@ -122,7 +132,7 @@ defaultContentLanguage = "en"           # Default language to use
     enable = false
 
   [params.social]                                         # 社交链接
-    a-email = "lartpang#163.com"
+    #a-email = ""
     g-github = "https://github.com/lartpang"
     #h-weibo = "http://localhost:1313"
     #i-zhihu = "http://localhost:1313"
