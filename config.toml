@@ -56,7 +56,7 @@ defaultContentLanguage = "en"           # Default language to use
   name = "WiKi"
   weight = 50
   identifier = "wiki"
-  url = "/wiki/"
+  url = "https://lart2p.github.io/wiki/"
 
 [params]
   debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
